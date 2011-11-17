@@ -1,8 +1,7 @@
 #import <UIKit/UIKit.h>
 
-@interface ApplicationDelegate : NSObject <UIApplicationDelegate> 
+@interface BCApplicationDelegate : NSObject <UIApplicationDelegate> 
 {
-  @private 
     UIWindow *mWindow;
     SPView *mSparrowView;
 }

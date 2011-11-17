@@ -1,5 +1,5 @@
 #import <Foundation/Foundation.h>
 
-@interface Game : SPStage
+@interface Game : SPSprite
 
 @end

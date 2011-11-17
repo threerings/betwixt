@@ -1,7 +1,7 @@
-#import "ApplicationDelegate.h"
+#import "BCApplicationDelegate.h"
 #import "Game.h" 
 
-@implementation ApplicationDelegate
+@implementation BCApplicationDelegate
 
 - (id)init
 {
@@ -16,18 +16,14 @@
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application 
 {    
-    @autoreleasepool {
-        [SPStage setSupportHighResolutions:YES];
-        [SPAudioEngine start];
-        
-        Game *game = [[Game alloc] init];        
-        mSparrowView.stage = game;
-        mSparrowView.multipleTouchEnabled = NO;
-        mSparrowView.frameRate = 30.0f;
-        
-        [mWindow makeKeyAndVisible];
-        [mSparrowView start];
-    }
+    [SPStage setSupportHighResolutions:YES];
+    [SPAudioEngine start];
+    
+    mSparrowView.stage = [[SPStage alloc] init];
+    mSparrowView.multipleTouchEnabled = YES;
+    
+    [mWindow makeKeyAndVisible];
+    [mSparrowView start];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application 
