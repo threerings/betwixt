@@ -1,46 +1,39 @@
-#import "BCApplicationDelegate.h"
-#import "Game.h" 
+#import "BCApplicationDelegate.h" 
 
 @implementation BCApplicationDelegate
 
-- (id)init
-{
+@synthesize defaultStack=_defaultStack;
+
+- (id)init {
     if ((self = [super init]))
     {
-        mWindow = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-        mSparrowView = [[SPView alloc] initWithFrame:mWindow.bounds]; 
-        [mWindow addSubview:mSparrowView];
+        _window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+        _view = [[SPView alloc] initWithFrame:_window.bounds]; 
+        [_window addSubview:_view];
     }
     return self;
 }
 
-- (void)applicationDidFinishLaunching:(UIApplication *)application 
-{    
+- (void)applicationDidFinishLaunching:(UIApplication *)application {    
     [SPStage setSupportHighResolutions:YES];
     [SPAudioEngine start];
     
-    mSparrowView.stage = [[SPStage alloc] init];
-    mSparrowView.multipleTouchEnabled = YES;
+    _view.stage = [[SPStage alloc] init];
+    _view.multipleTouchEnabled = YES;
     
-    [mWindow makeKeyAndVisible];
-    [mSparrowView start];
+    [_window makeKeyAndVisible];
+    [_view start];
+    
+    _defaultStack = [[BCModeStack alloc] init];
+    [_view.stage addChild:_defaultStack->_sprite];
 }
 
-- (void)applicationWillResignActive:(UIApplication *)application 
-{    
-    [mSparrowView stop];
+- (void)applicationWillResignActive:(UIApplication *)application {    
+    [_view stop];
 }
 
-- (void)applicationDidBecomeActive:(UIApplication *)application 
-{
-	[mSparrowView start];
-}
-
-- (void)applicationDidReceiveMemoryWarning:(UIApplication *)application
-{
-    [SPPoint purgePool];
-    [SPRectangle purgePool];
-    [SPMatrix purgePool];    
+- (void)applicationDidBecomeActive:(UIApplication *)application {
+	[_view start];
 }
 
 - (void)dealloc 

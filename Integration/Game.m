@@ -13,7 +13,7 @@
         quad.color = 0xff0000;
         quad.x = 50;
         quad.y = 50;
-        [self addChild:quad];
+        [self.sprite addChild:quad];
 
     }
     return self;

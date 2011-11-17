@@ -1,5 +1,6 @@
 #import <Foundation/Foundation.h>
+#import "BCMode.h"
 
-@interface Game : SPSprite
+@interface Game : BCMode
 
 @end

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB2755991475C0BD00C046C4 /* BCModeStack.h in Headers */ = {isa = PBXBuildFile; fileRef = CB2755971475C0BD00C046C4 /* BCModeStack.h */; };
+		CB27559A1475C0BD00C046C4 /* BCModeStack.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2755981475C0BD00C046C4 /* BCModeStack.m */; };
+		CB27559D1475C25E00C046C4 /* BCMode.h in Headers */ = {isa = PBXBuildFile; fileRef = CB27559B1475C25E00C046C4 /* BCMode.h */; };
+		CB27559E1475C25E00C046C4 /* BCMode.m in Sources */ = {isa = PBXBuildFile; fileRef = CB27559C1475C25E00C046C4 /* BCMode.m */; };
 		CBAD57881475A28800F7D78E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
 		CBAD57891475A28800F7D78E /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE4A3D7910FFB08200FDA492 /* OpenGLES.framework */; };
 		CBAD578A1475A28800F7D78E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
@@ -56,6 +60,10 @@
 		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		32CA4F630368D1EE00C91783 /* Bangalaclang_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bangalaclang_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Application-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Application-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		CB2755971475C0BD00C046C4 /* BCModeStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCModeStack.h; sourceTree = "<group>"; };
+		CB2755981475C0BD00C046C4 /* BCModeStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCModeStack.m; sourceTree = "<group>"; };
+		CB27559B1475C25E00C046C4 /* BCMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCMode.h; sourceTree = "<group>"; };
+		CB27559C1475C25E00C046C4 /* BCMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCMode.m; sourceTree = "<group>"; };
 		CBAD57941475A3A000F7D78E /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Integration/main.m; sourceTree = "<group>"; };
 		CBAD57971475A4EE00F7D78E /* TestApplicationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestApplicationDelegate.h; path = Integration/TestApplicationDelegate.h; sourceTree = "<group>"; };
 		CBAD57981475A4EE00F7D78E /* TestApplicationDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TestApplicationDelegate.m; path = Integration/TestApplicationDelegate.m; sourceTree = "<group>"; };
@@ -110,6 +118,10 @@
 			children = (
 				1D3623240D0F684500981E51 /* BCApplicationDelegate.h */,
 				1D3623250D0F684500981E51 /* BCApplicationDelegate.m */,
+				CB2755971475C0BD00C046C4 /* BCModeStack.h */,
+				CB2755981475C0BD00C046C4 /* BCModeStack.m */,
+				CB27559B1475C25E00C046C4 /* BCMode.h */,
+				CB27559C1475C25E00C046C4 /* BCMode.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -200,6 +212,8 @@
 				CBB8CB9C1475A18400445316 /* BCApplicationDelegate.h in Headers */,
 				CBAD57991475A4EE00F7D78E /* TestApplicationDelegate.h in Headers */,
 				CBAD57CE1475A70100F7D78E /* Game.h in Headers */,
+				CB2755991475C0BD00C046C4 /* BCModeStack.h in Headers */,
+				CB27559D1475C25E00C046C4 /* BCMode.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,6 +333,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CBB8CB9E1475A19B00445316 /* BCApplicationDelegate.m in Sources */,
+				CB27559A1475C0BD00C046C4 /* BCModeStack.m in Sources */,
+				CB27559E1475C25E00C046C4 /* BCMode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,6 +400,7 @@
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				HEADER_SEARCH_PATHS = Classes;
 				INFOPLIST_FILE = "Integration/Integration-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -402,6 +419,7 @@
 				GCC_PREFIX_HEADER = Bangalaclang_Prefix.pch;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				HEADER_SEARCH_PATHS = Classes;
 				INFOPLIST_FILE = "Integration/Integration-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
@@ -474,6 +492,7 @@
 				CBAD57C61475A62B00F7D78E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CBB8CB991475A06400445316 /* Build configuration list for PBXNativeTarget "Bangalaclang" */ = {
 			isa = XCConfigurationList;

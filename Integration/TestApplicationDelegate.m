@@ -8,7 +8,7 @@
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
     [super applicationDidFinishLaunching:application];
-    [mSparrowView.stage addChild:[[Game alloc] init]];
+    [self.defaultStack pushMode:[[Game alloc] init]];
 }
 
 @end
