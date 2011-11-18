@@ -230,9 +230,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		CBAD57B21475A62B00F7D78E /* BetwixtIntegration */ = {
+		CBAD57B21475A62B00F7D78E /* Betwixt Integration */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CBAD57C41475A62B00F7D78E /* Build configuration list for PBXNativeTarget "BetwixtIntegration" */;
+			buildConfigurationList = CBAD57C41475A62B00F7D78E /* Build configuration list for PBXNativeTarget "Betwixt Integration" */;
 			buildPhases = (
 				CBAD57AF1475A62B00F7D78E /* Sources */,
 				CBAD57B01475A62B00F7D78E /* Frameworks */,
@@ -242,7 +242,7 @@
 			);
 			dependencies = (
 			);
-			name = BetwixtIntegration;
+			name = "Betwixt Integration";
 			productName = BetwixtIntegration;
 			productReference = CBAD57B31475A62B00F7D78E /* BetwixtIntegration.app */;
 			productType = "com.apple.product-type.application";
@@ -295,7 +295,7 @@
 			projectRoot = "";
 			targets = (
 				CBB8CB901475A06400445316 /* Betwixt */,
-				CBAD57B21475A62B00F7D78E /* BetwixtIntegration */,
+				CBAD57B21475A62B00F7D78E /* Betwixt Integration */,
 			);
 		};
 /* End PBXProject section */
@@ -495,7 +495,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CBAD57C41475A62B00F7D78E /* Build configuration list for PBXNativeTarget "BetwixtIntegration" */ = {
+		CBAD57C41475A62B00F7D78E /* Build configuration list for PBXNativeTarget "Betwixt Integration" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CBAD57C51475A62B00F7D78E /* Debug */,
