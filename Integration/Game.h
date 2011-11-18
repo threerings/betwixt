@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
-#import "BCMode.h"
+#import "BTMode.h"
 
-@interface Game : BCMode
+@interface Game : BTMode
 
 @end

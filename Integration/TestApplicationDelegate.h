@@ -1,8 +1,8 @@
 //
-//  Bangalaclang - Copyright 2011 Three Rings Design
+//  Betwixt - Copyright 2011 Three Rings Design
 
-#import "BCApplicationDelegate.h"
+#import "BTApplicationDelegate.h"
 
-@interface TestApplicationDelegate : BCApplicationDelegate
+@interface TestApplicationDelegate : BTApplicationDelegate
 
 @end

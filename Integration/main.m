@@ -1,5 +1,5 @@
 //
-//  Bangalaclang - Copyright 2011 Three Rings Design
+//  Betwixt - Copyright 2011 Three Rings Design
 
 #import <UIKit/UIKit.h>
 

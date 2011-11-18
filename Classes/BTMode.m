@@ -1,9 +1,9 @@
 //
-//  Bangalaclang - Copyright 2011 Three Rings Design
+//  Betwixt - Copyright 2011 Three Rings Design
 
-#import "BCMode.h"
+#import "BTMode.h"
 
-@implementation BCMode
+@implementation BTMode
 
 - (id)init {
     if ((self = [super init])) {

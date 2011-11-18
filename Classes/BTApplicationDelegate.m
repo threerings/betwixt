@@ -1,6 +1,9 @@
-#import "BCApplicationDelegate.h" 
+//
+//  Betwixt - Copyright 2011 Three Rings Design
 
-@implementation BCApplicationDelegate
+#import "BTApplicationDelegate.h" 
+
+@implementation BTApplicationDelegate
 
 @synthesize defaultStack=_defaultStack;
 
@@ -24,7 +27,7 @@
     [_window makeKeyAndVisible];
     [_view start];
     
-    _defaultStack = [[BCModeStack alloc] init];
+    _defaultStack = [[BTModeStack alloc] init];
     [_view.stage addChild:_defaultStack->_sprite];
     [_view.stage addEventListener:@selector(advanceTime:) atObject:self forType:SP_EVENT_TYPE_ENTER_FRAME];
 }

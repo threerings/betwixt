@@ -1,9 +1,9 @@
 //
-//  Bangalaclang - Copyright 2011 Three Rings Design
+//  Betwixt - Copyright 2011 Three Rings Design
 
-#import "BCModeStack.h"
+#import "BTModeStack.h"
 
-@implementation BCModeStack
+@implementation BTModeStack
 
 - (id)init
 {
@@ -13,7 +13,7 @@
     return self;
 }
 
-- (void)pushMode:(BCMode *)mode 
+- (void)pushMode:(BTMode *)mode 
 {
     [_sprite addChild:mode.sprite];
 }
