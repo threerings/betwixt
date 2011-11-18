@@ -5,12 +5,14 @@
 
 @implementation BCMode
 
-- (id)init
-{
+- (id)init {
     if ((self = [super init])) {
         _sprite = [[SPSprite alloc] init];
     }
     return self;
+}
+
+- (void)advanceTime:(double)seconds {
 }
 
 @synthesize sprite=_sprite;

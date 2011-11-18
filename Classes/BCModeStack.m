@@ -18,4 +18,7 @@
     [_sprite addChild:mode.sprite];
 }
 
+- (void)advanceTime:(double)seconds {
+}
+
 @end

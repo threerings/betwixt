@@ -9,6 +9,8 @@
     SPSprite *_sprite;
 }
 
+-(void)advanceTime:(double)seconds;
+
 @property(readonly, strong, nonatomic) SPSprite *sprite;
 
 @end

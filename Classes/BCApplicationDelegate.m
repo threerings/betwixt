@@ -26,6 +26,11 @@
     
     _defaultStack = [[BCModeStack alloc] init];
     [_view.stage addChild:_defaultStack->_sprite];
+    [_view.stage addEventListener:@selector(advanceTime:) atObject:self forType:SP_EVENT_TYPE_ENTER_FRAME];
+}
+
+-(void)advanceTime:(SPEnterFrameEvent *)ev {
+    [_defaultStack advanceTime:ev.passedTime];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {    

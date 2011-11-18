@@ -12,4 +12,6 @@
 
 - (void)pushMode:(BCMode*)mode;
 
+- (void)advanceTime:(double)seconds;
+
 @end
