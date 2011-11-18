@@ -5,20 +5,20 @@
 
 @implementation BTModeStack
 
-- (id)init
-{
-    if ((self = [super init])) {
-        _sprite = [[SPSprite alloc] init];
-    }
+- (id)init {
+    if (!(self = [super init])) return nil;
+    _sprite = [[SPSprite alloc] init];
+    _stack = [NSMutableArray array];
     return self;
 }
 
-- (void)pushMode:(BTMode *)mode 
-{
+- (void)pushMode:(BTMode *)mode {
+    [_stack addObject:mode];
     [_sprite addChild:mode.sprite];
 }
 
 - (void)advanceTime:(double)seconds {
+    for (BTMode *mode in _stack) [mode advanceTime:seconds];
 }
 
 @end

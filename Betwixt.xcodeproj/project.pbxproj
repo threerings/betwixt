@@ -31,6 +31,12 @@
 		CBAD57D41475A7D200F7D78E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE4A3D7E10FFB08B00FDA492 /* QuartzCore.framework */; };
 		CBAD57D51475A7D800F7D78E /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE3F093911B7B9DC009D4DB0 /* AudioToolbox.framework */; };
 		CBAD57D61475A7E200F7D78E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE3F093711B7B9DC009D4DB0 /* AVFoundation.framework */; };
+		CBB86EE01476669800D0C57E /* BTObject.h in Headers */ = {isa = PBXBuildFile; fileRef = CBB86EDE1476669800D0C57E /* BTObject.h */; };
+		CBB86EE11476669800D0C57E /* BTObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB86EDF1476669800D0C57E /* BTObject.m */; };
+		CBB86EE4147666AA00D0C57E /* BTGeneration.h in Headers */ = {isa = PBXBuildFile; fileRef = CBB86EE2147666AA00D0C57E /* BTGeneration.h */; };
+		CBB86EE5147666AA00D0C57E /* BTGeneration.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB86EE3147666AA00D0C57E /* BTGeneration.m */; };
+		CBB86EE8147670A000D0C57E /* Square.h in Headers */ = {isa = PBXBuildFile; fileRef = CBB86EE6147670A000D0C57E /* Square.h */; };
+		CBB86EE9147670A000D0C57E /* Square.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB86EE7147670A000D0C57E /* Square.m */; };
 		CBB8CB921475A06400445316 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		CBF2AAA014765EA5000C022D /* BTApplicationDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = CBF2AA9A14765EA5000C022D /* BTApplicationDelegate.h */; };
 		CBF2AAA114765EA5000C022D /* BTApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF2AA9B14765EA5000C022D /* BTApplicationDelegate.m */; };
@@ -69,6 +75,12 @@
 		CBAD57B31475A62B00F7D78E /* BetwixtIntegration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BetwixtIntegration.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBAD57CC1475A70100F7D78E /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Game.h; path = Integration/Game.h; sourceTree = "<group>"; };
 		CBAD57CD1475A70100F7D78E /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Game.m; path = Integration/Game.m; sourceTree = "<group>"; };
+		CBB86EDE1476669800D0C57E /* BTObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTObject.h; sourceTree = "<group>"; };
+		CBB86EDF1476669800D0C57E /* BTObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTObject.m; sourceTree = "<group>"; };
+		CBB86EE2147666AA00D0C57E /* BTGeneration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTGeneration.h; sourceTree = "<group>"; };
+		CBB86EE3147666AA00D0C57E /* BTGeneration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTGeneration.m; sourceTree = "<group>"; };
+		CBB86EE6147670A000D0C57E /* Square.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Square.h; sourceTree = "<group>"; };
+		CBB86EE7147670A000D0C57E /* Square.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Square.m; sourceTree = "<group>"; };
 		CBB8CB911475A06400445316 /* libBetwixt.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBetwixt.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBF2AA9A14765EA5000C022D /* BTApplicationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTApplicationDelegate.h; sourceTree = "<group>"; };
 		CBF2AA9B14765EA5000C022D /* BTApplicationDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTApplicationDelegate.m; sourceTree = "<group>"; };
@@ -128,10 +140,14 @@
 			children = (
 				CBF2AA9A14765EA5000C022D /* BTApplicationDelegate.h */,
 				CBF2AA9B14765EA5000C022D /* BTApplicationDelegate.m */,
+				CBB86EE2147666AA00D0C57E /* BTGeneration.h */,
+				CBB86EE3147666AA00D0C57E /* BTGeneration.m */,
 				CBF2AA9C14765EA5000C022D /* BTMode.h */,
 				CBF2AA9D14765EA5000C022D /* BTMode.m */,
 				CBF2AA9E14765EA5000C022D /* BTModeStack.h */,
 				CBF2AA9F14765EA5000C022D /* BTModeStack.m */,
+				CBB86EDE1476669800D0C57E /* BTObject.h */,
+				CBB86EDF1476669800D0C57E /* BTObject.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -197,6 +213,8 @@
 				CBAD57CC1475A70100F7D78E /* Game.h */,
 				CBAD57CD1475A70100F7D78E /* Game.m */,
 				CBAD57941475A3A000F7D78E /* main.m */,
+				CBB86EE6147670A000D0C57E /* Square.h */,
+				CBB86EE7147670A000D0C57E /* Square.m */,
 				CBAD57971475A4EE00F7D78E /* TestApplicationDelegate.h */,
 				CBAD57981475A4EE00F7D78E /* TestApplicationDelegate.m */,
 			);
@@ -224,6 +242,9 @@
 				CBF2AAA014765EA5000C022D /* BTApplicationDelegate.h in Headers */,
 				CBF2AAA214765EA5000C022D /* BTMode.h in Headers */,
 				CBF2AAA414765EA5000C022D /* BTModeStack.h in Headers */,
+				CBB86EE01476669800D0C57E /* BTObject.h in Headers */,
+				CBB86EE4147666AA00D0C57E /* BTGeneration.h in Headers */,
+				CBB86EE8147670A000D0C57E /* Square.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,6 +366,9 @@
 				CBF2AAA114765EA5000C022D /* BTApplicationDelegate.m in Sources */,
 				CBF2AAA314765EA5000C022D /* BTMode.m in Sources */,
 				CBF2AAA514765EA5000C022D /* BTModeStack.m in Sources */,
+				CBB86EE11476669800D0C57E /* BTObject.m in Sources */,
+				CBB86EE5147666AA00D0C57E /* BTGeneration.m in Sources */,
+				CBB86EE9147670A000D0C57E /* Square.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

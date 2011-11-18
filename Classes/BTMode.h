@@ -3,13 +3,12 @@
 
 #import <Foundation/Foundation.h>
 #import "SPSprite.h"
+#import "BTGeneration.h"
 
-@interface BTMode : NSObject {
+@interface BTMode : BTGeneration {
 @private
     SPSprite *_sprite;
 }
-
--(void)advanceTime:(double)seconds;
 
 @property(readonly, strong, nonatomic) SPSprite *sprite;
 

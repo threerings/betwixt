@@ -7,6 +7,7 @@
 
 @interface BTModeStack : NSObject {
 @package
+    NSMutableArray *_stack;
     SPSprite *_sprite;
 }
 

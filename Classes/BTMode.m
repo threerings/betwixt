@@ -12,9 +12,6 @@
     return self;
 }
 
-- (void)advanceTime:(double)seconds {
-}
-
 @synthesize sprite=_sprite;
 
 @end
