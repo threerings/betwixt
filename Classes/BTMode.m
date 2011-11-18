@@ -6,9 +6,8 @@
 @implementation BTMode
 
 - (id)init {
-    if ((self = [super init])) {
-        _sprite = [[SPSprite alloc] init];
-    }
+    if (!(self = [super init])) return nil;
+    _sprite = [[SPSprite alloc] init];
     return self;
 }
 

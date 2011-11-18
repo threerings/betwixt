@@ -72,7 +72,7 @@
 		CBAD57941475A3A000F7D78E /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Integration/main.m; sourceTree = "<group>"; };
 		CBAD57971475A4EE00F7D78E /* TestApplicationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestApplicationDelegate.h; path = Integration/TestApplicationDelegate.h; sourceTree = "<group>"; };
 		CBAD57981475A4EE00F7D78E /* TestApplicationDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TestApplicationDelegate.m; path = Integration/TestApplicationDelegate.m; sourceTree = "<group>"; };
-		CBAD57B31475A62B00F7D78E /* BetwixtIntegration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BetwixtIntegration.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CBAD57B31475A62B00F7D78E /* Betwixt Integration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Betwixt Integration.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBAD57CC1475A70100F7D78E /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Game.h; path = Integration/Game.h; sourceTree = "<group>"; };
 		CBAD57CD1475A70100F7D78E /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Game.m; path = Integration/Game.m; sourceTree = "<group>"; };
 		CBB86EDE1476669800D0C57E /* BTObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTObject.h; sourceTree = "<group>"; };
@@ -156,7 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				CBB8CB911475A06400445316 /* libBetwixt.a */,
-				CBAD57B31475A62B00F7D78E /* BetwixtIntegration.app */,
+				CBAD57B31475A62B00F7D78E /* Betwixt Integration.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -265,7 +265,7 @@
 			);
 			name = "Betwixt Integration";
 			productName = BetwixtIntegration;
-			productReference = CBAD57B31475A62B00F7D78E /* BetwixtIntegration.app */;
+			productReference = CBAD57B31475A62B00F7D78E /* Betwixt Integration.app */;
 			productType = "com.apple.product-type.application";
 		};
 		CBB8CB901475A06400445316 /* Betwixt */ = {
