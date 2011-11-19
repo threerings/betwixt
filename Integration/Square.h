@@ -8,6 +8,8 @@
 {
     @private
     SPQuad *_quad;
+    int _color;
 }
+-(id)initWithColor:(int)color;
 
 @end

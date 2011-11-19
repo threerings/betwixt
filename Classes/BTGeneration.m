@@ -3,6 +3,9 @@
 
 #import "BTGeneration.h"
 
+void advanceLiveObjects(BTObject* head, double seconds);
+BTObject* dropDeadObjects(BTObject* head);
+
 @implementation BTGeneration
 
 -(void) addObject:(BTObject *)object {
@@ -13,26 +16,37 @@
 }
 
 -(void) removeObject:(BTObject *)object {
+    for (BTObject* obj = object->_depHead; obj != nil; obj = obj->_next) [self removeObject:obj];
     object->_removed = YES;
 }
 
-- (void)advanceTime:(double)seconds {
-    // Tick live objects
-    for (BTObject *obj = _head; obj != nil; obj = obj->_next) {
+void advanceLiveObjects(BTObject* head, double seconds) {
+    for (BTObject *obj = head; obj != nil; obj = obj->_next) {
         if (obj->_removed) continue;
         [obj advanceTime:seconds];
+        advanceLiveObjects(obj->_depHead, seconds);
     }
-    // Drop dead ones
+}
+
+BTObject* dropDeadObjects(BTObject* head) {
     BTObject *prev;
-    for (BTObject* obj = _head; obj != nil; obj = obj->_next) {
-        if (!obj->_removed) prev = obj;
-        else {
-            if (obj == _head) _head = _head->_next;
+    for (BTObject* obj = head; obj != nil; obj = obj->_next) {
+        obj->_depHead = dropDeadObjects(obj->_depHead);
+        if (!obj->_removed) {
+            prev = obj;
+        } else {
+            if (obj == head) head = head->_next;
             else prev->_next = obj->_next;
             obj->_next = nil;
             [obj removedFromGen];
         }
     }
+    return head;
+}
+
+- (void)advanceTime:(double)seconds {
+    advanceLiveObjects(_head, seconds);
+    _head = dropDeadObjects(_head);
 }
 
 @end

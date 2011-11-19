@@ -12,7 +12,8 @@
 		CB602C731476603800E52CE2 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE3F093911B7B9DC009D4DB0 /* AudioToolbox.framework */; };
 		CB602C741476603800E52CE2 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE3F097711B7BABD009D4DB0 /* OpenAL.framework */; };
 		CB602C751476603800E52CE2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE4A3D7E10FFB08B00FDA492 /* QuartzCore.framework */; };
-		CB72E4A81477341800F1EC78 /* Square.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB86EE7147670A000D0C57E /* Square.m */; };
+		CB72E4AB14773ED200F1EC78 /* Square.h in Headers */ = {isa = PBXBuildFile; fileRef = CB72E4A914773ED100F1EC78 /* Square.h */; };
+		CB72E4AC14773ED200F1EC78 /* Square.m in Sources */ = {isa = PBXBuildFile; fileRef = CB72E4AA14773ED100F1EC78 /* Square.m */; };
 		CBAD57881475A28800F7D78E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
 		CBAD57891475A28800F7D78E /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE4A3D7910FFB08200FDA492 /* OpenGLES.framework */; };
 		CBAD578A1475A28800F7D78E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
@@ -36,7 +37,6 @@
 		CBB86EE11476669800D0C57E /* BTObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB86EDF1476669800D0C57E /* BTObject.m */; };
 		CBB86EE4147666AA00D0C57E /* BTGeneration.h in Headers */ = {isa = PBXBuildFile; fileRef = CBB86EE2147666AA00D0C57E /* BTGeneration.h */; };
 		CBB86EE5147666AA00D0C57E /* BTGeneration.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB86EE3147666AA00D0C57E /* BTGeneration.m */; };
-		CBB86EE8147670A000D0C57E /* Square.h in Headers */ = {isa = PBXBuildFile; fileRef = CBB86EE6147670A000D0C57E /* Square.h */; };
 		CBB8CB921475A06400445316 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		CBF2AAA014765EA5000C022D /* BTApplicationDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = CBF2AA9A14765EA5000C022D /* BTApplicationDelegate.h */; };
 		CBF2AAA114765EA5000C022D /* BTApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF2AA9B14765EA5000C022D /* BTApplicationDelegate.m */; };
@@ -69,6 +69,8 @@
 		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		32CA4F630368D1EE00C91783 /* Betwixt_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Betwixt_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Application-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Application-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		CB72E4A914773ED100F1EC78 /* Square.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Square.h; path = Integration/Square.h; sourceTree = "<group>"; };
+		CB72E4AA14773ED100F1EC78 /* Square.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Square.m; path = Integration/Square.m; sourceTree = "<group>"; };
 		CBAD57941475A3A000F7D78E /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Integration/main.m; sourceTree = "<group>"; };
 		CBAD57971475A4EE00F7D78E /* TestApplicationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestApplicationDelegate.h; path = Integration/TestApplicationDelegate.h; sourceTree = "<group>"; };
 		CBAD57981475A4EE00F7D78E /* TestApplicationDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TestApplicationDelegate.m; path = Integration/TestApplicationDelegate.m; sourceTree = "<group>"; };
@@ -79,8 +81,6 @@
 		CBB86EDF1476669800D0C57E /* BTObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTObject.m; sourceTree = "<group>"; };
 		CBB86EE2147666AA00D0C57E /* BTGeneration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTGeneration.h; sourceTree = "<group>"; };
 		CBB86EE3147666AA00D0C57E /* BTGeneration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTGeneration.m; sourceTree = "<group>"; };
-		CBB86EE6147670A000D0C57E /* Square.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Square.h; sourceTree = "<group>"; };
-		CBB86EE7147670A000D0C57E /* Square.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Square.m; sourceTree = "<group>"; };
 		CBB8CB911475A06400445316 /* libBetwixt.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBetwixt.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBF2AA9A14765EA5000C022D /* BTApplicationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTApplicationDelegate.h; sourceTree = "<group>"; };
 		CBF2AA9B14765EA5000C022D /* BTApplicationDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTApplicationDelegate.m; sourceTree = "<group>"; };
@@ -210,11 +210,11 @@
 		CBAD57921475A33900F7D78E /* Integration */ = {
 			isa = PBXGroup;
 			children = (
+				CB72E4A914773ED100F1EC78 /* Square.h */,
+				CB72E4AA14773ED100F1EC78 /* Square.m */,
 				CBAD57CC1475A70100F7D78E /* Game.h */,
 				CBAD57CD1475A70100F7D78E /* Game.m */,
 				CBAD57941475A3A000F7D78E /* main.m */,
-				CBB86EE6147670A000D0C57E /* Square.h */,
-				CBB86EE7147670A000D0C57E /* Square.m */,
 				CBAD57971475A4EE00F7D78E /* TestApplicationDelegate.h */,
 				CBAD57981475A4EE00F7D78E /* TestApplicationDelegate.m */,
 			);
@@ -244,7 +244,7 @@
 				CBF2AAA414765EA5000C022D /* BTModeStack.h in Headers */,
 				CBB86EE01476669800D0C57E /* BTObject.h in Headers */,
 				CBB86EE4147666AA00D0C57E /* BTGeneration.h in Headers */,
-				CBB86EE8147670A000D0C57E /* Square.h in Headers */,
+				CB72E4AB14773ED200F1EC78 /* Square.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,7 +355,6 @@
 			files = (
 				CBAD57D01475A75100F7D78E /* Game.m in Sources */,
 				CBAD57C71475A69500F7D78E /* main.m in Sources */,
-				CB72E4A81477341800F1EC78 /* Square.m in Sources */,
 				CBAD57C91475A69500F7D78E /* TestApplicationDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -369,6 +368,7 @@
 				CBF2AAA514765EA5000C022D /* BTModeStack.m in Sources */,
 				CBB86EE11476669800D0C57E /* BTObject.m in Sources */,
 				CBB86EE5147666AA00D0C57E /* BTGeneration.m in Sources */,
+				CB72E4AC14773ED200F1EC78 /* Square.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

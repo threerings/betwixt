@@ -6,13 +6,15 @@
 @class BTGeneration;
 
 @interface BTObject : NSObject {
-@package
-    BTObject* _next;//Managed by BTGeneration
+@package//Managed by BTGeneration
+    BTObject* _next;
     BOOL _removed;
     BTGeneration *_gen;
+    BTObject* _depHead;
 }
 
 -(void) advanceTime:(double)seconds;
 -(void) addedToGen;
 -(void) removedFromGen;
+-(void) addDependentObject:(BTObject*)object;
 @end
