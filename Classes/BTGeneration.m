@@ -3,23 +3,36 @@
 
 #import "BTGeneration.h"
 
-void advanceLiveObjects(BTObject* head, double seconds);
-BTObject* dropDeadObjects(BTObject* head);
-
 @implementation BTGeneration
+
+-(id) init {
+    if (!(self = [super init])) return nil;
+    _namedObjects = [NSMutableDictionary dictionary];
+    return self;
+}
 
 -(void) addObject:(BTObject *)object {
     if (_head != nil) object->_next = _head;
     _head = object;
-    _head->_gen = self;
-    [_head addedToGen];
+    [self attachObject:object];
+}
+
+-(void) attachObject:(BTObject *)object {
+    object->_gen = self;
+    for (NSString *name in object.names) {
+        NSAssert1(![_namedObjects objectForKey:name], @"Object name '%@' already used", name);
+        [_namedObjects setObject:object forKey:name];
+    }
+    [object addedToGen];
 }
 
 -(void) removeObject:(BTObject *)object {
     for (BTObject* obj = object->_depHead; obj != nil; obj = obj->_next) [self removeObject:obj];
     object->_removed = YES;
+    [_namedObjects removeObjectsForKeys:object.names];
 }
 
+void advanceLiveObjects(BTObject* head, double seconds);
 void advanceLiveObjects(BTObject* head, double seconds) {
     for (BTObject *obj = head; obj != nil; obj = obj->_next) {
         if (obj->_removed) continue;
@@ -28,6 +41,7 @@ void advanceLiveObjects(BTObject* head, double seconds) {
     }
 }
 
+BTObject* dropDeadObjects(BTObject* head);
 BTObject* dropDeadObjects(BTObject* head) {
     BTObject *prev;
     for (BTObject* obj = head; obj != nil; obj = obj->_next) {

@@ -14,8 +14,11 @@
 -(void)addDependentObject:(BTObject *)object {
     object->_next = _depHead;
     _depHead = object;
-    object->_gen = self->_gen;
-    [object addedToGen];
+    [_gen attachObject:object];
+}
+
+-(NSArray*)names {
+    return [NSArray array];
 }
 
 // Stublets

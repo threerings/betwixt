@@ -13,6 +13,7 @@
     BTObject* _depHead;
 }
 
+-(NSArray*) names;
 -(void) advanceTime:(double)seconds;
 -(void) addedToGen;
 -(void) removedFromGen;

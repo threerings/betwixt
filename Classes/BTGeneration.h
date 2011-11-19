@@ -6,9 +6,11 @@
 
 @interface BTGeneration : NSObject {
 @private
-    BTObject* _head;
+    BTObject *_head;
+    NSMutableDictionary *_namedObjects;
 }
 -(void) addObject:(BTObject *)object;
+-(void)attachObject:(BTObject *)object;
 -(void) removeObject:(BTObject *)object;
 -(void) advanceTime:(double)seconds;
 @end
