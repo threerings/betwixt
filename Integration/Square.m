@@ -6,10 +6,15 @@
 
 @implementation Square
 
-- (id)initWithColor:(int)color {
+- (id)initWithColor:(int)color andName:(NSString *)name {
     if (!(self = [super init])) return nil;
     _color = color;
+    _name = name;
     return self;
+}
+
+- (NSArray*)names {
+    return [NSArray arrayWithObject:_name];
 }
 
 - (void)addedToGen {
@@ -18,16 +23,17 @@
     _quad.x = 50;
     _quad.y = 50;
     [((BTMode*)_gen).sprite addChild:_quad];
+    SQUARES_ADDED++;
 }
 
 - (void)removedFromGen {
      [((BTMode*)_gen).sprite removeChild:_quad];
+    SQUARES_REMOVED++;
 }
 
 - (void)advanceTime:(double)seconds {
     _quad.x += 1;
-    if (_quad.x == 70) [self addDependentObject:[[Square alloc] initWithColor:0x00ff00]];
-    if (_quad.x > 90) [_gen removeObject:self];
+    if (_quad.x > 52) [_gen removeObject:self];
 }
 
 @end

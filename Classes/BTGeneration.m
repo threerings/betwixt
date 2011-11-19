@@ -26,6 +26,10 @@
     [object addedToGen];
 }
 
+- (BTObject*)objectForName:(NSString*)name {
+    return [_namedObjects objectForKey:name];
+}
+
 - (void)removeObject:(BTObject*)object {
     for (BTObject* obj = object->_depHead; obj != nil; obj = obj->_next) [self removeObject:obj];
     object->_removed = YES;

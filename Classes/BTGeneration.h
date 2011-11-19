@@ -10,6 +10,7 @@
     NSMutableDictionary *_namedObjects;
 }
 - (void)addObject:(BTObject*)object;
+- (BTObject*)objectForName:(NSString*)name;
 - (void)attachObject:(BTObject*)object;
 - (void)removeObject:(BTObject*)object;
 - (void)advanceTime:(double)seconds;

@@ -4,8 +4,7 @@
 #import <UIKit/UIKit.h>
 #import "BTModeStack.h"
 
-@interface BTApplicationDelegate : NSObject <UIApplicationDelegate> 
-{
+@interface BTApplicationDelegate : NSObject <UIApplicationDelegate> {
 @private
     UIWindow *_window;
     SPView *_view;
