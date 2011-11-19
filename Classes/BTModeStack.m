@@ -12,7 +12,7 @@
     return self;
 }
 
-- (void)pushMode:(BTMode *)mode {
+- (void)pushMode:(BTMode*)mode {
     [_stack addObject:mode];
     [_sprite addChild:mode.sprite];
 }

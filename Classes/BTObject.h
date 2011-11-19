@@ -7,15 +7,15 @@
 
 @interface BTObject : NSObject {
 @package//Managed by BTGeneration
-    BTObject* _next;
+    BTObject *_next;
     BOOL _removed;
     BTGeneration *_gen;
-    BTObject* _depHead;
+    BTObject *_depHead;
 }
 
--(NSArray*) names;
--(void) advanceTime:(double)seconds;
--(void) addedToGen;
--(void) removedFromGen;
--(void) addDependentObject:(BTObject*)object;
+- (NSArray*)names;
+- (void)advanceTime:(double)seconds;
+- (void)addedToGen;
+- (void)removedFromGen;
+- (void)addDependentObject:(BTObject*)object;
 @end

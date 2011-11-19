@@ -15,7 +15,7 @@
     return self;
 }
 
-- (void)applicationDidFinishLaunching:(UIApplication *)application {    
+- (void)applicationDidFinishLaunching:(UIApplication*)application {    
     [SPStage setSupportHighResolutions:YES];
     [SPAudioEngine start];
     
@@ -30,15 +30,15 @@
     [_view.stage addEventListener:@selector(advanceTime:) atObject:self forType:SP_EVENT_TYPE_ENTER_FRAME];
 }
 
--(void)advanceTime:(SPEnterFrameEvent *)ev {
+-(void)advanceTime:(SPEnterFrameEvent*)ev {
     [_defaultStack advanceTime:ev.passedTime];
 }
 
-- (void)applicationWillResignActive:(UIApplication *)application {    
+- (void)applicationWillResignActive:(UIApplication*)application {    
     [_view stop];
 }
 
-- (void)applicationDidBecomeActive:(UIApplication *)application {
+- (void)applicationDidBecomeActive:(UIApplication*)application {
 	[_view start];
 }
 

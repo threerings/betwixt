@@ -6,7 +6,7 @@
 
 @implementation TestApplicationDelegate
 
-- (void)applicationDidFinishLaunching:(UIApplication *)application {
+- (void)applicationDidFinishLaunching:(UIApplication*)application {
     [super applicationDidFinishLaunching:application];
     [self.defaultStack pushMode:[[Game alloc] init]];
 }
