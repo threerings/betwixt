@@ -10,14 +10,6 @@
 typedef NSString AMBlockToken;
 typedef void (^AMBlockTask)(id obj, NSDictionary *change);
 
-#define OBSERVE_SELF(PATH, CODE) \
-[self addObserverForKeyPath:(PATH) task:^(id obj, NSDictionary *change) { \
-_Pragma("clang diagnostic push") \
-_Pragma("clang diagnostic ignored \"-Warc-retain-cycles\"") \
-do { CODE; } while(0); \
-_Pragma("clang diagnostic pop") \
-}];
-
 
 @interface NSObject (AMBlockObservation)
 - (AMBlockToken *)addObserverForKeyPath:(NSString *)keyPath task:(AMBlockTask)task;

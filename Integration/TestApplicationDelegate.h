@@ -3,6 +3,11 @@
 
 #import "BTApplicationDelegate.h"
 
-@interface TestApplicationDelegate : BTApplicationDelegate
+@class Game;
+
+@interface TestApplicationDelegate : BTApplicationDelegate {
+@private
+    Game *_game;
+}
 
 @end

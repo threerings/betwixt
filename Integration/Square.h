@@ -4,10 +4,6 @@
 #import <Foundation/Foundation.h>
 #import "BTObject.h"
 
-int SQUARES_ADDED;
-
-int SQUARES_REMOVED;
-
 @interface Square : BTObject {
 @private
     SPQuad *_quad;

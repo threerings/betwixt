@@ -11,16 +11,14 @@
     if (!(self = [super init])) return nil;
     _color = color;
     _name = name;
-    OBSERVE_SELF(@"added", {
+    OBSERVE(self, @"added", {
         _quad = [SPQuad quadWithWidth:100 height:100];
         _quad.color = _color;
         _quad.x = 50;
         _quad.y = 50;
         [((BTMode*)_gen).sprite addChild:_quad];
-        SQUARES_ADDED++;});
-    OBSERVE_SELF(@"removed", {
-       [((BTMode*)_gen).sprite removeChild:_quad];
-        SQUARES_REMOVED++;});
+    });
+    OBSERVE(self, @"removed", { [((BTMode*)_gen).sprite removeChild:_quad]; });
     return self;
 }
 
