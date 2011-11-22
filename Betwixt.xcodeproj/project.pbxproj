@@ -38,6 +38,8 @@
 		CBB86EE4147666AA00D0C57E /* BTGeneration.h in Headers */ = {isa = PBXBuildFile; fileRef = CBB86EE2147666AA00D0C57E /* BTGeneration.h */; };
 		CBB86EE5147666AA00D0C57E /* BTGeneration.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB86EE3147666AA00D0C57E /* BTGeneration.m */; };
 		CBB8CB921475A06400445316 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		CBD63C7F147AFBA10006E811 /* NSObject+BlockObservation.h in Headers */ = {isa = PBXBuildFile; fileRef = CBD63C7D147AFBA10006E811 /* NSObject+BlockObservation.h */; };
+		CBD63C80147AFBA10006E811 /* NSObject+BlockObservation.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD63C7E147AFBA10006E811 /* NSObject+BlockObservation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		CBF2AAA014765EA5000C022D /* BTApplicationDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = CBF2AA9A14765EA5000C022D /* BTApplicationDelegate.h */; };
 		CBF2AAA114765EA5000C022D /* BTApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF2AA9B14765EA5000C022D /* BTApplicationDelegate.m */; };
 		CBF2AAA214765EA5000C022D /* BTMode.h in Headers */ = {isa = PBXBuildFile; fileRef = CBF2AA9C14765EA5000C022D /* BTMode.h */; };
@@ -82,6 +84,8 @@
 		CBB86EE2147666AA00D0C57E /* BTGeneration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTGeneration.h; sourceTree = "<group>"; };
 		CBB86EE3147666AA00D0C57E /* BTGeneration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTGeneration.m; sourceTree = "<group>"; };
 		CBB8CB911475A06400445316 /* libBetwixt.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBetwixt.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		CBD63C7D147AFBA10006E811 /* NSObject+BlockObservation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+BlockObservation.h"; sourceTree = "<group>"; };
+		CBD63C7E147AFBA10006E811 /* NSObject+BlockObservation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+BlockObservation.m"; sourceTree = "<group>"; };
 		CBF2AA9A14765EA5000C022D /* BTApplicationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTApplicationDelegate.h; sourceTree = "<group>"; };
 		CBF2AA9B14765EA5000C022D /* BTApplicationDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTApplicationDelegate.m; sourceTree = "<group>"; };
 		CBF2AA9C14765EA5000C022D /* BTMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTMode.h; sourceTree = "<group>"; };
@@ -148,6 +152,8 @@
 				CBF2AA9F14765EA5000C022D /* BTModeStack.m */,
 				CBB86EDE1476669800D0C57E /* BTObject.h */,
 				CBB86EDF1476669800D0C57E /* BTObject.m */,
+				CBD63C7D147AFBA10006E811 /* NSObject+BlockObservation.h */,
+				CBD63C7E147AFBA10006E811 /* NSObject+BlockObservation.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -245,6 +251,7 @@
 				CBB86EE01476669800D0C57E /* BTObject.h in Headers */,
 				CBB86EE4147666AA00D0C57E /* BTGeneration.h in Headers */,
 				CB72E4AB14773ED200F1EC78 /* Square.h in Headers */,
+				CBD63C7F147AFBA10006E811 /* NSObject+BlockObservation.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,6 +376,7 @@
 				CBB86EE11476669800D0C57E /* BTObject.m in Sources */,
 				CBB86EE5147666AA00D0C57E /* BTGeneration.m in Sources */,
 				CB72E4AC14773ED200F1EC78 /* Square.m in Sources */,
+				CBD63C80147AFBA10006E811 /* NSObject+BlockObservation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

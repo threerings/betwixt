@@ -23,7 +23,7 @@
         NSAssert1(![_namedObjects objectForKey:name], @"Object name '%@' already used", name);
         [_namedObjects setObject:object forKey:name];
     }
-    [object addedToGen];
+    object.added = YES;
 }
 
 - (BTObject*)objectForName:(NSString*)name {
@@ -32,14 +32,14 @@
 
 - (void)removeObject:(BTObject*)object {
     for (BTObject* obj = object->_depHead; obj != nil; obj = obj->_next) [self removeObject:obj];
-    object->_removed = YES;
     [_namedObjects removeObjectsForKeys:object.names];
+    object.removed = YES;
 }
 
 void advanceLiveObjects(BTObject *head, double seconds);
 void advanceLiveObjects(BTObject *head, double seconds) {
     for (BTObject *obj = head; obj != nil; obj = obj->_next) {
-        if (obj->_removed) continue;
+        if (obj.removed) continue;
         [obj advanceTime:seconds];
         advanceLiveObjects(obj->_depHead, seconds);
     }
@@ -50,13 +50,12 @@ BTObject* dropDeadObjects(BTObject *head) {
     BTObject *prev;
     for (BTObject* obj = head; obj != nil; obj = obj->_next) {
         obj->_depHead = dropDeadObjects(obj->_depHead);
-        if (!obj->_removed) {
+        if (!obj.removed) {
             prev = obj;
         } else {
             if (obj == head) head = head->_next;
             else prev->_next = obj->_next;
             obj->_next = nil;
-            [obj removedFromGen];
         }
     }
     return head;

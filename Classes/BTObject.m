@@ -8,7 +8,6 @@
 
 - (id)init {
     if (!(self = [super init])) return nil;
-    _removed = NO;
     return self;
 }
 
@@ -22,9 +21,8 @@
     return [NSArray array];
 }
 
-// Stublets
-- (void)addedToGen {}
-- (void)removedFromGen {}
 - (void)advanceTime:(double)seconds {}
+
+@synthesize added, removed;
 
 @end

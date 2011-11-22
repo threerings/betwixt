@@ -8,9 +8,8 @@ int SQUARES_ADDED;
 
 int SQUARES_REMOVED;
 
-@interface Square : BTObject
-{
-    @private
+@interface Square : BTObject {
+@private
     SPQuad *_quad;
     NSString *_name;
     int _color;
