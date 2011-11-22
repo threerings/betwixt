@@ -11,13 +11,16 @@
     if (!(self = [super init])) return nil;
     _window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     _view = [[SPView alloc] initWithFrame:_window.bounds];
+    // Set a dummy controller to make the runtime happy
+    _window.rootViewController = [[UIViewController alloc] init];
     [_window addSubview:_view];
     return self;
 }
 
-- (void)applicationDidFinishLaunching:(UIApplication*)application {    
+- (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [SPStage setSupportHighResolutions:YES];
-    [SPAudioEngine start];
+    // TODO - figure out why this is throwing an exception. Looks like an iOS 5 bug
+    //[SPAudioEngine start];
     
     _view.stage = [[SPStage alloc] init];
     _view.multipleTouchEnabled = YES;
@@ -28,6 +31,7 @@
     _defaultStack = [[BTModeStack alloc] init];
     [_view.stage addChild:_defaultStack->_sprite];
     [_view.stage addEventListener:@selector(advanceTime:) atObject:self forType:SP_EVENT_TYPE_ENTER_FRAME];
+    return YES;
 }
 
 - (void)advanceTime:(SPEnterFrameEvent*)ev {
@@ -43,7 +47,9 @@
 }
 
 - (void)dealloc {
-    [SPAudioEngine stop];
+    //[SPAudioEngine stop];
 }
+
+
 
 @end

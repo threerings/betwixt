@@ -1,10 +1,7 @@
 #import <Foundation/Foundation.h>
 #import "BTMode.h"
 
-@interface Game : BTMode {
-@private
-    int _ticks, _squaresAdded, _squaresRemoved;
-}
+@interface Game : BTMode
 
 -(void)runTest;
 

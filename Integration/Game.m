@@ -1,7 +1,15 @@
 #import "Game.h" 
 #import "Square.h"
 
-@implementation Game
+@implementation Game {
+    int _ticks, _squaresRemoved, _squaresAdded;
+}
+
+- (id)init {
+    if (!(self = [super init])) return nil;
+    _ticks = 5;
+    return self;
+}
 
 - (Square*) createAndMonitorSquareWithColor:(int)color andName:(NSString*)name {
     Square *square = [[Square alloc] initWithColor:color andName:name];
@@ -23,8 +31,6 @@
         NSAssert(_squaresRemoved == 0, @"Squares removed too early");
     } else if (_ticks == 3) {
         NSAssert(_squaresRemoved == 2, @"Squares not removed");
-    } else if (_ticks == 4) {
-        NSLog(@"Named and dependendent objects passed");
     }
 }
 
