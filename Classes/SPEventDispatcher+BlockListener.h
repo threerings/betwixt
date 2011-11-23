@@ -4,7 +4,7 @@
 #import "SPEventDispatcher.h"
 
 typedef NSString OOOBlockToken;
-typedef void (^OOOBlockListener)(SPEvent*);
+typedef void (^OOOBlockListener)(SPEvent *event);
 
 @interface SPEventDispatcher (OOOBlockListener)
 - (OOOBlockToken*)addEventListenerForType:(NSString*)eventType listener:(OOOBlockListener)listener;

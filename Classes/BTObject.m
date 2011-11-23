@@ -32,13 +32,14 @@
 - (NSArray*)names {
     return [NSArray array];
 }
+
 - (AMBlockToken*)observeObject:(NSObject *)object forKeyPath:(NSString *)path withBlock:(AMBlockTask)block {
     AMBlockToken *token = [object addObserverForKeyPath:path task:block];
     [_tokenToObserver setObject:[NSValue valueWithNonretainedObject:object] forKey:token];
     return token;
 }
 
-- (OOOBlockToken*)listenTo:(SPEventDispatcher *)dispatcher forEvent:(NSString *)eventType withBlock:(OOOBlockListener)block {
+- (OOOBlockToken*)listenToDispatcher:(SPEventDispatcher *)dispatcher forEvent:(NSString *)eventType withBlock:(OOOBlockListener)block {
     OOOBlockToken *token = [dispatcher addEventListenerForType:eventType listener:block];
     [_tokenToDispatcher setObject:[NSValue valueWithNonretainedObject:dispatcher] forKey:token];
     return token;
@@ -55,8 +56,6 @@
     [observee removeListenerWithBlockToken:token];
     [_tokenToDispatcher removeObjectForKey:token];
 }
-
-
 
 @synthesize added, removed;
 

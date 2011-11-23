@@ -18,7 +18,7 @@
         _quad.x = 50;
         _quad.y = 50;
         [((BTMode*)_gen).sprite addChild:_quad];
-        [self listenTo:_gen forEvent:SP_EVENT_TYPE_ENTER_FRAME withBlock:^(SPEvent* event) {
+        [self listenToDispatcher:_gen forEvent:SP_EVENT_TYPE_ENTER_FRAME withBlock:^(SPEvent* event) {
             _quad.x += 1;
             if (_quad.x > 52) [_gen removeObject:self];
         }];
