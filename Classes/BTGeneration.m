@@ -2,6 +2,7 @@
 //  Betwixt - Copyright 2011 Three Rings Design
 
 #import "BTGeneration.h"
+#import "BTGeneration+Package.h"
 
 @implementation BTGeneration
 
@@ -17,15 +18,6 @@
     [self attachObject:object];
 }
 
-- (void)attachObject:(BTObject*)object {
-    object->_gen = self;
-    for (NSString *name in object.names) {
-        NSAssert1(![_namedObjects objectForKey:name], @"Object name '%@' already used", name);
-        [_namedObjects setObject:object forKey:name];
-    }
-    object.added = YES;
-}
-
 - (BTObject*)objectForName:(NSString*)name {
     return [_namedObjects objectForKey:name];
 }
@@ -34,15 +26,6 @@
     for (BTObject* obj = object->_depHead; obj != nil; obj = obj->_next) [self removeObject:obj];
     [_namedObjects removeObjectsForKeys:object.names];
     object.removed = YES;
-}
-
-void advanceLiveObjects(BTObject *head, double seconds);
-void advanceLiveObjects(BTObject *head, double seconds) {
-    for (BTObject *obj = head; obj != nil; obj = obj->_next) {
-        if (obj.removed) continue;
-        [obj advanceTime:seconds];
-        advanceLiveObjects(obj->_depHead, seconds);
-    }
 }
 
 BTObject* dropDeadObjects(BTObject *head);
@@ -60,10 +43,22 @@ BTObject* dropDeadObjects(BTObject *head) {
     }
     return head;
 }
+@end
 
-- (void)advanceTime:(double)seconds {
-    advanceLiveObjects(_head, seconds);
+@implementation BTGeneration (package)
+
+- (void)enterFrame:(SPEnterFrameEvent*)ev {
+    [self dispatchEvent:ev];
     _head = dropDeadObjects(_head);
+}
+
+- (void)attachObject:(BTObject*)object {
+    object->_gen = self;
+    for (NSString *name in object.names) {
+        NSAssert1(![_namedObjects objectForKey:name], @"Object name '%@' already used", name);
+        [_namedObjects setObject:object forKey:name];
+    }
+    object.added = YES;
 }
 
 @end

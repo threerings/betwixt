@@ -2,6 +2,7 @@
 //  Betwixt - Copyright 2011 Three Rings Design
 
 #import "BTApplicationDelegate.h" 
+#import "BTModeStack+Package.h"
 
 @implementation BTApplicationDelegate
 
@@ -35,7 +36,7 @@
 }
 
 - (void)advanceTime:(SPEnterFrameEvent*)ev {
-    [_defaultStack advanceTime:ev.passedTime];
+    [_defaultStack enterFrame:ev];
 }
 
 - (void)applicationWillResignActive:(UIApplication*)application {    

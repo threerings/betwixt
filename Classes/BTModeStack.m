@@ -3,6 +3,8 @@
 
 #import "BTModeStack.h"
 
+#import "BTGeneration+Package.h"
+
 @implementation BTModeStack
 
 - (id)init {
@@ -16,9 +18,12 @@
     [_stack addObject:mode];
     [_sprite addChild:mode.sprite];
 }
+@end
 
-- (void)advanceTime:(double)seconds {
-    for (BTMode *mode in _stack) [mode advanceTime:seconds];
+@implementation BTModeStack (package)
+
+- (void)enterFrame:(SPEnterFrameEvent *)ev {
+    for (BTMode *mode in _stack) [mode enterFrame:ev];
 }
 
 @end

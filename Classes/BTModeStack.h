@@ -13,6 +13,4 @@
 
 - (void)pushMode:(BTMode*)mode;
 
-- (void)advanceTime:(double)seconds;
-
 @end

@@ -5,6 +5,8 @@
 #import "Game.h"
 #import "Square.h"
 
+#import "SPEventDispatcher+BlockListener.h"
+
 @implementation TestApplicationDelegate
 
 - (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
