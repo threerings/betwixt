@@ -23,9 +23,7 @@
 - (void)runTest {
     _ticks = _squaresAdded = _squaresRemoved = 0;
     [self addObject:[self createAndMonitorSquareWithColor:0xff0000 andName:@"red"]];
-    __block OOOBlockToken *token = [self addEventListenerForType:SP_EVENT_TYPE_ENTER_FRAME listener:^(SPEvent* ev) {
-        _Pragma("clang diagnostic push")
-        _Pragma("clang diagnostic ignored \"-Warc-retain-cycles\"")
+    __block OOOBlockToken *token = LISTEN(self, self, SP_EVENT_TYPE_ENTER_FRAME, {
         if (++_ticks == 2) {
             [[self objectForName:@"red"] addDependentObject:[self createAndMonitorSquareWithColor:0x00ff00 andName:@"green"]];
             NSAssert(_squaresAdded == 2, @"Second square not added");
@@ -35,8 +33,7 @@
         } else if (_ticks == 4) {
             [self removeListenerWithBlockToken:token];
         }
-        _Pragma("clang diagnostic pop")
-    }];
+    });
 }
 
 @synthesize squaresAdded=_squaresAdded;

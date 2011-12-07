@@ -17,6 +17,7 @@
 - (void)pushMode:(BTMode*)mode {
     [_stack addObject:mode];
     [_sprite addChild:mode.sprite];
+    mode.added = YES;
 }
 @end
 

@@ -4,7 +4,7 @@
 #import <Foundation/Foundation.h>
 #import "BTObject.h"
 
-@interface BTGeneration : SPEventDispatcher {
+@interface BTGeneration : BTContext {
 @private
     BTObject *_head;
     NSMutableDictionary *_namedObjects;
