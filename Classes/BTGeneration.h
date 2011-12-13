@@ -9,7 +9,4 @@
     BTObject *_head;
     NSMutableDictionary *_namedObjects;
 }
-- (void)addObject:(BTObject*)object;
-- (BTObject*)objectForName:(NSString*)name;
-- (void)removeObject:(BTObject*)object;
 @end

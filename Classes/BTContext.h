@@ -21,6 +21,8 @@ do { CODE; } while(0); \
 _Pragma("clang diagnostic pop") \
 }];
 
+@class BTObject;
+
 @interface BTContext : SPEventDispatcher
 
 - (AMBlockToken*)observeObject:(NSObject*)object forKeyPath:(NSString*)path withBlock:(AMBlockTask)block;
@@ -28,6 +30,10 @@ _Pragma("clang diagnostic pop") \
 
 - (OOOBlockToken*)listenToDispatcher:(SPEventDispatcher*)dispatcher forEvent:(NSString*)eventType withBlock:(OOOBlockListener)block;
 - (void)cancelListeningForToken:(OOOBlockToken*)token;
+
+- (void)addObject:(BTObject*)object;
+- (BTObject*)objectForName:(NSString*)name;
+- (void)removeObject:(BTObject*)object;
 
 @property(nonatomic) BOOL added;
 @property(nonatomic) BOOL removed;

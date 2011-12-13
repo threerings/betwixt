@@ -16,7 +16,7 @@
     OBSERVE(self, self, @"removed", {
         // Copy the set before detaching as detaching modifies the set
         for (AMBlockToken *token in [_tokenToObserver allKeys]) [self cancelObservationForToken:token];
-        for (OOOBlockToken *token in [_tokenToDispatcher allKeys]) [self cancelListeningForToken:token];
+            for (OOOBlockToken *token in [_tokenToDispatcher allKeys]) [self cancelListeningForToken:token];
     });
     return self;
 }
@@ -25,7 +25,7 @@
     AMBlockToken *token = [object addObserverForKeyPath:path task:block];
     [_tokenToObserver setObject:[NSValue valueWithNonretainedObject:object] forKey:token];
     return token;
-    }
+}
 
 - (OOOBlockToken*)listenToDispatcher:(SPEventDispatcher *)dispatcher forEvent:(NSString *)eventType withBlock:(OOOBlockListener)block {
     OOOBlockToken *token = [dispatcher addEventListenerForType:eventType listener:block];
@@ -43,6 +43,21 @@
     SPEventDispatcher *observee = [[_tokenToDispatcher objectForKey:token] nonretainedObjectValue];
     [observee removeListenerWithBlockToken:token];
     [_tokenToDispatcher removeObjectForKey:token];
+}
+- (void)addObject:(BTObject*)object {
+    [NSException raise:NSInternalInconsistencyException 
+                format:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)];
+}
+
+- (BTObject*)objectForName:(NSString*)name {
+    @throw [NSException exceptionWithName:NSInternalInconsistencyException 
+        reason:[NSString stringWithFormat:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)]
+        userInfo:nil];
+}
+
+- (void)removeObject:(BTObject*)object {
+    [NSException raise:NSInternalInconsistencyException 
+                format:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)];
 }
 
 @synthesize added, removed;

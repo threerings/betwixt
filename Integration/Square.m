@@ -17,13 +17,13 @@
         _quad.color = _color;
         _quad.x = 50;
         _quad.y = 50;
-        [((BTMode*)_gen).sprite addChild:_quad];
-        [self listenToDispatcher:_gen forEvent:SP_EVENT_TYPE_ENTER_FRAME withBlock:^(SPEvent* event) {
+        [((BTMode*)self.root).sprite addChild:_quad];
+        [self listenToDispatcher:self.root forEvent:SP_EVENT_TYPE_ENTER_FRAME withBlock:^(SPEvent* event) {
             _quad.x += 1;
-            if (_quad.x > 52) [_gen removeObject:self];
+            if (_quad.x > 52) [self.root removeObject:self];
         }];
     });
-    OBSERVE(self, self, @"removed", { [((BTMode*)_gen).sprite removeChild:_quad]; });
+    OBSERVE(self, self, @"removed", { [((BTMode*)self.root).sprite removeChild:_quad]; });
     return self;
 }
 

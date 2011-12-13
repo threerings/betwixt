@@ -7,13 +7,14 @@
 @class BTGeneration;
 
 @interface BTObject : BTContext {
-@package//Managed by BTGeneration
+@package
     BTObject *_next;
-    BTGeneration *_gen;
     BTObject *_depHead;
+    BTContext *_parent;
 }
 
 - (NSArray*)names;
-- (void)addDependentObject:(BTObject*)object;
+@property(nonatomic,readonly) BTGeneration *root;
+@property(nonatomic,readonly,strong) BTContext *parent;
 
 @end

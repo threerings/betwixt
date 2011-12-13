@@ -15,6 +15,7 @@
 - (void)addObject:(BTObject*)object {
     if (_head != nil) object->_next = _head;
     _head = object;
+    object->_parent = self;
     [self attachObject:object];
 }
 
@@ -53,7 +54,6 @@ BTObject* dropDeadObjects(BTObject *head) {
 }
 
 - (void)attachObject:(BTObject*)object {
-    object->_gen = self;
     for (NSString *name in object.names) {
         NSAssert1(![_namedObjects objectForKey:name], @"Object name '%@' already used", name);
         [_namedObjects setObject:object forKey:name];
