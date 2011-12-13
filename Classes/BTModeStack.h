@@ -12,5 +12,6 @@
 }
 
 - (void)pushMode:(BTMode*)mode;
+- (void)popMode;
 
 @end

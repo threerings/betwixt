@@ -2,8 +2,5 @@
 #import "BTMode.h"
 
 @interface Game : BTMode
-
--(void)runTest;
-
 @property(nonatomic) int squaresAdded;
 @end

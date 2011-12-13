@@ -16,15 +16,24 @@
 
 - (void)pushMode:(BTMode*)mode {
     [_stack addObject:mode];
+    mode->_stack = self;
     [_sprite addChild:mode.sprite];
     mode.added = YES;
+}
+
+- (void)popMode {
+    NSAssert([_stack count] > 0, @"Popped empty stack!");
+    BTMode *popped = [_stack lastObject];
+    [_stack removeLastObject];
+    [_sprite removeChild:popped.sprite];
+    if ([_stack count]) [_sprite addChild:((BTMode*)[_stack lastObject]).sprite];
 }
 @end
 
 @implementation BTModeStack (package)
 
 - (void)enterFrame:(SPEnterFrameEvent *)ev {
-    for (BTMode *mode in _stack) [mode enterFrame:ev];
+    [[_stack lastObject] enterFrame:ev];
 }
 
 @end
