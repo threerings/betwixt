@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 #import "BTMode.h"
 
-@interface Game : BTMode
+@interface SubObjectMode : BTMode
 @property(nonatomic) int squaresAdded;
 @end

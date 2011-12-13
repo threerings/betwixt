@@ -3,11 +3,11 @@
 
 #import "BTApplicationDelegate.h"
 
-@class Game;
+@class SubObjectMode;
 
 @interface TestApplicationDelegate : BTApplicationDelegate {
 @private
-    Game *_game;
+    SubObjectMode *_adder;
 }
 
 @end

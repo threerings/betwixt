@@ -1,10 +1,10 @@
-#import "Game.h" 
+#import "SubObjectMode.h" 
 #import "Square.h"
 #import "SPEventDispatcher+BlockListener.h"
 
 #import "BTModeStack.h"
 
-@implementation Game {
+@implementation SubObjectMode {
     int _ticks, _squaresRemoved, _squaresAdded, _id;
 }
 
