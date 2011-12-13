@@ -20,7 +20,7 @@
         [((BTMode*)self.root).sprite addChild:_quad];
         [self listenToDispatcher:self.root forEvent:SP_EVENT_TYPE_ENTER_FRAME withBlock:^(SPEvent* event) {
             _quad.x += 1;
-            if (_quad.x > 52) [self.root removeObject:self];
+            if (_quad.x > 52) [self.parent removeObject:self];
         }];
     });
     OBSERVE(self, self, @"removed", { [((BTMode*)self.root).sprite removeChild:_quad]; });
