@@ -3,6 +3,12 @@
 
 #import "BTContext.h"
 
+#import "BTObject.h"
+
+#import "BTObject+Package.h"
+#import "BTGeneration.h"
+#import "BTGeneration+Package.h"
+
 @implementation BTContext {
     NSMutableDictionary *_tokenToObserver;
     NSMutableDictionary *_tokenToDispatcher;
@@ -10,6 +16,7 @@
 
 - (id)init {
     if (!(self = [super init])) return nil;
+    _children = [[NSMutableSet alloc] init];
     _tokenToObserver = [[NSMutableDictionary alloc] init];
     _tokenToDispatcher = [[NSMutableDictionary alloc] init];
 
@@ -44,9 +51,18 @@
     [observee removeListenerWithBlockToken:token];
     [_tokenToDispatcher removeObjectForKey:token];
 }
+
 - (void)addObject:(BTObject*)object {
-    [NSException raise:NSInternalInconsistencyException 
-                format:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)];
+    NSAssert(object->_parent == nil, @"Adding already added object");
+    [_children addObject:object];
+    object->_parent = self;
+    [self.root attachObject:object];
+}
+
+- (void)removeObject:(BTObject*)object {
+    NSAssert([_children member:object], @"Asked to remove unknown child");
+    [_children removeObject:object];
+    [object removeInternal];
 }
 
 - (BTObject*)objectForName:(NSString*)name {
@@ -55,9 +71,10 @@
         userInfo:nil];
 }
 
-- (void)removeObject:(BTObject*)object {
-    [NSException raise:NSInternalInconsistencyException 
-                format:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)];
+- (BTGeneration*) root {
+    @throw [NSException exceptionWithName:NSInternalInconsistencyException
+        reason:[NSString stringWithFormat:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)]
+        userInfo:nil];
 }
 
 @synthesize added, removed;

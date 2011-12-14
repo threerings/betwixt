@@ -4,18 +4,12 @@
 #import "BTObject.h"
 #import "BTGeneration.h"
 #import "BTGeneration+Package.h"
+#import "BTObject+Package.h"
 
 @implementation BTObject
 
 - (NSArray*)names {
     return [NSArray array];
-}
-
-- (void)addObject:(BTObject*)object {
-    object->_next = _depHead;
-    _depHead = object;
-    object->_parent = self;
-    [self.root attachObject:object];
 }
 
 - (BTGeneration*) root {
@@ -24,5 +18,19 @@
 }
 
 @synthesize parent=_parent;
+
+@end
+
+@implementation BTObject (package)
+
+- (void)removeInternal {
+    NSMutableSet *kids = _children;
+    _children = nil;
+    for (BTObject *child in kids) {
+        [child removeInternal];
+    }
+    _parent = nil;
+    self.removed = YES;
+}
 
 @end

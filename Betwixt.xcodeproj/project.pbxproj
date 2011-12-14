@@ -41,6 +41,8 @@
 		CBAD57D41475A7D200F7D78E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE4A3D7E10FFB08B00FDA492 /* QuartzCore.framework */; };
 		CBAD57D51475A7D800F7D78E /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE3F093911B7B9DC009D4DB0 /* AudioToolbox.framework */; };
 		CBAD57D61475A7E200F7D78E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE3F093711B7B9DC009D4DB0 /* AVFoundation.framework */; };
+		CBAF5619149807B5009A1A06 /* SelfRemoveMode.m in Sources */ = {isa = PBXBuildFile; fileRef = CBAF5618149807B4009A1A06 /* SelfRemoveMode.m */; };
+		CBAF561C14981FCE009A1A06 /* BTObject+Package.h in Headers */ = {isa = PBXBuildFile; fileRef = CBAF561A14981FCE009A1A06 /* BTObject+Package.h */; };
 		CBB86EE01476669800D0C57E /* BTObject.h in Headers */ = {isa = PBXBuildFile; fileRef = CBB86EDE1476669800D0C57E /* BTObject.h */; };
 		CBB86EE11476669800D0C57E /* BTObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB86EDF1476669800D0C57E /* BTObject.m */; };
 		CBB86EE4147666AA00D0C57E /* BTGeneration.h in Headers */ = {isa = PBXBuildFile; fileRef = CBB86EE2147666AA00D0C57E /* BTGeneration.h */; };
@@ -95,6 +97,9 @@
 		CBAD57B31475A62B00F7D78E /* Betwixt Integration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Betwixt Integration.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBAD57CC1475A70100F7D78E /* SubObjectMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SubObjectMode.h; path = Integration/SubObjectMode.h; sourceTree = "<group>"; };
 		CBAD57CD1475A70100F7D78E /* SubObjectMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SubObjectMode.m; path = Integration/SubObjectMode.m; sourceTree = "<group>"; };
+		CBAF5617149807B4009A1A06 /* SelfRemoveMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SelfRemoveMode.h; path = Integration/SelfRemoveMode.h; sourceTree = "<group>"; };
+		CBAF5618149807B4009A1A06 /* SelfRemoveMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SelfRemoveMode.m; path = Integration/SelfRemoveMode.m; sourceTree = "<group>"; };
+		CBAF561A14981FCE009A1A06 /* BTObject+Package.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BTObject+Package.h"; sourceTree = "<group>"; };
 		CBB86EDE1476669800D0C57E /* BTObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTObject.h; sourceTree = "<group>"; };
 		CBB86EDF1476669800D0C57E /* BTObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTObject.m; sourceTree = "<group>"; };
 		CBB86EE2147666AA00D0C57E /* BTGeneration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTGeneration.h; sourceTree = "<group>"; };
@@ -171,6 +176,7 @@
 				CB7ABCB4147C747C00EC6AEC /* BTModeStack+Package.h */,
 				CBF2AA9F14765EA5000C022D /* BTModeStack.m */,
 				CBB86EDE1476669800D0C57E /* BTObject.h */,
+				CBAF561A14981FCE009A1A06 /* BTObject+Package.h */,
 				CBB86EDF1476669800D0C57E /* BTObject.m */,
 				CBD63C7D147AFBA10006E811 /* NSObject+BlockObservation.h */,
 				CBD63C7E147AFBA10006E811 /* NSObject+BlockObservation.m */,
@@ -255,6 +261,8 @@
 				CBAD57941475A3A000F7D78E /* main.m */,
 				CBAD57971475A4EE00F7D78E /* TestApplicationDelegate.h */,
 				CBAD57981475A4EE00F7D78E /* TestApplicationDelegate.m */,
+				CBAF5617149807B4009A1A06 /* SelfRemoveMode.h */,
+				CBAF5618149807B4009A1A06 /* SelfRemoveMode.m */,
 			);
 			name = Integration;
 			sourceTree = "<group>";
@@ -289,6 +297,7 @@
 				CB7ABCB5147C747C00EC6AEC /* BTModeStack+Package.h in Headers */,
 				CB366FE6148ECC84004BE08B /* BTContext.h in Headers */,
 				CB366FEB148EE7C6004BE08B /* BTLocationTask.h in Headers */,
+				CBAF561C14981FCE009A1A06 /* BTObject+Package.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,6 +409,7 @@
 				CBAD57D01475A75100F7D78E /* SubObjectMode.m in Sources */,
 				CBAD57C71475A69500F7D78E /* main.m in Sources */,
 				CBAD57C91475A69500F7D78E /* TestApplicationDelegate.m in Sources */,
+				CBAF5619149807B5009A1A06 /* SelfRemoveMode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

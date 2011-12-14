@@ -22,8 +22,12 @@ _Pragma("clang diagnostic pop") \
 }];
 
 @class BTObject;
+@class BTGeneration;
 
-@interface BTContext : SPEventDispatcher
+@interface BTContext : SPEventDispatcher {
+    @package
+    NSMutableSet *_children;
+}
 
 - (AMBlockToken*)observeObject:(NSObject*)object forKeyPath:(NSString*)path withBlock:(AMBlockTask)block;
 - (void)cancelObservationForToken:(AMBlockToken*)token;
@@ -37,5 +41,6 @@ _Pragma("clang diagnostic pop") \
 
 @property(nonatomic) BOOL added;
 @property(nonatomic) BOOL removed;
+@property(nonatomic,readonly) BTGeneration *root;
 
 @end

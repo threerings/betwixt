@@ -10,7 +10,6 @@
 @package
     BTModeStack *_stack;
 @private
-    BTObject *_head;
     NSMutableDictionary *_namedObjects;
 }
 @end

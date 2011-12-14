@@ -8,13 +8,10 @@
 
 @interface BTObject : BTContext {
 @package
-    BTObject *_next;
-    BTObject *_depHead;
     BTContext *_parent;
 }
 
 - (NSArray*)names;
-@property(nonatomic,readonly) BTGeneration *root;
 @property(nonatomic,readonly,strong) BTContext *parent;
 
 @end

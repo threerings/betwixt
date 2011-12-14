@@ -15,8 +15,6 @@
     return square;
 }
 
-int gid = 0;
-
 - (id)init {
     if (!(self = [super init])) return nil;
     _ticks = _squaresAdded = _squaresRemoved = 0;
