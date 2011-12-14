@@ -20,11 +20,11 @@
     _tokenToObserver = [[NSMutableDictionary alloc] init];
     _tokenToDispatcher = [[NSMutableDictionary alloc] init];
 
-    OBSERVE(self, self, @"removed", {
+    [self observeObject:self forKeyPath:@"removed" withBlock:^(id obj, NSDictionary *change) {
         // Copy the set before detaching as detaching modifies the set
         for (AMBlockToken *token in [_tokenToObserver allKeys]) [self cancelObservationForToken:token];
-            for (OOOBlockToken *token in [_tokenToDispatcher allKeys]) [self cancelListeningForToken:token];
-    });
+        for (OOOBlockToken *token in [_tokenToDispatcher allKeys]) [self cancelListeningForToken:token];
+    }];
     return self;
 }
 

@@ -10,8 +10,12 @@
 
 - (Square*) createAndMonitorSquareWithColor:(int)color andName:(NSString*)name {
     Square *square = [[Square alloc] initWithColor:color andName:name];
-    OBSERVE(square, square, @"added", { _squaresAdded++; });
-    OBSERVE(square, square, @"removed", { _squaresRemoved++; });
+    [square observeObject:square forKeyPath:@"added" withBlock:^(id obj, NSDictionary *change) {
+        _squaresAdded++;
+    }];
+    [square observeObject:square forKeyPath:@"removed" withBlock:^(id obj, NSDictionary *change) {
+        _squaresRemoved++;
+    }];
     return square;
 }
 
