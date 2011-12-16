@@ -10,7 +10,6 @@
 #import "BTGeneration+Package.h"
 
 @implementation BTContext {
-    NSMutableDictionary *_tokenToObserver;
     NSMutableDictionary *_tokenToDispatcher;
     RAUnitSignal *_attached;
     RAUnitSignal *_detached;
@@ -20,7 +19,6 @@
 - (id)init {
     if (!(self = [super init])) return nil;
     _children = [[NSMutableSet alloc] init];
-    _tokenToObserver = [[NSMutableDictionary alloc] init];
     _tokenToDispatcher = [[NSMutableDictionary alloc] init];
     _attached = [[RAUnitSignal alloc] init];
     _detached = [[RAUnitSignal alloc] init];
@@ -28,28 +26,15 @@
     [_conns addConnection:[self.detached connectBlock:^ {
         [_conns disconnectAll];
         // Copy the set before detaching as detaching modifies the set
-        for (AMBlockToken *token in [_tokenToObserver allKeys]) [self cancelObservationForToken:token];
         for (OOOBlockToken *token in [_tokenToDispatcher allKeys]) [self cancelListeningForToken:token];
     }]];
     return self;
-}
-
-- (AMBlockToken*)observeObject:(NSObject *)object forKeyPath:(NSString *)path withBlock:(AMBlockTask)block {
-    AMBlockToken *token = [object addObserverForKeyPath:path task:block];
-    [_tokenToObserver setObject:[NSValue valueWithNonretainedObject:object] forKey:token];
-    return token;
 }
 
 - (OOOBlockToken*)listenToDispatcher:(SPEventDispatcher *)dispatcher forEvent:(NSString *)eventType withBlock:(OOOBlockListener)block {
     OOOBlockToken *token = [dispatcher addEventListenerForType:eventType listener:block];
     [_tokenToDispatcher setObject:[NSValue valueWithNonretainedObject:dispatcher] forKey:token];
     return token;
-}
-
-- (void)cancelObservationForToken:(AMBlockToken*)token {
-    NSObject *observee = [[_tokenToObserver objectForKey:token] nonretainedObjectValue];
-    [observee removeObserverWithBlockToken:token];
-    [_tokenToObserver removeObjectForKey:token];
 }
 
 - (void)cancelListeningForToken:(OOOBlockToken*)token {

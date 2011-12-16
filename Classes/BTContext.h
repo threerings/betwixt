@@ -2,7 +2,6 @@
 //  Betwixt - Copyright 2011 Three Rings Design
 
 #import "SPEventDispatcher.h"
-#import "NSObject+BlockObservation.h"
 #import "RAUnitSignal.h"
 #import "RAConnectionGroup.h"
 #import "SPEventDispatcher+BlockListener.h"
@@ -14,9 +13,6 @@
     @package
         NSMutableSet *_children;
 }
-
-- (AMBlockToken*)observeObject:(NSObject*)object forKeyPath:(NSString*)path withBlock:(AMBlockTask)block;
-- (void)cancelObservationForToken:(AMBlockToken*)token;
 
 - (OOOBlockToken*)listenToDispatcher:(SPEventDispatcher*)dispatcher forEvent:(NSString*)eventType withBlock:(OOOBlockListener)block;
 - (void)cancelListeningForToken:(OOOBlockToken*)token;

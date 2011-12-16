@@ -3,7 +3,6 @@
 
 #import "Square.h"
 #import "BTMode.h"
-#import "NSObject+BlockObservation.h"
 #import "SPEventDispatcher+BlockListener.h"
 
 @implementation Square
