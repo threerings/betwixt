@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		CB366FE6148ECC84004BE08B /* BTContext.h in Headers */ = {isa = PBXBuildFile; fileRef = CB366FE4148ECC84004BE08B /* BTContext.h */; };
 		CB366FE7148ECC84004BE08B /* BTContext.m in Sources */ = {isa = PBXBuildFile; fileRef = CB366FE5148ECC84004BE08B /* BTContext.m */; };
-		CB366FEB148EE7C6004BE08B /* BTLocationTask.h in Headers */ = {isa = PBXBuildFile; fileRef = CB366FE9148EE7C6004BE08B /* BTLocationTask.h */; };
-		CB366FEC148EE7C6004BE08B /* BTLocationTask.m in Sources */ = {isa = PBXBuildFile; fileRef = CB366FEA148EE7C6004BE08B /* BTLocationTask.m */; };
 		CB602C711476603800E52CE2 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DE5C4E6D138ED109004892CA /* libz.dylib */; };
 		CB602C721476603800E52CE2 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE3F093711B7B9DC009D4DB0 /* AVFoundation.framework */; };
 		CB602C731476603800E52CE2 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE3F093911B7B9DC009D4DB0 /* AudioToolbox.framework */; };
@@ -83,8 +81,6 @@
 		8D1107310486CEB800E47090 /* Application-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Application-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		CB366FE4148ECC84004BE08B /* BTContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTContext.h; sourceTree = "<group>"; };
 		CB366FE5148ECC84004BE08B /* BTContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTContext.m; sourceTree = "<group>"; };
-		CB366FE9148EE7C6004BE08B /* BTLocationTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTLocationTask.h; sourceTree = "<group>"; };
-		CB366FEA148EE7C6004BE08B /* BTLocationTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTLocationTask.m; sourceTree = "<group>"; };
 		CB72E4A914773ED100F1EC78 /* Square.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Square.h; path = Integration/Square.h; sourceTree = "<group>"; };
 		CB72E4AA14773ED100F1EC78 /* Square.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Square.m; path = Integration/Square.m; sourceTree = "<group>"; };
 		CB7ABCAC147C52D400EC6AEC /* SPEventDispatcher+BlockListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SPEventDispatcher+BlockListener.h"; sourceTree = "<group>"; };
@@ -182,7 +178,6 @@
 				CBD63C7E147AFBA10006E811 /* NSObject+BlockObservation.m */,
 				CB7ABCAC147C52D400EC6AEC /* SPEventDispatcher+BlockListener.h */,
 				CB7ABCAD147C52D400EC6AEC /* SPEventDispatcher+BlockListener.m */,
-				CB366FE8148EE7A0004BE08B /* Tasks */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -242,15 +237,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		CB366FE8148EE7A0004BE08B /* Tasks */ = {
-			isa = PBXGroup;
-			children = (
-				CB366FE9148EE7C6004BE08B /* BTLocationTask.h */,
-				CB366FEA148EE7C6004BE08B /* BTLocationTask.m */,
-			);
-			name = Tasks;
-			sourceTree = "<group>";
-		};
 		CBAD57921475A33900F7D78E /* Integration */ = {
 			isa = PBXGroup;
 			children = (
@@ -296,7 +282,6 @@
 				CB7ABCB2147C5EFB00EC6AEC /* BTGeneration+Package.h in Headers */,
 				CB7ABCB5147C747C00EC6AEC /* BTModeStack+Package.h in Headers */,
 				CB366FE6148ECC84004BE08B /* BTContext.h in Headers */,
-				CB366FEB148EE7C6004BE08B /* BTLocationTask.h in Headers */,
 				CBAF561C14981FCE009A1A06 /* BTObject+Package.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -426,7 +411,6 @@
 				CBD63C80147AFBA10006E811 /* NSObject+BlockObservation.m in Sources */,
 				CB7ABCAF147C52D400EC6AEC /* SPEventDispatcher+BlockListener.m in Sources */,
 				CB366FE7148ECC84004BE08B /* BTContext.m in Sources */,
-				CB366FEC148EE7C6004BE08B /* BTLocationTask.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
