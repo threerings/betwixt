@@ -10,7 +10,7 @@
 
 @interface BTContext : SPEventDispatcher {
     @package
-    NSMutableSet *_children;
+        NSMutableSet *_children;
 }
 
 - (AMBlockToken*)observeObject:(NSObject*)object forKeyPath:(NSString*)path withBlock:(AMBlockTask)block;

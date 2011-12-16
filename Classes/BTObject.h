@@ -7,11 +7,12 @@
 @class BTGeneration;
 
 @interface BTObject : BTContext {
-@package
-    BTContext *_parent;
+    @package
+        BTContext *_parent;
 }
 
 - (NSArray*)names;
+
 @property(nonatomic,readonly,strong) BTContext *parent;
 
 @end
