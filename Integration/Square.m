@@ -18,10 +18,10 @@
         _quad.x = 50;
         _quad.y = 50;
         [((BTMode*)self.root).sprite addChild:_quad];
-        [self.root.enterFrame connectBlock:^{
+        [self.conns addConnection:[self.root.enterFrame connectBlock:^{
             _quad.x += 1;
             if (_quad.x >= 52) { [self.parent removeObject:self]; }
-        }];
+        }]];
     }];
     [self observeObject:self forKeyPath:@"removed" withBlock:^(id obj, NSDictionary *change) { [((BTMode*)self.root).sprite removeChild:_quad]; }];
     return self;

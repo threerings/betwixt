@@ -3,6 +3,7 @@
 
 #import "SPEventDispatcher.h"
 #import "NSObject+BlockObservation.h"
+#import "RAConnectionGroup.h"
 #import "SPEventDispatcher+BlockListener.h"
 
 @class BTObject;
@@ -11,6 +12,7 @@
 @interface BTContext : NSObject {
     @package
         NSMutableSet *_children;
+        RAConnectionGroup *_conns;
 }
 
 - (AMBlockToken*)observeObject:(NSObject*)object forKeyPath:(NSString*)path withBlock:(AMBlockTask)block;
@@ -26,5 +28,6 @@
 @property(nonatomic) BOOL added;
 @property(nonatomic) BOOL removed;
 @property(nonatomic,readonly) BTGeneration *root;
+@property(nonatomic,readonly) RAConnectionGroup *conns;
 
 @end

@@ -23,7 +23,7 @@
     if (!(self = [super init])) return nil;
     _ticks = _squaresAdded = _squaresRemoved = 0;
     [self addObject:[self createAndMonitorSquareWithColor:0xff0000 andName:@"red"]];
-    [self.enterFrame connectBlock:^ {
+    [self.conns addConnection:[self.enterFrame connectBlock:^ {
         if (++_ticks == 2) {
             [[self objectForName:@"red"] addObject:[self createAndMonitorSquareWithColor:0x00ff00 andName:@"green"]];
             NSAssert(_squaresAdded == 2, @"Second square not added");
@@ -33,7 +33,7 @@
         } else if (_ticks == 4) {
             [_stack popMode];
         }
-    }];
+    }]];
     return self;
 }
 

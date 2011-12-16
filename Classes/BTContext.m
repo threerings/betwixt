@@ -21,6 +21,7 @@
     _tokenToDispatcher = [[NSMutableDictionary alloc] init];
 
     [self observeObject:self forKeyPath:@"removed" withBlock:^(id obj, NSDictionary *change) {
+        if (_conns != nil) [_conns disconnectAll];
         // Copy the set before detaching as detaching modifies the set
         for (AMBlockToken *token in [_tokenToObserver allKeys]) [self cancelObservationForToken:token];
         for (OOOBlockToken *token in [_tokenToDispatcher allKeys]) [self cancelListeningForToken:token];
@@ -66,7 +67,7 @@
 }
 
 - (BTObject*)objectForName:(NSString*)name {
-    @throw [NSException exceptionWithName:NSInternalInconsistencyException 
+    @throw [NSException exceptionWithName:NSInternalInconsistencyException
         reason:[NSString stringWithFormat:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)]
         userInfo:nil];
 }
@@ -75,6 +76,11 @@
     @throw [NSException exceptionWithName:NSInternalInconsistencyException
         reason:[NSString stringWithFormat:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)]
         userInfo:nil];
+}
+
+- (RAConnectionGroup*)conns {
+    if (_conns == nil) _conns = [[RAConnectionGroup alloc] init];
+    return _conns;
 }
 
 @synthesize added, removed;
