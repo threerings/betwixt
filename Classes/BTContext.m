@@ -12,6 +12,9 @@
 @implementation BTContext {
     NSMutableDictionary *_tokenToObserver;
     NSMutableDictionary *_tokenToDispatcher;
+    RAUnitSignal *_attached;
+    RAUnitSignal *_detached;
+    RAConnectionGroup *_conns;
 }
 
 - (id)init {
@@ -19,13 +22,15 @@
     _children = [[NSMutableSet alloc] init];
     _tokenToObserver = [[NSMutableDictionary alloc] init];
     _tokenToDispatcher = [[NSMutableDictionary alloc] init];
+    _attached = [[RAUnitSignal alloc] init];
+    _detached = [[RAUnitSignal alloc] init];
 
-    [self observeObject:self forKeyPath:@"removed" withBlock:^(id obj, NSDictionary *change) {
-        if (_conns != nil) [_conns disconnectAll];
+    [_conns addConnection:[self.detached connectBlock:^ {
+        [_conns disconnectAll];
         // Copy the set before detaching as detaching modifies the set
         for (AMBlockToken *token in [_tokenToObserver allKeys]) [self cancelObservationForToken:token];
         for (OOOBlockToken *token in [_tokenToDispatcher allKeys]) [self cancelListeningForToken:token];
-    }];
+    }]];
     return self;
 }
 
@@ -78,11 +83,6 @@
         userInfo:nil];
 }
 
-- (RAConnectionGroup*)conns {
-    if (_conns == nil) _conns = [[RAConnectionGroup alloc] init];
-    return _conns;
-}
-
-@synthesize added, removed;
+@synthesize attached=_attached, detached=_detached, conns=_conns;
 
 @end

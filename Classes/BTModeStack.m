@@ -18,7 +18,7 @@
     [_stack addObject:mode];
     mode->_stack = self;
     [_sprite addChild:mode.sprite];
-    mode.added = YES;
+    [mode.attached emit];
 }
 
 - (void)popMode {

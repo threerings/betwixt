@@ -13,9 +13,9 @@
 - (id)init {
     if (!(self = [super init])) return nil;
     __weak SelfRemoveObject* mySelf = self;
-    [self observeObject:self forKeyPath:@"added" withBlock:^(id obj, NSDictionary *change) {
+    [self.conns addConnection:[self.attached connectBlock:^{
         [mySelf.conns addConnection:[mySelf.root.enterFrame connectBlock:^ { [mySelf.parent removeObject:mySelf]; }]];
-    }];
+    }]];
     return self;
 }
 
@@ -26,12 +26,16 @@
 - (id)init {
     if (!(self = [super init])) return nil;
     SelfRemoveObject *remover = [[SelfRemoveObject alloc] init];
+    __block BOOL detached = NO;
+    [remover.detached connectBlock:^{ detached = YES; }];
     [self.conns addConnection:[[self.enterFrame connectBlock:^ {
-        NSAssert(remover.removed == YES, @"Remover removed");
+        NSAssert(detached, @"Remover removed");
+        detached = NO;
         BTObject *holder = [[BTObject alloc] init];
         SelfRemoveObject *subremover = [[SelfRemoveObject alloc] init];
+        [subremover.detached connectBlock:^{ detached = YES; }];
         [self.conns addConnection:[[self.enterFrame connectBlock:^ {
-            NSAssert(subremover.removed == YES, @"Subremover removed");
+            NSAssert(detached, @"Subremover removed");
             [_stack popMode];
         }] once]];
         [self addObject:holder];

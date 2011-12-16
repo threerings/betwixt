@@ -3,6 +3,7 @@
 
 #import "SPEventDispatcher.h"
 #import "NSObject+BlockObservation.h"
+#import "RAUnitSignal.h"
 #import "RAConnectionGroup.h"
 #import "SPEventDispatcher+BlockListener.h"
 
@@ -12,7 +13,6 @@
 @interface BTContext : NSObject {
     @package
         NSMutableSet *_children;
-        RAConnectionGroup *_conns;
 }
 
 - (AMBlockToken*)observeObject:(NSObject*)object forKeyPath:(NSString*)path withBlock:(AMBlockTask)block;
@@ -25,8 +25,8 @@
 - (BTObject*)objectForName:(NSString*)name;
 - (void)removeObject:(BTObject*)object;
 
-@property(nonatomic) BOOL added;
-@property(nonatomic) BOOL removed;
+@property(nonatomic,readonly) RAUnitSignal *attached;
+@property(nonatomic,readonly) RAUnitSignal *detached;
 @property(nonatomic,readonly) BTGeneration *root;
 @property(nonatomic,readonly) RAConnectionGroup *conns;
 

@@ -40,7 +40,7 @@
         NSAssert1(![_namedObjects objectForKey:name], @"Object name '%@' already used", name);
         [_namedObjects setObject:object forKey:name];
     }
-    object.added = YES;
+    [object.attached emit];
 }
 
 @end

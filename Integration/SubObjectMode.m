@@ -10,12 +10,8 @@
 
 - (Square*) createAndMonitorSquareWithColor:(int)color andName:(NSString*)name {
     Square *square = [[Square alloc] initWithColor:color andName:name];
-    [square observeObject:square forKeyPath:@"added" withBlock:^(id obj, NSDictionary *change) {
-        _squaresAdded++;
-    }];
-    [square observeObject:square forKeyPath:@"removed" withBlock:^(id obj, NSDictionary *change) {
-        _squaresRemoved++;
-    }];
+    [square.conns addConnection:[square.attached connectBlock:^ { _squaresAdded++; }]];
+    [square.conns addConnection:[square.detached connectBlock:^ { _squaresRemoved++; }]];
     return square;
 }
 

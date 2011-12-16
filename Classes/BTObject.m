@@ -30,7 +30,7 @@
         [child removeInternal];
     }
     _parent = nil;
-    self.removed = YES;
+    [self.detached emit];
 }
 
 @end
