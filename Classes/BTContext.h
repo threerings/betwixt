@@ -8,7 +8,7 @@
 @class BTObject;
 @class BTGeneration;
 
-@interface BTContext : SPEventDispatcher {
+@interface BTContext : NSObject {
     @package
         NSMutableSet *_children;
 }

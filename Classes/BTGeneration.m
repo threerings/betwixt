@@ -5,12 +5,15 @@
 #import "BTGeneration+Package.h"
 #import "BTObject+Package.h"
 
-@implementation BTGeneration
+@implementation BTGeneration {
+    RAUnitSignal *_enterFrame;
+}
 
 - (id)init {
     if (!(self = [super init])) return nil;
     _children = [[NSMutableSet alloc] init];
     _namedObjects = [NSMutableDictionary dictionary];
+    _enterFrame = [[RAUnitSignal alloc] init];
     return self;
 }
 
@@ -22,13 +25,14 @@
     return self;
 }
 
+@synthesize enterFrame=_enterFrame;
 
 @end
 
 @implementation BTGeneration (package)
 
 - (void)enterFrame:(SPEnterFrameEvent*)ev {
-    [self dispatchEvent:ev];
+    [_enterFrame emit];
 }
 
 - (void)attachObject:(BTObject*)object {
