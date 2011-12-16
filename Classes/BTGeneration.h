@@ -14,5 +14,5 @@
     NSMutableDictionary *_namedObjects;
 }
 
-@property(readonly) RAUnitSignal *enterFrame;
+@property(nonatomic,readonly) RAUnitSignal *enterFrame;
 @end
