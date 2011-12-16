@@ -12,6 +12,10 @@
     return [NSArray array];
 }
 
+- (void)detach {
+    [_parent removeObject:self];
+}
+
 - (BTGeneration*) root {
     if ([_parent isKindOfClass:[BTObject class]]) return ((BTObject*)_parent).root;
     return (BTGeneration*)_parent;
