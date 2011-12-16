@@ -23,11 +23,11 @@
     _attached = [[RAUnitSignal alloc] init];
     _detached = [[RAUnitSignal alloc] init];
 
-    [_conns addConnection:[self.detached connectBlock:^ {
+    [self.detached connectBlock:^ {
         [_conns disconnectAll];
         // Copy the set before detaching as detaching modifies the set
         for (OOOBlockToken *token in [_tokenToDispatcher allKeys]) [self cancelListeningForToken:token];
-    }]];
+    }];
     return self;
 }
 

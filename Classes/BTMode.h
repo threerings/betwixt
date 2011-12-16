@@ -10,6 +10,6 @@
     SPSprite *_sprite;
 }
 
-@property(readonly, strong, nonatomic) SPSprite *sprite;
+@property(readonly,nonatomic) SPSprite *sprite;
 
 @end
