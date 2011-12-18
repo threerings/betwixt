@@ -44,7 +44,9 @@
 }
 
 - (void)addObject:(BTObject*)object {
-    NSAssert(object->_parent == nil, @"Adding already added object");
+    NSAssert(object->_parent == nil, @"Adding attached object");
+    NSAssert(object->_children != nil, @"Adding detached object");
+    NSAssert(_children != nil, @"Adding object to detached object");
     [_children addObject:object];
     object->_parent = self;
     [self.root attachObject:object];
