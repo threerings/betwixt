@@ -17,10 +17,10 @@
         _quad.x = 50;
         _quad.y = 50;
         [((BTMode*)self.root).sprite addChild:_quad];
-        [self.root.enterFrame inGroup:self.conns connectBlock:^{
+        [self.conns addConnection:[self.root.enterFrame connectBlock:^{
             _quad.x += 1;
             if (_quad.x >= 52) { [self detach]; }
-        }];
+        }]];
     }];
     [self.detached connectBlock:^ { [((BTMode*)self.root).sprite removeChild:_quad]; }];
     return self;
