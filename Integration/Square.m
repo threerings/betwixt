@@ -11,18 +11,18 @@
     if (!(self = [super init])) return nil;
     _color = color;
     _name = name;
-    [self.attached connectBlock:^ {
+    [self.attached connectUnit:^ {
         _quad = [SPQuad quadWithWidth:100 height:100];
         _quad.color = _color;
         _quad.x = 50;
         _quad.y = 50;
         [((BTMode*)self.root).sprite addChild:_quad];
-        [self.conns addConnection:[self.root.enterFrame withPriority:SQUARE_FRAME_PRIORITY connectBlock:^{
+        [self.conns addConnection:[self.root.enterFrame withPriority:SQUARE_FRAME_PRIORITY connectUnit:^{
             _quad.x += 1;
             if (_quad.x >= 52) { [self detach]; }
         }]];
     }];
-    [self.detached connectBlock:^ { [((BTMode*)self.root).sprite removeChild:_quad]; }];
+    [self.detached connectUnit:^ { [((BTMode*)self.root).sprite removeChild:_quad]; }];
     return self;
 }
 
