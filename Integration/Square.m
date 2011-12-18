@@ -17,7 +17,7 @@
         _quad.x = 50;
         _quad.y = 50;
         [((BTMode*)self.root).sprite addChild:_quad];
-        [self.conns addConnection:[self.root.enterFrame connectBlock:^{
+        [self.conns addConnection:[self.root.enterFrame withPriority:SQUARE_FRAME_PRIORITY connectBlock:^{
             _quad.x += 1;
             if (_quad.x >= 52) { [self detach]; }
         }]];

@@ -4,6 +4,7 @@
 #import <Foundation/Foundation.h>
 #import "BTObject.h"
 
+#define SQUARE_FRAME_PRIORITY RA_DEFAULT_PRIORITY
 @interface Square : BTObject {
 @private
     SPQuad *_quad;

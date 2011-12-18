@@ -14,7 +14,8 @@
     if (!(self = [super init])) return nil;
     __weak SelfRemoveObject* mySelf = self;
     [self.attached connectBlock:^ {
-        [mySelf.conns addConnection:[mySelf.root.enterFrame connectBlock:^ { [mySelf detach]; }]];
+        [mySelf.conns addConnection:[mySelf.root.enterFrame withPriority:RA_DEFAULT_PRIORITY + 1
+                       connectBlock:^ { [mySelf detach]; }]];
     }];
     return self;
 }
