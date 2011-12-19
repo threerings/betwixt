@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB24CBBE149FF774004BAA57 /* BTDestroyParentTask.h in Headers */ = {isa = PBXBuildFile; fileRef = CB24CBBC149FF774004BAA57 /* BTDestroyParentTask.h */; };
+		CB24CBBF149FF774004BAA57 /* BTDestroyParentTask.m in Sources */ = {isa = PBXBuildFile; fileRef = CB24CBBD149FF774004BAA57 /* BTDestroyParentTask.m */; };
 		CB366FE6148ECC84004BE08B /* BTContext.h in Headers */ = {isa = PBXBuildFile; fileRef = CB366FE4148ECC84004BE08B /* BTContext.h */; };
 		CB366FE7148ECC84004BE08B /* BTContext.m in Sources */ = {isa = PBXBuildFile; fileRef = CB366FE5148ECC84004BE08B /* BTContext.m */; };
 		CB602C711476603800E52CE2 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DE5C4E6D138ED109004892CA /* libz.dylib */; };
@@ -92,6 +94,8 @@
 		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		32CA4F630368D1EE00C91783 /* Betwixt_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Betwixt_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Application-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Application-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		CB24CBBC149FF774004BAA57 /* BTDestroyParentTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTDestroyParentTask.h; sourceTree = "<group>"; };
+		CB24CBBD149FF774004BAA57 /* BTDestroyParentTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTDestroyParentTask.m; sourceTree = "<group>"; };
 		CB366FE4148ECC84004BE08B /* BTContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTContext.h; sourceTree = "<group>"; };
 		CB366FE5148ECC84004BE08B /* BTContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTContext.m; sourceTree = "<group>"; };
 		CB72E4A914773ED100F1EC78 /* Square.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Square.h; path = Integration/Square.h; sourceTree = "<group>"; };
@@ -189,6 +193,7 @@
 				CBB86EDF1476669800D0C57E /* BTObject.m */,
 				CB7ABCAC147C52D400EC6AEC /* SPEventDispatcher+BlockListener.h */,
 				CB7ABCAD147C52D400EC6AEC /* SPEventDispatcher+BlockListener.m */,
+				CB24CBBB149FF75C004BAA57 /* Tasks */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -249,6 +254,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CB24CBBB149FF75C004BAA57 /* Tasks */ = {
+			isa = PBXGroup;
+			children = (
+				CB24CBBC149FF774004BAA57 /* BTDestroyParentTask.h */,
+				CB24CBBD149FF774004BAA57 /* BTDestroyParentTask.m */,
+			);
+			name = Tasks;
+			sourceTree = "<group>";
+		};
 		CB846EEE149AE18900B29795 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -303,6 +317,7 @@
 				CB7ABCB5147C747C00EC6AEC /* BTModeStack+Package.h in Headers */,
 				CB366FE6148ECC84004BE08B /* BTContext.h in Headers */,
 				CBAF561C14981FCE009A1A06 /* BTObject+Package.h in Headers */,
+				CB24CBBE149FF774004BAA57 /* BTDestroyParentTask.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,6 +463,7 @@
 				CB72E4AC14773ED200F1EC78 /* Square.m in Sources */,
 				CB7ABCAF147C52D400EC6AEC /* SPEventDispatcher+BlockListener.m in Sources */,
 				CB366FE7148ECC84004BE08B /* BTContext.m in Sources */,
+				CB24CBBF149FF774004BAA57 /* BTDestroyParentTask.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

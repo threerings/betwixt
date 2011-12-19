@@ -3,6 +3,7 @@
 
 #import "SelfRemoveMode.h"
 
+#import "BTDestroyParentTask.h"
 #import "BTModeStack.h"
 #import "RAConnection.h"
 
@@ -24,6 +25,31 @@
 
 @implementation SelfRemoveMode
 
+- (void)testDestroyParentTask {
+    __block BOOL detached = NO;
+    BTObject *holder = [[BTObject alloc] init];
+    [holder.detached connectUnit:^{ detached = YES; }];
+    [self addObject:holder];
+    [holder addObject:[[BTDestroyParentTask alloc] init]];
+    [[self.enterFrame connectUnit:^ {
+        NSAssert(detached, @"Parent removed");
+        [self detach];
+    }] once];
+}
+
+- (void)testSubobjectRemoval {
+    __block BOOL detached = NO;
+    BTObject *holder = [[BTObject alloc] init];
+    SelfRemoveObject *subremover = [[SelfRemoveObject alloc] init];
+    [subremover.detached connectUnit:^{ detached = YES; }];
+    [self addObject:holder];
+    [holder addObject:subremover];
+    [[self.enterFrame connectUnit:^ {
+        NSAssert(detached, @"Subremover removed");
+        [self testDestroyParentTask];
+    }] once];
+}
+
 - (id)init {
     if (!(self = [super init])) return nil;
     SelfRemoveObject *remover = [[SelfRemoveObject alloc] init];
@@ -32,16 +58,7 @@
     [self addObject:remover];
     [[self.enterFrame connectUnit:^ {
         NSAssert(detached, @"Remover removed");
-        detached = NO;
-        BTObject *holder = [[BTObject alloc] init];
-        SelfRemoveObject *subremover = [[SelfRemoveObject alloc] init];
-        [subremover.detached connectUnit:^{ detached = YES; }];
-        [self addObject:holder];
-        [holder addObject:subremover];
-        [[self.enterFrame connectUnit:^ {
-            NSAssert(detached, @"Subremover removed");
-            [_stack popMode];
-        }] once];
+        [self testSubobjectRemoval];
     }] once];
     return self;
 }

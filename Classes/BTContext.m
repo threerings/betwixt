@@ -58,6 +58,11 @@
     [object removeInternal];
 }
 
+- (void)detach {
+    [NSException raise:NSInternalInconsistencyException
+        format:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)];
+}
+
 - (BTObject*)objectForName:(NSString*)name {
     @throw [NSException exceptionWithName:NSInternalInconsistencyException
         reason:[NSString stringWithFormat:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)]

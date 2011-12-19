@@ -4,6 +4,7 @@
 #import "BTGeneration.h"
 #import "BTGeneration+Package.h"
 #import "BTObject+Package.h"
+#import "BTModeStack.h"
 
 @implementation BTGeneration {
     RAUnitSignal *_enterFrame;
@@ -23,6 +24,10 @@
 
 - (BTGeneration*) root {
     return self;
+}
+
+- (void) detach {
+    [_stack popMode];
 }
 
 @synthesize enterFrame=_enterFrame;

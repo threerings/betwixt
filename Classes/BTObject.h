@@ -12,7 +12,6 @@
 }
 
 - (NSArray*)names;
-- (void)detach;
 
 @property(nonatomic,readonly,strong) BTContext *parent;
 

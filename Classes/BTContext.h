@@ -14,6 +14,8 @@
         NSMutableSet *_children;
 }
 
+- (void)detach;
+
 - (OOOBlockToken*)listenToDispatcher:(SPEventDispatcher*)dispatcher forEvent:(NSString*)eventType withBlock:(OOOBlockListener)block;
 - (void)cancelListeningForToken:(OOOBlockToken*)token;
 
