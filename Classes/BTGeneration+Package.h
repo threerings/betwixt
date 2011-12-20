@@ -6,6 +6,6 @@
 @interface BTGeneration (package)
 
 -(void)enterFrame:(SPEnterFrameEvent*)ev;
--(void)attachObject:(BTObject*)object;
+-(void)attachNode:(BTNode*)object;
 
 @end

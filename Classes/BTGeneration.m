@@ -3,8 +3,8 @@
 
 #import "BTGeneration.h"
 #import "BTGeneration+Package.h"
-#import "BTObject+Package.h"
 #import "BTModeStack.h"
+#import "BTNamed.h"
 
 @implementation BTGeneration {
     RADoubleSignal *_enterFrame;
@@ -18,7 +18,7 @@
     return self;
 }
 
-- (BTObject*)objectForName:(NSString*)name {
+- (BTNode*)nodeForName:(NSString*)name {
     return [_namedObjects objectForKey:name];
 }
 
@@ -40,10 +40,12 @@
     [_enterFrame emitEvent:ev.passedTime];
 }
 
-- (void)attachObject:(BTObject*)object {
-    for (NSString *name in object.names) {
-        NSAssert1(![_namedObjects objectForKey:name], @"Object name '%@' already used", name);
-        [_namedObjects setObject:object forKey:name];
+- (void)attachNode:(BTNode*)object {
+    if ([object conformsToProtocol:@protocol(BTNamed)]) {
+        for (NSString *name in ((id<BTNamed>)object).names) {
+            NSAssert1(![_namedObjects objectForKey:name], @"Object name '%@' already used", name);
+            [_namedObjects setObject:object forKey:name];
+        }
     }
     [object.attached emit];
 }

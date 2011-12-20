@@ -29,8 +29,8 @@
     __block BOOL detached = NO;
     BTObject *holder = [[BTObject alloc] init];
     [holder.detached connectUnit:^{ detached = YES; }];
-    [self addObject:holder];
-    [holder addObject:[[BTDestroyParentTask alloc] init]];
+    [self addNode:holder];
+    [holder addNode:[[BTDestroyParentTask alloc] init]];
     [[self.enterFrame connectUnit:^ {
         NSAssert(detached, @"Parent removed");
         [self detach];
@@ -42,8 +42,8 @@
     BTObject *holder = [[BTObject alloc] init];
     SelfRemoveObject *subremover = [[SelfRemoveObject alloc] init];
     [subremover.detached connectUnit:^{ detached = YES; }];
-    [self addObject:holder];
-    [holder addObject:subremover];
+    [self addNode:holder];
+    [holder addNode:subremover];
     [[self.enterFrame connectUnit:^ {
         NSAssert(detached, @"Subremover removed");
         [self testDestroyParentTask];
@@ -55,7 +55,7 @@
     SelfRemoveObject *remover = [[SelfRemoveObject alloc] init];
     __block BOOL detached = NO;
     [remover.detached connectUnit:^{ detached = YES; }];
-    [self addObject:remover];
+    [self addNode:remover];
     [[self.enterFrame connectUnit:^ {
         NSAssert(detached, @"Remover removed");
         [self testSubobjectRemoval];

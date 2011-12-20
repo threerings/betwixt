@@ -5,26 +5,20 @@
 
 #import "BTObject.h"
 
-#import "BTObject+Package.h"
+#import "BTNode+Package.h"
 #import "BTGeneration.h"
 #import "BTGeneration+Package.h"
 
 @implementation BTContext {
     NSMutableDictionary *_tokenToDispatcher;
-    RAUnitSignal *_attached;
-    RAUnitSignal *_detached;
-    RAConnectionGroup *_conns;
 }
 
 - (id)init {
     if (!(self = [super init])) return nil;
     _children = [[NSMutableSet alloc] init];
     _tokenToDispatcher = [[NSMutableDictionary alloc] init];
-    _attached = [[RAUnitSignal alloc] init];
-    _detached = [[RAUnitSignal alloc] init];
 
     [self.detached connectUnit:^ {
-        [_conns disconnectAll];
         // Copy the set before detaching as detaching modifies the set
         for (OOOBlockToken *token in [_tokenToDispatcher allKeys]) [self cancelListeningForToken:token];
     }];
@@ -43,38 +37,24 @@
     [_tokenToDispatcher removeObjectForKey:token];
 }
 
-- (void)addObject:(BTObject*)object {
+- (void)addNode:(BTNode*)object {
     NSAssert(object->_parent == nil, @"Adding attached object");
-    NSAssert(object->_children != nil, @"Adding detached object");
     NSAssert(_children != nil, @"Adding object to detached object");
     [_children addObject:object];
     object->_parent = self;
-    [self.root attachObject:object];
+    [self.root attachNode:object];
 }
 
-- (void)removeObject:(BTObject*)object {
+- (void)removeNode:(BTNode*)object {
     NSAssert([_children member:object], @"Asked to remove unknown child");
     [_children removeObject:object];
     [object removeInternal];
 }
 
-- (void)detach {
-    [NSException raise:NSInternalInconsistencyException
-        format:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)];
-}
-
-- (BTObject*)objectForName:(NSString*)name {
+- (BTNode*)nodeForName:(NSString*)name {
     @throw [NSException exceptionWithName:NSInternalInconsistencyException
         reason:[NSString stringWithFormat:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)]
         userInfo:nil];
 }
-
-- (BTGeneration*) root {
-    @throw [NSException exceptionWithName:NSInternalInconsistencyException
-        reason:[NSString stringWithFormat:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)]
-        userInfo:nil];
-}
-
-@synthesize attached=_attached, detached=_detached, conns=_conns;
 
 @end

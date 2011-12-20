@@ -3,9 +3,9 @@
 
 #import <Foundation/Foundation.h>
 #import "BTInterpolator.h"
-#import "BTObject.h"
+#import "BTNode.h"
 
-@interface BTInterpolationTask : BTObject {
+@interface BTInterpolationTask : BTNode {
     @protected
         SPDisplayObject *_target;
 }
