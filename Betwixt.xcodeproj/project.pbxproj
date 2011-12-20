@@ -17,6 +17,7 @@
 		CB24CBD514A115EF004BAA57 /* BTInterpolator.h in Headers */ = {isa = PBXBuildFile; fileRef = CB24CBD214A115EF004BAA57 /* BTInterpolator.h */; };
 		CB24CBD814A116AC004BAA57 /* BTSprite.h in Headers */ = {isa = PBXBuildFile; fileRef = CB24CBD614A116AB004BAA57 /* BTSprite.h */; };
 		CB24CBD914A116AC004BAA57 /* BTSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = CB24CBD714A116AB004BAA57 /* BTSprite.m */; };
+		CB323C6114A11A530039A2F1 /* libreact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB24CBE714A119EB004BAA57 /* libreact.a */; };
 		CB366FE6148ECC84004BE08B /* BTContext.h in Headers */ = {isa = PBXBuildFile; fileRef = CB366FE4148ECC84004BE08B /* BTContext.h */; };
 		CB366FE7148ECC84004BE08B /* BTContext.m in Sources */ = {isa = PBXBuildFile; fileRef = CB366FE5148ECC84004BE08B /* BTContext.m */; };
 		CB602C711476603800E52CE2 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DE5C4E6D138ED109004892CA /* libz.dylib */; };
@@ -65,6 +66,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		CB24CBE614A119EB004BAA57 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CB846EED149AE18900B29795 /* react.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = CBFF4A6C149AA9470003AC2B;
+			remoteInfo = react;
+		};
+		CB24CBE814A119EB004BAA57 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CB846EED149AE18900B29795 /* react.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = CBFF4A7C149AA9470003AC2B;
+			remoteInfo = reactTests;
+		};
 		DE4A3DAF10FFB0DB00FDA492 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DE4A3DA210FFB0D400FDA492 /* Sparrow.xcodeproj */;
@@ -158,6 +173,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB323C6114A11A530039A2F1 /* libreact.a in Frameworks */,
 				CBAD578D1475A28C00F7D78E /* libSparrow.a in Frameworks */,
 				CB602C711476603800E52CE2 /* libz.dylib in Frameworks */,
 				CB602C721476603800E52CE2 /* AVFoundation.framework in Frameworks */,
@@ -269,6 +285,15 @@
 				CB24CBBD149FF774004BAA57 /* BTDestroyParentTask.m */,
 			);
 			name = Tasks;
+			sourceTree = "<group>";
+		};
+		CB24CBE214A119EB004BAA57 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CB24CBE714A119EB004BAA57 /* libreact.a */,
+				CB24CBE914A119EB004BAA57 /* reactTests.octest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		CBAD57921475A33900F7D78E /* Integration */ = {
@@ -387,6 +412,10 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = CB24CBE214A119EB004BAA57 /* Products */;
+					ProjectRef = CB846EED149AE18900B29795 /* react.xcodeproj */;
+				},
+				{
 					ProductGroup = DE4A3DAB10FFB0DB00FDA492 /* Products */;
 					ProjectRef = DE4A3DA210FFB0D400FDA492 /* Sparrow.xcodeproj */;
 				},
@@ -400,6 +429,20 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		CB24CBE714A119EB004BAA57 /* libreact.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libreact.a;
+			remoteRef = CB24CBE614A119EB004BAA57 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CB24CBE914A119EB004BAA57 /* reactTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = reactTests.octest;
+			remoteRef = CB24CBE814A119EB004BAA57 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		DE4A3DB010FFB0DB00FDA492 /* libSparrow.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
