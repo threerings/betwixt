@@ -3,6 +3,7 @@
 
 #import "MoveMode.h"
 
+#import "BTAlphaTask.h"
 #import "BTRotationTask.h"
 #import "BTSprite.h"
 #import "BTLocationTask.h"
@@ -13,6 +14,7 @@
     SPQuad *directquad = [SPQuad quadWithWidth:100 height:100 color:0xff0000];
     [self.sprite addChild:directquad];
     [self addObject:[[BTLocationTask alloc] initOverTime:5.0 toX:100 toY:100 onDisplay:directquad]];
+    [self addObject:[[BTAlphaTask alloc] initOverTime:5.0 toAlpha:0 onDisplay:directquad]];
     BTSprite *sprite = [[BTSprite alloc] init];
     [self addObject:sprite];
     [sprite.sprite addChild:[SPQuad quadWithWidth:100 height:100 color:0x00ff00]];

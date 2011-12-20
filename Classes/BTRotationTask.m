@@ -6,7 +6,6 @@
 @implementation BTRotationTask {
     float _startRotation;
     float _deltaRotation;
-
 }
 - (id)initOverTime:(double)seconds toRotation:(float)rads {
     return [self initOverTime:seconds toRotation:rads withInterpolator:BTLinearInterpolator];

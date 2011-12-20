@@ -22,6 +22,8 @@
 		CB323C6514A132390039A2F1 /* BTInterpolationTask.m in Sources */ = {isa = PBXBuildFile; fileRef = CB323C6314A132390039A2F1 /* BTInterpolationTask.m */; };
 		CB323C6814A134B60039A2F1 /* BTRotationTask.h in Headers */ = {isa = PBXBuildFile; fileRef = CB323C6614A134B60039A2F1 /* BTRotationTask.h */; };
 		CB323C6914A134B60039A2F1 /* BTRotationTask.m in Sources */ = {isa = PBXBuildFile; fileRef = CB323C6714A134B60039A2F1 /* BTRotationTask.m */; };
+		CB323C6C14A138190039A2F1 /* BTAlphaTask.h in Headers */ = {isa = PBXBuildFile; fileRef = CB323C6A14A138190039A2F1 /* BTAlphaTask.h */; };
+		CB323C6D14A138190039A2F1 /* BTAlphaTask.m in Sources */ = {isa = PBXBuildFile; fileRef = CB323C6B14A138190039A2F1 /* BTAlphaTask.m */; };
 		CB366FE6148ECC84004BE08B /* BTContext.h in Headers */ = {isa = PBXBuildFile; fileRef = CB366FE4148ECC84004BE08B /* BTContext.h */; };
 		CB366FE7148ECC84004BE08B /* BTContext.m in Sources */ = {isa = PBXBuildFile; fileRef = CB366FE5148ECC84004BE08B /* BTContext.m */; };
 		CB602C711476603800E52CE2 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DE5C4E6D138ED109004892CA /* libz.dylib */; };
@@ -121,6 +123,8 @@
 		CB323C6314A132390039A2F1 /* BTInterpolationTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTInterpolationTask.m; sourceTree = "<group>"; };
 		CB323C6614A134B60039A2F1 /* BTRotationTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTRotationTask.h; sourceTree = "<group>"; };
 		CB323C6714A134B60039A2F1 /* BTRotationTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTRotationTask.m; sourceTree = "<group>"; };
+		CB323C6A14A138190039A2F1 /* BTAlphaTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTAlphaTask.h; sourceTree = "<group>"; };
+		CB323C6B14A138190039A2F1 /* BTAlphaTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTAlphaTask.m; sourceTree = "<group>"; };
 		CB366FE4148ECC84004BE08B /* BTContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTContext.h; sourceTree = "<group>"; };
 		CB366FE5148ECC84004BE08B /* BTContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTContext.m; sourceTree = "<group>"; };
 		CB72E4A914773ED100F1EC78 /* Square.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Square.h; path = Integration/Square.h; sourceTree = "<group>"; };
@@ -287,6 +291,8 @@
 		CB24CBBB149FF75C004BAA57 /* Tasks */ = {
 			isa = PBXGroup;
 			children = (
+				CB323C6A14A138190039A2F1 /* BTAlphaTask.h */,
+				CB323C6B14A138190039A2F1 /* BTAlphaTask.m */,
 				CB323C6614A134B60039A2F1 /* BTRotationTask.h */,
 				CB323C6714A134B60039A2F1 /* BTRotationTask.m */,
 				CB323C6214A132390039A2F1 /* BTInterpolationTask.h */,
@@ -362,6 +368,7 @@
 				CB24CBD814A116AC004BAA57 /* BTSprite.h in Headers */,
 				CB323C6414A132390039A2F1 /* BTInterpolationTask.h in Headers */,
 				CB323C6814A134B60039A2F1 /* BTRotationTask.h in Headers */,
+				CB323C6C14A138190039A2F1 /* BTAlphaTask.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,6 +521,7 @@
 				CB24CBD914A116AC004BAA57 /* BTSprite.m in Sources */,
 				CB323C6514A132390039A2F1 /* BTInterpolationTask.m in Sources */,
 				CB323C6914A134B60039A2F1 /* BTRotationTask.m in Sources */,
+				CB323C6D14A138190039A2F1 /* BTAlphaTask.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
