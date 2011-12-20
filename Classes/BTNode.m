@@ -3,7 +3,6 @@
 
 #import "BTNode.h"
 #import "BTNode+Package.h"
-#import "BTContext.h"
 #import "BTGeneration.h"
 
 @implementation BTNode
@@ -12,7 +11,6 @@
     if (!(self = [super init])) return nil;
     _attached = [[RAUnitSignal alloc] init];
     _detached = [[RAUnitSignal alloc] init];
-    _conns = [[RAConnectionGroup alloc] init];
     return self;
 }
 
@@ -25,7 +23,12 @@
     return _parent.root;
 }
 
-@synthesize parent=_parent, conns=_conns, attached=_attached, detached=_detached;
+- (RAConnectionGroup*)conns {
+    if (_conns == nil) _conns = [[RAConnectionGroup alloc] init];
+    return _conns;
+}
+
+@synthesize parent=_parent, attached=_attached, detached=_detached;
 @end
 
 @implementation BTNode (package)
