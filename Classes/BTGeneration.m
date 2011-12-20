@@ -7,14 +7,14 @@
 #import "BTModeStack.h"
 
 @implementation BTGeneration {
-    RAUnitSignal *_enterFrame;
+    RADoubleSignal *_enterFrame;
 }
 
 - (id)init {
     if (!(self = [super init])) return nil;
     _children = [[NSMutableSet alloc] init];
     _namedObjects = [NSMutableDictionary dictionary];
-    _enterFrame = [[RAUnitSignal alloc] init];
+    _enterFrame = [[RADoubleSignal alloc] init];
     return self;
 }
 
@@ -37,7 +37,7 @@
 @implementation BTGeneration (package)
 
 - (void)enterFrame:(SPEnterFrameEvent*)ev {
-    [_enterFrame emit];
+    [_enterFrame emitEvent:ev.passedTime];
 }
 
 - (void)attachObject:(BTObject*)object {

@@ -3,7 +3,7 @@
 
 #import <Foundation/Foundation.h>
 #import "BTObject.h"
-#import "RAUnitSignal.h"
+#import "RADoubleSignal.h"
 
 @class BTModeStack;
 
@@ -14,5 +14,5 @@
     NSMutableDictionary *_namedObjects;
 }
 
-@property(nonatomic,readonly) RAUnitSignal *enterFrame;
+@property(nonatomic,readonly) RADoubleSignal *enterFrame;
 @end

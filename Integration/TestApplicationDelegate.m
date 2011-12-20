@@ -3,6 +3,7 @@
 
 #import "TestApplicationDelegate.h"
 #import "SubObjectMode.h"
+#import "MoveMode.h"
 #import "Square.h"
 #import "SelfRemoveMode.h"
 
@@ -12,6 +13,7 @@
 
 - (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
     if (![super application:application didFinishLaunchingWithOptions:launchOptions]) return NO;
+    [self.defaultStack pushMode:[[MoveMode alloc] init]];
     [self.defaultStack pushMode:[[SelfRemoveMode alloc] init]];
      _adder = [[SubObjectMode alloc] init];
     [self.defaultStack pushMode:_adder];

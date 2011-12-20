@@ -1,10 +1,9 @@
 //
-//  Betwixt - Copyright 2011 Three Rings Design
+// Betwixt - Copyright 2011 Three Rings Design
 
-#import "BTMode.h"
+#import "BTSprite.h"
 
-@implementation BTMode
-
+@implementation BTSprite
 - (id)init {
     if (!(self = [super init])) return nil;
     _sprite = [[SPSprite alloc] init];

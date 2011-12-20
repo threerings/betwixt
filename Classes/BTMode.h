@@ -4,8 +4,9 @@
 #import <Foundation/Foundation.h>
 #import "SPSprite.h"
 #import "BTGeneration.h"
+#import "BTDisplayable.h"
 
-@interface BTMode : BTGeneration {
+@interface BTMode : BTGeneration<BTDisplayable> {
 @private
     SPSprite *_sprite;
 }
