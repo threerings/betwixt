@@ -3,6 +3,7 @@
 
 #import "MoveMode.h"
 
+#import "BTRotationTask.h"
 #import "BTSprite.h"
 #import "BTLocationTask.h"
 
@@ -16,6 +17,7 @@
     [self addObject:sprite];
     [sprite.sprite addChild:[SPQuad quadWithWidth:100 height:100 color:0x00ff00]];
     [sprite addObject:[[BTLocationTask alloc] initOverTime:5.0 toX:200 toY:200 withInterpolator:BTEaseInOutInterpolator]];
+    [sprite addObject:[[BTRotationTask alloc] initOverTime:5.0 toRotation:2 withInterpolator:BTEaseInInterpolator]];
     [self.sprite addChild:sprite.sprite];
     return self;
 }

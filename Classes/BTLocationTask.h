@@ -3,10 +3,9 @@
 
 #import <Foundation/Foundation.h>
 
-#import "BTInterpolator.h"
-#import "BTObject.h"
+#import "BTInterpolationTask.h"
 
-@interface BTLocationTask : BTObject
+@interface BTLocationTask : BTInterpolationTask
 - (id)initOverTime:(double)seconds toX:(float)x toY:(float)y;
 - (id)initOverTime:(double)seconds toX:(float)x toY:(float)y withInterpolator:(BTInterpolator)interp;
 - (id)initOverTime:(double)seconds toX:(float)x toY:(float)y onDisplay:(SPDisplayObject*)display;
