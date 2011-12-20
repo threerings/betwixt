@@ -22,7 +22,6 @@
 		CB7ABCAF147C52D400EC6AEC /* SPEventDispatcher+BlockListener.m in Sources */ = {isa = PBXBuildFile; fileRef = CB7ABCAD147C52D400EC6AEC /* SPEventDispatcher+BlockListener.m */; };
 		CB7ABCB2147C5EFB00EC6AEC /* BTGeneration+Package.h in Headers */ = {isa = PBXBuildFile; fileRef = CB7ABCB0147C5EFB00EC6AEC /* BTGeneration+Package.h */; };
 		CB7ABCB5147C747C00EC6AEC /* BTModeStack+Package.h in Headers */ = {isa = PBXBuildFile; fileRef = CB7ABCB4147C747C00EC6AEC /* BTModeStack+Package.h */; };
-		CB846EF9149AE3B300B29795 /* libreact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB846EF6149AE18A00B29795 /* libreact.a */; };
 		CBAD57881475A28800F7D78E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
 		CBAD57891475A28800F7D78E /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE4A3D7910FFB08200FDA492 /* OpenGLES.framework */; };
 		CBAD578A1475A28800F7D78E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
@@ -58,20 +57,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		CB846EF5149AE18A00B29795 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CB846EED149AE18900B29795 /* react.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = CBFF4A6C149AA9470003AC2B;
-			remoteInfo = react;
-		};
-		CB846EF7149AE18A00B29795 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CB846EED149AE18900B29795 /* react.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = CBFF4A7C149AA9470003AC2B;
-			remoteInfo = reactTests;
-		};
 		DE4A3DAF10FFB0DB00FDA492 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DE4A3DA210FFB0D400FDA492 /* Sparrow.xcodeproj */;
@@ -104,7 +89,7 @@
 		CB7ABCAD147C52D400EC6AEC /* SPEventDispatcher+BlockListener.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SPEventDispatcher+BlockListener.m"; sourceTree = "<group>"; };
 		CB7ABCB0147C5EFB00EC6AEC /* BTGeneration+Package.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BTGeneration+Package.h"; sourceTree = "<group>"; };
 		CB7ABCB4147C747C00EC6AEC /* BTModeStack+Package.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BTModeStack+Package.h"; sourceTree = "<group>"; };
-		CB846EED149AE18900B29795 /* react.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = react.xcodeproj; path = ../react/react.xcodeproj; sourceTree = "<group>"; };
+		CB846EED149AE18900B29795 /* react.xcodeproj */ = {isa = PBXFileReference; name = react.xcodeproj; path = ../../../react.xcodeproj; sourceTree = REACT_SRC; };
 		CBAD57941475A3A000F7D78E /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Integration/main.m; sourceTree = "<group>"; };
 		CBAD57971475A4EE00F7D78E /* TestApplicationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestApplicationDelegate.h; path = Integration/TestApplicationDelegate.h; sourceTree = "<group>"; };
 		CBAD57981475A4EE00F7D78E /* TestApplicationDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TestApplicationDelegate.m; path = Integration/TestApplicationDelegate.m; sourceTree = "<group>"; };
@@ -156,7 +141,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB846EF9149AE3B300B29795 /* libreact.a in Frameworks */,
 				CBAD578D1475A28C00F7D78E /* libSparrow.a in Frameworks */,
 				CB602C711476603800E52CE2 /* libz.dylib in Frameworks */,
 				CB602C721476603800E52CE2 /* AVFoundation.framework in Frameworks */,
@@ -261,15 +245,6 @@
 				CB24CBBD149FF774004BAA57 /* BTDestroyParentTask.m */,
 			);
 			name = Tasks;
-			sourceTree = "<group>";
-		};
-		CB846EEE149AE18900B29795 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				CB846EF6149AE18A00B29795 /* libreact.a */,
-				CB846EF8149AE18A00B29795 /* reactTests.octest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		CBAD57921475A33900F7D78E /* Integration */ = {
@@ -382,10 +357,6 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = CB846EEE149AE18900B29795 /* Products */;
-					ProjectRef = CB846EED149AE18900B29795 /* react.xcodeproj */;
-				},
-				{
 					ProductGroup = DE4A3DAB10FFB0DB00FDA492 /* Products */;
 					ProjectRef = DE4A3DA210FFB0D400FDA492 /* Sparrow.xcodeproj */;
 				},
@@ -399,20 +370,6 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		CB846EF6149AE18A00B29795 /* libreact.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libreact.a;
-			remoteRef = CB846EF5149AE18A00B29795 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CB846EF8149AE18A00B29795 /* reactTests.octest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = reactTests.octest;
-			remoteRef = CB846EF7149AE18A00B29795 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		DE4A3DB010FFB0DB00FDA492 /* libSparrow.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
