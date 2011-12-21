@@ -7,7 +7,6 @@
 @implementation BTObject
 
 - (void)removeInternal {
-
     NSMutableSet *kids = _children;
     _children = nil;
     for (BTObject *child in kids) {

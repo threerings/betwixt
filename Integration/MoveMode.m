@@ -3,6 +3,7 @@
 
 #import "MoveMode.h"
 
+#import "BTTaskSequence.h"
 #import "BTAlphaTask.h"
 #import "BTRotationTask.h"
 #import "BTSprite.h"
@@ -18,8 +19,9 @@
     BTSprite *sprite = [[BTSprite alloc] init];
     [self addNode:sprite];
     [sprite.sprite addChild:[SPQuad quadWithWidth:100 height:100 color:0x00ff00]];
-    [sprite addNode:[[BTLocationTask alloc] initOverTime:5.0 toX:200 toY:200 withInterpolator:BTEaseInOutInterpolator]];
-    [sprite addNode:[[BTRotationTask alloc] initOverTime:5.0 toRotation:2 withInterpolator:BTEaseInInterpolator]];
+    [sprite addNode:[BTTaskSequence seqWithNodes:
+        [[BTLocationTask alloc] initOverTime:5.0 toX:200 toY:200],
+        [[BTRotationTask alloc] initOverTime:5.0 toRotation:2], nil]];
     [self.sprite addChild:sprite.sprite];
     return self;
 }
