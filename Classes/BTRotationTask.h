@@ -13,5 +13,4 @@
 
 - (id)initOverTime:(double)seconds toRotation:(float)rads
   withInterpolator:(BTInterpolator)interp onDisplay:(SPDisplayObject*)display;
-
 @end

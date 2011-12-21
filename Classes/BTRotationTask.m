@@ -32,5 +32,4 @@
 -(void) updateInterpolatedTo:(float)interpolated {
     _target.rotation = _startRotation + _deltaRotation * interpolated;
 }
-
 @end
