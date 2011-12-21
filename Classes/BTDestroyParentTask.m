@@ -2,8 +2,7 @@
 // Betwixt - Copyright 2011 Three Rings Design
 
 #import "BTDestroyParentTask.h"
-
-#import "BTGeneration.h"
+#import "BTContext.h"
 
 @implementation BTDestroyParentTask
 - (id)init {

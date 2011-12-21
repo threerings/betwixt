@@ -2,7 +2,7 @@
 // Betwixt - Copyright 2011 Three Rings Design
 
 #import "BTInterpolationTask.h"
-#import "BTGeneration.h"
+#import "BTMode.h"
 #import "BTDisplayable.h"
 
 @implementation BTInterpolationTask {

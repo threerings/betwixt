@@ -3,7 +3,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class BTGeneration;
+@class BTMode;
 @class BTContext;
 
 @interface BTNode : NSObject {
@@ -18,7 +18,7 @@
 
 @property(nonatomic,readonly) RAUnitSignal *attached;
 @property(nonatomic,readonly) RAUnitSignal *detached;
-@property(nonatomic,readonly) BTGeneration *root;
+@property(nonatomic,readonly) BTMode *root;
 @property(nonatomic,readonly) RAConnectionGroup *conns;
 @property(nonatomic,readonly) BTContext *parent;
 

@@ -6,8 +6,8 @@
 #import "BTObject.h"
 
 #import "BTNode+Package.h"
-#import "BTGeneration.h"
-#import "BTGeneration+Package.h"
+#import "BTMode.h"
+#import "BTMode+Package.h"
 
 @implementation BTContext {
     NSMutableDictionary *_tokenToDispatcher;

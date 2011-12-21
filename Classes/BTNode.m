@@ -3,7 +3,7 @@
 
 #import "BTNode.h"
 #import "BTNode+Package.h"
-#import "BTGeneration.h"
+#import "BTMode.h"
 
 @implementation BTNode
 
@@ -18,8 +18,8 @@
     [_parent removeNode:self];
 }
 
-- (BTGeneration*) root {
-    if ([_parent isKindOfClass:[BTGeneration class]]) return (BTGeneration*)_parent;
+- (BTMode*) root {
+    if ([_parent isKindOfClass:[BTMode class]]) return (BTMode*)_parent;
     return _parent.root;
 }
 

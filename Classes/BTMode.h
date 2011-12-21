@@ -3,14 +3,20 @@
 
 #import <Foundation/Foundation.h>
 #import "SPSprite.h"
-#import "BTGeneration.h"
 #import "BTDisplayable.h"
+#import "BTContext.h"
 
-@interface BTMode : BTGeneration<BTDisplayable> {
+@class BTModeStack;
+
+@interface BTMode : BTContext<BTDisplayable> {
+@package
+    BTModeStack *_stack;
 @private
     SPSprite *_sprite;
+    NSMutableDictionary *_namedObjects;
 }
 
-@property(readonly,nonatomic) SPSprite *sprite;
+@property(nonatomic,readonly) RADoubleSignal *enterFrame;
+@property(nonatomic,readonly) SPSprite *sprite;
 
 @end

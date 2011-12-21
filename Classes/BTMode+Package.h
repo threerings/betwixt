@@ -3,7 +3,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface BTGeneration (package)
+@interface BTMode (package)
 
 -(void)enterFrame:(SPEnterFrameEvent*)ev;
 -(void)attachNode:(BTNode*)object;

@@ -3,7 +3,7 @@
 
 #import "BTModeStack.h"
 
-#import "BTGeneration+Package.h"
+#import "BTMode+Package.h"
 
 @implementation BTModeStack
 

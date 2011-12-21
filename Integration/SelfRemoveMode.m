@@ -5,6 +5,7 @@
 
 #import "BTDestroyParentTask.h"
 #import "BTModeStack.h"
+#import "BTObject.h"
 #import "RAConnection.h"
 
 @interface SelfRemoveObject : BTObject
