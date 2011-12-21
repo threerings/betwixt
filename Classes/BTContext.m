@@ -46,7 +46,7 @@
 }
 
 - (void)removeNode:(BTNode*)object {
-    NSAssert([_children member:object], @"Asked to remove unknown child");
+    if (![_children member:object]) return;
     [_children removeObject:object];
     [object removeInternal];
 }

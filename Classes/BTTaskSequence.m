@@ -20,7 +20,7 @@
     [self.attached connectUnit:^{ [self.parent addNode:[nodes objectAtIndex:0]]; }];
     for (BTNode *node in _nodes) {
         [node.detached connectUnit:^{
-            if (++_position == [_nodes count]) {
+            if (++_position >= [_nodes count]) {
                 [self detach];
             } else {
                 [self.parent addNode:[_nodes objectAtIndex:_position]];
