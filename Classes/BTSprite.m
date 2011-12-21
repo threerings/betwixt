@@ -7,6 +7,7 @@
 - (id)init {
     if (!(self = [super init])) return nil;
     _sprite = [[SPSprite alloc] init];
+    [self.detached connectUnit:^ { [_sprite removeFromParent]; }];
     return self;
 }
 
