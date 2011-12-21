@@ -27,7 +27,7 @@
         [BTBlockTask withBlock:^(BTBlockTask *task) {
             NSAssert(sprite.sprite.x == 200, nil);
             NSAssert(sprite.sprite.rotation == 2, nil);
-            [self detach];
+            [task detach];
         }],
         [[BTDestroyParentTask alloc] init],
         nil]];
