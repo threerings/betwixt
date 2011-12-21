@@ -11,6 +11,12 @@
 - (id)initWithNodes:(NSArray*)nodes {
     if (!(self = [super init])) return nil;
     _nodes = nodes;
+    [self.detached connectUnit:^{
+        if (_position == [_nodes count]) return;
+        BTNode *toDetach = [_nodes objectAtIndex:_position];
+        _position = [_nodes count];
+        [toDetach detach];
+    }];
     [self.attached connectUnit:^{ [self.parent addNode:[nodes objectAtIndex:0]]; }];
     for (BTNode *node in _nodes) {
         [node.detached connectUnit:^{
