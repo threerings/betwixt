@@ -3,9 +3,10 @@
 
 #import <Foundation/Foundation.h>
 #import "BTDisplayable.h"
+#import "BTDisplayContext.h"
 #import "BTObject.h"
 
-@interface BTSprite : BTObject <BTDisplayable> {
+@interface BTSprite : BTObject <BTDisplayable,BTDisplayContext> {
 @protected
     SPSprite *_sprite;
 }

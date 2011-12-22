@@ -15,6 +15,11 @@
     return _sprite;
 }
 
+- (void)displayNode:(BTNode<BTDisplayable>*)node {
+    [self addNode:node];
+    [_sprite addChild:node.display];
+}
+
 @synthesize sprite=_sprite;
 
 @end

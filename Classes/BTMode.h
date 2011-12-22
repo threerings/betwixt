@@ -4,11 +4,12 @@
 #import <Foundation/Foundation.h>
 #import "SPSprite.h"
 #import "BTDisplayable.h"
+#import "BTDisplayContext.h"
 #import "BTContext.h"
 
 @class BTModeStack;
 
-@interface BTMode : BTContext<BTDisplayable> {
+@interface BTMode : BTContext<BTDisplayable,BTDisplayContext> {
 @package
     BTModeStack *_stack;
 @private

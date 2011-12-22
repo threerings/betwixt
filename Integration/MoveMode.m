@@ -19,7 +19,7 @@
     [self addNode:[[BTLocationTask alloc] initOverTime:0.5 toX:100 toY:100 onDisplay:directquad]];
     [self addNode:[[BTAlphaTask alloc] initOverTime:0.5 toAlpha:0 onDisplay:directquad]];
     BTSprite *sprite = [[BTSprite alloc] init];
-    [self addNode:sprite];
+    [self displayNode:sprite];
     [sprite.sprite addChild:[SPQuad quadWithWidth:100 height:100 color:0x00ff00]];
     [sprite addNode:[BTTaskSequence seqWithNodes:
         [[BTLocationTask alloc] initOverTime:0.5 toX:200 toY:200],
@@ -31,7 +31,6 @@
         }],
         [[BTDestroyParentTask alloc] init],
         nil]];
-    [self.sprite addChild:sprite.sprite];
     return self;
 }
 

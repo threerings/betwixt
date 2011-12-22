@@ -10,7 +10,6 @@
     RADoubleSignal *_enterFrame;
 }
 
-
 - (id)init {
     if (!(self = [super init])) return nil;
     _sprite = [[SPSprite alloc] init];
@@ -26,6 +25,11 @@
 
 - (BTMode*) root {
     return self;
+}
+
+- (void)displayNode:(BTNode<BTDisplayable>*)node {
+    [self addNode:node];
+    [_sprite addChild:node.display];
 }
 
 - (void) detach {
