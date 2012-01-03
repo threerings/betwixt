@@ -3,6 +3,7 @@
 
 #import "TestApplicationDelegate.h"
 #import "SubObjectMode.h"
+#import "NamedNodeMode.h"
 #import "MoveMode.h"
 #import "Square.h"
 #import "SelfRemoveMode.h"
@@ -15,9 +16,10 @@
 
 - (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
     if (![super application:application didFinishLaunchingWithOptions:launchOptions]) return NO;
+    [self.defaultStack pushMode:[[NamedNodeMode alloc] init]];
     [self.defaultStack pushMode:[[MoveMode alloc] init]];
     [self.defaultStack pushMode:[[SelfRemoveMode alloc] init]];
-     _adder = [[SubObjectMode alloc] init];
+    _adder = [[SubObjectMode alloc] init];
     [self.defaultStack pushMode:_adder];
     [SPStage.mainStage addEventListener:@selector(checkForSquareAdded:) atObject:self forType:SP_EVENT_TYPE_ENTER_FRAME];
     return YES;

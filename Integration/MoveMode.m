@@ -10,6 +10,7 @@
 #import "BTRotationTask.h"
 #import "BTSprite.h"
 #import "BTLocationTask.h"
+#import "BTModeStack.h"
 
 @implementation MoveMode
 - (id)init {
@@ -24,12 +25,11 @@
     [sprite addNode:[BTTaskSequence seqWithNodes:
         [[BTLocationTask alloc] initOverTime:0.5 toX:200 toY:200],
         [[BTRotationTask alloc] initOverTime:0.5 toRotation:2],
-        [BTBlockTask withBlock:^(BTBlockTask *task) {
+        [BTBlockTask onAttach:^(BTBlockTask *task) {
             NSAssert(sprite.sprite.x == 200, nil);
             NSAssert(sprite.sprite.rotation == 2, nil);
-            [task detach];
         }],
-        [[BTDestroyParentTask alloc] init],
+        [BTBlockTask onAttach:^(BTBlockTask *task) { [_stack popMode]; }],
         nil]];
     return self;
 }

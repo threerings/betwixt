@@ -6,15 +6,20 @@
 
 @implementation BTBlockTask
 
-- (id)initWithBlock:(BTTaskBlock)block {
-    if (!(self = [super init])) return nil;
-    [self.attached connectUnit:^{
-        [self.conns addConnection:[self.root.enterFrame connectUnit:^{ block(self); }]];
++ (BTBlockTask*)onAttach:(BTTaskBlock)block {
+    BTBlockTask* task = [[BTBlockTask alloc] init];
+    [task.attached connectUnit:^{
+        block(task);
+        [task detach];
     }];
-    return self;
+    return task;
 }
 
-+ (BTBlockTask*)withBlock:(BTTaskBlock)block {
-    return [[BTBlockTask alloc] initWithBlock:block];
++ (BTBlockTask*)onEnterFrame:(BTTaskBlock)block {
+    BTBlockTask* task = [[BTBlockTask alloc] init];
+    [task.attached connectUnit:^{
+        [task.conns addConnection:[task.root.enterFrame connectUnit:^{ block(task); }]];
+    }];
+    return task;
 }
 @end
