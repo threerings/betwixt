@@ -15,6 +15,7 @@
 }
 
 - (void)pushMode:(BTMode*)mode {
+    if ([_stack count]) [_sprite removeChild:((BTMode*)[_stack lastObject]).sprite];
     [_stack addObject:mode];
     mode->_stack = self;
     [_sprite addChild:mode.sprite];
