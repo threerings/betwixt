@@ -9,7 +9,9 @@
 
 #import "SPEventDispatcher+BlockListener.h"
 
-@implementation TestApplicationDelegate
+@implementation TestApplicationDelegate {
+    SubObjectMode *_adder;
+}
 
 - (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
     if (![super application:application didFinishLaunchingWithOptions:launchOptions]) return NO;

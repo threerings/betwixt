@@ -5,9 +5,5 @@
 
 @class SubObjectMode;
 
-@interface TestApplicationDelegate : BTApplicationDelegate {
-@private
-    SubObjectMode *_adder;
-}
-
+@interface TestApplicationDelegate : BTApplicationDelegate
 @end
