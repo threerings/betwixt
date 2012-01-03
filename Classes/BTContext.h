@@ -13,6 +13,8 @@
 - (void)cancelListeningForToken:(OOOBlockToken*)token;
 
 - (void)addNode:(BTNode*)node;
+- (void)addNode:(BTNode*)node withName:(NSString*)name;
+- (void)replaceNode:(BTNode*)node withName:(NSString*)name;
 - (BTNode*)nodeForName:(NSString*)name;
 - (void)removeNode:(BTNode*)node;
 

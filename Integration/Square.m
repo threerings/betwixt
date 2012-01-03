@@ -24,7 +24,7 @@
     return self;
 }
 
-- (NSArray*)names {
+- (NSArray*)keys {
     return [NSArray arrayWithObject:_name];
 }
 

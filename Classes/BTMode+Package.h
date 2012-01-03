@@ -3,9 +3,11 @@
 
 #import <Foundation/Foundation.h>
 
+#import "BTKeyed.h"
+
 @interface BTMode (package)
 
 -(void)enterFrame:(SPEnterFrameEvent*)ev;
--(void)attachNode:(BTNode*)object;
+-(void)addKeys:(BTNode<BTKeyed>*)object;
 
 @end

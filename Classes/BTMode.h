@@ -12,10 +12,9 @@
 @interface BTMode : BTContext<BTDisplayable,BTDisplayContext> {
 @package
     BTModeStack *_stack;
-@private
-    SPSprite *_sprite;
-    NSMutableDictionary *_namedObjects;
 }
+
+- (BTNode*)nodeForKey:(NSString*)key;
 
 @property(nonatomic,readonly) RADoubleSignal *enterFrame;
 @property(nonatomic,readonly) SPSprite *sprite;

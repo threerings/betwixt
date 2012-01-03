@@ -4,11 +4,11 @@
 #import <Foundation/Foundation.h>
 #import "BTDisplayable.h"
 #import "BTObject.h"
-#import "BTNamed.h"
+#import "BTKeyed.h"
 
 #define SQUARE_FRAME_PRIORITY RA_DEFAULT_PRIORITY
 
-@interface Square : BTObject <BTNamed,BTDisplayable> {
+@interface Square : BTObject <BTKeyed,BTDisplayable> {
 @private
     SPQuad *_quad;
     NSString *_name;

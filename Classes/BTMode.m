@@ -3,24 +3,25 @@
 
 #import "BTMode.h"
 #import "BTModeStack.h"
-#import "BTNamed.h"
+#import "BTKeyed.h"
 #import "BTMode+Package.h"
 
 @implementation BTMode {
     RADoubleSignal *_enterFrame;
+    SPSprite *_sprite;
+    NSMutableDictionary *_keyedObjects;
 }
 
 - (id)init {
     if (!(self = [super init])) return nil;
     _sprite = [[SPSprite alloc] init];
-    _children = [[NSMutableSet alloc] init];
-    _namedObjects = [NSMutableDictionary dictionary];
     _enterFrame = [[RADoubleSignal alloc] init];
+    _keyedObjects = [[NSMutableDictionary alloc] init];
     return self;
 }
 
-- (BTNode*)nodeForName:(NSString*)name {
-    return [_namedObjects objectForKey:name];
+- (BTNode*)nodeForKey:(NSString*) key {
+    return [_keyedObjects objectForKey:key];
 }
 
 - (BTMode*) root {
@@ -50,14 +51,11 @@
     [_enterFrame emitEvent:ev.passedTime];
 }
 
-- (void)attachNode:(BTNode*)object {
-    if ([object conformsToProtocol:@protocol(BTNamed)]) {
-        for (NSString *name in ((id<BTNamed>)object).names) {
-            NSAssert1(![_namedObjects objectForKey:name], @"Object name '%@' already used", name);
-            [_namedObjects setObject:object forKey:name];
-        }
+- (void)addKeys:(BTNode<BTKeyed>*)node {
+    for (NSString *key in ((id<BTKeyed>)node).keys) {
+        NSAssert1(![_keyedObjects objectForKey:key], @"Object key '%@' already used", key);
+        [_keyedObjects setObject:node forKey:key];
     }
-    [object.attached emit];
 }
 
 @end
