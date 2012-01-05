@@ -3,7 +3,7 @@
 
 #import "SelfRemoveMode.h"
 
-#import "BTDestroyParentTask.h"
+#import "BTDetachTask.h"
 #import "BTModeStack.h"
 #import "BTObject.h"
 #import "RAConnection.h"
@@ -31,7 +31,7 @@
     BTObject *holder = [[BTObject alloc] init];
     [holder.detached connectUnit:^{ detached = YES; }];
     [self addNode:holder];
-    [holder addNode:[[BTDestroyParentTask alloc] init]];
+    [holder addNode:[BTDetachTask detachParent]];
     [[self.enterFrame connectUnit:^ {
         NSAssert(detached, @"Parent removed");
         [self detach];

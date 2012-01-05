@@ -4,5 +4,7 @@
 #import <Foundation/Foundation.h>
 #import "BTNode.h"
 
-@interface BTDestroyParentTask : BTNode
+@interface BTDetachTask : BTNode
++(BTDetachTask*)detachParent;
++(BTDetachTask*)detachNode:(BTNode*)node;
 @end
