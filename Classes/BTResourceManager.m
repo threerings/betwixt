@@ -27,7 +27,9 @@
 }
 
 - (BTResource *)getResource:(NSString *)name {
-    return [_resources objectForKey:name];
+    @synchronized (_resources) {
+        return [_resources objectForKey:name];
+    }
 }
 
 - (BTResource *)requireResource:(NSString *)name {
@@ -41,15 +43,19 @@
 }
 
 - (void)unloadGroup:(NSString *)group {
-    for (BTResource *rsrc in [_resources allValues]) {
-        if ([rsrc.group isEqualToString:group]) {
-            [_resources removeObjectForKey:rsrc.name];
+    @synchronized(_resources) {
+        for (BTResource *rsrc in [_resources allValues]) {
+            if ([rsrc.group isEqualToString:group]) {
+                [_resources removeObjectForKey:rsrc.name];
+            }
         }
     }
 }
 
 - (void)unloadAll {
-    [_resources removeAllObjects];
+    @synchronized(_resources) {
+        [_resources removeAllObjects];
+    }
 }
 
 - (void)registerFactory:(id<BTResourceFactory>)factory forType:(NSString *)type {
@@ -63,9 +69,11 @@
 - (void)add:(BTResource *)rsrc {
     NSAssert(rsrc.group != nil, @"Resource doesn't belong to a group: %@", rsrc);
     NSAssert(rsrc.state == LS_LOADED, @"Resource isn't loaded: %@", rsrc);
-    NSAssert([self getResource:rsrc.name] == nil, 
-             @"A Resource with that name already exists [name=%@]", [rsrc name]);
-    [_resources setObject:rsrc forKey:rsrc.name];
+    @synchronized (_resources) {
+        NSAssert([self getResource:rsrc.name] == nil, 
+                 @"A Resource with that name already exists [name=%@]", [rsrc name]);
+        [_resources setObject:rsrc forKey:rsrc.name];
+    }
 }
 
 @end
