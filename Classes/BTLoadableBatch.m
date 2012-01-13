@@ -1,14 +1,14 @@
 //
 //  gulp - Copyright 2011 Three Rings Design
 
-#import "GULoadableBatch.h"
+#import "BTLoadableBatch.h"
 
-@interface GULoadableBatch ()
-- (void)load1Loadable:(GULoadable *)loadable;
-- (void)loadableLoaded:(GULoadable *)loadable withError:(NSException *)err;
+@interface BTLoadableBatch ()
+- (void)load1Loadable:(BTLoadable *)loadable;
+- (void)loadableLoaded:(BTLoadable *)loadable withError:(NSException *)err;
 @end;
 
-@implementation GULoadableBatch
+@implementation BTLoadableBatch
 
 - (id)init
 {
@@ -22,7 +22,7 @@
     return self;
 }
 
-- (void)add:(GULoadable *)loadable
+- (void)add:(BTLoadable *)loadable
 {
     NSAssert(self.state == LS_NOT_LOADED, @"Can't add GULoadables now [state=%d]", self.state);
     [_allLoadables addObject:loadable];
@@ -37,7 +37,7 @@
             return;
         }
         
-        for (GULoadable *loadable in _allLoadables) {
+        for (BTLoadable *loadable in _allLoadables) {
             [self load1Loadable:loadable];
             // don't continue if the load operation has been canceled/errored,
             // or if we're loading in sequence
@@ -48,14 +48,14 @@
     }
 }
 
-- (void)load1Loadable:(GULoadable *)loadable
+- (void)load1Loadable:(BTLoadable *)loadable
 {
-    __weak GULoadableBatch* this = self;
+    __weak BTLoadableBatch* this = self;
     [loadable load: ^{ [this loadableLoaded:loadable withError:nil]; }
            onError:^(NSException* err) { [this loadableLoaded:loadable withError:err]; }];
 }
 
-- (void)loadableLoaded:(GULoadable *)loadable withError:(NSException *)err
+- (void)loadableLoaded:(BTLoadable *)loadable withError:(NSException *)err
 {
     // We may have already errored out, in which case, ignore
     @synchronized(self) {

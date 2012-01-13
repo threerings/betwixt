@@ -1,11 +1,11 @@
 //
-//  gulp - Copyright 2012 Three Rings Design
+//  Betwixt - Copyright 2011 Three Rings Design
 
-#import "GULoadable.h"
+#import "BTLoadable.h"
 
 @class GDataXMLElement;
 
-@interface GUResource : GULoadable {
+@interface BTResource : BTLoadable {
 @protected
     NSString *_name;
     NSString *_group;

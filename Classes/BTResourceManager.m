@@ -1,17 +1,17 @@
 //
-// gulp - Copyright 2011 Three Rings Design
+//  Betwixt - Copyright 2011 Three Rings Design
 
-#import "GUResourceManager.h"
-#import "GUResourceFactory.h"
-#import "GUResource.h"
+#import "BTResourceManager.h"
+#import "BTResourceFactory.h"
+#import "BTResource.h"
 
-@implementation GUResourceManager
+@implementation BTResourceManager
 
-+ (GUResourceManager *)sharedManager {
-    static GUResourceManager *instance = nil;
++ (BTResourceManager *)sharedManager {
+    static BTResourceManager *instance = nil;
     @synchronized(self) {
         if (instance == nil) {
-            instance = [[GUResourceManager alloc] init];
+            instance = [[BTResourceManager alloc] init];
         }
     }
     return instance;
@@ -26,12 +26,12 @@
     return self;
 }
 
-- (GUResource *)getResource:(NSString *)name {
+- (BTResource *)getResource:(NSString *)name {
     return [_resources objectForKey:name];
 }
 
-- (GUResource *)requireResource:(NSString *)name {
-    GUResource *rsrc = [self getResource:name];
+- (BTResource *)requireResource:(NSString *)name {
+    BTResource *rsrc = [self getResource:name];
     NSAssert(rsrc != nil, @"No such resource: %@", name);
     return rsrc;
 }
@@ -41,7 +41,7 @@
 }
 
 - (void)unloadGroup:(NSString *)group {
-    for (GUResource *rsrc in [_resources allValues]) {
+    for (BTResource *rsrc in [_resources allValues]) {
         if ([rsrc.group isEqualToString:group]) {
             [_resources removeObjectForKey:rsrc.name];
         }
@@ -52,15 +52,15 @@
     [_resources removeAllObjects];
 }
 
-- (void)registerType:(NSString *)type toFactory:(id<GUResourceFactory>)factory {
+- (void)registerType:(NSString *)type toFactory:(id<BTResourceFactory>)factory {
     [_factories setObject:factory forKey:type];
 }
 
-- (id<GUResourceFactory>)getFactory:(NSString *)type {
+- (id<BTResourceFactory>)getFactory:(NSString *)type {
     return [_factories objectForKey:type];
 }
 
-- (void)add:(GUResource *)rsrc {
+- (void)add:(BTResource *)rsrc {
     NSAssert(rsrc.group != nil, @"Resource doesn't belong to a group: %@", rsrc);
     NSAssert(rsrc.state == LS_LOADED, @"Resource isn't loaded: %@", rsrc);
     NSAssert([self getResource:rsrc.name] == nil, 

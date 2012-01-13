@@ -1,16 +1,16 @@
 //
-//  gulp - Copyright 2012 Three Rings Design
+//  Betwixt - Copyright 2011 Three Rings Design
 
-#import "GUResourceGroup.h"
-#import "GUResourceManager.h"
-#import "GULoadableBatch.h"
-#import "GUResourceFactory.h"
-#import "GUResource.h"
+#import "BTResourceGroup.h"
+#import "BTResourceManager.h"
+#import "BTLoadableBatch.h"
+#import "BTResourceFactory.h"
+#import "BTResource.h"
 #import "GDataXMLException.h"
 
 #import "GDataXMLNode+OOO.h"
 
-@implementation GUResourceGroup
+@implementation BTResourceGroup
 
 @synthesize name=_name;
 
@@ -66,11 +66,11 @@
         for (GDataXMLElement *child in [root elements]) {
             NSString *type = [child name];
             // find the resource factory for this type
-            id<GUResourceFactory> factory = [[GUResourceManager sharedManager] getFactory:type];
+            id<BTResourceFactory> factory = [[BTResourceManager sharedManager] getFactory:type];
             NSAssert(factory != nil, @"No ResourceFactory for '%@'", type);
             // create the resource
             NSString* name = [child stringAttribute:@"name"];
-            GUResource *rsrc = [factory create:name group:_name xml:child];
+            BTResource *rsrc = [factory create:name group:_name xml:child];
             // add it to the batch
             [resources addObject:rsrc];
         }
@@ -80,17 +80,17 @@
     }
     
     // Load the resources
-    GULoadableBatch *batch = [[GULoadableBatch alloc] init];
-    for (GUResource *rsrc in resources) {
+    BTLoadableBatch *batch = [[BTLoadableBatch alloc] init];
+    for (BTResource *rsrc in resources) {
         [batch add:rsrc];
     }
     
-    __weak GUResourceGroup *this = self;
+    __weak BTResourceGroup *this = self;
     [batch load:^{
         @try {
             // Add all the resources to the resource manager
-            for (GUResource *rsrc in resources) {
-                [[GUResourceManager sharedManager] add:rsrc];
+            for (BTResource *rsrc in resources) {
+                [[BTResourceManager sharedManager] add:rsrc];
                 
             }
         } @catch (NSException *err) {

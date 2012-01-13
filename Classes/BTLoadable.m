@@ -1,18 +1,18 @@
 //
-// gulp - Copyright 2011 Three Rings Design
+// Betwixt - Copyright 2011 Three Rings Design
 
-#import "GULoadable.h"
-#import "GULoadable+Protected.h"
+#import "BTLoadable.h"
+#import "BTLoadable+Protected.h"
 
 @interface Callback : NSObject
 @end
 
 @implementation Callback {
-    GUCompleteCallback _onComplete;
-    GUErrorCallback _onError;
+    BTCompleteCallback _onComplete;
+    BTErrorCallback _onError;
 }
 
-- (id)init:(GUCompleteCallback)onComplete onError:(GUErrorCallback)onError
+- (id)init:(BTCompleteCallback)onComplete onError:(BTErrorCallback)onError
 {
     if (!(self = [super init])) {
         return nil;
@@ -36,7 +36,7 @@
 
 @end
 
-@implementation GULoadable
+@implementation BTLoadable
 
 @synthesize state=_state;
 
@@ -51,12 +51,12 @@
     return self;
 }
 
-- (void)load:(GUCompleteCallback)onComplete
+- (void)load:(BTCompleteCallback)onComplete
 {
     [self load:onComplete onError:nil];
 }
 
--(void)load:(GUCompleteCallback)onComplete onError:(GUErrorCallback)onError
+-(void)load:(BTCompleteCallback)onComplete onError:(BTErrorCallback)onError
 {
     @synchronized(self) {
         if (_state == LS_LOADED) {

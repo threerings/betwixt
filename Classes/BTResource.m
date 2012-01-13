@@ -1,9 +1,9 @@
 //
-//  gulp - Copyright 2012 Three Rings Design
+//  Betwixt - Copyright 2011 Three Rings Design
 
-#import "GUResource.h"
+#import "BTResource.h"
 
-@implementation GUResource
+@implementation BTResource
 
 @synthesize name=_name;
 @synthesize group=_group;

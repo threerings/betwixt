@@ -13,18 +13,18 @@
 		22F979E914C0E23F00A6913B /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F979D714C0E23F00A6913B /* GDataXMLNode.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		22F979EA14C0E23F00A6913B /* GDataXMLNode+OOO.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F979D814C0E23F00A6913B /* GDataXMLNode+OOO.h */; };
 		22F979EB14C0E23F00A6913B /* GDataXMLNode+OOO.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F979D914C0E23F00A6913B /* GDataXMLNode+OOO.m */; };
-		22F979EC14C0E23F00A6913B /* GULoadable.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F979DA14C0E23F00A6913B /* GULoadable.h */; };
-		22F979ED14C0E23F00A6913B /* GULoadable.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F979DB14C0E23F00A6913B /* GULoadable.m */; };
-		22F979EE14C0E23F00A6913B /* GULoadable+Protected.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F979DC14C0E23F00A6913B /* GULoadable+Protected.h */; };
-		22F979EF14C0E23F00A6913B /* GULoadableBatch.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F979DD14C0E23F00A6913B /* GULoadableBatch.h */; };
-		22F979F014C0E23F00A6913B /* GULoadableBatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F979DE14C0E23F00A6913B /* GULoadableBatch.m */; };
-		22F979F114C0E23F00A6913B /* GUResource.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F979DF14C0E23F00A6913B /* GUResource.h */; };
-		22F979F214C0E23F00A6913B /* GUResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F979E014C0E23F00A6913B /* GUResource.m */; };
-		22F979F314C0E23F00A6913B /* GUResourceFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F979E114C0E23F00A6913B /* GUResourceFactory.h */; };
-		22F979F414C0E23F00A6913B /* GUResourceGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F979E214C0E23F00A6913B /* GUResourceGroup.h */; };
-		22F979F514C0E23F00A6913B /* GUResourceGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F979E314C0E23F00A6913B /* GUResourceGroup.m */; };
-		22F979F614C0E23F00A6913B /* GUResourceManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F979E414C0E23F00A6913B /* GUResourceManager.h */; };
-		22F979F714C0E23F00A6913B /* GUResourceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F979E514C0E23F00A6913B /* GUResourceManager.m */; };
+		22F979EC14C0E23F00A6913B /* BTLoadable.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F979DA14C0E23F00A6913B /* BTLoadable.h */; };
+		22F979ED14C0E23F00A6913B /* BTLoadable.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F979DB14C0E23F00A6913B /* BTLoadable.m */; };
+		22F979EF14C0E23F00A6913B /* BTLoadableBatch.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F979DD14C0E23F00A6913B /* BTLoadableBatch.h */; };
+		22F979F014C0E23F00A6913B /* BTLoadableBatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F979DE14C0E23F00A6913B /* BTLoadableBatch.m */; };
+		22F979F114C0E23F00A6913B /* BTResource.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F979DF14C0E23F00A6913B /* BTResource.h */; };
+		22F979F214C0E23F00A6913B /* BTResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F979E014C0E23F00A6913B /* BTResource.m */; };
+		22F979F414C0E23F00A6913B /* BTResourceGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F979E214C0E23F00A6913B /* BTResourceGroup.h */; };
+		22F979F514C0E23F00A6913B /* BTResourceGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F979E314C0E23F00A6913B /* BTResourceGroup.m */; };
+		22F979F614C0E23F00A6913B /* BTResourceManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F979E414C0E23F00A6913B /* BTResourceManager.h */; };
+		22F979F714C0E23F00A6913B /* BTResourceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F979E514C0E23F00A6913B /* BTResourceManager.m */; };
+		22F979F914C0E36F00A6913B /* BTResourceFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F979F814C0E36F00A6913B /* BTResourceFactory.h */; };
+		22F979FB14C0E38000A6913B /* BTLoadable+Protected.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F979FA14C0E38000A6913B /* BTLoadable+Protected.h */; };
 		CB24CBCB14A028F6004BAA57 /* BTLocationTask.h in Headers */ = {isa = PBXBuildFile; fileRef = CB24CBC914A028F5004BAA57 /* BTLocationTask.h */; };
 		CB24CBCC14A028F6004BAA57 /* BTLocationTask.m in Sources */ = {isa = PBXBuildFile; fileRef = CB24CBCA14A028F6004BAA57 /* BTLocationTask.m */; };
 		CB24CBCF14A02E10004BAA57 /* MoveMode.m in Sources */ = {isa = PBXBuildFile; fileRef = CB24CBCE14A02E10004BAA57 /* MoveMode.m */; };
@@ -152,18 +152,18 @@
 		22F979D714C0E23F00A6913B /* GDataXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDataXMLNode.m; sourceTree = "<group>"; };
 		22F979D814C0E23F00A6913B /* GDataXMLNode+OOO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GDataXMLNode+OOO.h"; sourceTree = "<group>"; };
 		22F979D914C0E23F00A6913B /* GDataXMLNode+OOO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GDataXMLNode+OOO.m"; sourceTree = "<group>"; };
-		22F979DA14C0E23F00A6913B /* GULoadable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GULoadable.h; sourceTree = "<group>"; };
-		22F979DB14C0E23F00A6913B /* GULoadable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GULoadable.m; sourceTree = "<group>"; };
-		22F979DC14C0E23F00A6913B /* GULoadable+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GULoadable+Protected.h"; sourceTree = "<group>"; };
-		22F979DD14C0E23F00A6913B /* GULoadableBatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GULoadableBatch.h; sourceTree = "<group>"; };
-		22F979DE14C0E23F00A6913B /* GULoadableBatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GULoadableBatch.m; sourceTree = "<group>"; };
-		22F979DF14C0E23F00A6913B /* GUResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUResource.h; sourceTree = "<group>"; };
-		22F979E014C0E23F00A6913B /* GUResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GUResource.m; sourceTree = "<group>"; };
-		22F979E114C0E23F00A6913B /* GUResourceFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUResourceFactory.h; sourceTree = "<group>"; };
-		22F979E214C0E23F00A6913B /* GUResourceGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUResourceGroup.h; sourceTree = "<group>"; };
-		22F979E314C0E23F00A6913B /* GUResourceGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GUResourceGroup.m; sourceTree = "<group>"; };
-		22F979E414C0E23F00A6913B /* GUResourceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUResourceManager.h; sourceTree = "<group>"; };
-		22F979E514C0E23F00A6913B /* GUResourceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GUResourceManager.m; sourceTree = "<group>"; };
+		22F979DA14C0E23F00A6913B /* BTLoadable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTLoadable.h; sourceTree = "<group>"; };
+		22F979DB14C0E23F00A6913B /* BTLoadable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTLoadable.m; sourceTree = "<group>"; };
+		22F979DD14C0E23F00A6913B /* BTLoadableBatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTLoadableBatch.h; sourceTree = "<group>"; };
+		22F979DE14C0E23F00A6913B /* BTLoadableBatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTLoadableBatch.m; sourceTree = "<group>"; };
+		22F979DF14C0E23F00A6913B /* BTResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTResource.h; sourceTree = "<group>"; };
+		22F979E014C0E23F00A6913B /* BTResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTResource.m; sourceTree = "<group>"; };
+		22F979E214C0E23F00A6913B /* BTResourceGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTResourceGroup.h; sourceTree = "<group>"; };
+		22F979E314C0E23F00A6913B /* BTResourceGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTResourceGroup.m; sourceTree = "<group>"; };
+		22F979E414C0E23F00A6913B /* BTResourceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTResourceManager.h; sourceTree = "<group>"; };
+		22F979E514C0E23F00A6913B /* BTResourceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTResourceManager.m; sourceTree = "<group>"; };
+		22F979F814C0E36F00A6913B /* BTResourceFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTResourceFactory.h; sourceTree = "<group>"; };
+		22F979FA14C0E38000A6913B /* BTLoadable+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BTLoadable+Protected.h"; sourceTree = "<group>"; };
 		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		32CA4F630368D1EE00C91783 /* Betwixt_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Betwixt_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Application-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Application-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
@@ -324,18 +324,18 @@
 				22F979D714C0E23F00A6913B /* GDataXMLNode.m */,
 				22F979D814C0E23F00A6913B /* GDataXMLNode+OOO.h */,
 				22F979D914C0E23F00A6913B /* GDataXMLNode+OOO.m */,
-				22F979DA14C0E23F00A6913B /* GULoadable.h */,
-				22F979DB14C0E23F00A6913B /* GULoadable.m */,
-				22F979DC14C0E23F00A6913B /* GULoadable+Protected.h */,
-				22F979DD14C0E23F00A6913B /* GULoadableBatch.h */,
-				22F979DE14C0E23F00A6913B /* GULoadableBatch.m */,
-				22F979DF14C0E23F00A6913B /* GUResource.h */,
-				22F979E014C0E23F00A6913B /* GUResource.m */,
-				22F979E114C0E23F00A6913B /* GUResourceFactory.h */,
-				22F979E214C0E23F00A6913B /* GUResourceGroup.h */,
-				22F979E314C0E23F00A6913B /* GUResourceGroup.m */,
-				22F979E414C0E23F00A6913B /* GUResourceManager.h */,
-				22F979E514C0E23F00A6913B /* GUResourceManager.m */,
+				22F979DA14C0E23F00A6913B /* BTLoadable.h */,
+				22F979DB14C0E23F00A6913B /* BTLoadable.m */,
+				22F979FA14C0E38000A6913B /* BTLoadable+Protected.h */,
+				22F979DD14C0E23F00A6913B /* BTLoadableBatch.h */,
+				22F979DE14C0E23F00A6913B /* BTLoadableBatch.m */,
+				22F979DF14C0E23F00A6913B /* BTResource.h */,
+				22F979E014C0E23F00A6913B /* BTResource.m */,
+				22F979F814C0E36F00A6913B /* BTResourceFactory.h */,
+				22F979E214C0E23F00A6913B /* BTResourceGroup.h */,
+				22F979E314C0E23F00A6913B /* BTResourceGroup.m */,
+				22F979E414C0E23F00A6913B /* BTResourceManager.h */,
+				22F979E514C0E23F00A6913B /* BTResourceManager.m */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -486,13 +486,13 @@
 				22F979E614C0E23F00A6913B /* GDataXMLException.h in Headers */,
 				22F979E814C0E23F00A6913B /* GDataXMLNode.h in Headers */,
 				22F979EA14C0E23F00A6913B /* GDataXMLNode+OOO.h in Headers */,
-				22F979EC14C0E23F00A6913B /* GULoadable.h in Headers */,
-				22F979EE14C0E23F00A6913B /* GULoadable+Protected.h in Headers */,
-				22F979EF14C0E23F00A6913B /* GULoadableBatch.h in Headers */,
-				22F979F114C0E23F00A6913B /* GUResource.h in Headers */,
-				22F979F314C0E23F00A6913B /* GUResourceFactory.h in Headers */,
-				22F979F414C0E23F00A6913B /* GUResourceGroup.h in Headers */,
-				22F979F614C0E23F00A6913B /* GUResourceManager.h in Headers */,
+				22F979EC14C0E23F00A6913B /* BTLoadable.h in Headers */,
+				22F979EF14C0E23F00A6913B /* BTLoadableBatch.h in Headers */,
+				22F979F114C0E23F00A6913B /* BTResource.h in Headers */,
+				22F979F414C0E23F00A6913B /* BTResourceGroup.h in Headers */,
+				22F979F614C0E23F00A6913B /* BTResourceManager.h in Headers */,
+				22F979F914C0E36F00A6913B /* BTResourceFactory.h in Headers */,
+				22F979FB14C0E38000A6913B /* BTLoadable+Protected.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -655,11 +655,11 @@
 				22F979E714C0E23F00A6913B /* GDataXMLException.m in Sources */,
 				22F979E914C0E23F00A6913B /* GDataXMLNode.m in Sources */,
 				22F979EB14C0E23F00A6913B /* GDataXMLNode+OOO.m in Sources */,
-				22F979ED14C0E23F00A6913B /* GULoadable.m in Sources */,
-				22F979F014C0E23F00A6913B /* GULoadableBatch.m in Sources */,
-				22F979F214C0E23F00A6913B /* GUResource.m in Sources */,
-				22F979F514C0E23F00A6913B /* GUResourceGroup.m in Sources */,
-				22F979F714C0E23F00A6913B /* GUResourceManager.m in Sources */,
+				22F979ED14C0E23F00A6913B /* BTLoadable.m in Sources */,
+				22F979F014C0E23F00A6913B /* BTLoadableBatch.m in Sources */,
+				22F979F214C0E23F00A6913B /* BTResource.m in Sources */,
+				22F979F514C0E23F00A6913B /* BTResourceGroup.m in Sources */,
+				22F979F714C0E23F00A6913B /* BTResourceManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

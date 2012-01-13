@@ -1,9 +1,9 @@
 //
-// gulp - Copyright 2011 Three Rings Design
+//  Betwixt - Copyright 2011 Three Rings Design
 
-#import "GULoadable.h"
+#import "BTLoadable.h"
 
-@interface GULoadable (protected)
+@interface BTLoadable (protected)
 /**
  * Subclasses should implement loading logic here, and call loadSuccess or loadError when loading
  * has finished.

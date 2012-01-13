@@ -1,12 +1,12 @@
 //
-//  gulp - Copyright 2012 Three Rings Design
+// gulp - Copyright 2012 Three Rings Design
 
-#import "GULoadable+Protected.h"
+#import "BTLoadable+Protected.h"
 
 /**
  * Loads resources from an XML description and adds them to the ResourceManager.
  */
-@interface GUResourceGroup : GULoadable {
+@interface BTResourceGroup : BTLoadable {
 @protected
     NSString *_filename;
     NSString *_xmlString;

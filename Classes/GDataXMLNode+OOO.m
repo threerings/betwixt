@@ -1,5 +1,5 @@
 //
-//  gulp - Copyright 2012 Three Rings Design
+//  Betwixt - Copyright 2011 Three Rings Design
 
 #import "GDataXMLNode+OOO.h"
 #import "GDataXMLException.h"

@@ -1,9 +1,9 @@
 //
 //  gulp - Copyright 2011 Three Rings Design
 
-#import "GULoadable+Protected.h"
+#import "BTLoadable+Protected.h"
 
-@interface GULoadableBatch : GULoadable {
+@interface BTLoadableBatch : BTLoadable {
 @protected
     BOOL _loadInSequence;
     NSMutableArray* _allLoadables;
@@ -11,6 +11,6 @@
 }
 
 - (id)init;
-- (void)add:(GULoadable*)loadable;
+- (void)add:(BTLoadable*)loadable;
 
 @end
