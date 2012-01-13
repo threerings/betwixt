@@ -81,6 +81,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		22C7176E14C0D7C80014B656 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CB846EED149AE18900B29795 /* react.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = CBFF4A6B149AA9470003AC2B;
+			remoteInfo = react;
+		};
+		22C7177214C0D7CE0014B656 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DE4A3DA210FFB0D400FDA492 /* Sparrow.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = DEFE4BC1101B317600E22471;
+			remoteInfo = Sparrow;
+		};
 		CB24CBE614A119EB004BAA57 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CB846EED149AE18900B29795 /* react.xcodeproj */;
@@ -114,6 +128,7 @@
 /* Begin PBXFileReference section */
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		22C7176214C0D7A60014B656 /* gulp.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = gulp.xcodeproj; path = ../gulp.xcodeproj; sourceTree = GULP_SRC; };
 		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		32CA4F630368D1EE00C91783 /* Betwixt_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Betwixt_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Application-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Application-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
@@ -267,6 +282,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				22C7176214C0D7A60014B656 /* gulp.xcodeproj */,
 				CB846EED149AE18900B29795 /* react.xcodeproj */,
 				DE4A3DA210FFB0D400FDA492 /* Sparrow.xcodeproj */,
 				080E96DDFE201D6D7F000001 /* Classes */,
@@ -441,6 +457,8 @@
 			buildRules = (
 			);
 			dependencies = (
+				22C7177314C0D7CE0014B656 /* PBXTargetDependency */,
+				22C7176F14C0D7C80014B656 /* PBXTargetDependency */,
 			);
 			name = Betwixt;
 			productName = Betwixtlib;
@@ -569,6 +587,19 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		22C7176F14C0D7C80014B656 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = react;
+			targetProxy = 22C7176E14C0D7C80014B656 /* PBXContainerItemProxy */;
+		};
+		22C7177314C0D7CE0014B656 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Sparrow;
+			targetProxy = 22C7177214C0D7CE0014B656 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -584,6 +615,7 @@
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
+					"-lxml2",
 				);
 				PRODUCT_NAME = Betwixt;
 				SDKROOT = iphoneos;
@@ -605,6 +637,7 @@
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
+					"-lxml2",
 				);
 				PRODUCT_NAME = Betwixt;
 				SDKROOT = iphoneos;
