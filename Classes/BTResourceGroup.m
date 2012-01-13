@@ -2,7 +2,7 @@
 //  Betwixt - Copyright 2011 Three Rings Design
 
 #import "BTResourceGroup.h"
-#import "BTResourceManager.h"
+#import "BTResourceManager+Package.h"
 #import "BTLoadableBatch.h"
 #import "BTResourceFactory.h"
 #import "BTResource.h"

@@ -18,6 +18,5 @@
 - (void)unloadAll;
 - (void)registerFactory:(id<BTResourceFactory>)factory forType:(NSString *)type;
 - (id<BTResourceFactory>)getFactory:(NSString *)type;
-- (void)add:(BTResource *)rsrc;
 
 @end

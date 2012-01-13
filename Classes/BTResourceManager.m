@@ -1,7 +1,7 @@
 //
 //  Betwixt - Copyright 2011 Three Rings Design
 
-#import "BTResourceManager.h"
+#import "BTResourceManager+Package.h"
 #import "BTResourceFactory.h"
 #import "BTResource.h"
 
@@ -65,6 +65,10 @@
 - (id<BTResourceFactory>)getFactory:(NSString *)type {
     return [_factories objectForKey:type];
 }
+
+@end
+
+@implementation BTResourceManager (package)
 
 - (void)add:(BTResource *)rsrc {
     NSAssert(rsrc.group != nil, @"Resource doesn't belong to a group: %@", rsrc);
