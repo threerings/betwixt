@@ -26,6 +26,7 @@
 		22F979F914C0E36F00A6913B /* BTResourceFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F979F814C0E36F00A6913B /* BTResourceFactory.h */; };
 		22F979FB14C0E38000A6913B /* BTLoadable+Protected.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F979FA14C0E38000A6913B /* BTLoadable+Protected.h */; };
 		22F97A0314C0E7EE00A6913B /* BTResourceManager+Package.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F97A0214C0E7EE00A6913B /* BTResourceManager+Package.h */; };
+		22F97A9014C0EC8B00A6913B /* Betwixt.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F97A8F14C0EC8B00A6913B /* Betwixt.h */; };
 		CB24CBCB14A028F6004BAA57 /* BTLocationTask.h in Headers */ = {isa = PBXBuildFile; fileRef = CB24CBC914A028F5004BAA57 /* BTLocationTask.h */; };
 		CB24CBCC14A028F6004BAA57 /* BTLocationTask.m in Sources */ = {isa = PBXBuildFile; fileRef = CB24CBCA14A028F6004BAA57 /* BTLocationTask.m */; };
 		CB24CBCF14A02E10004BAA57 /* MoveMode.m in Sources */ = {isa = PBXBuildFile; fileRef = CB24CBCE14A02E10004BAA57 /* MoveMode.m */; };
@@ -166,6 +167,7 @@
 		22F979F814C0E36F00A6913B /* BTResourceFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTResourceFactory.h; sourceTree = "<group>"; };
 		22F979FA14C0E38000A6913B /* BTLoadable+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BTLoadable+Protected.h"; sourceTree = "<group>"; };
 		22F97A0214C0E7EE00A6913B /* BTResourceManager+Package.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BTResourceManager+Package.h"; sourceTree = "<group>"; };
+		22F97A8F14C0EC8B00A6913B /* Betwixt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Betwixt.h; sourceTree = "<group>"; };
 		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		32CA4F630368D1EE00C91783 /* Betwixt_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Betwixt_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Application-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Application-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
@@ -278,6 +280,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				22F97A8F14C0EC8B00A6913B /* Betwixt.h */,
 				CBF2AA9A14765EA5000C022D /* BTApplicationDelegate.h */,
 				CBF2AA9B14765EA5000C022D /* BTApplicationDelegate.m */,
 				CB366FE4148ECC84004BE08B /* BTContext.h */,
@@ -497,6 +500,7 @@
 				22F979F914C0E36F00A6913B /* BTResourceFactory.h in Headers */,
 				22F979FB14C0E38000A6913B /* BTLoadable+Protected.h in Headers */,
 				22F97A0314C0E7EE00A6913B /* BTResourceManager+Package.h in Headers */,
+				22F97A9014C0EC8B00A6913B /* Betwixt.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
