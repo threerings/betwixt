@@ -52,7 +52,7 @@
     [_resources removeAllObjects];
 }
 
-- (void)registerType:(NSString *)type toFactory:(id<BTResourceFactory>)factory {
+- (void)registerFactory:(id<BTResourceFactory>)factory forType:(NSString *)type {
     [_factories setObject:factory forKey:type];
 }
 

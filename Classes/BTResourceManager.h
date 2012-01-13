@@ -16,7 +16,7 @@
 - (BOOL)isLoaded:(NSString *)name;
 - (void)unloadGroup:(NSString *)group;
 - (void)unloadAll;
-- (void)registerType:(NSString *)type toFactory:(id<BTResourceFactory>)factory;
+- (void)registerFactory:(id<BTResourceFactory>)factory forType:(NSString *)type;
 - (id<BTResourceFactory>)getFactory:(NSString *)type;
 - (void)add:(BTResource *)rsrc;
 
