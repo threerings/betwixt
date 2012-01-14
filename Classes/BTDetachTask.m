@@ -2,7 +2,7 @@
 // Betwixt - Copyright 2011 Three Rings Design
 
 #import "BTDetachTask.h"
-#import "BTContext.h"
+#import "BTNodeContainer.h"
 
 @implementation BTDetachTask
 

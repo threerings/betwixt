@@ -5,11 +5,11 @@
 #import "SPSprite.h"
 #import "BTDisplayable.h"
 #import "BTDisplayContext.h"
-#import "BTContext.h"
+#import "BTNodeContainer.h"
 
 @class BTModeStack;
 
-@interface BTMode : BTContext<BTDisplayable,BTDisplayContext> {
+@interface BTMode : BTNodeContainer<BTDisplayable,BTDisplayContext> {
 @package
     BTModeStack *_stack;
 }

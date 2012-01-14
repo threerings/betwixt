@@ -4,11 +4,11 @@
 #import <Foundation/Foundation.h>
 
 @class BTMode;
-@class BTContext;
+@class BTNodeContainer;
 
 @interface BTNode : NSObject {
 @package
-    BTContext *_parent;
+    BTNodeContainer *_parent;
     RAUnitSignal *_attached;
     RAUnitSignal *_detached;
     RAConnectionGroup *_conns;
@@ -20,7 +20,7 @@
 @property(nonatomic,readonly) RAUnitSignal *detached;
 @property(nonatomic,readonly) BTMode *root;
 @property(nonatomic,readonly) RAConnectionGroup *conns;
-@property(nonatomic,readonly) BTContext *parent;
+@property(nonatomic,readonly) BTNodeContainer *parent;
 
 
 @end

@@ -2,7 +2,7 @@
 // Betwixt - Copyright 2011 Three Rings Design
 
 #import "BTTaskSequence.h"
-#import "BTContext.h"
+#import "BTNodeContainer.h"
 
 @implementation BTTaskSequence {
     NSArray *_nodes;

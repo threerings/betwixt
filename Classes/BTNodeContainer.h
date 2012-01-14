@@ -4,7 +4,7 @@
 #import "SPEventDispatcher+BlockListener.h"
 #import "BTNode.h"
 
-@interface BTContext : BTNode {
+@interface BTNodeContainer : BTNode {
     @package
         NSMutableSet *_children;
 }

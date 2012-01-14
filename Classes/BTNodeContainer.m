@@ -1,7 +1,7 @@
 //
 //  Betwixt - Copyright 2011 Three Rings Design
 
-#import "BTContext.h"
+#import "BTNodeContainer.h"
 
 #import "BTKeyed.h"
 #import "BTObject.h"
@@ -10,12 +10,12 @@
 #import "BTMode.h"
 #import "BTMode+Package.h"
 
-@interface BTContext ()
+@interface BTNodeContainer ()
 @property (nonatomic, readonly) NSMutableDictionary *namedObjects;
 @property (nonatomic, readonly) NSMutableDictionary *tokenDispatchers;
 @end
 
-@implementation BTContext {
+@implementation BTNodeContainer {
     NSMutableDictionary *_tokenDispatchers;
     NSMutableDictionary *_namedObjects;
 }
