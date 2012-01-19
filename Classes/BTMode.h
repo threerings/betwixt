@@ -15,6 +15,7 @@
 }
 
 - (BTNode*)nodeForKey:(NSString*)key;
+- (void)update:(double)dt;
 
 @property(nonatomic,readonly) RADoubleSignal *update;
 @property(nonatomic,readonly) SPSprite *sprite;

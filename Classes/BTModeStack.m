@@ -34,7 +34,7 @@
 @implementation BTModeStack (package)
 
 - (void)enterFrame:(SPEnterFrameEvent *)ev {
-    [[_stack lastObject] enterFrame:ev];
+    [[_stack lastObject] update:ev.passedTime];
 }
 
 @end

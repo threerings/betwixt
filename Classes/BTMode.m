@@ -24,6 +24,10 @@
     return [_keyedObjects objectForKey:key];
 }
 
+- (void)update:(double)dt {
+    [_update emitEvent:dt];
+}
+
 - (BTMode*) root {
     return self;
 }
@@ -46,10 +50,6 @@
 @end
 
 @implementation BTMode (package)
-
-- (void)enterFrame:(SPEnterFrameEvent*)ev {
-    [_update emitEvent:ev.passedTime];
-}
 
 - (void)addKeys:(BTNode<BTKeyed>*)node {
     for (NSString *key in ((id<BTKeyed>)node).keys) {

@@ -7,7 +7,6 @@
 
 @interface BTMode (package)
 
--(void)enterFrame:(SPEnterFrameEvent*)ev;
 -(void)addKeys:(BTNode<BTKeyed>*)object;
 
 @end
