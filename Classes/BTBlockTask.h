@@ -10,5 +10,5 @@ typedef void (^BTTaskBlock)(BTBlockTask *task);
 
 @interface BTBlockTask : BTNode
 + (BTBlockTask*)onAttach:(BTTaskBlock)block;
-+ (BTBlockTask*)onEnterFrame:(BTTaskBlock)block;
++ (BTBlockTask*)onUpdate:(BTTaskBlock)block;
 @end

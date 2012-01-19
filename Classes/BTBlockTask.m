@@ -15,7 +15,7 @@
     return task;
 }
 
-+ (BTBlockTask*)onEnterFrame:(BTTaskBlock)block {
++ (BTBlockTask*)onUpdate:(BTTaskBlock)block {
     BTBlockTask* task = [[BTBlockTask alloc] init];
     [task.attached connectUnit:^{
         [task.conns addConnection:[task.root.update connectUnit:^{ block(task); }]];
