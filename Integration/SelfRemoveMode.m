@@ -18,7 +18,7 @@
     return self;
 }
 
-- (void)update:(float)dt {
+- (void)update:(double)dt {
     [self detach];
 }
 

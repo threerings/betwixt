@@ -14,7 +14,7 @@
     return [[BTDelayTask alloc] initOverTime:seconds];
 }
 
-- (void)update:(float)dt {
+- (void)update:(double)dt {
     _elapsedTime += dt;
     if (_elapsedTime > _totalTime) _elapsedTime = _totalTime;
     [self updateTo:_elapsedTime outOf:_totalTime];
