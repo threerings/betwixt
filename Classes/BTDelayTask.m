@@ -21,7 +21,7 @@
     if (!(self = [super init])) return nil;
     _totalTime = seconds;
     [self.attached connectUnit:^{
-       [self.conns addConnection:[self.root.enterFrame connectSlot:^(double timePassed){
+       [self.conns addConnection:[self.root.update connectSlot:^(double timePassed){
             _elapsedTime += timePassed;
             if (_elapsedTime > _totalTime) _elapsedTime = _totalTime;
             [self updateTo:_elapsedTime outOf:_totalTime];

@@ -16,7 +16,7 @@
     if (!(self = [super init])) return nil;
     __weak SelfRemoveObject* mySelf = self;
     [self.attached connectUnit:^ {
-        [mySelf.conns addConnection:[mySelf.root.enterFrame withPriority:RA_DEFAULT_PRIORITY + 1
+        [mySelf.conns addConnection:[mySelf.root.update withPriority:RA_DEFAULT_PRIORITY + 1
                        connectUnit:^ { [mySelf detach]; }]];
     }];
     return self;
@@ -32,7 +32,7 @@
     [holder.detached connectUnit:^{ detached = YES; }];
     [self addNode:holder];
     [holder addNode:[BTDetachTask detachParent]];
-    [[self.enterFrame connectUnit:^ {
+    [[self.update connectUnit:^ {
         NSAssert(detached, @"Parent removed");
         [self detach];
     }] once];
@@ -45,7 +45,7 @@
     [subremover.detached connectUnit:^{ detached = YES; }];
     [self addNode:holder];
     [holder addNode:subremover];
-    [[self.enterFrame connectUnit:^ {
+    [[self.update connectUnit:^ {
         NSAssert(detached, @"Subremover removed");
         [self testDestroyParentTask];
     }] once];
@@ -57,7 +57,7 @@
     __block BOOL detached = NO;
     [remover.detached connectUnit:^{ detached = YES; }];
     [self addNode:remover];
-    [[self.enterFrame connectUnit:^ {
+    [[self.update connectUnit:^ {
         NSAssert(detached, @"Remover removed");
         [self testSubobjectRemoval];
     }] once];

@@ -14,7 +14,7 @@
     _quad.x = 50;
     _quad.y = 50;
     [self.attached connectUnit:^ {
-        [self.conns addConnection:[self.root.enterFrame withPriority:SQUARE_FRAME_PRIORITY
+        [self.conns addConnection:[self.root.update withPriority:SQUARE_FRAME_PRIORITY
             connectUnit:^{
             _quad.x += 1;
             if (_quad.x >= 52) { [self detach]; }

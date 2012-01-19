@@ -16,7 +16,7 @@
 
 - (BTNode*)nodeForKey:(NSString*)key;
 
-@property(nonatomic,readonly) RADoubleSignal *enterFrame;
+@property(nonatomic,readonly) RADoubleSignal *update;
 @property(nonatomic,readonly) SPSprite *sprite;
 
 @end

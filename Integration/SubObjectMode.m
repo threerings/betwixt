@@ -18,7 +18,7 @@
 - (id)init {
     if (!(self = [super init])) return nil;
     [self displayNode:[self createAndMonitorSquareWithColor:0xff0000 andName:@"red"]];
-    [self.enterFrame withPriority:SQUARE_FRAME_PRIORITY + 1 connectUnit:^ {
+    [self.update withPriority:SQUARE_FRAME_PRIORITY + 1 connectUnit:^ {
         if (++_ticks == 2) {
             Square *green = [self createAndMonitorSquareWithColor:0x00ff00 andName:@"green"];
             [((BTObject*)[self nodeForKey:@"red"]) addNode:green];

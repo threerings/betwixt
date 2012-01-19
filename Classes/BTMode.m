@@ -7,7 +7,7 @@
 #import "BTMode+Package.h"
 
 @implementation BTMode {
-    RADoubleSignal *_enterFrame;
+    RADoubleSignal *_update;
     SPSprite *_sprite;
     NSMutableDictionary *_keyedObjects;
 }
@@ -15,7 +15,7 @@
 - (id)init {
     if (!(self = [super init])) return nil;
     _sprite = [[SPSprite alloc] init];
-    _enterFrame = [[RADoubleSignal alloc] init];
+    _update = [[RADoubleSignal alloc] init];
     _keyedObjects = [[NSMutableDictionary alloc] init];
     return self;
 }
@@ -41,14 +41,14 @@
     return _sprite;
 }
 
-@synthesize sprite=_sprite, enterFrame=_enterFrame;
+@synthesize sprite=_sprite, update=_update;
 
 @end
 
 @implementation BTMode (package)
 
 - (void)enterFrame:(SPEnterFrameEvent*)ev {
-    [_enterFrame emitEvent:ev.passedTime];
+    [_update emitEvent:ev.passedTime];
 }
 
 - (void)addKeys:(BTNode<BTKeyed>*)node {
