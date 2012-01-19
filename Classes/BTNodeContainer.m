@@ -4,6 +4,7 @@
 #import "BTNodeContainer.h"
 
 #import "BTKeyed.h"
+#import "BTUpdatable.h"
 #import "BTObject.h"
 
 #import "BTNode+Package.h"
@@ -61,6 +62,7 @@
     NSAssert1(![self.namedObjects objectForKey:name], @"Object name '%@' already used", name);
     [self.namedObjects setObject:node forKey:name];
 }
+
 - (void)addNode:(BTNode*)object {
     NSAssert(object->_parent == nil, @"Adding attached object");
     NSAssert(_children != nil, @"Adding object to detached object");
@@ -70,6 +72,14 @@
         [self.root addKeys:(BTNode<BTKeyed>*)object];
     }
     [object.attached emit];
+    
+    // If the object is BTUpdatable, wire up its update function to the update event
+    if ([object conformsToProtocol:@protocol(BTUpdatable)]) {
+        __weak BTNode<BTUpdatable>* obj = (BTNode<BTUpdatable>*)object;
+        [object.conns addConnection:[self.root.update connectSlot:^(double dt) {
+            [obj update:dt];
+        }]];
+    }   
 }
 
 - (void)addNode:(BTNode*)object withName:(NSString*)name {

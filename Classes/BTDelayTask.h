@@ -3,7 +3,8 @@
 
 #import <Foundation/Foundation.h>
 #import "BTNode.h"
+#import "BTUpdatable.h"
 
-@interface BTDelayTask : BTNode
+@interface BTDelayTask : BTNode<BTUpdatable>
 + delayFor:(double)seconds;
 @end

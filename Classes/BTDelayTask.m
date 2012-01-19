@@ -14,20 +14,19 @@
     return [[BTDelayTask alloc] initOverTime:seconds];
 }
 
+- (void)update:(float)dt {
+    _elapsedTime += dt;
+    if (_elapsedTime > _totalTime) _elapsedTime = _totalTime;
+    [self updateTo:_elapsedTime outOf:_totalTime];
+    if (_elapsedTime == _totalTime) [self detach];
+}
+
 @end
 
 @implementation BTDelayTask (protected)
 - (id)initOverTime:(double)seconds {
     if (!(self = [super init])) return nil;
     _totalTime = seconds;
-    [self.attached connectUnit:^{
-       [self.conns addConnection:[self.root.update connectSlot:^(double timePassed){
-            _elapsedTime += timePassed;
-            if (_elapsedTime > _totalTime) _elapsedTime = _totalTime;
-            [self updateTo:_elapsedTime outOf:_totalTime];
-            if (_elapsedTime == _totalTime) [self detach];
-        }]];
-    }];
     return self;
 }
 

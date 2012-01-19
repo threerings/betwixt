@@ -7,19 +7,19 @@
 #import "BTModeStack.h"
 #import "BTObject.h"
 #import "RAConnection.h"
+#import "BTUpdatable.h"
 
-@interface SelfRemoveObject : BTObject
+@interface SelfRemoveObject : BTObject<BTUpdatable>
 @end
 @implementation SelfRemoveObject
 
 - (id)init {
     if (!(self = [super init])) return nil;
-    __weak SelfRemoveObject* mySelf = self;
-    [self.attached connectUnit:^ {
-        [mySelf.conns addConnection:[mySelf.root.update withPriority:RA_DEFAULT_PRIORITY + 1
-                       connectUnit:^ { [mySelf detach]; }]];
-    }];
     return self;
+}
+
+- (void)update:(float)dt {
+    [self detach];
 }
 
 @end
