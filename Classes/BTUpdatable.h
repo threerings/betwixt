@@ -4,5 +4,5 @@
 #import <Foundation/Foundation.h>
 
 @protocol BTUpdatable
-- (void)update:(double)dt;
+- (void)update:(float)dt;
 @end

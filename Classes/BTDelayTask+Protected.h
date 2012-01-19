@@ -4,6 +4,6 @@
 #import "BTDelayTask.h"
 
 @interface BTDelayTask (protected)
--(id)initOverTime:(double)seconds;
--(void)updateTo:(double)elapsed outOf:(double)total;
+-(id)initOverTime:(float)seconds;
+-(void)updateTo:(float)elapsed outOf:(float)total;
 @end

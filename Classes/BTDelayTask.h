@@ -6,5 +6,5 @@
 #import "BTUpdatable.h"
 
 @interface BTDelayTask : BTNode<BTUpdatable>
-+ delayFor:(double)seconds;
++ delayFor:(float)seconds;
 @end

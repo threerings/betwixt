@@ -6,15 +6,15 @@
 #import "BTMode.h"
 
 @implementation BTDelayTask {
-    double _elapsedTime;
-    double _totalTime;
+    float _elapsedTime;
+    float _totalTime;
 }
 
-+ (BTDelayTask*)delayFor:(double)seconds {
++ (BTDelayTask*)delayFor:(float)seconds {
     return [[BTDelayTask alloc] initOverTime:seconds];
 }
 
-- (void)update:(double)dt {
+- (void)update:(float)dt {
     _elapsedTime += dt;
     if (_elapsedTime > _totalTime) _elapsedTime = _totalTime;
     [self updateTo:_elapsedTime outOf:_totalTime];
@@ -24,11 +24,11 @@
 @end
 
 @implementation BTDelayTask (protected)
-- (id)initOverTime:(double)seconds {
+- (id)initOverTime:(float)seconds {
     if (!(self = [super init])) return nil;
     _totalTime = seconds;
     return self;
 }
 
--(void)updateTo:(double)elapsed outOf:(double)total { }
+-(void)updateTo:(float)elapsed outOf:(float)total { }
 @end

@@ -8,7 +8,7 @@
 #import "BTMode+Package.h"
 
 @implementation BTMode {
-    RADoubleSignal *_update;
+    RAFloatSignal *_update;
     SPSprite *_sprite;
     NSMutableDictionary *_keyedObjects;
 }
@@ -16,7 +16,7 @@
 - (id)init {
     if (!(self = [super init])) return nil;
     _sprite = [[SPSprite alloc] init];
-    _update = [[RADoubleSignal alloc] init];
+    _update = [[RAFloatSignal alloc] init];
     _keyedObjects = [[NSMutableDictionary alloc] init];
     return self;
 }
@@ -48,7 +48,7 @@
 
 @implementation BTMode (protected)
 
-- (void)update:(double)dt {
+- (void)update:(float)dt {
     [_update emitEvent:dt];
 }
 

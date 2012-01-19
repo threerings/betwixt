@@ -10,20 +10,20 @@
     float _deltaY;
 }
 
-- (id)initOverTime:(double)seconds toX:(float)x toY:(float)y {
+- (id)initOverTime:(float)seconds toX:(float)x toY:(float)y {
     return [self initOverTime:seconds toX:x toY:x withInterpolator:BTLinearInterpolator];
 }
 
-- (id)initOverTime:(double)seconds toX:(float)x toY:(float)y withInterpolator:(BTInterpolator)interp {
+- (id)initOverTime:(float)seconds toX:(float)x toY:(float)y withInterpolator:(BTInterpolator)interp {
     return [self initOverTime:seconds toX:x toY:y withInterpolator:interp onDisplay:nil];
 }
 
-- (id)initOverTime:(double)seconds toX:(float)x toY:(float)y onDisplay:(SPDisplayObject*)display {
+- (id)initOverTime:(float)seconds toX:(float)x toY:(float)y onDisplay:(SPDisplayObject*)display {
     return [self initOverTime:seconds toX:x toY:y withInterpolator:BTLinearInterpolator
                     onDisplay:display];
 }
 
-- (id)initOverTime:(double)seconds toX:(float)x toY:(float)y
+- (id)initOverTime:(float)seconds toX:(float)x toY:(float)y
   withInterpolator:(BTInterpolator)interp onDisplay:(SPDisplayObject*)display {
     if (!(self = [super initOverTime:seconds withInterpolator:interp onDisplay:display])) return nil;
     [self.attached connectUnit:^{

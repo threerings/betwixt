@@ -10,5 +10,5 @@
     @protected
         SPDisplayObject *_target;
 }
--(id)initOverTime:(double)seconds withInterpolator:(BTInterpolator)interp onDisplay:(SPDisplayObject*)display;
+-(id)initOverTime:(float)seconds withInterpolator:(BTInterpolator)interp onDisplay:(SPDisplayObject*)display;
 @end
