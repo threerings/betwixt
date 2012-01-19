@@ -4,6 +4,7 @@
 #import "BTModeStack.h"
 
 #import "BTMode+Package.h"
+#import "BTMode+Protected.h"
 
 @implementation BTModeStack
 

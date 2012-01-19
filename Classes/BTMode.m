@@ -4,6 +4,7 @@
 #import "BTMode.h"
 #import "BTModeStack.h"
 #import "BTKeyed.h"
+#import "BTMode+Protected.h"
 #import "BTMode+Package.h"
 
 @implementation BTMode {
@@ -24,10 +25,6 @@
     return [_keyedObjects objectForKey:key];
 }
 
-- (void)update:(double)dt {
-    [_update emitEvent:dt];
-}
-
 - (BTMode*) root {
     return self;
 }
@@ -46,6 +43,14 @@
 }
 
 @synthesize sprite=_sprite, update=_update;
+
+@end
+
+@implementation BTMode (protected)
+
+- (void)update:(double)dt {
+    [_update emitEvent:dt];
+}
 
 @end
 
