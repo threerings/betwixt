@@ -175,9 +175,9 @@ typedef enum {
     }
 }
 
-- (void)enterFrame:(SPEnterFrameEvent *)ev {
+- (void)update:(float)dt {
     [self handleModeTransitions];
-    [[_stack lastObject] update:(float) ev.passedTime];
+    [[_stack lastObject] update:dt];
 }
 
 @end

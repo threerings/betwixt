@@ -31,12 +31,12 @@
     
     _defaultStack = [[BTModeStack alloc] init];
     [_view.stage addChild:_defaultStack->_sprite];
-    [_view.stage addEventListener:@selector(advanceTime:) atObject:self forType:SP_EVENT_TYPE_ENTER_FRAME];
+    [_view.stage addEventListener:@selector(onEnterFrame:) atObject:self forType:SP_EVENT_TYPE_ENTER_FRAME];
     return YES;
 }
 
-- (void)advanceTime:(SPEnterFrameEvent*)ev {
-    [_defaultStack enterFrame:ev];
+- (void)onEnterFrame:(SPEnterFrameEvent *)ev {
+    [_defaultStack update:(float) ev.passedTime];
 }
 
 - (void)applicationWillResignActive:(UIApplication*)application {    

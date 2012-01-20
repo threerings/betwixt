@@ -5,6 +5,6 @@
 
 @interface BTModeStack (package)
 
--(void)enterFrame:(SPEnterFrameEvent*)ev;
+-(void)update:(float)dt;
 
 @end
