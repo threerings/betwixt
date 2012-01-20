@@ -52,6 +52,12 @@
     [_update emitEvent:dt];
 }
 
+- (void)enter {
+}
+
+- (void) exit {
+}
+
 @end
 
 @implementation BTMode (package)
