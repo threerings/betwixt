@@ -12,9 +12,9 @@
     SPSprite *_sprite;
 }
 
-@property (readonly) BTMode* topMode;
+@property (nonatomic, readonly) BTMode *topMode;
 
-- (void)pushMode:(BTMode*)mode;
+- (void)pushMode:(BTMode *)mode;
 - (void)popMode;
 - (void)changeMode:(BTMode *)mode;
 - (void)insertMode:(BTMode *)mode atIndex:(int)index;
