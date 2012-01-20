@@ -49,58 +49,31 @@
     }
 }
 
-- (void)doLoad {
+- (NSArray *)load {
     NSData *data = [self getData];
     NSError *err;
     GDataXMLDocument *xmldoc = [[GDataXMLDocument alloc] initWithData:data options:0 error:&err];
     if (xmldoc == nil) {
-        [self loadError:[[NSException alloc] initWithName:NSGenericException 
-                                                   reason:[err localizedDescription] 
-                                                 userInfo:[err userInfo]]];
+        @throw [[NSException alloc] initWithName:NSGenericException 
+                                          reason:[err localizedDescription] 
+                                        userInfo:[err userInfo]];
     }
     
     // Create the resources
     NSMutableArray *resources = [NSMutableArray array];
-    @try {
-        GDataXMLElement *root = [xmldoc rootElement];
-        for (GDataXMLElement *child in [root elements]) {
-            NSString *type = [child name];
-            // find the resource factory for this type
-            id<BTResourceFactory> factory = [[BTResourceManager sharedManager] getFactory:type];
-            NSAssert(factory != nil, @"No ResourceFactory for '%@'", type);
-            // create the resource
-            NSString* name = [child stringAttribute:@"name"];
-            BTResource *rsrc = [factory create:name group:_name xml:child];
-            // add it to the batch
-            [resources addObject:rsrc];
-        }
-    } @catch (NSException *err) {
-        [self loadError:err];
-        return;
+    GDataXMLElement *root = [xmldoc rootElement];
+    for (GDataXMLElement *child in [root elements]) {
+        NSString *type = [child name];
+        // find the resource factory for this type
+        id<BTResourceFactory> factory = [[BTResourceManager sharedManager] getFactory:type];
+        NSAssert(factory != nil, @"No ResourceFactory for '%@'", type);
+        // create the resource
+        NSString* name = [child stringAttribute:@"name"];
+        id<BTResource> rsrc = [factory create:name group:_name xml:child];
+        // add it to the batch
+        [resources addObject:rsrc];
     }
-    
-    // Load the resources
-    BTLoadableBatch *batch = [[BTLoadableBatch alloc] init];
-    for (BTResource *rsrc in resources) {
-        [batch add:rsrc];
-    }
-    
-    __weak BTResourceGroup *this = self;
-    [batch load:^{
-        @try {
-            // Add all the resources to the resource manager
-            for (BTResource *rsrc in resources) {
-                [[BTResourceManager sharedManager] add:rsrc];
-                
-            }
-        } @catch (NSException *err) {
-            [this loadError:err];
-        }
-        [this loadSuccess]; 
-    }
-    onError:^(NSException *err) { 
-        [this loadError:err]; 
-    }];
+    return resources;
 }
 
 @end

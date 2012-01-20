@@ -1,7 +1,7 @@
 //
 //  Betwixt - Copyright 2011 Three Rings Design
 
-@class BTResource;
+@protocol BTResource;
 @protocol BTResourceFactory;
 
 @interface BTResourceManager : NSObject {
@@ -11,8 +11,8 @@
 }
 
 + (BTResourceManager *)sharedManager;
-- (BTResource *)getResource:(NSString *)name;
-- (BTResource *)requireResource:(NSString *)name;
+- (id<BTResource>)getResource:(NSString *)name;
+- (id<BTResource>)requireResource:(NSString *)name;
 - (BOOL)isLoaded:(NSString *)name;
 - (void)unloadGroup:(NSString *)group;
 - (void)unloadAll;

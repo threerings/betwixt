@@ -4,5 +4,5 @@
 #import "BTResourceManager.h"
 
 @interface BTResourceManager (package)
-- (void)add:(BTResource *)rsrc;
+- (void)add:(id<BTResource>)rsrc;
 @end
