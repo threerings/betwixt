@@ -7,6 +7,7 @@
 #import "MoveMode.h"
 #import "Square.h"
 #import "SelfRemoveMode.h"
+#import "BTResourceManager.h"
 
 #import "SPEventDispatcher+BlockListener.h"
 
@@ -16,6 +17,10 @@
 
 - (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
     if (![super application:application didFinishLaunchingWithOptions:launchOptions]) return NO;
+    
+    // load resources
+    [[BTResourceManager sharedManager] loadResourceFile:@"ResourceTest.xml"];
+    
     [self.defaultStack pushMode:[[NamedNodeMode alloc] init]];
     [self.defaultStack pushMode:[[MoveMode alloc] init]];
     [self.defaultStack pushMode:[[SelfRemoveMode alloc] init]];

@@ -11,6 +11,8 @@
 		221B6F9814C8BC3200747A18 /* BTMode+Protected.h in Headers */ = {isa = PBXBuildFile; fileRef = 221B6F9714C8BC3200747A18 /* BTMode+Protected.h */; };
 		2221989B14C90F9F009B764F /* BTTextureResource.h in Headers */ = {isa = PBXBuildFile; fileRef = 2221989914C90F9F009B764F /* BTTextureResource.h */; };
 		2221989C14C90F9F009B764F /* BTTextureResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2221989A14C90F9F009B764F /* BTTextureResource.m */; };
+		2221990814CA3C69009B764F /* archer.png in Resources */ = {isa = PBXBuildFile; fileRef = 2221990614CA3C69009B764F /* archer.png */; };
+		2221990914CA3C69009B764F /* ResourceTest.xml in Resources */ = {isa = PBXBuildFile; fileRef = 2221990714CA3C69009B764F /* ResourceTest.xml */; };
 		22F979E614C0E23F00A6913B /* GDataXMLException.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F979D414C0E23F00A6913B /* GDataXMLException.h */; };
 		22F979E714C0E23F00A6913B /* GDataXMLException.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F979D514C0E23F00A6913B /* GDataXMLException.m */; };
 		22F979E814C0E23F00A6913B /* GDataXMLNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F979D614C0E23F00A6913B /* GDataXMLNode.h */; };
@@ -152,6 +154,8 @@
 		221B6F9714C8BC3200747A18 /* BTMode+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BTMode+Protected.h"; sourceTree = "<group>"; };
 		2221989914C90F9F009B764F /* BTTextureResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTTextureResource.h; sourceTree = "<group>"; };
 		2221989A14C90F9F009B764F /* BTTextureResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTTextureResource.m; sourceTree = "<group>"; };
+		2221990614CA3C69009B764F /* archer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = archer.png; path = Resources/archer.png; sourceTree = "<group>"; };
+		2221990714CA3C69009B764F /* ResourceTest.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = ResourceTest.xml; path = Resources/ResourceTest.xml; sourceTree = "<group>"; };
 		22F979D414C0E23F00A6913B /* GDataXMLException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataXMLException.h; sourceTree = "<group>"; };
 		22F979D514C0E23F00A6913B /* GDataXMLException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDataXMLException.m; sourceTree = "<group>"; };
 		22F979D614C0E23F00A6913B /* GDataXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataXMLNode.h; sourceTree = "<group>"; };
@@ -372,6 +376,8 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2221990614CA3C69009B764F /* archer.png */,
+				2221990714CA3C69009B764F /* ResourceTest.xml */,
 				8D1107310486CEB800E47090 /* Application-Info.plist */,
 			);
 			name = Resources;
@@ -620,6 +626,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2221990814CA3C69009B764F /* archer.png in Resources */,
+				2221990914CA3C69009B764F /* ResourceTest.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
