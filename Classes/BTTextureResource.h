@@ -3,7 +3,7 @@
 
 #import "BTResource.h"
 
-#define BTTEXTURE_RESOURCE_NAME @"texture";
+#define BTTEXTURE_RESOURCE_NAME @"texture"
 
 @protocol BTResourceFactory;
 

@@ -4,6 +4,9 @@
 #import "BTApplicationDelegate.h" 
 #import "BTModeStack+Package.h"
 
+#import "BTResourceManager.h"
+#import "BTTextureResource.h"
+
 @implementation BTApplicationDelegate
 
 @synthesize defaultStack=_defaultStack;
@@ -32,6 +35,10 @@
     _defaultStack = [[BTModeStack alloc] init];
     [_view.stage addChild:_defaultStack->_sprite];
     [_view.stage addEventListener:@selector(onEnterFrame:) atObject:self forType:SP_EVENT_TYPE_ENTER_FRAME];
+    
+    // Register default resource factories
+    [[BTResourceManager sharedManager] registerFactory:[BTTextureResource sharedFactory] 
+                                               forType:BTTEXTURE_RESOURCE_NAME];
     return YES;
 }
 
