@@ -1,9 +1,16 @@
 //
 //  Betwixt - Copyright 2011 Three Rings Design
 
-#import "BTResourceManager+Package.h"
+#import "BTResourceManager.h"
 #import "BTResourceFactory.h"
 #import "BTResource.h"
+#import "GDataXMLException.h"
+
+#import "GDataXMLNode+OOO.h"
+
+@interface BTResourceManager ()
+- (id<BTResourceFactory>)getFactory:(NSString *)type;
+@end
 
 @implementation BTResourceManager
 
@@ -26,10 +33,43 @@
     return self;
 }
 
-- (id<BTResource>)getResource:(NSString *)name {
-    @synchronized (_resources) {
-        return [_resources objectForKey:name];
+- (void)loadResourceFile:(NSString *)filename {
+    NSString *strippedFilename = [filename stringByDeletingPathExtension];
+    NSString *extension = [filename pathExtension];
+    
+    NSBundle *bundle = [NSBundle bundleForClass:[self class]];
+    NSData *data = [NSData dataWithContentsOfFile:
+                    [bundle pathForResource:strippedFilename ofType:extension]];
+    if (data == nil) {
+        @throw [GDataXMLException withReason:@"Unable to load file '%@'", filename];
     }
+    
+    NSError *err;
+    GDataXMLDocument *xmldoc = [[GDataXMLDocument alloc] initWithData:data options:0 error:&err];
+    if (xmldoc == nil) {
+        @throw [[NSException alloc] initWithName:NSGenericException 
+                                          reason:[err localizedDescription] 
+                                        userInfo:[err userInfo]];
+    }
+    
+    // Create the resources
+    GDataXMLElement *root = [xmldoc rootElement];
+    for (GDataXMLElement *child in [root elements]) {
+        NSString *type = [child name];
+        // find the resource factory for this type
+        id<BTResourceFactory> factory = [self getFactory:type];
+        NSAssert(factory != nil, @"No ResourceFactory for '%@'", type);
+        // create the resource
+        NSString* name = [child stringAttribute:@"name"];
+        NSAssert(![self isLoaded:name], @"A resource with that name already exists: '%@'", name);
+        id<BTResource> rsrc = [factory create:name group:filename xml:child];
+        // add it to the batch
+        [_resources setValue:rsrc forKey:name];
+    }
+}
+
+- (id<BTResource>)getResource:(NSString *)name {
+    return [_resources objectForKey:name];
 }
 
 - (id<BTResource>)requireResource:(NSString *)name {
@@ -43,19 +83,15 @@
 }
 
 - (void)unloadGroup:(NSString *)group {
-    @synchronized(_resources) {
-        for (id<BTResource>rsrc in [_resources allValues]) {
-            if ([rsrc.group isEqualToString:group]) {
-                [_resources removeObjectForKey:rsrc.name];
-            }
+    for (id<BTResource>rsrc in [_resources allValues]) {
+        if ([rsrc.group isEqualToString:group]) {
+            [_resources removeObjectForKey:rsrc.name];
         }
     }
 }
 
 - (void)unloadAll {
-    @synchronized(_resources) {
-        [_resources removeAllObjects];
-    }
+    [_resources removeAllObjects];
 }
 
 - (void)registerFactory:(id<BTResourceFactory>)factory forType:(NSString *)type {
@@ -64,19 +100,6 @@
 
 - (id<BTResourceFactory>)getFactory:(NSString *)type {
     return [_factories objectForKey:type];
-}
-
-@end
-
-@implementation BTResourceManager (package)
-
-- (void)add:(id<BTResource>)rsrc {
-    NSAssert(rsrc.group != nil, @"Resource doesn't belong to a group: %@", rsrc);
-    @synchronized (_resources) {
-        NSAssert([self getResource:rsrc.name] == nil, 
-                 @"A Resource with that name already exists [name=%@]", [rsrc name]);
-        [_resources setObject:rsrc forKey:rsrc.name];
-    }
 }
 
 @end

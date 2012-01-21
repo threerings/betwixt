@@ -11,12 +11,12 @@
 }
 
 + (BTResourceManager *)sharedManager;
+- (void)loadResourceFile:(NSString *)filename;
 - (id<BTResource>)getResource:(NSString *)name;
 - (id<BTResource>)requireResource:(NSString *)name;
 - (BOOL)isLoaded:(NSString *)name;
 - (void)unloadGroup:(NSString *)group;
 - (void)unloadAll;
 - (void)registerFactory:(id<BTResourceFactory>)factory forType:(NSString *)type;
-- (id<BTResourceFactory>)getFactory:(NSString *)type;
 
 @end
