@@ -8,6 +8,19 @@
 
 #import "GDataXMLNode+OOO.h"
 
+@interface BackroundLoadTask : NSObject {
+@public
+    NSString *_filename;
+    BTCompleteCallback _onComplete;
+    BTErrorCallback _onError;
+    NSArray *_resources;
+    NSException *_err;
+}
+- (id)initWithFilename:(NSString *)filename onComplete:(BTCompleteCallback)onComplete 
+               onError:(BTErrorCallback) onError;
+- (void)load;
+@end
+
 @interface BTResourceManager ()
 - (id<BTResourceFactory>)getFactory:(NSString *)type;
 @end
@@ -33,7 +46,7 @@
     return self;
 }
 
-- (void)loadResourceFile:(NSString *)filename {
+- (NSArray *)getResourcesFromFile:(NSString *)filename {
     NSString *strippedFilename = [filename stringByDeletingPathExtension];
     NSString *extension = [filename pathExtension];
     
@@ -53,6 +66,7 @@
     }
     
     // Create the resources
+    NSMutableArray *resources = [NSMutableArray array];
     GDataXMLElement *root = [xmldoc rootElement];
     for (GDataXMLElement *child in [root elements]) {
         NSString *type = [child name];
@@ -61,11 +75,31 @@
         NSAssert(factory != nil, @"No ResourceFactory for '%@'", type);
         // create the resource
         NSString* name = [child stringAttribute:@"name"];
-        NSAssert(![self isLoaded:name], @"A resource with that name already exists: '%@'", name);
         id<BTResource> rsrc = [factory create:name group:filename xml:child];
         // add it to the batch
-        [_resources setValue:rsrc forKey:name];
+        [resources setValue:rsrc forKey:name];
     }
+    
+    return resources;
+}
+
+- (void)addResources:(NSArray *)resources {
+    for (id<BTResource> rsrc in resources) {
+        NSAssert(![self isLoaded:rsrc.name], @"A resource with that name already exists: '%@'", 
+                 rsrc.name);
+        [_resources setValue:rsrc forKey:rsrc.name];
+    }
+}
+
+- (void)loadResourceFile:(NSString *)filename {
+    [self addResources:[self getResourcesFromFile:filename]];
+}
+
+- (void)loadResourceFileAsync:(NSString *)filename onComplete:(BTCompleteCallback)completeCallback 
+                      onError:(BTErrorCallback)errorCallback {
+    [[[BackroundLoadTask alloc] initWithFilename:filename 
+                                      onComplete:completeCallback 
+                                         onError:errorCallback] load];
 }
 
 - (id<BTResource>)getResource:(NSString *)name {
@@ -100,6 +134,53 @@
 
 - (id<BTResourceFactory>)getFactory:(NSString *)type {
     return [_factories objectForKey:type];
+}
+
+@end
+
+@implementation BackroundLoadTask
+
+- (id)initWithFilename:(NSString *)filename 
+            onComplete:(BTCompleteCallback)onComplete 
+               onError:(BTErrorCallback) onError {
+    
+    if (!(self = [super init])) {
+        return nil;
+    }
+    _filename = filename;
+    _onComplete = onComplete;
+    _onError = onError;
+    return self;
+}
+
+- (void)complete {
+    if (_err != nil) {
+        @try {
+            [[BTResourceManager sharedManager] addResources:_resources];
+        }
+        @catch (NSException *exception) {
+            _err = exception;
+        }
+    }
+    
+    if (_err != nil) {
+        _onError(_err);
+    } else {
+        _onComplete();
+    }
+}
+
+- (void)begin {
+    @try {
+        _resources = [[BTResourceManager sharedManager] getResourcesFromFile:_filename];
+    } @catch (NSException *err) {
+        _err = err;
+    }
+    [self performSelectorOnMainThread:@selector(complete) withObject:nil waitUntilDone:NO];
+}
+
+- (void)load {
+    [self performSelectorInBackground:@selector(begin) withObject:nil];
 }
 
 @end

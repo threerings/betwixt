@@ -4,6 +4,9 @@
 @protocol BTResource;
 @protocol BTResourceFactory;
 
+typedef void (^BTCompleteCallback)(void);
+typedef void (^BTErrorCallback)(NSException *);
+
 @interface BTResourceManager : NSObject {
 @protected
     NSMutableDictionary* _factories;   // <String, GUResourceFactory>
@@ -12,6 +15,9 @@
 
 + (BTResourceManager *)sharedManager;
 - (void)loadResourceFile:(NSString *)filename;
+- (void)loadResourceFileAsync:(NSString *)filename 
+                   onComplete:(BTCompleteCallback)completeCallback 
+                      onError:(BTErrorCallback)errorCallback;
 - (id<BTResource>)getResource:(NSString *)name;
 - (id<BTResource>)requireResource:(NSString *)name;
 - (BOOL)isLoaded:(NSString *)name;
