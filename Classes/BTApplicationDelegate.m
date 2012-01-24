@@ -1,11 +1,11 @@
 //
 //  Betwixt - Copyright 2011 Three Rings Design
 
-#import "BTApplicationDelegate.h" 
+#import "BTApplicationDelegate.h"
 #import "BTModeStack+Package.h"
 
 #import "BTResourceManager.h"
-#import "BTTextureResource.h"
+#import "BTTexture.h"
 
 @implementation BTApplicationDelegate
 
@@ -25,19 +25,19 @@
     [SPStage setSupportHighResolutions:YES];
     // TODO - figure out why this is throwing an exception. Looks like an iOS 5 bug
     //[SPAudioEngine start];
-    
+
     _view.stage = [[SPStage alloc] init];
     _view.multipleTouchEnabled = YES;
-    
+
     [_window makeKeyAndVisible];
     [_view start];
-    
+
     _defaultStack = [[BTModeStack alloc] init];
     [_view.stage addChild:_defaultStack->_sprite];
     [_view.stage addEventListener:@selector(onEnterFrame:) atObject:self forType:SP_EVENT_TYPE_ENTER_FRAME];
-    
+
     // Register default resource factories
-    [[BTResourceManager sharedManager] registerFactory:[BTTextureResource sharedFactory] 
+    [[BTResourceManager sharedManager] registerFactory:[BTTextureResource sharedFactory]
                                                forType:BTTEXTURE_RESOURCE_NAME];
     return YES;
 }
@@ -46,7 +46,7 @@
     [_defaultStack update:(float) ev.passedTime];
 }
 
-- (void)applicationWillResignActive:(UIApplication*)application {    
+- (void)applicationWillResignActive:(UIApplication*)application {
     [_view stop];
 }
 

@@ -1,7 +1,7 @@
 //
 //  Betwixt - Copyright 2012 Three Rings Design
 
-#import "BTTextureResource.h"
+#import "BTTexture.h"
 #import "BTResourceFactory.h"
 #import "GDataXMLNode+OOO.h"
 
