@@ -6,7 +6,6 @@
 #import "GDataXMLNode+OOO.h"
 
 @interface BTTextureResourceFactory : NSObject<BTResourceFactory>
-- (id<BTResource>)create:(NSString *)name group:(NSString *)group xml:(GDataXMLElement *)xml;
 @end
 
 @implementation BTTextureResource
@@ -38,7 +37,7 @@
 @implementation BTTextureResourceFactory
 
 - (id<BTResource>)create:(NSString *)name group:(NSString *)group xml:(GDataXMLElement *)xml {
-    return [[BTTextureResource alloc] initWithContentsOfFile:[xml stringAttribute:@"filename"]];
+    return [[BTTextureResource alloc] initWithName:name group:group filename:[xml stringAttribute:@"filename"]];
 }
 
 @end
