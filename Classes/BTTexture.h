@@ -7,7 +7,7 @@
 
 @protocol BTResourceFactory;
 
-@interface BTTextureResource : SPTexture <BTResource> {
+@interface BTTexture : SPTexture <BTResource> {
 @private
     NSString *_name;
     NSString *_group;

@@ -37,7 +37,7 @@
     [_view.stage addEventListener:@selector(onEnterFrame:) atObject:self forType:SP_EVENT_TYPE_ENTER_FRAME];
 
     // Register default resource factories
-    [[BTResourceManager sharedManager] registerFactory:[BTTextureResource sharedFactory]
+    [[BTResourceManager sharedManager] registerFactory:[BTTexture sharedFactory]
                                                forType:BTTEXTURE_RESOURCE_NAME];
     return YES;
 }

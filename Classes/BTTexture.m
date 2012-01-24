@@ -5,16 +5,16 @@
 #import "BTResourceFactory.h"
 #import "GDataXMLNode+OOO.h"
 
-@interface BTTextureResourceFactory : NSObject<BTResourceFactory>
+@interface BTTextureFactory : NSObject<BTResourceFactory>
 @end
 
-@implementation BTTextureResource
+@implementation BTTexture
 
 + (id<BTResourceFactory>)sharedFactory {
-    static BTTextureResourceFactory *instance = nil;
+    static BTTextureFactory *instance = nil;
     @synchronized(self) {
         if (instance == nil) {
-            instance = [[BTTextureResourceFactory alloc] init];
+            instance = [[BTTextureFactory alloc] init];
         }
     }
     return instance;
@@ -34,10 +34,10 @@
 
 @end
 
-@implementation BTTextureResourceFactory
+@implementation BTTextureFactory
 
 - (id<BTResource>)create:(NSString *)name group:(NSString *)group xml:(GDataXMLElement *)xml {
-    return [[BTTextureResource alloc] initWithName:name group:group filename:[xml stringAttribute:@"filename"]];
+    return [[BTTexture alloc] initWithName:name group:group filename:[xml stringAttribute:@"filename"]];
 }
 
 @end
