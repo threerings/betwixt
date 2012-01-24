@@ -47,7 +47,7 @@
     }
     _state = LS_NOT_LOADED;
     _callbacks = [[NSMutableArray alloc] init];
-    
+
     return self;
 }
 
@@ -66,7 +66,7 @@
             onError(_loadError);
             return;
         }
-        
+
         [_callbacks addObject:[[Callback alloc] init:onComplete onError:onError]];
         if (_state == LS_NOT_LOADED) {
             // load now!
@@ -84,15 +84,15 @@
 - (void)loadComplete:(NSException *)error
 {
     NSMutableArray* callbacks = _callbacks;
-    GULoadableState state = (error == nil ? LS_LOADED : LS_ERROR);
-    
+    BTLoadableState state = (error == nil ? LS_LOADED : LS_ERROR);
+
     @synchronized(self) {
         NSAssert(_state == LS_LOADING, @"We weren't loading [state=%d]", _state);
         _loadError = error;
         _state = state;
         _callbacks = [[NSMutableArray alloc] init];
     }
-    
+
     @try {
         for (Callback* cb in callbacks) {
             if (state == LS_ERROR) {
@@ -103,7 +103,7 @@
         }
     }
     @catch (NSException *exception) {
-        NSLog(@"Unhandled exception in GULoadable.loadComplete: %@", exception);
+        NSLog(@"Unhandled exception in BTLoadable.loadComplete: %@", exception);
     }
 }
 

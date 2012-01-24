@@ -15,16 +15,16 @@
     if (!(self = [super init])) {
         return nil;
     }
-    
+
     _allLoadables = [[NSMutableArray alloc] init];
     _loadedLoadables = [[NSMutableArray alloc] init];
-    
+
     return self;
 }
 
 - (void)add:(BTLoadable *)loadable
 {
-    NSAssert(self.state == LS_NOT_LOADED, @"Can't add GULoadables now [state=%d]", self.state);
+    NSAssert(self.state == LS_NOT_LOADED, @"Can't add BTLoadables now [state=%d]", self.state);
     [_allLoadables addObject:loadable];
 }
 
@@ -36,7 +36,7 @@
             [self loadSuccess];
             return;
         }
-        
+
         for (BTLoadable *loadable in _allLoadables) {
             [self load1Loadable:loadable];
             // don't continue if the load operation has been canceled/errored,
@@ -62,7 +62,7 @@
         if (self.state == LS_ERROR) {
             return;
         }
-        
+
         if (err != nil) {
             [self loadError:err];
         } else {

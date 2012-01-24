@@ -6,19 +6,19 @@ typedef enum {
     LS_LOADING,
     LS_LOADED,
     LS_ERROR
-} GULoadableState;
+} BTLoadableState;
 
 typedef void (^BTCompleteCallback)(void);
 typedef void (^BTErrorCallback)(NSException *);
 
 @interface BTLoadable : NSObject {
 @protected
-    GULoadableState _state;
+    BTLoadableState _state;
     NSException* _loadError;
     NSMutableArray* _callbacks;
 }
 
-@property(readonly) GULoadableState state;
+@property(readonly) BTLoadableState state;
 - (id)init;
 - (void)load:(BTCompleteCallback)onComplete;
 - (void)load:(BTCompleteCallback)onComplete onError:(BTErrorCallback)onError;

@@ -9,8 +9,8 @@ typedef void (^BTErrorCallback)(NSException *);
 
 @interface BTResourceManager : NSObject {
 @protected
-    NSMutableDictionary* _factories;   // <String, GUResourceFactory>
-    NSMutableDictionary* _resources;   // <String, GUResource>
+    NSMutableDictionary* _factories;   // <String, BTResourceFactory>
+    NSMutableDictionary* _resources;   // <String, BTResource>
 }
 
 + (BTResourceManager *)sharedManager;
