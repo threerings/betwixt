@@ -19,8 +19,8 @@
     if (![super application:application didFinishLaunchingWithOptions:launchOptions]) return NO;
     
     // load resources
-    [[BTResourceManager sharedManager] loadResourceFileAsync:@"ResourceTest.xml" 
-                                                  onComplete:^{ 
+    [[BTResourceManager sharedManager] pendResourceFile:@"ResourceTest.xml"];
+    [[BTResourceManager sharedManager] loadPendingResources:^{ 
                                                       NSLog(@"onComplete");
                                                   } onError:^(NSException *err) {
                                                       NSLog(@"onError: %@", err);

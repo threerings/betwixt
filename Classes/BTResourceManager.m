@@ -8,17 +8,17 @@
 
 #import "GDataXMLNode+OOO.h"
 
-@interface BackroundLoadTask : NSObject {
-@public
-    NSString *_filename;
+@interface LoadTask : NSObject {
+@private
+    NSMutableArray *_filenames;
+    NSMutableArray *_resources;
+    NSException *_err;
     BTCompleteCallback _onComplete;
     BTErrorCallback _onError;
-    NSArray *_resources;
-    NSException *_err;
 }
-- (id)initWithFilename:(NSString *)filename onComplete:(BTCompleteCallback)onComplete 
-               onError:(BTErrorCallback) onError;
-- (void)load;
+- (id)init;
+- (void)addFilename:(NSString *)filename;
+- (void)load:(BTCompleteCallback)onComplete onError:(BTErrorCallback)onError;
 @end
 
 @interface BTResourceManager ()
@@ -95,11 +95,22 @@
     [self addResources:[self getResourcesFromFile:filename]];
 }
 
-- (void)loadResourceFileAsync:(NSString *)filename onComplete:(BTCompleteCallback)completeCallback 
-                      onError:(BTErrorCallback)errorCallback {
-    [[[BackroundLoadTask alloc] initWithFilename:filename 
-                                      onComplete:completeCallback 
-                                         onError:errorCallback] load];
+- (void)pendResourceFile:(NSString *)filename {
+    if (_pendingLoadTask == nil) {
+        _pendingLoadTask = [[LoadTask alloc] init];
+    }
+    [_pendingLoadTask addFilename:filename];
+}
+
+- (void)loadPendingResources:(BTCompleteCallback)onComplete onError:(BTErrorCallback)onError {
+    if (_pendingLoadTask == nil) {
+        onComplete();
+        return;
+    }
+    
+    LoadTask *loadTask = _pendingLoadTask;
+    _pendingLoadTask = nil;
+    [loadTask load:onComplete onError:onError];
 }
 
 - (id<BTResource>)getResource:(NSString *)name {
@@ -138,19 +149,20 @@
 
 @end
 
-@implementation BackroundLoadTask
+@implementation LoadTask
 
-- (id)initWithFilename:(NSString *)filename 
-            onComplete:(BTCompleteCallback)onComplete 
-               onError:(BTErrorCallback) onError {
+- (id)init {
     
     if (!(self = [super init])) {
         return nil;
     }
-    _filename = filename;
-    _onComplete = onComplete;
-    _onError = onError;
+    _filenames = [NSMutableArray array];
+    _resources = [NSMutableArray array];
     return self;
+}
+
+- (void)addFilename:(NSString *)filename {
+    [_filenames addObject:filename];
 }
 
 - (void)complete {
@@ -172,14 +184,18 @@
 
 - (void)begin {
     @try {
-        _resources = [[BTResourceManager sharedManager] getResourcesFromFile:_filename];
+        for (NSString *filename in _filenames) {
+            [_resources addObjectsFromArray:[[BTResourceManager sharedManager] getResourcesFromFile:filename]];
+        }
     } @catch (NSException *err) {
         _err = err;
     }
     [self performSelectorOnMainThread:@selector(complete) withObject:nil waitUntilDone:NO];
 }
 
-- (void)load {
+- (void)load:(BTCompleteCallback)onComplete onError:(BTErrorCallback)onError {
+    _onComplete = onComplete;
+    _onError = onError;
     [self performSelectorInBackground:@selector(begin) withObject:nil];
 }
 
