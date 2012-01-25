@@ -19,12 +19,12 @@
     if (![super application:application didFinishLaunchingWithOptions:launchOptions]) return NO;
     
     // load resources
-    [[BTResourceManager sharedManager] pendResourceFile:@"ResourceTest.xml"];
-    [[BTResourceManager sharedManager] loadPendingResources:^{ 
-                                                      NSLog(@"onComplete");
-                                                  } onError:^(NSException *err) {
-                                                      NSLog(@"onError: %@", err);
-                                                  }];
+    [[BTResourceManager sharedManager] loadResourceFile:@"ResourceTest.xml"
+                                             onComplete:^(BTResourceFile *handle) {
+                                                 NSLog(@"onComplete");
+                                             } onError:^(NSException *err) {
+                                                 NSLog(@"onError: %@", err);
+                                             }];
     
     [self.defaultStack pushMode:[[NamedNodeMode alloc] init]];
     [self.defaultStack pushMode:[[MoveMode alloc] init]];
