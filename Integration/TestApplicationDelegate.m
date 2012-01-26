@@ -23,10 +23,6 @@
     return self;
 }
 
-@end
-
-@implementation LoadingMode (protected)
-
 - (void)update:(float)dt {
     [super update:dt];
     if (self.loadComplete) {

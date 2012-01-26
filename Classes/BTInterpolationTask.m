@@ -7,6 +7,7 @@
 @implementation BTInterpolationTask {
     BTInterpolator _interpolator;
 }
+
 - (id)initOverTime:(float)seconds withInterpolator:(BTInterpolator)interp
          onDisplay:(SPDisplayObject*)display {
     if (!(self = [super initOverTime:seconds])) return nil;
@@ -20,13 +21,9 @@
     return self;
 }
 
--(void)updateTo:(float)elapsed outOf:(float)total {
+- (void)updateTo:(float)elapsed outOf:(float)total {
     [self updateInterpolatedTo:_interpolator(elapsed/total)];
 }
-
-@end
-
-@implementation BTInterpolationTask (protected)
 
 -(void) updateInterpolatedTo:(float)interpolated {}
 

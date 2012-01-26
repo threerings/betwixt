@@ -77,10 +77,6 @@ typedef enum {
     [_pendingModeTransitions addObject:[[PendingModeTransition alloc] init:kMTT_Unwind mode:nil index:0]];
 }
 
-@end
-
-@implementation BTModeStack (package)
-
 - (void)handleModeTransitions {
     if (_pendingModeTransitions.count == 0) {
         return;

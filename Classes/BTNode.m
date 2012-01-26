@@ -28,11 +28,6 @@
     return _conns;
 }
 
-@synthesize parent=_parent, attached=_attached, detached=_detached;
-@end
-
-@implementation BTNode (package)
-
 - (void)removeInternal {
     _parent = nil;
     [self.detached emit];
@@ -40,5 +35,7 @@
     [_detached disconnectAll];
     [_conns disconnectAll];
 }
+
+@synthesize parent=_parent, attached=_attached, detached=_detached;
 
 @end

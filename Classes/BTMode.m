@@ -42,12 +42,6 @@
     return _sprite;
 }
 
-@synthesize sprite=_sprite, update=_update, stack=_stack;
-
-@end
-
-@implementation BTMode (protected)
-
 - (void)update:(float)dt {
     [_update emitEvent:dt];
 }
@@ -58,15 +52,13 @@
 - (void) exit {
 }
 
-@end
-
-@implementation BTMode (package)
-
 - (void)addKeys:(BTNode<BTKeyed>*)node {
     for (NSString *key in ((id<BTKeyed>)node).keys) {
         NSAssert1(![_keyedObjects objectForKey:key], @"Object key '%@' already used", key);
         [_keyedObjects setObject:node forKey:key];
     }
 }
+
+@synthesize sprite=_sprite, update=_update, stack=_stack;
 
 @end
