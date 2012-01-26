@@ -8,15 +8,23 @@
 
 #import "GDataXMLNode+OOO.h"
 
-@interface BTResourceFile () {
-@private
+@interface LoadTask : NSObject {
+@public
     NSString *_filename;
-    NSMutableSet *_referencedFiles;
+    NSArray *_resources;
+    NSException *_err;
+    BTCompleteCallback _onComplete;
+    BTErrorCallback _onError;
 }
-- (id)initWithFilename:(NSString *)filename;
-- (void)addReferencedFile:(BTResourceFile *)file;
-- (void)load:(BTCompleteCallback)onComplete onError:(BTErrorCallback)onError;
-- (void)dealloc;
+- (id)initWithFilename:(NSString *)filename onComplete:(BTCompleteCallback)onComplete
+               onError:(BTErrorCallback)onError;
+- (void)load;
+
+@property (readonly,strong) NSString *filename;
+@property (readonly,strong) NSArray *resources;
+@property (readonly,strong) NSException *err;
+@property (readonly,strong) BTCompleteCallback onComplete;
+@property (readonly,strong) BTErrorCallback onError;
 @end
 
 @implementation BTResourceManager
@@ -37,29 +45,50 @@
     }
     _factories = [[NSMutableDictionary alloc] init];
     _resources = [[NSMutableDictionary alloc] init];
-    _resourceFiles = [[NSMutableDictionary alloc] init];
+    _loadingFiles = [[NSMutableSet alloc] init];
+    _loadedFiles = [[NSMutableSet alloc] init];
     return self;
 }
 
-- (BTResourceFile *)getResourceFile:(NSString *)name {
-    NSValue *weakVal = [_resourceFiles objectForKey:name];
-    return (BTResourceFile *) [weakVal nonretainedObjectValue];
+- (BOOL)isResourceFileLoaded:(NSString *)filename {
+    return [_loadedFiles containsObject:filename] || [_loadingFiles containsObject:filename];
 }
 
 - (void)loadResourceFile:(NSString *)filename onComplete:(BTCompleteCallback)onComplete 
                  onError:(BTErrorCallback)onError {
-    NSAssert([self getResourceFile:filename] == nil, @"Resource file '%@' already loaded", filename);
-    BTResourceFile *file = [[BTResourceFile alloc] initWithFilename:filename];
-    // store a weak reference to the file in our dictionary
-    [_resourceFiles setObject:[NSValue valueWithNonretainedObject:file] forKey:filename];
-    [file load:onComplete onError:onError];
+    NSAssert(![self isResourceFileLoaded:filename], 
+             @"Resource file '%@' already loaded (or is loading)", filename);
+    
+    [_loadingFiles addObject:filename];
+    LoadTask *task = [[LoadTask alloc] initWithFilename:filename onComplete:onComplete 
+                                                onError:onError];
+    [task load];
 }
 
-- (void)addResources:(NSArray *)resources {
-    for (id<BTResource> rsrc in resources) {
-        NSAssert(![self isLoaded:rsrc.name], @"A resource with that name already exists: '%@'", 
-                 rsrc.name);
-        [_resources setValue:rsrc forKey:rsrc.name];
+- (void)loadTaskCompleted:(LoadTask *)task {
+    NSAssert([_loadingFiles containsObject:task.filename], @"");
+    [_loadingFiles removeObject:task.filename];
+    
+    NSException *loadErr = task.err;
+    
+    if (loadErr == nil) {
+        @try {
+            for (id<BTResource> rsrc in task.resources) {
+                NSAssert(![self isLoaded:rsrc.name], 
+                         @"A resource with that name already exists: '%@'", rsrc.name);
+                [_resources setValue:rsrc forKey:rsrc.name];
+            }
+        } @catch (NSException *err) {
+            [self unloadResourceFile:task.filename];
+            loadErr = err;
+        }
+    }
+    
+    if (loadErr != nil) {
+        [_loadedFiles addObject:task.filename];
+        task.onComplete();
+    } else {
+        task.onError(loadErr);
     }
 }
 
@@ -77,12 +106,19 @@
     return [self getResource:name] != nil;
 }
 
-- (void)unloadGroup:(NSString *)group {
+- (void)unloadResourceFile:(NSString *)filename {
     for (id<BTResource>rsrc in [_resources allValues]) {
-        if ([rsrc.group isEqualToString:group]) {
+        if ([rsrc.group isEqualToString:filename]) {
             [_resources removeObjectForKey:rsrc.name];
         }
     }
+    [_loadedFiles removeObject:filename];
+}
+
+- (void)unloadAll {
+    [_resources removeAllObjects];
+    [_loadedFiles removeAllObjects];
+    // TODO: what to do with loading files?
 }
 
 - (void)registerFactory:(id<BTResourceFactory>)factory forType:(NSString *)type {
@@ -95,72 +131,30 @@
 
 @end
 
-@interface LoadTask : NSObject {
-@public
-    BTCompleteCallback _onComplete;
-    BTErrorCallback _onError;
-}
-@property (strong) NSArray *resources;
-@property (strong) NSException *err;
-@property (readonly) BTCompleteCallback onComplete;
-@property (readonly) BTErrorCallback onError;
-- (id)init:(BTCompleteCallback)onComplete onError:(BTErrorCallback)onError;
-@end
-
 @implementation LoadTask
 
-@synthesize resources;
-@synthesize err;
+@synthesize filename = _filename;
+@synthesize err = _err;
+@synthesize resources = _resources;
 @synthesize onComplete = _onComplete;
 @synthesize onError = _onError;
 
-- (id)init:(BTCompleteCallback)onComplete onError:(BTErrorCallback)onError {
+- (id)initWithFilename:(NSString *)filename onComplete:(BTCompleteCallback)onComplete 
+               onError:(BTErrorCallback)onError {
     if (!(self = [super init])) {
         return nil;
     }
+    _filename = filename;
     _onComplete = onComplete;
     _onError = onError;
     return self;
 }
 
-@end
-
-@implementation BTResourceFile
-
-- (id)initWithFilename:(NSString *)filename {
-    if (!(self = [super init])) {
-        return nil;
-    }
-    _filename = filename;
-    return self;
+- (void)complete {
+    [[BTResourceManager sharedManager] loadTaskCompleted:self];
 }
 
-- (void)addReferencedFile:(BTResourceFile *)file {
-    if (_referencedFiles == nil) {
-        _referencedFiles = [NSMutableSet setWithObject:file];
-    } else {
-        [_referencedFiles addObject:file];
-    }
-}
-
-- (void)complete:(LoadTask *)task {
-    if (task.err == nil) {
-        @try {
-            [[BTResourceManager sharedManager] addResources:task.resources];
-        }
-        @catch (NSException *exception) {
-            task.err = exception;
-        }
-    }
-    
-    if (task.err != nil) {
-        task.onError(task.err);
-    } else {
-        task.onComplete(self);
-    }
-}
-
-- (void)begin:(LoadTask *)task {
+- (void)begin {
     @try {
         NSString *strippedFilename = [_filename stringByDeletingPathExtension];
         NSString *extension = [_filename pathExtension];
@@ -194,22 +188,15 @@
             // add it to the batch
             [resources addObject:rsrc];
         }
-        task.resources = resources;
+        _resources = resources;
     } @catch (NSException *err) {
-        task.err = err;
+        _err = err;
     }
-    [self performSelectorOnMainThread:@selector(complete:) withObject:task waitUntilDone:NO];
+    [self performSelectorOnMainThread:@selector(complete) withObject:nil waitUntilDone:NO];
 }
 
-- (void)load:(BTCompleteCallback)onComplete onError:(BTErrorCallback)onError {
-    LoadTask *task = [[LoadTask alloc] init:onComplete onError:onError];
-    [self performSelectorInBackground:@selector(begin:) withObject:task];
+- (void)load {
+    [self performSelectorInBackground:@selector(begin) withObject:nil];
 }
-
-- (void)dealloc {
-    [[BTResourceManager sharedManager] unloadGroup:_filename];
-}
-
-@synthesize filename = _filename;
 
 @end

@@ -20,7 +20,7 @@
     
     // load resources
     [[BTResourceManager sharedManager] loadResourceFile:@"ResourceTest.xml"
-                                             onComplete:^(BTResourceFile *handle) {
+                                             onComplete:^ {
                                                  NSLog(@"onComplete");
                                              } onError:^(NSException *err) {
                                                  NSLog(@"onError: %@", err);
