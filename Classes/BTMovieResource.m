@@ -15,7 +15,26 @@
     NSString *libraryItem;
 }
 @end
-@implementation BTMovieResourceKeyframe @end
+@implementation BTMovieResourceKeyframe
+
+-initWithFrame:(GDataXMLElement*)frameEl {
+    if (!(self = [super init])) return nil;
+    index = [frameEl intAttribute:@"index"];
+    duration = [frameEl intAttribute:@"duration" defaultVal:1];
+
+    GDataXMLElement *symbolEl = [frameEl walkTo:@"elements/DOMSymbolInstance"];
+    libraryItem = [symbolEl stringAttribute:@"libraryItemName"];
+
+    GDataXMLElement *matrixEl = [symbolEl walkTo:@"matrix/Matrix"];
+    matrix = [[SPMatrix alloc] initWithA:[matrixEl floatAttribute:@"a" defaultVal:1]
+                                       b:[matrixEl floatAttribute:@"b" defaultVal:0]
+                                       c:[matrixEl floatAttribute:@"c" defaultVal:0]
+                                       d:[matrixEl floatAttribute:@"d" defaultVal:1]
+                                      tx:[matrixEl floatAttribute:@"tx" defaultVal:0]
+                                      ty:[matrixEl floatAttribute:@"ty" defaultVal:0]];
+    return self;
+}
+@end
 
 @interface BTMovieResourceLayer :NSObject {
 @public
@@ -23,7 +42,17 @@
     NSMutableArray *keyframes;
 }
 @end
-@implementation BTMovieResourceLayer @end
+@implementation BTMovieResourceLayer
+-initWithLayer:(GDataXMLElement*)layerEl {
+    if (!(self = [super init])) return nil;
+    keyframes = [[NSMutableArray alloc] init];
+    name = [layerEl stringAttribute:@"name"];
+    for (GDataXMLElement *frameEl in [[layerEl walkTo:@"frames"] elements]) {
+        [keyframes addObject:[[BTMovieResourceKeyframe alloc] initWithFrame:frameEl]];
+    }
+    return self;
+}
+@end
 
 @implementation BTMovieResource {
 @public
@@ -56,26 +85,7 @@
     BTMovieResource *movie = [[BTMovieResource alloc] init];
     GDataXMLElement *layersEl = [xml walkTo:@"DOMSymbolItem/timeline/DOMTimeline/layers"];
     for (GDataXMLElement *layerEl in [layersEl elements]) {
-        BTMovieResourceLayer *layer = [[BTMovieResourceLayer alloc] init];
-        layer->keyframes = [[NSMutableArray alloc] init];
-        layer->name = [layerEl stringAttribute:@"name"];
-        for (GDataXMLElement *frameEl in [[layerEl walkTo:@"frames"] elements]) {
-            BTMovieResourceKeyframe *keyframe = [[BTMovieResourceKeyframe alloc] init];
-            keyframe->index = [frameEl intAttribute:@"index"];
-            keyframe->duration = [frameEl intAttribute:@"duration" defaultVal:1];
-            GDataXMLElement *symbolEl = [frameEl walkTo:@"elements/DOMSymbolInstance"];
-            keyframe->libraryItem = [symbolEl stringAttribute:@"libraryItemName"];
-            GDataXMLElement *matrixEl = [symbolEl walkTo:@"matrix/Matrix"];
-            keyframe->matrix = [[SPMatrix alloc]
-                initWithA:[matrixEl floatAttribute:@"a" defaultVal:1]
-                        b:[matrixEl floatAttribute:@"b" defaultVal:0]
-                        c:[matrixEl floatAttribute:@"c" defaultVal:0]
-                        d:[matrixEl floatAttribute:@"d" defaultVal:1]
-                       tx:[matrixEl floatAttribute:@"tx" defaultVal:0]
-                       ty:[matrixEl floatAttribute:@"ty" defaultVal:0]];
-            [layer->keyframes addObject:keyframe];
-        }
-        [movie->layers addObject:layer];
+        [movie->layers addObject:[[BTMovieResourceLayer alloc] initWithLayer:layerEl]];
     }
     return movie;
 }
