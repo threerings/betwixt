@@ -11,12 +11,13 @@
 
 @interface BTMode : BTNodeContainer<BTDisplayable,BTDisplayContext> {
 @package
-    BTModeStack *_stack;
+    __weak BTModeStack *_stack;
 }
 
 - (BTNode*)nodeForKey:(NSString*)key;
 
 @property(nonatomic,readonly) RAFloatSignal *update;
+@property(nonatomic,readonly) BTModeStack *stack;
 @property(nonatomic,readonly) SPSprite *sprite;
 
 @end

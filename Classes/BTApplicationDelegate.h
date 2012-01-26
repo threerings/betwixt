@@ -7,10 +7,9 @@
 @interface BTApplicationDelegate : NSObject <UIApplicationDelegate> {
 @private
     UIWindow *_window;
-    SPView *_view;
-    BTModeStack *_defaultStack;
 }
 
-@property(strong, nonatomic) BTModeStack *defaultStack;
+// Subclasses should override this.
+- (void)run:(BTModeStack *)defaultStack;
 
 @end

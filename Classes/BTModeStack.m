@@ -7,6 +7,7 @@
 #import "BTMode+Protected.h"
 
 typedef enum {
+    kMTT_Push,
     kMTT_Insert,
     kMTT_Remove,
     kMTT_Change,
@@ -49,7 +50,7 @@ typedef enum {
 }
 
 - (void)pushMode:(BTMode*)mode {
-    [self insertMode:mode atIndex:-1];
+    [_pendingModeTransitions addObject:[[PendingModeTransition alloc] init:kMTT_Push mode:mode index:0]];
 }
 
 - (void)popMode {
@@ -86,6 +87,7 @@ typedef enum {
     }
     
     __block BTMode *initialTopMode = self.topMode;
+    __weak BTModeStack *this = self;
     
     typedef void (^InsertModeBlock)(BTMode *mode, int index);
     typedef void (^RemoveModeBlock)(int index);
@@ -104,6 +106,7 @@ typedef enum {
             [_stack insertObject:newMode atIndex:index];
             [_sprite addChild:newMode.sprite atIndex:index];
         }
+        newMode->_stack = this;
         [newMode.attached emit];
     };
     
@@ -114,7 +117,7 @@ typedef enum {
             index = _stack.count + index;
         }
         index = MAX(index, 0);
-        index = MIN(index, _stack.count);
+        index = MIN(index, _stack.count - 1);
         
         // if the top mode is removed, make sure it's exited first
         BTMode *removedMode = [_stack objectAtIndex:index];
@@ -125,6 +128,7 @@ typedef enum {
         
         [_stack removeObjectAtIndex:index];
         [_sprite removeChild:removedMode.sprite];
+        removedMode->_stack = nil;
         [removedMode.detached emit];
     };
     
@@ -136,6 +140,10 @@ typedef enum {
     
     for (PendingModeTransition *transition in transitions) {
         switch (transition->type) {
+            case kMTT_Push:
+                doInsertMode(transition->mode, _stack.count);
+                break;
+                
             case kMTT_Insert:
                 doInsertMode(transition->mode, transition->index);
                 break;
@@ -146,7 +154,7 @@ typedef enum {
                 
             case kMTT_Change:
                 doRemoveMode(-1); // pop
-                doInsertMode(transition->mode, -1); // push
+                doInsertMode(transition->mode, _stack.count); // push
                 break;
                 
             case kMTT_Unwind:
@@ -158,7 +166,7 @@ typedef enum {
                 NSAssert(self.topMode == transition->mode || _stack.count == 0, @"");
                 
                 if (_stack.count == 0 && transition->mode != nil) {
-                    doInsertMode(transition->mode, -1);
+                    doInsertMode(transition->mode, _stack.count);
                 }
                 break;
         }

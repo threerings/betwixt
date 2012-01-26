@@ -7,38 +7,42 @@
 #import "MoveMode.h"
 #import "Square.h"
 #import "SelfRemoveMode.h"
-#import "BTResourceManager.h"
 
-#import "SPEventDispatcher+BlockListener.h"
+#import "BTLoadingMode.h"
 
-@implementation TestApplicationDelegate {
-    SubObjectMode *_adder;
+@interface LoadingMode : BTLoadingMode
+@end
+
+@implementation LoadingMode
+
+- (id)init {
+    if (!(self = [super init])) {
+        return nil;
+    }
+    [[self add:@"ResourceTest.xml"] add:@"squaredance.xml"];
+    return self;
 }
 
-- (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
-    if (![super application:application didFinishLaunchingWithOptions:launchOptions]) return NO;
+@end
 
-    // load resources
-    [[BTResourceManager sharedManager] loadResourceFile:@"ResourceTest.xml"
-                                                  onComplete:^{ NSLog(@"onComplete"); }
-                                                     onError:^(NSException *err) { NSLog(@"onError: %@", err); }];
-    [[BTResourceManager sharedManager] loadResourceFile:@"squaredance.xml"
-                                                  onComplete:^{ NSLog(@"Squaredance started"); }
-                                                  onError:^(NSException *err) { NSLog(@"sq onError: %@", err); }];
+@implementation LoadingMode (protected)
 
-    [self.defaultStack pushMode:[[NamedNodeMode alloc] init]];
-    [self.defaultStack pushMode:[[MoveMode alloc] init]];
-    [self.defaultStack pushMode:[[SelfRemoveMode alloc] init]];
-    _adder = [[SubObjectMode alloc] init];
-    [self.defaultStack pushMode:_adder];
-    [SPStage.mainStage addEventListener:@selector(checkForSquareAdded:) atObject:self forType:SP_EVENT_TYPE_ENTER_FRAME];
-    return YES;
+- (void)update:(float)dt {
+    [super update:dt];
+    if (self.loadComplete) {
+        [self.stack changeMode:[[NamedNodeMode alloc] init]];
+        [self.stack pushMode:[[MoveMode alloc] init]];
+        [self.stack pushMode:[[SelfRemoveMode alloc] init]];
+        [self.stack pushMode:[[SubObjectMode alloc] init]];
+    }
 }
 
-- (void)checkForSquareAdded:(SPEnterFrameEvent*)ev {
-    [SPStage.mainStage removeEventListener:@selector(checkForSquareAdded:) atObject:self forType:SP_EVENT_TYPE_ENTER_FRAME];
-    NSAssert(_adder.squaresAdded == 1, @"Square not added by first tick by Game");
-    _adder = nil;
+@end
+
+@implementation TestApplicationDelegate
+
+- (void)run:(BTModeStack *)defaultStack {
+    [defaultStack pushMode:[[LoadingMode alloc] init]];
 }
 
 @end

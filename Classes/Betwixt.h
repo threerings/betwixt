@@ -5,6 +5,7 @@
 #import "React.h"
 #import "Sparrow.h"
 
+#import "BTApp.h"
 #import "BTApplicationDelegate.h"
 #import "BTContext.h"
 #import "BTDisplayable.h"
@@ -36,3 +37,6 @@
 #import "BTLocationTask.h"
 #import "BTRotationTask.h"
 #import "BTTaskSequence.h"
+
+// Utils
+#import "BTLoadingMode.h"

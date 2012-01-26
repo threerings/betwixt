@@ -10,13 +10,16 @@
 
 @interface LoadTask : NSObject {
 @public
+    __weak BTResourceManager *_mgr;
     NSString *_filename;
     NSArray *_resources;
     NSException *_err;
     BTCompleteCallback _onComplete;
     BTErrorCallback _onError;
 }
-- (id)initWithFilename:(NSString *)filename onComplete:(BTCompleteCallback)onComplete
+- (id)initWithManager:(BTResourceManager *)mgr 
+             filename:(NSString *)filename 
+           onComplete:(BTCompleteCallback)onComplete
                onError:(BTErrorCallback)onError;
 - (void)load;
 
@@ -28,16 +31,6 @@
 @end
 
 @implementation BTResourceManager
-
-+ (BTResourceManager *)sharedManager {
-    static BTResourceManager *instance = nil;
-    @synchronized(self) {
-        if (instance == nil) {
-            instance = [[BTResourceManager alloc] init];
-        }
-    }
-    return instance;
-}
 
 - (id)init {
     if (!(self = [super init])) {
@@ -60,8 +53,8 @@
              @"Resource file '%@' already loaded (or is loading)", filename);
     
     [_loadingFiles addObject:filename];
-    LoadTask *task = [[LoadTask alloc] initWithFilename:filename onComplete:onComplete 
-                                                onError:onError];
+    LoadTask *task = [[LoadTask alloc] initWithManager:self filename:filename onComplete:onComplete 
+                                               onError:onError];
     [task load];
 }
 
@@ -138,11 +131,14 @@
 @synthesize onComplete = _onComplete;
 @synthesize onError = _onError;
 
-- (id)initWithFilename:(NSString *)filename onComplete:(BTCompleteCallback)onComplete 
-               onError:(BTErrorCallback)onError {
+- (id)initWithManager:(BTResourceManager *)mgr 
+             filename:(NSString *)filename 
+           onComplete:(BTCompleteCallback)onComplete 
+              onError:(BTErrorCallback)onError {
     if (!(self = [super init])) {
         return nil;
     }
+    _mgr = mgr;
     _filename = filename;
     _onComplete = onComplete;
     _onError = onError;
@@ -150,7 +146,7 @@
 }
 
 - (void)complete {
-    [[BTResourceManager sharedManager] loadTaskCompleted:self];
+    [_mgr loadTaskCompleted:self];
 }
 
 - (void)begin {
@@ -179,7 +175,7 @@
         for (GDataXMLElement *child in [root elements]) {
             NSString *type = [child name];
             // find the resource factory for this type
-            id<BTResourceFactory> factory = [[BTResourceManager sharedManager] getFactory:type];
+            id<BTResourceFactory> factory = [_mgr getFactory:type];
             NSAssert(factory != nil, @"No ResourceFactory for '%@'", type);
             // create the resource
             NSString* name = [child stringAttribute:@"name"];

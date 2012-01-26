@@ -18,7 +18,7 @@
 
 @property(nonatomic,readonly) RAUnitSignal *attached;
 @property(nonatomic,readonly) RAUnitSignal *detached;
-@property(nonatomic,readonly) BTMode *root;
+@property(nonatomic,readonly) BTMode *mode;
 @property(nonatomic,readonly) RAConnectionGroup *conns;
 @property(nonatomic,readonly) BTNodeContainer *parent;
 

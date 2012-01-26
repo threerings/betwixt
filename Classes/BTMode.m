@@ -25,7 +25,7 @@
     return [_keyedObjects objectForKey:key];
 }
 
-- (BTMode*) root {
+- (BTMode*) mode {
     return self;
 }
 
@@ -42,7 +42,7 @@
     return _sprite;
 }
 
-@synthesize sprite=_sprite, update=_update;
+@synthesize sprite=_sprite, update=_update, stack=_stack;
 
 @end
 

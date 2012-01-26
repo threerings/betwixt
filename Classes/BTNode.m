@@ -18,9 +18,9 @@
     [_parent removeNode:self];
 }
 
-- (BTMode*) root {
+- (BTMode*) mode {
     if ([_parent isKindOfClass:[BTMode class]]) return (BTMode*)_parent;
-    return _parent.root;
+    return _parent.mode;
 }
 
 - (RAConnectionGroup*)conns {

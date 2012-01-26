@@ -3,6 +3,7 @@
 
 #import "BTLoadingMode.h"
 #import "BTMode+Protected.h"
+#import "BTApp.h"
 #import "BTResourceManager.h"
 
 @implementation BTLoadingMode
@@ -40,7 +41,7 @@
     NSString *filename = [_filenames objectAtIndex:_filenameIdx];
     
     __weak BTLoadingMode *this = self;
-    [[BTResourceManager sharedManager] loadResourceFile:filename onComplete:^{
+    [[BTApp resourceManager] loadResourceFile:filename onComplete:^{
         [this loadNextFile];
     } onError:^(NSException *err) {
         [this onError:err];

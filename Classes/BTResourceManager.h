@@ -15,7 +15,6 @@ typedef void (^BTErrorCallback)(NSException *);
     NSMutableSet *_loadedFiles; // <String>
 }
 
-+ (BTResourceManager *)sharedManager;
 - (void)loadResourceFile:(NSString *)filename onComplete:(BTCompleteCallback)onComplete 
                  onError:(BTErrorCallback)onError;
 - (void)unloadResourceFile:(NSString *)filename;

@@ -13,7 +13,7 @@
     _quad = [SPQuad quadWithWidth:100 height:100 color:color];
     _quad.x = 50;
     _quad.y = 50;
-    [self.detached connectUnit:^ { [((BTMode*)self.root).sprite removeChild:_quad]; }];
+    [self.detached connectUnit:^ { [((BTMode*)self.mode).sprite removeChild:_quad]; }];
     return self;
 }
 
