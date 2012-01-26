@@ -18,5 +18,6 @@
 - (int)intAttribute:(NSString *)name;
 - (BOOL)boolAttribute:(NSString *)name defaultVal:(BOOL)defaultVal;
 - (BOOL)boolAttribute:(NSString *)name;
+- (GDataXMLElement *)walkTo:(NSString *)path;
 
 @end

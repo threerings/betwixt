@@ -6,6 +6,7 @@
 
 #import "BTResourceManager.h"
 #import "BTTexture.h"
+#import "BTMovieResource.h"
 
 @implementation BTApplicationDelegate
 
@@ -39,6 +40,8 @@
     // Register default resource factories
     [[BTResourceManager sharedManager] registerFactory:[BTTexture sharedFactory]
                                                forType:BTTEXTURE_RESOURCE_NAME];
+    [[BTResourceManager sharedManager] registerFactory:[BTMovieResource sharedFactory]
+                                               forType:BTMOVIE_RESOURCE_NAME];
     return YES;
 }
 

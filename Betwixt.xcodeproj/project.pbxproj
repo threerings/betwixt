@@ -87,6 +87,11 @@
 		CBB8CB921475A06400445316 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		CBD20D0814CF68D600662068 /* BTTexture.h in Headers */ = {isa = PBXBuildFile; fileRef = CBD20D0614CF68D600662068 /* BTTexture.h */; };
 		CBD20D0914CF68D600662068 /* BTTexture.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD20D0714CF68D600662068 /* BTTexture.m */; };
+		CBD20D0C14CF693700662068 /* BTMovieResource.h in Headers */ = {isa = PBXBuildFile; fileRef = CBD20D0A14CF693700662068 /* BTMovieResource.h */; };
+		CBD20D0D14CF693700662068 /* BTMovieResource.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD20D0B14CF693700662068 /* BTMovieResource.m */; };
+		CBD20D1114CF7E0E00662068 /* bluesquare.png in Resources */ = {isa = PBXBuildFile; fileRef = CBD20D0E14CF7CBE00662068 /* bluesquare.png */; };
+		CBD20D1214CF7E0E00662068 /* redsquare.png in Resources */ = {isa = PBXBuildFile; fileRef = CBD20D0F14CF7CBE00662068 /* redsquare.png */; };
+		CBD20D1314CF7E0E00662068 /* squaredance.xml in Resources */ = {isa = PBXBuildFile; fileRef = CBD20D1014CF7CBE00662068 /* squaredance.xml */; };
 		CBE1F0DA14A14D9E00B82344 /* BTNode.h in Headers */ = {isa = PBXBuildFile; fileRef = CBE1F0D714A14D9E00B82344 /* BTNode.h */; };
 		CBE1F0DB14A14D9E00B82344 /* BTNode.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE1F0D814A14D9E00B82344 /* BTNode.m */; };
 		CBE1F0DC14A14D9E00B82344 /* BTNode+Package.h in Headers */ = {isa = PBXBuildFile; fileRef = CBE1F0D914A14D9E00B82344 /* BTNode+Package.h */; };
@@ -220,6 +225,11 @@
 		CBB8CB911475A06400445316 /* libBetwixt.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBetwixt.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBD20D0614CF68D600662068 /* BTTexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTTexture.h; sourceTree = "<group>"; };
 		CBD20D0714CF68D600662068 /* BTTexture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTTexture.m; sourceTree = "<group>"; };
+		CBD20D0A14CF693700662068 /* BTMovieResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTMovieResource.h; sourceTree = "<group>"; };
+		CBD20D0B14CF693700662068 /* BTMovieResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTMovieResource.m; sourceTree = "<group>"; };
+		CBD20D0E14CF7CBE00662068 /* bluesquare.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bluesquare.png; path = Resources/bluesquare.png; sourceTree = "<group>"; };
+		CBD20D0F14CF7CBE00662068 /* redsquare.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = redsquare.png; path = Resources/redsquare.png; sourceTree = "<group>"; };
+		CBD20D1014CF7CBE00662068 /* squaredance.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = squaredance.xml; path = Resources/squaredance.xml; sourceTree = "<group>"; };
 		CBE1F0D714A14D9E00B82344 /* BTNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTNode.h; sourceTree = "<group>"; };
 		CBE1F0D814A14D9E00B82344 /* BTNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTNode.m; sourceTree = "<group>"; };
 		CBE1F0D914A14D9E00B82344 /* BTNode+Package.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BTNode+Package.h"; sourceTree = "<group>"; };
@@ -340,6 +350,8 @@
 				22F979FA14C0E38000A6913B /* BTLoadable+Protected.h */,
 				22F979DD14C0E23F00A6913B /* BTLoadableBatch.h */,
 				22F979DE14C0E23F00A6913B /* BTLoadableBatch.m */,
+				CBD20D0A14CF693700662068 /* BTMovieResource.h */,
+				CBD20D0B14CF693700662068 /* BTMovieResource.m */,
 				22F979DF14C0E23F00A6913B /* BTResource.h */,
 				22F979F814C0E36F00A6913B /* BTResourceFactory.h */,
 				22F979E414C0E23F00A6913B /* BTResourceManager.h */,
@@ -376,6 +388,9 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CBD20D0E14CF7CBE00662068 /* bluesquare.png */,
+				CBD20D0F14CF7CBE00662068 /* redsquare.png */,
+				CBD20D1014CF7CBE00662068 /* squaredance.xml */,
 				2221990614CA3C69009B764F /* archer.png */,
 				2221990714CA3C69009B764F /* ResourceTest.xml */,
 				8D1107310486CEB800E47090 /* Application-Info.plist */,
@@ -508,6 +523,7 @@
 				2217E4CD14C79B90000F976A /* BTUpdatable.h in Headers */,
 				221B6F9814C8BC3200747A18 /* BTMode+Protected.h in Headers */,
 				CBD20D0814CF68D600662068 /* BTTexture.h in Headers */,
+				CBD20D0C14CF693700662068 /* BTMovieResource.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -626,6 +642,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBD20D1114CF7E0E00662068 /* bluesquare.png in Resources */,
+				CBD20D1214CF7E0E00662068 /* redsquare.png in Resources */,
+				CBD20D1314CF7E0E00662068 /* squaredance.xml in Resources */,
 				2221990814CA3C69009B764F /* archer.png in Resources */,
 				2221990914CA3C69009B764F /* ResourceTest.xml in Resources */,
 			);
@@ -676,6 +695,7 @@
 				22F979F014C0E23F00A6913B /* BTLoadableBatch.m in Sources */,
 				22F979F714C0E23F00A6913B /* BTResourceManager.m in Sources */,
 				CBD20D0914CF68D600662068 /* BTTexture.m in Sources */,
+				CBD20D0D14CF693700662068 /* BTMovieResource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

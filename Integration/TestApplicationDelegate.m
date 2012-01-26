@@ -17,15 +17,15 @@
 
 - (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
     if (![super application:application didFinishLaunchingWithOptions:launchOptions]) return NO;
-    
+
     // load resources
     [[BTResourceManager sharedManager] loadResourceFile:@"ResourceTest.xml"
-                                             onComplete:^ {
-                                                 NSLog(@"onComplete");
-                                             } onError:^(NSException *err) {
-                                                 NSLog(@"onError: %@", err);
-                                             }];
-    
+                                                  onComplete:^{ NSLog(@"onComplete"); }
+                                                     onError:^(NSException *err) { NSLog(@"onError: %@", err); }];
+    [[BTResourceManager sharedManager] loadResourceFile:@"squaredance.xml"
+                                                  onComplete:^{ NSLog(@"Squaredance started"); }
+                                                  onError:^(NSException *err) { NSLog(@"sq onError: %@", err); }];
+
     [self.defaultStack pushMode:[[NamedNodeMode alloc] init]];
     [self.defaultStack pushMode:[[MoveMode alloc] init]];
     [self.defaultStack pushMode:[[SelfRemoveMode alloc] init]];

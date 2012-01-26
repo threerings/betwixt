@@ -48,17 +48,12 @@
 
 - (float)floatAttribute:(NSString *)name defaultVal:(float)defaultVal required:(BOOL)required {
     NSString* attr = [self getAttr:name required:required];
-    if (attr == nil) {
-        return defaultVal;
-    }
-    
-    const char *utf8 = [attr UTF8String];
-    char *endptr;
-    float val = strtof(utf8, &endptr);
-    if (endptr != NULL) {
-        @throw [GDataXMLException withElement:self reason:@"Error reading attribute '%@': could not convert '%@' to float", name, attr];
-    }
-    return val;
+    if (attr == nil) return defaultVal;
+    NSScanner *scanner = [[NSScanner alloc] initWithString:attr];
+    float retVal;
+    if ([scanner scanFloat:&retVal] && [scanner isAtEnd]) return retVal;
+    @throw [GDataXMLException withElement:self
+        reason:@"Error reading attribute '%@': could not convert '%@' to int", name, attr];
 }
 
 - (float)floatAttribute:(NSString *)name defaultVal:(float)defaultVal {
@@ -71,17 +66,13 @@
 
 - (int)intAttribute:(NSString *)name defaultVal:(int)defaultVal required:(BOOL)required {
     NSString* attr = [self getAttr:name required:required];
-    if (attr == nil) {
-        return defaultVal;
-    }
-    
-    const char *utf8 = [attr UTF8String];
-    char *endptr;
-    long val = strtol(utf8, &endptr, 10);
-    if (endptr != NULL) {
-        @throw [GDataXMLException withElement:self reason:@"Error reading attribute '%@': could not convert '%@' to int", name, attr];
-    }
-    return (int) val;
+    if (attr == nil) return defaultVal;
+
+    NSScanner *scanner = [[NSScanner alloc] initWithString:attr];
+    int retVal;
+    if ([scanner scanInt:&retVal] && [scanner isAtEnd]) return retVal;
+    @throw [GDataXMLException withElement:self
+        reason:@"Error reading attribute '%@': could not convert '%@' to int", name, attr];
 }
 
 - (int)intAttribute:(NSString *)name defaultVal:(int)defaultVal {
@@ -97,15 +88,15 @@
     if (attr == nil) {
         return defaultVal;
     }
-    
+
     attr = [attr lowercaseString];
-    
+
     if ([attr isEqualToString:@"true"]) {
         return YES;
     } else if ([attr isEqualToString:@"false"]) {
         return NO;
     } else {
-       @throw [GDataXMLException withElement:self reason:@"Error reading attribute '%@': could not convert '%@' to BOOL", name, attr]; 
+       @throw [GDataXMLException withElement:self reason:@"Error reading attribute '%@': could not convert '%@' to BOOL", name, attr];
     }
 }
 
@@ -115,6 +106,22 @@
 
 - (BOOL)boolAttribute:(NSString *)name {
     return [self boolAttribute:name defaultVal:0 required:YES];
+}
+
+- (GDataXMLElement *) walkTo:(NSString *)path {
+    GDataXMLElement *current = self;
+    for (NSString* name in [path componentsSeparatedByString:@"/"]) {
+        NSArray *els = [current elementsForName:name];
+        if ([els count] > 1) {
+            @throw [GDataXMLException withElement:self
+                reason:@"More than one child named '%@' in path '%@'", name, path];
+        } else if ([els count] == 0) {
+            @throw [GDataXMLException withElement:current
+                reason:@"No child named '%@' in path '%@'", name, path];
+        }
+        current = [els objectAtIndex:0];
+    }
+    return current;
 }
 
 @end
