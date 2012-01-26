@@ -84,11 +84,10 @@
         }
     }
     
-    if (loadErr != nil) {
+    if (loadErr) task.onError(loadErr);
+    else {
         [_loadedFiles addObject:task.filename];
         task.onComplete();
-    } else {
-        task.onError(loadErr);
     }
 }
 
