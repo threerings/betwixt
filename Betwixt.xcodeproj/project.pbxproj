@@ -85,8 +85,8 @@
 		CBB86EE01476669800D0C57E /* BTObject.h in Headers */ = {isa = PBXBuildFile; fileRef = CBB86EDE1476669800D0C57E /* BTObject.h */; };
 		CBB86EE11476669800D0C57E /* BTObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB86EDF1476669800D0C57E /* BTObject.m */; };
 		CBB8CB921475A06400445316 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
-		CBD20D0814CF68D600662068 /* BTTexture.h in Headers */ = {isa = PBXBuildFile; fileRef = CBD20D0614CF68D600662068 /* BTTexture.h */; };
-		CBD20D0914CF68D600662068 /* BTTexture.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD20D0714CF68D600662068 /* BTTexture.m */; };
+		CBD20D0814CF68D600662068 /* BTTextureResource.h in Headers */ = {isa = PBXBuildFile; fileRef = CBD20D0614CF68D600662068 /* BTTextureResource.h */; };
+		CBD20D0914CF68D600662068 /* BTTextureResource.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD20D0714CF68D600662068 /* BTTextureResource.m */; };
 		CBD20D0C14CF693700662068 /* BTMovieResource.h in Headers */ = {isa = PBXBuildFile; fileRef = CBD20D0A14CF693700662068 /* BTMovieResource.h */; };
 		CBD20D0D14CF693700662068 /* BTMovieResource.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD20D0B14CF693700662068 /* BTMovieResource.m */; };
 		CBD20D1114CF7E0E00662068 /* bluesquare.png in Resources */ = {isa = PBXBuildFile; fileRef = CBD20D0E14CF7CBE00662068 /* bluesquare.png */; };
@@ -223,8 +223,8 @@
 		CBB86EDE1476669800D0C57E /* BTObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTObject.h; sourceTree = "<group>"; };
 		CBB86EDF1476669800D0C57E /* BTObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTObject.m; sourceTree = "<group>"; };
 		CBB8CB911475A06400445316 /* libBetwixt.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBetwixt.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		CBD20D0614CF68D600662068 /* BTTexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTTexture.h; sourceTree = "<group>"; };
-		CBD20D0714CF68D600662068 /* BTTexture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTTexture.m; sourceTree = "<group>"; };
+		CBD20D0614CF68D600662068 /* BTTextureResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTTextureResource.h; sourceTree = "<group>"; };
+		CBD20D0714CF68D600662068 /* BTTextureResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTTextureResource.m; sourceTree = "<group>"; };
 		CBD20D0A14CF693700662068 /* BTMovieResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTMovieResource.h; sourceTree = "<group>"; };
 		CBD20D0B14CF693700662068 /* BTMovieResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTMovieResource.m; sourceTree = "<group>"; };
 		CBD20D0E14CF7CBE00662068 /* bluesquare.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bluesquare.png; path = Resources/bluesquare.png; sourceTree = "<group>"; };
@@ -356,8 +356,8 @@
 				22F979F814C0E36F00A6913B /* BTResourceFactory.h */,
 				22F979E414C0E23F00A6913B /* BTResourceManager.h */,
 				22F979E514C0E23F00A6913B /* BTResourceManager.m */,
-				CBD20D0614CF68D600662068 /* BTTexture.h */,
-				CBD20D0714CF68D600662068 /* BTTexture.m */,
+				CBD20D0614CF68D600662068 /* BTTextureResource.h */,
+				CBD20D0714CF68D600662068 /* BTTextureResource.m */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -522,7 +522,7 @@
 				22F97A9014C0EC8B00A6913B /* Betwixt.h in Headers */,
 				2217E4CD14C79B90000F976A /* BTUpdatable.h in Headers */,
 				221B6F9814C8BC3200747A18 /* BTMode+Protected.h in Headers */,
-				CBD20D0814CF68D600662068 /* BTTexture.h in Headers */,
+				CBD20D0814CF68D600662068 /* BTTextureResource.h in Headers */,
 				CBD20D0C14CF693700662068 /* BTMovieResource.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -694,7 +694,7 @@
 				22F979ED14C0E23F00A6913B /* BTLoadable.m in Sources */,
 				22F979F014C0E23F00A6913B /* BTLoadableBatch.m in Sources */,
 				22F979F714C0E23F00A6913B /* BTResourceManager.m in Sources */,
-				CBD20D0914CF68D600662068 /* BTTexture.m in Sources */,
+				CBD20D0914CF68D600662068 /* BTTextureResource.m in Sources */,
 				CBD20D0D14CF693700662068 /* BTMovieResource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

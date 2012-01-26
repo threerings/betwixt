@@ -5,7 +5,7 @@
 #import "BTModeStack+Package.h"
 
 #import "BTResourceManager.h"
-#import "BTTexture.h"
+#import "BTTextureResource.h"
 #import "BTMovieResource.h"
 
 @implementation BTApplicationDelegate
@@ -38,7 +38,7 @@
     [_view.stage addEventListener:@selector(onEnterFrame:) atObject:self forType:SP_EVENT_TYPE_ENTER_FRAME];
 
     // Register default resource factories
-    [[BTResourceManager sharedManager] registerFactory:[BTTexture sharedFactory]
+    [[BTResourceManager sharedManager] registerFactory:[BTTextureResource sharedFactory]
                                                forType:BTTEXTURE_RESOURCE_NAME];
     [[BTResourceManager sharedManager] registerFactory:[BTMovieResource sharedFactory]
                                                forType:BTMOVIE_RESOURCE_NAME];
