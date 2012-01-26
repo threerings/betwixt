@@ -9,11 +9,7 @@
 
 @protocol BTResourceFactory;
 
-@interface BTMovieResource : NSObject<BTResource> {
-@private
-    NSString *_name;
-    NSString *_group;
-}
+@interface BTMovieResource : BTResource
 
 + (id<BTResourceFactory>) sharedFactory;
 

@@ -1,11 +1,11 @@
 //
 //  Betwixt - Copyright 2011 Three Rings Design
 
-@protocol BTResource;
+@class BTResource;
 @class GDataXMLElement;
 
 @protocol BTResourceFactory
 
-- (id<BTResource>)create:(NSString *)name group:(NSString *) group xml:(GDataXMLElement *)xml;
+- (BTResource *)create:(GDataXMLElement *)xml;
 
 @end

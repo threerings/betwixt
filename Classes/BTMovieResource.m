@@ -59,9 +59,8 @@
     NSMutableArray *layers;
 }
 
-- (id)initWithName:(NSString*)name fromXml:(GDataXMLElement*)xml {
+- (id)initFromXml:(GDataXMLElement*)xml {
     if (!(self = [super init])) return nil;
-    _name = name;
     layers = [[NSMutableArray alloc] init];
     GDataXMLElement *layersEl = [xml walkTo:@"DOMSymbolItem/timeline/DOMTimeline/layers"];
     for (GDataXMLElement *layerEl in [layersEl elements]) {
@@ -78,16 +77,13 @@
     return instance;
 }
 
-@synthesize name = _name;
-@synthesize group = _group;
-
 @end
 
 
 @implementation BTMovieResourceFactory
 
-- (id<BTResource>)create:(NSString *)name group:(NSString *)group xml:(GDataXMLElement *)xml {
-    return [[BTMovieResource alloc] initWithName:name fromXml:xml];
+- (BTResource *)create:(GDataXMLElement *)xml {
+    return [[BTMovieResource alloc] initFromXml:xml];
 }
 
 @end

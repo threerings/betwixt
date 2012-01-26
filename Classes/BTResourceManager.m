@@ -73,7 +73,7 @@
     
     if (loadErr == nil) {
         @try {
-            for (id<BTResource> rsrc in task.resources) {
+            for (BTResource *rsrc in task.resources) {
                 NSAssert(![self isLoaded:rsrc.name], 
                          @"A resource with that name already exists: '%@'", rsrc.name);
                 [_resources setValue:rsrc forKey:rsrc.name];
@@ -106,7 +106,7 @@
 }
 
 - (void)unloadResourceFile:(NSString *)filename {
-    for (id<BTResource>rsrc in [_resources allValues]) {
+    for (BTResource *rsrc in [_resources allValues]) {
         if ([rsrc.group isEqualToString:filename]) {
             [_resources removeObjectForKey:rsrc.name];
         }
@@ -183,7 +183,9 @@
             NSAssert(factory != nil, @"No ResourceFactory for '%@'", type);
             // create the resource
             NSString* name = [child stringAttribute:@"name"];
-            id<BTResource> rsrc = [factory create:name group:_filename xml:child];
+            BTResource* rsrc = [factory create:child];
+            rsrc->_name = name;
+            rsrc->_group = _filename;
             // add it to the batch
             [resources addObject:rsrc];
         }
