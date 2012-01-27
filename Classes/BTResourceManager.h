@@ -3,7 +3,7 @@
 
 #import "BTCallbacks.h"
 
-@protocol BTResource;
+@class BTResource;
 @protocol BTResourceFactory;
 
 @interface BTResourceManager : NSObject {
@@ -17,8 +17,8 @@
 - (void)loadResourceFile:(NSString *)filename onComplete:(BTCompleteCallback)onComplete 
                  onError:(BTErrorCallback)onError;
 - (void)unloadResourceFile:(NSString *)filename;
-- (id<BTResource>)getResource:(NSString *)name;
-- (id<BTResource>)requireResource:(NSString *)name;
+- (BTResource*)getResource:(NSString *)name;
+- (BTResource*)requireResource:(NSString *)name;
 - (BOOL)isLoaded:(NSString *)name;
 - (void)registerFactory:(id<BTResourceFactory>)factory forType:(NSString *)type;
 - (void)unloadAll;

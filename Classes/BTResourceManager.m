@@ -84,12 +84,12 @@
     }
 }
 
-- (id<BTResource>)getResource:(NSString *)name {
+- (BTResource*)getResource:(NSString *)name {
     return [_resources objectForKey:name];
 }
 
-- (id<BTResource>)requireResource:(NSString *)name {
-    id<BTResource> rsrc = [self getResource:name];
+- (BTResource*)requireResource:(NSString *)name {
+    BTResource* rsrc = [self getResource:name];
     NSAssert(rsrc != nil, @"No such resource: %@", name);
     return rsrc;
 }
