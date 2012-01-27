@@ -2,16 +2,18 @@
 //  Betwixt - Copyright 2012 Three Rings Design
 
 #import "BTLoadingMode.h"
+#import "RAUnitSignal.h"
 #import "BTMode+Protected.h"
 #import "BTApp.h"
 #import "BTResourceManager.h"
 
-@implementation BTLoadingMode
+@implementation BTLoadingMode {
+    RAUnitSignal *_loadComplete;
+}
 
 - (id)init {
-    if (!(self = [super init])) {
-        return nil;
-    }
+    if (!(self = [super init])) return nil;
+    _loadComplete = [[RAUnitSignal alloc] init];
     _filenames = [NSMutableArray array];
     _filenameIdx = -1;
     return self;
@@ -22,24 +24,17 @@
     return self;
 }
 
-- (BOOL)loadComplete {
-    return (_filenameIdx >= _filenames.count);
-}
-
-@end
-
-@implementation BTLoadingMode (protected)
-
 - (void)onError:(NSException *)err {
     NSLog(@"LoadingMode error: %@", err);
 }
 
 - (void)loadNextFile {
     if (++_filenameIdx >= _filenames.count) {
-        return; // we're done.
+        [_loadComplete emit];
+        return;
     }
     NSString *filename = [_filenames objectAtIndex:_filenameIdx];
-    
+
     __weak BTLoadingMode *this = self;
     [[BTApp resourceManager] loadResourceFile:filename onComplete:^{
         [this loadNextFile];
@@ -50,12 +45,14 @@
 
 - (void)enter {
     [super enter];
-    
+
     if (_filenameIdx >= 0) {
         // We're already loading
         return;
     }
     [self loadNextFile];
 }
+
+@synthesize loadComplete=_loadComplete;
 
 @end

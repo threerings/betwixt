@@ -16,21 +16,15 @@
 @implementation LoadingMode
 
 - (id)init {
-    if (!(self = [super init])) {
-        return nil;
-    }
+    if (!(self = [super init])) return nil;
     [[self add:@"ResourceTest.xml"] add:@"squaredance.xml"];
-    return self;
-}
-
-- (void)update:(float)dt {
-    [super update:dt];
-    if (self.loadComplete) {
+    [self.loadComplete connectUnit:^{
         [self.stack changeMode:[[NamedNodeMode alloc] init]];
         [self.stack pushMode:[[MoveMode alloc] init]];
         [self.stack pushMode:[[SelfRemoveMode alloc] init]];
         [self.stack pushMode:[[SubObjectMode alloc] init]];
-    }
+    }];
+    return self;
 }
 
 @end

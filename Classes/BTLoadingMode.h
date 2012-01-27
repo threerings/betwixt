@@ -3,13 +3,15 @@
 
 #import "BTMode+Protected.h"
 
+@class RAUnitSignal;
+
 @interface BTLoadingMode : BTMode {
 @protected
     NSMutableArray *_filenames;
     int _filenameIdx;
 }
 
-@property (readonly) BOOL loadComplete;
+@property (nonatomic,readonly) RAUnitSignal *loadComplete;
 
 - (id)init;
 - (BTLoadingMode *)add:(NSString *)filename;
