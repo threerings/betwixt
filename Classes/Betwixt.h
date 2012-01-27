@@ -3,11 +3,12 @@
 
 // Dependencies
 #import "React.h"
+#define DISABLE_MEMORY_POOLING // disable memory pooling in Sparrow for ARC compatability
 #import "Sparrow.h"
 
 #import "BTApp.h"
 #import "BTApplicationDelegate.h"
-#import "BTContext.h"
+#import "BTCallbacks.h"
 #import "BTDisplayable.h"
 #import "BTDisplayContext.h"
 #import "BTInterpolator.h"
@@ -26,7 +27,6 @@
 #import "BTLoadableBatch.h"
 #import "BTResource.h"
 #import "BTResourceFactory.h"
-#import "BTResourceGroup.h"
 #import "BTResourceManager.h"
 
 // Tasks
