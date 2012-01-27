@@ -8,7 +8,7 @@
 @implementation PlayMovieMode
 - (id)init {
     if (!(self = [super init])) return nil;
-    BTMovieResource *res = (BTMovieResource*)[[BTApp resourceManager] requireResource:@"Animations/squaredance"];
+    BTMovieResource *res = [[BTApp resourceManager] requireResource:@"Animations/squaredance"];
     [self displayNode:[res newMovie]];
     return self;
 }

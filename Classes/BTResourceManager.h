@@ -14,11 +14,11 @@
     NSMutableSet *_loadedFiles; // <String>
 }
 
-- (void)loadResourceFile:(NSString *)filename onComplete:(BTCompleteCallback)onComplete 
+- (void)loadResourceFile:(NSString *)filename onComplete:(BTCompleteCallback)onComplete
                  onError:(BTErrorCallback)onError;
 - (void)unloadResourceFile:(NSString *)filename;
-- (BTResource*)getResource:(NSString *)name;
-- (BTResource*)requireResource:(NSString *)name;
+- (id)getResource:(NSString *)name;
+- (id)requireResource:(NSString *)name;
 - (BOOL)isLoaded:(NSString *)name;
 - (void)registerFactory:(id<BTResourceFactory>)factory forType:(NSString *)type;
 - (void)unloadAll;

@@ -17,8 +17,8 @@
     BTCompleteCallback _onComplete;
     BTErrorCallback _onError;
 }
-- (id)initWithManager:(BTResourceManager *)mgr 
-             filename:(NSString *)filename 
+- (id)initWithManager:(BTResourceManager *)mgr
+             filename:(NSString *)filename
            onComplete:(BTCompleteCallback)onComplete
                onError:(BTErrorCallback)onError;
 - (void)load;
@@ -47,13 +47,13 @@
     return [_loadedFiles containsObject:filename] || [_loadingFiles containsObject:filename];
 }
 
-- (void)loadResourceFile:(NSString *)filename onComplete:(BTCompleteCallback)onComplete 
+- (void)loadResourceFile:(NSString *)filename onComplete:(BTCompleteCallback)onComplete
                  onError:(BTErrorCallback)onError {
-    NSAssert(![self isResourceFileLoaded:filename], 
+    NSAssert(![self isResourceFileLoaded:filename],
              @"Resource file '%@' already loaded (or is loading)", filename);
-    
+
     [_loadingFiles addObject:filename];
-    LoadTask *task = [[LoadTask alloc] initWithManager:self filename:filename onComplete:onComplete 
+    LoadTask *task = [[LoadTask alloc] initWithManager:self filename:filename onComplete:onComplete
                                                onError:onError];
     [task load];
 }
@@ -61,13 +61,13 @@
 - (void)loadTaskCompleted:(LoadTask *)task {
     NSAssert([_loadingFiles containsObject:task.filename], @"");
     [_loadingFiles removeObject:task.filename];
-    
+
     NSException *loadErr = task.err;
-    
+
     if (loadErr == nil) {
         @try {
             for (BTResource *rsrc in task.resources) {
-                NSAssert(![self isLoaded:rsrc.name], 
+                NSAssert(![self isLoaded:rsrc.name],
                          @"A resource with that name already exists: '%@'", rsrc.name);
                 [_resources setValue:rsrc forKey:rsrc.name];
             }
@@ -76,7 +76,7 @@
             loadErr = err;
         }
     }
-    
+
     if (loadErr) task.onError(loadErr);
     else {
         [_loadedFiles addObject:task.filename];
@@ -84,11 +84,11 @@
     }
 }
 
-- (BTResource*)getResource:(NSString *)name {
+- (id)getResource:(NSString *)name {
     return [_resources objectForKey:name];
 }
 
-- (BTResource*)requireResource:(NSString *)name {
+- (id)requireResource:(NSString *)name {
     BTResource* rsrc = [self getResource:name];
     NSAssert(rsrc != nil, @"No such resource: %@", name);
     return rsrc;
@@ -131,9 +131,9 @@
 @synthesize onComplete = _onComplete;
 @synthesize onError = _onError;
 
-- (id)initWithManager:(BTResourceManager *)mgr 
-             filename:(NSString *)filename 
-           onComplete:(BTCompleteCallback)onComplete 
+- (id)initWithManager:(BTResourceManager *)mgr
+             filename:(NSString *)filename
+           onComplete:(BTCompleteCallback)onComplete
               onError:(BTErrorCallback)onError {
     if (!(self = [super init])) {
         return nil;
@@ -153,22 +153,22 @@
     @try {
         NSString *strippedFilename = [_filename stringByDeletingPathExtension];
         NSString *extension = [_filename pathExtension];
-        
+
         NSBundle *bundle = [NSBundle bundleForClass:[self class]];
         NSData *data = [NSData dataWithContentsOfFile:
                         [bundle pathForResource:strippedFilename ofType:extension]];
         if (data == nil) {
             @throw [GDataXMLException withReason:@"Unable to load file '%@'", _filename];
         }
-        
+
         NSError *err;
         GDataXMLDocument *xmldoc = [[GDataXMLDocument alloc] initWithData:data options:0 error:&err];
         if (xmldoc == nil) {
-            @throw [[NSException alloc] initWithName:NSGenericException 
-                                              reason:[err localizedDescription] 
+            @throw [[NSException alloc] initWithName:NSGenericException
+                                              reason:[err localizedDescription]
                                             userInfo:[err userInfo]];
         }
-        
+
         // Create the resources
         NSMutableArray* resources = [NSMutableArray array];
         GDataXMLElement *root = [xmldoc rootElement];

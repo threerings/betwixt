@@ -25,7 +25,7 @@
     if (!(self = [super init])) return nil;
     self.name = layer->name;
     keyframes = layer->keyframes;
-    BTTextureResource *tex = (BTTextureResource*)[[BTApp resourceManager] requireResource:[self kfAtIdx:0]->libraryItem];
+    BTTextureResource *tex = [[BTApp resourceManager] requireResource:[self kfAtIdx:0]->libraryItem];
     // TODO - texture offset
     [self addChild:[[SPImage alloc] initWithTexture:tex.texture]];
     return self;
