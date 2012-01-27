@@ -1,11 +1,10 @@
 //
 //  Betwixt - Copyright 2011 Three Rings Design
 
+#import "BTCallbacks.h"
+
 @protocol BTResource;
 @protocol BTResourceFactory;
-
-typedef void (^BTCompleteCallback)(void);
-typedef void (^BTErrorCallback)(NSException *);
 
 @interface BTResourceManager : NSObject {
 @protected

@@ -1,15 +1,14 @@
 //
 //  Betwixt - Copyright 2011 Three Rings Design
 
+#import "BTCallbacks.h"
+
 typedef enum {
     LS_NOT_LOADED,
     LS_LOADING,
     LS_LOADED,
     LS_ERROR
 } BTLoadableState;
-
-typedef void (^BTCompleteCallback)(void);
-typedef void (^BTErrorCallback)(NSException *);
 
 @interface BTLoadable : NSObject {
 @protected

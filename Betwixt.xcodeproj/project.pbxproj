@@ -16,6 +16,7 @@
 		2221999014D0F809009B764F /* BTLoadingMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 2221998E14D0F809009B764F /* BTLoadingMode.m */; };
 		2221999314D1F021009B764F /* BTApp.h in Headers */ = {isa = PBXBuildFile; fileRef = 2221999114D1F020009B764F /* BTApp.h */; };
 		2221999414D1F021009B764F /* BTApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 2221999214D1F021009B764F /* BTApp.m */; };
+		222199A914D2271D009B764F /* BTCallbacks.h in Headers */ = {isa = PBXBuildFile; fileRef = 222199A814D2271D009B764F /* BTCallbacks.h */; };
 		22F979E614C0E23F00A6913B /* GDataXMLException.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F979D414C0E23F00A6913B /* GDataXMLException.h */; };
 		22F979E714C0E23F00A6913B /* GDataXMLException.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F979D514C0E23F00A6913B /* GDataXMLException.m */; };
 		22F979E814C0E23F00A6913B /* GDataXMLNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F979D614C0E23F00A6913B /* GDataXMLNode.h */; };
@@ -169,6 +170,7 @@
 		2221998E14D0F809009B764F /* BTLoadingMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTLoadingMode.m; sourceTree = "<group>"; };
 		2221999114D1F020009B764F /* BTApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTApp.h; sourceTree = "<group>"; };
 		2221999214D1F021009B764F /* BTApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTApp.m; sourceTree = "<group>"; };
+		222199A814D2271D009B764F /* BTCallbacks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTCallbacks.h; sourceTree = "<group>"; };
 		22F979D414C0E23F00A6913B /* GDataXMLException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataXMLException.h; sourceTree = "<group>"; };
 		22F979D514C0E23F00A6913B /* GDataXMLException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDataXMLException.m; sourceTree = "<group>"; };
 		22F979D614C0E23F00A6913B /* GDataXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataXMLNode.h; sourceTree = "<group>"; };
@@ -307,6 +309,7 @@
 				22F97A8F14C0EC8B00A6913B /* Betwixt.h */,
 				2221999114D1F020009B764F /* BTApp.h */,
 				2221999214D1F021009B764F /* BTApp.m */,
+				222199A814D2271D009B764F /* BTCallbacks.h */,
 				2217E4CC14C79B90000F976A /* BTUpdatable.h */,
 				CBF2AA9A14765EA5000C022D /* BTApplicationDelegate.h */,
 				CBF2AA9B14765EA5000C022D /* BTApplicationDelegate.m */,
@@ -549,6 +552,7 @@
 				CBD20D0C14CF693700662068 /* BTMovieResource.h in Headers */,
 				2221998F14D0F809009B764F /* BTLoadingMode.h in Headers */,
 				2221999314D1F021009B764F /* BTApp.h in Headers */,
+				222199A914D2271D009B764F /* BTCallbacks.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
