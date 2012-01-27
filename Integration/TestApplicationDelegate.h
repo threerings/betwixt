@@ -3,7 +3,5 @@
 
 #import "BTApplicationDelegate.h"
 
-@class SubObjectMode;
-
 @interface TestApplicationDelegate : BTApplicationDelegate
 @end
