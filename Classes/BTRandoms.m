@@ -77,6 +77,7 @@
         return nil;
     }
     mti = N+1;
+    [self setSeed:(unsigned int)time(0)];
     return self;
 }
 
