@@ -2,56 +2,13 @@
 //  Betwixt - Copyright 2012 Three Rings Design
 
 #import "BTMovieResource.h"
+#import "BTMovieResourceLayer.h"
 #import "BTResourceFactory.h"
+#import "BTMovie.h"
+#import "BTMovie+Package.h"
 #import "GDataXMLNode+OOO.h"
 
 @interface BTMovieResourceFactory : NSObject<BTResourceFactory>
-@end
-
-@interface BTMovieResourceKeyframe : NSObject{
-@public
-    int index, duration;
-    SPMatrix *matrix;
-    NSString *libraryItem;
-}
-@end
-@implementation BTMovieResourceKeyframe
-
--initWithFrame:(GDataXMLElement*)frameEl {
-    if (!(self = [super init])) return nil;
-    index = [frameEl intAttribute:@"index"];
-    duration = [frameEl intAttribute:@"duration" defaultVal:1];
-
-    GDataXMLElement *symbolEl = [frameEl walkTo:@"elements/DOMSymbolInstance"];
-    libraryItem = [symbolEl stringAttribute:@"libraryItemName"];
-
-    GDataXMLElement *matrixEl = [symbolEl walkTo:@"matrix/Matrix"];
-    matrix = [[SPMatrix alloc] initWithA:[matrixEl floatAttribute:@"a" defaultVal:1]
-                                       b:[matrixEl floatAttribute:@"b" defaultVal:0]
-                                       c:[matrixEl floatAttribute:@"c" defaultVal:0]
-                                       d:[matrixEl floatAttribute:@"d" defaultVal:1]
-                                      tx:[matrixEl floatAttribute:@"tx" defaultVal:0]
-                                      ty:[matrixEl floatAttribute:@"ty" defaultVal:0]];
-    return self;
-}
-@end
-
-@interface BTMovieResourceLayer :NSObject {
-@public
-    NSString *name;
-    NSMutableArray *keyframes;
-}
-@end
-@implementation BTMovieResourceLayer
--initWithLayer:(GDataXMLElement*)layerEl {
-    if (!(self = [super init])) return nil;
-    keyframes = [[NSMutableArray alloc] init];
-    name = [layerEl stringAttribute:@"name"];
-    for (GDataXMLElement *frameEl in [[layerEl walkTo:@"frames"] elements]) {
-        [keyframes addObject:[[BTMovieResourceKeyframe alloc] initWithFrame:frameEl]];
-    }
-    return self;
-}
 @end
 
 @implementation BTMovieResource {
@@ -67,6 +24,10 @@
         [layers addObject:[[BTMovieResourceLayer alloc] initWithLayer:layerEl]];
     }
     return self;
+}
+
+- (BTMovie*)newMovie {
+    return [[BTMovie alloc] initWithLayers:layers];
 }
 
 + (id<BTResourceFactory>)sharedFactory {
