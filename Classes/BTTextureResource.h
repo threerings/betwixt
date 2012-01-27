@@ -10,10 +10,12 @@
 @interface BTTextureResource : BTResource {
 @private
     SPTexture *_texture;
+    SPPoint *_offset;
 }
 
 + (id<BTResourceFactory>) sharedFactory;
 
 @property(nonatomic,readonly) SPTexture *texture;
+@property(nonatomic,readonly) SPPoint *offset;
 
 @end

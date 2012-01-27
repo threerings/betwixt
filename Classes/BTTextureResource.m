@@ -20,13 +20,13 @@
     return instance;
 }
 
-@synthesize texture = _texture;
+@synthesize texture = _texture, offset = _offset;
 
-- (id)initWithFilename:(NSString *)filename {
-    if (!(self = [super init])) {
-        return nil;
-    }
-    _texture = [[SPTexture alloc] initWithContentsOfFile:filename];
+- (id)initWithXml:(GDataXMLElement *)xml {
+    if (!(self = [super init])) return nil;
+    _texture = [[SPTexture alloc] initWithContentsOfFile:[xml stringAttribute:@"filename"]];
+    _offset = [[SPPoint alloc] initWithX:[xml intAttribute:@"xOffset" defaultVal:0]
+                                       y:[xml intAttribute:@"yOffset" defaultVal:0]];
     return self;
 }
 
@@ -35,7 +35,7 @@
 @implementation BTTextureFactory
 
 - (BTResource *)create:(GDataXMLElement *)xml {
-    return [[BTTextureResource alloc] initWithFilename:[xml stringAttribute:@"filename"]];
+    return [[BTTextureResource alloc] initWithXml:xml];
 }
 
 @end

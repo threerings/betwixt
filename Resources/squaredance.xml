@@ -89,6 +89,6 @@
   </timeline>
 </DOMSymbolItem>
   </movie>
-  <texture name='Textures/redsquare' filename='redsquare.png'/>
-  <texture name='Textures/bluesquare' filename='bluesquare.png'/>
+  <texture name='Textures/redsquare' filename='redsquare.png' xOffset='125' yOffset='100'/>
+  <texture name='Textures/bluesquare' filename='bluesquare.png' xOffset='0' yOffset='0'/>
 </resources>

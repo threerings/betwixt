@@ -27,7 +27,10 @@
     keyframes = layer->keyframes;
     BTTextureResource *tex = [[BTApp resourceManager] requireResource:[self kfAtIdx:0]->libraryItem];
     // TODO - texture offset
-    [self addChild:[[SPImage alloc] initWithTexture:tex.texture]];
+    SPImage *img = [[SPImage alloc] initWithTexture:tex.texture];
+    img.x = tex.offset.x;
+    img.y = tex.offset.y;
+    [self addChild:img];
     return self;
 }
 
