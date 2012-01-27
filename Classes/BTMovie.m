@@ -18,7 +18,7 @@
 
 @implementation BTMovieLayer
 -(BTMovieResourceKeyframe*)kfAtIdx:(int)idx {
-    return (BTMovieResourceKeyframe*)[keyframes objectAtIndex:0];
+    return (BTMovieResourceKeyframe*)[keyframes objectAtIndex:idx];
 }
 
 - (id)initWithLayer:(BTMovieResourceLayer*)layer {
@@ -31,27 +31,31 @@
     return self;
 }
 
+- (int) frames {
+    BTMovieResourceKeyframe *last = [self kfAtIdx:[self->keyframes count] - 1];
+    return last->index + last->duration;
+}
+
 - (void)drawFrame:(int)frame {
-    while (keyframeIdx < [keyframes count] - 1 && [self kfAtIdx:keyframeIdx + 1]->index >= frame) {
+    while (keyframeIdx < [keyframes count] - 1 && [self kfAtIdx:keyframeIdx + 1]->index <= frame) {
         keyframeIdx++;
     }
-    float x, y, scaleX, scaleY, rotation;
-    BTMovieResourceKeyframe *kf = [keyframes objectAtIndex:keyframeIdx];
-    if (keyframeIdx == [keyframes count] || kf->index == frame) {
-        x = kf->x;
-        y = kf->y;
-        scaleX = kf->scaleX;
-        scaleY = kf->scaleY;
-        rotation = kf->rotation;
+    BTMovieResourceKeyframe *kf = [self kfAtIdx:keyframeIdx];
+    if (keyframeIdx == [keyframes count] - 1|| kf->index == frame) {
+        self.x = kf->x;
+        self.y = kf->y;
+        self.scaleX = kf->scaleX;
+        self.scaleY = kf->scaleY;
+        self.rotation = kf->rotation;
     } else {
         // TODO - interpolation types other than linear
-        float interped = (frame - kf->index)/kf->duration;
-        BTMovieResourceKeyframe *nextKf = [keyframes objectAtIndex:keyframeIdx + 1];
-        x = kf->x + (nextKf->x - kf->x) * interped;
-        y = kf->y + (nextKf->y - kf->y) * interped;
-        scaleX = kf->scaleX + (nextKf->scaleX - kf->scaleX) * interped;
-        scaleY = kf->scaleY + (nextKf->scaleY - kf->scaleY) * interped;
-        rotation = kf->rotation + (nextKf->rotation - kf->rotation) * interped;
+        float interped = (frame - kf->index)/(float)kf->duration;
+        BTMovieResourceKeyframe *nextKf = [self kfAtIdx:keyframeIdx + 1];
+        self.x = kf->x + (nextKf->x - kf->x) * interped;
+        self.y = kf->y + (nextKf->y - kf->y) * interped;
+        self.scaleX = kf->scaleX + (nextKf->scaleX - kf->scaleX) * interped;
+        self.scaleY = kf->scaleY + (nextKf->scaleY - kf->scaleY) * interped;
+        self.rotation = kf->rotation + (nextKf->rotation - kf->rotation) * interped;
     }
 }
 @end
@@ -86,7 +90,9 @@
 - (id)initWithLayers:(NSMutableArray*)layers {
     if (!(self = [super init])) return nil;
     for (BTMovieResourceLayer *layer in layers) {
-        [_sprite addChild:[[BTMovieLayer alloc] initWithLayer:layer]];
+        BTMovieLayer *mLayer = [[BTMovieLayer alloc] initWithLayer:layer];
+        [_sprite addChild:mLayer];
+        if ([mLayer frames] > _frames) _frames = [mLayer frames];
     }
     [self drawFrame:0];
     return self;

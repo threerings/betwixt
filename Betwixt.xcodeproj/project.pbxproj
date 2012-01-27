@@ -98,6 +98,8 @@
 		CBC4524B14D216A1008CC04D /* BTMovieResourceLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = CBC4524714D216A1008CC04D /* BTMovieResourceLayer.h */; };
 		CBC4524C14D216A1008CC04D /* BTMovieResourceLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC4524814D216A1008CC04D /* BTMovieResourceLayer.m */; };
 		CBC4524E14D21700008CC04D /* BTMovie+Package.h in Headers */ = {isa = PBXBuildFile; fileRef = CBC4524D14D21700008CC04D /* BTMovie+Package.h */; };
+		CBC4526014D22F04008CC04D /* PlayMovieMode.h in Headers */ = {isa = PBXBuildFile; fileRef = CBC4525E14D22F04008CC04D /* PlayMovieMode.h */; };
+		CBC4526114D22F04008CC04D /* PlayMovieMode.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC4525F14D22F04008CC04D /* PlayMovieMode.m */; };
 		CBD20D0814CF68D600662068 /* BTTextureResource.h in Headers */ = {isa = PBXBuildFile; fileRef = CBD20D0614CF68D600662068 /* BTTextureResource.h */; };
 		CBD20D0914CF68D600662068 /* BTTextureResource.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD20D0714CF68D600662068 /* BTTextureResource.m */; };
 		CBD20D0C14CF693700662068 /* BTMovieResource.h in Headers */ = {isa = PBXBuildFile; fileRef = CBD20D0A14CF693700662068 /* BTMovieResource.h */; };
@@ -249,6 +251,8 @@
 		CBC4524714D216A1008CC04D /* BTMovieResourceLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTMovieResourceLayer.h; sourceTree = "<group>"; };
 		CBC4524814D216A1008CC04D /* BTMovieResourceLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTMovieResourceLayer.m; sourceTree = "<group>"; };
 		CBC4524D14D21700008CC04D /* BTMovie+Package.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BTMovie+Package.h"; sourceTree = "<group>"; };
+		CBC4525E14D22F04008CC04D /* PlayMovieMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayMovieMode.h; path = Integration/PlayMovieMode.h; sourceTree = "<group>"; };
+		CBC4525F14D22F04008CC04D /* PlayMovieMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayMovieMode.m; path = Integration/PlayMovieMode.m; sourceTree = "<group>"; };
 		CBD20D0614CF68D600662068 /* BTTextureResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTTextureResource.h; sourceTree = "<group>"; };
 		CBD20D0714CF68D600662068 /* BTTextureResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTTextureResource.m; sourceTree = "<group>"; };
 		CBD20D0A14CF693700662068 /* BTMovieResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTMovieResource.h; sourceTree = "<group>"; };
@@ -500,6 +504,8 @@
 				CB24CBCE14A02E10004BAA57 /* MoveMode.m */,
 				CB442C7214B3800000EB2821 /* NamedNodeMode.h */,
 				CB442C7314B3800000EB2821 /* NamedNodeMode.m */,
+				CBC4525E14D22F04008CC04D /* PlayMovieMode.h */,
+				CBC4525F14D22F04008CC04D /* PlayMovieMode.m */,
 				CBAF5617149807B4009A1A06 /* SelfRemoveMode.h */,
 				CBAF5618149807B4009A1A06 /* SelfRemoveMode.m */,
 				CB72E4A914773ED100F1EC78 /* Square.h */,
@@ -586,6 +592,7 @@
 				CBC4524914D216A1008CC04D /* BTMovieResourceKeyframe.h in Headers */,
 				CBC4524B14D216A1008CC04D /* BTMovieResourceLayer.h in Headers */,
 				CBC4524E14D21700008CC04D /* BTMovie+Package.h in Headers */,
+				CBC4526014D22F04008CC04D /* PlayMovieMode.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -764,6 +771,7 @@
 				CBC4524314D20051008CC04D /* BTMovie.m in Sources */,
 				CBC4524A14D216A1008CC04D /* BTMovieResourceKeyframe.m in Sources */,
 				CBC4524C14D216A1008CC04D /* BTMovieResourceLayer.m in Sources */,
+				CBC4526114D22F04008CC04D /* PlayMovieMode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

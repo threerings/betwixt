@@ -7,6 +7,7 @@
 #import "MoveMode.h"
 #import "Square.h"
 #import "SelfRemoveMode.h"
+#import "PlayMovieMode.h"
 
 #import "BTLoadingMode.h"
 
@@ -22,6 +23,7 @@
         [self.stack changeMode:[[NamedNodeMode alloc] init]];
         [self.stack pushMode:[[MoveMode alloc] init]];
         [self.stack pushMode:[[SelfRemoveMode alloc] init]];
+        [self.stack pushMode:[[PlayMovieMode alloc] init]];
         [self.stack pushMode:[[SubObjectMode alloc] init]];
     }];
     return self;
