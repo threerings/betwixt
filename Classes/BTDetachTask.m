@@ -14,7 +14,10 @@
 
 +(BTDetachTask*)detachNode:(BTNode*)node {
     BTDetachTask* task = [BTDetachTask new];
-    [task.attached connectUnit:^{ [node detach]; }];
+    [task.attached connectUnit:^{
+        [node detach];
+        [task detach];
+    }];
     return task;
 }
 
