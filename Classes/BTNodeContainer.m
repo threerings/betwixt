@@ -61,6 +61,7 @@
 
 - (void)associateNode:(BTNode*)node withName:(NSString*)name {
     NSAssert1(![self.namedObjects objectForKey:name], @"Object name '%@' already used", name);
+    [node.detached connectUnit:^{ [self.namedObjects removeObjectForKey:name]; }];
     [self.namedObjects setObject:node forKey:name];
 }
 
@@ -92,13 +93,8 @@
 }
 
 - (void)replaceNode:(BTNode*)object withName:(NSString*)name {
-    BTNode *replaced = [self nodeForName:name];
-    if (replaced) {
-        [self.namedObjects removeObjectForKey:name];
-        [replaced detach];
-    }
-    [self associateNode:object withName:name];
-    [self addNode:object];
+    [[self nodeForName:name] detach];
+    [self addNode:object withName:name];
 }
 
 - (void)removeNode:(BTNode*)object {

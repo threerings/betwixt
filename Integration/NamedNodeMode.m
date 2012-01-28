@@ -21,6 +21,7 @@
         [BTDetachTask detachNode:[sprite nodeForName:@"mover"]],
         [BTDelayTask delayFor:.25],
         [BTBlockTask onAttach:^(BTBlockTask *task) {
+            NSAssert([sprite nodeForName:@"mover"] == nil, nil);
             NSAssert(sprite.sprite.x > 0, nil);
             NSAssert(sprite.sprite.x < 100, nil);
         }],
