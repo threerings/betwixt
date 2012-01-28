@@ -30,6 +30,8 @@
             NSAssert(2 == [[self nodesForGroup:@"squares"] count], @"Incorrect squares in group");
         } else if (_ticks == 3) {
             NSAssert(_squaresRemoved == 2, @"Squares not removed");
+            NSAssert(nil == [self nodesForGroup:@"squares"], @"Squares not removed from group");
+            NSAssert(nil == [self nodeForKey:@"red"], @"Square key not cleared");
         } else if (_ticks == 4) {
             [_stack popMode];
         }

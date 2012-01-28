@@ -59,14 +59,28 @@
 }
 
 - (void)addKeys:(BTNode<BTKeyed>*)node {
-    for (NSString *key in ((id<BTKeyed>)node).keys) {
+    NSArray *keys = ((id<BTKeyed>)node).keys;
+    [node.detached connectUnit:^ {
+        for (NSString *key in keys) {
+            [_keyedObjects removeObjectForKey:key];
+        }
+    }];
+    for (NSString *key in keys) {
         NSAssert1(![_keyedObjects objectForKey:key], @"Object key '%@' already used", key);
         [_keyedObjects setObject:node forKey:key];
     }
 }
 
 - (void)addGroups:(BTNode<BTGrouped>*)node {
-    for (NSString *group in ((id<BTGrouped>)node).groups) {
+    NSArray *groups = ((id<BTGrouped>)node).groups;
+    [node.detached connectUnit:^ {
+        for (NSString *group in groups) {
+            NSMutableArray *members = [_groups objectForKey:group];
+            [members removeObject:node];
+            if ([members count] == 0) [_groups removeObjectForKey:group];
+        }
+    }];
+    for (NSString *group in groups) {
         NSMutableArray *members = [_groups objectForKey:group];
         if (!members) {
             members = [[NSMutableArray alloc] init];
