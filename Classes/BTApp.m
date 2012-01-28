@@ -25,24 +25,24 @@ static SPView *_view;
     static BOOL hasSetup = NO;
     NSAssert(!hasSetup, @"setup has already been called");
     hasSetup = YES;
-    
+
     // Setup Sparrow
     [SPStage setSupportHighResolutions:YES];
     _view = [[SPView alloc] initWithFrame:window.bounds];
     _view.multipleTouchEnabled = YES;
     _view.stage = [[SPStage alloc] init];
-    [_view.stage addEventListener:@selector(onEnterFrame:) atObject:self 
+    [_view.stage addEventListener:@selector(onEnterFrame:) atObject:self
                           forType:SP_EVENT_TYPE_ENTER_FRAME];
     [window addSubview:_view];
-    
+
     // TODO - figure out why this is throwing an exception. Looks like an iOS 5 bug
     //[SPAudioEngine start];
-    
+
     // Setup ResourceManager
     _resourceMgr = [[BTResourceManager alloc] init];
     [_resourceMgr registerFactory:[BTTextureResource sharedFactory] forType:BTTEXTURE_RESOURCE_NAME];
     [_resourceMgr registerFactory:[BTMovieResource sharedFactory] forType:BTMOVIE_RESOURCE_NAME];
-    
+
     // Mode stacks
     _modeStacks = [NSMutableArray array];
     return [BTApp createModeStack]; // create default mode stack
@@ -65,6 +65,10 @@ static SPView *_view;
 
 + (BTResourceManager *)resourceManager {
     return _resourceMgr;
+}
+
++ (SPView*)view {
+    return _view;
 }
 
 + (BTModeStack *)createModeStack {

@@ -3,6 +3,8 @@
 
 #import "BTResourceManager.h"
 #import "BTResourceFactory.h"
+#import "BTApp.h"
+#import "BTApp+Package.h"
 #import "BTResource.h"
 #import "GDataXMLException.h"
 
@@ -151,7 +153,11 @@
 
 - (void)begin {
     @try {
+        if (![[BTApp view] useNewSharedEAGLContext]) {
+            [NSException raise:NSGenericException format:@"Unable to use new EAGLContext"];
+        }
         NSString *strippedFilename = [_filename stringByDeletingPathExtension];
+
         NSString *extension = [_filename pathExtension];
 
         NSBundle *bundle = [NSBundle bundleForClass:[self class]];
