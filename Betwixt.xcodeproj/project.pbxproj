@@ -35,6 +35,7 @@
 		22F979F914C0E36F00A6913B /* BTResourceFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F979F814C0E36F00A6913B /* BTResourceFactory.h */; };
 		22F979FB14C0E38000A6913B /* BTLoadable+Protected.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F979FA14C0E38000A6913B /* BTLoadable+Protected.h */; };
 		22F97A9014C0EC8B00A6913B /* Betwixt.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F97A8F14C0EC8B00A6913B /* Betwixt.h */; };
+		CB15859714D385AA0025AF65 /* BTGrouped.h in Headers */ = {isa = PBXBuildFile; fileRef = CB15859614D385AA0025AF65 /* BTGrouped.h */; };
 		CB24CBCB14A028F6004BAA57 /* BTLocationTask.h in Headers */ = {isa = PBXBuildFile; fileRef = CB24CBC914A028F5004BAA57 /* BTLocationTask.h */; };
 		CB24CBCC14A028F6004BAA57 /* BTLocationTask.m in Sources */ = {isa = PBXBuildFile; fileRef = CB24CBCA14A028F6004BAA57 /* BTLocationTask.m */; };
 		CB24CBCF14A02E10004BAA57 /* MoveMode.m in Sources */ = {isa = PBXBuildFile; fileRef = CB24CBCE14A02E10004BAA57 /* MoveMode.m */; };
@@ -203,6 +204,7 @@
 		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		32CA4F630368D1EE00C91783 /* Betwixt_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Betwixt_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Application-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Application-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		CB15859614D385AA0025AF65 /* BTGrouped.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTGrouped.h; sourceTree = "<group>"; };
 		CB24CBC914A028F5004BAA57 /* BTLocationTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTLocationTask.h; sourceTree = "<group>"; };
 		CB24CBCA14A028F6004BAA57 /* BTLocationTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTLocationTask.m; sourceTree = "<group>"; };
 		CB24CBCD14A02E10004BAA57 /* MoveMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MoveMode.h; path = Integration/MoveMode.h; sourceTree = "<group>"; };
@@ -339,6 +341,7 @@
 				CB366FE5148ECC84004BE08B /* BTNodeContainer.m */,
 				CB24CBD014A115EF004BAA57 /* BTDisplayable.h */,
 				CB442C6C14B3788800EB2821 /* BTDisplayContext.h */,
+				CB15859614D385AA0025AF65 /* BTGrouped.h */,
 				CB24CBD214A115EF004BAA57 /* BTInterpolator.h */,
 				CB24CBD114A115EF004BAA57 /* BTInterpolator.c */,
 				CB442C6D14B3788800EB2821 /* BTKeyed.h */,
@@ -600,6 +603,7 @@
 				CBC4524E14D21700008CC04D /* BTMovie+Package.h in Headers */,
 				CBC4526014D22F04008CC04D /* PlayMovieMode.h in Headers */,
 				222199F414D24660009B764F /* BTRandoms.h in Headers */,
+				CB15859714D385AA0025AF65 /* BTGrouped.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

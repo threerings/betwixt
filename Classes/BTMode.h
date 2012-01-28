@@ -15,6 +15,8 @@
 }
 
 - (BTNode*)nodeForKey:(NSString*)key;
+/// Returns the nodes in the group or nil if there are no nodes in the group.
+- (NSArray*)nodesForGroup:(NSString*)group;
 
 @property(nonatomic,readonly) RAFloatSignal *update;
 @property(nonatomic,readonly) BTModeStack *stack;

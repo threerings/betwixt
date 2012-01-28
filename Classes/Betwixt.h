@@ -11,6 +11,7 @@
 #import "BTCallbacks.h"
 #import "BTDisplayable.h"
 #import "BTDisplayContext.h"
+#import "BTGrouped.h"
 #import "BTInterpolator.h"
 #import "BTKeyed.h"
 #import "BTMode.h"

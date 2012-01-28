@@ -22,6 +22,10 @@
     if (_quad.x >= 52) { [self detach]; }
 }
 
+- (NSArray*)groups {
+    return [NSArray arrayWithObject:@"squares"];
+}
+
 - (NSArray*)keys {
     return [NSArray arrayWithObject:_name];
 }

@@ -3,6 +3,7 @@
 
 #import "BTNodeContainer.h"
 
+#import "BTGrouped.h"
 #import "BTKeyed.h"
 #import "BTUpdatable.h"
 #import "BTObject.h"
@@ -71,15 +72,18 @@
     if ([object conformsToProtocol:@protocol(BTKeyed)]) {
         [self.mode addKeys:(BTNode<BTKeyed>*)object];
     }
+    if ([object conformsToProtocol:@protocol(BTGrouped)]) {
+        [self.mode addGroups:(BTNode<BTGrouped>*)object];
+    }
     [object.attached emit];
-    
+
     // If the object is BTUpdatable, wire up its update function to the update event
     if ([object conformsToProtocol:@protocol(BTUpdatable)]) {
         __weak BTNode<BTUpdatable>* obj = (BTNode<BTUpdatable>*)object;
         [object.conns addConnection:[self.mode.update connectSlot:^(float dt) {
             [obj update:dt];
         }]];
-    }   
+    }
 }
 
 - (void)addNode:(BTNode*)object withName:(NSString*)name {
