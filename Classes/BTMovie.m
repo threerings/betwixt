@@ -63,58 +63,36 @@
 }
 @end
 
-@interface BTMovieFrameValue : RAIntValue {
-    __weak BTMovie *movie;
-}
-- (id)initWithMovie:(BTMovie*)movie;
-@end
-
-
 @implementation BTMovie {
-    RAIntValue *_frame;
-    int _frames;
+    int _frame, _frames;
     BOOL _stopped;
-    float _playTime;
+    float _playTime, _duration;
 }
 
 - (void)drawFrame:(int)newFrame {
-    if (newFrame < _frame.value) for (BTMovieLayer *layer in _sprite) layer->keyframeIdx = 0;
+    if (newFrame < _frame) for (BTMovieLayer *layer in _sprite) layer->keyframeIdx = 0;
     for (BTMovieLayer *layer in _sprite) [layer drawFrame:newFrame];
-    _playTime = (float) newFrame / 30; // reset playtime
+    _frame = newFrame;
 }
-
-- (RAIntValue*)frame { return _frame; }
 
 - (void)update:(float) dt {
     if (_stopped) return;
     _playTime += dt;
-    self.frame.value = (int)(_playTime * 30) % _frames;
+    if (_playTime > _duration) _playTime = fmodf(_playTime, _duration);
+    [self drawFrame:(int)(_playTime * 30) % _frames];
 }
 
 - (id)initWithLayers:(NSMutableArray*)layers {
     if (!(self = [super init])) return nil;
-    _frame = [[BTMovieFrameValue alloc] initWithMovie:self];
     for (BTMovieResourceLayer *layer in layers) {
         BTMovieLayer *mLayer = [[BTMovieLayer alloc] initWithLayer:layer];
         [_sprite addChild:mLayer];
         if ([mLayer frames] > _frames) _frames = [mLayer frames];
     }
+    _duration = _frames / 30.0;
     [self drawFrame:0];
     return self;
 }
 
-@synthesize frames=_frames;
-@end
-
-@implementation BTMovieFrameValue
-- (id)initWithMovie:(BTMovie*)newMovie {
-    if (!(self = [super init])) return nil;
-    movie = newMovie;
-    return self;
-}
-
-- (void)setValue:(int)value {
-    if (value != self.value) [movie drawFrame:value];
-    [super setValue:value];
-}
+@synthesize duration=_duration;
 @end
