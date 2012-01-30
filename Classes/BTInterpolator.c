@@ -1,3 +1,6 @@
+//
+// Betwixt - Copyright 2012 Three Rings Design
+
 #include "BTInterpolator.h"
 
 BTInterpolator BTLinearInterpolator = ^ float (float ratio) { return ratio; };

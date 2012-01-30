@@ -1,5 +1,5 @@
 //
-//  Betwixt - Copyright 2012 Three Rings Design
+// Betwixt - Copyright 2012 Three Rings Design
 
 #import "BTLoadingMode.h"
 #import "RAUnitSignal.h"
