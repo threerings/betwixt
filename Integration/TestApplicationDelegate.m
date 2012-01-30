@@ -3,11 +3,11 @@
 
 #import "TestApplicationDelegate.h"
 #import "SubObjectMode.h"
+#import "PlayMovieMode.h"
 #import "NamedNodeMode.h"
 #import "MoveMode.h"
 #import "Square.h"
 #import "SelfRemoveMode.h"
-#import "PlayMovieMode.h"
 
 #import "BTLoadingMode.h"
 
@@ -20,8 +20,8 @@
     if (!(self = [super init])) return nil;
     [[self add:@"ResourceTest.xml"] add:@"squaredance.xml"];
     [self.loadComplete connectUnit:^{
-        [self.stack changeMode:[[PlayMovieMode alloc] init]];
-        [self.stack pushMode:[[NamedNodeMode alloc] init]];
+        [self.stack changeMode:[[NamedNodeMode alloc] init]];
+        [self.stack pushMode:[[PlayMovieMode alloc] init]];
         [self.stack pushMode:[[MoveMode alloc] init]];
         [self.stack pushMode:[[SelfRemoveMode alloc] init]];
         [self.stack pushMode:[[SubObjectMode alloc] init]];

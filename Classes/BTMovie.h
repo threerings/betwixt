@@ -6,6 +6,9 @@
 #import "BTSprite.h"
 #import "BTUpdatable.h"
 
+@class RAIntValue;
+
 @interface BTMovie : BTSprite <BTUpdatable>
-@property(nonatomic,readwrite) int frame;
+@property(nonatomic,readonly) int frames;
+@property(nonatomic,readonly,strong) RAIntValue *frame;
 @end
