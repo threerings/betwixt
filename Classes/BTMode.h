@@ -1,15 +1,12 @@
 //
 // Betwixt - Copyright 2012 Three Rings Design
 
-#import <Foundation/Foundation.h>
-#import "SPSprite.h"
-#import "BTDisplayable.h"
-#import "BTDisplayContext.h"
-#import "BTNodeContainer.h"
+#import "BTDisplayObjectContainer.h"
 
 @class BTModeStack;
+@class SPSprite;
 
-@interface BTMode : BTNodeContainer<BTDisplayable,BTDisplayContext> {
+@interface BTMode : BTDisplayObjectContainer {
 @package
     __weak BTModeStack *_stack;
 }

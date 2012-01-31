@@ -10,7 +10,7 @@
 #import "BTApplicationDelegate.h"
 #import "BTCallbacks.h"
 #import "BTDisplayable.h"
-#import "BTDisplayContext.h"
+#import "BTDisplayObjectContainer.h"
 #import "BTGrouped.h"
 #import "BTInterpolator.h"
 #import "BTKeyed.h"

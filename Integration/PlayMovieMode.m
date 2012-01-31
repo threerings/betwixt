@@ -15,7 +15,7 @@
         if (frame == (movie.frames - 1)) passes++;
         if (passes == 2) [movie.mode detach];
     }]];
-    [self displayNode:movie];
+    [self addAndDisplayNode:movie];
     return self;
 }
 

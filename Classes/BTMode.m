@@ -35,16 +35,11 @@
     return self;
 }
 
-- (void)displayNode:(BTNode<BTDisplayable>*)node {
-    [self addNode:node];
-    [_sprite addChild:node.display];
-}
-
 - (void) detach {
     [_stack popMode];
 }
 
-- (SPDisplayObject*)display {
+- (SPDisplayObjectContainer *)container {
     return _sprite;
 }
 

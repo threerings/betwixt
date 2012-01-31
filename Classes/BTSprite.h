@@ -1,12 +1,10 @@
 //
 // Betwixt - Copyright 2012 Three Rings Design
 
-#import <Foundation/Foundation.h>
-#import "BTDisplayable.h"
-#import "BTDisplayContext.h"
+#import "BTDisplayObjectContainer.h"
 #import "BTObject.h"
 
-@interface BTSprite : BTObject <BTDisplayable,BTDisplayContext> {
+@interface BTSprite : BTDisplayObjectContainer {
 @protected
     SPSprite *_sprite;
 }

@@ -19,6 +19,8 @@
 		222199A914D2271D009B764F /* BTCallbacks.h in Headers */ = {isa = PBXBuildFile; fileRef = 222199A814D2271D009B764F /* BTCallbacks.h */; };
 		222199F414D24660009B764F /* BTRandoms.h in Headers */ = {isa = PBXBuildFile; fileRef = 222199F214D24660009B764F /* BTRandoms.h */; };
 		222199F514D24660009B764F /* BTRandoms.m in Sources */ = {isa = PBXBuildFile; fileRef = 222199F314D24660009B764F /* BTRandoms.m */; };
+		229B459314D76B62005FC8E9 /* BTDisplayObjectContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = 229B459214D76B62005FC8E9 /* BTDisplayObjectContainer.h */; };
+		229B459814D77185005FC8E9 /* BTDisplayObjectContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 229B459714D77185005FC8E9 /* BTDisplayObjectContainer.m */; };
 		22F979E614C0E23F00A6913B /* GDataXMLException.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F979D414C0E23F00A6913B /* GDataXMLException.h */; };
 		22F979E714C0E23F00A6913B /* GDataXMLException.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F979D514C0E23F00A6913B /* GDataXMLException.m */; };
 		22F979E814C0E23F00A6913B /* GDataXMLNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F979D614C0E23F00A6913B /* GDataXMLNode.h */; };
@@ -55,7 +57,6 @@
 		CB366FE7148ECC84004BE08B /* BTNodeContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = CB366FE5148ECC84004BE08B /* BTNodeContainer.m */; };
 		CB395DBE14B3D7F90093E37F /* BTDetachTask.h in Headers */ = {isa = PBXBuildFile; fileRef = CB395DBC14B3D7F90093E37F /* BTDetachTask.h */; };
 		CB395DBF14B3D7F90093E37F /* BTDetachTask.m in Sources */ = {isa = PBXBuildFile; fileRef = CB395DBD14B3D7F90093E37F /* BTDetachTask.m */; };
-		CB442C6F14B3788800EB2821 /* BTDisplayContext.h in Headers */ = {isa = PBXBuildFile; fileRef = CB442C6C14B3788800EB2821 /* BTDisplayContext.h */; };
 		CB442C7014B3788800EB2821 /* BTKeyed.h in Headers */ = {isa = PBXBuildFile; fileRef = CB442C6D14B3788800EB2821 /* BTKeyed.h */; };
 		CB442C7114B3788800EB2821 /* BTMode+Package.h in Headers */ = {isa = PBXBuildFile; fileRef = CB442C6E14B3788800EB2821 /* BTMode+Package.h */; };
 		CB442C7414B3800000EB2821 /* NamedNodeMode.m in Sources */ = {isa = PBXBuildFile; fileRef = CB442C7314B3800000EB2821 /* NamedNodeMode.m */; };
@@ -185,6 +186,8 @@
 		222199A814D2271D009B764F /* BTCallbacks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTCallbacks.h; sourceTree = "<group>"; };
 		222199F214D24660009B764F /* BTRandoms.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTRandoms.h; sourceTree = "<group>"; };
 		222199F314D24660009B764F /* BTRandoms.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTRandoms.m; sourceTree = "<group>"; };
+		229B459214D76B62005FC8E9 /* BTDisplayObjectContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTDisplayObjectContainer.h; sourceTree = "<group>"; };
+		229B459714D77185005FC8E9 /* BTDisplayObjectContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTDisplayObjectContainer.m; sourceTree = "<group>"; };
 		22F979D414C0E23F00A6913B /* GDataXMLException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataXMLException.h; sourceTree = "<group>"; };
 		22F979D514C0E23F00A6913B /* GDataXMLException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDataXMLException.m; sourceTree = "<group>"; };
 		22F979D614C0E23F00A6913B /* GDataXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataXMLNode.h; sourceTree = "<group>"; };
@@ -224,7 +227,6 @@
 		CB366FE5148ECC84004BE08B /* BTNodeContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTNodeContainer.m; sourceTree = "<group>"; };
 		CB395DBC14B3D7F90093E37F /* BTDetachTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTDetachTask.h; sourceTree = "<group>"; };
 		CB395DBD14B3D7F90093E37F /* BTDetachTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTDetachTask.m; sourceTree = "<group>"; };
-		CB442C6C14B3788800EB2821 /* BTDisplayContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTDisplayContext.h; sourceTree = "<group>"; };
 		CB442C6D14B3788800EB2821 /* BTKeyed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTKeyed.h; sourceTree = "<group>"; };
 		CB442C6E14B3788800EB2821 /* BTMode+Package.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BTMode+Package.h"; sourceTree = "<group>"; };
 		CB442C7214B3800000EB2821 /* NamedNodeMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NamedNodeMode.h; path = Integration/NamedNodeMode.h; sourceTree = "<group>"; };
@@ -340,7 +342,8 @@
 				CB366FE4148ECC84004BE08B /* BTNodeContainer.h */,
 				CB366FE5148ECC84004BE08B /* BTNodeContainer.m */,
 				CB24CBD014A115EF004BAA57 /* BTDisplayable.h */,
-				CB442C6C14B3788800EB2821 /* BTDisplayContext.h */,
+				229B459214D76B62005FC8E9 /* BTDisplayObjectContainer.h */,
+				229B459714D77185005FC8E9 /* BTDisplayObjectContainer.m */,
 				CB15859614D385AA0025AF65 /* BTGrouped.h */,
 				CB24CBD214A115EF004BAA57 /* BTInterpolator.h */,
 				CB24CBD114A115EF004BAA57 /* BTInterpolator.c */,
@@ -575,7 +578,6 @@
 				CBE1F0DC14A14D9E00B82344 /* BTNode+Package.h in Headers */,
 				CBE1F0E114A1554A00B82344 /* BTTaskSequence.h in Headers */,
 				CBE1F0E514A1707500B82344 /* BTBlockTask.h in Headers */,
-				CB442C6F14B3788800EB2821 /* BTDisplayContext.h in Headers */,
 				CB442C7014B3788800EB2821 /* BTKeyed.h in Headers */,
 				CB442C7114B3788800EB2821 /* BTMode+Package.h in Headers */,
 				CB442C7B14B3851A00EB2821 /* BTInterpolationTask+Protected.h in Headers */,
@@ -604,6 +606,7 @@
 				CBC4526014D22F04008CC04D /* PlayMovieMode.h in Headers */,
 				222199F414D24660009B764F /* BTRandoms.h in Headers */,
 				CB15859714D385AA0025AF65 /* BTGrouped.h in Headers */,
+				229B459314D76B62005FC8E9 /* BTDisplayObjectContainer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -784,6 +787,7 @@
 				CBC4524C14D216A1008CC04D /* BTMovieResourceLayer.m in Sources */,
 				CBC4526114D22F04008CC04D /* PlayMovieMode.m in Sources */,
 				222199F514D24660009B764F /* BTRandoms.m in Sources */,
+				229B459814D77185005FC8E9 /* BTDisplayObjectContainer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
