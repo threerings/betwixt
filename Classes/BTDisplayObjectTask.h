@@ -5,7 +5,7 @@
 
 @interface BTDisplayObjectTask : BTInterpolationTask {
 @protected
-    SPDisplayObject *_target;
+    __weak SPDisplayObject *_target;
 }
 
 - (id)initWithTime:(float)seconds interpolator:(BTInterpolator)interp 
