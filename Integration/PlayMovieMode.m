@@ -1,7 +1,6 @@
 #import "PlayMovieMode.h"
 
 #import "BTDetachTask.h"
-#import "BTDelayTask.h"
 #import "BTApp.h"
 #import "BTTaskSequence.h"
 #import "BTResourceManager.h"
