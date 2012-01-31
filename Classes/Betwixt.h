@@ -34,6 +34,8 @@
 #import "BTAlphaTask.h"
 #import "BTBlockTask.h"
 #import "BTDetachTask.h"
+#import "BTDurationTask.h"
+#import "BTInterpolationTask.h"
 #import "BTLocationTask.h"
 #import "BTRotationTask.h"
 #import "BTTaskSequence.h"
