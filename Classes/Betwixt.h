@@ -33,11 +33,11 @@
 // Tasks
 #import "BTAlphaTask.h"
 #import "BTBlockTask.h"
-#import "BTDelayTask.h"
 #import "BTDetachTask.h"
 #import "BTLocationTask.h"
 #import "BTRotationTask.h"
 #import "BTTaskSequence.h"
+#import "BTWaitTask.h"
 
 // Utils
 #import "BTLoadingMode.h"

@@ -6,8 +6,8 @@
 #import "BTInterpolationTask.h"
 
 @interface BTLocationTask : BTInterpolationTask
-- (id)initOverTime:(float)seconds toX:(float)x toY:(float)y;
-- (id)initOverTime:(float)seconds toX:(float)x toY:(float)y withInterpolator:(BTInterpolator)interp;
-- (id)initOverTime:(float)seconds toX:(float)x toY:(float)y onDisplay:(SPDisplayObject*)display;
-- (id)initOverTime:(float)seconds toX:(float)x toY:(float)y withInterpolator:(BTInterpolator)interp onDisplay:(SPDisplayObject*)display;
+- (id)initWithTime:(float)seconds toX:(float)x toY:(float)y;
+- (id)initWithTime:(float)seconds toX:(float)x toY:(float)y interpolator:(BTInterpolator)interp;
+- (id)initWithTime:(float)seconds toX:(float)x toY:(float)y display:(SPDisplayObject*)display;
+- (id)initWithTime:(float)seconds toX:(float)x toY:(float)y interpolator:(BTInterpolator)interp display:(SPDisplayObject*)display;
 @end

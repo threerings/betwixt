@@ -10,22 +10,22 @@
     float _deltaY;
 }
 
-- (id)initOverTime:(float)seconds toX:(float)x toY:(float)y {
-    return [self initOverTime:seconds toX:x toY:x withInterpolator:BTLinearInterpolator];
+- (id)initWithTime:(float)seconds toX:(float)x toY:(float)y {
+    return [self initWithTime:seconds toX:x toY:x interpolator:BTLinearInterpolator];
 }
 
-- (id)initOverTime:(float)seconds toX:(float)x toY:(float)y withInterpolator:(BTInterpolator)interp {
-    return [self initOverTime:seconds toX:x toY:y withInterpolator:interp onDisplay:nil];
+- (id)initWithTime:(float)seconds toX:(float)x toY:(float)y interpolator:(BTInterpolator)interp {
+    return [self initWithTime:seconds toX:x toY:y interpolator:interp display:nil];
 }
 
-- (id)initOverTime:(float)seconds toX:(float)x toY:(float)y onDisplay:(SPDisplayObject*)display {
-    return [self initOverTime:seconds toX:x toY:y withInterpolator:BTLinearInterpolator
-                    onDisplay:display];
+- (id)initWithTime:(float)seconds toX:(float)x toY:(float)y display:(SPDisplayObject*)display {
+    return [self initWithTime:seconds toX:x toY:y interpolator:BTLinearInterpolator
+                    display:display];
 }
 
-- (id)initOverTime:(float)seconds toX:(float)x toY:(float)y
-  withInterpolator:(BTInterpolator)interp onDisplay:(SPDisplayObject*)display {
-    if (!(self = [super initOverTime:seconds withInterpolator:interp onDisplay:display])) return nil;
+- (id)initWithTime:(float)seconds toX:(float)x toY:(float)y interpolator:(BTInterpolator)interp 
+           display:(SPDisplayObject*)display {
+    if (!(self = [super initWithTime:seconds interpolator:interp display:display])) return nil;
     [self.attached connectUnit:^{
         _startX = _target.x;
         _startY = _target.y;

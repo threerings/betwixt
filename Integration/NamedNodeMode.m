@@ -6,7 +6,7 @@
 #import "BTLocationTask.h"
 #import "BTDetachTask.h"
 #import "BTBlockTask.h"
-#import "BTDelayTask.h"
+#import "BTWaitTask.h"
 #import "BTTaskSequence.h"
 
 @implementation NamedNodeMode
@@ -15,11 +15,11 @@
     BTSprite *sprite = [BTSprite new];
     [self addAndDisplayNode:sprite];
     [sprite.sprite addChild:[SPQuad quadWithWidth:100 height:100 color:0x0000ff]];
-    [sprite addNode:[[BTLocationTask alloc] initOverTime:1 toX:300 toY:200] withName:@"mover"];
+    [sprite addNode:[[BTLocationTask alloc] initWithTime:1 toX:300 toY:200] withName:@"mover"];
     [sprite addNode:[BTTaskSequence seqWithNodes:
-        [BTDelayTask delayFor:.25],
+        [BTWaitTask waitFor:.25f],
         [BTDetachTask detachNode:[sprite nodeForName:@"mover"]],
-        [BTDelayTask delayFor:.25],
+        [BTWaitTask waitFor:.25f],
         [BTBlockTask onAttach:^(BTBlockTask *task) {
             NSAssert([sprite nodeForName:@"mover"] == nil, nil);
             NSAssert(sprite.sprite.x > 0, nil);

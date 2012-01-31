@@ -1,13 +1,12 @@
 //
 // Betwixt - Copyright 2012 Three Rings Design
 
-#import <Foundation/Foundation.h>
 #import "BTInterpolationTask.h"
 
 @interface BTAlphaTask : BTInterpolationTask
-- (id)initOverTime:(float)seconds toAlpha:(float)alpha;
-- (id)initOverTime:(float)seconds toAlpha:(float)alpha withInterpolator:(BTInterpolator)interp;
-- (id)initOverTime:(float)seconds toAlpha:(float)alpha onDisplay:(SPDisplayObject*)display;
-- (id)initOverTime:(float)seconds toAlpha:(float)alpha
-  withInterpolator:(BTInterpolator)interp onDisplay:(SPDisplayObject*)display;
+- (id)initWithTime:(float)seconds alpha:(float)alpha;
+- (id)initWithTime:(float)seconds alpha:(float)alpha interpolator:(BTInterpolator)interp;
+- (id)initWithTime:(float)seconds alpha:(float)alpha display:(SPDisplayObject*)display;
+- (id)initWithTime:(float)seconds alpha:(float)alpha interpolator:(BTInterpolator)interp 
+           display:(SPDisplayObject*)display;
 @end

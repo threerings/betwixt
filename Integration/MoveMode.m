@@ -16,14 +16,14 @@
     if (!(self = [super init])) return nil;
     SPQuad *directquad = [SPQuad quadWithWidth:100 height:100 color:0xff0000];
     [self.sprite addChild:directquad];
-    [self addNode:[[BTLocationTask alloc] initOverTime:0.5 toX:100 toY:100 onDisplay:directquad]];
-    [self addNode:[[BTAlphaTask alloc] initOverTime:0.5 toAlpha:0 onDisplay:directquad]];
+    [self addNode:[[BTLocationTask alloc] initWithTime:0.5 toX:100 toY:100 display:directquad]];
+    [self addNode:[[BTAlphaTask alloc] initWithTime:0.5 alpha:0 display:directquad]];
     BTSprite *sprite = [[BTSprite alloc] init];
     [self addAndDisplayNode:sprite];
     [sprite.sprite addChild:[SPQuad quadWithWidth:100 height:100 color:0x00ff00]];
     [sprite addNode:[BTTaskSequence seqWithNodes:
-        [[BTLocationTask alloc] initOverTime:0.5 toX:200 toY:200],
-        [[BTRotationTask alloc] initOverTime:0.5 toRotation:2],
+        [[BTLocationTask alloc] initWithTime:0.5 toX:200 toY:200],
+        [[BTRotationTask alloc] initWithTime:0.5 rotation:2],
         [BTBlockTask onAttach:^(BTBlockTask *task) {
             NSAssert(sprite.sprite.x == 200, nil);
             NSAssert(sprite.sprite.rotation == 2, nil);

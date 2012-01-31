@@ -21,6 +21,9 @@
 		222199F514D24660009B764F /* BTRandoms.m in Sources */ = {isa = PBXBuildFile; fileRef = 222199F314D24660009B764F /* BTRandoms.m */; };
 		229B459314D76B62005FC8E9 /* BTDisplayObjectContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = 229B459214D76B62005FC8E9 /* BTDisplayObjectContainer.h */; };
 		229B459814D77185005FC8E9 /* BTDisplayObjectContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 229B459714D77185005FC8E9 /* BTDisplayObjectContainer.m */; };
+		229B45C314D786B6005FC8E9 /* BTDurationTask.h in Headers */ = {isa = PBXBuildFile; fileRef = 229B45C114D786B5005FC8E9 /* BTDurationTask.h */; };
+		229B45C414D786B6005FC8E9 /* BTDurationTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 229B45C214D786B6005FC8E9 /* BTDurationTask.m */; };
+		229B45C914D787F5005FC8E9 /* BTDurationTask+Protected.h in Headers */ = {isa = PBXBuildFile; fileRef = 229B45C814D787F4005FC8E9 /* BTDurationTask+Protected.h */; };
 		22F979E614C0E23F00A6913B /* GDataXMLException.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F979D414C0E23F00A6913B /* GDataXMLException.h */; };
 		22F979E714C0E23F00A6913B /* GDataXMLException.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F979D514C0E23F00A6913B /* GDataXMLException.m */; };
 		22F979E814C0E23F00A6913B /* GDataXMLNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F979D614C0E23F00A6913B /* GDataXMLNode.h */; };
@@ -60,7 +63,7 @@
 		CB442C7014B3788800EB2821 /* BTKeyed.h in Headers */ = {isa = PBXBuildFile; fileRef = CB442C6D14B3788800EB2821 /* BTKeyed.h */; };
 		CB442C7114B3788800EB2821 /* BTMode+Package.h in Headers */ = {isa = PBXBuildFile; fileRef = CB442C6E14B3788800EB2821 /* BTMode+Package.h */; };
 		CB442C7414B3800000EB2821 /* NamedNodeMode.m in Sources */ = {isa = PBXBuildFile; fileRef = CB442C7314B3800000EB2821 /* NamedNodeMode.m */; };
-		CB442C7914B3834E00EB2821 /* BTDelayTask.m in Sources */ = {isa = PBXBuildFile; fileRef = CB442C7614B3834200EB2821 /* BTDelayTask.m */; };
+		CB442C7914B3834E00EB2821 /* BTWaitTask.m in Sources */ = {isa = PBXBuildFile; fileRef = CB442C7614B3834200EB2821 /* BTWaitTask.m */; };
 		CB442C7B14B3851A00EB2821 /* BTInterpolationTask+Protected.h in Headers */ = {isa = PBXBuildFile; fileRef = CB442C7A14B3851A00EB2821 /* BTInterpolationTask+Protected.h */; };
 		CB602C711476603800E52CE2 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DE5C4E6D138ED109004892CA /* libz.dylib */; };
 		CB602C721476603800E52CE2 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE3F093711B7B9DC009D4DB0 /* AVFoundation.framework */; };
@@ -188,6 +191,9 @@
 		222199F314D24660009B764F /* BTRandoms.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTRandoms.m; sourceTree = "<group>"; };
 		229B459214D76B62005FC8E9 /* BTDisplayObjectContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTDisplayObjectContainer.h; sourceTree = "<group>"; };
 		229B459714D77185005FC8E9 /* BTDisplayObjectContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTDisplayObjectContainer.m; sourceTree = "<group>"; };
+		229B45C114D786B5005FC8E9 /* BTDurationTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTDurationTask.h; sourceTree = "<group>"; };
+		229B45C214D786B6005FC8E9 /* BTDurationTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTDurationTask.m; sourceTree = "<group>"; };
+		229B45C814D787F4005FC8E9 /* BTDurationTask+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BTDurationTask+Protected.h"; sourceTree = "<group>"; };
 		22F979D414C0E23F00A6913B /* GDataXMLException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataXMLException.h; sourceTree = "<group>"; };
 		22F979D514C0E23F00A6913B /* GDataXMLException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDataXMLException.m; sourceTree = "<group>"; };
 		22F979D614C0E23F00A6913B /* GDataXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataXMLNode.h; sourceTree = "<group>"; };
@@ -231,9 +237,8 @@
 		CB442C6E14B3788800EB2821 /* BTMode+Package.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BTMode+Package.h"; sourceTree = "<group>"; };
 		CB442C7214B3800000EB2821 /* NamedNodeMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NamedNodeMode.h; path = Integration/NamedNodeMode.h; sourceTree = "<group>"; };
 		CB442C7314B3800000EB2821 /* NamedNodeMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NamedNodeMode.m; path = Integration/NamedNodeMode.m; sourceTree = "<group>"; };
-		CB442C7514B3834200EB2821 /* BTDelayTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTDelayTask.h; sourceTree = "<group>"; };
-		CB442C7614B3834200EB2821 /* BTDelayTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTDelayTask.m; sourceTree = "<group>"; };
-		CB442C7714B3834200EB2821 /* BTDelayTask+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BTDelayTask+Protected.h"; sourceTree = "<group>"; };
+		CB442C7514B3834200EB2821 /* BTWaitTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTWaitTask.h; sourceTree = "<group>"; };
+		CB442C7614B3834200EB2821 /* BTWaitTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTWaitTask.m; sourceTree = "<group>"; };
 		CB442C7A14B3851A00EB2821 /* BTInterpolationTask+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BTInterpolationTask+Protected.h"; sourceTree = "<group>"; };
 		CB72E4A914773ED100F1EC78 /* Square.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Square.h; path = Integration/Square.h; sourceTree = "<group>"; };
 		CB72E4AA14773ED100F1EC78 /* Square.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Square.m; path = Integration/Square.m; sourceTree = "<group>"; };
@@ -481,11 +486,11 @@
 				CB323C6B14A138190039A2F1 /* BTAlphaTask.m */,
 				CBE1F0E314A1707500B82344 /* BTBlockTask.h */,
 				CBE1F0E414A1707500B82344 /* BTBlockTask.m */,
-				CB442C7514B3834200EB2821 /* BTDelayTask.h */,
-				CB442C7614B3834200EB2821 /* BTDelayTask.m */,
-				CB442C7714B3834200EB2821 /* BTDelayTask+Protected.h */,
 				CB395DBC14B3D7F90093E37F /* BTDetachTask.h */,
 				CB395DBD14B3D7F90093E37F /* BTDetachTask.m */,
+				229B45C114D786B5005FC8E9 /* BTDurationTask.h */,
+				229B45C214D786B6005FC8E9 /* BTDurationTask.m */,
+				229B45C814D787F4005FC8E9 /* BTDurationTask+Protected.h */,
 				CB323C6214A132390039A2F1 /* BTInterpolationTask.h */,
 				CB323C6314A132390039A2F1 /* BTInterpolationTask.m */,
 				CB442C7A14B3851A00EB2821 /* BTInterpolationTask+Protected.h */,
@@ -495,6 +500,8 @@
 				CB323C6714A134B60039A2F1 /* BTRotationTask.m */,
 				CBE1F0DF14A1554A00B82344 /* BTTaskSequence.h */,
 				CBE1F0E014A1554A00B82344 /* BTTaskSequence.m */,
+				CB442C7514B3834200EB2821 /* BTWaitTask.h */,
+				CB442C7614B3834200EB2821 /* BTWaitTask.m */,
 			);
 			name = Tasks;
 			sourceTree = "<group>";
@@ -607,6 +614,8 @@
 				222199F414D24660009B764F /* BTRandoms.h in Headers */,
 				CB15859714D385AA0025AF65 /* BTGrouped.h in Headers */,
 				229B459314D76B62005FC8E9 /* BTDisplayObjectContainer.h in Headers */,
+				229B45C314D786B6005FC8E9 /* BTDurationTask.h in Headers */,
+				229B45C914D787F5005FC8E9 /* BTDurationTask+Protected.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -753,7 +762,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB442C7914B3834E00EB2821 /* BTDelayTask.m in Sources */,
+				CB442C7914B3834E00EB2821 /* BTWaitTask.m in Sources */,
 				CBF2AAA114765EA5000C022D /* BTApplicationDelegate.m in Sources */,
 				CBF2AAA314765EA5000C022D /* BTMode.m in Sources */,
 				CBF2AAA514765EA5000C022D /* BTModeStack.m in Sources */,
@@ -788,6 +797,7 @@
 				CBC4526114D22F04008CC04D /* PlayMovieMode.m in Sources */,
 				222199F514D24660009B764F /* BTRandoms.m in Sources */,
 				229B459814D77185005FC8E9 /* BTDisplayObjectContainer.m in Sources */,
+				229B45C414D786B6005FC8E9 /* BTDurationTask.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

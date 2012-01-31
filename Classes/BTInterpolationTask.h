@@ -4,11 +4,14 @@
 #import <Foundation/Foundation.h>
 #import "BTInterpolator.h"
 #import "BTNode.h"
-#import "BTDelayTask.h"
+#import "BTWaitTask.h"
 
-@interface BTInterpolationTask : BTDelayTask {
-    @protected
-        SPDisplayObject *_target;
+@interface BTInterpolationTask : BTDurationTask {
+@protected
+    BTInterpolator _interpolator;
+    SPDisplayObject *_target;
 }
--(id)initOverTime:(float)seconds withInterpolator:(BTInterpolator)interp onDisplay:(SPDisplayObject*)display;
+
+- (id)initWithTime:(float)seconds interpolator:(BTInterpolator)interp 
+           display:(SPDisplayObject*)display;
 @end

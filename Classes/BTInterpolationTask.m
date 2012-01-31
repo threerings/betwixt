@@ -4,13 +4,11 @@
 #import "BTInterpolationTask+Protected.h"
 #import "BTDisplayable.h"
 
-@implementation BTInterpolationTask {
-    BTInterpolator _interpolator;
-}
+@implementation BTInterpolationTask
 
-- (id)initOverTime:(float)seconds withInterpolator:(BTInterpolator)interp
-         onDisplay:(SPDisplayObject*)display {
-    if (!(self = [super initOverTime:seconds])) return nil;
+- (id)initWithTime:(float)seconds interpolator:(BTInterpolator)interp 
+           display:(SPDisplayObject *)display {
+    if (!(self = [super initWithTime:seconds])) return nil;
     _target = display;
     _interpolator = interp;
     if (!_target) {
@@ -25,6 +23,6 @@
     [self updateInterpolatedTo:_interpolator(elapsed/total)];
 }
 
--(void) updateInterpolatedTo:(float)interpolated {}
+- (void)updateInterpolatedTo:(float)interpolated {}
 
 @end
