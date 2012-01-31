@@ -19,7 +19,6 @@
 }
 
 - (BTMode*) mode {
-    if ([_parent isKindOfClass:[BTMode class]]) return (BTMode*)_parent;
     return _parent.mode;
 }
 
