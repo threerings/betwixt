@@ -65,7 +65,7 @@
 
 @implementation BTMovie {
     int _frame, _frames;
-    BOOL _stopped;
+    RABoolValue *_playing;
     float _playTime, _duration;
 }
 
@@ -76,7 +76,7 @@
 }
 
 - (void)update:(float) dt {
-    if (_stopped) return;
+    if (!_playing.value) return;
     _playTime += dt;
     if (_playTime > _duration) _playTime = fmodf(_playTime, _duration);
     [self drawFrame:(int)(_playTime * 30) % _frames];
@@ -90,9 +90,11 @@
         if ([mLayer frames] > _frames) _frames = [mLayer frames];
     }
     _duration = _frames / 30.0;
+    _playing = [[RABoolValue alloc] init];
+    _playing.value = YES;
     [self drawFrame:0];
     return self;
 }
 
-@synthesize duration=_duration;
+@synthesize duration=_duration, playing=_playing;
 @end
