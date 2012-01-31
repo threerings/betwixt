@@ -8,7 +8,7 @@
     float _deltaRotation;
 }
 - (id)initWithTime:(float)seconds rotation:(float)rads {
-    return [self initWithTime:seconds rotation:rads interpolator:BTLinearInterpolator];
+    return [self initWithTime:seconds rotation:rads interpolator:BTLinearInterpolator display:nil];
 }
 
 - (id)initWithTime:(float)seconds rotation:(float)rads interpolator:(BTInterpolator)interp {

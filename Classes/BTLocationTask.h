@@ -1,11 +1,9 @@
 //
 // Betwixt - Copyright 2012 Three Rings Design
 
-#import <Foundation/Foundation.h>
+#import "BTDisplayObjectTask.h"
 
-#import "BTInterpolationTask.h"
-
-@interface BTLocationTask : BTInterpolationTask
+@interface BTLocationTask : BTDisplayObjectTask
 - (id)initWithTime:(float)seconds toX:(float)x toY:(float)y;
 - (id)initWithTime:(float)seconds toX:(float)x toY:(float)y interpolator:(BTInterpolator)interp;
 - (id)initWithTime:(float)seconds toX:(float)x toY:(float)y display:(SPDisplayObject*)display;

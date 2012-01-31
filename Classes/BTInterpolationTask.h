@@ -9,9 +9,7 @@
 @interface BTInterpolationTask : BTDurationTask {
 @protected
     BTInterpolator _interpolator;
-    SPDisplayObject *_target;
 }
 
-- (id)initWithTime:(float)seconds interpolator:(BTInterpolator)interp 
-           display:(SPDisplayObject*)display;
+- (id)initWithTime:(float)seconds interpolator:(BTInterpolator)interp;
 @end

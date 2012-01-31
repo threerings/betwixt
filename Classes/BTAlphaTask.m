@@ -9,7 +9,7 @@
 }
 
 - (id)initWithTime:(float)seconds alpha:(float)alpha {
-    return [self initWithTime:seconds alpha:alpha interpolator:BTLinearInterpolator];
+    return [self initWithTime:seconds alpha:alpha interpolator:BTLinearInterpolator display:nil];
 }
 
 - (id)initWithTime:(float)seconds alpha:(float)alpha interpolator:(BTInterpolator)interp {

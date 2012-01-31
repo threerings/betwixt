@@ -24,6 +24,8 @@
 		229B45C314D786B6005FC8E9 /* BTDurationTask.h in Headers */ = {isa = PBXBuildFile; fileRef = 229B45C114D786B5005FC8E9 /* BTDurationTask.h */; };
 		229B45C414D786B6005FC8E9 /* BTDurationTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 229B45C214D786B6005FC8E9 /* BTDurationTask.m */; };
 		229B45C914D787F5005FC8E9 /* BTDurationTask+Protected.h in Headers */ = {isa = PBXBuildFile; fileRef = 229B45C814D787F4005FC8E9 /* BTDurationTask+Protected.h */; };
+		229B460014D87E05005FC8E9 /* BTDisplayObjectTask.h in Headers */ = {isa = PBXBuildFile; fileRef = 229B45FE14D87E05005FC8E9 /* BTDisplayObjectTask.h */; };
+		229B460114D87E05005FC8E9 /* BTDisplayObjectTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 229B45FF14D87E05005FC8E9 /* BTDisplayObjectTask.m */; };
 		22F979E614C0E23F00A6913B /* GDataXMLException.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F979D414C0E23F00A6913B /* GDataXMLException.h */; };
 		22F979E714C0E23F00A6913B /* GDataXMLException.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F979D514C0E23F00A6913B /* GDataXMLException.m */; };
 		22F979E814C0E23F00A6913B /* GDataXMLNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F979D614C0E23F00A6913B /* GDataXMLNode.h */; };
@@ -194,6 +196,8 @@
 		229B45C114D786B5005FC8E9 /* BTDurationTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTDurationTask.h; sourceTree = "<group>"; };
 		229B45C214D786B6005FC8E9 /* BTDurationTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTDurationTask.m; sourceTree = "<group>"; };
 		229B45C814D787F4005FC8E9 /* BTDurationTask+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BTDurationTask+Protected.h"; sourceTree = "<group>"; };
+		229B45FE14D87E05005FC8E9 /* BTDisplayObjectTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTDisplayObjectTask.h; sourceTree = "<group>"; };
+		229B45FF14D87E05005FC8E9 /* BTDisplayObjectTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTDisplayObjectTask.m; sourceTree = "<group>"; };
 		22F979D414C0E23F00A6913B /* GDataXMLException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataXMLException.h; sourceTree = "<group>"; };
 		22F979D514C0E23F00A6913B /* GDataXMLException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDataXMLException.m; sourceTree = "<group>"; };
 		22F979D614C0E23F00A6913B /* GDataXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataXMLNode.h; sourceTree = "<group>"; };
@@ -488,6 +492,8 @@
 				CBE1F0E414A1707500B82344 /* BTBlockTask.m */,
 				CB395DBC14B3D7F90093E37F /* BTDetachTask.h */,
 				CB395DBD14B3D7F90093E37F /* BTDetachTask.m */,
+				229B45FE14D87E05005FC8E9 /* BTDisplayObjectTask.h */,
+				229B45FF14D87E05005FC8E9 /* BTDisplayObjectTask.m */,
 				229B45C114D786B5005FC8E9 /* BTDurationTask.h */,
 				229B45C214D786B6005FC8E9 /* BTDurationTask.m */,
 				229B45C814D787F4005FC8E9 /* BTDurationTask+Protected.h */,
@@ -616,6 +622,7 @@
 				229B459314D76B62005FC8E9 /* BTDisplayObjectContainer.h in Headers */,
 				229B45C314D786B6005FC8E9 /* BTDurationTask.h in Headers */,
 				229B45C914D787F5005FC8E9 /* BTDurationTask+Protected.h in Headers */,
+				229B460014D87E05005FC8E9 /* BTDisplayObjectTask.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -798,6 +805,7 @@
 				222199F514D24660009B764F /* BTRandoms.m in Sources */,
 				229B459814D77185005FC8E9 /* BTDisplayObjectContainer.m in Sources */,
 				229B45C414D786B6005FC8E9 /* BTDurationTask.m in Sources */,
+				229B460114D87E05005FC8E9 /* BTDisplayObjectTask.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

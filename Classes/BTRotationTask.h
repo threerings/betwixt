@@ -1,10 +1,9 @@
 //
 // Betwixt - Copyright 2012 Three Rings Design
 
-#import <Foundation/Foundation.h>
-#import "BTInterpolationTask.h"
+#import "BTDisplayObjectTask.h"
 
-@interface BTRotationTask : BTInterpolationTask
+@interface BTRotationTask : BTDisplayObjectTask
 
 - (id)initWithTime:(float)seconds rotation:(float)rads;
 - (id)initWithTime:(float)seconds rotation:(float)rads interpolator:(BTInterpolator)interp;
