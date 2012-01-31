@@ -18,6 +18,7 @@ NSString * const BTMovieLastFrame = @"BTMovieLastFrame";
 }
 @end
 
+#define NO_FRAME -1
 @implementation BTMovieLayer
 -(BTMovieResourceKeyframe*)kfAtIdx:(int)idx {
     return (BTMovieResourceKeyframe*)[keyframes objectAtIndex:idx];
@@ -61,16 +62,29 @@ NSString * const BTMovieLastFrame = @"BTMovieLastFrame";
 @end
 
 @implementation BTMovie {
-    int _frame;
+    BOOL _goingToFrame;
+    int _pendingFrame;
+    int _frame, _stopFrame;
     RABoolValue *_playing;
     float _playTime, _duration;
     RAObjectSignal *_labelPassed;
     NSArray *_labels;
 }
 
-- (void)drawFrame:(BOOL)resetKeframes {
-    if (resetKeframes) for (BTMovieLayer *layer in _sprite) layer->keyframeIdx = 0;
-    for (BTMovieLayer *layer in _sprite) [layer drawFrame:_frame];
+- (int)frameForLabel:(NSString*)label {
+    for (int ii = 0; ii < [_labels count]; ii++) {
+        if ([[_labels objectAtIndex:ii] containsObject:label]) return ii;
+    }
+    @throw([NSException
+        exceptionWithName:@"UnknownLabel"
+        reason:[NSString stringWithFormat:@"Unknown label '%@'", label]
+        userInfo:nil]);
+}
+
+- (RAConnection*)monitorLabel:(NSString *)label withUnit:(RAUnitBlock)slot {
+    return [_labelPassed connectSlot:^(id labelFired) {
+        if ([labelFired isEqual:label]) slot();
+    }];
 }
 
 - (void)fireLabelsFrom:(int)startFrame to:(int)endFrame {
@@ -79,33 +93,101 @@ NSString * const BTMovieLastFrame = @"BTMovieLastFrame";
     }
 }
 
-- (void)update:(float)dt {
-    if (!_playing.value) return;
-    _playTime += dt;
-    if (_playTime > _duration) _playTime = fmodf(_playTime, _duration);
+- (void)gotoFrame:(int)newFrame fromSkip:(BOOL)fromSkip overDuration:(BOOL)overDuration {
+    if (_goingToFrame) {
+        _pendingFrame = newFrame;
+        return;
+    }
+    _goingToFrame = YES;
+    BOOL differentFrame = newFrame != _frame;
+    BOOL wrapped = newFrame < _frame;
+    if (differentFrame) {
+        if (wrapped) for (BTMovieLayer *layer in _sprite) layer->keyframeIdx = 0;
+        for (BTMovieLayer *layer in _sprite) [layer drawFrame:newFrame];
+    }
 
+    // Update the frame before firing, so if firing changes the frame, it should stick.
     int oldFrame = _frame;
-    _frame = (int)(_playTime * 30);
-    BOOL differentFrame = oldFrame != _frame;
-    BOOL wrapped = _frame < oldFrame;
-    if (differentFrame) [self drawFrame:wrapped];
-
-    if (dt >= _duration) {
+    _frame = newFrame;
+    if (fromSkip) {
+        [self fireLabelsFrom:newFrame to:newFrame];
+        _playTime = newFrame/30.0f;
+    } else if (overDuration) {
         [self fireLabelsFrom:oldFrame + 1 to:[_labels count] - 1];
-        [self fireLabelsFrom:0 to:oldFrame];
+        [self fireLabelsFrom:0 to:_frame];
     } else if (differentFrame) {
         if (wrapped) {
             [self fireLabelsFrom:oldFrame + 1 to:[_labels count] - 1];
             [self fireLabelsFrom:0 to:_frame];
         } else [self fireLabelsFrom:oldFrame + 1 to:_frame];
     }
+    _goingToFrame = NO;
+    if (_pendingFrame != NO_FRAME) {
+        newFrame = _pendingFrame;
+        _pendingFrame = NO_FRAME;
+        [self gotoFrame:newFrame fromSkip:YES overDuration:NO];
+    }
 }
 
-- (RAConnection*)monitorLabel:(NSString *)label withUnit:(RAUnitBlock)slot {
-    return [_labelPassed connectSlot:^(id labelFired) {
-        if ([labelFired isEqual:label]) slot();
-    }];
+- (void)playToLabel:(NSString*)label {
+  [self playToFrame:[self frameForLabel:label]];
+}
 
+- (void)playToFrame:(int)frame {
+    _stopFrame = frame;
+    _playing.value = YES;
+}
+
+- (void)playFromLabel:(NSString*)startLabel toLabel:(NSString*)stopLabel {
+    [self playFromFrame:[self frameForLabel:startLabel] toFrame:[self frameForLabel:stopLabel]];
+}
+
+- (void)playFromFrame:(int)startFrame toLabel:(NSString*)stopLabel {
+    [self playFromFrame:startFrame toFrame:[self frameForLabel:stopLabel]];
+}
+- (void)playFromLabel:(NSString*)startLabel toFrame:(int)stopFrame {
+    [self playFromFrame:[self frameForLabel:startLabel] toFrame:stopFrame];
+}
+
+- (void)playFromFrame:(int)startFrame toFrame:(int)stopFrame {
+    [self playToFrame:stopFrame];
+    [self gotoFrame:startFrame fromSkip:YES overDuration:NO];
+}
+
+- (void)loopFromLabel:(NSString*)label {
+    [self loopFromFrame:[self frameForLabel:label]];
+}
+
+- (void)loopFromFrame:(int)frame {
+    _playing.value = YES;
+    _stopFrame = NO_FRAME;
+    [self gotoFrame:frame fromSkip:YES overDuration:NO];
+}
+
+- (void)gotoLabel:(NSString*)label {
+    [self gotoFrame:[self frameForLabel:label]];
+}
+
+- (void)gotoFrame:(int)frame {
+    _playing.value = NO;
+    [self gotoFrame:frame fromSkip:YES overDuration:NO];
+}
+
+- (void)update:(float)dt {
+    if (!_playing.value) return;
+    _playTime += dt;
+    if (_playTime > _duration) _playTime = fmodf(_playTime, _duration);
+    int newFrame = (int)(_playTime * 30);
+    BOOL overDuration = dt >= _duration;
+    // If the update crosses or goes to the stopFrame, go to the stop frame, stop the movie and
+    // clear it
+    if (_stopFrame != NO_FRAME &&
+        ((newFrame >= _stopFrame && (_frame < _stopFrame || newFrame < _frame)) || overDuration)) {
+        _playing.value = NO;
+        newFrame = _stopFrame;
+        _stopFrame = NO_FRAME;
+    }
+    [self gotoFrame:newFrame fromSkip:NO overDuration:overDuration];
 }
 
 - (id)initWithLayers:(NSMutableArray*)layers andLabels:(NSArray*)labels {
@@ -114,12 +196,15 @@ NSString * const BTMovieLastFrame = @"BTMovieLastFrame";
         BTMovieLayer *mLayer = [[BTMovieLayer alloc] initWithLayer:layer];
         [_sprite addChild:mLayer];
     }
+    _pendingFrame = NO_FRAME;
+    _stopFrame = NO_FRAME;
+    _frame = NO_FRAME;
     _labels = labels;
     _duration = [labels count] / 30.0;
     _playing = [[RABoolValue alloc] init];
     _playing.value = YES;
     _labelPassed = [[RAObjectSignal alloc] init];
-    [self drawFrame:NO];
+    [self gotoFrame:0 fromSkip:YES overDuration:NO];
     return self;
 }
 

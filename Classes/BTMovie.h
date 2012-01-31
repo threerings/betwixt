@@ -13,6 +13,17 @@ extern NSString * const BTMovieLastFrame;
 
 @interface BTMovie : BTSprite <BTUpdatable>
 
+-(void)loopFromLabel:(NSString*)label;
+-(void)loopFromFrame:(int)frame;
+-(void)playFromLabel:(NSString*)startLabel toLabel:(NSString*)stopLabel;
+-(void)playFromLabel:(NSString*)startLabel toFrame:(int)stopFrame;
+-(void)playFromFrame:(int)startFrame toLabel:(NSString*)stopLabel;
+-(void)playFromFrame:(int)startFrame toFrame:(int)stopFrame;
+-(void)gotoLabel:(NSString*)label;
+-(void)gotoFrame:(int)frame;
+-(void)playToLabel:(NSString*)label;
+-(void)playToFrame:(int)frame;
+
 // Fires when the given label is fired by labelPassed.
 -(RAConnection*) monitorLabel:(NSString*)label withUnit:(RAUnitBlock)slot;
 

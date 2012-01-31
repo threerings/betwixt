@@ -14,7 +14,10 @@
     BTMovie *movie = [res newMovie];
     [self addAndDisplayNode:movie];
     // Play the movie once and pop the mode
-    [movie monitorLabel:BTMovieLastFrame withUnit:^{ [self detach]; }];
+    [[movie monitorLabel:BTMovieLastFrame withUnit:^{
+        [movie playFromFrame:0 toLabel:BTMovieLastFrame];
+    }] once];
+    [movie.playing connectUnit:^{ [self detach]; }];
     return self;
 }
 
