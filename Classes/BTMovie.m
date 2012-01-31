@@ -173,6 +173,8 @@ NSString * const BTMovieLastFrame = @"BTMovieLastFrame";
     [self gotoFrame:frame fromSkip:YES overDuration:NO];
 }
 
+- (int)frames { return [_labels count]; }
+
 - (void)update:(float)dt {
     if (!_playing.value) return;
     _playTime += dt;
@@ -208,5 +210,5 @@ NSString * const BTMovieLastFrame = @"BTMovieLastFrame";
     return self;
 }
 
-@synthesize duration=_duration, playing=_playing, labelPassed=_labelPassed;
+@synthesize duration=_duration, playing=_playing, labelPassed=_labelPassed, frame=_frame;
 @end

@@ -33,4 +33,6 @@ extern NSString * const BTMovieLastFrame;
 @property(nonatomic,readonly) RAObjectSignal *labelPassed;
 @property(nonatomic,readonly) RABoolValue *playing;
 @property(nonatomic,readonly) float duration;
+@property(nonatomic,readonly) int frame;
+@property(nonatomic,readonly) int frames;
 @end
