@@ -21,9 +21,9 @@
     [[self add:@"ResourceTest.xml"] add:@"squaredance.xml"];
     [self.loadComplete connectUnit:^{
         [self.stack changeMode:[[NamedNodeMode alloc] init]];
-        [self.stack pushMode:[[PlayMovieMode alloc] init]];
         [self.stack pushMode:[[MoveMode alloc] init]];
         [self.stack pushMode:[[SelfRemoveMode alloc] init]];
+        [self.stack pushMode:[[PlayMovieMode alloc] init]];
         [self.stack pushMode:[[SubObjectMode alloc] init]];
     }];
     return self;

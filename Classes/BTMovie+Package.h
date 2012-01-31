@@ -4,5 +4,5 @@
 #import <Foundation/Foundation.h>
 
 @interface BTMovie (package)
-- (id)initWithLayers:(NSMutableArray*)layers;
+- (id)initWithLayers:(NSMutableArray*)layers andLabels:(NSArray*)labels;
 @end

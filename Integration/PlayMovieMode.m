@@ -14,10 +14,8 @@
     BTMovieResource *res = [[BTApp resourceManager] requireResource:@"Animations/squaredance"];
     BTMovie *movie = [res newMovie];
     [self addAndDisplayNode:movie];
-    [self addNode:[BTTaskSequence seqWithNodes:
-        [BTDelayTask delayFor:movie.duration * 2],
-        [BTDetachTask detachParent],
-        nil]];
+    // Play the movie once and pop the mode
+    [movie monitorLabel:BTMovieLastFrame withUnit:^{ [self detach]; }];
     return self;
 }
 
