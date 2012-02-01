@@ -7,7 +7,7 @@
 #import "BTDetachTask.h"
 #import "BTBlockTask.h"
 #import "BTWaitTask.h"
-#import "BTTaskSequence.h"
+#import "BTSequenceTask.h"
 
 @implementation NamedNodeMode
 - (id)init {
@@ -16,7 +16,7 @@
     [self addAndDisplayNode:sprite];
     [sprite.sprite addChild:[SPQuad quadWithWidth:100 height:100 color:0x0000ff]];
     [sprite addNode:[[BTLocationTask alloc] initWithTime:1 toX:300 toY:200] withName:@"mover"];
-    [sprite addNode:[BTTaskSequence seqWithNodes:
+    [sprite addNode:[BTSequenceTask withNodes:
         [BTWaitTask waitFor:.25f],
         [BTDetachTask detachNode:[sprite nodeForName:@"mover"]],
         [BTWaitTask waitFor:.25f],

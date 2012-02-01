@@ -2,7 +2,6 @@
 
 #import "BTDetachTask.h"
 #import "BTApp.h"
-#import "BTTaskSequence.h"
 #import "BTResourceManager.h"
 #import "BTMovieResource.h"
 #import "BTMovie.h"

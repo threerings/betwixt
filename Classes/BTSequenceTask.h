@@ -4,6 +4,6 @@
 #import <Foundation/Foundation.h>
 #import "BTNode.h"
 
-@interface BTTaskSequence : BTNode
-+ (BTTaskSequence*)seqWithNodes:(BTNode*)node, ...;
+@interface BTSequenceTask : BTNode
++ (BTSequenceTask*)withNodes:(BTNode*)node, ...;
 @end

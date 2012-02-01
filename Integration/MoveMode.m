@@ -4,7 +4,7 @@
 #import "MoveMode.h"
 
 #import "BTBlockTask.h"
-#import "BTTaskSequence.h"
+#import "BTSequenceTask.h"
 #import "BTAlphaTask.h"
 #import "BTRotationTask.h"
 #import "BTSprite.h"
@@ -21,7 +21,7 @@
     BTSprite *sprite = [[BTSprite alloc] init];
     [self addAndDisplayNode:sprite];
     [sprite.sprite addChild:[SPQuad quadWithWidth:100 height:100 color:0x00ff00]];
-    [sprite addNode:[BTTaskSequence seqWithNodes:
+    [sprite addNode:[BTSequenceTask withNodes:
         [[BTLocationTask alloc] initWithTime:0.5 toX:200 toY:200],
         [[BTRotationTask alloc] initWithTime:0.5 rotation:2],
         [BTBlockTask onAttach:^(BTBlockTask *task) {

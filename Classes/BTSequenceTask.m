@@ -1,10 +1,10 @@
 //
 // Betwixt - Copyright 2012 Three Rings Design
 
-#import "BTTaskSequence.h"
+#import "BTSequenceTask.h"
 #import "BTNodeContainer.h"
 
-@implementation BTTaskSequence {
+@implementation BTSequenceTask {
     NSArray *_nodes;
     int _position;
 }
@@ -27,7 +27,7 @@
     return self;
 }
 
-+ (BTTaskSequence*)seqWithNodes:(BTNode*)node, ... {
++ (BTSequenceTask*)withNodes:(BTNode*)node, ... {
     va_list ap;
     va_start(ap, node);
     NSMutableArray *nodes = [[NSMutableArray alloc] init];
@@ -35,6 +35,6 @@
         [nodes addObject:node];
     }
     va_end(ap);
-    return [[BTTaskSequence alloc] initWithNodes:nodes];
+    return [[BTSequenceTask alloc] initWithNodes:nodes];
 }
 @end

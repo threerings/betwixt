@@ -3,7 +3,7 @@
 #import "BTRotationTask.h"
 #import "BTParallelTask.h"
 #import "BTLocationTask.h"
-#import "BTTaskSequence.h"
+#import "BTSequenceTask.h"
 
 @implementation RepeatingMode
 
@@ -14,7 +14,7 @@
     __block int reps = 0;
     [self addNode:[BTRepeatingTask withTaskCreator:^BTNode* (BTRepeatingTask *owner){
         if (reps++ == 2) [self detach];
-        return [BTTaskSequence seqWithNodes:
+        return [BTSequenceTask withNodes:
           [BTParallelTask withNodes:[[BTLocationTask alloc] initWithTime:.25f toX:100 toY:100],
               [[BTRotationTask alloc] initWithTime:.25f rotation:1.0f],
               nil],
