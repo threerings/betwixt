@@ -7,6 +7,10 @@
 #import "BTApp.h"
 #import "BTResourceManager.h"
 
+@interface BTLoadingMode ()
+- (void)loadNextFile;
+@end
+
 @implementation BTLoadingMode {
     RAUnitSignal *_loadComplete;
 }
@@ -16,6 +20,16 @@
     _loadComplete = [[RAUnitSignal alloc] init];
     _filenames = [NSMutableArray array];
     _filenameIdx = -1;
+    
+    __weak BTLoadingMode* this = self;
+    [self.entered connectUnit:^{
+        if (_filenameIdx >= 0) {
+            // We're already loading
+            return;
+        }
+        [this loadNextFile];
+    }];
+    
     return self;
 }
 
@@ -41,16 +55,6 @@
     } onError:^(NSException *err) {
         [this onError:err];
     }];
-}
-
-- (void)enter {
-    [super enter];
-
-    if (_filenameIdx >= 0) {
-        // We're already loading
-        return;
-    }
-    [self loadNextFile];
 }
 
 @synthesize loadComplete=_loadComplete;

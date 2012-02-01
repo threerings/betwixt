@@ -16,6 +16,8 @@
 - (NSArray*)nodesForGroup:(NSString*)group;
 
 @property(nonatomic,readonly) RAFloatSignal *update;
+@property(nonatomic,readonly) RAUnitSignal *entered;
+@property(nonatomic,readonly) RAUnitSignal *exited;
 @property(nonatomic,readonly) BTModeStack *stack;
 @property(nonatomic,readonly) SPSprite *sprite;
 

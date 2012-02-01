@@ -8,7 +8,9 @@
 
 @interface BTMode (package)
 
--(void)addKeys:(BTNode<BTKeyed>*)object;
--(void)addGroups:(BTNode<BTGrouped>*)object;
+- (void)addKeys:(BTNode<BTKeyed>*)object;
+- (void)addGroups:(BTNode<BTGrouped>*)object;
+- (void)enter;
+- (void)exit;
 
 @end

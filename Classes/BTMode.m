@@ -9,6 +9,8 @@
 
 @implementation BTMode {
     RAFloatSignal *_update;
+    RAUnitSignal *_entered;
+    RAUnitSignal *_exited;
     SPSprite *_sprite;
     NSMutableDictionary *_keyedObjects;
     NSMutableDictionary *_groups;
@@ -18,8 +20,13 @@
     if (!(self = [super init])) return nil;
     _sprite = [[SPSprite alloc] init];
     _update = [[RAFloatSignal alloc] init];
+    _entered = [[RAUnitSignal alloc] init];
+    _exited = [[RAUnitSignal alloc] init];
     _keyedObjects = [[NSMutableDictionary alloc] init];
     _groups = [[NSMutableDictionary alloc] init];
+    
+    _sprite.touchable = NO;
+    
     return self;
 }
 
@@ -31,11 +38,11 @@
     return [_groups objectForKey:group];
 }
 
-- (BTMode*) mode {
+- (BTMode*)mode {
     return self;
 }
 
-- (void) detach {
+- (void)detach {
     [_stack popMode];
 }
 
@@ -48,9 +55,13 @@
 }
 
 - (void)enter {
+    _sprite.touchable = YES;
+    [_entered emit];
 }
 
-- (void) exit {
+- (void)exit {
+    _sprite.touchable = NO;
+    [_exited emit];
 }
 
 - (void)addKeys:(BTNode<BTKeyed>*)node {
@@ -85,6 +96,6 @@
     }
 }
 
-@synthesize sprite=_sprite, update=_update, stack=_stack;
+@synthesize sprite=_sprite, update=_update, entered=_entered, exited=_exited, stack=_stack;
 
 @end
