@@ -20,6 +20,7 @@
 #import "BTObject.h"
 #import "BTSprite.h"
 #import "SPEventDispatcher+BlockListener.h"
+#import "SPDisplayObject+Extensions.h"
 
 // Resources
 #import "GDataXMLException.h"
