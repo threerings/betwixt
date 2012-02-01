@@ -16,7 +16,7 @@
     if (!(self = [super init])) return nil;
     SPQuad *directquad = [SPQuad quadWithWidth:100 height:100 color:0xff0000];
     [self.sprite addChild:directquad];
-    [self addNode:[[BTLocationTask alloc] initWithTime:0.5 toX:100 toY:100 display:directquad]];
+    [self addNode:[[BTLocationTask alloc] initWithTime:0.5 toX:100 toY:100 target:directquad]];
     [self addNode:[[BTAlphaTask alloc] initWithTime:0.5 alpha:0 display:directquad]];
     BTSprite *sprite = [[BTSprite alloc] init];
     [self addAndDisplayNode:sprite];

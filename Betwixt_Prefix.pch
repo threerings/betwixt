@@ -3,4 +3,5 @@
     #import <UIKit/UIKit.h>
     #import "Sparrow.h" 
     #import "React.h"
+    #import "SPDisplayObject+Extensions.h"
 #endif

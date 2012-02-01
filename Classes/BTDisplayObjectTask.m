@@ -11,8 +11,9 @@
     if (!(self = [super initWithTime:seconds interpolator:interp])) return nil;
     _target = display;
     if (!_target) {
+        __weak BTDisplayObjectTask *this = self;
         [self.attached connectUnit:^{
-            _target = ((id<BTDisplayable>)self.parent).display;
+            _target = ((id<BTDisplayable>)this.parent).display;
         }];
     }
     return self;

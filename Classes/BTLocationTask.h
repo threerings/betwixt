@@ -3,9 +3,11 @@
 
 #import "BTDisplayObjectTask.h"
 
-@interface BTLocationTask : BTDisplayObjectTask
+@protocol BTHasLocation;
+
+@interface BTLocationTask : BTInterpolationTask
 - (id)initWithTime:(float)seconds toX:(float)x toY:(float)y;
 - (id)initWithTime:(float)seconds toX:(float)x toY:(float)y interpolator:(BTInterpolator)interp;
-- (id)initWithTime:(float)seconds toX:(float)x toY:(float)y display:(SPDisplayObject*)display;
-- (id)initWithTime:(float)seconds toX:(float)x toY:(float)y interpolator:(BTInterpolator)interp display:(SPDisplayObject*)display;
+- (id)initWithTime:(float)seconds toX:(float)x toY:(float)y target:(id<BTHasLocation>)target;
+- (id)initWithTime:(float)seconds toX:(float)x toY:(float)y interpolator:(BTInterpolator)interp target:(id<BTHasLocation>)target;
 @end
