@@ -6,6 +6,7 @@
 #import "PlayMovieMode.h"
 #import "NamedNodeMode.h"
 #import "MoveMode.h"
+#import "RepeatingMode.h"
 #import "Square.h"
 #import "SelfRemoveMode.h"
 
@@ -24,6 +25,7 @@
         [self.stack pushMode:[[MoveMode alloc] init]];
         [self.stack pushMode:[[SelfRemoveMode alloc] init]];
         [self.stack pushMode:[[PlayMovieMode alloc] init]];
+        [self.stack pushMode:[[RepeatingMode alloc] init]];
         [self.stack pushMode:[[SubObjectMode alloc] init]];
     }];
     return self;

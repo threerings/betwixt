@@ -72,6 +72,10 @@
 		CB602C731476603800E52CE2 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE3F093911B7B9DC009D4DB0 /* AudioToolbox.framework */; };
 		CB602C741476603800E52CE2 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE3F097711B7BABD009D4DB0 /* OpenAL.framework */; };
 		CB602C751476603800E52CE2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE4A3D7E10FFB08B00FDA492 /* QuartzCore.framework */; };
+		CB69E37114D8C66D00E7C18D /* BTRepeatingTask.h in Headers */ = {isa = PBXBuildFile; fileRef = CB69E36F14D8C66D00E7C18D /* BTRepeatingTask.h */; };
+		CB69E37214D8C66D00E7C18D /* BTRepeatingTask.m in Sources */ = {isa = PBXBuildFile; fileRef = CB69E37014D8C66D00E7C18D /* BTRepeatingTask.m */; };
+		CB69E37514D8CADE00E7C18D /* RepeatingMode.h in Headers */ = {isa = PBXBuildFile; fileRef = CB69E37314D8CADE00E7C18D /* RepeatingMode.h */; };
+		CB69E37614D8CADE00E7C18D /* RepeatingMode.m in Sources */ = {isa = PBXBuildFile; fileRef = CB69E37414D8CADE00E7C18D /* RepeatingMode.m */; };
 		CB72E4AB14773ED200F1EC78 /* Square.h in Headers */ = {isa = PBXBuildFile; fileRef = CB72E4A914773ED100F1EC78 /* Square.h */; };
 		CB72E4AC14773ED200F1EC78 /* Square.m in Sources */ = {isa = PBXBuildFile; fileRef = CB72E4AA14773ED100F1EC78 /* Square.m */; };
 		CB7ABCAE147C52D400EC6AEC /* SPEventDispatcher+BlockListener.h in Headers */ = {isa = PBXBuildFile; fileRef = CB7ABCAC147C52D400EC6AEC /* SPEventDispatcher+BlockListener.h */; };
@@ -244,6 +248,10 @@
 		CB442C7514B3834200EB2821 /* BTWaitTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTWaitTask.h; sourceTree = "<group>"; };
 		CB442C7614B3834200EB2821 /* BTWaitTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTWaitTask.m; sourceTree = "<group>"; };
 		CB442C7A14B3851A00EB2821 /* BTInterpolationTask+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BTInterpolationTask+Protected.h"; sourceTree = "<group>"; };
+		CB69E36F14D8C66D00E7C18D /* BTRepeatingTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTRepeatingTask.h; sourceTree = "<group>"; };
+		CB69E37014D8C66D00E7C18D /* BTRepeatingTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTRepeatingTask.m; sourceTree = "<group>"; };
+		CB69E37314D8CADE00E7C18D /* RepeatingMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RepeatingMode.h; path = Integration/RepeatingMode.h; sourceTree = "<group>"; };
+		CB69E37414D8CADE00E7C18D /* RepeatingMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RepeatingMode.m; path = Integration/RepeatingMode.m; sourceTree = "<group>"; };
 		CB72E4A914773ED100F1EC78 /* Square.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Square.h; path = Integration/Square.h; sourceTree = "<group>"; };
 		CB72E4AA14773ED100F1EC78 /* Square.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Square.m; path = Integration/Square.m; sourceTree = "<group>"; };
 		CB7ABCAC147C52D400EC6AEC /* SPEventDispatcher+BlockListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SPEventDispatcher+BlockListener.h"; sourceTree = "<group>"; };
@@ -494,14 +502,16 @@
 				CB395DBD14B3D7F90093E37F /* BTDetachTask.m */,
 				229B45FE14D87E05005FC8E9 /* BTDisplayObjectTask.h */,
 				229B45FF14D87E05005FC8E9 /* BTDisplayObjectTask.m */,
+				229B45C814D787F4005FC8E9 /* BTDurationTask+Protected.h */,
 				229B45C114D786B5005FC8E9 /* BTDurationTask.h */,
 				229B45C214D786B6005FC8E9 /* BTDurationTask.m */,
-				229B45C814D787F4005FC8E9 /* BTDurationTask+Protected.h */,
+				CB442C7A14B3851A00EB2821 /* BTInterpolationTask+Protected.h */,
 				CB323C6214A132390039A2F1 /* BTInterpolationTask.h */,
 				CB323C6314A132390039A2F1 /* BTInterpolationTask.m */,
-				CB442C7A14B3851A00EB2821 /* BTInterpolationTask+Protected.h */,
 				CB24CBC914A028F5004BAA57 /* BTLocationTask.h */,
 				CB24CBCA14A028F6004BAA57 /* BTLocationTask.m */,
+				CB69E36F14D8C66D00E7C18D /* BTRepeatingTask.h */,
+				CB69E37014D8C66D00E7C18D /* BTRepeatingTask.m */,
 				CB323C6614A134B60039A2F1 /* BTRotationTask.h */,
 				CB323C6714A134B60039A2F1 /* BTRotationTask.m */,
 				CBE1F0DF14A1554A00B82344 /* BTTaskSequence.h */,
@@ -531,6 +541,8 @@
 				CB442C7314B3800000EB2821 /* NamedNodeMode.m */,
 				CBC4525E14D22F04008CC04D /* PlayMovieMode.h */,
 				CBC4525F14D22F04008CC04D /* PlayMovieMode.m */,
+				CB69E37314D8CADE00E7C18D /* RepeatingMode.h */,
+				CB69E37414D8CADE00E7C18D /* RepeatingMode.m */,
 				CBAF5617149807B4009A1A06 /* SelfRemoveMode.h */,
 				CBAF5618149807B4009A1A06 /* SelfRemoveMode.m */,
 				CB72E4A914773ED100F1EC78 /* Square.h */,
@@ -623,6 +635,8 @@
 				229B45C314D786B6005FC8E9 /* BTDurationTask.h in Headers */,
 				229B45C914D787F5005FC8E9 /* BTDurationTask+Protected.h in Headers */,
 				229B460014D87E05005FC8E9 /* BTDisplayObjectTask.h in Headers */,
+				CB69E37114D8C66D00E7C18D /* BTRepeatingTask.h in Headers */,
+				CB69E37514D8CADE00E7C18D /* RepeatingMode.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -806,6 +820,8 @@
 				229B459814D77185005FC8E9 /* BTDisplayObjectContainer.m in Sources */,
 				229B45C414D786B6005FC8E9 /* BTDurationTask.m in Sources */,
 				229B460114D87E05005FC8E9 /* BTDisplayObjectTask.m in Sources */,
+				CB69E37214D8C66D00E7C18D /* BTRepeatingTask.m in Sources */,
+				CB69E37614D8CADE00E7C18D /* RepeatingMode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
