@@ -33,6 +33,17 @@
     return self;
 }
 
+- (void)addFiles:(NSString *)filename, ... {
+    
+    [_filenames addObject:filename];
+    va_list args;
+    va_start(args, filename);
+    while ((filename = va_arg(args, NSString *)) != nil) {
+        [_filenames addObject:filename];
+    }
+    va_end(args);
+}
+
 - (BTLoadingMode *)add:(NSString *)filename {
     [_filenames addObject:filename];
     return self;

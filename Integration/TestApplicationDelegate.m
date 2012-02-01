@@ -19,7 +19,7 @@
 
 - (id)init {
     if (!(self = [super init])) return nil;
-    [[self add:@"ResourceTest.xml"] add:@"squaredance.xml"];
+    [self addFiles:@"ResourceTest.xml", @"squaredance.xml", nil];
     [self.loadComplete connectUnit:^{
         [self.stack changeMode:[[NamedNodeMode alloc] init]];
         [self.stack pushMode:[[MoveMode alloc] init]];
