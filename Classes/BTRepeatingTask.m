@@ -10,7 +10,7 @@
 }
 
 - (void)onRepeat {
-    BTNode *toRepeat = _creator(self);
+    BTNode *toRepeat = _creator();
     if (toRepeat == nil) [self detach];
     else {
         [toRepeat.detached connectUnit:^{ [self onRepeat]; }];

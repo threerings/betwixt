@@ -5,7 +5,7 @@
 
 @class BTRepeatingTask;
 
-typedef BTNode* (^BTRepeatCreator)(BTRepeatingTask* owner);
+typedef BTNode* (^BTRepeatCreator)(void);
 
 @interface BTRepeatingTask : BTNode
 + (BTRepeatingTask*)withTaskCreator:(BTRepeatCreator)creator;

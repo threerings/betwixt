@@ -16,7 +16,7 @@
     SPQuad *directquad = [SPQuad quadWithWidth:100 height:100 color:0xff0000];
     [self.sprite addChild:directquad];
     __block int reps = 0;
-    [self addNode:[BTRepeatingTask withTaskCreator:^BTNode* (BTRepeatingTask *owner){
+    [self addNode:[BTRepeatingTask withTaskCreator:^BTNode* {
         if (reps++ == 2) [self.stack popMode];
         return [BTSequenceTask withNodes:
                     [BTParallelTask withNodes:
