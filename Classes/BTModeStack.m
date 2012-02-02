@@ -103,7 +103,6 @@ typedef enum {
             [_sprite addChild:newMode.sprite atIndex:index];
         }
         newMode->_stack = this;
-        [newMode.attached emit];
     };
     
     RemoveModeBlock doRemoveMode = ^(int index) {
@@ -125,7 +124,6 @@ typedef enum {
         [_stack removeObjectAtIndex:index];
         [_sprite removeChild:removedMode.sprite];
         removedMode->_stack = nil;
-        [removedMode.detached emit];
     };
     
     // create a new _pendingModeTransitionQueue right now

@@ -1,9 +1,13 @@
+//
+// Betwixt - Copyright 2012 Three Rings Design
+
 #import "RepeatingMode.h"
 #import "BTRepeatingTask.h"
 #import "BTRotationTask.h"
 #import "BTParallelTask.h"
 #import "BTLocationTask.h"
 #import "BTSequenceTask.h"
+#import "BTModeStack.h"
 
 @implementation RepeatingMode
 
@@ -13,7 +17,7 @@
     [self.sprite addChild:directquad];
     __block int reps = 0;
     [self addNode:[BTRepeatingTask withTaskCreator:^BTNode* (BTRepeatingTask *owner){
-        if (reps++ == 2) [self detach];
+        if (reps++ == 2) [self.stack popMode];
         return [BTSequenceTask withNodes:
           [BTParallelTask withNodes:[[BTLocationTask alloc] initWithTime:.25f toX:100 toY:100],
               [[BTRotationTask alloc] initWithTime:.25f rotation:1.0f],

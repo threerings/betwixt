@@ -1,3 +1,6 @@
+//
+// Betwixt - Copyright 2012 Three Rings Design
+
 #import "PlayMovieMode.h"
 
 #import "BTDetachTask.h"
@@ -5,6 +8,7 @@
 #import "BTResourceManager.h"
 #import "BTMovieResource.h"
 #import "BTMovie.h"
+#import "BTModeStack.h"
 
 @implementation PlayMovieMode
 - (id)init {
@@ -16,7 +20,7 @@
     [[movie monitorLabel:BTMovieLastFrame withUnit:^{
         [movie playFromFrame:0 toLabel:BTMovieLastFrame];
     }] once];
-    [movie.playing connectUnit:^{ [self detach]; }];
+    [movie.playing connectUnit:^{ [self.stack popMode]; }];
     return self;
 }
 

@@ -2,9 +2,10 @@
 // Betwixt - Copyright 2012 Three Rings Design
 
 #import "BTNodeContainer.h"
-#import "BTDisplayable.h"
 
-@interface BTDisplayObjectContainer : BTNodeContainer<BTDisplayable>
+@protocol BTDisplayable;
+
+@protocol BTDisplayNodeContainer <BTNodeContainer>
 
 @property(nonatomic,readonly) SPDisplayObjectContainer *container;
 

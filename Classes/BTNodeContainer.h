@@ -2,20 +2,20 @@
 // Betwixt - Copyright 2012 Three Rings Design
 
 #import "SPEventDispatcher+BlockListener.h"
-#import "BTNode.h"
 
-@interface BTNodeContainer : BTNode {
-    @package
-        NSMutableSet *_children;
-}
+@class BTNode;
+@class BTMode;
 
-- (OOOBlockToken*)listenToDispatcher:(SPEventDispatcher*)dispatcher forEvent:(NSString*)eventType withBlock:(OOOBlockListener)block;
-- (void)cancelListeningForToken:(OOOBlockToken*)token;
+@protocol BTNodeContainer
 
+- (BTMode *)mode;
 - (void)addNode:(BTNode*)node;
 - (void)addNode:(BTNode*)node withName:(NSString*)name;
 - (void)replaceNode:(BTNode*)node withName:(NSString*)name;
 - (BTNode*)nodeForName:(NSString*)name;
 - (void)removeNode:(BTNode*)node;
+
+- (OOOBlockToken*)listenToDispatcher:(SPEventDispatcher*)dispatcher forEvent:(NSString*)eventType withBlock:(OOOBlockListener)block;
+- (void)cancelListeningForToken:(OOOBlockToken*)token;
 
 @end

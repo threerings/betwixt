@@ -8,7 +8,7 @@
 
 +(BTDetachTask*)detachParent {
     BTDetachTask* task = [BTDetachTask new];
-    [task.attached connectUnit:^{ [task.parent detach]; }];
+    [task.attached connectUnit:^{ [((BTNode *) task.parent) detach]; }];
     return task;
 }
 

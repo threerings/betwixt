@@ -1,14 +1,12 @@
 //
 // Betwixt - Copyright 2012 Three Rings Design
 
-#import <Foundation/Foundation.h>
-
 @class BTMode;
-@class BTNodeContainer;
+@protocol BTNodeContainer;
 
 @interface BTNode : NSObject {
 @package
-    BTNodeContainer *_parent;
+    id<BTNodeContainer> _parent;
     RAUnitSignal *_attached;
     RAUnitSignal *_detached;
     RAConnectionGroup *_conns;
@@ -20,7 +18,6 @@
 @property(nonatomic,readonly) RAUnitSignal *detached;
 @property(nonatomic,readonly) BTMode *mode;
 @property(nonatomic,readonly) RAConnectionGroup *conns;
-@property(nonatomic,readonly) BTNodeContainer *parent;
-
+@property(nonatomic,readonly) id<BTNodeContainer> parent;
 
 @end

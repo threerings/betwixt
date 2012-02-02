@@ -34,7 +34,7 @@
     [holder addNode:[BTDetachTask detachParent]];
     [[self.update connectUnit:^ {
         NSAssert(detached, @"Parent removed");
-        [self detach];
+        [self.stack popMode];
     }] once];
 }
 

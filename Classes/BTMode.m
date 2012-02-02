@@ -6,26 +6,48 @@
 #import "BTKeyed.h"
 #import "BTMode+Protected.h"
 #import "BTMode+Package.h"
+#import "BTSprite.h"
+
+@interface BTRootNode : BTSprite {
+@private
+    __weak BTMode *_mode;
+}
+- (id)initWithMode:(BTMode *)mode;
+- (BTMode *)mode;
+@end
+
+@implementation BTRootNode
+- (id)initWithMode:(BTMode *)mode {
+    if (!(self = [super init])) {
+        return nil;
+    }
+    _mode = mode;
+    return self;
+}
+- (BTMode *)mode {
+    return _mode;
+}
+@end
 
 @implementation BTMode {
     RAFloatSignal *_update;
     RAUnitSignal *_entered;
     RAUnitSignal *_exited;
-    SPSprite *_sprite;
+    BTRootNode *_rootNode;
     NSMutableDictionary *_keyedObjects;
     NSMutableDictionary *_groups;
 }
 
 - (id)init {
     if (!(self = [super init])) return nil;
-    _sprite = [[SPSprite alloc] init];
+    _rootNode = [[BTRootNode alloc] initWithMode:self];
+    _rootNode.sprite.touchable = NO;
+    
     _update = [[RAFloatSignal alloc] init];
     _entered = [[RAUnitSignal alloc] init];
     _exited = [[RAUnitSignal alloc] init];
     _keyedObjects = [[NSMutableDictionary alloc] init];
     _groups = [[NSMutableDictionary alloc] init];
-    
-    _sprite.touchable = NO;
     
     return self;
 }
@@ -42,12 +64,8 @@
     return self;
 }
 
-- (void)detach {
-    [_stack popMode];
-}
-
 - (SPDisplayObjectContainer *)container {
-    return _sprite;
+    return _rootNode.container;
 }
 
 - (void)update:(float)dt {
@@ -55,12 +73,12 @@
 }
 
 - (void)enter {
-    _sprite.touchable = YES;
+    _rootNode.sprite.touchable = YES;
     [_entered emit];
 }
 
 - (void)exit {
-    _sprite.touchable = NO;
+    _rootNode.sprite.touchable = NO;
     [_exited emit];
 }
 
@@ -96,6 +114,42 @@
     }
 }
 
-@synthesize sprite=_sprite, update=_update, entered=_entered, exited=_exited, stack=_stack;
+- (SPSprite *)sprite {
+    return _rootNode.sprite;
+}
+
+- (OOOBlockToken*)listenToDispatcher:(SPEventDispatcher *)dispatcher forEvent:(NSString *)eventType withBlock:(OOOBlockListener)block {
+    return [_rootNode listenToDispatcher:dispatcher forEvent:eventType withBlock:block];
+}
+
+- (void)cancelListeningForToken:(OOOBlockToken*)token {
+    [_rootNode cancelListeningForToken:token];
+}
+
+- (void)addNode:(BTNode*)object {
+    [_rootNode addNode:object];
+}
+
+- (void)addNode:(BTNode*)object withName:(NSString*)name {
+    [_rootNode addNode:object withName:name];
+}
+
+- (void)replaceNode:(BTNode*)object withName:(NSString*)name {
+    [_rootNode replaceNode:object withName:name];
+}
+
+- (void)removeNode:(BTNode*)object {
+    [_rootNode removeNode:object];
+}
+
+- (BTNode*)nodeForName:(NSString*)name {
+    return [_rootNode nodeForName:name];
+}
+
+- (void)addAndDisplayNode:(BTNode<BTDisplayable> *)node {
+    [_rootNode addAndDisplayNode:node];
+}
+
+@synthesize update=_update, entered=_entered, exited=_exited, stack=_stack;
 
 @end
