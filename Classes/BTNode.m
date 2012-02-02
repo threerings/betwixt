@@ -33,7 +33,7 @@
 
 - (void)removeInternal {
     _parent = nil;
-    [self.detached emit];
+    [_detached emit];
     [self cleanup];
 }
 
