@@ -7,20 +7,20 @@
 
 @implementation BTMath
 
-+ (float) distanceX1:(float)x1 y1:(float)y1 x2:(float)x2 y2:(float)y2 {
-    return sqrtf([BTMath distanceSqX1:x1 y1:y1 x2:x2 y2:y2]);
++ (float) distanceFromX:(float)fromX fromY:(float)fromY toX:(float)toX toY:(float)toY {
+    return sqrtf([BTMath distanceSqFromX:fromX fromY:fromY toX:toX toY:toY]);
 }
 
-+ (float) distanceP1:(SPPoint *)p1 p2:(SPPoint *)p2 {
-    return [BTMath distanceX1:p1.x y1:p1.y x2:p2.x y2:p2.y];
++ (float) distanceFrom:(SPPoint *)p1 to:(SPPoint *)p2 {
+    return [BTMath distanceFromX:p1.x fromY:p1.y toX:p2.x toY:p2.y];
 }
 
-+ (float) distanceSqX1:(float)x1 y1:(float)y1 x2:(float)x2 y2:(float)y2 {
-    return SQ(x2 - x1) + SQ(y2 - y1);
++ (float) distanceSqFromX:(float)fromX fromY:(float)fromY toX:(float)toX toY:(float)toY {
+    return SQ(toX - fromX) + SQ(toY - fromY);
 }
 
-+ (float) distanceSqP1:(SPPoint *)p1 p2:(SPPoint *)p2 {
-    return [BTMath distanceSqX1:p1.x y1:p1.y x2:p2.x y2:p2.y];
++ (float) distanceSqFrom:(SPPoint *)p1 to:(SPPoint *)p2 {
+    return [BTMath distanceSqFromX:p1.x fromY:p1.y toX:p2.x toY:p2.y];
 }
 
 @end

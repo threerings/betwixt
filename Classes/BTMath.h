@@ -3,9 +3,9 @@
 
 @interface BTMath : NSObject
 
-+ (float) distanceX1:(float)x1 y1:(float)y1 x2:(float)x2 y2:(float)y2;
-+ (float) distanceP1:(SPPoint *)p1 p2:(SPPoint *)p2;
-+ (float) distanceSqX1:(float)x1 y1:(float)y1 x2:(float)x2 y2:(float)y2;
-+ (float) distanceSqP1:(SPPoint *)p1 p2:(SPPoint *)p2;
++ (float) distanceFromX:(float)fromX fromY:(float)fromY toX:(float)toX toY:(float)toY;
++ (float) distanceFrom:(SPPoint *)p1 to:(SPPoint *)p2;
++ (float) distanceSqFromX:(float)fromX fromY:(float)fromY toX:(float)toX toY:(float)toY;
++ (float) distanceSqFrom:(SPPoint *)p1 to:(SPPoint *)p2;
 
 @end
