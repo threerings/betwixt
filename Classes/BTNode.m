@@ -8,19 +8,22 @@
 
 @implementation BTNode
 
--  (id)init {
-    if (!(self = [super init])) return nil;
-    _attached = [[RAUnitSignal alloc] init];
-    _detached = [[RAUnitSignal alloc] init];
-    return self;
-}
-
 - (void)detach {
     [_parent removeNode:self];
 }
 
 - (BTMode *)mode {
     return _parent.mode;
+}
+
+- (RAUnitSignal *)attached {
+    if (_attached == nil) _attached = [[RAUnitSignal alloc] init];
+    return _attached;
+}
+
+- (RAUnitSignal *)detached {
+    if (_detached == nil) _detached = [[RAUnitSignal alloc] init];
+    return _detached;
 }
 
 - (RAConnectionGroup *)conns {
@@ -40,6 +43,6 @@
     [_conns disconnectAll];
 }
 
-@synthesize parent=_parent, attached=_attached, detached=_detached;
+@synthesize parent=_parent;
 
 @end
