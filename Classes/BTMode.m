@@ -7,6 +7,7 @@
 #import "BTMode+Protected.h"
 #import "BTMode+Package.h"
 #import "BTSprite.h"
+#import "BTNode+Protected.h"
 
 @interface BTRootNode : BTSprite {
 @private
@@ -72,14 +73,20 @@
     [_update emitEvent:dt];
 }
 
-- (void)enter {
+- (void)enterInternal {
     _rootNode.sprite.touchable = YES;
     [_entered emit];
 }
 
-- (void)exit {
+- (void)exitInternal {
     _rootNode.sprite.touchable = NO;
     [_exited emit];
+}
+
+- (void)shutdownInternal {
+    _stack = nil;
+    [_rootNode cleanup];
+    _rootNode = nil;
 }
 
 - (void)addKeys:(BTNode<BTKeyed>*)node {

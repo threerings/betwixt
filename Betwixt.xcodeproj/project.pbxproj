@@ -30,6 +30,7 @@
 		229B467914D9FEAE005FC8E9 /* BTDisplayNodeContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = 229B467814D9FEAE005FC8E9 /* BTDisplayNodeContainer.h */; };
 		22C85EAD14DB225400F9EC07 /* BTMath.h in Headers */ = {isa = PBXBuildFile; fileRef = 22C85EAB14DB225400F9EC07 /* BTMath.h */; };
 		22C85EAE14DB225400F9EC07 /* BTMath.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C85EAC14DB225400F9EC07 /* BTMath.m */; };
+		22C85EB614DB344100F9EC07 /* BTNode+Protected.h in Headers */ = {isa = PBXBuildFile; fileRef = 22C85EB514DB344100F9EC07 /* BTNode+Protected.h */; };
 		22F979E614C0E23F00A6913B /* GDataXMLException.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F979D414C0E23F00A6913B /* GDataXMLException.h */; };
 		22F979E714C0E23F00A6913B /* GDataXMLException.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F979D514C0E23F00A6913B /* GDataXMLException.m */; };
 		22F979E814C0E23F00A6913B /* GDataXMLNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F979D614C0E23F00A6913B /* GDataXMLNode.h */; };
@@ -211,6 +212,7 @@
 		229B467814D9FEAE005FC8E9 /* BTDisplayNodeContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTDisplayNodeContainer.h; sourceTree = "<group>"; };
 		22C85EAB14DB225400F9EC07 /* BTMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTMath.h; sourceTree = "<group>"; };
 		22C85EAC14DB225400F9EC07 /* BTMath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTMath.m; sourceTree = "<group>"; };
+		22C85EB514DB344100F9EC07 /* BTNode+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BTNode+Protected.h"; sourceTree = "<group>"; };
 		22F979D414C0E23F00A6913B /* GDataXMLException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataXMLException.h; sourceTree = "<group>"; };
 		22F979D514C0E23F00A6913B /* GDataXMLException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDataXMLException.m; sourceTree = "<group>"; };
 		22F979D614C0E23F00A6913B /* GDataXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataXMLNode.h; sourceTree = "<group>"; };
@@ -384,6 +386,7 @@
 				CBC4524114D20051008CC04D /* BTMovie.m */,
 				CBE1F0D914A14D9E00B82344 /* BTNode+Package.h */,
 				CBE1F0D714A14D9E00B82344 /* BTNode.h */,
+				22C85EB514DB344100F9EC07 /* BTNode+Protected.h */,
 				CBE1F0D814A14D9E00B82344 /* BTNode.m */,
 				CB366FE4148ECC84004BE08B /* BTNodeContainer.h */,
 				CBB86EDE1476669800D0C57E /* BTObject.h */,
@@ -656,6 +659,7 @@
 				CB69E37914D8D07E00E7C18D /* BTParallelTask.h in Headers */,
 				229B467914D9FEAE005FC8E9 /* BTDisplayNodeContainer.h in Headers */,
 				22C85EAD14DB225400F9EC07 /* BTMath.h in Headers */,
+				22C85EB614DB344100F9EC07 /* BTNode+Protected.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

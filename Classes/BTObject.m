@@ -9,6 +9,7 @@
 #import "BTObject.h"
 
 #import "BTNode+Package.h"
+#import "BTNode+Protected.h"
 #import "BTMode.h"
 #import "BTMode+Package.h"
 
@@ -108,12 +109,24 @@
 }
 
 - (void)removeInternal {
+    // Prevent our _children array from being manipulated while
+    // we're iterating it
     NSMutableSet *kids = _children;
     _children = nil;
     for (BTObject *child in kids) {
         [child removeInternal];
     }
+    _children = kids;
     [super removeInternal];
+}
+
+- (void)cleanup {
+    NSMutableSet *kids = _children;
+    _children = nil;
+    for (BTObject *child in kids) {
+        [child cleanup];
+    }
+    [super cleanup];
 }
 
 @end

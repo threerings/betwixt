@@ -1,8 +1,6 @@
 //
 // Betwixt - Copyright 2012 Three Rings Design
 
-#import <Foundation/Foundation.h>
-
 #import "BTGrouped.h"
 #import "BTKeyed.h"
 
@@ -10,7 +8,8 @@
 
 - (void)addKeys:(BTNode<BTKeyed>*)object;
 - (void)addGroups:(BTNode<BTGrouped>*)object;
-- (void)enter;
-- (void)exit;
+- (void)enterInternal;
+- (void)exitInternal;
+- (void)shutdownInternal;
 
 @end

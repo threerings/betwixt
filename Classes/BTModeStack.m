@@ -117,13 +117,13 @@ typedef enum {
         // if the top mode is removed, make sure it's exited first
         BTMode *removedMode = [_stack objectAtIndex:index];
         if (removedMode == initialTopMode) {
-            [initialTopMode exit];
+            [initialTopMode exitInternal];
             initialTopMode = nil;
         }
         
         [_stack removeObjectAtIndex:index];
         [_sprite removeChild:removedMode.sprite];
-        removedMode->_stack = nil;
+        [removedMode shutdownInternal];
     };
     
     // create a new _pendingModeTransitionQueue right now
@@ -147,7 +147,9 @@ typedef enum {
                 break;
                 
             case kMTT_Change:
-                doRemoveMode(-1); // pop
+                if (_stack.count > 0) {
+                    doRemoveMode(-1); // pop
+                }
                 doInsertMode(transition->mode, _stack.count); // push
                 break;
                 
@@ -169,10 +171,10 @@ typedef enum {
     BTMode *newTopMode = self.topMode;
     if (newTopMode != initialTopMode) {
         if (initialTopMode != nil) {
-            [initialTopMode exit];
+            [initialTopMode exitInternal];
         }
         if (newTopMode != nil) {
-            [newTopMode enter];
+            [newTopMode enterInternal];
         }
     }
 }

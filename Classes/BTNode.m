@@ -3,6 +3,7 @@
 
 #import "BTNode.h"
 #import "BTNode+Package.h"
+#import "BTNode+Protected.h"
 #import "BTMode.h"
 
 @implementation BTNode
@@ -18,11 +19,11 @@
     [_parent removeNode:self];
 }
 
-- (BTMode*) mode {
+- (BTMode *)mode {
     return _parent.mode;
 }
 
-- (RAConnectionGroup*)conns {
+- (RAConnectionGroup *)conns {
     if (_conns == nil) _conns = [[RAConnectionGroup alloc] init];
     return _conns;
 }
@@ -30,6 +31,10 @@
 - (void)removeInternal {
     _parent = nil;
     [self.detached emit];
+    [self cleanup];
+}
+
+- (void)cleanup {
     [_attached disconnectAll];
     [_detached disconnectAll];
     [_conns disconnectAll];
