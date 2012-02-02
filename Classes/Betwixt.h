@@ -49,4 +49,5 @@
 
 // Utils
 #import "BTLoadingMode.h"
+#import "BTMath.h"
 #import "BTRandoms.h"
