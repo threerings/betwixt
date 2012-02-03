@@ -3,12 +3,10 @@
 
 #import "BTNodeContainer.h"
 
-@protocol BTDisplayable;
+@class BTDisplayObject;
 
 @protocol BTDisplayNodeContainer <BTNodeContainer>
 
-@property(nonatomic,readonly) SPDisplayObjectContainer *container;
-
-- (void)addAndDisplayNode:(BTNode<BTDisplayable> *)node;
+- (void)addAndDisplayNode:(BTDisplayObject *)node;
 
 @end

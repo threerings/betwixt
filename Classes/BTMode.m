@@ -153,7 +153,7 @@
     return [_rootNode nodeForName:name];
 }
 
-- (void)addAndDisplayNode:(BTNode<BTDisplayable> *)node {
+- (void)addAndDisplayNode:(BTDisplayObject *)node {
     [_rootNode addAndDisplayNode:node];
 }
 

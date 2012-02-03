@@ -1,11 +1,10 @@
 //
 // Betwixt - Copyright 2012 Three Rings Design
 
-#import "BTObject.h"
+#import "BTDisplayObject.h"
 #import "BTDisplayNodeContainer.h"
-#import "BTDisplayable.h"
 
-@interface BTSprite : BTObject<BTDisplayNodeContainer,BTDisplayable> {
+@interface BTSprite : BTDisplayObject<BTDisplayNodeContainer> {
 @protected
     SPSprite *_sprite;
 }
@@ -15,6 +14,6 @@
 @property(nonatomic,readonly) SPDisplayObjectContainer *container;
 @property(nonatomic,readonly) SPDisplayObject *display;
 
-- (void)addAndDisplayNode:(BTNode<BTDisplayable> *)node;
+- (void)addAndDisplayNode:(BTDisplayObject *)node;
 
 @end

@@ -2,7 +2,7 @@
 // Betwixt - Copyright 2012 Three Rings Design
 
 #import "BTDisplayObjectTask.h"
-#import "BTDisplayable.h"
+#import "BTDisplayObject.h"
 
 @implementation BTDisplayObjectTask
 
@@ -13,7 +13,7 @@
     if (!_target) {
         __weak BTDisplayObjectTask *this = self;
         [self.attached connectUnit:^{
-            _target = ((id<BTDisplayable>)this.parent).display;
+            _target = ((BTDisplayObject *)this.parent).display;
         }];
     }
     return self;

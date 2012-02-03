@@ -3,7 +3,7 @@
 
 #import "BTLocationTask.h"
 #import "BTHasLocation.h"
-#import "BTDisplayable.h"
+#import "BTDisplayObject.h"
 
 @implementation BTLocationTask {
     float _startX;
@@ -33,7 +33,7 @@
     __weak BTLocationTask *this = self;
     [self.attached connectUnit:^{
         if (_target == nil) {
-            _target = ((id<BTDisplayable>)this.parent).display;
+            _target = ((BTDisplayObject *)this.parent).display;
         }
         _startX = _target.x;
         _startY = _target.y;
