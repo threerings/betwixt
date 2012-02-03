@@ -13,7 +13,7 @@
 @implementation PlayMovieMode
 - (id)init {
     if (!(self = [super init])) return nil;
-    BTMovieResource *res = [[BTApp resourceManager] requireResource:@"Animations/squaredance"];
+    BTMovieResource *res = [BTApp.app.resourceManager requireResource:@"Animations/squaredance"];
     BTMovie *movie = [res newMovie];
     [self addAndDisplayNode:movie];
     // Play the movie once and pop the mode

@@ -15,10 +15,10 @@
 }
 
 - (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    BTModeStack* defaultStack = [BTApp setup:_window];
+    BTModeStack* defaultStack = [BTApp.app setup:_window];
     [_window makeKeyAndVisible];
     [self run:defaultStack];
-    [BTApp start];
+    [BTApp.app start];
     return YES;
 }
 
@@ -27,15 +27,15 @@
 }
 
 - (void)applicationWillResignActive:(UIApplication*)application {
-    [BTApp stop];
+    [BTApp.app stop];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication*)application {
-	[BTApp start];
+	[BTApp.app start];
 }
 
 - (void)dealloc {
-    [BTApp cleanup];
+    [BTApp.app cleanup];
 }
 
 @end

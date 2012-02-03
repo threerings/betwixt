@@ -153,7 +153,7 @@
 
 - (void)begin {
     @try {
-        if (![[BTApp view] useNewSharedEAGLContext]) {
+        if (![BTApp.app.view useNewSharedEAGLContext]) {
             [NSException raise:NSGenericException format:@"Unable to use new EAGLContext"];
         }
         NSString *strippedFilename = [_filename stringByDeletingPathExtension];

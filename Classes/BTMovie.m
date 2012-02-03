@@ -28,7 +28,7 @@ NSString * const BTMovieLastFrame = @"BTMovieLastFrame";
     if (!(self = [super init])) return nil;
     self.name = layer->name;
     keyframes = layer->keyframes;
-    BTTextureResource *tex = [[BTApp resourceManager] requireResource:[self kfAtIdx:0]->libraryItem];
+    BTTextureResource *tex = [BTApp.app.resourceManager requireResource:[self kfAtIdx:0]->libraryItem];
     // TODO - texture offset
     SPImage *img = [[SPImage alloc] initWithTexture:tex.texture];
     img.x = tex.offset.x;

@@ -61,7 +61,7 @@
     NSString *filename = [_filenames objectAtIndex:_filenameIdx];
 
     __weak BTLoadingMode *this = self;
-    [[BTApp resourceManager] loadResourceFile:filename onComplete:^{
+    [BTApp.app.resourceManager loadResourceFile:filename onComplete:^{
         [this loadNextFile];
     } onError:^(NSException *err) {
         [this onError:err];
