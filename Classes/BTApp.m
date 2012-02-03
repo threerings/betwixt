@@ -85,7 +85,9 @@
 }
 
 - (void)processTouches:(NSSet *)touches {
-    
+    for (BTModeStack *stack in _modeStacks) {
+        [stack processTouches:touches];
+    }
 }
 
 - (BTModeStack *)createModeStack {
@@ -106,8 +108,7 @@
 }
 
 - (void)processTouches:(NSSet *)touches {
-    [super processTouches:touches];
-    //[BTApp processTouches:touches];
+    [self.app processTouches:touches];
 }
 
 @synthesize app;

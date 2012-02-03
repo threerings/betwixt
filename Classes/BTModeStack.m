@@ -185,4 +185,8 @@ typedef enum {
     [[_stack lastObject] update:dt];
 }
 
+- (void)processTouches:(NSSet *)touches {
+    [[_stack lastObject] processTouches:touches];
+}
+
 @end

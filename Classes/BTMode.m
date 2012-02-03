@@ -8,6 +8,7 @@
 #import "BTMode+Package.h"
 #import "BTSprite.h"
 #import "BTNode+Protected.h"
+#import "SPTouchProcessor.h"
 
 @interface BTRootNode : BTSprite {
 @private
@@ -30,19 +31,13 @@
 }
 @end
 
-@implementation BTMode {
-    RAFloatSignal *_update;
-    RAUnitSignal *_entered;
-    RAUnitSignal *_exited;
-    BTRootNode *_rootNode;
-    NSMutableDictionary *_keyedObjects;
-    NSMutableDictionary *_groups;
-}
+@implementation BTMode
 
 - (id)init {
     if (!(self = [super init])) return nil;
     _rootNode = [[BTRootNode alloc] initWithMode:self];
-    _rootNode.sprite.touchable = NO;
+    
+    _touchProcessor = [[SPTouchProcessor alloc] initWithRoot:_rootNode.sprite];
     
     _update = [[RAFloatSignal alloc] init];
     _entered = [[RAUnitSignal alloc] init];
@@ -79,13 +74,15 @@
     [_update emitEvent:dt];
 }
 
+- (void)processTouches:(NSSet *)touches {
+    [_touchProcessor processTouches:touches];
+}
+
 - (void)enterInternal {
-    _rootNode.sprite.touchable = YES;
     [_entered emit];
 }
 
 - (void)exitInternal {
-    _rootNode.sprite.touchable = NO;
     [_exited emit];
 }
 

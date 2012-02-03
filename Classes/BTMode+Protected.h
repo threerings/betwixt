@@ -7,4 +7,5 @@
 - (void)setup;
 - (void)destroy;
 - (void)update:(float)dt;
+- (void)processTouches:(NSSet *)touches;
 @end

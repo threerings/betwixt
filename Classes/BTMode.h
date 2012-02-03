@@ -4,11 +4,18 @@
 #import "BTDisplayNodeContainer.h"
 
 @class BTModeStack;
-@class SPSprite;
+@class BTSprite;
 
 @interface BTMode : NSObject<BTDisplayNodeContainer> {
 @package
     __weak BTModeStack *_stack;
+    SPTouchProcessor *_touchProcessor;
+    RAFloatSignal *_update;
+    RAUnitSignal *_entered;
+    RAUnitSignal *_exited;
+    BTSprite *_rootNode;
+    NSMutableDictionary *_keyedObjects;
+    NSMutableDictionary *_groups;
 }
 
 - (BTNode*)nodeForKey:(NSString*)key;

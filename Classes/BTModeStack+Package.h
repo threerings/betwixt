@@ -5,6 +5,7 @@
 
 @interface BTModeStack (package)
 
--(void)update:(float)dt;
+- (void)update:(float)dt;
+- (void)processTouches:(NSSet *)touches;
 
 @end
