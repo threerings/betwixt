@@ -103,6 +103,7 @@ typedef enum {
             [_sprite addChild:newMode.sprite atIndex:index];
         }
         newMode->_stack = this;
+        [newMode setupInternal];
     };
     
     RemoveModeBlock doRemoveMode = ^(int index) {

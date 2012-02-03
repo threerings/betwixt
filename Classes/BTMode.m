@@ -69,6 +69,12 @@
     return _rootNode.container;
 }
 
+- (void)setup {
+}
+
+- (void)destroy {
+}
+
 - (void)update:(float)dt {
     [_update emitEvent:dt];
 }
@@ -83,7 +89,12 @@
     [_exited emit];
 }
 
+- (void)setupInternal {
+    [self setup];
+}
+
 - (void)shutdownInternal {
+    [self destroy];
     _stack = nil;
     [_rootNode cleanup];
     _rootNode = nil;

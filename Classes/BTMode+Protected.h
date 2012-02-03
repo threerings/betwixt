@@ -4,5 +4,7 @@
 #import "BTMode.h"
 
 @interface BTMode (protected)
+- (void)setup;
+- (void)destroy;
 - (void)update:(float)dt;
 @end

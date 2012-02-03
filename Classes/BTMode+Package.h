@@ -8,8 +8,9 @@
 
 - (void)addKeys:(BTNode<BTKeyed>*)object;
 - (void)addGroups:(BTNode<BTGrouped>*)object;
+- (void)setupInternal;
+- (void)shutdownInternal;
 - (void)enterInternal;
 - (void)exitInternal;
-- (void)shutdownInternal;
 
 @end
