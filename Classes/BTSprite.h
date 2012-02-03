@@ -15,5 +15,6 @@
 @property(nonatomic,readonly) SPDisplayObject *display;
 
 - (void)addAndDisplayNode:(BTDisplayObject *)node;
+- (void)addAndDisplayNode:(BTDisplayObject *)node onParent:(SPDisplayObjectContainer *)parent;
 
 @end

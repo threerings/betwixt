@@ -12,8 +12,12 @@
 }
 
 - (void)addAndDisplayNode:(BTDisplayObject *)node {
+    [self addAndDisplayNode:node onParent:self.container];
+}
+
+- (void)addAndDisplayNode:(BTDisplayObject *)node onParent:(SPDisplayObjectContainer *)parent {
     [self addNode:node];
-    [_sprite addChild:node.display];
+    [parent addChild:node.display];
 }
 
 - (SPDisplayObjectContainer *)container {

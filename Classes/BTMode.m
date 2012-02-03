@@ -168,6 +168,10 @@
     [_rootNode addAndDisplayNode:node];
 }
 
+- (void)addAndDisplayNode:(BTDisplayObject *)node onParent:(SPDisplayObjectContainer *)parent {
+    [_rootNode addAndDisplayNode:node onParent:parent];
+}
+
 @synthesize update=_update, entered=_entered, exited=_exited, stack=_stack;
 
 @end
