@@ -11,6 +11,9 @@
 + (void)start;
 + (void)stop;
 
+/// Returns the framerate that the app is currently running at
++ (float)framerate;
+
 + (BTResourceManager *)resourceManager;
 + (BTModeStack *)createModeStack;
 

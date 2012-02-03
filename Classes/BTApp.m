@@ -63,6 +63,10 @@ static SPView *_view;
     [_view stop];
 }
 
++ (float)framerate {
+    return _view.stage.frameRate;
+}
+
 + (BTResourceManager *)resourceManager {
     return _resourceMgr;
 }
