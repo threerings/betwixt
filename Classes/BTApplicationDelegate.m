@@ -9,7 +9,6 @@
 - (id)init {
     if (!(self = [super init])) return nil;
     _window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    // Set a dummy controller to make the runtime happy
     _window.rootViewController = [[UIViewController alloc] init];
     return self;
 }

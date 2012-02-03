@@ -47,7 +47,8 @@
     _view.stage = stage;
     // Framerate must be set after the stage has been attached to the view.
     _view.stage.frameRate = 60;
-    [window addSubview:_view];
+    // Attach the view to the window
+    window.rootViewController.view = _view;
 
     // TODO - figure out why this is throwing an exception. Looks like an iOS 5 bug
     //[SPAudioEngine start];
