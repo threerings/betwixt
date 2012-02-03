@@ -31,6 +31,7 @@ static SPView *_view;
     _view = [[SPView alloc] initWithFrame:window.bounds];
     _view.multipleTouchEnabled = YES;
     _view.stage = [[SPStage alloc] init];
+    _view.stage.frameRate = 60;
     [_view.stage addEventListener:@selector(onEnterFrame:) atObject:self
                           forType:SP_EVENT_TYPE_ENTER_FRAME];
     [window addSubview:_view];
