@@ -33,6 +33,9 @@
 		22C85EB614DB344100F9EC07 /* BTNode+Protected.h in Headers */ = {isa = PBXBuildFile; fileRef = 22C85EB514DB344100F9EC07 /* BTNode+Protected.h */; };
 		22C85F0A14DB784B00F9EC07 /* BTDisplayObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 22C85F0814DB784900F9EC07 /* BTDisplayObject.h */; };
 		22C85F0B14DB784B00F9EC07 /* BTDisplayObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C85F0914DB784A00F9EC07 /* BTDisplayObject.m */; };
+		22DBA63814DCAF6200F0F7C8 /* BTApp+Protected.h in Headers */ = {isa = PBXBuildFile; fileRef = 22DBA63714DCAF6200F0F7C8 /* BTApp+Protected.h */; };
+		22DBA63D14DCB29100F0F7C8 /* BTApp+Package.h in Headers */ = {isa = PBXBuildFile; fileRef = 22DBA63C14DCB29100F0F7C8 /* BTApp+Package.h */; };
+		22DBA64014DCB64900F0F7C8 /* TestApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DBA63F14DCB64900F0F7C8 /* TestApp.m */; };
 		22F979E614C0E23F00A6913B /* GDataXMLException.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F979D414C0E23F00A6913B /* GDataXMLException.h */; };
 		22F979E714C0E23F00A6913B /* GDataXMLException.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F979D514C0E23F00A6913B /* GDataXMLException.m */; };
 		22F979E814C0E23F00A6913B /* GDataXMLNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F979D614C0E23F00A6913B /* GDataXMLNode.h */; };
@@ -92,12 +95,10 @@
 		CBAD57891475A28800F7D78E /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE4A3D7910FFB08200FDA492 /* OpenGLES.framework */; };
 		CBAD578A1475A28800F7D78E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		CBAD578D1475A28C00F7D78E /* libSparrow.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE4A3DB010FFB0DB00FDA492 /* libSparrow.a */; };
-		CBAD57991475A4EE00F7D78E /* TestApplicationDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = CBAD57971475A4EE00F7D78E /* TestApplicationDelegate.h */; };
 		CBAD57B51475A62B00F7D78E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		CBAD57B61475A62B00F7D78E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		CBAD57B71475A62B00F7D78E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
 		CBAD57C71475A69500F7D78E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CBAD57941475A3A000F7D78E /* main.m */; };
-		CBAD57C91475A69500F7D78E /* TestApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CBAD57981475A4EE00F7D78E /* TestApplicationDelegate.m */; };
 		CBAD57CA1475A6A500F7D78E /* libBetwixt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB8CB911475A06400445316 /* libBetwixt.a */; };
 		CBAD57CE1475A70100F7D78E /* SubObjectMode.h in Headers */ = {isa = PBXBuildFile; fileRef = CBAD57CC1475A70100F7D78E /* SubObjectMode.h */; };
 		CBAD57D01475A75100F7D78E /* SubObjectMode.m in Sources */ = {isa = PBXBuildFile; fileRef = CBAD57CD1475A70100F7D78E /* SubObjectMode.m */; };
@@ -216,6 +217,10 @@
 		22C85EB514DB344100F9EC07 /* BTNode+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BTNode+Protected.h"; sourceTree = "<group>"; };
 		22C85F0814DB784900F9EC07 /* BTDisplayObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTDisplayObject.h; sourceTree = "<group>"; };
 		22C85F0914DB784A00F9EC07 /* BTDisplayObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTDisplayObject.m; sourceTree = "<group>"; };
+		22DBA63714DCAF6200F0F7C8 /* BTApp+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BTApp+Protected.h"; sourceTree = "<group>"; };
+		22DBA63C14DCB29100F0F7C8 /* BTApp+Package.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BTApp+Package.h"; sourceTree = "<group>"; };
+		22DBA63E14DCB64900F0F7C8 /* TestApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestApp.h; sourceTree = "<group>"; };
+		22DBA63F14DCB64900F0F7C8 /* TestApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestApp.m; sourceTree = "<group>"; };
 		22F979D414C0E23F00A6913B /* GDataXMLException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataXMLException.h; sourceTree = "<group>"; };
 		22F979D514C0E23F00A6913B /* GDataXMLException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDataXMLException.m; sourceTree = "<group>"; };
 		22F979D614C0E23F00A6913B /* GDataXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataXMLNode.h; sourceTree = "<group>"; };
@@ -273,8 +278,6 @@
 		CB7ABCB4147C747C00EC6AEC /* BTModeStack+Package.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BTModeStack+Package.h"; sourceTree = "<group>"; };
 		CB846EED149AE18900B29795 /* react.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = react.xcodeproj; path = ../../../react.xcodeproj; sourceTree = REACT_SRC; };
 		CBAD57941475A3A000F7D78E /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Integration/main.m; sourceTree = "<group>"; };
-		CBAD57971475A4EE00F7D78E /* TestApplicationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestApplicationDelegate.h; path = Integration/TestApplicationDelegate.h; sourceTree = "<group>"; };
-		CBAD57981475A4EE00F7D78E /* TestApplicationDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TestApplicationDelegate.m; path = Integration/TestApplicationDelegate.m; sourceTree = "<group>"; };
 		CBAD57B31475A62B00F7D78E /* Betwixt Integration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Betwixt Integration.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBAD57CC1475A70100F7D78E /* SubObjectMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SubObjectMode.h; path = Integration/SubObjectMode.h; sourceTree = "<group>"; };
 		CBAD57CD1475A70100F7D78E /* SubObjectMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SubObjectMode.m; path = Integration/SubObjectMode.m; sourceTree = "<group>"; };
@@ -364,6 +367,8 @@
 			isa = PBXGroup;
 			children = (
 				22F97A8F14C0EC8B00A6913B /* Betwixt.h */,
+				22DBA63C14DCB29100F0F7C8 /* BTApp+Package.h */,
+				22DBA63714DCAF6200F0F7C8 /* BTApp+Protected.h */,
 				2221999114D1F020009B764F /* BTApp.h */,
 				2221999214D1F021009B764F /* BTApp.m */,
 				CBF2AA9A14765EA5000C022D /* BTApplicationDelegate.h */,
@@ -570,8 +575,8 @@
 				CB72E4AA14773ED100F1EC78 /* Square.m */,
 				CBAD57CC1475A70100F7D78E /* SubObjectMode.h */,
 				CBAD57CD1475A70100F7D78E /* SubObjectMode.m */,
-				CBAD57971475A4EE00F7D78E /* TestApplicationDelegate.h */,
-				CBAD57981475A4EE00F7D78E /* TestApplicationDelegate.m */,
+				22DBA63E14DCB64900F0F7C8 /* TestApp.h */,
+				22DBA63F14DCB64900F0F7C8 /* TestApp.m */,
 			);
 			name = Integration;
 			sourceTree = "<group>";
@@ -603,7 +608,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CBAD57991475A4EE00F7D78E /* TestApplicationDelegate.h in Headers */,
 				CBAD57CE1475A70100F7D78E /* SubObjectMode.h in Headers */,
 				CBF2AAA014765EA5000C022D /* BTApplicationDelegate.h in Headers */,
 				CBF2AAA214765EA5000C022D /* BTMode.h in Headers */,
@@ -663,6 +667,8 @@
 				22C85EAD14DB225400F9EC07 /* BTMath.h in Headers */,
 				22C85EB614DB344100F9EC07 /* BTNode+Protected.h in Headers */,
 				22C85F0A14DB784B00F9EC07 /* BTDisplayObject.h in Headers */,
+				22DBA63814DCAF6200F0F7C8 /* BTApp+Protected.h in Headers */,
+				22DBA63D14DCB29100F0F7C8 /* BTApp+Package.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -798,10 +804,10 @@
 			files = (
 				CBAD57D01475A75100F7D78E /* SubObjectMode.m in Sources */,
 				CBAD57C71475A69500F7D78E /* main.m in Sources */,
-				CBAD57C91475A69500F7D78E /* TestApplicationDelegate.m in Sources */,
 				CBAF5619149807B5009A1A06 /* SelfRemoveMode.m in Sources */,
 				CB24CBCF14A02E10004BAA57 /* MoveMode.m in Sources */,
 				CB442C7414B3800000EB2821 /* NamedNodeMode.m in Sources */,
+				22DBA64014DCB64900F0F7C8 /* TestApp.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

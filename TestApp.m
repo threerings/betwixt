@@ -1,7 +1,8 @@
 //
 // Betwixt - Copyright 2012 Three Rings Design
 
-#import "TestApplicationDelegate.h"
+#import "TestApp.h"
+#import "BTApp+Protected.h"
 #import "SubObjectMode.h"
 #import "PlayMovieMode.h"
 #import "NamedNodeMode.h"
@@ -9,6 +10,7 @@
 #import "RepeatingMode.h"
 #import "Square.h"
 #import "SelfRemoveMode.h"
+#import "BTModeStack.h"
 
 #import "BTLoadingMode.h"
 
@@ -33,7 +35,7 @@
 
 @end
 
-@implementation TestApplicationDelegate
+@implementation TestApp
 
 - (void)run:(BTModeStack *)defaultStack {
     [defaultStack pushMode:[[LoadingMode alloc] init]];

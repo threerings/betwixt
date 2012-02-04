@@ -7,17 +7,14 @@
 
 @interface BTApp : NSObject {
 @protected
+    UIWindow *_window;
     SPView *_view;
     BTResourceManager *_resourceMgr;
     NSMutableArray *_modeStacks;
 }
 
++ (void)registerAppClass:(Class)theClass;
 + (BTApp *)app;
-
-- (BTModeStack *)setup:(UIWindow *)window;
-- (void)cleanup;
-- (void)start;
-- (void)stop;
 
 - (BTModeStack *)createModeStack;
 

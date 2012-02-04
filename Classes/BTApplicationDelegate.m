@@ -2,7 +2,8 @@
 // Betwixt - Copyright 2012 Three Rings Design
 
 #import "BTApplicationDelegate.h"
-#import "BTApp.h"
+#import "BTApp+Protected.h"
+#import "BTApp+Package.h"
 
 @implementation BTApplicationDelegate
 
@@ -14,23 +15,17 @@
 }
 
 - (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    BTModeStack* defaultStack = [BTApp.app setup:_window];
+    [BTApp create:_window];
     [_window makeKeyAndVisible];
-    [self run:defaultStack];
-    [BTApp.app start];
     return YES;
 }
 
-- (void)run:(BTModeStack *)defaultStack {
-    NSLog(@"Games should kick off their initial BTMode from this function");
-}
-
 - (void)applicationWillResignActive:(UIApplication*)application {
-    [BTApp.app stop];
+    [BTApp.app appWillResignActive];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication*)application {
-	[BTApp.app start];
+	[BTApp.app appDidBecomeActive];
 }
 
 - (void)dealloc {
