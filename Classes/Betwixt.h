@@ -29,9 +29,11 @@
 #import "GDataXMLNode+OOO.h"
 #import "BTLoadable.h"
 #import "BTLoadableBatch.h"
+#import "BTMovieResource.h"
 #import "BTResource.h"
 #import "BTResourceFactory.h"
 #import "BTResourceManager.h"
+#import "BTTextureResource.h"
 
 // Tasks
 #import "BTAlphaTask.h"
