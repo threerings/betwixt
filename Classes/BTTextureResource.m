@@ -4,6 +4,8 @@
 #import "BTTextureResource.h"
 #import "BTResourceFactory.h"
 #import "GDataXMLNode+OOO.h"
+#import "BTApp.h"
+#import "BTResourceManager.h"
 
 @interface BTTextureFactory : NSObject<BTResourceFactory>
 @end
@@ -20,7 +22,9 @@
     return instance;
 }
 
-@synthesize texture = _texture, offset = _offset;
++ (BTTextureResource *)require:(NSString *)name {
+    return [BTApp.app.resourceManager requireResource:name ofType:[BTTextureResource class]];
+}
 
 - (id)initWithXml:(GDataXMLElement *)xml {
     if (!(self = [super init])) return nil;
@@ -29,6 +33,8 @@
                                        y:[xml intAttribute:@"yOffset" defaultVal:0]];
     return self;
 }
+
+@synthesize texture = _texture, offset = _offset;
 
 @end
 

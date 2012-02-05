@@ -14,6 +14,7 @@
 }
 
 + (id<BTResourceFactory>) sharedFactory;
++ (BTTextureResource *)require:(NSString *)name;
 
 @property(nonatomic,readonly) SPTexture *texture;
 @property(nonatomic,readonly) SPPoint *offset;

@@ -96,6 +96,13 @@
     return rsrc;
 }
 
+- (id)requireResource:(NSString *)name ofType:(__unsafe_unretained Class)clazz {
+    BTResource *rsrc = [self requireResource:name];
+    NSAssert([rsrc isKindOfClass:clazz], @"Resource is the wrong type " 
+             "[name='%@' expectedType=%@ actualType=%@]", name, clazz, [rsrc class]);
+    return rsrc;
+}
+
 - (BOOL)isLoaded:(NSString *)name {
     return [self getResource:name] != nil;
 }

@@ -19,6 +19,7 @@
 - (void)unloadResourceFile:(NSString *)filename;
 - (id)getResource:(NSString *)name;
 - (id)requireResource:(NSString *)name;
+- (id)requireResource:(NSString *)name ofType:(Class)clazz;
 - (BOOL)isLoaded:(NSString *)name;
 - (void)registerFactory:(id<BTResourceFactory>)factory forType:(NSString *)type;
 - (void)unloadAll;
