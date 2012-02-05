@@ -48,6 +48,7 @@
 #import "BTWaitTask.h"
 
 // Utils
+#import "BTEnum.h"
 #import "BTLoadingMode.h"
 #import "BTMath.h"
 #import "BTRandoms.h"
