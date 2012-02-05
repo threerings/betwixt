@@ -80,12 +80,10 @@
 + (void)initialize {
     static NSString *PREFIX = @"BTEnum_Init";
     
-    Class clazz = object_getClass(self);
-    
     if (self != [BTEnum class]) {
         // walk the class methods 
         unsigned int methodCount = 0;
-        Method *mlist = class_copyMethodList(clazz, &methodCount);
+        Method *mlist = class_copyMethodList(object_getClass(self), &methodCount);
         for (unsigned int ii = 0; ii < methodCount; ++ii) {
             NSString *mname = NSStringFromSelector(method_getName(mlist[ii]));
             if (mname.length > PREFIX.length && [[mname substringToIndex:PREFIX.length] isEqualToString:PREFIX]) {
@@ -97,7 +95,7 @@
         free(mlist);
     }
         
-    [[BTEnum blocked] addObject:clazz];
+    [[BTEnum blocked] addObject:self];
 }
 
 @synthesize name=_name, ordinal=_ordinal;
