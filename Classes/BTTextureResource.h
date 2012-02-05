@@ -6,9 +6,10 @@
 #define BTTEXTURE_RESOURCE_NAME @"texture"
 
 @protocol BTResourceFactory;
+@class GDataXMLElement;
 
 @interface BTTextureResource : BTResource {
-@private
+@protected
     SPTexture *_texture;
     SPPoint *_offset;
 }
@@ -18,5 +19,7 @@
 
 @property(nonatomic,readonly) SPTexture *texture;
 @property(nonatomic,readonly) SPPoint *offset;
+
+- (id)initWithXml:(GDataXMLElement *)xml;
 
 @end
