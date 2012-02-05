@@ -1,0 +1,104 @@
+//
+// Betwixt - Copyright 2012 Three Rings Design
+
+#import "BTEnum.h"
+#import <objc/runtime.h>
+#import <objc/message.h>
+
+@interface BTEnum ()
++ (NSMutableDictionary *)enums;
++ (NSMutableSet *)blocked;
+@end
+
+@implementation BTEnum {
+    NSString *_name;
+    int _ordinal;
+}
+
++ (id)valueOfEnum:(Class)clazz forName:(NSString *)name {
+    for (BTEnum *theEnum in [BTEnum valuesOfEnum:clazz]) {
+        if ([theEnum.name isEqualToString:name]) {
+            return theEnum;
+        }
+    }
+    return nil;
+}
+
++ (NSArray *)valuesOfEnum:(Class)clazz {
+    return [[BTEnum enums] objectForKey:clazz];
+}
+
+- (id)initWithName:(NSString *)name {
+    if (!(self = [super init])) {
+        return nil;
+    }
+    Class clazz = [self class];
+    if ([[BTEnum blocked] containsObject:clazz]) {
+        [NSException raise:NSGenericException format:@"You may not just construct an enum!"];
+    } else if (name == nil) {
+        [NSException raise:NSGenericException format:@"nil is invalid"];
+    }
+    
+    NSMutableArray *array = [[BTEnum enums] objectForKey:clazz];
+    if (array == nil) {
+        array = [NSMutableArray array];
+        [[BTEnum enums] setObject:array forKey:clazz];
+    }
+    [array addObject:self];
+    
+    _name = name;
+    _ordinal = array.count - 1;
+    return self;
+}
+
+- (BOOL)isEqual:(id)object {
+    return object == self;
+}
+
+- (NSUInteger)hash {
+    return _name.hash;
+}
+
++ (NSMutableDictionary *)enums {
+    static NSMutableDictionary *enums = nil;
+    if (enums == nil) {
+        enums = [NSMutableDictionary dictionary];
+    }
+    return enums;
+}
+
++ (NSMutableSet *)blocked {
+    static NSMutableSet *blocked = nil;
+    if (blocked == nil) {
+        blocked = [NSMutableSet set];
+    }
+    return blocked;
+}
+
++ (void)initialize {
+    static NSString *PREFIX = @"BTEnum_Init";
+    
+    Class clazz = object_getClass(self);
+    
+    if (self != [BTEnum class]) {
+        // walk the class methods 
+        unsigned int methodCount = 0;
+        Method *mlist = class_copyMethodList(clazz, &methodCount);
+        for (unsigned int ii = 0; ii < methodCount; ++ii) {
+            NSString *mname = NSStringFromSelector(method_getName(mlist[ii]));
+            if (mname.length > PREFIX.length && [[mname substringToIndex:PREFIX.length] isEqualToString:PREFIX]) {
+                //[self performSelector:method_getName(mlist[ii])];
+                // Equivalent to the above, but doesn't produce an ARC warning
+                objc_msgSend(self, method_getName(mlist[ii]));
+            }
+        }
+        free(mlist);
+    }
+        
+    [[BTEnum blocked] addObject:clazz];
+}
+
+@synthesize name=_name, ordinal=_ordinal;
+
+@end
+
