@@ -24,8 +24,8 @@
 
 @interface BTEnum : NSObject
 
-+ (id)valueOfEnum:(Class)clazz forName:(NSString *)name;
-+ (NSArray *)valuesOfEnum:(Class)clazz;
++ (id)valueOf:(NSString *)name;
++ (NSArray *)values;
 
 @property(readonly) NSString *name;
 @property(readonly) int ordinal;

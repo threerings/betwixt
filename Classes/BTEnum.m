@@ -15,8 +15,8 @@
     int _ordinal;
 }
 
-+ (id)valueOfEnum:(Class)clazz forName:(NSString *)name {
-    for (BTEnum *theEnum in [BTEnum valuesOfEnum:clazz]) {
++ (id)valueOf:(NSString *)name {
+    for (BTEnum *theEnum in [self values]) {
         if ([theEnum.name isEqualToString:name]) {
             return theEnum;
         }
@@ -24,8 +24,8 @@
     return nil;
 }
 
-+ (NSArray *)valuesOfEnum:(Class)clazz {
-    return [[BTEnum enums] objectForKey:clazz];
++ (NSArray *)values {
+    return [[BTEnum enums] objectForKey:[self class]];
 }
 
 - (id)init {
