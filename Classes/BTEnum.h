@@ -3,7 +3,22 @@
 
 #define BTENUM(NAME) \
     static id _##NAME = nil; \
-    + (void)BTEnum_Init##NAME { if (_##NAME == nil) { _##NAME = [[self alloc] initWithName:@#NAME]; } } \
+    + (void)BTEnum_Init##NAME { \
+        if (_##NAME == nil) { \
+            _##NAME = [[self alloc] init]; \
+            [_##NAME setName:@#NAME]; \
+        } \
+    } \
+    + (id)NAME { return _##NAME; }
+
+#define BTENUM_INIT(NAME, INIT) \
+    static id _##NAME = nil; \
+    + (void)BTEnum_Init##NAME { \
+        if (_##NAME == nil) { \
+            _##NAME = INIT; \
+            [_##NAME setName:@#NAME]; \
+        } \
+    } \
     + (id)NAME { return _##NAME; }
 
 
@@ -11,8 +26,6 @@
 
 + (id)valueOfEnum:(Class)clazz forName:(NSString *)name;
 + (NSArray *)valuesOfEnum:(Class)clazz;
-
-- (id)initWithName:(NSString *)name;
 
 @property(readonly) NSString *name;
 @property(readonly) int ordinal;

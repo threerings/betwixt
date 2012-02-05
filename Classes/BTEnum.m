@@ -28,15 +28,13 @@
     return [[BTEnum enums] objectForKey:clazz];
 }
 
-- (id)initWithName:(NSString *)name {
+- (id)init {
     if (!(self = [super init])) {
         return nil;
     }
     Class clazz = [self class];
     if ([[BTEnum blocked] containsObject:clazz]) {
         [NSException raise:NSGenericException format:@"You may not just construct an enum!"];
-    } else if (name == nil) {
-        [NSException raise:NSGenericException format:@"nil is invalid"];
     }
     
     NSMutableArray *array = [[BTEnum enums] objectForKey:clazz];
@@ -46,9 +44,13 @@
     }
     [array addObject:self];
     
-    _name = name;
     _ordinal = array.count - 1;
     return self;
+}
+
+- (void)setName:(NSString *)name {
+    NSAssert(_name == nil, @"name already set");
+    _name = name;
 }
 
 - (BOOL)isEqual:(id)object {
