@@ -61,6 +61,10 @@
     return _name.hash;
 }
 
+- (NSString *)description {
+    return [NSString stringWithFormat:@"%@.%@", [self class].description, self.name];
+}
+
 + (NSMutableDictionary *)enums {
     static NSMutableDictionary *enums = nil;
     if (enums == nil) {
