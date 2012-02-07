@@ -21,6 +21,8 @@
 		222199F514D24660009B764F /* BTRandoms.m in Sources */ = {isa = PBXBuildFile; fileRef = 222199F314D24660009B764F /* BTRandoms.m */; };
 		2225C36814DDF1B800962B1B /* BTEnum.h in Headers */ = {isa = PBXBuildFile; fileRef = 2225C36614DDF1B800962B1B /* BTEnum.h */; };
 		2225C36914DDF1B800962B1B /* BTEnum.m in Sources */ = {isa = PBXBuildFile; fileRef = 2225C36714DDF1B800962B1B /* BTEnum.m */; };
+		22448DF914E09B20001CF5CE /* BTInput.h in Headers */ = {isa = PBXBuildFile; fileRef = 22448DF714E09B20001CF5CE /* BTInput.h */; };
+		22448DFA14E09B20001CF5CE /* BTInput.m in Sources */ = {isa = PBXBuildFile; fileRef = 22448DF814E09B20001CF5CE /* BTInput.m */; };
 		229B45C314D786B6005FC8E9 /* BTDurationTask.h in Headers */ = {isa = PBXBuildFile; fileRef = 229B45C114D786B5005FC8E9 /* BTDurationTask.h */; };
 		229B45C414D786B6005FC8E9 /* BTDurationTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 229B45C214D786B6005FC8E9 /* BTDurationTask.m */; };
 		229B45C914D787F5005FC8E9 /* BTDurationTask+Protected.h in Headers */ = {isa = PBXBuildFile; fileRef = 229B45C814D787F4005FC8E9 /* BTDurationTask+Protected.h */; };
@@ -207,6 +209,8 @@
 		222199F314D24660009B764F /* BTRandoms.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTRandoms.m; sourceTree = "<group>"; };
 		2225C36614DDF1B800962B1B /* BTEnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTEnum.h; sourceTree = "<group>"; };
 		2225C36714DDF1B800962B1B /* BTEnum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTEnum.m; sourceTree = "<group>"; };
+		22448DF714E09B20001CF5CE /* BTInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTInput.h; sourceTree = "<group>"; };
+		22448DF814E09B20001CF5CE /* BTInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTInput.m; sourceTree = "<group>"; };
 		229B45C114D786B5005FC8E9 /* BTDurationTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTDurationTask.h; sourceTree = "<group>"; };
 		229B45C214D786B6005FC8E9 /* BTDurationTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTDurationTask.m; sourceTree = "<group>"; };
 		229B45C814D787F4005FC8E9 /* BTDurationTask+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BTDurationTask+Protected.h"; sourceTree = "<group>"; };
@@ -383,6 +387,8 @@
 				22C85F0914DB784A00F9EC07 /* BTDisplayObject.m */,
 				CB15859614D385AA0025AF65 /* BTGrouped.h */,
 				229B463214D8C439005FC8E9 /* BTHasLocation.h */,
+				22448DF714E09B20001CF5CE /* BTInput.h */,
+				22448DF814E09B20001CF5CE /* BTInput.m */,
 				CB24CBD114A115EF004BAA57 /* BTInterpolator.c */,
 				CB24CBD214A115EF004BAA57 /* BTInterpolator.h */,
 				CB442C6D14B3788800EB2821 /* BTKeyed.h */,
@@ -676,6 +682,7 @@
 				22DBA63814DCAF6200F0F7C8 /* BTApp+Protected.h in Headers */,
 				22DBA63D14DCB29100F0F7C8 /* BTApp+Package.h in Headers */,
 				2225C36814DDF1B800962B1B /* BTEnum.h in Headers */,
+				22448DF914E09B20001CF5CE /* BTInput.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -864,6 +871,7 @@
 				22C85EAE14DB225400F9EC07 /* BTMath.m in Sources */,
 				22C85F0B14DB784B00F9EC07 /* BTDisplayObject.m in Sources */,
 				2225C36914DDF1B800962B1B /* BTEnum.m in Sources */,
+				22448DFA14E09B20001CF5CE /* BTInput.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
