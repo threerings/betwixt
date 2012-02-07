@@ -8,7 +8,7 @@
 #import "BTMode+Package.h"
 #import "BTSprite.h"
 #import "BTNode+Protected.h"
-#import "BTInput.h"
+#import "BTInput+Package.h"
 #import "SPTouchProcessor.h"
 
 @interface BTRootNode : BTSprite {

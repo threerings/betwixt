@@ -12,18 +12,6 @@
 - (id)initWithInput:(BTInput *)input reaction:(BTReaction *)reaction;
 @end
 
-/// Regions
-@interface BTScreenRegion : BTInputRegion
-@end
-
-@interface BTBoundsRegion : BTInputRegion
-- (id)initWithBounds:(SPRectangle *)bounds;
-@end
-
-@interface BTDisplayObjectRegion : BTInputRegion
-- (id)initWithDisplayObject:(SPDisplayObject *)disp;
-@end
-
 // Reaction
 @interface BTReaction : NSObject 
 - (id)initWithRegion:(BTInputRegion *)region listener:(id<BTTouchListener>)listener;

@@ -17,6 +17,21 @@
 - (BOOL)hitTest:(SPPoint *)globalPt;
 @end
 
+/// A Region that triggers on any touch
+@interface BTScreenRegion : BTInputRegion
+@end
+
+/// A Region that triggers on touches that intersect a given rectangle
+@interface BTBoundsRegion : BTInputRegion
+- (id)initWithBounds:(SPRectangle *)bounds;
+@end
+
+/// A Region that triggers on touches that intersect a SPDisplayObject
+@interface BTDisplayObjectRegion : BTInputRegion
+- (id)initWithDisplayObject:(SPDisplayObject *)disp;
+@end
+
+
 @protocol BTTouchListener
 - (void)onTouchStart:(SPPoint *)globalPt;
 - (void)onTouchMove:(SPPoint *)globalPt;
@@ -29,9 +44,6 @@
     id<BTTouchListener> _activeListener;
     SPTouch *_lastTouch;
 }
-
-- (id)initWithMode:(BTMode *)mode;
-- (void)processTouches:(NSSet *)touches;
 
 - (BTInputRegistration *)registerListener:(id<BTTouchListener>)listener forRegion:(BTInputRegion *)region;
 
