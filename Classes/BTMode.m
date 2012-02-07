@@ -8,6 +8,7 @@
 #import "BTMode+Package.h"
 #import "BTSprite.h"
 #import "BTNode+Protected.h"
+#import "BTInput.h"
 #import "SPTouchProcessor.h"
 
 @interface BTRootNode : BTSprite {
@@ -37,8 +38,7 @@
     if (!(self = [super init])) return nil;
     _rootNode = [[BTRootNode alloc] initWithMode:self];
     
-    _touchProcessor = [[SPTouchProcessor alloc] initWithRoot:_rootNode.sprite];
-    
+    _input = [[BTInput alloc] initWithMode:self];
     _update = [[RAFloatSignal alloc] init];
     _entered = [[RAUnitSignal alloc] init];
     _exited = [[RAUnitSignal alloc] init];
@@ -75,7 +75,7 @@
 }
 
 - (void)processTouches:(NSSet *)touches {
-    [_touchProcessor processTouches:touches];
+    [_input processTouches:touches];
 }
 
 - (void)enterInternal {
@@ -169,6 +169,6 @@
     [_rootNode addAndDisplayNode:node onParent:parent];
 }
 
-@synthesize update=_update, entered=_entered, exited=_exited, stack=_stack;
+@synthesize update=_update, entered=_entered, exited=_exited, stack=_stack, input=_input;
 
 @end

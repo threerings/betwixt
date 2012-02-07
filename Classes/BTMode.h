@@ -5,11 +5,12 @@
 
 @class BTModeStack;
 @class BTSprite;
+@class BTInput;
 
 @interface BTMode : NSObject<BTDisplayNodeContainer> {
 @package
     __weak BTModeStack *_stack;
-    SPTouchProcessor *_touchProcessor;
+    BTInput *_input;
     RAFloatSignal *_update;
     RAUnitSignal *_entered;
     RAUnitSignal *_exited;
@@ -33,6 +34,7 @@
 @property(nonatomic,readonly) RAUnitSignal *exited;
 @property(nonatomic,readonly) BTModeStack *stack;
 @property(nonatomic,readonly) SPSprite *sprite;
+@property(nonatomic,readonly) BTInput *input;
 
 
 @end
