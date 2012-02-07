@@ -3,6 +3,36 @@
 
 #import "BTDragger.h"
 
+@interface BTCallbackDragger : BTDragger
+@property(nonatomic,assign) BTDragStartBlock onDragStart;
+@property(nonatomic,assign) BTDraggedBlock onDragged;
+@property(nonatomic,assign) BTDraggedBlock onDragEnd;
+@end
+
+@implementation BTCallbackDragger
+
+@synthesize onDragStart, onDragged, onDragEnd;
+
+- (void)onDragStart:(SPPoint *)start {
+    if (onDragStart != nil) {
+        onDragStart(start);
+    }
+}
+
+- (void)onDragged:(SPPoint *)current start:(SPPoint *)start {
+    if (onDragged != nil) {
+        onDragged(current, start);
+    }
+}
+
+- (void)onDragEnd:(SPPoint *)current start:(SPPoint *)start {
+    if (onDragEnd != nil) {
+        onDragEnd(current, start);
+    }
+}
+
+@end
+
 @implementation BTDragger
 
 - (id)init {
@@ -34,6 +64,15 @@
     _current.x = globalPt.x;
     _current.y = globalPt.y;
     [self onDragEnd:_current start:_start];
+}
+
++ (BTDragger *)onDragStart:(BTDragStartBlock)onDragStart onDragged:(BTDraggedBlock)onDragged 
+                 onDragEnd:(BTDraggedBlock)onDragEnd {
+    BTCallbackDragger *dragger = [[BTCallbackDragger alloc] init];
+    dragger.onDragStart = onDragStart;
+    dragger.onDragged = onDragged;
+    dragger.onDragEnd = onDragEnd;
+    return dragger;
 }
 
 @end
