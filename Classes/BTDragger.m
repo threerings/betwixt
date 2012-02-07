@@ -4,9 +4,9 @@
 #import "BTDragger.h"
 
 @interface BTCallbackDragger : BTDragger
-@property(nonatomic,assign) BTDragStartBlock onDragStart;
-@property(nonatomic,assign) BTDraggedBlock onDragged;
-@property(nonatomic,assign) BTDraggedBlock onDragEnd;
+@property(nonatomic,copy) BTDragStartBlock onDragStart;
+@property(nonatomic,copy) BTDraggedBlock onDragged;
+@property(nonatomic,copy) BTDraggedBlock onDragEnd;
 @end
 
 @implementation BTCallbackDragger
