@@ -17,7 +17,7 @@
 - (BOOL)hitTest:(SPPoint *)globalPt;
 @end
 
-@interface BTTouchListener : NSObject
+@protocol BTTouchListener
 - (void)onTouchStart:(SPPoint *)globalPt;
 - (void)onTouchMove:(SPPoint *)globalPt;
 - (void)onTouchEnd:(SPPoint *)globalPt;
@@ -26,17 +26,17 @@
 @interface BTInput : NSObject {
     SPTouchProcessor *_touchProcessor;
     NSMutableArray *_reactions;
-    BTTouchListener *_activeListener;
+    id<BTTouchListener> _activeListener;
     SPTouch *_lastTouch;
 }
 
 - (id)initWithMode:(BTMode *)mode;
 - (void)processTouches:(NSSet *)touches;
 
-- (BTInputRegistration *)registerListener:(BTTouchListener *)listener forRegion:(BTInputRegion *)region;
+- (BTInputRegistration *)registerListener:(id<BTTouchListener>)listener forRegion:(BTInputRegion *)region;
 
-- (BTInputRegistration *)registerScreenListener:(BTTouchListener *)listener;
-- (BTInputRegistration *)registerListener:(BTTouchListener *)listener forBounds:(SPRectangle *)bounds;
-- (BTInputRegistration *)registerListener:(BTTouchListener *)listener forDisplayObject:(SPDisplayObject *)disp;
+- (BTInputRegistration *)registerScreenListener:(id<BTTouchListener>)listener;
+- (BTInputRegistration *)registerListener:(id<BTTouchListener>)listener forBounds:(SPRectangle *)bounds;
+- (BTInputRegistration *)registerListener:(id<BTTouchListener>)listener forDisplayObject:(SPDisplayObject *)disp;
 
 @end

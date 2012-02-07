@@ -26,9 +26,9 @@
 
 // Reaction
 @interface BTReaction : NSObject 
-- (id)initWithRegion:(BTInputRegion *)region listener:(BTTouchListener *)listener;
+- (id)initWithRegion:(BTInputRegion *)region listener:(id<BTTouchListener>)listener;
 @property(nonatomic,readonly) BTInputRegion *region;
-@property(nonatomic,readonly) BTTouchListener *listener;
+@property(nonatomic,readonly) id<BTTouchListener> listener;
 @end
 
 @implementation BTInput
@@ -42,7 +42,7 @@
     return self;
 }
 
-- (BTTouchListener *)hitTest:(SPPoint *)globalPt {
+- (id<BTTouchListener>)hitTest:(SPPoint *)globalPt {
     // take a snapshot of the regions list to avoid concurrent modification if reactions
     // are added or removed during processing
     NSArray *snapshot = [NSArray arrayWithArray:_reactions];
@@ -146,21 +146,21 @@
     }
 }
 
-- (BTInputRegistration *)registerListener:(BTTouchListener *)listener forRegion:(BTInputRegion *)region {
+- (BTInputRegistration *)registerListener:(id<BTTouchListener>)listener forRegion:(BTInputRegion *)region {
     BTReaction *reaction = [[BTReaction alloc] initWithRegion:region listener:listener];
     [_reactions addObject:reaction];
     return [[BTInputRegistration alloc] initWithInput:self reaction:reaction];
 }
 
-- (BTInputRegistration *)registerScreenListener:(BTTouchListener *)listener {
+- (BTInputRegistration *)registerScreenListener:(id<BTTouchListener>)listener {
     return [self registerListener:listener forRegion:[[BTScreenRegion alloc] init]];
 }
 
-- (BTInputRegistration *)registerListener:(BTTouchListener *)listener forBounds:(SPRectangle *)bounds {
+- (BTInputRegistration *)registerListener:(id<BTTouchListener>)listener forBounds:(SPRectangle *)bounds {
     return [self registerListener:listener forRegion:[[BTBoundsRegion alloc] initWithBounds:bounds]];
 }
 
-- (BTInputRegistration *)registerListener:(BTTouchListener *)listener forDisplayObject:(SPDisplayObject *)disp {
+- (BTInputRegistration *)registerListener:(id<BTTouchListener>)listener forDisplayObject:(SPDisplayObject *)disp {
     return [self registerListener:listener forRegion:[[BTDisplayObjectRegion alloc] initWithDisplayObject:disp]];
 }
     
@@ -220,9 +220,9 @@
 @implementation BTReaction {
 @protected
     BTInputRegion *_region;
-    BTTouchListener *_listener;
+    id<BTTouchListener>_listener;
 }
-- (id)initWithRegion:(BTInputRegion *)region listener:(BTTouchListener *)listener {
+- (id)initWithRegion:(BTInputRegion *)region listener:(id<BTTouchListener>)listener {
     if (!(self = [super init])) {
         return nil;
     }
