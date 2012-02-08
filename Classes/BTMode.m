@@ -149,8 +149,8 @@
     [_rootNode addNode:object withName:name];
 }
 
-- (void)replaceNode:(BTNode*)object withName:(NSString*)name {
-    [_rootNode replaceNode:object withName:name];
+- (void)addNode:(BTNode *)node withName:(NSString *)name replaceExisting:(BOOL)replaceExisting {
+    [_rootNode addNode:node withName:name replaceExisting:replaceExisting];
 }
 
 - (void)removeNode:(BTNode*)object {

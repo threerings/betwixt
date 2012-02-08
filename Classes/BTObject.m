@@ -93,8 +93,10 @@
     [self addNode:object];
 }
 
-- (void)replaceNode:(BTNode*)object withName:(NSString*)name {
-    [[self nodeForName:name] detach];
+- (void)addNode:(BTNode*)object withName:(NSString*)name replaceExisting:(BOOL)replaceExisting {
+    if (replaceExisting) {
+        [[self nodeForName:name] detach];
+    }
     [self addNode:object withName:name];
 }
 
