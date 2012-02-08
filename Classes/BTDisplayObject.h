@@ -10,4 +10,6 @@
 @property(nonatomic,assign) float x;
 @property(nonatomic,assign) float y;
 
++ (BTDisplayObject *)create:(SPDisplayObject *)disp;
+
 @end
