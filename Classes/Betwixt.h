@@ -48,6 +48,7 @@
 #import "BTParallelTask.h"
 #import "BTRepeatingTask.h"
 #import "BTRotationTask.h"
+#import "BTScaleTask.h"
 #import "BTSequenceTask.h"
 #import "BTWaitTask.h"
 
