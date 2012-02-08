@@ -52,10 +52,10 @@
     
     if (_lastTouch != nil) {
         for (SPTouch *touch in touches) {
-            if ((touch.globalX == _lastTouch.previousGlobalX &&
-                 touch.globalY == _lastTouch.previousGlobalY) ||
-                (touch.globalX == _lastTouch.globalX &&
-                 touch.globalY == _lastTouch.globalY)) {
+            if ((_lastTouch.globalX == touch.previousGlobalX &&
+                 _lastTouch.globalY == touch.previousGlobalY) ||
+                (_lastTouch.globalX == touch.globalX &&
+                 _lastTouch.globalY == touch.globalY)) {
              
                 // existing touch; update values
                 _lastTouch.timestamp = touch.timestamp;
@@ -90,6 +90,8 @@
             }
         }
     }
+    
+    NSLog(@"currentTouchPhase: %d", (currentTouch != nil ? currentTouch.phase : -1));
     
     // Send the touch to our reactors
     BOOL handled = NO;
