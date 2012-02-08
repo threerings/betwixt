@@ -9,20 +9,20 @@
 }
 
 - (id)initWithTime:(float)seconds alpha:(float)alpha {
-    return [self initWithTime:seconds alpha:alpha interpolator:BTLinearInterpolator display:nil];
+    return [self initWithTime:seconds alpha:alpha interpolator:BTLinearInterpolator target:nil];
 }
 
 - (id)initWithTime:(float)seconds alpha:(float)alpha interpolator:(BTInterpolator)interp {
-    return [self initWithTime:seconds alpha:alpha interpolator:interp display:nil];
+    return [self initWithTime:seconds alpha:alpha interpolator:interp target:nil];
 }
 
-- (id)initWithTime:(float)seconds alpha:(float)alpha display:(SPDisplayObject*)display {
-    return [self initWithTime:seconds alpha:alpha interpolator:BTLinearInterpolator display:display];
+- (id)initWithTime:(float)seconds alpha:(float)alpha target:(SPDisplayObject*)target {
+    return [self initWithTime:seconds alpha:alpha interpolator:BTLinearInterpolator target:target];
 }
 
 - (id)initWithTime:(float)seconds alpha:(float)alpha
-  interpolator:(BTInterpolator)interp display:(SPDisplayObject*)display {
-    if (!(self = [super initWithTime:seconds interpolator:interp display:display])) return nil;
+  interpolator:(BTInterpolator)interp target:(SPDisplayObject*)target {
+    if (!(self = [super initWithTime:seconds interpolator:interp target:target])) return nil;
     [self.attached connectUnit:^{
         _startAlpha = _target.alpha;
         _deltaAlpha = alpha - _startAlpha;

@@ -6,7 +6,7 @@
 @interface BTAlphaTask : BTDisplayObjectTask
 - (id)initWithTime:(float)seconds alpha:(float)alpha;
 - (id)initWithTime:(float)seconds alpha:(float)alpha interpolator:(BTInterpolator)interp;
-- (id)initWithTime:(float)seconds alpha:(float)alpha display:(SPDisplayObject*)display;
+- (id)initWithTime:(float)seconds alpha:(float)alpha target:(SPDisplayObject*)target;
 - (id)initWithTime:(float)seconds alpha:(float)alpha interpolator:(BTInterpolator)interp 
-           display:(SPDisplayObject*)display;
+           target:(SPDisplayObject*)target;
 @end
