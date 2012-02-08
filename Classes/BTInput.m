@@ -91,8 +91,6 @@
         }
     }
     
-    NSLog(@"currentTouchPhase: %d", (currentTouch != nil ? currentTouch.phase : -1));
-    
     // Send the touch to our reactors
     BOOL handled = NO;
     if (currentTouch != nil) {
