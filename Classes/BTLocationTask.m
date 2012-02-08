@@ -13,6 +13,22 @@
     __weak id<BTHasLocation> _target;
 }
 
++ (BTLocationTask *)withTime:(float)seconds toX:(float)x toY:(float)y {
+    return [[BTLocationTask alloc] initWithTime:seconds toX:x toY:y];
+}
+
++ (BTLocationTask *)withTime:(float)seconds toX:(float)x toY:(float)y interpolator:(BTInterpolator)interp {
+    return [[BTLocationTask alloc] initWithTime:seconds toX:x toY:y interpolator:interp];
+}
+
++ (BTLocationTask *)withTime:(float)seconds toX:(float)x toY:(float)y target:(id<BTHasLocation>)target {
+    return [[BTLocationTask alloc] initWithTime:seconds toX:x toY:y target:target];
+}
+
++ (BTLocationTask *)withTime:(float)seconds toX:(float)x toY:(float)y interpolator:(BTInterpolator)interp target:(id<BTHasLocation>)target {
+    return [[BTLocationTask alloc] initWithTime:seconds toX:x toY:y interpolator:interp target:target];
+}
+
 - (id)initWithTime:(float)seconds toX:(float)x toY:(float)y {
     return [self initWithTime:seconds toX:x toY:x interpolator:BTLinearInterpolator target:nil];
 }

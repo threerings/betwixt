@@ -10,6 +10,25 @@
     float _deltaY;
 }
 
++ (BTScaleTask *)withTime:(float)seconds scaleX:(float)scaleX scaleY:(float)scaleY {
+    return [[BTScaleTask alloc] initWithTime:seconds scaleX:scaleX scaleY:scaleY];
+}
+
++ (BTScaleTask *)withTime:(float)seconds scaleX:(float)scaleX scaleY:(float)scaleY 
+             interpolator:(BTInterpolator)interp {
+    return [[BTScaleTask alloc] initWithTime:seconds scaleX:scaleX scaleY:scaleY interpolator:interp];
+}
+
++ (BTScaleTask *)withTime:(float)seconds scaleX:(float)scaleX scaleY:(float)scaleY 
+                   target:(SPDisplayObject *)target {
+    return [[BTScaleTask alloc] initWithTime:seconds scaleX:scaleX scaleY:scaleY target:target];
+}
+
++ (BTScaleTask *)withTime:(float)seconds scaleX:(float)scaleX scaleY:(float)scaleY 
+             interpolator:(BTInterpolator)interp target:(SPDisplayObject *)target {
+    return [[BTScaleTask alloc] initWithTime:seconds scaleX:scaleX scaleY:scaleY interpolator:interp target:target];
+}
+
 - (id)initWithTime:(float)seconds scaleX:(float)scaleX scaleY:(float)scaleY {
     return [self initWithTime:seconds scaleX:(float)scaleX scaleY:(float)scaleY 
                  interpolator:BTLinearInterpolator target:nil];

@@ -8,6 +8,23 @@
     float _deltaRotation;
 }
 
++ (BTRotationTask *)withTime:(float)seconds rotation:(float)rads {
+    return [[BTRotationTask alloc] initWithTime:seconds rotation:rads];
+}
+
++ (BTRotationTask *)withTime:(float)seconds rotation:(float)rads interpolator:(BTInterpolator)interp {
+    return [[BTRotationTask alloc] initWithTime:seconds rotation:rads interpolator:interp];
+}
+
++ (BTRotationTask *)withTime:(float)seconds rotation:(float)rads target:(SPDisplayObject*)target {
+    return [[BTRotationTask alloc] initWithTime:seconds rotation:rads target:target];
+}
+
++ (BTRotationTask *)withTime:(float)seconds rotation:(float)rads interpolator:(BTInterpolator)interp 
+                      target:(SPDisplayObject*)target {
+    return [[BTRotationTask alloc] initWithTime:seconds rotation:rads interpolator:interp target:target];
+}
+
 - (id)initWithTime:(float)seconds rotation:(float)rads {
     return [self initWithTime:seconds rotation:rads interpolator:BTLinearInterpolator target:nil];
 }
