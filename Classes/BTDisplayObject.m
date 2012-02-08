@@ -2,6 +2,7 @@
 // Betwixt - Copyright 2012 Three Rings Design
 
 #import "BTDisplayObject.h"
+#import "BTNode+Protected.h"
 
 @interface BTSimpleDisplayObject : BTDisplayObject
 - (id)initWithDisplayObject:(SPDisplayObject *)disp;
@@ -28,6 +29,11 @@
 - (SPDisplayObject *)display {
     [self doesNotRecognizeSelector:_cmd];
     return nil;
+}
+
+- (void)cleanup {
+    [self.display removeFromParent];
+    [super cleanup];
 }
 
 + (BTDisplayObject *)create:(SPDisplayObject *)disp {
