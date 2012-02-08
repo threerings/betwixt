@@ -9,6 +9,7 @@
 @property(nonatomic,readonly) SPDisplayObject *display; // abstract
 @property(nonatomic,assign) float x;
 @property(nonatomic,assign) float y;
+@property(nonatomic,copy) SPPoint *loc;
 
 + (BTDisplayObject *)create:(SPDisplayObject *)disp;
 

@@ -26,6 +26,15 @@
     self.display.y = y;
 }
 
+- (SPPoint *)loc {
+    return [SPPoint pointWithX:self.x y:self.y];
+}
+
+- (void)setLoc:(SPPoint *)loc {
+    self.x = loc.x;
+    self.y = loc.y;
+}
+
 - (SPDisplayObject *)display {
     [self doesNotRecognizeSelector:_cmd];
     return nil;
