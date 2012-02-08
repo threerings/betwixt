@@ -7,29 +7,32 @@
     float _startRotation;
     float _deltaRotation;
 }
+
 - (id)initWithTime:(float)seconds rotation:(float)rads {
-    return [self initWithTime:seconds rotation:rads interpolator:BTLinearInterpolator display:nil];
+    return [self initWithTime:seconds rotation:rads interpolator:BTLinearInterpolator target:nil];
 }
 
 - (id)initWithTime:(float)seconds rotation:(float)rads interpolator:(BTInterpolator)interp {
-    return [self initWithTime:seconds rotation:rads interpolator:interp display:nil];
+    return [self initWithTime:seconds rotation:rads interpolator:interp target:nil];
 }
 
-- (id)initWithTime:(float)seconds rotation:(float)rads display:(SPDisplayObject*)display {
+- (id)initWithTime:(float)seconds rotation:(float)rads target:(SPDisplayObject*)target {
     return [self initWithTime:seconds rotation:rads interpolator:BTLinearInterpolator
-                display:display];
+                target:target];
 }
 
 - (id)initWithTime:(float)seconds rotation:(float)rads
-  interpolator:(BTInterpolator)interp display:(SPDisplayObject*)display {
-    if (!(self = [super initWithTime:seconds interpolator:interp display:display])) return nil;
+  interpolator:(BTInterpolator)interp target:(SPDisplayObject*)target {
+    if (!(self = [super initWithTime:seconds interpolator:interp target:target])) return nil;
     [self.attached connectUnit:^{
         _startRotation = _target.rotation;
         _deltaRotation = rads - _startRotation;
     }];
     return self;
 }
+
 -(void) updateInterpolatedTo:(float)interpolated {
     _target.rotation = _startRotation + _deltaRotation * interpolated;
 }
+
 @end

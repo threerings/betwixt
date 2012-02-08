@@ -9,6 +9,6 @@
 }
 
 - (id)initWithTime:(float)seconds interpolator:(BTInterpolator)interp 
-           display:(SPDisplayObject*)display;
+            target:(SPDisplayObject*)target;
 
 @end

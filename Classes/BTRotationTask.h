@@ -7,7 +7,7 @@
 
 - (id)initWithTime:(float)seconds rotation:(float)rads;
 - (id)initWithTime:(float)seconds rotation:(float)rads interpolator:(BTInterpolator)interp;
-- (id)initWithTime:(float)seconds rotation:(float)rads display:(SPDisplayObject*)display;
+- (id)initWithTime:(float)seconds rotation:(float)rads target:(SPDisplayObject*)target;
 - (id)initWithTime:(float)seconds rotation:(float)rads interpolator:(BTInterpolator)interp 
-           display:(SPDisplayObject*)display;
+           target:(SPDisplayObject*)target;
 @end

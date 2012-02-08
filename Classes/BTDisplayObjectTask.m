@@ -7,9 +7,9 @@
 @implementation BTDisplayObjectTask
 
 - (id)initWithTime:(float)seconds interpolator:(BTInterpolator)interp 
-           display:(SPDisplayObject *)display {
+           target:(SPDisplayObject *)target {
     if (!(self = [super initWithTime:seconds interpolator:interp])) return nil;
-    _target = display;
+    _target = target;
     if (!_target) {
         __weak BTDisplayObjectTask *this = self;
         [self.attached connectUnit:^{
