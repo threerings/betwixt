@@ -13,7 +13,7 @@
 - (id)init {
     if (!(self = [super init])) return nil;
     BTSprite *sprite = [BTSprite new];
-    [self addAndDisplayNode:sprite];
+    [self addAndDisplayNode:sprite onParent:self.sprite];
     [sprite.sprite addChild:[SPQuad quadWithWidth:100 height:100 color:0x0000ff]];
     [sprite addNode:[[BTLocationTask alloc] initWithTime:1 toX:300 toY:200] withName:@"mover"];
     [sprite addNode:[BTSequenceTask withNodes:

@@ -17,12 +17,12 @@
 
 - (void)update:(float)dt {
     _elapsedTime = MIN(_elapsedTime + dt, _totalTime);
-    [self updateTo:_elapsedTime outOf:_totalTime];
+    [self updateValues];
     if (_elapsedTime == _totalTime) {
         [self detach];
     }
 }
 
-- (void)updateTo:(float)elapsed outOf:(float)total {}
+- (void)updateValues {}
 
 @end

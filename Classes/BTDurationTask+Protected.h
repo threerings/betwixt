@@ -4,5 +4,5 @@
 #import "BTDurationTask.h"
 
 @interface BTDurationTask (protected)
-- (void)updateTo:(float)elapsed outOf:(float)total;
+- (void)updateValues;
 @end

@@ -2,14 +2,16 @@
 // Betwixt - Copyright 2012 Three Rings Design
 
 #import "BTLocationTask.h"
+#import "BTInterpolationTask+Protected.h"
+#import "BTInterpolator.h"
 #import "BTHasLocation.h"
 #import "BTDisplayObject.h"
 
 @implementation BTLocationTask {
     float _startX;
     float _startY;
-    float _deltaX;
-    float _deltaY;
+    float _endX;
+    float _endY;
     __weak id<BTHasLocation> _target;
 }
 
@@ -17,7 +19,7 @@
     return [[BTLocationTask alloc] initWithTime:seconds toX:x toY:y];
 }
 
-+ (BTLocationTask *)withTime:(float)seconds toX:(float)x toY:(float)y interpolator:(BTInterpolator)interp {
++ (BTLocationTask *)withTime:(float)seconds toX:(float)x toY:(float)y interpolator:(BTInterpolator *)interp {
     return [[BTLocationTask alloc] initWithTime:seconds toX:x toY:y interpolator:interp];
 }
 
@@ -25,43 +27,44 @@
     return [[BTLocationTask alloc] initWithTime:seconds toX:x toY:y target:target];
 }
 
-+ (BTLocationTask *)withTime:(float)seconds toX:(float)x toY:(float)y interpolator:(BTInterpolator)interp target:(id<BTHasLocation>)target {
++ (BTLocationTask *)withTime:(float)seconds toX:(float)x toY:(float)y interpolator:(BTInterpolator *)interp target:(id<BTHasLocation>)target {
     return [[BTLocationTask alloc] initWithTime:seconds toX:x toY:y interpolator:interp target:target];
 }
 
 - (id)initWithTime:(float)seconds toX:(float)x toY:(float)y {
-    return [self initWithTime:seconds toX:x toY:x interpolator:BTLinearInterpolator target:nil];
+    return [self initWithTime:seconds toX:x toY:x interpolator:BTInterpolator.LINEAR target:nil];
 }
 
-- (id)initWithTime:(float)seconds toX:(float)x toY:(float)y interpolator:(BTInterpolator)interp {
+- (id)initWithTime:(float)seconds toX:(float)x toY:(float)y interpolator:(BTInterpolator *)interp {
     return [self initWithTime:seconds toX:x toY:y interpolator:interp target:nil];
 }
 
 - (id)initWithTime:(float)seconds toX:(float)x toY:(float)y target:(id<BTHasLocation>)target {
-    return [self initWithTime:seconds toX:x toY:y interpolator:BTLinearInterpolator target:target];
+    return [self initWithTime:seconds toX:x toY:y interpolator:BTInterpolator.LINEAR target:target];
 }
 
-- (id)initWithTime:(float)seconds toX:(float)x toY:(float)y interpolator:(BTInterpolator)interp 
+- (id)initWithTime:(float)seconds toX:(float)x toY:(float)y interpolator:(BTInterpolator *)interp 
            target:(id<BTHasLocation>)target {
     if (!(self = [super initWithTime:seconds interpolator:interp])) return nil;
-    _target = target;
     
-    __weak BTLocationTask *this = self;
-    [self.attached connectUnit:^{
+    _target = target;
+    _endX = x;
+    _endY = y;
+    
+    [_conns addConnection:[self.attached connectUnit:^{
         if (_target == nil) {
-            _target = ((BTDisplayObject *)this.parent).display;
+            _target = ((BTDisplayObject *)self.parent).display;
         }
         _startX = _target.x;
         _startY = _target.y;
-        _deltaX = x - _startX;
-        _deltaY = y - _startY;
-    }];
+    }]];
     
     return self;
 }
 
-- (void)updateInterpolatedTo:(float)interpolated {
-    _target.x = _startX + _deltaX * interpolated;
-    _target.y = _startY + _deltaY * interpolated;
+- (void)updateValues {
+    _target.x = [self interpolate:_startX to:_endX];
+    _target.y = [self interpolate:_startY to:_endY];
 }
+
 @end

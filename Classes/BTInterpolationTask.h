@@ -1,15 +1,14 @@
 //
 // Betwixt - Copyright 2012 Three Rings Design
 
-#import <Foundation/Foundation.h>
-#import "BTInterpolator.h"
-#import "BTNode.h"
-#import "BTWaitTask.h"
+#import "BTDurationTask.h"
+
+@class BTInterpolator;
 
 @interface BTInterpolationTask : BTDurationTask {
 @protected
-    BTInterpolator _interpolator;
+    BTInterpolator *_interpolator;
 }
 
-- (id)initWithTime:(float)seconds interpolator:(BTInterpolator)interp;
+- (id)initWithTime:(float)seconds interpolator:(BTInterpolator *)interp;
 @end

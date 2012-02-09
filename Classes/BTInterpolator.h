@@ -1,12 +1,13 @@
 //
 // Betwixt - Copyright 2012 Three Rings Design
 
-typedef float (^BTInterpolator)(float);
+@interface BTInterpolator : NSObject
 
-BTInterpolator BTLinearInterpolator;
-BTInterpolator BTEaseInInterpolator;
-BTInterpolator BTEaseOutInterpolator;
-BTInterpolator BTEaseInOutInterpolator;
+- (float)interpolate:(float)from to:(float)to dt:(float)dt t:(float)t;
 
-float BTInterpolate (float from, float to, float elapsedTime, float totalTime, 
-                     BTInterpolator interp);
++ (BTInterpolator *)LINEAR;
++ (BTInterpolator *)EASE_IN;
++ (BTInterpolator *)EASE_OUT;
++ (BTInterpolator *)EASE_IN_OUT;
+
+@end

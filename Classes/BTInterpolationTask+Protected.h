@@ -2,7 +2,8 @@
 // Betwixt - Copyright 2012 Three Rings Design
 
 #import "BTInterpolationTask.h"
+#import "BTDurationTask+Protected.h"
 
 @interface BTInterpolationTask (protected)
--(void)updateInterpolatedTo:(float)interp;
+- (float)interpolate:(float)from to:(float)to;
 @end

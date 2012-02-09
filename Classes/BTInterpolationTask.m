@@ -2,19 +2,18 @@
 // Betwixt - Copyright 2012 Three Rings Design
 
 #import "BTInterpolationTask+Protected.h"
+#import "BTInterpolator.h"
 
 @implementation BTInterpolationTask
 
-- (id)initWithTime:(float)seconds interpolator:(BTInterpolator)interp {
+- (id)initWithTime:(float)seconds interpolator:(BTInterpolator *)interp {
     if (!(self = [super initWithTime:seconds])) return nil;
     _interpolator = interp;
     return self;
 }
 
-- (void)updateTo:(float)elapsed outOf:(float)total {
-    [self updateInterpolatedTo:_interpolator(elapsed/total)];
+- (float)interpolate:(float)from to:(float)to {
+    return [_interpolator interpolate:from to:to dt:_elapsedTime t:_totalTime];
 }
-
-- (void)updateInterpolatedTo:(float)interpolated {}
 
 @end
