@@ -10,6 +10,7 @@
     RAUnitSignal *_attached;
     RAUnitSignal *_detached;
     RAConnectionGroup *_conns;
+    BOOL _isDetached;
 }
 
 - (void)detach;

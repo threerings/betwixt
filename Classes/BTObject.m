@@ -69,7 +69,8 @@
 
 - (void)addNode:(BTNode*)object {
     NSAssert(object->_parent == nil, @"Adding attached object");
-    NSAssert(_children != nil, @"Adding object to detached object");
+    NSAssert(!self.isDetached, @"Adding object to detached object");
+    NSAssert(!object.isDetached, @"You cannot re-add a detached object");
     [_children addObject:object];
     object->_parent = self;
     if ([object conformsToProtocol:@protocol(BTKeyed)]) {

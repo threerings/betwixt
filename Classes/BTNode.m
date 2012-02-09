@@ -41,6 +41,11 @@
     [_attached disconnectAll];
     [_detached disconnectAll];
     [_conns disconnectAll];
+    _isDetached = YES;
+}
+
+- (BOOL)isDetached {
+    return _isDetached;
 }
 
 @synthesize parent=_parent;

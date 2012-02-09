@@ -3,4 +3,5 @@
 
 @interface BTNode (package)
 - (void)removeInternal;
+- (BOOL)isDetached;
 @end
