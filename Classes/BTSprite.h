@@ -8,6 +8,9 @@
     SPSprite* _sprite;
 }
 
+- (id)init;
+- (id)initWithSprite:(SPSprite*)sprite;
+
 @property(nonatomic,readonly) SPSprite* sprite;
 
 @end

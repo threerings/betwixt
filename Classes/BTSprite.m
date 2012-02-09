@@ -4,9 +4,16 @@
 #import "BTSprite.h"
 
 @implementation BTSprite
+
 - (id)init {
     if (!(self = [super init])) return nil;
     _sprite = [[SPSprite alloc] init];
+    return self;
+}
+
+- (id)initWithSprite:(SPSprite*)sprite {
+    if (!(self = [super init])) return nil;
+    _sprite = sprite;
     return self;
 }
 
