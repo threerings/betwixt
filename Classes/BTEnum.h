@@ -24,10 +24,10 @@
 
 @interface BTEnum : NSObject
 
-+ (id)valueOf:(NSString *)name;
-+ (NSArray *)values;
++ (id)valueOf:(NSString*)name;
++ (NSArray*)values;
 
-@property(readonly) NSString *name;
+@property(readonly) NSString* name;
 @property(readonly) int ordinal;
 
 @end

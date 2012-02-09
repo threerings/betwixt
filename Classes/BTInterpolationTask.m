@@ -6,7 +6,7 @@
 
 @implementation BTInterpolationTask
 
-- (id)initWithTime:(float)seconds interpolator:(BTInterpolator *)interp {
+- (id)initWithTime:(float)seconds interpolator:(BTInterpolator*)interp {
     if (!(self = [super initWithTime:seconds])) return nil;
     _interpolator = interp;
     return self;

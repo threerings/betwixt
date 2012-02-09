@@ -11,7 +11,7 @@
     return sqrtf([BTMath distanceSqFromX:fromX fromY:fromY toX:toX toY:toY]);
 }
 
-+ (float) distanceFrom:(SPPoint *)p1 to:(SPPoint *)p2 {
++ (float) distanceFrom:(SPPoint*)p1 to:(SPPoint*)p2 {
     return [BTMath distanceFromX:p1.x fromY:p1.y toX:p2.x toY:p2.y];
 }
 
@@ -19,7 +19,7 @@
     return SQ(toX - fromX) + SQ(toY - fromY);
 }
 
-+ (float) distanceSqFrom:(SPPoint *)p1 to:(SPPoint *)p2 {
++ (float) distanceSqFrom:(SPPoint*)p1 to:(SPPoint*)p2 {
     return [BTMath distanceSqFromX:p1.x fromY:p1.y toX:p2.x toY:p2.y];
 }
 

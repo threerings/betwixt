@@ -6,17 +6,17 @@
 #import <objc/message.h>
 
 @interface BTEnum ()
-+ (NSMutableDictionary *)enums;
-+ (NSMutableSet *)blocked;
++ (NSMutableDictionary*)enums;
++ (NSMutableSet*)blocked;
 @end
 
 @implementation BTEnum {
-    NSString *_name;
+    NSString* _name;
     int _ordinal;
 }
 
-+ (id)valueOf:(NSString *)name {
-    for (BTEnum *theEnum in [self values]) {
++ (id)valueOf:(NSString*)name {
+    for (BTEnum* theEnum in [self values]) {
         if ([theEnum.name isEqualToString:name]) {
             return theEnum;
         }
@@ -24,7 +24,7 @@
     return nil;
 }
 
-+ (NSArray *)values {
++ (NSArray*)values {
     return [[BTEnum enums] objectForKey:[self class]];
 }
 
@@ -37,7 +37,7 @@
         [NSException raise:NSGenericException format:@"You may not just construct an enum!"];
     }
     
-    NSMutableArray *array = [[BTEnum enums] objectForKey:clazz];
+    NSMutableArray* array = [[BTEnum enums] objectForKey:clazz];
     if (array == nil) {
         array = [NSMutableArray array];
         [[BTEnum enums] setObject:array forKey:clazz];
@@ -48,7 +48,7 @@
     return self;
 }
 
-- (void)setName:(NSString *)name {
+- (void)setName:(NSString*)name {
     NSAssert(_name == nil, @"name already set");
     _name = name;
 }
@@ -61,20 +61,20 @@
     return _name.hash;
 }
 
-- (NSString *)description {
+- (NSString*)description {
     return [NSString stringWithFormat:@"%@.%@", [self class].description, self.name];
 }
 
-+ (NSMutableDictionary *)enums {
-    static NSMutableDictionary *enums = nil;
++ (NSMutableDictionary*)enums {
+    static NSMutableDictionary* enums = nil;
     if (enums == nil) {
         enums = [NSMutableDictionary dictionary];
     }
     return enums;
 }
 
-+ (NSMutableSet *)blocked {
-    static NSMutableSet *blocked = nil;
++ (NSMutableSet*)blocked {
+    static NSMutableSet* blocked = nil;
     if (blocked == nil) {
         blocked = [NSMutableSet set];
     }
@@ -82,14 +82,14 @@
 }
 
 + (void)initialize {
-    static NSString *PREFIX = @"BTEnum_Init";
+    static NSString* PREFIX = @"BTEnum_Init";
     
     if (self != [BTEnum class]) {
         // walk the class methods 
         unsigned int methodCount = 0;
-        Method *mlist = class_copyMethodList(object_getClass(self), &methodCount);
+        Method* mlist = class_copyMethodList(object_getClass(self), &methodCount);
         for (unsigned int ii = 0; ii < methodCount; ++ii) {
-            NSString *mname = NSStringFromSelector(method_getName(mlist[ii]));
+            NSString* mname = NSStringFromSelector(method_getName(mlist[ii]));
             if (mname.length > PREFIX.length && [[mname substringToIndex:PREFIX.length] isEqualToString:PREFIX]) {
                 //[self performSelector:method_getName(mlist[ii])];
                 // Equivalent to the above, but doesn't produce an ARC warning

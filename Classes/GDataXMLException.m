@@ -8,18 +8,18 @@ static NSString * const NAME = @"XMLException";
 
 @implementation GDataXMLException
 
-+ (GDataXMLException *)withReason:(NSString *)format, ... {
++ (GDataXMLException*)withReason:(NSString*)format, ... {
     va_list args;
     va_start(args, format);
-    NSString *reason = [[NSString alloc]initWithFormat:format arguments:args];
+    NSString* reason = [[NSString alloc]initWithFormat:format arguments:args];
     va_end(args);
     return [[GDataXMLException alloc] initWithReason:reason];
 }
 
-+ (GDataXMLException *)withElement:(GDataXMLElement *)badElement reason:(NSString *)format, ... {
++ (GDataXMLException*)withElement:(GDataXMLElement*)badElement reason:(NSString*)format, ... {
     va_list args;
     va_start(args, format);
-    NSMutableString *reason = [[NSMutableString alloc]initWithFormat:format arguments:args];
+    NSMutableString* reason = [[NSMutableString alloc]initWithFormat:format arguments:args];
     va_end(args);
     
     if (badElement != nil) {
@@ -29,7 +29,7 @@ static NSString * const NAME = @"XMLException";
     return [[GDataXMLException alloc] initWithReason:reason];
 }
 
-- (id)initWithReason:(NSString *)reason
+- (id)initWithReason:(NSString*)reason
 {
     if (!(self = [super initWithName:NAME reason:reason userInfo:nil])) {
         return nil;

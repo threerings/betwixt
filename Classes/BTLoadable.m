@@ -27,7 +27,7 @@
     _onComplete();
 }
 
-- (void)onError:(NSException *)err
+- (void)onError:(NSException*)err
 {
     if (_onError != nil) {
         _onError(err);
@@ -81,7 +81,7 @@
     [self doesNotRecognizeSelector:_cmd];
 }
 
-- (void)loadComplete:(NSException *)error
+- (void)loadComplete:(NSException*)error
 {
     NSMutableArray* callbacks = _callbacks;
     BTLoadableState state = (error == nil ? LS_LOADED : LS_ERROR);
@@ -102,7 +102,7 @@
             }
         }
     }
-    @catch (NSException *exception) {
+    @catch (NSException* exception) {
         NSLog(@"Unhandled exception in BTLoadable.loadComplete: %@", exception);
     }
 }
@@ -111,7 +111,7 @@
     [self loadComplete:nil];
 }
 
-- (void)loadError:(NSException *)err {
+- (void)loadError:(NSException*)err {
     [self loadComplete:err];
 }
 

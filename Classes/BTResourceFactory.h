@@ -6,6 +6,6 @@
 
 @protocol BTResourceFactory
 
-- (BTResource *)create:(GDataXMLElement *)xml;
+- (BTResource*)create:(GDataXMLElement*)xml;
 
 @end

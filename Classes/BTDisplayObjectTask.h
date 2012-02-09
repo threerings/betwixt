@@ -5,10 +5,10 @@
 
 @interface BTDisplayObjectTask : BTInterpolationTask {
 @protected
-    __weak SPDisplayObject *_target;
+    __weak SPDisplayObject* _target;
 }
 
-- (id)initWithTime:(float)seconds interpolator:(BTInterpolator *)interp 
+- (id)initWithTime:(float)seconds interpolator:(BTInterpolator*)interp 
             target:(SPDisplayObject*)target;
 
 @end

@@ -5,8 +5,8 @@
 
 @interface BTDisplayObject : BTObject
 
-@property(nonatomic,readonly) SPDisplayObject *display; // abstract
+@property(nonatomic,readonly) SPDisplayObject* display; // abstract
 
-+ (BTDisplayObject *)create:(SPDisplayObject *)disp;
++ (BTDisplayObject*)create:(SPDisplayObject*)disp;
 
 @end

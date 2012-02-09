@@ -6,7 +6,7 @@
 
 @class BTBlockTask;
 
-typedef void (^BTTaskBlock)(BTBlockTask *task);
+typedef void (^BTTaskBlock)(BTBlockTask* task);
 
 @interface BTBlockTask : BTNode
 + (BTBlockTask*)onAttach:(BTTaskBlock)block;

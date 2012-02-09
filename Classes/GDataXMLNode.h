@@ -112,50 +112,50 @@ typedef NSUInteger GDataXMLNodeKind;
   BOOL shouldFreeXMLNode_; // if yes, xmlNode_ will be free'd in dealloc
 
   // cached values
-  NSString *cachedName_;
-  NSArray *cachedChildren_;
-  NSArray *cachedAttributes_;
+  NSString* cachedName_;
+  NSArray* cachedChildren_;
+  NSArray* cachedAttributes_;
 }
 
-+ (GDataXMLElement *)elementWithName:(NSString *)name;
-+ (GDataXMLElement *)elementWithName:(NSString *)name stringValue:(NSString *)value;
-+ (GDataXMLElement *)elementWithName:(NSString *)name URI:(NSString *)value;
++ (GDataXMLElement*)elementWithName:(NSString*)name;
++ (GDataXMLElement*)elementWithName:(NSString*)name stringValue:(NSString*)value;
++ (GDataXMLElement*)elementWithName:(NSString*)name URI:(NSString*)value;
 
-+ (id)attributeWithName:(NSString *)name stringValue:(NSString *)value;
-+ (id)attributeWithName:(NSString *)name URI:(NSString *)attributeURI stringValue:(NSString *)value;
++ (id)attributeWithName:(NSString*)name stringValue:(NSString*)value;
++ (id)attributeWithName:(NSString*)name URI:(NSString*)attributeURI stringValue:(NSString*)value;
 
-+ (id)namespaceWithName:(NSString *)name stringValue:(NSString *)value;
++ (id)namespaceWithName:(NSString*)name stringValue:(NSString*)value;
 
-+ (id)textWithStringValue:(NSString *)value;
++ (id)textWithStringValue:(NSString*)value;
 
-- (NSString *)stringValue;
-- (void)setStringValue:(NSString *)str;
+- (NSString*)stringValue;
+- (void)setStringValue:(NSString*)str;
 
 - (NSUInteger)childCount;
-- (NSArray *)children;
-- (GDataXMLNode *)childAtIndex:(unsigned)index;
+- (NSArray*)children;
+- (GDataXMLNode*)childAtIndex:(unsigned)index;
 
-- (NSString *)localName;
-- (NSString *)name;
-- (NSString *)prefix;
-- (NSString *)URI;
+- (NSString*)localName;
+- (NSString*)name;
+- (NSString*)prefix;
+- (NSString*)URI;
 
 - (GDataXMLNodeKind)kind;
 
-- (NSString *)XMLString;
+- (NSString*)XMLString;
 
-+ (NSString *)localNameForName:(NSString *)name;
-+ (NSString *)prefixForName:(NSString *)name;
++ (NSString*)localNameForName:(NSString*)name;
++ (NSString*)prefixForName:(NSString*)name;
 
 // This is the preferred entry point for nodesForXPath.  This takes an explicit
 // namespace dictionary (keys are prefixes, values are URIs).
-- (NSArray *)nodesForXPath:(NSString *)xpath namespaces:(NSDictionary *)namespaces error:(NSError **)error;
+- (NSArray*)nodesForXPath:(NSString*)xpath namespaces:(NSDictionary*)namespaces error:(NSError **)error;
 
 // This implementation of nodesForXPath registers namespaces only from the
 // document's root node.  _def_ns may be used as a prefix for the default
 // namespace, though there's no guarantee that the default namespace will
 // be consistenly the same namespace in server responses.
-- (NSArray *)nodesForXPath:(NSString *)xpath error:(NSError **)error;
+- (NSArray*)nodesForXPath:(NSString*)xpath error:(NSError **)error;
 
 // access to the underlying libxml node; be sure to release the cached values
 // if you change the underlying tree at all
@@ -167,25 +167,25 @@ typedef NSUInteger GDataXMLNodeKind;
 
 @interface GDataXMLElement : GDataXMLNode
 
-- (id)initWithXMLString:(NSString *)str error:(NSError **)error;
+- (id)initWithXMLString:(NSString*)str error:(NSError **)error;
 
-- (NSArray *)namespaces;
-- (void)setNamespaces:(NSArray *)namespaces;
-- (void)addNamespace:(GDataXMLNode *)aNamespace;
+- (NSArray*)namespaces;
+- (void)setNamespaces:(NSArray*)namespaces;
+- (void)addNamespace:(GDataXMLNode*)aNamespace;
 
 // addChild adds a copy of the child node to the element
-- (void)addChild:(GDataXMLNode *)child;
-- (void)removeChild:(GDataXMLNode *)child;
+- (void)addChild:(GDataXMLNode*)child;
+- (void)removeChild:(GDataXMLNode*)child;
 
-- (NSArray *)elementsForName:(NSString *)name;
-- (NSArray *)elementsForLocalName:(NSString *)localName URI:(NSString *)URI;
+- (NSArray*)elementsForName:(NSString*)name;
+- (NSArray*)elementsForLocalName:(NSString*)localName URI:(NSString*)URI;
 
-- (NSArray *)attributes;
-- (GDataXMLNode *)attributeForName:(NSString *)name;
-- (GDataXMLNode *)attributeForLocalName:(NSString *)name URI:(NSString *)attributeURI;
-- (void)addAttribute:(GDataXMLNode *)attribute;
+- (NSArray*)attributes;
+- (GDataXMLNode*)attributeForName:(NSString*)name;
+- (GDataXMLNode*)attributeForLocalName:(NSString*)name URI:(NSString*)attributeURI;
+- (void)addAttribute:(GDataXMLNode*)attribute;
 
-- (NSString *)resolvePrefixForNamespaceURI:(NSString *)namespaceURI;
+- (NSString*)resolvePrefixForNamespaceURI:(NSString*)namespaceURI;
 
 @end
 
@@ -194,28 +194,28 @@ typedef NSUInteger GDataXMLNodeKind;
   xmlDoc* xmlDoc_; // strong; always free'd in dealloc
 }
 
-- (id)initWithXMLString:(NSString *)str options:(unsigned int)mask error:(NSError **)error;
-- (id)initWithData:(NSData *)data options:(unsigned int)mask error:(NSError **)error;
+- (id)initWithXMLString:(NSString*)str options:(unsigned int)mask error:(NSError **)error;
+- (id)initWithData:(NSData*)data options:(unsigned int)mask error:(NSError **)error;
 
 // initWithRootElement uses a copy of the argument as the new document's root
-- (id)initWithRootElement:(GDataXMLElement *)element;
+- (id)initWithRootElement:(GDataXMLElement*)element;
 
-- (GDataXMLElement *)rootElement;
+- (GDataXMLElement*)rootElement;
 
-- (NSData *)XMLData;
+- (NSData*)XMLData;
 
-- (void)setVersion:(NSString *)version;
-- (void)setCharacterEncoding:(NSString *)encoding;
+- (void)setVersion:(NSString*)version;
+- (void)setCharacterEncoding:(NSString*)encoding;
 
 // This is the preferred entry point for nodesForXPath.  This takes an explicit
 // namespace dictionary (keys are prefixes, values are URIs).
-- (NSArray *)nodesForXPath:(NSString *)xpath namespaces:(NSDictionary *)namespaces error:(NSError **)error;
+- (NSArray*)nodesForXPath:(NSString*)xpath namespaces:(NSDictionary*)namespaces error:(NSError **)error;
 
 // This implementation of nodesForXPath registers namespaces only from the
 // document's root node.  _def_ns may be used as a prefix for the default
 // namespace, though there's no guarantee that the default namespace will
 // be consistenly the same namespace in server responses.
-- (NSArray *)nodesForXPath:(NSString *)xpath error:(NSError **)error;
+- (NSArray*)nodesForXPath:(NSString*)xpath error:(NSError **)error;
 
-- (NSString *)description;
+- (NSString*)description;
 @end

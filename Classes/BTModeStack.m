@@ -17,14 +17,14 @@ typedef enum {
 @interface PendingModeTransition : NSObject {
 @public
     ModeTransitionType type;
-    BTMode *mode;
+    BTMode* mode;
     int index;
 }
-- (id)init:(ModeTransitionType)theType mode:(BTMode *)theMode index:(int)theIndex;
+- (id)init:(ModeTransitionType)theType mode:(BTMode*)theMode index:(int)theIndex;
 @end
 
 @implementation PendingModeTransition
-- (id)init:(ModeTransitionType)theType mode:(BTMode *)theMode index:(int)theIndex {
+- (id)init:(ModeTransitionType)theType mode:(BTMode*)theMode index:(int)theIndex {
     if (!(self = [super init])) {
         return nil;
     }
@@ -45,8 +45,8 @@ typedef enum {
     return self;
 }
 
-- (BTMode *)topMode {
-    return (BTMode *)[_stack lastObject];
+- (BTMode*)topMode {
+    return (BTMode*)[_stack lastObject];
 }
 
 - (void)pushMode:(BTMode*)mode {
@@ -57,11 +57,11 @@ typedef enum {
     [self removeModeAt:-1];
 }
 
-- (void)changeMode:(BTMode *)mode {
+- (void)changeMode:(BTMode*)mode {
     [_pendingModeTransitions addObject:[[PendingModeTransition alloc] init:kMTT_Change mode:mode index:0]];
 }
 
-- (void)insertMode:(BTMode *)mode atIndex:(int)index {
+- (void)insertMode:(BTMode*)mode atIndex:(int)index {
     [_pendingModeTransitions addObject:[[PendingModeTransition alloc] init:kMTT_Insert mode:mode index:index]];
 }
 
@@ -69,7 +69,7 @@ typedef enum {
     [_pendingModeTransitions addObject:[[PendingModeTransition alloc] init:kMTT_Remove mode:nil index:index]];
 }
 
-- (void)unwindToMode:(BTMode *)mode {
+- (void)unwindToMode:(BTMode*)mode {
     [_pendingModeTransitions addObject:[[PendingModeTransition alloc] init:kMTT_Unwind mode:mode index:0]];
 }
 
@@ -82,13 +82,13 @@ typedef enum {
         return;
     }
     
-    __block BTMode *initialTopMode = self.topMode;
-    __weak BTModeStack *this = self;
+    __block BTMode* initialTopMode = self.topMode;
+    __weak BTModeStack* this = self;
     
-    typedef void (^InsertModeBlock)(BTMode *mode, int index);
+    typedef void (^InsertModeBlock)(BTMode* mode, int index);
     typedef void (^RemoveModeBlock)(int index);
     
-    InsertModeBlock doInsertMode = ^(BTMode *newMode, int index) {
+    InsertModeBlock doInsertMode = ^(BTMode* newMode, int index) {
         if (index < 0) {
             index = _stack.count + index;
         }
@@ -116,7 +116,7 @@ typedef enum {
         index = MIN(index, _stack.count - 1);
         
         // if the top mode is removed, make sure it's exited first
-        BTMode *removedMode = [_stack objectAtIndex:index];
+        BTMode* removedMode = [_stack objectAtIndex:index];
         if (removedMode == initialTopMode) {
             [initialTopMode exitInternal];
             initialTopMode = nil;
@@ -130,10 +130,10 @@ typedef enum {
     // create a new _pendingModeTransitionQueue right now
     // so that we can properly handle mode transition requests
     // that occur during the processing of the current queue
-    NSMutableArray *transitions = _pendingModeTransitions;
+    NSMutableArray* transitions = _pendingModeTransitions;
     _pendingModeTransitions = [NSMutableArray array];
     
-    for (PendingModeTransition *transition in transitions) {
+    for (PendingModeTransition* transition in transitions) {
         switch (transition->type) {
             case kMTT_Push:
                 doInsertMode(transition->mode, _stack.count);
@@ -169,7 +169,7 @@ typedef enum {
         }
     }
     
-    BTMode *newTopMode = self.topMode;
+    BTMode* newTopMode = self.topMode;
     if (newTopMode != initialTopMode) {
         if (initialTopMode != nil) {
             [initialTopMode exitInternal];
@@ -185,7 +185,7 @@ typedef enum {
     [[_stack lastObject] update:dt];
 }
 
-- (void)processTouches:(NSSet *)touches {
+- (void)processTouches:(NSSet*)touches {
     [[_stack lastObject] processTouches:touches];
 }
 

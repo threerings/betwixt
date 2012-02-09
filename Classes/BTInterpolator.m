@@ -63,8 +63,8 @@
 @implementation BTInterpolator
 - (float)interpolate:(float)from to:(float)to dt:(float)dt t:(float)t { return to; }
 
-+ (BTInterpolator *)LINEAR {
-    static BTInterpolator *interp = nil;
++ (BTInterpolator*)LINEAR {
+    static BTInterpolator* interp = nil;
     @synchronized(self) {
         if (interp == nil) {
             interp = [[BTLinearInterpolator alloc] init];
@@ -73,8 +73,8 @@
     return interp;
 }
 
-+ (BTInterpolator *)EASE_IN {
-    static BTInterpolator *interp = nil;
++ (BTInterpolator*)EASE_IN {
+    static BTInterpolator* interp = nil;
     @synchronized(self) {
         if (interp == nil) {
             interp = [[BTEaseInInterpolator alloc] init];
@@ -83,8 +83,8 @@
     return interp;
 }
 
-+ (BTInterpolator *)EASE_OUT {
-    static BTInterpolator *interp = nil;
++ (BTInterpolator*)EASE_OUT {
+    static BTInterpolator* interp = nil;
     @synchronized(self) {
         if (interp == nil) {
             interp = [[BTEaseOutInterpolator alloc] init];
@@ -93,8 +93,8 @@
     return interp;
 }
 
-+ (BTInterpolator *)EASE_IN_OUT {
-    static BTInterpolator *interp = nil;
++ (BTInterpolator*)EASE_IN_OUT {
+    static BTInterpolator* interp = nil;
     @synchronized(self) {
         if (interp == nil) {
             interp = [[BTEaseInOutInterpolator alloc] init];

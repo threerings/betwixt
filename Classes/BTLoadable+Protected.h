@@ -10,5 +10,5 @@
  */
 - (void)doLoad;
 - (void)loadSuccess;
-- (void)loadError:(NSException *)err;
+- (void)loadError:(NSException*)err;
 @end

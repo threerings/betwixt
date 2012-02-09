@@ -15,13 +15,13 @@
 #import "BTMode+Package.h"
 
 @interface BTObject ()
-@property (nonatomic, readonly) NSMutableDictionary *namedObjects;
-@property (nonatomic, readonly) NSMutableDictionary *tokenDispatchers;
+@property (nonatomic, readonly) NSMutableDictionary* namedObjects;
+@property (nonatomic, readonly) NSMutableDictionary* tokenDispatchers;
 @end
 
 @implementation BTObject {
-    NSMutableDictionary *_tokenDispatchers;
-    NSMutableDictionary *_namedObjects;
+    NSMutableDictionary* _tokenDispatchers;
+    NSMutableDictionary* _namedObjects;
 }
 
 - (id)init {
@@ -32,7 +32,7 @@
         // Copy the set before detaching as detaching modifies the set
         // Go through _tokenDispatchers instead of tokenDispatchers to keep from instantiating it
         // if there aren't any listeners
-        for (OOOBlockToken *token in [_tokenDispatchers allKeys]) {
+        for (OOOBlockToken* token in [_tokenDispatchers allKeys]) {
             [self cancelListeningForToken:token];
         }
     }];
@@ -49,14 +49,14 @@
     return _namedObjects;
 }
 
-- (OOOBlockToken*)listenToDispatcher:(SPEventDispatcher *)dispatcher forEvent:(NSString *)eventType withBlock:(OOOBlockListener)block {
-    OOOBlockToken *token = [dispatcher addEventListenerForType:eventType listener:block];
+- (OOOBlockToken*)listenToDispatcher:(SPEventDispatcher*)dispatcher forEvent:(NSString*)eventType withBlock:(OOOBlockListener)block {
+    OOOBlockToken* token = [dispatcher addEventListenerForType:eventType listener:block];
     [self.tokenDispatchers setObject:[NSValue valueWithNonretainedObject:dispatcher] forKey:token];
     return token;
 }
 
 - (void)cancelListeningForToken:(OOOBlockToken*)token {
-    SPEventDispatcher *observee = [[self.tokenDispatchers objectForKey:token] nonretainedObjectValue];
+    SPEventDispatcher* observee = [[self.tokenDispatchers objectForKey:token] nonretainedObjectValue];
     [observee removeListenerWithBlockToken:token];
     [self.tokenDispatchers removeObjectForKey:token];
 }
@@ -102,7 +102,7 @@
     [self addNode:object withName:name];
 }
 
-- (void)addAndDisplayNode:(BTDisplayObject *)node onParent:(SPDisplayObjectContainer *)parent {
+- (void)addAndDisplayNode:(BTDisplayObject*)node onParent:(SPDisplayObjectContainer*)parent {
     [self addNode:node];
     [parent addChild:node.display];
 }
@@ -120,9 +120,9 @@
 - (void)removeInternal {
     // Prevent our _children array from being manipulated while
     // we're iterating it
-    NSMutableSet *kids = _children;
+    NSMutableSet* kids = _children;
     _children = nil;
-    for (BTObject *child in kids) {
+    for (BTObject* child in kids) {
         [child removeInternal];
     }
     _children = kids;
@@ -130,9 +130,9 @@
 }
 
 - (void)cleanup {
-    NSMutableSet *kids = _children;
+    NSMutableSet* kids = _children;
     _children = nil;
-    for (BTObject *child in kids) {
+    for (BTObject* child in kids) {
         [child cleanup];
     }
     [super cleanup];

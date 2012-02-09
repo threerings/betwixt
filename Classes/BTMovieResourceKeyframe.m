@@ -10,11 +10,11 @@
     index = [frameEl intAttribute:@"index"];
     duration = [frameEl intAttribute:@"duration" defaultVal:1];
 
-    GDataXMLElement *symbolEl = [frameEl walkTo:@"elements/DOMSymbolInstance"];
+    GDataXMLElement* symbolEl = [frameEl walkTo:@"elements/DOMSymbolInstance"];
     libraryItem = [symbolEl stringAttribute:@"libraryItemName"];
 
-    GDataXMLElement *matrixEl = [symbolEl walkTo:@"matrix/Matrix"];
-    SPMatrix *mat = [[SPMatrix alloc] initWithA:[matrixEl floatAttribute:@"a" defaultVal:1]
+    GDataXMLElement* matrixEl = [symbolEl walkTo:@"matrix/Matrix"];
+    SPMatrix* mat = [[SPMatrix alloc] initWithA:[matrixEl floatAttribute:@"a" defaultVal:1]
                                                  b:[matrixEl floatAttribute:@"b" defaultVal:0]
                                                  c:[matrixEl floatAttribute:@"c" defaultVal:0]
                                                  d:[matrixEl floatAttribute:@"d" defaultVal:1]
@@ -22,7 +22,7 @@
                                                 ty:[matrixEl floatAttribute:@"ty" defaultVal:0]];
     x = mat.tx;
     y = mat.ty;
-    SPPoint *py = [mat transformPoint:[SPPoint pointWithX:1 y:0]];
+    SPPoint* py = [mat transformPoint:[SPPoint pointWithX:1 y:0]];
     py.x -= mat.tx;
     py.y -= mat.ty;
     rotation = atan2(py.y, py.x);

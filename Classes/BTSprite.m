@@ -10,7 +10,7 @@
     return self;
 }
 
-- (SPDisplayObject *)display {
+- (SPDisplayObject*)display {
     return _sprite;
 }
 

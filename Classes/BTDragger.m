@@ -13,19 +13,19 @@
 
 @synthesize onDragStart, onDragged, onDragEnd;
 
-- (void)onDragStart:(SPPoint *)start {
+- (void)onDragStart:(SPPoint*)start {
     if (onDragStart != nil) {
         onDragStart(start);
     }
 }
 
-- (void)onDragged:(SPPoint *)current start:(SPPoint *)start {
+- (void)onDragged:(SPPoint*)current start:(SPPoint*)start {
     if (onDragged != nil) {
         onDragged(current, start);
     }
 }
 
-- (void)onDragEnd:(SPPoint *)current start:(SPPoint *)start {
+- (void)onDragEnd:(SPPoint*)current start:(SPPoint*)start {
     if (onDragEnd != nil) {
         onDragEnd(current, start);
     }
@@ -44,31 +44,31 @@
     return self;
 }
 
-- (void)onDragStart:(SPPoint *)start {}
-- (void)onDragged:(SPPoint *)current start:(SPPoint *)start {}
-- (void)onDragEnd:(SPPoint *)current start:(SPPoint *)start {}
+- (void)onDragStart:(SPPoint*)start {}
+- (void)onDragged:(SPPoint*)current start:(SPPoint*)start {}
+- (void)onDragEnd:(SPPoint*)current start:(SPPoint*)start {}
 
-- (void)onTouchStart:(SPPoint *)globalPt {
+- (void)onTouchStart:(SPPoint*)globalPt {
     _start.x = globalPt.x;
     _start.y = globalPt.y;
     [self onDragStart:_start];
 }
 
-- (void)onTouchMove:(SPPoint *)globalPt {
+- (void)onTouchMove:(SPPoint*)globalPt {
     _current.x = globalPt.x;
     _current.y = globalPt.y;
     [self onDragged:_current start:_start];
 }
 
-- (void)onTouchEnd:(SPPoint *)globalPt {
+- (void)onTouchEnd:(SPPoint*)globalPt {
     _current.x = globalPt.x;
     _current.y = globalPt.y;
     [self onDragEnd:_current start:_start];
 }
 
-+ (BTDragger *)onDragStart:(BTDragStartBlock)onDragStart onDragged:(BTDraggedBlock)onDragged 
++ (BTDragger*)onDragStart:(BTDragStartBlock)onDragStart onDragged:(BTDraggedBlock)onDragged 
                  onDragEnd:(BTDraggedBlock)onDragEnd {
-    BTCallbackDragger *dragger = [[BTCallbackDragger alloc] init];
+    BTCallbackDragger* dragger = [[BTCallbackDragger alloc] init];
     dragger.onDragStart = onDragStart;
     dragger.onDragged = onDragged;
     dragger.onDragEnd = onDragEnd;

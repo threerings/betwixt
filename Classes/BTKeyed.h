@@ -5,5 +5,5 @@
 /// No two nodes can share the same key in a given mode.
 /// You can retrieve a keyed node from its mode with [BTMode nodeForKey:]
 @protocol BTKeyed
-@property(nonatomic,readonly) NSArray *keys;
+@property(nonatomic,readonly) NSArray* keys;
 @end

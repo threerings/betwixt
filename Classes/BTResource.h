@@ -3,11 +3,11 @@
 
 @interface BTResource : NSObject {
 @package
-    NSString *_name;
-    NSString *_group;
+    NSString* _name;
+    NSString* _group;
 }
 
-@property(nonatomic,readonly) NSString *name;
-@property(nonatomic,readonly) NSString *group;
+@property(nonatomic,readonly) NSString* name;
+@property(nonatomic,readonly) NSString* group;
 
 @end

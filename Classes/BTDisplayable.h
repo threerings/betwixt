@@ -4,5 +4,5 @@
 #import "BTHasLocation.h"
 
 @protocol BTDisplayable<BTHasLocation>
-@property(nonatomic,readonly) SPDisplayObject *display;
+@property(nonatomic,readonly) SPDisplayObject* display;
 @end

@@ -4,5 +4,5 @@
 #import "BTDurationTask.h"
 
 @interface BTWaitTask : BTDurationTask
-+ (BTWaitTask *)waitFor:(float)seconds;
++ (BTWaitTask*)waitFor:(float)seconds;
 @end

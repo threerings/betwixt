@@ -7,8 +7,8 @@
 
 @interface BTInterpolationTask : BTDurationTask {
 @protected
-    BTInterpolator *_interpolator;
+    BTInterpolator* _interpolator;
 }
 
-- (id)initWithTime:(float)seconds interpolator:(BTInterpolator *)interp;
+- (id)initWithTime:(float)seconds interpolator:(BTInterpolator*)interp;
 @end

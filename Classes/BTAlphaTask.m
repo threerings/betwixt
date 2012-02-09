@@ -10,19 +10,19 @@
     float _endAlpha;
 }
 
-+ (BTAlphaTask *)withTime:(float)seconds alpha:(float)alpha {
++ (BTAlphaTask*)withTime:(float)seconds alpha:(float)alpha {
     return [[BTAlphaTask alloc] initWithTime:seconds alpha:alpha];
 }
 
-+ (BTAlphaTask *)withTime:(float)seconds alpha:(float)alpha interpolator:(BTInterpolator *)interp {
++ (BTAlphaTask*)withTime:(float)seconds alpha:(float)alpha interpolator:(BTInterpolator*)interp {
     return [[BTAlphaTask alloc] initWithTime:seconds alpha:alpha interpolator:interp];
 }
 
-+ (BTAlphaTask *)withTime:(float)seconds alpha:(float)alpha target:(SPDisplayObject*)target {
++ (BTAlphaTask*)withTime:(float)seconds alpha:(float)alpha target:(SPDisplayObject*)target {
     return [[BTAlphaTask alloc] initWithTime:seconds alpha:alpha target:target];
 }
 
-+ (BTAlphaTask *)withTime:(float)seconds alpha:(float)alpha interpolator:(BTInterpolator *)interp 
++ (BTAlphaTask*)withTime:(float)seconds alpha:(float)alpha interpolator:(BTInterpolator*)interp 
         target:(SPDisplayObject*)target {
     return [[BTAlphaTask alloc] initWithTime:seconds alpha:alpha interpolator:interp target:target];
 }
@@ -31,7 +31,7 @@
     return [self initWithTime:seconds alpha:alpha interpolator:BTInterpolator.LINEAR target:nil];
 }
 
-- (id)initWithTime:(float)seconds alpha:(float)alpha interpolator:(BTInterpolator *)interp {
+- (id)initWithTime:(float)seconds alpha:(float)alpha interpolator:(BTInterpolator*)interp {
     return [self initWithTime:seconds alpha:alpha interpolator:interp target:nil];
 }
 
@@ -39,7 +39,7 @@
     return [self initWithTime:seconds alpha:alpha interpolator:BTInterpolator.LINEAR target:target];
 }
 
-- (id)initWithTime:(float)seconds alpha:(float)alpha interpolator:(BTInterpolator *)interp target:(SPDisplayObject*)target {
+- (id)initWithTime:(float)seconds alpha:(float)alpha interpolator:(BTInterpolator*)interp target:(SPDisplayObject*)target {
     if (!(self = [super initWithTime:seconds interpolator:interp target:target])) return nil;
     _endAlpha = alpha;
     [_conns addConnection:[self.attached connectUnit:^{

@@ -5,7 +5,7 @@
 
 @interface BTApplicationDelegate : NSObject <UIApplicationDelegate> {
 @private
-    UIWindow *_window;
+    UIWindow* _window;
 }
 
 @end

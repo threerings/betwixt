@@ -5,11 +5,11 @@
 
 @interface BTApp (protected)
 
-- (void)run:(BTModeStack *)defaultStack;
+- (void)run:(BTModeStack*)defaultStack;
 - (void)cleanup;
 
 - (void)update:(float)dt;
-- (void)processTouches:(NSSet *)touches;
+- (void)processTouches:(NSSet*)touches;
 
 - (void)appDidBecomeActive;
 - (void)appWillResignActive;

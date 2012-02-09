@@ -12,21 +12,21 @@
     [_parent removeNode:self];
 }
 
-- (BTMode *)mode {
+- (BTMode*)mode {
     return _parent.mode;
 }
 
-- (RAUnitSignal *)attached {
+- (RAUnitSignal*)attached {
     if (_attached == nil) _attached = [[RAUnitSignal alloc] init];
     return _attached;
 }
 
-- (RAUnitSignal *)detached {
+- (RAUnitSignal*)detached {
     if (_detached == nil) _detached = [[RAUnitSignal alloc] init];
     return _detached;
 }
 
-- (RAConnectionGroup *)conns {
+- (RAConnectionGroup*)conns {
     if (_conns == nil) _conns = [[RAConnectionGroup alloc] init];
     return _conns;
 }

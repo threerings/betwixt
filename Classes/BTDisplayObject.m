@@ -5,7 +5,7 @@
 #import "BTNode+Protected.h"
 
 @interface BTSimpleDisplayObject : BTDisplayObject
-- (id)initWithDisplayObject:(SPDisplayObject *)disp;
+- (id)initWithDisplayObject:(SPDisplayObject*)disp;
 @end
 
 @implementation BTDisplayObject
@@ -26,16 +26,16 @@
     self.display.y = y;
 }
 
-- (SPPoint *)loc {
+- (SPPoint*)loc {
     return [SPPoint pointWithX:self.x y:self.y];
 }
 
-- (void)setLoc:(SPPoint *)loc {
+- (void)setLoc:(SPPoint*)loc {
     self.x = loc.x;
     self.y = loc.y;
 }
 
-- (SPDisplayObject *)display {
+- (SPDisplayObject*)display {
     [self doesNotRecognizeSelector:_cmd];
     return nil;
 }
@@ -45,7 +45,7 @@
     [super cleanup];
 }
 
-+ (BTDisplayObject *)create:(SPDisplayObject *)disp {
++ (BTDisplayObject*)create:(SPDisplayObject*)disp {
     return [[BTSimpleDisplayObject alloc] initWithDisplayObject:disp];
 }
 
@@ -53,10 +53,10 @@
 
 @implementation BTSimpleDisplayObject {
 @private
-    SPDisplayObject *_disp;
+    SPDisplayObject* _disp;
 }
 
-- (id)initWithDisplayObject:(SPDisplayObject *)disp {
+- (id)initWithDisplayObject:(SPDisplayObject*)disp {
     if (!(self = [super init])) {
         return nil;
     }

@@ -7,14 +7,14 @@
 
 @interface BTLoadingMode : BTMode {
 @protected
-    NSMutableArray *_filenames;
+    NSMutableArray* _filenames;
     int _filenameIdx;
 }
 
-@property (nonatomic,readonly) RAUnitSignal *loadComplete;
+@property (nonatomic,readonly) RAUnitSignal* loadComplete;
 
 - (id)init;
-- (void)addFiles:(NSString *)filename, ... NS_REQUIRES_NIL_TERMINATION;
+- (void)addFiles:(NSString*)filename, ... NS_REQUIRES_NIL_TERMINATION;
 
 @end
 

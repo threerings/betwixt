@@ -10,7 +10,7 @@
 }
 
 - (void)onRepeat {
-    BTNode *toRepeat = _creator();
+    BTNode* toRepeat = _creator();
     if (toRepeat == nil) [self detach];
     else {
         [toRepeat.detached connectUnit:^{ [self onRepeat]; }];
@@ -19,7 +19,7 @@
 }
 
 + (BTRepeatingTask*)withTaskCreator:(BTRepeatCreator)creator {
-    BTRepeatingTask *task = [[BTRepeatingTask alloc] init];
+    BTRepeatingTask* task = [[BTRepeatingTask alloc] init];
     task->_creator = creator;
     [task.attached connectUnit:^{ [task onRepeat]; }];
     return task;

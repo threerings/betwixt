@@ -4,6 +4,6 @@
 #import "BTInput.h"
 
 @interface BTInput (package)
-- (id)initWithMode:(BTMode *)mode;
-- (void)processTouches:(NSSet *)touches;
+- (id)initWithMode:(BTMode*)mode;
+- (void)processTouches:(NSSet*)touches;
 @end

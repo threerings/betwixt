@@ -5,9 +5,9 @@
 
 @interface BTSprite : BTDisplayObject {
 @protected
-    SPSprite *_sprite;
+    SPSprite* _sprite;
 }
 
-@property(nonatomic,readonly) SPSprite *sprite;
+@property(nonatomic,readonly) SPSprite* sprite;
 
 @end

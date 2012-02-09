@@ -14,19 +14,19 @@
 
 @implementation BTMovieResource {
 @public
-    NSMutableArray *layers;
-    NSMutableArray *labels;
+    NSMutableArray* layers;
+    NSMutableArray* labels;
 }
 
 - (id)initFromXml:(GDataXMLElement*)xml {
     if (!(self = [super init])) return nil;
     layers = [[NSMutableArray alloc] init];
-    GDataXMLElement *layersEl = [xml walkTo:@"DOMSymbolItem/timeline/DOMTimeline/layers"];
+    GDataXMLElement* layersEl = [xml walkTo:@"DOMSymbolItem/timeline/DOMTimeline/layers"];
     int frames = 0;
-    for (GDataXMLElement *layerEl in [layersEl elements]) {
-        BTMovieResourceLayer *layer = [[BTMovieResourceLayer alloc] initWithLayer:layerEl];
+    for (GDataXMLElement* layerEl in [layersEl elements]) {
+        BTMovieResourceLayer* layer = [[BTMovieResourceLayer alloc] initWithLayer:layerEl];
         [layers addObject:layer];
-        BTMovieResourceKeyframe *lastKf = [layer->keyframes lastObject];
+        BTMovieResourceKeyframe* lastKf = [layer->keyframes lastObject];
         int layerFrames = lastKf->index + lastKf->duration;
         if (layerFrames > frames) frames = layerFrames;
     }
@@ -34,7 +34,7 @@
     for (int ii = 0; ii < frames; ii++) {
         [labels insertObject:[[NSMutableArray alloc] init] atIndex:ii];
         if (ii == 0 || ii == frames - 1) {
-            NSString *label = ii == 0 ? BTMovieFirstFrame : BTMovieLastFrame;
+            NSString* label = ii == 0 ? BTMovieFirstFrame : BTMovieLastFrame;
             [[labels lastObject] addObject:label];
         }
     }
@@ -46,7 +46,7 @@
 }
 
 + (id<BTResourceFactory>)sharedFactory {
-    static BTMovieResourceFactory *instance;
+    static BTMovieResourceFactory* instance;
     @synchronized(self) {
         if (instance == nil) instance = [[BTMovieResourceFactory alloc] init];
     }
@@ -58,7 +58,7 @@
 
 @implementation BTMovieResourceFactory
 
-- (BTResource *)create:(GDataXMLElement *)xml {
+- (BTResource*)create:(GDataXMLElement*)xml {
     return [[BTMovieResource alloc] initFromXml:xml];
 }
 

@@ -12,7 +12,7 @@
 @end
 
 @implementation BTLoadingMode {
-    RAUnitSignal *_loadComplete;
+    RAUnitSignal* _loadComplete;
 }
 
 - (id)init {
@@ -33,23 +33,23 @@
     return self;
 }
 
-- (void)addFiles:(NSString *)filename, ... {
+- (void)addFiles:(NSString*)filename, ... {
     
     [_filenames addObject:filename];
     va_list args;
     va_start(args, filename);
-    while ((filename = va_arg(args, NSString *)) != nil) {
+    while ((filename = va_arg(args, NSString*)) != nil) {
         [_filenames addObject:filename];
     }
     va_end(args);
 }
 
-- (BTLoadingMode *)add:(NSString *)filename {
+- (BTLoadingMode*)add:(NSString*)filename {
     [_filenames addObject:filename];
     return self;
 }
 
-- (void)onError:(NSException *)err {
+- (void)onError:(NSException*)err {
     NSLog(@"LoadingMode error: %@", err);
 }
 
@@ -58,12 +58,12 @@
         [_loadComplete emit];
         return;
     }
-    NSString *filename = [_filenames objectAtIndex:_filenameIdx];
+    NSString* filename = [_filenames objectAtIndex:_filenameIdx];
 
-    __weak BTLoadingMode *this = self;
+    __weak BTLoadingMode* this = self;
     [BTApp.app.resourceManager loadResourceFile:filename onComplete:^{
         [this loadNextFile];
-    } onError:^(NSException *err) {
+    } onError:^(NSException* err) {
         [this onError:err];
     }];
 }

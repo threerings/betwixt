@@ -6,7 +6,7 @@
 
 @interface BTObject : BTNode <BTNodeContainer> {
 @package
-    NSMutableSet *_children;
+    NSMutableSet* _children;
 }
 
 - (id)init;

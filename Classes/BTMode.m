@@ -13,21 +13,21 @@
 
 @interface BTRootNode : BTSprite {
 @private
-    __weak BTMode *_mode;
+    __weak BTMode* _mode;
 }
-- (id)initWithMode:(BTMode *)mode;
-- (BTMode *)mode;
+- (id)initWithMode:(BTMode*)mode;
+- (BTMode*)mode;
 @end
 
 @implementation BTRootNode
-- (id)initWithMode:(BTMode *)mode {
+- (id)initWithMode:(BTMode*)mode {
     if (!(self = [super init])) {
         return nil;
     }
     _mode = mode;
     return self;
 }
-- (BTMode *)mode {
+- (BTMode*)mode {
     return _mode;
 }
 @end
@@ -70,7 +70,7 @@
     [_update emitEvent:dt];
 }
 
-- (void)processTouches:(NSSet *)touches {
+- (void)processTouches:(NSSet*)touches {
     [_input processTouches:touches];
 }
 
@@ -94,29 +94,29 @@
 }
 
 - (void)addKeys:(BTNode<BTKeyed>*)node {
-    NSArray *keys = ((id<BTKeyed>)node).keys;
+    NSArray* keys = ((id<BTKeyed>)node).keys;
     [node.detached connectUnit:^ {
-        for (NSString *key in keys) {
+        for (NSString* key in keys) {
             [_keyedObjects removeObjectForKey:key];
         }
     }];
-    for (NSString *key in keys) {
+    for (NSString* key in keys) {
         NSAssert1(![_keyedObjects objectForKey:key], @"Object key '%@' already used", key);
         [_keyedObjects setObject:node forKey:key];
     }
 }
 
 - (void)addGroups:(BTNode<BTGrouped>*)node {
-    NSArray *groups = ((id<BTGrouped>)node).groups;
+    NSArray* groups = ((id<BTGrouped>)node).groups;
     [node.detached connectUnit:^ {
-        for (NSString *group in groups) {
-            NSMutableArray *members = [_groups objectForKey:group];
+        for (NSString* group in groups) {
+            NSMutableArray* members = [_groups objectForKey:group];
             [members removeObject:node];
             if ([members count] == 0) [_groups removeObjectForKey:group];
         }
     }];
-    for (NSString *group in groups) {
-        NSMutableArray *members = [_groups objectForKey:group];
+    for (NSString* group in groups) {
+        NSMutableArray* members = [_groups objectForKey:group];
         if (!members) {
             members = [[NSMutableArray alloc] init];
             [_groups setObject:members forKey:group];
@@ -125,11 +125,11 @@
     }
 }
 
-- (SPSprite *)sprite {
+- (SPSprite*)sprite {
     return _rootNode.sprite;
 }
 
-- (OOOBlockToken*)listenToDispatcher:(SPEventDispatcher *)dispatcher forEvent:(NSString *)eventType withBlock:(OOOBlockListener)block {
+- (OOOBlockToken*)listenToDispatcher:(SPEventDispatcher*)dispatcher forEvent:(NSString*)eventType withBlock:(OOOBlockListener)block {
     return [_rootNode listenToDispatcher:dispatcher forEvent:eventType withBlock:block];
 }
 
@@ -145,11 +145,11 @@
     [_rootNode addNode:object withName:name];
 }
 
-- (void)addNode:(BTNode *)node withName:(NSString *)name replaceExisting:(BOOL)replaceExisting {
+- (void)addNode:(BTNode*)node withName:(NSString*)name replaceExisting:(BOOL)replaceExisting {
     [_rootNode addNode:node withName:name replaceExisting:replaceExisting];
 }
 
-- (void)addAndDisplayNode:(BTDisplayObject *)node onParent:(SPDisplayObjectContainer *)parent {
+- (void)addAndDisplayNode:(BTDisplayObject*)node onParent:(SPDisplayObjectContainer*)parent {
     [_rootNode addAndDisplayNode:node onParent:parent];
 }
 

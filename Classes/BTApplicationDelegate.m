@@ -14,7 +14,7 @@
     return self;
 }
 
-- (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+- (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions {
     [BTApp create:_window];
     [_window makeKeyAndVisible];
     return YES;

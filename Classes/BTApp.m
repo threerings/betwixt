@@ -11,11 +11,11 @@
 #import "BTMovieResource.h"
 
 static Class gClass = nil;
-static BTApp *gInstance = nil;
+static BTApp* gInstance = nil;
 
 // We override SPStage in order to handle our own input and update processing.
 @interface BTStage : SPStage
-@property(nonatomic,weak) BTApp *app;
+@property(nonatomic,weak) BTApp* app;
 @end
 
 @implementation BTApp
@@ -25,7 +25,7 @@ static BTApp *gInstance = nil;
     gClass = theClass;
 }
 
-+ (void)create:(UIWindow *)window {
++ (void)create:(UIWindow*)window {
     @synchronized(self) {
         NSAssert(gInstance == nil, @"BTApp has already been created");
         NSAssert(gClass != nil, @"[BTApp registerAppClass:] has not been called");
@@ -35,7 +35,7 @@ static BTApp *gInstance = nil;
     [gInstance runInternal];
 }
 
-+ (BTApp *)app {
++ (BTApp*)app {
     return gInstance;
 }
 
@@ -53,7 +53,7 @@ static BTApp *gInstance = nil;
 
     // Setup Sparrow
     [BTStage setSupportHighResolutions:YES];
-    BTStage *stage = [[BTStage alloc] init];
+    BTStage* stage = [[BTStage alloc] init];
     stage.app = self;
     
     _view = [[SPView alloc] initWithFrame:_window.bounds];
@@ -82,7 +82,7 @@ static BTApp *gInstance = nil;
     //[SPAudioEngine stop];
 }
 
-- (void)run:(BTModeStack *)defaultStack {
+- (void)run:(BTModeStack*)defaultStack {
     NSLog(@"BTApp.run must be implemented by a subclass");
     [self doesNotRecognizeSelector:_cmd];
 }
@@ -96,7 +96,7 @@ static BTApp *gInstance = nil;
 }
 
 - (void)update:(float)dt {
-    for (BTModeStack *stack in _modeStacks) {
+    for (BTModeStack* stack in _modeStacks) {
         [stack update:dt];
     }
 }
@@ -105,14 +105,14 @@ static BTApp *gInstance = nil;
     return _view.stage.frameRate;
 }
 
-- (void)processTouches:(NSSet *)touches {
-    for (BTModeStack *stack in _modeStacks) {
+- (void)processTouches:(NSSet*)touches {
+    for (BTModeStack* stack in _modeStacks) {
         [stack processTouches:touches];
     }
 }
 
-- (BTModeStack *)createModeStack {
-    BTModeStack *stack = [[BTModeStack alloc] init];
+- (BTModeStack*)createModeStack {
+    BTModeStack* stack = [[BTModeStack alloc] init];
     [_view.stage addChild:stack->_sprite];
     [_modeStacks addObject:stack];
     return stack;
@@ -128,7 +128,7 @@ static BTApp *gInstance = nil;
     [self.app update:(float) seconds];
 }
 
-- (void)processTouches:(NSSet *)touches {
+- (void)processTouches:(NSSet*)touches {
     [self.app processTouches:touches];
 }
 

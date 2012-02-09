@@ -13,7 +13,7 @@
 @implementation BTTextureResource
 
 + (id<BTResourceFactory>)sharedFactory {
-    static BTTextureFactory *instance = nil;
+    static BTTextureFactory* instance = nil;
     @synchronized(self) {
         if (instance == nil) {
             instance = [[BTTextureFactory alloc] init];
@@ -22,11 +22,11 @@
     return instance;
 }
 
-+ (BTTextureResource *)require:(NSString *)name {
++ (BTTextureResource*)require:(NSString*)name {
     return [BTApp.app.resourceManager requireResource:name ofType:[BTTextureResource class]];
 }
 
-- (id)initWithXml:(GDataXMLElement *)xml {
+- (id)initWithXml:(GDataXMLElement*)xml {
     if (!(self = [super init])) return nil;
     _texture = [[SPTexture alloc] initWithContentsOfFile:[xml stringAttribute:@"filename"]];
     _offset = [[SPPoint alloc] initWithX:[xml intAttribute:@"xOffset" defaultVal:0]
@@ -40,7 +40,7 @@
 
 @implementation BTTextureFactory
 
-- (BTResource *)create:(GDataXMLElement *)xml {
+- (BTResource*)create:(GDataXMLElement*)xml {
     return [[BTTextureResource alloc] initWithXml:xml];
 }
 

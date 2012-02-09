@@ -14,7 +14,7 @@ NSString * const BTMovieLastFrame = @"BTMovieLastFrame";
 @interface BTMovieLayer : SPSprite {
 @public
     int keyframeIdx;
-    NSMutableArray *keyframes;
+    NSMutableArray* keyframes;
 }
 @end
 
@@ -28,9 +28,9 @@ NSString * const BTMovieLastFrame = @"BTMovieLastFrame";
     if (!(self = [super init])) return nil;
     self.name = layer->name;
     keyframes = layer->keyframes;
-    BTTextureResource *tex = [BTApp.app.resourceManager requireResource:[self kfAtIdx:0]->libraryItem];
+    BTTextureResource* tex = [BTApp.app.resourceManager requireResource:[self kfAtIdx:0]->libraryItem];
     // TODO - texture offset
-    SPImage *img = [[SPImage alloc] initWithTexture:tex.texture];
+    SPImage* img = [[SPImage alloc] initWithTexture:tex.texture];
     img.x = tex.offset.x;
     img.y = tex.offset.y;
     [self addChild:img];
@@ -41,7 +41,7 @@ NSString * const BTMovieLastFrame = @"BTMovieLastFrame";
     while (keyframeIdx < [keyframes count] - 1 && [self kfAtIdx:keyframeIdx + 1]->index <= frame) {
         keyframeIdx++;
     }
-    BTMovieResourceKeyframe *kf = [self kfAtIdx:keyframeIdx];
+    BTMovieResourceKeyframe* kf = [self kfAtIdx:keyframeIdx];
     if (keyframeIdx == [keyframes count] - 1|| kf->index == frame) {
         self.x = kf->x;
         self.y = kf->y;
@@ -51,7 +51,7 @@ NSString * const BTMovieLastFrame = @"BTMovieLastFrame";
     } else {
         // TODO - interpolation types other than linear
         float interped = (frame - kf->index)/(float)kf->duration;
-        BTMovieResourceKeyframe *nextKf = [self kfAtIdx:keyframeIdx + 1];
+        BTMovieResourceKeyframe* nextKf = [self kfAtIdx:keyframeIdx + 1];
         self.x = kf->x + (nextKf->x - kf->x) * interped;
         self.y = kf->y + (nextKf->y - kf->y) * interped;
         self.scaleX = kf->scaleX + (nextKf->scaleX - kf->scaleX) * interped;
@@ -65,10 +65,10 @@ NSString * const BTMovieLastFrame = @"BTMovieLastFrame";
     BOOL _goingToFrame;
     int _pendingFrame;
     int _frame, _stopFrame;
-    RABoolValue *_playing;
+    RABoolValue* _playing;
     float _playTime, _duration;
-    RAObjectSignal *_labelPassed;
-    NSArray *_labels;
+    RAObjectSignal* _labelPassed;
+    NSArray* _labels;
 }
 
 - (int)frameForLabel:(NSString*)label {
@@ -81,7 +81,7 @@ NSString * const BTMovieLastFrame = @"BTMovieLastFrame";
         userInfo:nil]);
 }
 
-- (RAConnection*)monitorLabel:(NSString *)label withUnit:(RAUnitBlock)slot {
+- (RAConnection*)monitorLabel:(NSString*)label withUnit:(RAUnitBlock)slot {
     return [_labelPassed connectSlot:^(id labelFired) {
         if ([labelFired isEqual:label]) slot();
     }];
@@ -89,7 +89,7 @@ NSString * const BTMovieLastFrame = @"BTMovieLastFrame";
 
 - (void)fireLabelsFrom:(int)startFrame to:(int)endFrame {
     for (int ii = startFrame; ii <= endFrame; ii++) {
-        for (NSString *label in [_labels objectAtIndex:ii]) [_labelPassed emitEvent:label];
+        for (NSString* label in [_labels objectAtIndex:ii]) [_labelPassed emitEvent:label];
     }
 }
 
@@ -102,8 +102,8 @@ NSString * const BTMovieLastFrame = @"BTMovieLastFrame";
     BOOL differentFrame = newFrame != _frame;
     BOOL wrapped = newFrame < _frame;
     if (differentFrame) {
-        if (wrapped) for (BTMovieLayer *layer in _sprite) layer->keyframeIdx = 0;
-        for (BTMovieLayer *layer in _sprite) [layer drawFrame:newFrame];
+        if (wrapped) for (BTMovieLayer* layer in _sprite) layer->keyframeIdx = 0;
+        for (BTMovieLayer* layer in _sprite) [layer drawFrame:newFrame];
     }
 
     // Update the frame before firing, so if firing changes the frame, it should stick.
@@ -194,8 +194,8 @@ NSString * const BTMovieLastFrame = @"BTMovieLastFrame";
 
 - (id)initWithLayers:(NSMutableArray*)layers andLabels:(NSArray*)labels {
     if (!(self = [super init])) return nil;
-    for (BTMovieResourceLayer *layer in layers) {
-        BTMovieLayer *mLayer = [[BTMovieLayer alloc] initWithLayer:layer];
+    for (BTMovieResourceLayer* layer in layers) {
+        BTMovieLayer* mLayer = [[BTMovieLayer alloc] initWithLayer:layer];
         [_sprite addChild:mLayer];
     }
     _pendingFrame = NO_FRAME;

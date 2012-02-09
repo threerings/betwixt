@@ -10,16 +10,16 @@
 
 @interface BTTextureResource : BTResource {
 @protected
-    SPTexture *_texture;
-    SPPoint *_offset;
+    SPTexture* _texture;
+    SPPoint* _offset;
 }
 
 + (id<BTResourceFactory>) sharedFactory;
-+ (BTTextureResource *)require:(NSString *)name;
++ (BTTextureResource*)require:(NSString*)name;
 
-@property(nonatomic,readonly) SPTexture *texture;
-@property(nonatomic,readonly) SPPoint *offset;
+@property(nonatomic,readonly) SPTexture* texture;
+@property(nonatomic,readonly) SPPoint* offset;
 
-- (id)initWithXml:(GDataXMLElement *)xml;
+- (id)initWithXml:(GDataXMLElement*)xml;
 
 @end

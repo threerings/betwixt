@@ -7,8 +7,8 @@
 
 @interface BTMovieResourceLayer : NSObject {
 @public
-    NSString *name;
-    NSMutableArray *keyframes;
+    NSString* name;
+    NSMutableArray* keyframes;
 }
 -initWithLayer:(GDataXMLElement*)layerEl;
 @end
