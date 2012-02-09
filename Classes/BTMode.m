@@ -42,6 +42,7 @@
     _update = [[RAFloatSignal alloc] init];
     _entered = [[RAUnitSignal alloc] init];
     _exited = [[RAUnitSignal alloc] init];
+    _conns = [[RAConnectionGroup alloc] init];
     _keyedObjects = [[NSMutableDictionary alloc] init];
     _groups = [[NSMutableDictionary alloc] init];
     
@@ -89,6 +90,10 @@
 - (void)shutdownInternal {
     [self destroy];
     _stack = nil;
+    [_update disconnectAll];
+    [_entered disconnectAll];
+    [_exited disconnectAll];
+    [_conns disconnectAll];
     [_rootNode cleanup];
     _rootNode = nil;
 }

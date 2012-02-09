@@ -15,6 +15,7 @@
     RAFloatSignal* _update;
     RAUnitSignal* _entered;
     RAUnitSignal* _exited;
+    RAConnectionGroup* _conns;
     BTSprite* _rootNode;
     NSMutableDictionary* _keyedObjects;
     NSMutableDictionary* _groups;
