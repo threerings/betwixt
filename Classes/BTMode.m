@@ -60,10 +60,6 @@
     return self;
 }
 
-- (SPDisplayObjectContainer *)container {
-    return _rootNode.container;
-}
-
 - (void)setup {
 }
 
@@ -153,20 +149,16 @@
     [_rootNode addNode:node withName:name replaceExisting:replaceExisting];
 }
 
+- (void)addAndDisplayNode:(BTDisplayObject *)node onParent:(SPDisplayObjectContainer *)parent {
+    [_rootNode addAndDisplayNode:node onParent:parent];
+}
+
 - (void)removeNode:(BTNode*)object {
     [_rootNode removeNode:object];
 }
 
 - (BTNode*)nodeForName:(NSString*)name {
     return [_rootNode nodeForName:name];
-}
-
-- (void)addAndDisplayNode:(BTDisplayObject *)node {
-    [_rootNode addAndDisplayNode:node];
-}
-
-- (void)addAndDisplayNode:(BTDisplayObject *)node onParent:(SPDisplayObjectContainer *)parent {
-    [_rootNode addAndDisplayNode:node onParent:parent];
 }
 
 @synthesize update=_update, entered=_entered, exited=_exited, stack=_stack, input=_input;

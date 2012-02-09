@@ -7,6 +7,7 @@
 #import "BTKeyed.h"
 #import "BTUpdatable.h"
 #import "BTObject.h"
+#import "BTDisplayObject.h"
 
 #import "BTNode+Package.h"
 #import "BTNode+Protected.h"
@@ -98,6 +99,11 @@
         [[self nodeForName:name] detach];
     }
     [self addNode:object withName:name];
+}
+
+- (void)addAndDisplayNode:(BTDisplayObject *)node onParent:(SPDisplayObjectContainer *)parent {
+    [self addNode:node];
+    [parent addChild:node.display];
 }
 
 - (void)removeNode:(BTNode*)object {

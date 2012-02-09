@@ -9,7 +9,6 @@
 #import "BTApp.h"
 #import "BTApplicationDelegate.h"
 #import "BTCallbacks.h"
-#import "BTDisplayNodeContainer.h"
 #import "BTDisplayObject.h"
 #import "BTDragger.h"
 #import "BTGrouped.h"

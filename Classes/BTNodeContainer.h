@@ -5,13 +5,17 @@
 
 @class BTNode;
 @class BTMode;
+@class BTDisplayObject;
 
 @protocol BTNodeContainer
 
 - (BTMode *)mode;
+
 - (void)addNode:(BTNode *)node;
 - (void)addNode:(BTNode *)node withName:(NSString *)name;
 - (void)addNode:(BTNode *)node withName:(NSString *)name replaceExisting:(BOOL)replaceExisting;
+- (void)addAndDisplayNode:(BTDisplayObject *)node onParent:(SPDisplayObjectContainer *)parent;
+
 - (BTNode*)nodeForName:(NSString *)name;
 - (void)removeNode:(BTNode *)node;
 

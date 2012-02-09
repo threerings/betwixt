@@ -36,7 +36,6 @@
 		229B463314D8C439005FC8E9 /* BTHasLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = 229B463214D8C439005FC8E9 /* BTHasLocation.h */; };
 		229B463614D8C525005FC8E9 /* SPDisplayObject+Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 229B463414D8C525005FC8E9 /* SPDisplayObject+Extensions.h */; };
 		229B463714D8C525005FC8E9 /* SPDisplayObject+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 229B463514D8C525005FC8E9 /* SPDisplayObject+Extensions.m */; };
-		229B467914D9FEAE005FC8E9 /* BTDisplayNodeContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = 229B467814D9FEAE005FC8E9 /* BTDisplayNodeContainer.h */; };
 		22C85EAD14DB225400F9EC07 /* BTMath.h in Headers */ = {isa = PBXBuildFile; fileRef = 22C85EAB14DB225400F9EC07 /* BTMath.h */; };
 		22C85EAE14DB225400F9EC07 /* BTMath.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C85EAC14DB225400F9EC07 /* BTMath.m */; };
 		22C85EB614DB344100F9EC07 /* BTNode+Protected.h in Headers */ = {isa = PBXBuildFile; fileRef = 22C85EB514DB344100F9EC07 /* BTNode+Protected.h */; };
@@ -229,7 +228,6 @@
 		229B463214D8C439005FC8E9 /* BTHasLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTHasLocation.h; sourceTree = "<group>"; };
 		229B463414D8C525005FC8E9 /* SPDisplayObject+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SPDisplayObject+Extensions.h"; sourceTree = "<group>"; };
 		229B463514D8C525005FC8E9 /* SPDisplayObject+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SPDisplayObject+Extensions.m"; sourceTree = "<group>"; };
-		229B467814D9FEAE005FC8E9 /* BTDisplayNodeContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTDisplayNodeContainer.h; sourceTree = "<group>"; };
 		22C85EAB14DB225400F9EC07 /* BTMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTMath.h; sourceTree = "<group>"; };
 		22C85EAC14DB225400F9EC07 /* BTMath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTMath.m; sourceTree = "<group>"; };
 		22C85EB514DB344100F9EC07 /* BTNode+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BTNode+Protected.h"; sourceTree = "<group>"; };
@@ -392,7 +390,6 @@
 				CBF2AA9A14765EA5000C022D /* BTApplicationDelegate.h */,
 				CBF2AA9B14765EA5000C022D /* BTApplicationDelegate.m */,
 				222199A814D2271D009B764F /* BTCallbacks.h */,
-				229B467814D9FEAE005FC8E9 /* BTDisplayNodeContainer.h */,
 				22C85F0814DB784900F9EC07 /* BTDisplayObject.h */,
 				22C85F0914DB784A00F9EC07 /* BTDisplayObject.m */,
 				22448E0314E0BD77001CF5CE /* BTDragger.h */,
@@ -690,7 +687,6 @@
 				229B463314D8C439005FC8E9 /* BTHasLocation.h in Headers */,
 				229B463614D8C525005FC8E9 /* SPDisplayObject+Extensions.h in Headers */,
 				CB69E37914D8D07E00E7C18D /* BTParallelTask.h in Headers */,
-				229B467914D9FEAE005FC8E9 /* BTDisplayNodeContainer.h in Headers */,
 				22C85EAD14DB225400F9EC07 /* BTMath.h in Headers */,
 				22C85EB614DB344100F9EC07 /* BTNode+Protected.h in Headers */,
 				22C85F0A14DB784B00F9EC07 /* BTDisplayObject.h in Headers */,

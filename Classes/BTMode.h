@@ -1,13 +1,14 @@
 //
 // Betwixt - Copyright 2012 Three Rings Design
 
-#import "BTDisplayNodeContainer.h"
+#import "BTNodeContainer.h"
 
 @class BTModeStack;
 @class BTSprite;
 @class BTInput;
+@class BTDisplayObject;
 
-@interface BTMode : NSObject<BTDisplayNodeContainer> {
+@interface BTMode : NSObject <BTNodeContainer> {
 @package
     __weak BTModeStack *_stack;
     BTInput *_input;
@@ -22,12 +23,6 @@
 - (BTNode*)nodeForKey:(NSString*)key;
 /// Returns the nodes in the group or nil if there are no nodes in the group.
 - (NSArray*)nodesForGroup:(NSString*)group;
-
-- (void)addNode:(BTNode*)node;
-- (void)addNode:(BTNode*)node withName:(NSString*)name;
-- (void)addNode:(BTNode *)node withName:(NSString *)name replaceExisting:(BOOL)replaceExisting;
-- (BTNode*)nodeForName:(NSString*)name;
-- (void)removeNode:(BTNode*)node;
 
 @property(nonatomic,readonly) RAFloatSignal *update;
 @property(nonatomic,readonly) RAUnitSignal *entered;

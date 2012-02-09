@@ -10,19 +10,6 @@
     return self;
 }
 
-- (void)addAndDisplayNode:(BTDisplayObject *)node {
-    [self addAndDisplayNode:node onParent:self.container];
-}
-
-- (void)addAndDisplayNode:(BTDisplayObject *)node onParent:(SPDisplayObjectContainer *)parent {
-    [self addNode:node];
-    [parent addChild:node.display];
-}
-
-- (SPDisplayObjectContainer *)container {
-    return _sprite;
-}
-
 - (SPDisplayObject *)display {
     return _sprite;
 }
