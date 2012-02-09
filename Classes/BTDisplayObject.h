@@ -2,14 +2,10 @@
 // Betwixt - Copyright 2012 Three Rings Design
 
 #import "BTObject.h"
-#import "BTHasLocation.h"
 
-@interface BTDisplayObject : BTObject<BTHasLocation>
+@interface BTDisplayObject : BTObject
 
 @property(nonatomic,readonly) SPDisplayObject *display; // abstract
-@property(nonatomic,assign) float x;
-@property(nonatomic,assign) float y;
-@property(nonatomic,copy) SPPoint *loc;
 
 + (BTDisplayObject *)create:(SPDisplayObject *)disp;
 
