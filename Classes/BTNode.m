@@ -8,6 +8,8 @@
 
 @implementation BTNode
 
+- (void)attached {}
+
 - (void)detach {
     [_parent removeNode:self];
 }
