@@ -28,6 +28,10 @@
 		22448E0814E0C1ED001CF5CE /* BTInput+Package.h in Headers */ = {isa = PBXBuildFile; fileRef = 22448E0714E0C1ED001CF5CE /* BTInput+Package.h */; };
 		22448E0E14E3356A001CF5CE /* BTScaleTask.h in Headers */ = {isa = PBXBuildFile; fileRef = 22448E0C14E3356A001CF5CE /* BTScaleTask.h */; };
 		22448E0F14E3356A001CF5CE /* BTScaleTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 22448E0D14E3356A001CF5CE /* BTScaleTask.m */; };
+		22448E2914E4A7A4001CF5CE /* SPPoint+Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 22448E2714E4A79D001CF5CE /* SPPoint+Extensions.h */; };
+		22448E2A14E4A7A4001CF5CE /* SPPoint+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 22448E2814E4A7A0001CF5CE /* SPPoint+Extensions.m */; };
+		22448E2D14E4A938001CF5CE /* SPRectangle+Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 22448E2B14E4A931001CF5CE /* SPRectangle+Extensions.h */; };
+		22448E2E14E4A938001CF5CE /* SPRectangle+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 22448E2C14E4A933001CF5CE /* SPRectangle+Extensions.m */; };
 		229B45C314D786B6005FC8E9 /* BTDurationTask.h in Headers */ = {isa = PBXBuildFile; fileRef = 229B45C114D786B5005FC8E9 /* BTDurationTask.h */; };
 		229B45C414D786B6005FC8E9 /* BTDurationTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 229B45C214D786B6005FC8E9 /* BTDurationTask.m */; };
 		229B45C914D787F5005FC8E9 /* BTDurationTask+Protected.h in Headers */ = {isa = PBXBuildFile; fileRef = 229B45C814D787F4005FC8E9 /* BTDurationTask+Protected.h */; };
@@ -220,6 +224,10 @@
 		22448E0714E0C1ED001CF5CE /* BTInput+Package.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BTInput+Package.h"; sourceTree = "<group>"; };
 		22448E0C14E3356A001CF5CE /* BTScaleTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTScaleTask.h; sourceTree = "<group>"; };
 		22448E0D14E3356A001CF5CE /* BTScaleTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTScaleTask.m; sourceTree = "<group>"; };
+		22448E2714E4A79D001CF5CE /* SPPoint+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SPPoint+Extensions.h"; sourceTree = "<group>"; };
+		22448E2814E4A7A0001CF5CE /* SPPoint+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SPPoint+Extensions.m"; sourceTree = "<group>"; };
+		22448E2B14E4A931001CF5CE /* SPRectangle+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SPRectangle+Extensions.h"; sourceTree = "<group>"; };
+		22448E2C14E4A933001CF5CE /* SPRectangle+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SPRectangle+Extensions.m"; sourceTree = "<group>"; };
 		229B45C114D786B5005FC8E9 /* BTDurationTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTDurationTask.h; sourceTree = "<group>"; };
 		229B45C214D786B6005FC8E9 /* BTDurationTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTDurationTask.m; sourceTree = "<group>"; };
 		229B45C814D787F4005FC8E9 /* BTDurationTask+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BTDurationTask+Protected.h"; sourceTree = "<group>"; };
@@ -426,6 +434,10 @@
 				229B463514D8C525005FC8E9 /* SPDisplayObject+Extensions.m */,
 				CB7ABCAC147C52D400EC6AEC /* SPEventDispatcher+BlockListener.h */,
 				CB7ABCAD147C52D400EC6AEC /* SPEventDispatcher+BlockListener.m */,
+				22448E2714E4A79D001CF5CE /* SPPoint+Extensions.h */,
+				22448E2814E4A7A0001CF5CE /* SPPoint+Extensions.m */,
+				22448E2B14E4A931001CF5CE /* SPRectangle+Extensions.h */,
+				22448E2C14E4A933001CF5CE /* SPRectangle+Extensions.m */,
 				CBC4524414D21692008CC04D /* Impl */,
 				22C7178C14C0E0000014B656 /* Resources */,
 				CB24CBBB149FF75C004BAA57 /* Tasks */,
@@ -697,6 +709,8 @@
 				22448E0514E0BD77001CF5CE /* BTDragger.h in Headers */,
 				22448E0814E0C1ED001CF5CE /* BTInput+Package.h in Headers */,
 				22448E0E14E3356A001CF5CE /* BTScaleTask.h in Headers */,
+				22448E2914E4A7A4001CF5CE /* SPPoint+Extensions.h in Headers */,
+				22448E2D14E4A938001CF5CE /* SPRectangle+Extensions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -888,6 +902,8 @@
 				22448DFA14E09B20001CF5CE /* BTInput.m in Sources */,
 				22448E0614E0BD77001CF5CE /* BTDragger.m in Sources */,
 				22448E0F14E3356A001CF5CE /* BTScaleTask.m in Sources */,
+				22448E2A14E4A7A4001CF5CE /* SPPoint+Extensions.m in Sources */,
+				22448E2E14E4A938001CF5CE /* SPRectangle+Extensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

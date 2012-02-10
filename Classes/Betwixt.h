@@ -24,6 +24,8 @@
 #import "BTSprite.h"
 #import "SPEventDispatcher+BlockListener.h"
 #import "SPDisplayObject+Extensions.h"
+#import "SPPoint+Extensions.h"
+#import "SPRectangle+Extensions.h"
 
 // Resources
 #import "GDataXMLException.h"
