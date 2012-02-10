@@ -17,21 +17,21 @@
 
 - (void)attached {
     [super attached];
-    
-    [_conns addConnection:[self.detached connectUnit:^{
+
+    [_conns onReactor:self.detached connectUnit:^{
         if (_position == [_nodes count]) return;
         BTNode* toDetach = [_nodes objectAtIndex:_position];
         _position = [_nodes count];
         [toDetach detach];
-    }]];
-    
+    }];
+
     for (BTNode* node in _nodes) {
         [node.detached connectUnit:^{
             if (++_position >= [_nodes count]) [self detach];
             else [self.parent addNode:[_nodes objectAtIndex:_position]];
         }];
     }
-    
+
     // Kick off the first task
     [self.parent addNode:[_nodes objectAtIndex:0]];
 }
