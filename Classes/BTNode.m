@@ -8,7 +8,12 @@
 
 @implementation BTNode
 
-- (void)attached {}
+- (void)attachedInternal {
+    [self attached];
+}
+
+- (void)attached {
+}
 
 - (void)detach {
     [_parent removeNode:self];
@@ -40,10 +45,10 @@
     _isDetached = YES;
 }
 
-- (BOOL)isDetached {
-    return _isDetached;
+- (BOOL)isAttached {
+    return (_parent != nil);
 }
 
-@synthesize parent=_parent;
+@synthesize parent=_parent, isDetached=_isDetached;
 
 @end

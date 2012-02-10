@@ -19,9 +19,20 @@
 @property (nonatomic, readonly) NSMutableDictionary* tokenDispatchers;
 @end
 
+@interface BTPendingChildNode : NSObject {
+@public
+    BTNode *node;
+    NSString *name;
+    BOOL replaceExisting;
+    SPDisplayObjectContainer *displayParent;
+}
+@end
+@implementation BTPendingChildNode @end
+
 @implementation BTObject {
     NSMutableDictionary* _tokenDispatchers;
     NSMutableDictionary* _namedObjects;
+    NSMutableArray* _pendingChildren;
 }
 
 - (id)init {
@@ -49,6 +60,11 @@
     return _namedObjects;
 }
 
+- (NSMutableArray*)pendingChildren {
+    if (_pendingChildren == nil) _pendingChildren = [NSMutableArray array];
+    return _pendingChildren;
+}
+
 - (OOOBlockToken*)listenToDispatcher:(SPEventDispatcher*)dispatcher forEvent:(NSString*)eventType withBlock:(OOOBlockListener)block {
     OOOBlockToken* token = [dispatcher addEventListenerForType:eventType listener:block];
     [self.tokenDispatchers setObject:[NSValue valueWithNonretainedObject:dispatcher] forKey:token];
@@ -67,51 +83,93 @@
     [self.namedObjects setObject:node forKey:name];
 }
 
-- (void)addNode:(BTNode*)object {
-    NSAssert(object->_parent == nil, @"Adding attached object");
+- (void)addNodeInternal:(BTNode*)node withName:(NSString*)name 
+        replaceExisting:(BOOL)replaceExisting parent:(SPDisplayObjectContainer*)parent {
+    
     NSAssert(!self.isDetached, @"Adding object to detached object");
-    NSAssert(!object.isDetached, @"You cannot re-add a detached object");
-    [_children addObject:object];
-    object->_parent = self;
-    if ([object conformsToProtocol:@protocol(BTKeyed)]) {
-        [self.mode addKeys:(BTNode<BTKeyed>*)object];
+    NSAssert(!node.isAttached, @"Cannot add an already-attached object");
+    NSAssert(!node.isDetached, @"Cannot re-add a detached object");
+    
+    // If we're not yet attached to the mode, we'll attach this node when we are
+    if (!self.isAttached) {
+        BTPendingChildNode *pendingChild = [[BTPendingChildNode alloc] init];
+        pendingChild->node = node;
+        pendingChild->name = name;
+        pendingChild->replaceExisting = replaceExisting;
+        pendingChild->displayParent = parent;
+        [self.pendingChildren addObject:pendingChild];
+        return;
     }
-    if ([object conformsToProtocol:@protocol(BTGrouped)]) {
-        [self.mode addGroups:(BTNode<BTGrouped>*)object];
+    
+    [_children addObject:node];
+    node->_parent = self;
+    
+    if ([node conformsToProtocol:@protocol(BTKeyed)]) {
+        [self.mode addKeys:(BTNode<BTKeyed>*)node];
     }
-    [object attached];
+    if ([node conformsToProtocol:@protocol(BTGrouped)]) {
+        [self.mode addGroups:(BTNode<BTGrouped>*)node];
+    }
     
     // If the object is BTUpdatable, wire up its update function to the update event
-    // (Ensure the object hasn't already been detached, first)
-    if (!object.isDetached && [object conformsToProtocol:@protocol(BTUpdatable)]) {
-        __weak BTNode<BTUpdatable>* obj = (BTNode<BTUpdatable>*)object;
-        [object.conns addConnection:[self.mode.update connectSlot:^(float dt) {
+    if ([node conformsToProtocol:@protocol(BTUpdatable)]) {
+        __weak BTNode<BTUpdatable>* obj = (BTNode<BTUpdatable>*)node;
+        [node.conns addConnection:[self.mode.update connectSlot:^(float dt) {
             [obj update:dt];
         }]];
     }
-}
-
-- (void)addNode:(BTNode*)object withName:(NSString*)name {
-    [self associateNode:object withName:name];
-    [self addNode:object];
-}
-
-- (void)addNode:(BTNode*)object withName:(NSString*)name replaceExisting:(BOOL)replaceExisting {
-    if (replaceExisting) {
-        [[self nodeForName:name] detach];
+    
+    // Does the object have a name?
+    if (name != nil) {
+        if (replaceExisting) {
+            [[self nodeForName:name] detach];
+        }
+        [self associateNode:node withName:name];
     }
-    [self addNode:object withName:name];
+    
+    // Does the object have a display parent?
+    if (parent != nil) {
+        [parent addChild:((BTDisplayObject *)node).display];
+    }
+    
+    // Tell the node it's attached
+    [node attachedInternal];
+}
+
+- (void)attachedInternal {
+    if (_pendingChildren != nil) {
+        // Attach all our pending children
+        for (BTPendingChildNode *pending in _pendingChildren) {
+            [self addNodeInternal:pending->node 
+                         withName:pending->name 
+                  replaceExisting:pending->replaceExisting 
+                           parent:pending->displayParent];
+        }
+        _pendingChildren = nil;
+    }
+    [super attachedInternal];
+}
+
+- (void)addNode:(BTNode*)node {
+    [self addNodeInternal:node withName:nil replaceExisting:NO parent:nil];
+}
+
+- (void)addNode:(BTNode*)node withName:(NSString*)name {
+    [self addNodeInternal:node withName:name replaceExisting:NO parent:nil];
+}
+
+- (void)addNode:(BTNode*)node withName:(NSString*)name replaceExisting:(BOOL)replaceExisting {
+    [self addNodeInternal:node withName:name replaceExisting:replaceExisting parent:nil];
 }
 
 - (void)addAndDisplayNode:(BTDisplayObject*)node onParent:(SPDisplayObjectContainer*)parent {
-    [self addNode:node];
-    [parent addChild:node.display];
+    [self addNodeInternal:node withName:nil replaceExisting:NO parent:parent];
 }
 
-- (void)removeNode:(BTNode*)object {
-    if (![_children member:object]) return;
-    [_children removeObject:object];
-    [object removeInternal];
+- (void)removeNode:(BTNode*)node {
+    if (![_children member:node]) return;
+    [_children removeObject:node];
+    [node removeInternal];
 }
 
 - (BTNode*)nodeForName:(NSString*)name {
