@@ -32,6 +32,9 @@
 		22448E2A14E4A7A4001CF5CE /* SPPoint+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 22448E2814E4A7A0001CF5CE /* SPPoint+Extensions.m */; };
 		22448E2D14E4A938001CF5CE /* SPRectangle+Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 22448E2B14E4A931001CF5CE /* SPRectangle+Extensions.h */; };
 		22448E2E14E4A938001CF5CE /* SPRectangle+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 22448E2C14E4A933001CF5CE /* SPRectangle+Extensions.m */; };
+		22448E7414E5D4C1001CF5CE /* PlayMovieMode.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC4525F14D22F04008CC04D /* PlayMovieMode.m */; };
+		22448E7514E5D4D5001CF5CE /* RepeatingMode.m in Sources */ = {isa = PBXBuildFile; fileRef = CB69E37414D8CADE00E7C18D /* RepeatingMode.m */; };
+		22448E7614E5D4DD001CF5CE /* Square.m in Sources */ = {isa = PBXBuildFile; fileRef = CB72E4AA14773ED100F1EC78 /* Square.m */; };
 		229B45C314D786B6005FC8E9 /* BTDurationTask.h in Headers */ = {isa = PBXBuildFile; fileRef = 229B45C114D786B5005FC8E9 /* BTDurationTask.h */; };
 		229B45C414D786B6005FC8E9 /* BTDurationTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 229B45C214D786B6005FC8E9 /* BTDurationTask.m */; };
 		229B45C914D787F5005FC8E9 /* BTDurationTask+Protected.h in Headers */ = {isa = PBXBuildFile; fileRef = 229B45C814D787F4005FC8E9 /* BTDurationTask+Protected.h */; };
@@ -94,12 +97,8 @@
 		CB602C751476603800E52CE2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE4A3D7E10FFB08B00FDA492 /* QuartzCore.framework */; };
 		CB69E37114D8C66D00E7C18D /* BTRepeatingTask.h in Headers */ = {isa = PBXBuildFile; fileRef = CB69E36F14D8C66D00E7C18D /* BTRepeatingTask.h */; };
 		CB69E37214D8C66D00E7C18D /* BTRepeatingTask.m in Sources */ = {isa = PBXBuildFile; fileRef = CB69E37014D8C66D00E7C18D /* BTRepeatingTask.m */; };
-		CB69E37514D8CADE00E7C18D /* RepeatingMode.h in Headers */ = {isa = PBXBuildFile; fileRef = CB69E37314D8CADE00E7C18D /* RepeatingMode.h */; };
-		CB69E37614D8CADE00E7C18D /* RepeatingMode.m in Sources */ = {isa = PBXBuildFile; fileRef = CB69E37414D8CADE00E7C18D /* RepeatingMode.m */; };
 		CB69E37914D8D07E00E7C18D /* BTParallelTask.h in Headers */ = {isa = PBXBuildFile; fileRef = CB69E37714D8D07E00E7C18D /* BTParallelTask.h */; };
 		CB69E37A14D8D07E00E7C18D /* BTParallelTask.m in Sources */ = {isa = PBXBuildFile; fileRef = CB69E37814D8D07E00E7C18D /* BTParallelTask.m */; };
-		CB72E4AB14773ED200F1EC78 /* Square.h in Headers */ = {isa = PBXBuildFile; fileRef = CB72E4A914773ED100F1EC78 /* Square.h */; };
-		CB72E4AC14773ED200F1EC78 /* Square.m in Sources */ = {isa = PBXBuildFile; fileRef = CB72E4AA14773ED100F1EC78 /* Square.m */; };
 		CB7ABCAE147C52D400EC6AEC /* SPEventDispatcher+BlockListener.h in Headers */ = {isa = PBXBuildFile; fileRef = CB7ABCAC147C52D400EC6AEC /* SPEventDispatcher+BlockListener.h */; };
 		CB7ABCAF147C52D400EC6AEC /* SPEventDispatcher+BlockListener.m in Sources */ = {isa = PBXBuildFile; fileRef = CB7ABCAD147C52D400EC6AEC /* SPEventDispatcher+BlockListener.m */; };
 		CB7ABCB5147C747C00EC6AEC /* BTModeStack+Package.h in Headers */ = {isa = PBXBuildFile; fileRef = CB7ABCB4147C747C00EC6AEC /* BTModeStack+Package.h */; };
@@ -112,7 +111,6 @@
 		CBAD57B71475A62B00F7D78E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
 		CBAD57C71475A69500F7D78E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CBAD57941475A3A000F7D78E /* main.m */; };
 		CBAD57CA1475A6A500F7D78E /* libBetwixt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB8CB911475A06400445316 /* libBetwixt.a */; };
-		CBAD57CE1475A70100F7D78E /* SubObjectMode.h in Headers */ = {isa = PBXBuildFile; fileRef = CBAD57CC1475A70100F7D78E /* SubObjectMode.h */; };
 		CBAD57D01475A75100F7D78E /* SubObjectMode.m in Sources */ = {isa = PBXBuildFile; fileRef = CBAD57CD1475A70100F7D78E /* SubObjectMode.m */; };
 		CBAD57D11475A7A200F7D78E /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE3F097711B7BABD009D4DB0 /* OpenAL.framework */; };
 		CBAD57D21475A7A200F7D78E /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE4A3D7910FFB08200FDA492 /* OpenGLES.framework */; };
@@ -131,8 +129,6 @@
 		CBC4524B14D216A1008CC04D /* BTMovieResourceLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = CBC4524714D216A1008CC04D /* BTMovieResourceLayer.h */; };
 		CBC4524C14D216A1008CC04D /* BTMovieResourceLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC4524814D216A1008CC04D /* BTMovieResourceLayer.m */; };
 		CBC4524E14D21700008CC04D /* BTMovie+Package.h in Headers */ = {isa = PBXBuildFile; fileRef = CBC4524D14D21700008CC04D /* BTMovie+Package.h */; };
-		CBC4526014D22F04008CC04D /* PlayMovieMode.h in Headers */ = {isa = PBXBuildFile; fileRef = CBC4525E14D22F04008CC04D /* PlayMovieMode.h */; };
-		CBC4526114D22F04008CC04D /* PlayMovieMode.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC4525F14D22F04008CC04D /* PlayMovieMode.m */; };
 		CBD20D0814CF68D600662068 /* BTTextureResource.h in Headers */ = {isa = PBXBuildFile; fileRef = CBD20D0614CF68D600662068 /* BTTextureResource.h */; };
 		CBD20D0914CF68D600662068 /* BTTextureResource.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD20D0714CF68D600662068 /* BTTextureResource.m */; };
 		CBD20D0C14CF693700662068 /* BTMovieResource.h in Headers */ = {isa = PBXBuildFile; fileRef = CBD20D0A14CF693700662068 /* BTMovieResource.h */; };
@@ -644,12 +640,10 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CBAD57CE1475A70100F7D78E /* SubObjectMode.h in Headers */,
 				CBF2AAA014765EA5000C022D /* BTApplicationDelegate.h in Headers */,
 				CBF2AAA214765EA5000C022D /* BTMode.h in Headers */,
 				CBF2AAA414765EA5000C022D /* BTModeStack.h in Headers */,
 				CBB86EE01476669800D0C57E /* BTObject.h in Headers */,
-				CB72E4AB14773ED200F1EC78 /* Square.h in Headers */,
 				CB7ABCAE147C52D400EC6AEC /* SPEventDispatcher+BlockListener.h in Headers */,
 				CB7ABCB5147C747C00EC6AEC /* BTModeStack+Package.h in Headers */,
 				CB366FE6148ECC84004BE08B /* BTNodeContainer.h in Headers */,
@@ -688,14 +682,12 @@
 				CBC4524914D216A1008CC04D /* BTMovieResourceKeyframe.h in Headers */,
 				CBC4524B14D216A1008CC04D /* BTMovieResourceLayer.h in Headers */,
 				CBC4524E14D21700008CC04D /* BTMovie+Package.h in Headers */,
-				CBC4526014D22F04008CC04D /* PlayMovieMode.h in Headers */,
 				222199F414D24660009B764F /* BTRandoms.h in Headers */,
 				CB15859714D385AA0025AF65 /* BTGrouped.h in Headers */,
 				229B45C314D786B6005FC8E9 /* BTDurationTask.h in Headers */,
 				229B45C914D787F5005FC8E9 /* BTDurationTask+Protected.h in Headers */,
 				229B460014D87E05005FC8E9 /* BTDisplayObjectTask.h in Headers */,
 				CB69E37114D8C66D00E7C18D /* BTRepeatingTask.h in Headers */,
-				CB69E37514D8CADE00E7C18D /* RepeatingMode.h in Headers */,
 				229B463314D8C439005FC8E9 /* BTHasLocation.h in Headers */,
 				229B463614D8C525005FC8E9 /* SPDisplayObject+Extensions.h in Headers */,
 				CB69E37914D8D07E00E7C18D /* BTParallelTask.h in Headers */,
@@ -850,6 +842,9 @@
 				CB24CBCF14A02E10004BAA57 /* MoveMode.m in Sources */,
 				CB442C7414B3800000EB2821 /* NamedNodeMode.m in Sources */,
 				22DBA64014DCB64900F0F7C8 /* TestApp.m in Sources */,
+				22448E7414E5D4C1001CF5CE /* PlayMovieMode.m in Sources */,
+				22448E7514E5D4D5001CF5CE /* RepeatingMode.m in Sources */,
+				22448E7614E5D4DD001CF5CE /* Square.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -862,7 +857,6 @@
 				CBF2AAA314765EA5000C022D /* BTMode.m in Sources */,
 				CBF2AAA514765EA5000C022D /* BTModeStack.m in Sources */,
 				CBB86EE11476669800D0C57E /* BTObject.m in Sources */,
-				CB72E4AC14773ED200F1EC78 /* Square.m in Sources */,
 				CB7ABCAF147C52D400EC6AEC /* SPEventDispatcher+BlockListener.m in Sources */,
 				CB24CBCC14A028F6004BAA57 /* BTLocationTask.m in Sources */,
 				CB24CBD414A115EF004BAA57 /* BTInterpolator.m in Sources */,
@@ -888,12 +882,10 @@
 				CBC4524314D20051008CC04D /* BTMovie.m in Sources */,
 				CBC4524A14D216A1008CC04D /* BTMovieResourceKeyframe.m in Sources */,
 				CBC4524C14D216A1008CC04D /* BTMovieResourceLayer.m in Sources */,
-				CBC4526114D22F04008CC04D /* PlayMovieMode.m in Sources */,
 				222199F514D24660009B764F /* BTRandoms.m in Sources */,
 				229B45C414D786B6005FC8E9 /* BTDurationTask.m in Sources */,
 				229B460114D87E05005FC8E9 /* BTDisplayObjectTask.m in Sources */,
 				CB69E37214D8C66D00E7C18D /* BTRepeatingTask.m in Sources */,
-				CB69E37614D8CADE00E7C18D /* RepeatingMode.m in Sources */,
 				229B463714D8C525005FC8E9 /* SPDisplayObject+Extensions.m in Sources */,
 				CB69E37A14D8D07E00E7C18D /* BTParallelTask.m in Sources */,
 				22C85EAE14DB225400F9EC07 /* BTMath.m in Sources */,
