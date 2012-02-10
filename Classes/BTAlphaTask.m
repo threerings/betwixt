@@ -42,10 +42,12 @@
 - (id)initWithTime:(float)seconds alpha:(float)alpha interpolator:(BTInterpolator*)interp target:(SPDisplayObject*)target {
     if (!(self = [super initWithTime:seconds interpolator:interp target:target])) return nil;
     _endAlpha = alpha;
-    [_conns addConnection:[self.attached connectUnit:^{
-        _startAlpha = _target.alpha;
-    }]];
     return self;
+}
+
+- (void)attached {
+    [super attached];
+    _startAlpha = _target.alpha;
 }
 
 - (void)updateValues {

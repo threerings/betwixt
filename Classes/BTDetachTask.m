@@ -3,21 +3,40 @@
 
 #import "BTDetachTask.h"
 #import "BTNodeContainer.h"
+#import "BTNode+Protected.h"
+
+@interface BTDetachParentTask : BTDetachTask
+@end
+@implementation BTDetachParentTask
+- (void)attached {
+    [super attached];
+    [((BTNode*) self.parent) detach];
+}
+@end
+
+@interface BTDetachNodeTask : BTDetachTask {
+@public
+    BTNode* _node;
+}
+@end
+@implementation BTDetachNodeTask
+- (void)attached {
+    [super attached];
+    [_node detach];
+    [self detach];
+}
+@end
+
 
 @implementation BTDetachTask
 
 +(BTDetachTask*)detachParent {
-    BTDetachTask* task = [BTDetachTask new];
-    [task.attached connectUnit:^{ [((BTNode*) task.parent) detach]; }];
-    return task;
+    return [[BTDetachParentTask alloc] init];
 }
 
 +(BTDetachTask*)detachNode:(BTNode*)node {
-    BTDetachTask* task = [BTDetachTask new];
-    [task.attached connectUnit:^{
-        [node detach];
-        [task detach];
-    }];
+    BTDetachNodeTask* task = [[BTDetachNodeTask alloc] init];
+    task->_node = node;
     return task;
 }
 

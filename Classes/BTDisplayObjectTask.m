@@ -3,6 +3,7 @@
 
 #import "BTDisplayObjectTask.h"
 #import "BTDisplayObject.h"
+#import "BTNode+Protected.h"
 
 @implementation BTDisplayObjectTask
 
@@ -10,12 +11,14 @@
            target:(SPDisplayObject*)target {
     if (!(self = [super initWithTime:seconds interpolator:interp])) return nil;
     _target = target;
-    if (!_target) {
-        [_conns addConnection:[self.attached connectUnit:^{
-            _target = ((BTDisplayObject*)self.parent).display;
-        }]];
-    }
     return self;
+}
+
+- (void)attached {
+    [super attached];
+    if (!_target) {
+        _target = ((BTDisplayObject*)self.parent).display;
+    }
 }
 
 @end

@@ -62,7 +62,7 @@
 }
 
 - (void)associateNode:(BTNode*)node withName:(NSString*)name {
-    NSAssert1(![self.namedObjects objectForKey:name], @"Object name '%@' already used", name);
+    NSAssert(![self.namedObjects objectForKey:name], @"Object name '%@' already used", name);
     [node.detached connectUnit:^{ [self.namedObjects removeObjectForKey:name]; }];
     [self.namedObjects setObject:node forKey:name];
 }
@@ -79,10 +79,11 @@
     if ([object conformsToProtocol:@protocol(BTGrouped)]) {
         [self.mode addGroups:(BTNode<BTGrouped>*)object];
     }
-    [object.attached emit];
+    [object attached];
     
     // If the object is BTUpdatable, wire up its update function to the update event
-    if ([object conformsToProtocol:@protocol(BTUpdatable)]) {
+    // (Ensure the object hasn't already been detached, first)
+    if (!object.isDetached && [object conformsToProtocol:@protocol(BTUpdatable)]) {
         __weak BTNode<BTUpdatable>* obj = (BTNode<BTUpdatable>*)object;
         [object.conns addConnection:[self.mode.update connectSlot:^(float dt) {
             [obj update:dt];

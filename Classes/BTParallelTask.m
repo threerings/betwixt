@@ -3,17 +3,26 @@
 
 #import "BTParallelTask.h"
 #import "BTNodeContainer.h"
+#import "BTNode+Protected.h"
 
-@implementation BTParallelTask
+@implementation BTParallelTask {
+    NSArray *_nodes;
+}
 
 - (id)initWithNodes:(NSArray*)nodes {
     if (!(self = [super init])) return nil;
-    __block int toDetach = [nodes count];
-    for (BTNode* node in nodes) {
+    _nodes = nodes;
+    return self;
+}
+
+- (void)attached {
+    [super attached];
+    
+    __block int toDetach = [_nodes count];
+    for (BTNode* node in _nodes) {
+        [self.parent addNode:node]; 
         [node.detached connectUnit:^{ if (--toDetach == 0) [self detach]; }];
     }
-    [self.attached connectUnit:^{ for (BTNode* node in nodes) [self.parent addNode:node]; }];
-    return self;
 }
 
 + (BTParallelTask*)withNodes:(BTNode*)node, ... {

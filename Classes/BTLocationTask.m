@@ -2,6 +2,7 @@
 // Betwixt - Copyright 2012 Three Rings Design
 
 #import "BTLocationTask.h"
+#import "BTNode+Protected.h"
 #import "BTInterpolationTask+Protected.h"
 #import "BTInterpolator.h"
 #import "BTHasLocation.h"
@@ -51,15 +52,16 @@
     _endX = x;
     _endY = y;
     
-    [_conns addConnection:[self.attached connectUnit:^{
-        if (_target == nil) {
-            _target = ((BTDisplayObject*)self.parent).display;
-        }
-        _startX = _target.x;
-        _startY = _target.y;
-    }]];
-    
     return self;
+}
+
+- (void)attached {
+    [super attached];
+    if (_target == nil) {
+        _target = ((BTDisplayObject*)self.parent).display;
+    }
+    _startX = _target.x;
+    _startY = _target.y;
 }
 
 - (void)updateValues {

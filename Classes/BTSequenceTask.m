@@ -3,6 +3,7 @@
 
 #import "BTSequenceTask.h"
 #import "BTNodeContainer.h"
+#import "BTNode+Protected.h"
 
 @implementation BTSequenceTask {
     NSArray* _nodes;
@@ -11,20 +12,28 @@
 - (id)initWithNodes:(NSArray*)nodes {
     if (!(self = [super init])) return nil;
     _nodes = nodes;
-    [self.detached connectUnit:^{
+    return self;
+}
+
+- (void)attached {
+    [super attached];
+    
+    [_conns addConnection:[self.detached connectUnit:^{
         if (_position == [_nodes count]) return;
         BTNode* toDetach = [_nodes objectAtIndex:_position];
         _position = [_nodes count];
         [toDetach detach];
-    }];
-    [self.attached connectUnit:^{ [self.parent addNode:[nodes objectAtIndex:0]]; }];
+    }]];
+    
     for (BTNode* node in _nodes) {
         [node.detached connectUnit:^{
             if (++_position >= [_nodes count]) [self detach];
             else [self.parent addNode:[_nodes objectAtIndex:_position]];
         }];
     }
-    return self;
+    
+    // Kick off the first task
+    [self.parent addNode:[_nodes objectAtIndex:0]];
 }
 
 + (BTSequenceTask*)withNodes:(BTNode*)node, ... {

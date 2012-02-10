@@ -54,11 +54,13 @@
     
     _endX = scaleX;
     _endY = scaleY;
-    [_conns addConnection:[self.attached connectUnit:^{
-        _startX = _target.x;
-        _startY = _target.y;
-    }]];
     return self;
+}
+
+- (void)attached {
+    [super attached];
+    _startX = _target.x;
+    _startY = _target.y;
 }
 
 - (void)updateValues {

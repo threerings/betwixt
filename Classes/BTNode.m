@@ -16,11 +16,6 @@
     return _parent.mode;
 }
 
-- (RAUnitSignal*)attached {
-    if (_attached == nil) _attached = [[RAUnitSignal alloc] init];
-    return _attached;
-}
-
 - (RAUnitSignal*)detached {
     if (_detached == nil) _detached = [[RAUnitSignal alloc] init];
     return _detached;
@@ -38,7 +33,6 @@
 }
 
 - (void)cleanup {
-    [_attached disconnectAll];
     [_detached disconnectAll];
     [_conns disconnectAll];
     _isDetached = YES;

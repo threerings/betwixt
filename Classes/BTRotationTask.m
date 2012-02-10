@@ -4,6 +4,7 @@
 #import "BTRotationTask.h"
 #import "BTInterpolator.h"
 #import "BTInterpolationTask+Protected.h"
+#import "BTNode+Protected.h"
 
 @implementation BTRotationTask {
     float _startRotation;
@@ -43,10 +44,12 @@
     if (!(self = [super initWithTime:seconds interpolator:interp target:target])) return nil;
     
     _endRotation = rads;
-    [_conns addConnection:[self.attached connectUnit:^{
-        _startRotation = _target.rotation;
-    }]];
     return self;
+}
+
+- (void)attached {
+    [super attached];
+    _startRotation = _target.rotation;
 }
 
 - (void)updateValues {

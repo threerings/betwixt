@@ -2,6 +2,7 @@
 // Betwixt - Copyright 2012 Three Rings Design
 
 #import "Square.h"
+#import "BTNode+Protected.h"
 #import "BTMode.h"
 #import "SPEventDispatcher+BlockListener.h"
 
@@ -13,8 +14,14 @@
     _quad = [SPQuad quadWithWidth:100 height:100 color:color];
     _quad.x = 50;
     _quad.y = 50;
+    _attached = [[RAUnitSignal alloc] init];
     [self.detached connectUnit:^ { [((BTMode*)self.mode).sprite removeChild:_quad]; }];
     return self;
+}
+
+- (void)attached {
+    [super attached];
+    [_attached emit];
 }
 
 - (void)update:(float)dt {
@@ -30,6 +37,6 @@
     return [NSArray arrayWithObject:_name];
 }
 
-@synthesize display=_quad;
+@synthesize display=_quad, onAttached=_attached;
 
 @end

@@ -2,8 +2,8 @@
 // Betwixt - Copyright 2012 Three Rings Design
 
 #import "BTRepeatingTask.h"
-
 #import "BTNodeContainer.h"
+#import "BTNode+Protected.h"
 
 @implementation BTRepeatingTask {
     BTRepeatCreator _creator;
@@ -18,10 +18,14 @@
     }
 }
 
+- (void)attached {
+    [super attached];
+    [self onRepeat];
+}
+
 + (BTRepeatingTask*)withTaskCreator:(BTRepeatCreator)creator {
     BTRepeatingTask* task = [[BTRepeatingTask alloc] init];
     task->_creator = creator;
-    [task.attached connectUnit:^{ [task onRepeat]; }];
     return task;
 }
 

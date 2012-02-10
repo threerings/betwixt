@@ -12,7 +12,10 @@
 @private
     SPQuad *_quad;
     NSString *_name;
+    RAUnitSignal *_attached;
 }
+
+@property(nonatomic,readonly) RAUnitSignal* onAttached;
 
 - (id)initWithColor:(int)color andName:(NSString*)name;
 - (void)update:(float)dt;
