@@ -3,7 +3,6 @@
 
 // Dependencies
 #import "React.h"
-#define DISABLE_MEMORY_POOLING // disable memory pooling in Sparrow for ARC compatability
 #import "Sparrow.h"
 
 #import "BTApp.h"
