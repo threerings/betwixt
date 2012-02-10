@@ -4,6 +4,7 @@
 #import "BTMovie.h"
 #import "BTMovie+Package.h"
 #import "BTApp.h"
+#import "BTDisplayObjectCreator.h"
 #import "BTMovieResourceKeyframe.h"
 #import "BTResourceManager.h"
 #import "BTTextureResource.h"
@@ -28,12 +29,10 @@ NSString * const BTMovieLastFrame = @"BTMovieLastFrame";
     if (!(self = [super init])) return nil;
     self.name = layer->name;
     keyframes = layer->keyframes;
-    BTTextureResource* tex = [BTApp.app.resourceManager requireResource:[self kfAtIdx:0]->libraryItem];
-    // TODO - texture offset
-    SPImage* img = [[SPImage alloc] initWithTexture:tex.texture];
-    img.x = tex.offset.x;
-    img.y = tex.offset.y;
-    [self addChild:img];
+
+    NSString *symbol = [self kfAtIdx:0]->libraryItem;
+    id<BTDisplayObjectCreator> res = [BTApp.app.resourceManager requireResource:symbol conformingTo:@protocol(BTDisplayObjectCreator)];
+    [self addChild:[res createDisplayObject]];
     return self;
 }
 

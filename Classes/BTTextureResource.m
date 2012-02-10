@@ -34,6 +34,13 @@
     return self;
 }
 
+- (SPDisplayObject*)createDisplayObject {
+    SPImage* img = [[SPImage alloc] initWithTexture:_texture];
+    img.x = _offset.x;
+    img.y = _offset.y;
+    return img;
+}
+
 @synthesize texture = _texture, offset = _offset;
 
 @end

@@ -2,13 +2,14 @@
 // Betwixt - Copyright 2012 Three Rings Design
 
 #import "BTResource.h"
+#import "BTDisplayObjectCreator.h"
 
 #define BTTEXTURE_RESOURCE_NAME @"texture"
 
 @protocol BTResourceFactory;
 @class GDataXMLElement;
 
-@interface BTTextureResource : BTResource {
+@interface BTTextureResource : BTResource<BTDisplayObjectCreator> {
 @protected
     SPTexture* _texture;
     SPPoint* _offset;
