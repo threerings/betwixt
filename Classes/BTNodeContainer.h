@@ -14,7 +14,7 @@
 - (void)addNode:(BTNode*)node;
 - (void)addNode:(BTNode*)node withName:(NSString*)name;
 - (void)addNode:(BTNode*)node withName:(NSString*)name replaceExisting:(BOOL)replaceExisting;
-- (void)addAndDisplayNode:(BTDisplayObject*)node onParent:(SPDisplayObjectContainer*)parent;
+- (void)addNode:(BTDisplayObject*)node displayOn:(SPDisplayObjectContainer*)displayParent;
 
 - (BTNode*)nodeForName:(NSString*)name;
 - (void)removeNode:(BTNode*)node;

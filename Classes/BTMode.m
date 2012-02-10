@@ -154,8 +154,8 @@
     [_rootNode addNode:node withName:name replaceExisting:replaceExisting];
 }
 
-- (void)addAndDisplayNode:(BTDisplayObject*)node onParent:(SPDisplayObjectContainer*)parent {
-    [_rootNode addAndDisplayNode:node onParent:parent];
+- (void)addNode:(BTDisplayObject*)node displayOn:(SPDisplayObjectContainer*)displayParent {
+    [_rootNode addNode:node displayOn:displayParent];
 }
 
 - (void)removeNode:(BTNode*)object {

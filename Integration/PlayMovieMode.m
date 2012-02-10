@@ -15,7 +15,7 @@
     if (!(self = [super init])) return nil;
     BTMovieResource *res = [BTApp.app.resourceManager requireResource:@"Animations/squaredance"];
     BTMovie *movie = [res newMovie];
-    [self addAndDisplayNode:movie onParent:self.sprite];
+    [self addNode:movie displayOn:self.sprite];
     // Play the movie once and pop the mode
     [[movie monitorLabel:BTMovieLastFrame withUnit:^{
         [movie playFromFrame:0 toLabel:BTMovieLastFrame];

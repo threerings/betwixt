@@ -162,8 +162,8 @@
     [self addNodeInternal:node withName:name replaceExisting:replaceExisting parent:nil];
 }
 
-- (void)addAndDisplayNode:(BTDisplayObject*)node onParent:(SPDisplayObjectContainer*)parent {
-    [self addNodeInternal:node withName:nil replaceExisting:NO parent:parent];
+- (void)addNode:(BTDisplayObject*)node displayOn:(SPDisplayObjectContainer*)displayParent {
+    [self addNodeInternal:node withName:nil replaceExisting:NO parent:displayParent];
 }
 
 - (void)removeNode:(BTNode*)node {

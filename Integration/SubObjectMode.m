@@ -18,8 +18,8 @@
 - (id)init {
     if (!(self = [super init])) return nil;
     NSAssert(nil == [self nodesForGroup:@"squares"], @"Incorrect squares in group");
-    [self addAndDisplayNode:[self createAndMonitorSquareWithColor:0xff0000 andName:@"red"] 
-                   onParent:self.sprite];
+    [self addNode:[self createAndMonitorSquareWithColor:0xff0000 andName:@"red"] 
+                   displayOn:self.sprite];
     NSAssert(1 == [[self nodesForGroup:@"squares"] count], @"Incorrect squares in group");
     [self.update withPriority:SQUARE_FRAME_PRIORITY + 1 connectUnit:^ {
         if (++_ticks == 2) {
