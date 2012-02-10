@@ -19,4 +19,7 @@
 
 + (float)distanceSqFromPoint:(SPPoint *)p1 toPoint:(SPPoint *)p2;
 
+@property(nonatomic,assign) float length;
+@property(nonatomic,assign) float angle;
+
 @end
