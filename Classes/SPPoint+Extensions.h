@@ -5,6 +5,12 @@
 
 @interface SPPoint (OOOExtensions)
 
+/// Sets this point's coords to those of the specfied point
+- (void)set:(SPPoint *)pt;
+
+/// Sets this point's coords
+- (void)setX:(int)x y:(int)y;
+
 /// Adds a point to the current point and returns the resulting point.
 - (SPPoint *)addX:(float)x y:(float)y;
 

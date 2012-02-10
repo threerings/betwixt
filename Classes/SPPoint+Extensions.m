@@ -7,6 +7,16 @@
 
 @implementation SPPoint (OOOExtensions)
 
+- (void)set:(SPPoint *)pt {
+    mX = pt.x;
+    mY = pt.y;
+}
+
+- (void)setX:(int)x y:(int)y {
+    mX = x;
+    mY = y;
+}
+
 - (SPPoint *)addX:(float)x y:(float)y {
     return [[SPPoint alloc] initWithX:mX+x y:mY+y];
 }
