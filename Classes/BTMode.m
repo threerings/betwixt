@@ -30,6 +30,9 @@
 - (BTMode*)mode {
     return _mode;
 }
+- (BOOL)isAttached {
+    return YES;
+}
 @end
 
 @implementation BTMode
