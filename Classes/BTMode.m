@@ -3,7 +3,6 @@
 
 #import "BTMode.h"
 #import "BTModeStack.h"
-#import "BTKeyed.h"
 #import "BTMode+Protected.h"
 #import "BTMode+Package.h"
 #import "BTSprite.h"
@@ -101,35 +100,39 @@
     _rootNode = nil;
 }
 
-- (void)addKeys:(BTNode<BTKeyed>*)node {
-    NSArray* keys = ((id<BTKeyed>)node).keys;
-    [node.detached connectUnit:^ {
+- (void)addKeys:(BTNode*)node {
+    NSArray* keys = node.keys;
+    if (keys != nil) {
+        [node.detached connectUnit:^ {
+            for (NSString* key in keys) {
+                [_keyedObjects removeObjectForKey:key];
+            }
+        }];
         for (NSString* key in keys) {
-            [_keyedObjects removeObjectForKey:key];
+            NSAssert1(![_keyedObjects objectForKey:key], @"Object key '%@' already used", key);
+            [_keyedObjects setObject:node forKey:key];
         }
-    }];
-    for (NSString* key in keys) {
-        NSAssert1(![_keyedObjects objectForKey:key], @"Object key '%@' already used", key);
-        [_keyedObjects setObject:node forKey:key];
     }
 }
 
-- (void)addGroups:(BTNode<BTGrouped>*)node {
-    NSArray* groups = ((id<BTGrouped>)node).groups;
-    [node.detached connectUnit:^ {
+- (void)addGroups:(BTNode*)node {
+    NSArray* groups = node.groups;
+    if (groups != nil) {
+        [node.detached connectUnit:^ {
+            for (NSString* group in groups) {
+                NSMutableArray* members = [_groups objectForKey:group];
+                [members removeObject:node];
+                if ([members count] == 0) [_groups removeObjectForKey:group];
+            }
+        }];
         for (NSString* group in groups) {
             NSMutableArray* members = [_groups objectForKey:group];
-            [members removeObject:node];
-            if ([members count] == 0) [_groups removeObjectForKey:group];
+            if (!members) {
+                members = [[NSMutableArray alloc] init];
+                [_groups setObject:members forKey:group];
+            }
+            [members addObject:node];
         }
-    }];
-    for (NSString* group in groups) {
-        NSMutableArray* members = [_groups objectForKey:group];
-        if (!members) {
-            members = [[NSMutableArray alloc] init];
-            [_groups setObject:members forKey:group];
-        }
-        [members addObject:node];
     }
 }
 

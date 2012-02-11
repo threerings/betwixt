@@ -3,8 +3,6 @@
 
 #import "BTObject.h"
 
-#import "BTGrouped.h"
-#import "BTKeyed.h"
 #import "BTUpdatable.h"
 #import "BTObject.h"
 #import "BTDisplayObject.h"
@@ -104,12 +102,9 @@
     [_children addObject:node];
     node->_parent = self;
     
-    if ([node conformsToProtocol:@protocol(BTKeyed)]) {
-        [self.mode addKeys:(BTNode<BTKeyed>*)node];
-    }
-    if ([node conformsToProtocol:@protocol(BTGrouped)]) {
-        [self.mode addGroups:(BTNode<BTGrouped>*)node];
-    }
+    BTMode *mode = self.mode;
+    [mode addKeys:node];
+    [mode addGroups:node];
     
     // If the object is BTUpdatable, wire up its update function to the update event
     if ([node conformsToProtocol:@protocol(BTUpdatable)]) {

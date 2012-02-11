@@ -49,6 +49,14 @@
     return (_parent != nil);
 }
 
+- (NSArray*)keys {
+    return nil;
+}
+
+- (NSArray*)groups {
+    return nil;
+}
+
 @synthesize parent=_parent, isDetached=_isDetached;
 
 @end

@@ -30,11 +30,11 @@
 }
 
 - (NSArray*)groups {
-    return [NSArray arrayWithObject:@"squares"];
+    BT_STATIC_GROUPS(@"squares");
 }
 
 - (NSArray*)keys {
-    return [NSArray arrayWithObject:_name];
+    BT_KEYS(_name);
 }
 
 @synthesize display=_quad, onAttached=_attached;

@@ -22,3 +22,4 @@
 @property(nonatomic,readonly) BOOL isDetached;
 
 @end
+    
