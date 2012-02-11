@@ -420,14 +420,7 @@
 				CB24CBD614A116AB004BAA57 /* BTSprite.h */,
 				CB24CBD714A116AB004BAA57 /* BTSprite.m */,
 				2217E4CC14C79B90000F976A /* BTUpdatable.h */,
-				229B463414D8C525005FC8E9 /* SPDisplayObject+Extensions.h */,
-				229B463514D8C525005FC8E9 /* SPDisplayObject+Extensions.m */,
-				CB7ABCAC147C52D400EC6AEC /* SPEventDispatcher+BlockListener.h */,
-				CB7ABCAD147C52D400EC6AEC /* SPEventDispatcher+BlockListener.m */,
-				22448E2714E4A79D001CF5CE /* SPPoint+Extensions.h */,
-				22448E2814E4A7A0001CF5CE /* SPPoint+Extensions.m */,
-				22448E2B14E4A931001CF5CE /* SPRectangle+Extensions.h */,
-				22448E2C14E4A933001CF5CE /* SPRectangle+Extensions.m */,
+				22448E8914E602FF001CF5CE /* Categories */,
 				CBC4524414D21692008CC04D /* Impl */,
 				22C7178C14C0E0000014B656 /* Resources */,
 				CB24CBBB149FF75C004BAA57 /* Tasks */,
@@ -458,6 +451,21 @@
 				222199F314D24660009B764F /* BTRandoms.m */,
 			);
 			name = Utils;
+			sourceTree = "<group>";
+		};
+		22448E8914E602FF001CF5CE /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				229B463414D8C525005FC8E9 /* SPDisplayObject+Extensions.h */,
+				229B463514D8C525005FC8E9 /* SPDisplayObject+Extensions.m */,
+				CB7ABCAC147C52D400EC6AEC /* SPEventDispatcher+BlockListener.h */,
+				CB7ABCAD147C52D400EC6AEC /* SPEventDispatcher+BlockListener.m */,
+				22448E2714E4A79D001CF5CE /* SPPoint+Extensions.h */,
+				22448E2814E4A7A0001CF5CE /* SPPoint+Extensions.m */,
+				22448E2B14E4A931001CF5CE /* SPRectangle+Extensions.h */,
+				22448E2C14E4A933001CF5CE /* SPRectangle+Extensions.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 		22C7178C14C0E0000014B656 /* Resources */ = {
