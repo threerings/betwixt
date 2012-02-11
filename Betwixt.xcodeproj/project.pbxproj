@@ -35,6 +35,8 @@
 		22448E7414E5D4C1001CF5CE /* PlayMovieMode.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC4525F14D22F04008CC04D /* PlayMovieMode.m */; };
 		22448E7514E5D4D5001CF5CE /* RepeatingMode.m in Sources */ = {isa = PBXBuildFile; fileRef = CB69E37414D8CADE00E7C18D /* RepeatingMode.m */; };
 		22448E7614E5D4DD001CF5CE /* Square.m in Sources */ = {isa = PBXBuildFile; fileRef = CB72E4AA14773ED100F1EC78 /* Square.m */; };
+		22448E8C14E603DF001CF5CE /* NSArray+Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 22448E8A14E603DF001CF5CE /* NSArray+Extensions.h */; };
+		22448E8D14E603DF001CF5CE /* NSArray+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 22448E8B14E603DF001CF5CE /* NSArray+Extensions.m */; };
 		229B45C314D786B6005FC8E9 /* BTDurationTask.h in Headers */ = {isa = PBXBuildFile; fileRef = 229B45C114D786B5005FC8E9 /* BTDurationTask.h */; };
 		229B45C414D786B6005FC8E9 /* BTDurationTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 229B45C214D786B6005FC8E9 /* BTDurationTask.m */; };
 		229B45C914D787F5005FC8E9 /* BTDurationTask+Protected.h in Headers */ = {isa = PBXBuildFile; fileRef = 229B45C814D787F4005FC8E9 /* BTDurationTask+Protected.h */; };
@@ -222,6 +224,8 @@
 		22448E2814E4A7A0001CF5CE /* SPPoint+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SPPoint+Extensions.m"; sourceTree = "<group>"; };
 		22448E2B14E4A931001CF5CE /* SPRectangle+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SPRectangle+Extensions.h"; sourceTree = "<group>"; };
 		22448E2C14E4A933001CF5CE /* SPRectangle+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SPRectangle+Extensions.m"; sourceTree = "<group>"; };
+		22448E8A14E603DF001CF5CE /* NSArray+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Extensions.h"; sourceTree = "<group>"; };
+		22448E8B14E603DF001CF5CE /* NSArray+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Extensions.m"; sourceTree = "<group>"; };
 		229B45C114D786B5005FC8E9 /* BTDurationTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTDurationTask.h; sourceTree = "<group>"; };
 		229B45C214D786B6005FC8E9 /* BTDurationTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTDurationTask.m; sourceTree = "<group>"; };
 		229B45C814D787F4005FC8E9 /* BTDurationTask+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BTDurationTask+Protected.h"; sourceTree = "<group>"; };
@@ -458,6 +462,8 @@
 			children = (
 				22F979D814C0E23F00A6913B /* GDataXMLNode+Extensions.h */,
 				22F979D914C0E23F00A6913B /* GDataXMLNode+Extensions.m */,
+				22448E8A14E603DF001CF5CE /* NSArray+Extensions.h */,
+				22448E8B14E603DF001CF5CE /* NSArray+Extensions.m */,
 				229B463414D8C525005FC8E9 /* SPDisplayObject+Extensions.h */,
 				229B463514D8C525005FC8E9 /* SPDisplayObject+Extensions.m */,
 				CB7ABCAC147C52D400EC6AEC /* SPEventDispatcher+BlockListener.h */,
@@ -703,6 +709,7 @@
 				22448E0E14E3356A001CF5CE /* BTScaleTask.h in Headers */,
 				22448E2914E4A7A4001CF5CE /* SPPoint+Extensions.h in Headers */,
 				22448E2D14E4A938001CF5CE /* SPRectangle+Extensions.h in Headers */,
+				22448E8C14E603DF001CF5CE /* NSArray+Extensions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -896,6 +903,7 @@
 				22448E0F14E3356A001CF5CE /* BTScaleTask.m in Sources */,
 				22448E2A14E4A7A4001CF5CE /* SPPoint+Extensions.m in Sources */,
 				22448E2E14E4A938001CF5CE /* SPRectangle+Extensions.m in Sources */,
+				22448E8D14E603DF001CF5CE /* NSArray+Extensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
