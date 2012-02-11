@@ -8,6 +8,9 @@
     SPSprite* _sprite;
 }
 
++ (BTSprite*)sprite;
++ (BTSprite*)withSprite:(SPSprite*)sprite;
+
 - (id)init;
 - (id)initWithSprite:(SPSprite*)sprite;
 

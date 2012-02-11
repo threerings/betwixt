@@ -5,6 +5,14 @@
 
 @implementation BTSprite
 
++ (BTSprite*)sprite {
+    return [[BTSprite alloc] init];
+}
+
++ (BTSprite*)withSprite:(SPSprite *)sprite {
+    return [[BTSprite alloc] initWithSprite:sprite];
+}
+
 - (id)init {
     if (!(self = [super init])) return nil;
     _sprite = [[SPSprite alloc] init];
