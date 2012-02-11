@@ -3,7 +3,7 @@
 
 #import "BTMovieResourceLayer.h"
 #import "BTMovieResourceKeyframe.h"
-#import "GDataXMLNode+OOO.h"
+#import "GDataXMLNode+Extensions.h"
 
 @implementation BTMovieResourceLayer
 -initWithLayer:(GDataXMLElement*)layerEl {

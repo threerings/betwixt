@@ -1,7 +1,7 @@
 //
 // Betwixt - Copyright 2012 Three Rings Design
 
-#import "GDataXMLNode+OOO.h"
+#import "GDataXMLNode+Extensions.h"
 #import "GDataXMLException.h"
 
 @implementation GDataXMLElement (OOOExtensions)

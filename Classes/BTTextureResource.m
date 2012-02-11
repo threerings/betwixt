@@ -3,7 +3,7 @@
 
 #import "BTTextureResource.h"
 #import "BTResourceFactory.h"
-#import "GDataXMLNode+OOO.h"
+#import "GDataXMLNode+Extensions.h"
 #import "BTApp.h"
 #import "BTResourceManager.h"
 

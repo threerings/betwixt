@@ -2,7 +2,7 @@
 // Betwixt - Copyright 2012 Three Rings Design
 
 #import "BTMovieResourceKeyframe.h"
-#import "GDataXMLNode+OOO.h"
+#import "GDataXMLNode+Extensions.h"
 
 @implementation BTMovieResourceKeyframe
 -initWithFrame:(GDataXMLElement*)frameEl {

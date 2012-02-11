@@ -55,8 +55,8 @@
 		22F979E714C0E23F00A6913B /* GDataXMLException.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F979D514C0E23F00A6913B /* GDataXMLException.m */; };
 		22F979E814C0E23F00A6913B /* GDataXMLNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F979D614C0E23F00A6913B /* GDataXMLNode.h */; };
 		22F979E914C0E23F00A6913B /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F979D714C0E23F00A6913B /* GDataXMLNode.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		22F979EA14C0E23F00A6913B /* GDataXMLNode+OOO.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F979D814C0E23F00A6913B /* GDataXMLNode+OOO.h */; };
-		22F979EB14C0E23F00A6913B /* GDataXMLNode+OOO.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F979D914C0E23F00A6913B /* GDataXMLNode+OOO.m */; };
+		22F979EA14C0E23F00A6913B /* GDataXMLNode+Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F979D814C0E23F00A6913B /* GDataXMLNode+Extensions.h */; };
+		22F979EB14C0E23F00A6913B /* GDataXMLNode+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F979D914C0E23F00A6913B /* GDataXMLNode+Extensions.m */; };
 		22F979EC14C0E23F00A6913B /* BTLoadable.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F979DA14C0E23F00A6913B /* BTLoadable.h */; };
 		22F979ED14C0E23F00A6913B /* BTLoadable.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F979DB14C0E23F00A6913B /* BTLoadable.m */; };
 		22F979EF14C0E23F00A6913B /* BTLoadableBatch.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F979DD14C0E23F00A6913B /* BTLoadableBatch.h */; };
@@ -243,8 +243,8 @@
 		22F979D514C0E23F00A6913B /* GDataXMLException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDataXMLException.m; sourceTree = "<group>"; };
 		22F979D614C0E23F00A6913B /* GDataXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataXMLNode.h; sourceTree = "<group>"; };
 		22F979D714C0E23F00A6913B /* GDataXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDataXMLNode.m; sourceTree = "<group>"; };
-		22F979D814C0E23F00A6913B /* GDataXMLNode+OOO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GDataXMLNode+OOO.h"; sourceTree = "<group>"; };
-		22F979D914C0E23F00A6913B /* GDataXMLNode+OOO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GDataXMLNode+OOO.m"; sourceTree = "<group>"; };
+		22F979D814C0E23F00A6913B /* GDataXMLNode+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GDataXMLNode+Extensions.h"; sourceTree = "<group>"; };
+		22F979D914C0E23F00A6913B /* GDataXMLNode+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GDataXMLNode+Extensions.m"; sourceTree = "<group>"; };
 		22F979DA14C0E23F00A6913B /* BTLoadable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTLoadable.h; sourceTree = "<group>"; };
 		22F979DB14C0E23F00A6913B /* BTLoadable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTLoadable.m; sourceTree = "<group>"; };
 		22F979DD14C0E23F00A6913B /* BTLoadableBatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTLoadableBatch.h; sourceTree = "<group>"; };
@@ -456,6 +456,8 @@
 		22448E8914E602FF001CF5CE /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				22F979D814C0E23F00A6913B /* GDataXMLNode+Extensions.h */,
+				22F979D914C0E23F00A6913B /* GDataXMLNode+Extensions.m */,
 				229B463414D8C525005FC8E9 /* SPDisplayObject+Extensions.h */,
 				229B463514D8C525005FC8E9 /* SPDisplayObject+Extensions.m */,
 				CB7ABCAC147C52D400EC6AEC /* SPEventDispatcher+BlockListener.h */,
@@ -475,8 +477,6 @@
 				22F979D514C0E23F00A6913B /* GDataXMLException.m */,
 				22F979D614C0E23F00A6913B /* GDataXMLNode.h */,
 				22F979D714C0E23F00A6913B /* GDataXMLNode.m */,
-				22F979D814C0E23F00A6913B /* GDataXMLNode+OOO.h */,
-				22F979D914C0E23F00A6913B /* GDataXMLNode+OOO.m */,
 				22F979DA14C0E23F00A6913B /* BTLoadable.h */,
 				22F979DB14C0E23F00A6913B /* BTLoadable.m */,
 				22F979FA14C0E38000A6913B /* BTLoadable+Protected.h */,
@@ -664,7 +664,7 @@
 				CB395DBE14B3D7F90093E37F /* BTDetachTask.h in Headers */,
 				22F979E614C0E23F00A6913B /* GDataXMLException.h in Headers */,
 				22F979E814C0E23F00A6913B /* GDataXMLNode.h in Headers */,
-				22F979EA14C0E23F00A6913B /* GDataXMLNode+OOO.h in Headers */,
+				22F979EA14C0E23F00A6913B /* GDataXMLNode+Extensions.h in Headers */,
 				22F979EC14C0E23F00A6913B /* BTLoadable.h in Headers */,
 				22F979EF14C0E23F00A6913B /* BTLoadableBatch.h in Headers */,
 				22F979F114C0E23F00A6913B /* BTResource.h in Headers */,
@@ -870,7 +870,7 @@
 				CB395DBF14B3D7F90093E37F /* BTDetachTask.m in Sources */,
 				22F979E714C0E23F00A6913B /* GDataXMLException.m in Sources */,
 				22F979E914C0E23F00A6913B /* GDataXMLNode.m in Sources */,
-				22F979EB14C0E23F00A6913B /* GDataXMLNode+OOO.m in Sources */,
+				22F979EB14C0E23F00A6913B /* GDataXMLNode+Extensions.m in Sources */,
 				22F979ED14C0E23F00A6913B /* BTLoadable.m in Sources */,
 				22F979F014C0E23F00A6913B /* BTLoadableBatch.m in Sources */,
 				22F979F714C0E23F00A6913B /* BTResourceManager.m in Sources */,

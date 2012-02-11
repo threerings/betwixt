@@ -8,7 +8,7 @@
 #import "BTResource.h"
 #import "GDataXMLException.h"
 
-#import "GDataXMLNode+OOO.h"
+#import "GDataXMLNode+Extensions.h"
 
 @interface LoadTask : NSObject {
 @public

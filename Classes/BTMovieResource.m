@@ -7,7 +7,7 @@
 #import "BTResourceFactory.h"
 #import "BTMovie.h"
 #import "BTMovie+Package.h"
-#import "GDataXMLNode+OOO.h"
+#import "GDataXMLNode+Extensions.h"
 
 @interface BTMovieResourceFactory : NSObject<BTResourceFactory>
 @end

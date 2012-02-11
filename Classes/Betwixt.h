@@ -19,14 +19,16 @@
 #import "BTNodeContainer.h"
 #import "BTObject.h"
 #import "BTSprite.h"
+
+// Categories
 #import "SPEventDispatcher+BlockListener.h"
 #import "SPDisplayObject+Extensions.h"
 #import "SPPoint+Extensions.h"
 #import "SPRectangle+Extensions.h"
+#import "GDataXMLNode+Extensions.h"
 
 // Resources
 #import "GDataXMLException.h"
-#import "GDataXMLNode+OOO.h"
 #import "BTLoadable.h"
 #import "BTLoadableBatch.h"
 #import "BTMovieResource.h"
