@@ -5,6 +5,18 @@
 
 @implementation SPRectangle (OOOExtensions)
 
+- (float)centerX {
+    return mX + (mWidth / 2);
+}
+
+- (float)centerY {
+    return mY + (mHeight / 2);
+}
+
+- (SPPoint*)center {
+    return [SPPoint pointWithX:self.centerX y:self.centerY];
+}
+
 - (void)setX:(float)x y:(float)y width:(float)width height:(float)height {
     mX = x;
     mY = y;

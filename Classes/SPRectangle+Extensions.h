@@ -5,6 +5,10 @@
 
 @interface SPRectangle (OOOExtensions)
 
+@property(nonatomic,readonly) float centerX;
+@property(nonatomic,readonly) float centerY;
+@property(nonatomic,readonly) SPPoint* center;
+
 /// Sets the bounds of the rectangle.
 - (void)setX:(float)x y:(float)y width:(float)width height:(float)height;
 
