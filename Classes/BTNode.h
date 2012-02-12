@@ -39,33 +39,35 @@
 @end
 
 /// Helper macros for implementing the -keys and -groups methods
+/// - (NSArray*)groups { return BT_STATIC_GROUPS(@"FooGroup", @"BarGroup"); }
+/// - (NSArray*)keys { return BT_KEYS(@"FooKey", _instanceKey); }
 
-#define BT_GROUPS(...) \
+#define BT_GROUPS(...) ({ \
     NSMutableArray* values = [NSMutableArray arrayWithObjects:__VA_ARGS__, nil]; \
     NSArray* parentGroups = super.groups; \
     if (parentGroups != nil) { [values addObjectsFromArray:parentGroups]; } \
-    return values;
+    values; })
 
-#define BT_KEYS(...) \
+#define BT_KEYS(...) ({ \
     NSMutableArray* values = [NSMutableArray arrayWithObjects:__VA_ARGS__, nil]; \
     NSArray* parentKeys = super.keys; \
     if (parentKeys != nil) { [values addObjectsFromArray:parentKeys]; } \
-    return values;
+    values; })
     
-#define BT_STATIC_GROUPS(...) \
+#define BT_STATIC_GROUPS(...) ({ \
     static NSMutableArray* gValues = nil;  \
     if (gValues == nil) { \
         gValues = [NSMutableArray arrayWithObjects:__VA_ARGS__, nil]; \
         NSArray* parentGroups = super.groups; \
         if (parentGroups != nil) { [gValues addObjectsFromArray:parentGroups]; } \
     } \
-    return gValues;
+    gValues; })
 
-#define BT_STATIC_KEYS(...) \
+#define BT_STATIC_KEYS(...) ({ \
     static NSMutableArray* gValues = nil;  \
     if (gValues == nil) { \
         gValues = [NSMutableArray arrayWithObjects:__VA_ARGS__, nil]; \
         NSArray* parentKeys = super.keys; \
         if (parentKeys != nil) { [gValues addObjectsFromArray:parentKeys]; } \
     } \
-    return gValues;
+    gValues; })
