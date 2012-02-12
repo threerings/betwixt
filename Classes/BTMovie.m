@@ -9,13 +9,15 @@
 #import "BTResourceManager.h"
 #import "BTTextureResource.h"
 #import "BTMovieResourceLayer.h"
+#import "BTJugglerContainer.h"
 
 NSString * const BTMovieFirstFrame = @"BTMovieFirstFrame";
 NSString * const BTMovieLastFrame = @"BTMovieLastFrame";
-@interface BTMovieLayer : SPSprite {
+@interface BTMovieLayer : NSObject {
 @public
-    int keyframeIdx;
+    int keyframeIdx, layerIdx;
     NSMutableArray* keyframes;
+    __weak BTMovie *movie;
 }
 @end
 
@@ -25,14 +27,15 @@ NSString * const BTMovieLastFrame = @"BTMovieLastFrame";
     return (BTMovieResourceKeyframe*)[keyframes objectAtIndex:idx];
 }
 
-- (id)initWithLayer:(BTMovieResourceLayer*)layer {
+- (id)initForMovie:(BTMovie*)parent withLayer:(BTMovieResourceLayer*)layer {
     if (!(self = [super init])) return nil;
-    self.name = layer->name;
     keyframes = layer->keyframes;
-
     NSString *symbol = [self kfAtIdx:0]->libraryItem;
     id<BTDisplayObjectCreator> res = [BTApp.app.resourceManager requireResource:symbol conformingTo:@protocol(BTDisplayObjectCreator)];
-    [self addChild:[res createDisplayObject]];
+    movie = parent;
+    [movie addChild:[res createDisplayObject]];
+    layerIdx = movie.numChildren - 1;
+    [movie childAtIndex:layerIdx].name = layer->name;
     return self;
 }
 
@@ -41,21 +44,22 @@ NSString * const BTMovieLastFrame = @"BTMovieLastFrame";
         keyframeIdx++;
     }
     BTMovieResourceKeyframe* kf = [self kfAtIdx:keyframeIdx];
+    SPDisplayObject* layer = [movie childAtIndex:layerIdx];
     if (keyframeIdx == [keyframes count] - 1|| kf->index == frame) {
-        self.x = kf->x;
-        self.y = kf->y;
-        self.scaleX = kf->scaleX;
-        self.scaleY = kf->scaleY;
-        self.rotation = kf->rotation;
+        layer.x = kf->x;
+        layer.y = kf->y;
+        layer.scaleX = kf->scaleX;
+        layer.scaleY = kf->scaleY;
+        layer.rotation = kf->rotation;
     } else {
         // TODO - interpolation types other than linear
         float interped = (frame - kf->index)/(float)kf->duration;
         BTMovieResourceKeyframe* nextKf = [self kfAtIdx:keyframeIdx + 1];
-        self.x = kf->x + (nextKf->x - kf->x) * interped;
-        self.y = kf->y + (nextKf->y - kf->y) * interped;
-        self.scaleX = kf->scaleX + (nextKf->scaleX - kf->scaleX) * interped;
-        self.scaleY = kf->scaleY + (nextKf->scaleY - kf->scaleY) * interped;
-        self.rotation = kf->rotation + (nextKf->rotation - kf->rotation) * interped;
+        layer.x = kf->x + (nextKf->x - kf->x) * interped;
+        layer.y = kf->y + (nextKf->y - kf->y) * interped;
+        layer.scaleX = kf->scaleX + (nextKf->scaleX - kf->scaleX) * interped;
+        layer.scaleY = kf->scaleY + (nextKf->scaleY - kf->scaleY) * interped;
+        layer.rotation = kf->rotation + (nextKf->rotation - kf->rotation) * interped;
     }
 }
 @end
@@ -68,6 +72,8 @@ NSString * const BTMovieLastFrame = @"BTMovieLastFrame";
     float _playTime, _duration;
     RAObjectSignal* _labelPassed;
     NSArray* _labels;
+    NSMutableArray* _layers;
+    __weak SPJuggler* _juggler;
 }
 
 - (int)frameForLabel:(NSString*)label {
@@ -101,8 +107,8 @@ NSString * const BTMovieLastFrame = @"BTMovieLastFrame";
     BOOL differentFrame = newFrame != _frame;
     BOOL wrapped = newFrame < _frame;
     if (differentFrame) {
-        if (wrapped) for (BTMovieLayer* layer in _sprite) layer->keyframeIdx = 0;
-        for (BTMovieLayer* layer in _sprite) [layer drawFrame:newFrame];
+        if (wrapped) for (BTMovieLayer* layer in _layers) layer->keyframeIdx = 0;
+        for (BTMovieLayer* layer in _layers) [layer drawFrame:newFrame];
     }
 
     // Update the frame before firing, so if firing changes the frame, it should stick.
@@ -174,8 +180,9 @@ NSString * const BTMovieLastFrame = @"BTMovieLastFrame";
 
 - (int)frames { return [_labels count]; }
 
-- (void)update:(float)dt {
+- (void)advanceTime:(double)dt {
     if (!_playing.value) return;
+    
     _playTime += dt;
     if (_playTime > _duration) _playTime = fmodf(_playTime, _duration);
     int newFrame = (int)(_playTime * 30);
@@ -191,11 +198,31 @@ NSString * const BTMovieLastFrame = @"BTMovieLastFrame";
     [self gotoFrame:newFrame fromSkip:NO overDuration:overDuration];
 }
 
+- (BOOL) isComplete { return !_playing.value; }
+
+- (void)addedToStage:(SPEvent*)event {
+    SPDisplayObject* parent = self.parent;
+    while (parent) {
+        if ([parent conformsToProtocol:@protocol(BTJugglerContainer)]) {
+            _juggler = ((id<BTJugglerContainer>)parent).juggler;
+            break;
+        }
+        parent = parent.parent;
+    }
+    if (!_juggler) _juggler = [[SPStage mainStage] juggler];
+    [_juggler addObject:self];
+}
+
+- (void)removedFromStage:(SPEvent*)event {
+    [_juggler removeObject:self];
+    _juggler = nil;
+}
+
 - (id)initWithLayers:(NSMutableArray*)layers andLabels:(NSArray*)labels {
     if (!(self = [super init])) return nil;
+    _layers = [[NSMutableArray alloc] initWithCapacity:[layers count]];
     for (BTMovieResourceLayer* layer in layers) {
-        BTMovieLayer* mLayer = [[BTMovieLayer alloc] initWithLayer:layer];
-        [_sprite addChild:mLayer];
+        [_layers addObject:[[BTMovieLayer alloc] initForMovie:self withLayer:layer]];
     }
     _pendingFrame = NO_FRAME;
     _stopFrame = NO_FRAME;
@@ -206,6 +233,8 @@ NSString * const BTMovieLastFrame = @"BTMovieLastFrame";
     _playing.value = YES;
     _labelPassed = [[RAObjectSignal alloc] init];
     [self gotoFrame:0 fromSkip:YES overDuration:NO];
+    [self addEventListener:@selector(addedToStage:) atObject:self forType:SP_EVENT_TYPE_ADDED_TO_STAGE];
+    [self addEventListener:@selector(removedFromStage:) atObject:self forType:SP_EVENT_TYPE_REMOVED_FROM_STAGE];
     return self;
 }
 

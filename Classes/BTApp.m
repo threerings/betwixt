@@ -125,6 +125,7 @@ static BTApp* gInstance = nil;
 @implementation BTStage
 
 - (void)advanceTime:(double)seconds {
+    [self.juggler advanceTime:seconds];
     [self.app update:(float) seconds];
 }
 

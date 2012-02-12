@@ -19,6 +19,7 @@
     BTSprite* _rootNode;
     NSMutableDictionary* _keyedObjects;
     NSMutableDictionary* _groups;
+    SPJuggler* _juggler;
 }
 
 - (BTNode*)nodeForKey:(NSString*)key;

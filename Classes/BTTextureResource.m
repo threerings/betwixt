@@ -35,10 +35,12 @@
 }
 
 - (SPDisplayObject*)createDisplayObject {
+    SPSprite* holder = [[SPSprite alloc] init];
     SPImage* img = [[SPImage alloc] initWithTexture:_texture];
     img.x = _offset.x;
     img.y = _offset.y;
-    return img;
+    [holder addChild:img];
+    return holder;
 }
 
 @synthesize texture = _texture, offset = _offset;

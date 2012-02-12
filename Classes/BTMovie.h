@@ -9,7 +9,7 @@
 extern NSString * const BTMovieFirstFrame;
 extern NSString * const BTMovieLastFrame;
 
-@interface BTMovie : BTSprite <BTUpdatable>
+@interface BTMovie : SPSprite <SPAnimatable>
 
 -(void)loopFromLabel:(NSString*)label;
 -(void)loopFromFrame:(int)frame;

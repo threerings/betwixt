@@ -1,14 +1,14 @@
 <resources>
-  <movie name="Animations/squaredance" group="">
-<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Animations/squaredance" itemID="4f063d3c-00000258" linkageExportForAS="true" linkageClassName="squaredance" lastModified="1326499300" lastUniqueIdentifier="11">
+  <movie name="squaredance" md5="e0a86cdc33f6d5ef815060f3be6d1a8b">
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="squaredance" itemID="4f063d3c-00000258" linkageExportForAS="true" linkageClassName="squaredance" lastModified="1329077627" lastUniqueIdentifier="17">
   <timeline>
-    <DOMTimeline name="squaredance" currentFrame="29">
+    <DOMTimeline name="squaredance">
       <layers>
         <DOMLayer name="blue" color="#9933CC" current="true" isSelected="true" autoNamed="false">
           <frames>
             <DOMFrame index="0" duration="14" tweenType="motion" motionTweenSnap="true" keyMode="22017">
               <elements>
-                <DOMSymbolInstance libraryItemName="Textures/bluesquare" centerPoint3DX="127" centerPoint3DY="237">
+                <DOMSymbolInstance libraryItemName="bluesquare" centerPoint3DX="127" centerPoint3DY="237">
                   <matrix>
                     <Matrix tx="41.5" ty="151.5"/>
                   </matrix>
@@ -20,7 +20,7 @@
             </DOMFrame>
             <DOMFrame index="14" duration="15" tweenType="motion" motionTweenSnap="true" keyMode="22017">
               <elements>
-                <DOMSymbolInstance libraryItemName="Textures/bluesquare" selected="true" centerPoint3DX="210.55" centerPoint3DY="289.4">
+                <DOMSymbolInstance libraryItemName="bluesquare" selected="true" centerPoint3DX="210.55" centerPoint3DY="289.4">
                   <matrix>
                     <Matrix a="0" b="1" c="-0.623687744140625" d="0" tx="295.95" ty="204"/>
                   </matrix>
@@ -32,7 +32,7 @@
             </DOMFrame>
             <DOMFrame index="29" tweenType="motion" motionTweenSnap="true" keyMode="22017">
               <elements>
-                <DOMSymbolInstance libraryItemName="Textures/bluesquare" centerPoint3DX="12.55" centerPoint3DY="289.4">
+                <DOMSymbolInstance libraryItemName="bluesquare" centerPoint3DX="12.55" centerPoint3DY="289.4">
                   <matrix>
                     <Matrix a="0" b="1" c="-0.623687744140625" d="0" tx="97.95" ty="204"/>
                   </matrix>
@@ -48,7 +48,7 @@
           <frames>
             <DOMFrame index="0" duration="14" tweenType="motion" motionTweenSnap="true" keyMode="22017">
               <elements>
-                <DOMSymbolInstance libraryItemName="Textures/redsquare">
+                <DOMSymbolInstance libraryItemName="redsquare">
                   <matrix>
                     <Matrix tx="-125" ty="-100"/>
                   </matrix>
@@ -60,7 +60,7 @@
             </DOMFrame>
             <DOMFrame index="14" duration="15" tweenType="motion" motionTweenSnap="true" keyMode="22017">
               <elements>
-                <DOMSymbolInstance libraryItemName="Textures/redsquare" selected="true">
+                <DOMSymbolInstance libraryItemName="redsquare" selected="true">
                   <matrix>
                     <Matrix a="0" b="-0.4320068359375" c="1.17282104492188" d="0" tx="72" ty="258"/>
                   </matrix>
@@ -72,7 +72,7 @@
             </DOMFrame>
             <DOMFrame index="29" tweenType="motion" motionTweenSnap="true" keyMode="22017">
               <elements>
-                <DOMSymbolInstance libraryItemName="Textures/redsquare">
+                <DOMSymbolInstance libraryItemName="redsquare">
                   <matrix>
                     <Matrix a="0" b="-0.4320068359375" c="1.17282104492188" d="0" tx="-126" ty="258"/>
                   </matrix>
@@ -89,6 +89,72 @@
   </timeline>
 </DOMSymbolItem>
   </movie>
-  <texture name='Textures/redsquare' filename='redsquare.png' xOffset='125' yOffset='100'/>
-  <texture name='Textures/bluesquare' filename='bluesquare.png' xOffset='0' yOffset='0'/>
+  <movie name="nesteddance" md5="0a9398ec8b24441cebe43c4ca4b2f2fc">
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="nesteddance" itemID="4f35a674-00000251" linkageExportForAS="true" linkageClassName="nesteddance" lastModified="1329077624" lastUniqueIdentifier="2">
+  <timeline>
+    <DOMTimeline name="nesteddance" currentFrame="29">
+      <layers>
+        <DOMLayer name="square 2" color="#9933CC" current="true" isSelected="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" duration="29" tweenType="motion" motionTweenSnap="true" keyMode="22017">
+              <elements>
+                <DOMSymbolInstance libraryItemName="squaredance" centerPoint3DX="384" centerPoint3DY="26">
+                  <matrix>
+                    <Matrix tx="277.75" ty="-135.25"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="29" tweenType="motion" motionTweenSnap="true" keyMode="22017">
+              <elements>
+                <DOMSymbolInstance libraryItemName="squaredance" centerPoint3DX="-31.45" centerPoint3DY="140.45">
+                  <matrix>
+                    <Matrix a="0" b="-1" c="1" d="0" tx="-192.75" ty="246.7"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="square1" color="#4FFF4F" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" duration="29" tweenType="motion" motionTweenSnap="true" keyMode="22017">
+              <elements>
+                <DOMSymbolInstance libraryItemName="squaredance" centerPoint3DX="40" centerPoint3DY="24">
+                  <matrix>
+                    <Matrix tx="-66.25" ty="-137.25"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="29" tweenType="motion" motionTweenSnap="true" keyMode="22017">
+              <elements>
+                <DOMSymbolInstance libraryItemName="squaredance" centerPoint3DX="410.05" centerPoint3DY="251.1">
+                  <matrix>
+                    <Matrix a="0" b="-1" c="1" d="0" tx="249.25" ty="357.7"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>
+  </movie>
+  <texture name='redsquare' filename='redsquare.png' xOffset='125' yOffset='100' md5='b7313e8cb63744254cd87a994d924650'/>
+  <texture name='bluesquare' filename='bluesquare.png' xOffset='0' yOffset='0' md5='de6d78affc5a793733f7c9ba898d3ee8'/>
 </resources>

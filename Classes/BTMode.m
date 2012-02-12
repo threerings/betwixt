@@ -9,6 +9,25 @@
 #import "BTNode+Protected.h"
 #import "BTInput+Package.h"
 #import "SPTouchProcessor.h"
+#import "BTJugglerContainer.h"
+
+@interface BTModeSprite : SPSprite<BTJugglerContainer> {
+    SPJuggler* _juggler;
+}
+@end
+@implementation BTModeSprite
+
+- (id)initWithJuggler:(SPJuggler*)juggler {
+    if (!(self = [super init])) {
+        return nil;
+    }
+    _juggler = juggler;
+    return self;
+}
+
+@synthesize juggler=_juggler;
+@end
+    
 
 @interface BTRootNode : BTSprite {
 @private
@@ -19,8 +38,8 @@
 @end
 
 @implementation BTRootNode
-- (id)initWithMode:(BTMode*)mode {
-    if (!(self = [super init])) {
+- (id)initWithMode:(BTMode*)mode{
+    if (!(self = [super initWithSprite:[[BTModeSprite alloc] initWithJuggler:mode->_juggler]])) {
         return nil;
     }
     _mode = mode;
@@ -38,6 +57,7 @@
 
 - (id)init {
     if (!(self = [super init])) return nil;
+    _juggler = [[SPJuggler alloc] init];
     _rootNode = [[BTRootNode alloc] initWithMode:self];
     
     _input = [[BTInput alloc] initWithMode:self];
@@ -70,6 +90,7 @@
 }
 
 - (void)update:(float)dt {
+    [_juggler advanceTime:dt];
     [_update emitEvent:dt];
 }
 
