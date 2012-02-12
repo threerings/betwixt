@@ -27,7 +27,15 @@
 }
 
 + (float)distanceSqFromPoint:(SPPoint *)p1 toPoint:(SPPoint *)p2 {
-    return SQ(p2->mX - p1->mX) + SQ(p2->mY - p1->mY);
+    return [SPPoint distanceSqFromX:p1.x fromY:p1.y toX:p2.x toY:p2.y];
+}
+
++ (float)distanceSqFromX:(float)fromX fromY:(float)fromY toX:(float)toX toY:(float)toY {
+    return SQ(toX - fromX) + SQ(toY - fromY);
+}
+
++ (float)distanceFromX:(float)fromX fromY:(float)fromY toX:(float)toX toY:(float)toY {
+    return sqrtf([SPPoint distanceSqFromX:fromX fromY:fromY toX:toX toY:toY]);
 }
 
 - (void)setLength:(float)length {

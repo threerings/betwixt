@@ -57,5 +57,4 @@
 #import "BTEnum.h"
 #import "BTLoadingMode.h"
 #import "BTMacros.h"
-#import "BTPoints.h"
 #import "BTRandoms.h"
