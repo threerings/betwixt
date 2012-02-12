@@ -2,6 +2,9 @@
 // Betwixt - Copyright 2012 Three Rings Design
 
 #import "SPRectangle+Extensions.h"
+#import "SPPoint+Extensions.h"
+#import "BTMacros.h"
+#import <math.h>
 
 @implementation SPRectangle (OOOExtensions)
 
@@ -34,6 +37,20 @@
 
 - (void)addPoint:(SPPoint *)p {
     [self addX:p.x y:p.y];
+}
+
+- (SPPoint*)closestInteriorPointTo:(SPPoint *)p {
+    return [SPPoint pointWithX:CLAMP(p.x, self.left, self.right) 
+                             y:CLAMP(p.y, self.top, self.bottom)];
+}
+
+- (float)distanceSqToPoint:(SPPoint *)p {
+    SPPoint* p2 = [self closestInteriorPointTo:p];
+    return [SPPoint distanceSqFromPoint:p toPoint:p2];
+}
+
+- (float)distanceToPoint:(SPPoint *)p {
+    return sqrtf([self distanceSqToPoint:p]);
 }
 
 @end

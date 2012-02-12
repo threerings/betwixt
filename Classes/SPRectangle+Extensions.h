@@ -18,4 +18,17 @@
 /// Expands the bounds of this rectangle to contain the specified point.
 - (void)addPoint:(SPPoint *)p;
 
+/// Computes the point inside the bounds of the rectangle that's closest to the given point.
+- (SPPoint*)closestInteriorPointTo:(SPPoint*)p;
+
+/// Returns the squared Euclidean distance between the given point and the nearest point
+/// inside the bounds of the rectangle. If the supplied points is inside the rectangle,
+/// the distance will be 0.
+- (float)distanceSqToPoint:(SPPoint*)p;
+
+/// Returns the Euclidean distance between the given point and the nearest point
+/// inside the bounds of the rectangle. If the supplied points is inside the rectangle,
+/// the distance will be 0.
+- (float)distanceToPoint:(SPPoint*)p;
+
 @end
