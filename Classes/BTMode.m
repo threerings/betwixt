@@ -92,12 +92,15 @@
             }
         }
     }
-
-    // Since we're not limiting our batchCount to 1,
-    // callers could end up enumerating over nodes that
-    // are removed during enumeration. Do we care about this?
+    
     NSUInteger batchCount = 0;
-    while (batchCount < len && index < _group.count) {
+    // Limit our batchCount to 1, so that enumerators
+    // are guaranteed not to see nodes that have been detached.
+    // This is slightly slower, but more correct than just returning
+    // 'len' items, some of which may no longer be valid when the
+    // iteration reaches them.
+    while (batchCount < 1 && index < _group.count) {
+    //while (batchCount < len && index < _group.count) {
         BTNode* node = [_group objectAtIndex:index++];
         NSUInteger nodeId = node->_id;
         // Ensure we haven't already returned this node, and that the
