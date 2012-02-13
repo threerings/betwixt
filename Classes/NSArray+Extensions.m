@@ -2,6 +2,7 @@
 // Betwixt - Copyright 2012 Three Rings Design
 
 #import "NSArray+Extensions.h"
+#import "BTUtils.h"
 
 @implementation NSArray (OOOExtensions)
 
@@ -18,7 +19,7 @@
 - (NSMutableArray *)map:(id (^)(id))block {
     NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:self.count];
     for (id obj in self) {
-        [array addObject:block(obj)];
+        [array addObject:BTNilToNSNull(block(obj))];
     }
     return array;
 }
