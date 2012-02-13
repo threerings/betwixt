@@ -21,7 +21,7 @@
 - (id)initFromXml:(GDataXMLElement*)xml {
     if (!(self = [super init])) return nil;
     layers = [[NSMutableArray alloc] init];
-    GDataXMLElement* layersEl = [xml walkTo:@"DOMSymbolItem/timeline/DOMTimeline/layers"];
+    GDataXMLElement* layersEl = [xml requireChild:@"DOMSymbolItem/timeline/DOMTimeline/layers"];
     int frames = 0;
     for (GDataXMLElement* layerEl in [layersEl elements]) {
         BTMovieResourceLayer* layer = [[BTMovieResourceLayer alloc] initWithLayer:layerEl];
@@ -44,6 +44,8 @@
 - (BTMovie*)newMovie {
     return [[BTMovie alloc] initWithLayers:layers andLabels:labels];
 }
+
+- (SPDisplayObject*)createDisplayObject { return [self newMovie]; }
 
 + (id<BTResourceFactory>)sharedFactory {
     static BTMovieResourceFactory* instance;

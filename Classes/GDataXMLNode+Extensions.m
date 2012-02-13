@@ -108,12 +108,21 @@
     return [self boolAttribute:name defaultVal:0 required:YES];
 }
 
-- (GDataXMLElement*) walkTo:(NSString*)path {
+- (GDataXMLElement*) getChild:(NSString*)path {
+    NSArray* els = [NSArray arrayWithObject:self];
+    for (NSString* name in [path componentsSeparatedByString:@"/"]) {
+        els = [[els objectAtIndex:0] elementsForName:name];
+        if ([els count] > 1 || [els count] == 0) return nil;
+    }
+    return [els objectAtIndex:0];
+}
+
+- (GDataXMLElement*) requireChild:(NSString*)path {
     GDataXMLElement* current = self;
     for (NSString* name in [path componentsSeparatedByString:@"/"]) {
         NSArray* els = [current elementsForName:name];
         if ([els count] > 1) {
-            @throw [GDataXMLException withElement:self
+            @throw [GDataXMLException withElement:current
                 reason:@"More than one child named '%@' in path '%@'", name, path];
         } else if ([els count] == 0) {
             @throw [GDataXMLException withElement:current

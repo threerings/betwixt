@@ -4,13 +4,14 @@
 #import "SPSprite.h"
 
 #import "BTResource.h"
+#import "BTDisplayObjectCreator.h"
 
 #define BTMOVIE_RESOURCE_NAME @"movie"
 
 @protocol BTResourceFactory;
 @class BTMovie;
 
-@interface BTMovieResource : BTResource
+@interface BTMovieResource : BTResource<BTDisplayObjectCreator>
 
 + (id<BTResourceFactory>) sharedFactory;
 

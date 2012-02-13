@@ -10,16 +10,19 @@
     index = [frameEl intAttribute:@"index"];
     duration = [frameEl intAttribute:@"duration" defaultVal:1];
 
-    GDataXMLElement* symbolEl = [frameEl walkTo:@"elements/DOMSymbolInstance"];
+    GDataXMLElement* symbolEl = [frameEl requireChild:@"elements/DOMSymbolInstance"];
     libraryItem = [symbolEl stringAttribute:@"libraryItemName"];
 
-    GDataXMLElement* matrixEl = [symbolEl walkTo:@"matrix/Matrix"];
-    SPMatrix* mat = [[SPMatrix alloc] initWithA:[matrixEl floatAttribute:@"a" defaultVal:1]
+    GDataXMLElement* matrixEl = [symbolEl getChild:@"matrix/Matrix"];
+    SPMatrix* mat;
+    if (matrixEl) {
+        mat = [[SPMatrix alloc] initWithA:[matrixEl floatAttribute:@"a" defaultVal:1]
                                                  b:[matrixEl floatAttribute:@"b" defaultVal:0]
                                                  c:[matrixEl floatAttribute:@"c" defaultVal:0]
                                                  d:[matrixEl floatAttribute:@"d" defaultVal:1]
                                                 tx:[matrixEl floatAttribute:@"tx" defaultVal:0]
                                                 ty:[matrixEl floatAttribute:@"ty" defaultVal:0]];
+    } else mat = [[SPMatrix alloc] init];
     x = mat.tx;
     y = mat.ty;
     SPPoint* py = [mat transformPoint:[SPPoint pointWithX:1 y:0]];

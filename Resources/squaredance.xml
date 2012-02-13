@@ -90,18 +90,15 @@
 </DOMSymbolItem>
   </movie>
   <movie name="nesteddance" md5="0a9398ec8b24441cebe43c4ca4b2f2fc">
-<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="nesteddance" itemID="4f35a674-00000251" linkageExportForAS="true" linkageClassName="nesteddance" lastModified="1329077624" lastUniqueIdentifier="2">
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="nesteddance" itemID="4f35a674-00000251" linkageExportForAS="true" linkageClassName="nesteddance" lastModified="1329158154" lastUniqueIdentifier="2">
   <timeline>
     <DOMTimeline name="nesteddance" currentFrame="29">
       <layers>
-        <DOMLayer name="square 2" color="#9933CC" current="true" isSelected="true" autoNamed="false">
+        <DOMLayer name="square 2" color="#9933CC" autoNamed="false">
           <frames>
             <DOMFrame index="0" duration="29" tweenType="motion" motionTweenSnap="true" keyMode="22017">
               <elements>
-                <DOMSymbolInstance libraryItemName="squaredance" centerPoint3DX="384" centerPoint3DY="26">
-                  <matrix>
-                    <Matrix tx="277.75" ty="-135.25"/>
-                  </matrix>
+                <DOMSymbolInstance libraryItemName="squaredance" centerPoint3DX="106.25" centerPoint3DY="161.25">
                   <transformationPoint>
                     <Point/>
                   </transformationPoint>
@@ -122,13 +119,13 @@
             </DOMFrame>
           </frames>
         </DOMLayer>
-        <DOMLayer name="square1" color="#4FFF4F" autoNamed="false">
+        <DOMLayer name="square1" color="#4FFF4F" current="true" isSelected="true" autoNamed="false">
           <frames>
             <DOMFrame index="0" duration="29" tweenType="motion" motionTweenSnap="true" keyMode="22017">
               <elements>
-                <DOMSymbolInstance libraryItemName="squaredance" centerPoint3DX="40" centerPoint3DY="24">
+                <DOMSymbolInstance libraryItemName="squaredance" centerPoint3DX="238" centerPoint3DY="161.25">
                   <matrix>
-                    <Matrix tx="-66.25" ty="-137.25"/>
+                    <Matrix tx="131.75"/>
                   </matrix>
                   <transformationPoint>
                     <Point/>
