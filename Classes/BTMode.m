@@ -29,6 +29,93 @@
 @end
     
 
+@interface BTNodeGroup : NSObject <NSFastEnumeration> {
+@private
+    BTMode* _mode;
+    NSMutableArray* _group;
+}
+- (id)initWithMode:(BTMode*)mode;
+- (void)addNode:(BTNode*)node;
+- (void)removeNode:(BTNode*)node;
+- (NSUInteger)count;
+@end
+
+@implementation BTNodeGroup
+- (id)initWithMode:(BTMode *)mode {
+    if (!(self = [super init])) {
+        return nil;
+    }
+    _mode = mode;
+    _group = [NSMutableArray array];
+    return self;
+}
+
+- (void)addNode:(BTNode *)node {
+    [_group addObject:node];
+}
+
+- (void)removeNode:(BTNode *)node {
+    [_group removeObject:node];
+}
+
+- (NSUInteger)count {
+    return _group.count;
+}
+
+- (NSUInteger)countByEnumeratingWithState:(NSFastEnumerationState *)state 
+                                  objects:(__unsafe_unretained id [])buffer 
+                                    count:(NSUInteger)len {
+    if (state->state == 0) {
+        state->extra[0] = _mode->_nextNodeId - 1;
+        state->extra[1] = 0;
+        state->extra[2] = 0;
+        
+        // mutationsPtr must not be null, so point it to an arbitrary unchanging value.
+        state->mutationsPtr = &state->extra[0];
+        // We can rewind our index, so we don't store it in state
+        state->state = 1;
+    }
+    
+    NSUInteger maxNodeId = state->extra[0];
+    NSUInteger minNodeId = state->extra[1];
+    NSUInteger index = state->extra[2];
+    
+    // Check to see if we need to rewind our index
+    // (if nodes have been deleted during the iteration)
+    if (_group.count > 0) {
+        while (index > 0) {
+            BTNode* prevNode = [_group objectAtIndex:index - 1];
+            if (prevNode->_id >= minNodeId) {
+                index--;
+            } else {
+                break;
+            }
+        }
+    }
+
+    // Since we're not limiting our batchCount to 1,
+    // callers could end up enumerating over nodes that
+    // are removed during enumeration. Do we care about this?
+    NSUInteger batchCount = 0;
+    while (batchCount < len && index < _group.count) {
+        BTNode* node = [_group objectAtIndex:index++];
+        NSUInteger nodeId = node->_id;
+        // Ensure we haven't already returned this node, and that the
+        // node hasn't been added since group enumeration started
+        if (nodeId >= minNodeId && nodeId <= maxNodeId) {
+            buffer[batchCount++] = node;
+            minNodeId = nodeId + 1;
+        }
+    }
+    
+    state->extra[1] = minNodeId;
+    state->extra[2] = index;
+    state->itemsPtr = buffer;
+    return batchCount;
+}
+
+@end
+
 @interface BTRootNode : BTSprite {
 @private
     __weak BTMode* _mode;
@@ -75,8 +162,13 @@
     return [_keyedObjects objectForKey:key];
 }
 
-- (NSArray*)nodesForGroup:(NSString*)group {
+- (id<NSFastEnumeration>)nodesForGroup:(NSString*)group {
     return [_groups objectForKey:group];
+}
+
+- (int)countNodesInGroup:(NSString *)group {
+    BTNodeGroup* nodeGroup = [_groups objectForKey:group];
+    return [nodeGroup count];
 }
 
 - (BTMode*)mode {
@@ -141,18 +233,18 @@
     if (groups != nil) {
         [node.detached connectUnit:^ {
             for (NSString* group in groups) {
-                NSMutableArray* members = [_groups objectForKey:group];
-                [members removeObject:node];
+                BTNodeGroup* members = [_groups objectForKey:group];
+                [members removeNode:node];
                 if ([members count] == 0) [_groups removeObjectForKey:group];
             }
         }];
         for (NSString* group in groups) {
-            NSMutableArray* members = [_groups objectForKey:group];
+            BTNodeGroup* members = [_groups objectForKey:group];
             if (!members) {
-                members = [[NSMutableArray alloc] init];
+                members = [[BTNodeGroup alloc] initWithMode:self];
                 [_groups setObject:members forKey:group];
             }
-            [members addObject:node];
+            [members addNode:node];
         }
     }
 }

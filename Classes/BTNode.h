@@ -10,6 +10,7 @@
     RAUnitSignal* _detached;
     RAConnectionGroup* _conns;
     BOOL _isDetached;
+    NSUInteger _id;
 }
 
 /// Detaches the node from its mode. Once a node has been detached, it can't

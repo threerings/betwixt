@@ -99,10 +99,12 @@
         return;
     }
     
+    BTMode *mode = self.mode;
+    
     [_children addObject:node];
     node->_parent = self;
+    node->_id = mode->_nextNodeId++;
     
-    BTMode *mode = self.mode;
     [mode addKeys:node];
     [mode addGroups:node];
     

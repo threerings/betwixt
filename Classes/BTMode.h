@@ -20,11 +20,13 @@
     NSMutableDictionary* _keyedObjects;
     NSMutableDictionary* _groups;
     SPJuggler* _juggler;
+    NSUInteger _nextNodeId;
 }
 
 - (BTNode*)nodeForKey:(NSString*)key;
 /// Returns the nodes in the group or nil if there are no nodes in the group.
-- (NSArray*)nodesForGroup:(NSString*)group;
+- (id<NSFastEnumeration>)nodesForGroup:(NSString*)group;
+- (int)countNodesInGroup:(NSString*)group;
 
 @property(nonatomic,readonly) RAFloatSignal* update;
 @property(nonatomic,readonly) RAUnitSignal* entered;
