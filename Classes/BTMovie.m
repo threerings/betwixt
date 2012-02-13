@@ -114,7 +114,7 @@ NSString * const BTMovieLastFrame = @"BTMovieLastFrame";
 - (RAConnection*)monitorLabel:(NSString*)label withUnit:(RAUnitBlock)slot {
     LabelMonitorConnProxy* proxy = [[LabelMonitorConnProxy alloc] init];
     RAConnection* realConn = [_labelPassed connectSlot:^(id labelFired) {
-        if ([labelFired isEqual:label]) {
+        if ([labelFired isEqualToString:label]) {
             slot();
             [proxy proxiedDispatched];
         }
