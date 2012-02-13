@@ -38,6 +38,11 @@
             [[labels lastObject] addObject:label];
         }
     }
+    for (BTMovieResourceLayer* layer in layers) {
+        for (BTMovieResourceKeyframe* kf in layer->keyframes) {
+            if (kf->label) [[labels objectAtIndex:kf->index] addObject:kf->label];
+        }
+    }
     return self;
 }
 

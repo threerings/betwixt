@@ -1,10 +1,10 @@
 <resources>
-  <movie name="squaredance" md5="e0a86cdc33f6d5ef815060f3be6d1a8b">
-<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="squaredance" itemID="4f063d3c-00000258" linkageExportForAS="true" linkageClassName="squaredance" lastModified="1329077627" lastUniqueIdentifier="17">
+  <movie name="squaredance" md5="8b294fd4d8d47e55e4509120d3bc70f8">
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="squaredance" itemID="4f063d3c-00000258" linkageExportForAS="true" linkageClassName="squaredance" lastModified="1329170903" lastUniqueIdentifier="17">
   <timeline>
     <DOMTimeline name="squaredance">
       <layers>
-        <DOMLayer name="blue" color="#9933CC" current="true" isSelected="true" autoNamed="false">
+        <DOMLayer name="blue" color="#9933CC" autoNamed="false">
           <frames>
             <DOMFrame index="0" duration="14" tweenType="motion" motionTweenSnap="true" keyMode="22017">
               <elements>
@@ -18,9 +18,9 @@
                 </DOMSymbolInstance>
               </elements>
             </DOMFrame>
-            <DOMFrame index="14" duration="15" tweenType="motion" motionTweenSnap="true" keyMode="22017">
+            <DOMFrame index="14" duration="15" name="blueswitch" labelType="name" tweenType="motion" motionTweenSnap="true" keyMode="22017">
               <elements>
-                <DOMSymbolInstance libraryItemName="bluesquare" selected="true" centerPoint3DX="210.55" centerPoint3DY="289.4">
+                <DOMSymbolInstance libraryItemName="bluesquare" centerPoint3DX="210.55" centerPoint3DY="289.4">
                   <matrix>
                     <Matrix a="0" b="1" c="-0.623687744140625" d="0" tx="295.95" ty="204"/>
                   </matrix>
@@ -44,7 +44,7 @@
             </DOMFrame>
           </frames>
         </DOMLayer>
-        <DOMLayer name="red" color="#4FFF4F" autoNamed="false">
+        <DOMLayer name="red" color="#4FFF4F" current="true" isSelected="true" autoNamed="false">
           <frames>
             <DOMFrame index="0" duration="14" tweenType="motion" motionTweenSnap="true" keyMode="22017">
               <elements>
@@ -58,9 +58,9 @@
                 </DOMSymbolInstance>
               </elements>
             </DOMFrame>
-            <DOMFrame index="14" duration="15" tweenType="motion" motionTweenSnap="true" keyMode="22017">
+            <DOMFrame index="14" duration="15" name="redswitch" labelType="name" tweenType="motion" motionTweenSnap="true" keyMode="22017">
               <elements>
-                <DOMSymbolInstance libraryItemName="redsquare" selected="true">
+                <DOMSymbolInstance libraryItemName="redsquare">
                   <matrix>
                     <Matrix a="0" b="-0.4320068359375" c="1.17282104492188" d="0" tx="72" ty="258"/>
                   </matrix>
@@ -89,11 +89,24 @@
   </timeline>
 </DOMSymbolItem>
   </movie>
-  <movie name="nesteddance" md5="0a9398ec8b24441cebe43c4ca4b2f2fc">
-<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="nesteddance" itemID="4f35a674-00000251" linkageExportForAS="true" linkageClassName="nesteddance" lastModified="1329158154" lastUniqueIdentifier="2">
+  <movie name="nesteddance" md5="a989b3dded0ceac4456ba72278bec137">
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="nesteddance" itemID="4f35a674-00000251" linkageExportForAS="true" linkageClassName="nesteddance" lastModified="1329170968" lastUniqueIdentifier="2">
   <timeline>
-    <DOMTimeline name="nesteddance" currentFrame="29">
+    <DOMTimeline name="nesteddance" currentFrame="19">
       <layers>
+        <DOMLayer name="labels" color="#9933CC" current="true" isSelected="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" duration="9" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="9" duration="10" name="timepassed" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="19" duration="11" name="moretimepassed" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
         <DOMLayer name="square 2" color="#9933CC" autoNamed="false">
           <frames>
             <DOMFrame index="0" duration="29" tweenType="motion" motionTweenSnap="true" keyMode="22017">
@@ -119,7 +132,7 @@
             </DOMFrame>
           </frames>
         </DOMLayer>
-        <DOMLayer name="square1" color="#4FFF4F" current="true" isSelected="true" autoNamed="false">
+        <DOMLayer name="square1" color="#4FFF4F" autoNamed="false">
           <frames>
             <DOMFrame index="0" duration="29" tweenType="motion" motionTweenSnap="true" keyMode="22017">
               <elements>

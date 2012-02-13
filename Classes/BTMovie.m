@@ -66,6 +66,29 @@ NSString * const BTMovieLastFrame = @"BTMovieLastFrame";
 }
 @end
 
+// Proxies connections to the label montior connecitions so that once only applies when the desired
+// label is fired.
+@interface LabelMonitorConnProxy : RAConnection {
+@public
+    RAConnection* _proxied;
+    BOOL _oneShot;
+}
+@end
+@implementation LabelMonitorConnProxy
+-(void) proxiedDispatched {
+    if (_oneShot) [_proxied disconnect];
+}
+
+-(RAConnection*) once {
+    _oneShot = YES;
+    return self;
+}
+
+-(void) disconnect {
+    [_proxied disconnect];
+}
+@end
+
 @implementation BTMovie {
     BOOL _goingToFrame;
     int _pendingFrame;
@@ -89,9 +112,15 @@ NSString * const BTMovieLastFrame = @"BTMovieLastFrame";
 }
 
 - (RAConnection*)monitorLabel:(NSString*)label withUnit:(RAUnitBlock)slot {
-    return [_labelPassed connectSlot:^(id labelFired) {
-        if ([labelFired isEqual:label]) slot();
+    LabelMonitorConnProxy* proxy = [[LabelMonitorConnProxy alloc] init];
+    RAConnection* realConn = [_labelPassed connectSlot:^(id labelFired) {
+        if ([labelFired isEqual:label]) {
+            slot();
+            [proxy proxiedDispatched];
+        }
     }];
+    proxy->_proxied = realConn;
+    return proxy;
 }
 
 - (void)fireLabelsFrom:(int)startFrame to:(int)endFrame {

@@ -10,6 +10,7 @@
     int index, duration;
     float x, y, rotation, scaleX, scaleY;
     NSString* libraryItem;
+    NSString* label;
 }
 
 -initWithFrame:(GDataXMLElement*)frameEl;

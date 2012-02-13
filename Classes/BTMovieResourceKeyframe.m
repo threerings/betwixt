@@ -9,6 +9,7 @@
     if (!(self = [super init])) return nil;
     index = [frameEl intAttribute:@"index"];
     duration = [frameEl intAttribute:@"duration" defaultVal:1];
+    label = [frameEl stringAttribute:@"name" defaultVal:nil];
 
     GDataXMLElement* symbolEl = [frameEl getChild:@"elements/DOMSymbolInstance"];
     libraryItem = [symbolEl stringAttribute:@"libraryItemName"];
