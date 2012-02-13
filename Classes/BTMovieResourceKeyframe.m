@@ -10,7 +10,7 @@
     index = [frameEl intAttribute:@"index"];
     duration = [frameEl intAttribute:@"duration" defaultVal:1];
 
-    GDataXMLElement* symbolEl = [frameEl requireChild:@"elements/DOMSymbolInstance"];
+    GDataXMLElement* symbolEl = [frameEl getChild:@"elements/DOMSymbolInstance"];
     libraryItem = [symbolEl stringAttribute:@"libraryItemName"];
 
     GDataXMLElement* matrixEl = [symbolEl getChild:@"matrix/Matrix"];

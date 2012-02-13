@@ -31,9 +31,11 @@ NSString * const BTMovieLastFrame = @"BTMovieLastFrame";
     if (!(self = [super init])) return nil;
     keyframes = layer->keyframes;
     NSString *symbol = [self kfAtIdx:0]->libraryItem;
-    id<BTDisplayObjectCreator> res = [BTApp.app.resourceManager requireResource:symbol conformingTo:@protocol(BTDisplayObjectCreator)];
-    movie = parent;
-    [movie addChild:[res createDisplayObject]];
+    if (symbol) {
+        id<BTDisplayObjectCreator> res = [BTApp.app.resourceManager requireResource:symbol conformingTo:@protocol(BTDisplayObjectCreator)];
+        movie = parent;
+        [movie addChild:[res createDisplayObject]];
+    } else [movie addChild:[[SPSprite alloc] init]];
     layerIdx = movie.numChildren - 1;
     [movie childAtIndex:layerIdx].name = layer->name;
     return self;
