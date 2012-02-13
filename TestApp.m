@@ -11,6 +11,7 @@
 #import "Square.h"
 #import "SelfRemoveMode.h"
 #import "BTModeStack.h"
+#import "GroupTestMode.h"
 
 #import "BTLoadingMode.h"
 
@@ -29,6 +30,7 @@
         [self.stack pushMode:[[PlayMovieMode alloc] init]];
         [self.stack pushMode:[[RepeatingMode alloc] init]];
         [self.stack pushMode:[[SubObjectMode alloc] init]];
+        [self.stack pushMode:[[GroupTestMode alloc] init]];
     }];
     return self;
 }

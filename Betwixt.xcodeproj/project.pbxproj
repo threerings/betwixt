@@ -54,6 +54,7 @@
 		22DBA63814DCAF6200F0F7C8 /* BTApp+Protected.h in Headers */ = {isa = PBXBuildFile; fileRef = 22DBA63714DCAF6200F0F7C8 /* BTApp+Protected.h */; };
 		22DBA63D14DCB29100F0F7C8 /* BTApp+Package.h in Headers */ = {isa = PBXBuildFile; fileRef = 22DBA63C14DCB29100F0F7C8 /* BTApp+Package.h */; };
 		22DBA64014DCB64900F0F7C8 /* TestApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DBA63F14DCB64900F0F7C8 /* TestApp.m */; };
+		22F3373D14E89BAC00A17CCB /* GroupTestMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F3373C14E89BAC00A17CCB /* GroupTestMode.m */; };
 		22F979E614C0E23F00A6913B /* GDataXMLException.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F979D414C0E23F00A6913B /* GDataXMLException.h */; };
 		22F979E714C0E23F00A6913B /* GDataXMLException.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F979D514C0E23F00A6913B /* GDataXMLException.m */; };
 		22F979E814C0E23F00A6913B /* GDataXMLNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F979D614C0E23F00A6913B /* GDataXMLNode.h */; };
@@ -247,6 +248,8 @@
 		22DBA63C14DCB29100F0F7C8 /* BTApp+Package.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BTApp+Package.h"; sourceTree = "<group>"; };
 		22DBA63E14DCB64900F0F7C8 /* TestApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestApp.h; sourceTree = "<group>"; };
 		22DBA63F14DCB64900F0F7C8 /* TestApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestApp.m; sourceTree = "<group>"; };
+		22F3373B14E89BAC00A17CCB /* GroupTestMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GroupTestMode.h; path = Integration/GroupTestMode.h; sourceTree = "<group>"; };
+		22F3373C14E89BAC00A17CCB /* GroupTestMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GroupTestMode.m; path = Integration/GroupTestMode.m; sourceTree = "<group>"; };
 		22F979D414C0E23F00A6913B /* GDataXMLException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataXMLException.h; sourceTree = "<group>"; };
 		22F979D514C0E23F00A6913B /* GDataXMLException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDataXMLException.m; sourceTree = "<group>"; };
 		22F979D614C0E23F00A6913B /* GDataXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataXMLNode.h; sourceTree = "<group>"; };
@@ -626,6 +629,8 @@
 				CBAD57CD1475A70100F7D78E /* SubObjectMode.m */,
 				22DBA63E14DCB64900F0F7C8 /* TestApp.h */,
 				22DBA63F14DCB64900F0F7C8 /* TestApp.m */,
+				22F3373B14E89BAC00A17CCB /* GroupTestMode.h */,
+				22F3373C14E89BAC00A17CCB /* GroupTestMode.m */,
 			);
 			name = Integration;
 			sourceTree = "<group>";
@@ -864,6 +869,7 @@
 				22448E7414E5D4C1001CF5CE /* PlayMovieMode.m in Sources */,
 				22448E7514E5D4D5001CF5CE /* RepeatingMode.m in Sources */,
 				22448E7614E5D4DD001CF5CE /* Square.m in Sources */,
+				22F3373D14E89BAC00A17CCB /* GroupTestMode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
