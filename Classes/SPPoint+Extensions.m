@@ -26,6 +26,14 @@
     return [[SPPoint alloc] initWithX:mX-x y:mY-y];
 }
 
+- (float)distanceSqToPoint:(SPPoint *)p {
+    return [SPPoint distanceSqFromPoint:self toPoint:p];
+}
+
+- (float)distanceToPoint:(SPPoint *)p {
+    return [SPPoint distanceFromPoint:self toPoint:p];
+}
+
 + (float)distanceSqFromPoint:(SPPoint *)p1 toPoint:(SPPoint *)p2 {
     return [SPPoint distanceSqFromX:p1.x fromY:p1.y toX:p2.x toY:p2.y];
 }

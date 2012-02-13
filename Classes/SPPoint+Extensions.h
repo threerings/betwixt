@@ -17,6 +17,10 @@
 /// Substracts a point from the current point and returns the resulting point.
 - (SPPoint *)subtractX:(float)x y:(float)y;
 
+- (float)distanceSqToPoint:(SPPoint*)p;
+
+- (float)distanceToPoint:(SPPoint*)p;
+
 + (float)distanceSqFromPoint:(SPPoint *)p1 toPoint:(SPPoint *)p2;
 
 + (float)distanceFromX:(float)fromX fromY:(float)fromY toX:(float)toX toY:(float)toY;
