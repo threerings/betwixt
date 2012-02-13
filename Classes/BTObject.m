@@ -84,9 +84,9 @@
 - (void)addNodeInternal:(BTNode*)node withName:(NSString*)name 
         replaceExisting:(BOOL)replaceExisting parent:(SPDisplayObjectContainer*)parent {
     
-    NSAssert(!self.isDetached, @"Adding object to detached object");
+    NSAssert(!_isDetached, @"Adding object to detached object");
     NSAssert(!node.isAttached, @"Cannot add an already-attached object");
-    NSAssert(!node.isDetached, @"Cannot re-add a detached object");
+    NSAssert(!node->_isDetached, @"Cannot re-add a detached object");
     
     // If we're not yet attached to the mode, we'll attach this node when we are
     if (!self.isAttached) {

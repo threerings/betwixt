@@ -57,6 +57,6 @@
     return nil;
 }
 
-@synthesize parent=_parent, isDetached=_isDetached;
+@synthesize parent=_parent;
 
 @end

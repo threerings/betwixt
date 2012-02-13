@@ -35,7 +35,6 @@
 @property(nonatomic,readonly) RAConnectionGroup* conns;
 @property(nonatomic,readonly) id<BTNodeContainer> parent;
 @property(nonatomic,readonly) BOOL isAttached;
-@property(nonatomic,readonly) BOOL isDetached;
 
 @end
 
