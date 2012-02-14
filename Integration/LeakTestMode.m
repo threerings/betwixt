@@ -7,6 +7,11 @@
 #import "BTNode+Protected.h"
 #import "BTModeStack.h"
 #import "BTUpdatable.h"
+#import "BTSprite.h"
+#import "BTResourceManager.h"
+#import "BTMovieResource.h"
+#import "BTMovie.h"
+#import "BTApp.h"
 
 @interface Updater : BTObject <BTUpdatable>
 @end
@@ -34,6 +39,8 @@
     __weak BTObject* _child2;
     __weak Updater* _updater;
     __weak Listener* _listener;
+    __weak BTSprite* _sprite;
+    __weak BTMovie* _movie;
     int _ticks;
 }
 
@@ -42,18 +49,15 @@
     BTObject* child = [[BTObject alloc] init];
     [self addNode:parent];
     [parent addNode:child];
-    
+    [parent detach];
     _parent = parent;
     _child = child;
-    [parent detach];
     
     BTObject* parent2 = [[BTObject alloc] init];
     BTObject* child2 = [[BTObject alloc] init];
     [parent2 addNode:child2];
     [self addNode:parent2];
-    
     [child2 detach];
-    
     _child2 = child2;
     
     Updater* updater = [[Updater alloc] init];
@@ -63,8 +67,18 @@
     
     Listener* listener = [[Listener alloc] init];
     [self addNode:listener];
-    
     _listener = listener;
+    
+    BTSprite* sprite = [BTSprite sprite];
+    [self addNode:sprite displayOn:self.sprite];
+    [sprite detach];
+    _sprite = sprite;
+    
+    BTMovie *movie = [[BTApp.app.resourceManager requireResource:@"squaredance"] newMovie];
+    BTSprite* movieSprite = [BTSprite withSprite:movie];
+    [self addNode:movieSprite displayOn:self.sprite];
+    [movieSprite detach];
+    _movie = movie;
 }
 
 - (void)update:(float)dt {
@@ -75,6 +89,8 @@
         NSAssert(_child == nil, @"Child leaked");
         NSAssert(_child2 == nil, @"Child2 leaked");
         NSAssert(_updater == nil, @"Updater leaked");
+        NSAssert(_sprite == nil, @"Sprite leaked");
+        NSAssert(_movie == nil, @"Movie leaked");
         [_listener detach];
     } else if (_ticks == 3) {
         NSAssert(_listener == nil, @"Listener leaked");
