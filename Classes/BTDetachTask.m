@@ -16,7 +16,7 @@
 
 @interface BTDetachNodeTask : BTDetachTask {
 @public
-    BTNode* _node;
+    __weak BTNode* _node;
 }
 @end
 @implementation BTDetachNodeTask
