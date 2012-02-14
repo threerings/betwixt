@@ -11,8 +11,8 @@
 @implementation PlayMovieMode
 - (id)init {
     if (!(self = [super init])) return nil;
-    BTMovie *movie = [[BTMovieResource require:@"squaredance"] newMovie];
-    BTMovie* nested = [[BTMovieResource require:@"nesteddance"] newMovie];
+    BTMovie *movie = [BTMovieResource newMovie:@"squaredance"];
+    BTMovie* nested = [BTMovieResource newMovie:@"nesteddance"];
     [self.sprite addChild:movie];
     [self.sprite addChild:nested];
     NSMutableSet* seen = [[NSMutableSet alloc] init];
