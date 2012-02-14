@@ -8,6 +8,8 @@
 #import "BTMovie.h"
 #import "BTMovie+Package.h"
 #import "GDataXMLNode+Extensions.h"
+#import "BTApp.h"
+#import "BTResourceManager.h"
 
 @interface BTMovieResourceFactory : NSObject<BTResourceFactory>
 @end
@@ -58,6 +60,10 @@
         if (instance == nil) instance = [[BTMovieResourceFactory alloc] init];
     }
     return instance;
+}
+
++ (BTMovieResource*)require:(NSString *)name {
+    return [BTApp.app.resourceManager requireResource:name ofType:[BTMovieResource class]];
 }
 
 @end

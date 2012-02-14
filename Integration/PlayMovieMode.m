@@ -4,8 +4,6 @@
 #import "PlayMovieMode.h"
 
 #import "BTDetachTask.h"
-#import "BTApp.h"
-#import "BTResourceManager.h"
 #import "BTMovieResource.h"
 #import "BTMovie.h"
 #import "BTModeStack.h"
@@ -13,8 +11,8 @@
 @implementation PlayMovieMode
 - (id)init {
     if (!(self = [super init])) return nil;
-    BTMovie *movie = [[BTApp.app.resourceManager requireResource:@"squaredance"] newMovie];
-    BTMovie* nested = [[BTApp.app.resourceManager requireResource:@"nesteddance"] newMovie];
+    BTMovie *movie = [[BTMovieResource require:@"squaredance"] newMovie];
+    BTMovie* nested = [[BTMovieResource require:@"nesteddance"] newMovie];
     [self.sprite addChild:movie];
     [self.sprite addChild:nested];
     NSMutableSet* seen = [[NSMutableSet alloc] init];
