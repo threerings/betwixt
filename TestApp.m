@@ -12,6 +12,7 @@
 #import "SelfRemoveMode.h"
 #import "BTModeStack.h"
 #import "GroupTestMode.h"
+#import "LeakTestMode.h"
 
 #import "BTLoadingMode.h"
 
@@ -31,6 +32,7 @@
         [self.stack pushMode:[[RepeatingMode alloc] init]];
         [self.stack pushMode:[[SubObjectMode alloc] init]];
         [self.stack pushMode:[[GroupTestMode alloc] init]];
+        [self.stack pushMode:[[LeakTestMode alloc] init]];
     }];
     return self;
 }
