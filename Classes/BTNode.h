@@ -6,7 +6,7 @@
 
 @interface BTNode : NSObject {
 @package
-    id<BTNodeContainer> _parent;
+    __weak id<BTNodeContainer> _parent;
     BOOL _isDetached;
     NSUInteger _id;
 @private
