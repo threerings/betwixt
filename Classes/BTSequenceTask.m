@@ -18,7 +18,7 @@
 - (void)attached {
     [super attached];
 
-    [_conns onReactor:self.detached connectUnit:^{
+    [self.conns onReactor:self.detached connectUnit:^{
         if (_position == [_nodes count]) return;
         BTNode* toDetach = [_nodes objectAtIndex:_position];
         _position = [_nodes count];
