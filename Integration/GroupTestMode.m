@@ -40,7 +40,7 @@ static NSString * GROUP = @"Group";
         NSAssert(count == 10, @"Missing grouped nodes");
     } while (0);
     
-    [self.stack popMode];
+    [self.modeStack popMode];
 }
 
 @end

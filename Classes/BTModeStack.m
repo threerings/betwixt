@@ -125,7 +125,7 @@ typedef enum {
         
         // It's possible that the mode's setup function wasn't called -
         // if this is the case, don't call its shutdown function.
-        if (removedMode->_stack != nil) {
+        if (removedMode->_modeStack != nil) {
             [removedMode shutdownInternal];
         }
     };
@@ -178,8 +178,8 @@ typedef enum {
             [initialTopMode exitInternal];
         }
         if (newTopMode != nil) {
-            if (newTopMode->_stack == nil) {
-                newTopMode->_stack = self;
+            if (newTopMode->_modeStack == nil) {
+                newTopMode->_modeStack = self;
                 [newTopMode setupInternal];
             }
             [newTopMode enterInternal];

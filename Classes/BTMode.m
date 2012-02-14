@@ -207,7 +207,7 @@
 
 - (void)shutdownInternal {
     [self destroy];
-    _stack = nil;
+    _modeStack = nil;
     [_update disconnectAll];
     [_entered disconnectAll];
     [_exited disconnectAll];
@@ -288,6 +288,6 @@
     return [_rootNode nodeForName:name];
 }
 
-@synthesize update=_update, entered=_entered, exited=_exited, stack=_stack, input=_input;
+@synthesize update=_update, entered=_entered, exited=_exited, modeStack=_modeStack, input=_input;
 
 @end

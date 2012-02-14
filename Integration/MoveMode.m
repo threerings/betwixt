@@ -28,7 +28,7 @@
             NSAssert(sprite.sprite.x == 200, nil);
             NSAssert(sprite.sprite.rotation == 2, nil);
         }],
-        [BTBlockTask onAttach:^(BTBlockTask *task) { [_stack popMode]; }],
+        [BTBlockTask onAttach:^(BTBlockTask *task) { [_modeStack popMode]; }],
         nil]];
     return self;
 }

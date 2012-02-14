@@ -34,7 +34,7 @@
             NSAssert(nil == [self nodesForGroup:@"squares"], @"Squares not removed from group");
             NSAssert(nil == [self nodeForKey:@"red"], @"Square key not cleared");
         } else if (_ticks == 4) {
-            [_stack popMode];
+            [_modeStack popMode];
         }
     }];
     return self;

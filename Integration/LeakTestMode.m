@@ -94,7 +94,7 @@
         [_listener detach];
     } else if (_ticks == 3) {
         NSAssert(_listener == nil, @"Listener leaked");
-        [self.stack popMode];
+        [self.modeStack popMode];
     }
 }
 

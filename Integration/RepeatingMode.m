@@ -17,7 +17,7 @@
     [self.sprite addChild:directquad];
     __block int reps = 0;
     [self addNode:[BTRepeatingTask withTaskCreator:^BTNode* {
-        if (reps++ == 2) [self.stack popMode];
+        if (reps++ == 2) [self.modeStack popMode];
         return [BTSequenceTask withNodes:
                     [BTParallelTask withNodes:
                         [[BTLocationTask alloc] initWithTime:.25f toX:100 toY:100],

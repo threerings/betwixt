@@ -25,14 +25,14 @@
     if (!(self = [super init])) return nil;
     [self addFiles:@"ResourceTest.xml", @"squaredance.xml", nil];
     [self.loadComplete connectUnit:^{
-        [self.stack changeMode:[[NamedNodeMode alloc] init]];
-        [self.stack pushMode:[[MoveMode alloc] init]];
-        [self.stack pushMode:[[SelfRemoveMode alloc] init]];
-        [self.stack pushMode:[[PlayMovieMode alloc] init]];
-        [self.stack pushMode:[[RepeatingMode alloc] init]];
-        [self.stack pushMode:[[SubObjectMode alloc] init]];
-        [self.stack pushMode:[[GroupTestMode alloc] init]];
-        [self.stack pushMode:[[LeakTestMode alloc] init]];
+        [self.modeStack changeMode:[[NamedNodeMode alloc] init]];
+        [self.modeStack pushMode:[[MoveMode alloc] init]];
+        [self.modeStack pushMode:[[SelfRemoveMode alloc] init]];
+        [self.modeStack pushMode:[[PlayMovieMode alloc] init]];
+        [self.modeStack pushMode:[[RepeatingMode alloc] init]];
+        [self.modeStack pushMode:[[SubObjectMode alloc] init]];
+        [self.modeStack pushMode:[[GroupTestMode alloc] init]];
+        [self.modeStack pushMode:[[LeakTestMode alloc] init]];
     }];
     return self;
 }

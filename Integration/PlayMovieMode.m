@@ -30,7 +30,7 @@
         NSAssert([seen containsObject:@"timepassed"], nil);
         NSAssert([seen containsObject:@"moretimepassed"], nil);
         NSAssert([seen count] == 6, nil);// Last and first frame as well
-        [self.stack popMode]; 
+        [self.modeStack popMode]; 
     }];
     return self;
 }
