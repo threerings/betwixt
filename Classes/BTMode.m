@@ -225,7 +225,7 @@
             }
         }];
         for (NSString* key in keys) {
-            NSAssert1(![_keyedObjects objectForKey:key], @"Object key '%@' already used", key);
+            NSAssert(![_keyedObjects objectForKey:key], @"Object key '%@' already used", key);
             [_keyedObjects setObject:node forKey:key];
         }
     }
