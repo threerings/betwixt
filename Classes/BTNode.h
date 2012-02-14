@@ -7,10 +7,11 @@
 @interface BTNode : NSObject {
 @package
     id<BTNodeContainer> _parent;
-    RAUnitSignal* _detached;
-    RAConnectionGroup* _conns;
     BOOL _isDetached;
     NSUInteger _id;
+@private
+    RAUnitSignal* _detached;
+    RAConnectionGroup* _conns;
 }
 
 /// Detaches the node from its mode. Once a node has been detached, it can't
