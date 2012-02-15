@@ -38,8 +38,8 @@
     if (!(self = [super init])) return nil;
     SPRectangle* region = [[SPRectangle alloc] initWithX:[xml floatAttribute:@"xAtlas"] y:[xml floatAttribute:@"yAtlas"] width:[xml floatAttribute:@"wAtlas"] height:[xml floatAttribute:@"hAtlas"]];
     _texture = [[SPTexture alloc] initWithRegion:region ofTexture:atlas];
-    _offset = [[SPPoint alloc] initWithX:[xml intAttribute:@"xOffset" defaultVal:0]
-                                       y:[xml intAttribute:@"yOffset" defaultVal:0]];
+    _offset = [[SPPoint alloc] initWithX:[xml floatAttribute:@"xOffset" defaultVal:0]
+                                       y:[xml floatAttribute:@"yOffset" defaultVal:0]];
     _name = [xml stringAttribute:@"name"];
     return self;
 }

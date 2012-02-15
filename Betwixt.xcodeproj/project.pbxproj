@@ -103,6 +103,7 @@
 		CB65CE3314EC3B1F00534FAE /* BTMultiResourceFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = CB65CE3114EC3B1F00534FAE /* BTMultiResourceFactory.h */; };
 		CB65CE3714EC400200534FAE /* BTTextureResource+Package.h in Headers */ = {isa = PBXBuildFile; fileRef = CB65CE3514EC400200534FAE /* BTTextureResource+Package.h */; };
 		CB65CE3B14EC42F400534FAE /* squaredance in Resources */ = {isa = PBXBuildFile; fileRef = CB65CE3A14EC42F400534FAE /* squaredance */; };
+		CB65CE3D14EC44FF00534FAE /* shapes in Resources */ = {isa = PBXBuildFile; fileRef = CB65CE3C14EC44FF00534FAE /* shapes */; };
 		CB69E37114D8C66D00E7C18D /* BTRepeatingTask.h in Headers */ = {isa = PBXBuildFile; fileRef = CB69E36F14D8C66D00E7C18D /* BTRepeatingTask.h */; };
 		CB69E37214D8C66D00E7C18D /* BTRepeatingTask.m in Sources */ = {isa = PBXBuildFile; fileRef = CB69E37014D8C66D00E7C18D /* BTRepeatingTask.m */; };
 		CB69E37914D8D07E00E7C18D /* BTParallelTask.h in Headers */ = {isa = PBXBuildFile; fileRef = CB69E37714D8D07E00E7C18D /* BTParallelTask.h */; };
@@ -307,6 +308,7 @@
 		CB65CE3114EC3B1F00534FAE /* BTMultiResourceFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTMultiResourceFactory.h; sourceTree = "<group>"; };
 		CB65CE3514EC400200534FAE /* BTTextureResource+Package.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BTTextureResource+Package.h"; sourceTree = "<group>"; };
 		CB65CE3A14EC42F400534FAE /* squaredance */ = {isa = PBXFileReference; lastKnownFileType = folder; name = squaredance; path = Exported/squaredance; sourceTree = "<group>"; };
+		CB65CE3C14EC44FF00534FAE /* shapes */ = {isa = PBXFileReference; lastKnownFileType = folder; name = shapes; path = Exported/shapes; sourceTree = "<group>"; };
 		CB69E36F14D8C66D00E7C18D /* BTRepeatingTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTRepeatingTask.h; sourceTree = "<group>"; };
 		CB69E37014D8C66D00E7C18D /* BTRepeatingTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTRepeatingTask.m; sourceTree = "<group>"; };
 		CB69E37314D8CADE00E7C18D /* RepeatingMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RepeatingMode.h; path = Integration/RepeatingMode.h; sourceTree = "<group>"; };
@@ -636,6 +638,7 @@
 		CB65CE3914EC42DE00534FAE /* Exported */ = {
 			isa = PBXGroup;
 			children = (
+				CB65CE3C14EC44FF00534FAE /* shapes */,
 				CB65CE3A14EC42F400534FAE /* squaredance */,
 			);
 			name = Exported;
@@ -889,6 +892,7 @@
 				2221990814CA3C69009B764F /* archer.png in Resources */,
 				2221990914CA3C69009B764F /* ResourceTest.xml in Resources */,
 				CB65CE3B14EC42F400534FAE /* squaredance in Resources */,
+				CB65CE3D14EC44FF00534FAE /* shapes in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

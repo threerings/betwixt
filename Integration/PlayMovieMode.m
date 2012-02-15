@@ -13,6 +13,7 @@
     if (!(self = [super init])) return nil;
     BTMovie *movie = [BTMovieResource newMovie:@"squaredance"];
     BTMovie* nested = [BTMovieResource newMovie:@"nesteddance"];
+    [self.sprite addChild:[BTMovieResource newMovie:@"allshapes"]];
     [self.sprite addChild:movie];
     [self.sprite addChild:nested];
     NSMutableSet* seen = [[NSMutableSet alloc] init];
