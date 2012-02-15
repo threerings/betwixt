@@ -18,6 +18,8 @@
 + (id<BTResourceFactory>) sharedFactory;
 + (BTTextureResource*)require:(NSString*)name;
 
+- (id)initWithXml:(GDataXMLElement*)xml;
+
 @property(nonatomic,readonly) SPTexture* texture;
 @property(nonatomic,readonly) SPPoint* offset;
 
