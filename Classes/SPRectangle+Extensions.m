@@ -40,8 +40,8 @@
 }
 
 - (SPPoint*)closestInteriorPointTo:(SPPoint *)p {
-    return [SPPoint pointWithX:CLAMP(p.x, self.left, self.right) 
-                             y:CLAMP(p.y, self.top, self.bottom)];
+    return [SPPoint pointWithX:SP_CLAMP(p.x, self.left, self.right) 
+                             y:SP_CLAMP(p.y, self.top, self.bottom)];
 }
 
 - (float)distanceSqToPoint:(SPPoint *)p {
