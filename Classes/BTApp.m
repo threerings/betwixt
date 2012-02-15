@@ -64,6 +64,8 @@ static BTApp* gInstance = nil;
     _view.stage.frameRate = 60;
     // Attach the view to the window
     _window.rootViewController.view = _view;
+    
+    _viewSize = [SPPoint pointWithX:_view.stage.width y:_view.stage.height];
 
     // TODO - figure out why this is throwing an exception. Looks like an iOS 5 bug
     //[SPAudioEngine start];
@@ -120,7 +122,7 @@ static BTApp* gInstance = nil;
     return stack;
 }
 
-@synthesize resourceManager=_resourceMgr, view=_view;
+@synthesize resourceManager=_resourceMgr, view=_view, viewSize=_viewSize;
 
 @end
 

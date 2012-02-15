@@ -11,6 +11,7 @@
     SPView* _view;
     BTResourceManager* _resourceMgr;
     NSMutableArray* _modeStacks;
+    SPPoint* _viewSize;
 }
 
 + (void)registerAppClass:(Class)theClass;
@@ -22,5 +23,6 @@
 @property(nonatomic,readonly) float framerate;
 @property(nonatomic,readonly) BTResourceManager* resourceManager;
 @property(nonatomic,readonly) SPView* view;
+@property(nonatomic,readonly) SPPoint* viewSize;
 
 @end
