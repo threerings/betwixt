@@ -7,6 +7,7 @@
 #import "BTResourceManager.h"
 #import "BTModeStack+Package.h"
 
+#import "BTAtlasFactory.h"
 #import "BTTextureResource.h"
 #import "BTMovieResource.h"
 
@@ -70,6 +71,7 @@ static BTApp* gInstance = nil;
     // Setup ResourceManager
     [_resourceMgr registerFactory:[BTTextureResource sharedFactory] forType:BTTEXTURE_RESOURCE_NAME];
     [_resourceMgr registerFactory:[BTMovieResource sharedFactory] forType:BTMOVIE_RESOURCE_NAME];
+    [_resourceMgr registerMultiFactory:[BTAtlasFactory sharedFactory] forType:BTATLAS_RESOURCE_NAME];
     
     // create default mode stack
     [self run:[self createModeStack]];

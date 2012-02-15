@@ -1,0 +1,159 @@
+<resources>
+  <movie name="allshapes" md5="e589735d30cf1183f7547c2d9bcd33a7">
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="allshapes" itemID="4f3aad25-000002e3" linkageExportForAS="true" linkageClassName="allshapes" lastModified="1329245710" lastUniqueIdentifier="5">
+  <timeline>
+    <DOMTimeline name="allshapes" currentFrame="58">
+      <layers>
+        <DOMLayer name="hexagon" color="#9933CC" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" duration="58" tweenType="motion" motionTweenSnap="true" keyMode="22017">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Shapes/hexagon" centerPoint3DX="-148" centerPoint3DY="93.95">
+                  <matrix>
+                    <Matrix tx="-149" ty="93.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="1"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="58" tweenType="motion" motionTweenSnap="true" keyMode="22017">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Shapes/hexagon" centerPoint3DX="277.75" centerPoint3DY="78.45">
+                  <matrix>
+                    <Matrix a="0.749298095703125" b="-0.6622314453125" c="0.6622314453125" d="0.749298095703125" tx="277.25" ty="78.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="1"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="triangle" color="#4FFFFF" current="true" isSelected="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" duration="58" tweenType="motion" motionTweenSnap="true" keyMode="22017">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Shapes/triangle" centerPoint3DX="-675.95" centerPoint3DY="-12">
+                  <matrix>
+                    <Matrix tx="-676.85" ty="-53.8"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="0.9" y="41.8"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="58" tweenType="motion" motionTweenSnap="true" keyMode="22017">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Shapes/triangle" centerPoint3DX="1105.9" centerPoint3DY="-35">
+                  <matrix>
+                    <Matrix tx="1105" ty="-76.8"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="0.9" y="41.8"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="square" color="#FF4FFF" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" duration="58" tweenType="motion" motionTweenSnap="true" keyMode="22017">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Shapes/square" centerPoint3DX="134" centerPoint3DY="-110">
+                  <matrix>
+                    <Matrix tx="25.5" ty="-194.45"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="108.5" y="84.45"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="58" tweenType="motion" motionTweenSnap="true" keyMode="22017">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Shapes/square" centerPoint3DX="134.45" centerPoint3DY="-110.4">
+                  <matrix>
+                    <Matrix a="-1" d="-1" tx="242.5" ty="-25.55"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="108.5" y="84.45"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="pentagonparty" color="#FF800A" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" duration="58" tweenType="motion" motionTweenSnap="true" keyMode="22017">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Shapes/pentagonparty" centerPoint3DX="135" centerPoint3DY="607.9">
+                  <matrix>
+                    <Matrix tx="135" ty="665.45"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-57.55"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="58" tweenType="motion" motionTweenSnap="true" keyMode="22017">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Shapes/pentagonparty" centerPoint3DX="0.45" centerPoint3DY="0.85">
+                  <matrix>
+                    <Matrix a="-1" d="-1" ty="-56.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point y="-57.55"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="pentagon" color="#4FFF4F" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" duration="58" tweenType="motion" motionTweenSnap="true" keyMode="22017">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Shapes/pentagon" centerPoint3DX="411" centerPoint3DY="13">
+                  <matrix>
+                    <Matrix tx="410" ty="29.7"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="1" y="-16.7"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="58" tweenType="motion" motionTweenSnap="true" keyMode="22017">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Shapes/pentagon" centerPoint3DX="-148.75" centerPoint3DY="35.05">
+                  <matrix>
+                    <Matrix a="0" b="1" c="-1" d="0" tx="-165.8" ty="34"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="1" y="-16.7"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>
+  </movie>
+<atlas name='shapes/atlas0' filename='shapes/atlas0.png'>
+  <texture name='Shapes/pentagonparty' xOffset='-334.05' yOffset='-314.15' md5='80d6acc14d4c60958807d188f51a5efe' xAtlas='0' yAtlas='0' wAtlas='669' hAtlas='514'/>
+  <texture name='Shapes/hexagon' xOffset='-171.5' yOffset='-198.9' md5='048ad4819a45762078bc5c7ecb4c2b40' xAtlas='669' yAtlas='0' wAtlas='345' hAtlas='398'/>
+  <texture name='Shapes/pentagon' xOffset='-166.25' yOffset='-175.85' md5='f2ffaf8cca806448b4b6356696f4006c' xAtlas='669' yAtlas='398' wAtlas='335' hAtlas='319'/>
+  <texture name='Shapes/triangle' xOffset='-144.7' yOffset='-84.4' md5='1a36f2b3dca6381645192167ac1f63ec' xAtlas='669' yAtlas='717' wAtlas='292' hAtlas='253'/>
+  <texture name='Shapes/square' xOffset='-0.5' yOffset='-0.5' md5='ea5bfb087e0d6da1b45bc735b05f30f2' xAtlas='0' yAtlas='514' wAtlas='218' hAtlas='170'/>
+</atlas>
+</resources>

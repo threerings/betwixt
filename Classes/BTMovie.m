@@ -66,7 +66,7 @@ NSString * const BTMovieLastFrame = @"BTMovieLastFrame";
 }
 @end
 
-// Proxies connections to the label montior connecitions so that once only applies when the desired
+// Proxies connections to the label monitor connecitions so that once only applies when the desired
 // label is fired.
 @interface LabelMonitorConnProxy : RAConnection {
 @public

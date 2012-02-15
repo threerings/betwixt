@@ -21,6 +21,4 @@
 @property(nonatomic,readonly) SPTexture* texture;
 @property(nonatomic,readonly) SPPoint* offset;
 
-- (id)initWithXml:(GDataXMLElement*)xml;
-
 @end

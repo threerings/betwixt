@@ -3,6 +3,7 @@
 
 #import "BTResourceManager.h"
 #import "BTResourceFactory.h"
+#import "BTMultiResourceFactory.h"
 #import "BTApp.h"
 #import "BTApp+Package.h"
 #import "BTResource.h"
@@ -133,6 +134,10 @@
     [_factories setObject:factory forKey:type];
 }
 
+- (void)registerMultiFactory:(id<BTMultiResourceFactory>)factory forType:(NSString*)type {
+    [_factories setObject:factory forKey:type];
+}
+
 - (id<BTResourceFactory>)getFactory:(NSString*)type {
     return [_factories objectForKey:type];
 }
@@ -195,15 +200,25 @@
         for (GDataXMLElement* child in [root elements]) {
             NSString* type = [child name];
             // find the resource factory for this type
-            id<BTResourceFactory> factory = [_mgr getFactory:type];
-            NSAssert(factory != nil, @"No ResourceFactory for '%@'", type);
-            // create the resource
-            NSString* name = [child stringAttribute:@"name"];
-            BTResource* rsrc = [factory create:child];
-            rsrc->_name = name;
-            rsrc->_group = _filename;
-            // add it to the batch
-            [resources addObject:rsrc];
+            id factory = [_mgr getFactory:type];
+            NSAssert(factory, @"No ResourceFactory for '%@'", type);
+            if ([factory conformsToProtocol:@protocol(BTMultiResourceFactory)]) {
+                for (BTResource* rsrc in [((id<BTMultiResourceFactory>)factory) create:child]) {
+                    rsrc->_group = _filename;
+                    // add it to the batch
+                    [resources addObject:rsrc];
+                }
+            } else {
+                NSAssert([factory conformsToProtocol:@protocol(BTResourceFactory)], 
+                  @"Factory for '%@', '%@', doesn't conform to BTResourceFactory or BTMultiResourceFactory", type, factory);
+                // create the resource
+                NSString* name = [child stringAttribute:@"name"];
+                BTResource* rsrc = [factory create:child];
+                rsrc->_name = name;
+                rsrc->_group = _filename;
+                // add it to the batch
+                [resources addObject:rsrc];
+            }
         }
         _resources = resources;
     } @catch (NSException* err) {
