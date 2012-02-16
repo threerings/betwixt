@@ -1,10 +1,10 @@
 <resources>
-  <movie name="guybrush" md5="da6bd4206cf795b721c2ab0837381b9b">
-<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="guybrush" itemID="4f3c29eb-00000259" linkageExportForAS="true" linkageClassName="guybrush" lastModified="1329411965">
+  <movie name="guybrush" md5="5ad036306c7fcbb059a313bfd54703ff">
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="guybrush" itemID="4f3c29eb-00000259" linkageExportForAS="true" linkageClassName="guybrush" lastModified="1329415122">
   <timeline>
     <DOMTimeline name="guybrush" currentFrame="20">
       <layers>
-        <DOMLayer name="snapshots" color="#4FFF4F" current="true" isSelected="true" autoNamed="false">
+        <DOMLayer name="flipbook" color="#4FFF4F" current="true" isSelected="true" autoNamed="false">
           <frames>
             <DOMFrame index="0" duration="4" keyMode="9728">
               <elements>
@@ -53,7 +53,7 @@
             </DOMFrame>
             <DOMFrame index="20" duration="4" keyMode="9728">
               <elements>
-                <DOMBitmapInstance selected="true" libraryItemName="gb_walk_5.png">
+                <DOMBitmapInstance libraryItemName="gb_walk_5.png">
                   <matrix>
                     <Matrix tx="-52" ty="-75"/>
                   </matrix>
@@ -68,11 +68,11 @@
 </DOMSymbolItem>
   </movie>
 <atlas name='guybrush/atlas0' filename='guybrush/atlas0.png'>
-  <texture name='guybrush_snapshot_12' xOffset='-52' yOffset='-75' md5='da6bd4206cf795b721c2ab0837381b9b' xAtlas='0' yAtlas='0' wAtlas='104' hAtlas='150'/>
-  <texture name='guybrush_snapshot_4' xOffset='-52' yOffset='-75' md5='da6bd4206cf795b721c2ab0837381b9b' xAtlas='104' yAtlas='0' wAtlas='104' hAtlas='150'/>
-  <texture name='guybrush_snapshot_8' xOffset='-50' yOffset='-75' md5='da6bd4206cf795b721c2ab0837381b9b' xAtlas='208' yAtlas='0' wAtlas='104' hAtlas='150'/>
-  <texture name='guybrush_snapshot_0' xOffset='-53' yOffset='-75' md5='da6bd4206cf795b721c2ab0837381b9b' xAtlas='312' yAtlas='0' wAtlas='104' hAtlas='150'/>
-  <texture name='guybrush_snapshot_16' xOffset='-52' yOffset='-75' md5='da6bd4206cf795b721c2ab0837381b9b' xAtlas='312' yAtlas='150' wAtlas='104' hAtlas='150'/>
-  <texture name='guybrush_snapshot_20' xOffset='-52' yOffset='-75' md5='da6bd4206cf795b721c2ab0837381b9b' xAtlas='312' yAtlas='300' wAtlas='104' hAtlas='150'/>
+  <texture name='guybrush_snapshot_12' xOffset='-52' yOffset='-75' md5='5ad036306c7fcbb059a313bfd54703ff' xAtlas='0' yAtlas='0' wAtlas='104' hAtlas='150'/>
+  <texture name='guybrush_snapshot_4' xOffset='-52' yOffset='-75' md5='5ad036306c7fcbb059a313bfd54703ff' xAtlas='104' yAtlas='0' wAtlas='104' hAtlas='150'/>
+  <texture name='guybrush_snapshot_8' xOffset='-50' yOffset='-75' md5='5ad036306c7fcbb059a313bfd54703ff' xAtlas='208' yAtlas='0' wAtlas='104' hAtlas='150'/>
+  <texture name='guybrush_snapshot_0' xOffset='-53' yOffset='-75' md5='5ad036306c7fcbb059a313bfd54703ff' xAtlas='312' yAtlas='0' wAtlas='104' hAtlas='150'/>
+  <texture name='guybrush_snapshot_16' xOffset='-52' yOffset='-75' md5='5ad036306c7fcbb059a313bfd54703ff' xAtlas='312' yAtlas='150' wAtlas='104' hAtlas='150'/>
+  <texture name='guybrush_snapshot_20' xOffset='-52' yOffset='-75' md5='5ad036306c7fcbb059a313bfd54703ff' xAtlas='312' yAtlas='300' wAtlas='104' hAtlas='150'/>
 </atlas>
 </resources>
