@@ -21,13 +21,11 @@
     _filenames = [NSMutableArray array];
     _filenameIdx = -1;
     
-    __weak BTLoadingMode* this = self;
-    [self.entered connectUnit:^{
-        if (_filenameIdx >= 0) {
-            // We're already loading
-            return;
+    [_conns onReactor:self.entered connectUnit:^{
+        if (_filenameIdx < 0) {
+            // Start the load
+            [self loadNextFile];
         }
-        [this loadNextFile];
     }];
     
     return self;
