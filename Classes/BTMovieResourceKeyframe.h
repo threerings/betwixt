@@ -14,5 +14,6 @@
 }
 
 -initWithFrame:(GDataXMLElement*)frameEl;
+-initFlipbookNamed:(NSString*)name withXml:(GDataXMLElement*)frameEl;
 
 @end

@@ -17,9 +17,17 @@ NSString * const BTMovieLastFrame = @"BTMovieLastFrame";
 @public
     int keyframeIdx, layerIdx;
     NSMutableArray* keyframes;
-    __weak BTMovie *movie;
+    NSMutableArray* displays;
+    __weak BTMovie* movie;
+    BOOL changedKeyframe;
 }
 @end
+SPDisplayObject* createDisplayObject(NSString* symbol);
+SPDisplayObject* createDisplayObject(NSString* symbol) {
+    if (!symbol) return [[SPSprite alloc] init];
+    id<BTDisplayObjectCreator> res = [BTApp.app.resourceManager requireResource:symbol conformingTo:@protocol(BTDisplayObjectCreator)];
+    return [res createDisplayObject];
+}
 
 #define NO_FRAME -1
 @implementation BTMovieLayer
@@ -30,12 +38,33 @@ NSString * const BTMovieLastFrame = @"BTMovieLastFrame";
 - (id)initForMovie:(BTMovie*)parent withLayer:(BTMovieResourceLayer*)layer {
     if (!(self = [super init])) return nil;
     keyframes = layer->keyframes;
-    NSString *symbol = [self kfAtIdx:0]->libraryItem;
-    if (symbol) {
-        id<BTDisplayObjectCreator> res = [BTApp.app.resourceManager requireResource:symbol conformingTo:@protocol(BTDisplayObjectCreator)];
+    NSString *lastSymbol = nil;
+    for (int ii = 0; ii < [keyframes count] && !lastSymbol; ii++) {
+        lastSymbol = [self kfAtIdx:ii]->libraryItem;
+    }
+    if (!lastSymbol) [movie addChild:[[SPSprite alloc] init]];// Label only movie
+    else {
         movie = parent;
-        [movie addChild:[res createDisplayObject]];
-    } else [movie addChild:[[SPSprite alloc] init]];
+        BOOL multipleSymbols = false;
+        for (BTMovieResourceKeyframe* kf in keyframes) {
+            if (kf->libraryItem != lastSymbol) {
+                multipleSymbols = true;
+                break;
+            }
+        }
+        if (!multipleSymbols) [movie addChild:createDisplayObject(lastSymbol)];
+        else {
+            displays = [[NSMutableArray alloc] initWithCapacity:[keyframes count]];
+            for (BTMovieResourceKeyframe* kf in keyframes) {
+                SPDisplayObject* display = createDisplayObject(kf->libraryItem);
+                NSLog(@"%@", kf->libraryItem);
+
+                [displays addObject:display];
+                display.name = layer->name;
+            }
+            [movie addChild:[displays objectAtIndex:0]];
+        }
+    }
     layerIdx = movie.numChildren - 1;
     [movie childAtIndex:layerIdx].name = layer->name;
     return self;
@@ -44,7 +73,14 @@ NSString * const BTMovieLastFrame = @"BTMovieLastFrame";
 - (void)drawFrame:(int)frame {
     while (keyframeIdx < [keyframes count] - 1 && [self kfAtIdx:keyframeIdx + 1]->index <= frame) {
         keyframeIdx++;
+        changedKeyframe = true;
     }
+    if (changedKeyframe && displays) {
+        NSLog(@"Switching at %d to %d", frame, keyframeIdx);
+        [movie removeChildAtIndex:layerIdx];
+        [movie addChild:[displays objectAtIndex:keyframeIdx] atIndex:layerIdx];
+    } else NSLog(@"No switch at %d from %d", frame, keyframeIdx);
+    changedKeyframe = false;
     BTMovieResourceKeyframe* kf = [self kfAtIdx:keyframeIdx];
     SPDisplayObject* layer = [movie childAtIndex:layerIdx];
     if (keyframeIdx == [keyframes count] - 1|| kf->index == frame) {
@@ -138,7 +174,10 @@ NSString * const BTMovieLastFrame = @"BTMovieLastFrame";
     BOOL differentFrame = newFrame != _frame;
     BOOL wrapped = newFrame < _frame;
     if (differentFrame) {
-        if (wrapped) for (BTMovieLayer* layer in _layers) layer->keyframeIdx = 0;
+        if (wrapped) for (BTMovieLayer* layer in _layers) {
+            layer->changedKeyframe = true;
+            layer->keyframeIdx = 0;
+        }
         for (BTMovieLayer* layer in _layers) [layer drawFrame:newFrame];
     }
 

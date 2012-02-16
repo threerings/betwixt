@@ -25,12 +25,17 @@
     layers = [[NSMutableArray alloc] init];
     GDataXMLElement* layersEl = [xml requireChild:@"DOMSymbolItem/timeline/DOMTimeline/layers"];
     int frames = 0;
-    for (GDataXMLElement* layerEl in [layersEl elements]) {
-        BTMovieResourceLayer* layer = [[BTMovieResourceLayer alloc] initWithLayer:layerEl];
+    NSArray* layerEls = [layersEl elements];
+    if ([[[layerEls objectAtIndex:0] stringAttribute:@"name"] isEqualToString:@"snapshots"]) {
+        BTMovieResourceLayer* layer = [[BTMovieResourceLayer alloc] initFlipbookNamed:[xml stringAttribute:@"name"] withXml:[layerEls objectAtIndex:0]];
         [layers addObject:layer];
-        BTMovieResourceKeyframe* lastKf = [layer->keyframes lastObject];
-        int layerFrames = lastKf->index + lastKf->duration;
-        if (layerFrames > frames) frames = layerFrames;
+        frames = layer.frames;
+    } else {
+        for (GDataXMLElement* layerEl in layerEls) {
+            BTMovieResourceLayer* layer = [[BTMovieResourceLayer alloc] initWithLayer:layerEl];
+            [layers addObject:layer];
+            frames = MAX(frames, layer.frames);
+        }
     }
     labels = [[NSMutableArray alloc] initWithCapacity:frames];
     for (int ii = 0; ii < frames; ii++) {

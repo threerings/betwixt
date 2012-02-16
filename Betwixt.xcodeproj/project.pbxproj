@@ -104,6 +104,8 @@
 		CB65CE3714EC400200534FAE /* BTTextureResource+Package.h in Headers */ = {isa = PBXBuildFile; fileRef = CB65CE3514EC400200534FAE /* BTTextureResource+Package.h */; };
 		CB65CE3B14EC42F400534FAE /* squaredance in Resources */ = {isa = PBXBuildFile; fileRef = CB65CE3A14EC42F400534FAE /* squaredance */; };
 		CB65CE3D14EC44FF00534FAE /* shapes in Resources */ = {isa = PBXBuildFile; fileRef = CB65CE3C14EC44FF00534FAE /* shapes */; };
+		CB65CE4014EC7EF200534FAE /* FlipbookMode.m in Sources */ = {isa = PBXBuildFile; fileRef = CB65CE3F14EC7EF200534FAE /* FlipbookMode.m */; };
+		CB65CE4214EC7F8300534FAE /* guybrush in Resources */ = {isa = PBXBuildFile; fileRef = CB65CE4114EC7F8300534FAE /* guybrush */; };
 		CB69E37114D8C66D00E7C18D /* BTRepeatingTask.h in Headers */ = {isa = PBXBuildFile; fileRef = CB69E36F14D8C66D00E7C18D /* BTRepeatingTask.h */; };
 		CB69E37214D8C66D00E7C18D /* BTRepeatingTask.m in Sources */ = {isa = PBXBuildFile; fileRef = CB69E37014D8C66D00E7C18D /* BTRepeatingTask.m */; };
 		CB69E37914D8D07E00E7C18D /* BTParallelTask.h in Headers */ = {isa = PBXBuildFile; fileRef = CB69E37714D8D07E00E7C18D /* BTParallelTask.h */; };
@@ -309,6 +311,9 @@
 		CB65CE3514EC400200534FAE /* BTTextureResource+Package.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BTTextureResource+Package.h"; sourceTree = "<group>"; };
 		CB65CE3A14EC42F400534FAE /* squaredance */ = {isa = PBXFileReference; lastKnownFileType = folder; name = squaredance; path = Exported/squaredance; sourceTree = "<group>"; };
 		CB65CE3C14EC44FF00534FAE /* shapes */ = {isa = PBXFileReference; lastKnownFileType = folder; name = shapes; path = Exported/shapes; sourceTree = "<group>"; };
+		CB65CE3E14EC7EF200534FAE /* FlipbookMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlipbookMode.h; path = Integration/FlipbookMode.h; sourceTree = "<group>"; };
+		CB65CE3F14EC7EF200534FAE /* FlipbookMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FlipbookMode.m; path = Integration/FlipbookMode.m; sourceTree = "<group>"; };
+		CB65CE4114EC7F8300534FAE /* guybrush */ = {isa = PBXFileReference; lastKnownFileType = folder; name = guybrush; path = Exported/guybrush; sourceTree = "<group>"; };
 		CB69E36F14D8C66D00E7C18D /* BTRepeatingTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTRepeatingTask.h; sourceTree = "<group>"; };
 		CB69E37014D8C66D00E7C18D /* BTRepeatingTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTRepeatingTask.m; sourceTree = "<group>"; };
 		CB69E37314D8CADE00E7C18D /* RepeatingMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RepeatingMode.h; path = Integration/RepeatingMode.h; sourceTree = "<group>"; };
@@ -638,6 +643,7 @@
 		CB65CE3914EC42DE00534FAE /* Exported */ = {
 			isa = PBXGroup;
 			children = (
+				CB65CE4114EC7F8300534FAE /* guybrush */,
 				CB65CE3C14EC44FF00534FAE /* shapes */,
 				CB65CE3A14EC42F400534FAE /* squaredance */,
 			);
@@ -648,6 +654,8 @@
 			isa = PBXGroup;
 			children = (
 				CBAD57941475A3A000F7D78E /* main.m */,
+				CB65CE3E14EC7EF200534FAE /* FlipbookMode.h */,
+				CB65CE3F14EC7EF200534FAE /* FlipbookMode.m */,
 				CB24CBCD14A02E10004BAA57 /* MoveMode.h */,
 				CB24CBCE14A02E10004BAA57 /* MoveMode.m */,
 				CB442C7214B3800000EB2821 /* NamedNodeMode.h */,
@@ -893,6 +901,7 @@
 				2221990914CA3C69009B764F /* ResourceTest.xml in Resources */,
 				CB65CE3B14EC42F400534FAE /* squaredance in Resources */,
 				CB65CE3D14EC44FF00534FAE /* shapes in Resources */,
+				CB65CE4214EC7F8300534FAE /* guybrush in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -914,6 +923,7 @@
 				22448E7614E5D4DD001CF5CE /* Square.m in Sources */,
 				22F3373D14E89BAC00A17CCB /* GroupTestMode.m in Sources */,
 				22955A3F14EA1EB1006E5BEE /* LeakTestMode.m in Sources */,
+				CB65CE4014EC7EF200534FAE /* FlipbookMode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

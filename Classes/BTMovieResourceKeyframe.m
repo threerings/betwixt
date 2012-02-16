@@ -34,4 +34,19 @@
     scaleY = sqrt(mat.c * mat.c + mat.d * mat.d);
     return self;
 }
+
+
+-initFlipbookNamed:(NSString*)name withXml:(GDataXMLElement*)frameEl {
+    if (!(self = [super init])) return nil;
+    index = [frameEl intAttribute:@"index"];
+    duration = [frameEl intAttribute:@"duration" defaultVal:1];
+    label = [frameEl stringAttribute:@"name" defaultVal:nil];
+    
+    libraryItem = [NSString stringWithFormat:@"%@_snapshot_%d", name, index];
+    
+    scaleX = 1;
+    scaleY = 1;
+    return self;
+    
+}
 @end

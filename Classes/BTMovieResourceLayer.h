@@ -11,4 +11,7 @@
     NSMutableArray* keyframes;
 }
 -initWithLayer:(GDataXMLElement*)layerEl;
+-initFlipbookNamed:(NSString*)name withXml:(GDataXMLElement*)layerEl;
+
+@property(nonatomic,readonly) int frames;
 @end

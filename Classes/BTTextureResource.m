@@ -41,6 +41,7 @@
     _offset = [[SPPoint alloc] initWithX:[xml floatAttribute:@"xOffset" defaultVal:0]
                                        y:[xml floatAttribute:@"yOffset" defaultVal:0]];
     _name = [xml stringAttribute:@"name"];
+    NSLog(@"Created %@ with %@", _name, region);
     return self;
 }
 
