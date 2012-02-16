@@ -19,7 +19,7 @@ typedef void (^BTTouchBlock)(SPPoint* p);
 
 @interface BTInputRegion : NSObject {
 @protected
-    BTInput* _input;
+    __weak BTInput* _input;
 }
 - (id)initWithInput:(BTInput*)input;
 /// Returns true if this region can be triggered, false if it's currently invisible.
