@@ -15,10 +15,14 @@ NSString * const BTMovieFirstFrame = @"BTMovieFirstFrame";
 NSString * const BTMovieLastFrame = @"BTMovieLastFrame";
 @interface BTMovieLayer : NSObject {
 @public
-    int keyframeIdx, layerIdx;
-    NSMutableArray* keyframes;
-    NSMutableArray* displays;
+    int keyframeIdx;// The index of the last keyframe drawn in drawFrame
+    int layerIdx;// This layer's index in the movie
+    NSMutableArray* keyframes;// <BTMovieResourceKeyframe*>
+    // Only created if there are multiple symbols on this layer. If it does exist, the appropriate display is swapped in at keyframe changes. If it doesn't, the display is only added to the parent on layer creation
+    NSMutableArray* displays;// <SPDisplayObject*>
+    // The movie this layer belongs to
     __weak BTMovie* movie;
+    // If the keyframe has changed since the last drawFrame
     BOOL changedKeyframe;
 }
 @end
@@ -73,11 +77,12 @@ SPDisplayObject* createDisplayObject(NSString* symbol) {
         keyframeIdx++;
         changedKeyframe = true;
     }
-    if (changedKeyframe && displays) {
+    if (changedKeyframe && displays) {// We've got multiple symbols. Swap in the one for this kf
         [movie removeChildAtIndex:layerIdx];
         [movie addChild:[displays objectAtIndex:keyframeIdx] atIndex:layerIdx];
     }
     changedKeyframe = false;
+
     BTMovieResourceKeyframe* kf = [self kfAtIdx:keyframeIdx];
     SPDisplayObject* layer = [movie childAtIndex:layerIdx];
     if (keyframeIdx == [keyframes count] - 1|| kf->index == frame) {
@@ -123,15 +128,17 @@ SPDisplayObject* createDisplayObject(NSString* symbol) {
 @end
 
 @implementation BTMovie {
-    BOOL _goingToFrame;
-    int _pendingFrame;
-    int _frame, _stopFrame;
+    BOOL _goingToFrame;// If a call to gotoFrame is active
+    int _pendingFrame;// Latest frame given to gotoFrame while _goingToFrame, or NO_FRAME if there isn't a queued frame move
+    int _frame;// Last drawn frame
+    int _stopFrame;// Frame on which playing stops, or NO_FRAME if we're looping or already stopped
     RABoolValue* _playing;
-    float _playTime, _duration;
+    float _playTime;// Time position of the playhead. Does not snap to frame boundaries.
+    float _duration;// Length of the movie in seconds
     RAObjectSignal* _labelPassed;
-    NSArray* _labels;
-    NSMutableArray* _layers;
-    __weak SPJuggler* _juggler;
+    NSArray* _labels;// <NSArray<NSString>> by frame idx
+    NSMutableArray* _layers;// <BTMovieLayer>
+    __weak SPJuggler* _juggler;// The juggler advancing us if we're on the stage, or nil if we're not on the display list
 }
 
 - (int)frameForLabel:(NSString*)label {
@@ -171,14 +178,16 @@ SPDisplayObject* createDisplayObject(NSString* symbol) {
     BOOL differentFrame = newFrame != _frame;
     BOOL wrapped = newFrame < _frame;
     if (differentFrame) {
-        if (wrapped) for (BTMovieLayer* layer in _layers) {
-            layer->changedKeyframe = true;
-            layer->keyframeIdx = 0;
+        if (wrapped) {
+            for (BTMovieLayer* layer in _layers) {
+                layer->changedKeyframe = true;
+                layer->keyframeIdx = 0;
+            }
         }
         for (BTMovieLayer* layer in _layers) [layer drawFrame:newFrame];
     }
 
-    // Update the frame before firing, so if firing changes the frame, it should stick.
+    // Update the frame before firing, so if firing changes the frame, it sticks.
     int oldFrame = _frame;
     _frame = newFrame;
     if (fromSkip) {
