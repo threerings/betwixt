@@ -26,10 +26,7 @@
 @implementation Listener
 @synthesize ticks;
 - (void)attached {
-    [self.conns onFloatReactor:self.mode.update connectSlot:^(float dt) {
-        self.ticks++;
-        NSLog(@"Listener.ticks: %d", self.ticks);
-    }];
+    [self.conns onFloatReactor:self.mode.update connectSlot:^(float dt) { self.ticks++; }];
 }
 @end
 
