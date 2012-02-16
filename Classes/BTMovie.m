@@ -265,7 +265,7 @@ SPDisplayObject* createDisplayObject(NSString* symbol) {
     [self gotoFrame:newFrame fromSkip:NO overDuration:overDuration];
 }
 
-- (BOOL) isComplete { return !_playing.value; }
+- (BOOL) isComplete { return NO; }
 
 - (void)addedToStage:(SPEvent*)event {
     SPDisplayObject* parent = self.parent;
