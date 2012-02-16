@@ -39,12 +39,12 @@ SPDisplayObject* createDisplayObject(NSString* symbol) {
     if (!(self = [super init])) return nil;
     keyframes = layer->keyframes;
     NSString *lastSymbol = nil;
+    movie = parent;
     for (int ii = 0; ii < [keyframes count] && !lastSymbol; ii++) {
         lastSymbol = [self kfAtIdx:ii]->libraryItem;
     }
     if (!lastSymbol) [movie addChild:[[SPSprite alloc] init]];// Label only movie
     else {
-        movie = parent;
         BOOL multipleSymbols = false;
         for (BTMovieResourceKeyframe* kf in keyframes) {
             if (kf->libraryItem != lastSymbol) {
