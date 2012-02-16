@@ -214,6 +214,7 @@
     [_conns disconnectAll];
     [_rootNode cleanup];
     _rootNode = nil;
+    _input = nil;
 }
 
 - (void)addKeys:(BTNode*)node {

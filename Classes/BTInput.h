@@ -3,39 +3,56 @@
 
 @class BTMode;
 @class SPTouchProcessor;
+@class BTInput;
 
 @interface BTInputRegistration : NSObject
 - (void)cancel;
 @end
 
-@interface BTInputRegion : NSObject
+@protocol BTTouchListener
+- (void)onTouchStart:(SPPoint*)globalPt;
+- (void)onTouchMove:(SPPoint*)globalPt;
+- (void)onTouchEnd:(SPPoint*)globalPt;
+@end
+
+typedef void (^BTTouchBlock)(SPPoint* p);
+
+@interface BTInputRegion : NSObject {
+@protected
+    BTInput* _input;
+}
+- (id)initWithInput:(BTInput*)input;
 /// Returns true if this region can be triggered, false if it's currently invisible.
 - (BOOL)canTrigger;
 /// Returns true if this region is no longer relevant and should be removed.
 - (BOOL)hasExpired;
 /// Returns true if the (screen-coordinates) point triggers falls in this region.
 - (BOOL)hitTest:(SPPoint*)globalPt;
+
+- (BTInputRegistration*)registerListener:(id<BTTouchListener>)l;
+
+- (BTInputRegistration*)onTouchStart:(BTTouchBlock)onTouchStart 
+                        onTouchMove:(BTTouchBlock)onTouchMove
+                         onTouchEnd:(BTTouchBlock)onTouchEnd;
+- (BTInputRegistration*)onTouchStart:(BTTouchBlock)onTouchStart
+                         onTouchEnd:(BTTouchBlock)onTouchEnd;
+- (BTInputRegistration*)onTouchStart:(BTTouchBlock)onTouchStart;
+- (BTInputRegistration*)onTouchEnd:(BTTouchBlock)onTouchEnd;
 @end
 
 /// A Region that triggers on any touch
 @interface BTScreenRegion : BTInputRegion
++ (BTScreenRegion*)withInput:(BTInput*)input;
 @end
 
 /// A Region that triggers on touches that intersect a given rectangle
 @interface BTBoundsRegion : BTInputRegion
-- (id)initWithBounds:(SPRectangle*)bounds;
++ (BTBoundsRegion*)withInput:(BTInput*)input bounds:(SPRectangle*)bounds;
 @end
 
 /// A Region that triggers on touches that intersect a SPDisplayObject
 @interface BTDisplayObjectRegion : BTInputRegion
-- (id)initWithDisplayObject:(SPDisplayObject*)disp;
-@end
-
-
-@protocol BTTouchListener
-- (void)onTouchStart:(SPPoint*)globalPt;
-- (void)onTouchMove:(SPPoint*)globalPt;
-- (void)onTouchEnd:(SPPoint*)globalPt;
++ (BTDisplayObjectRegion*)withInput:(BTInput*)input disp:(SPDisplayObject*)disp;
 @end
 
 @interface BTInput : NSObject {
@@ -46,9 +63,6 @@
 }
 
 - (BTInputRegistration*)registerListener:(id<BTTouchListener>)listener forRegion:(BTInputRegion*)region;
-
-- (BTInputRegistration*)registerScreenListener:(id<BTTouchListener>)listener;
-- (BTInputRegistration*)registerListener:(id<BTTouchListener>)listener forBounds:(SPRectangle*)bounds;
-- (BTInputRegistration*)registerListener:(id<BTTouchListener>)listener forDisplayObject:(SPDisplayObject*)disp;
+- (void)removeAllListeners;
 
 @end
