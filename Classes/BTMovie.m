@@ -57,8 +57,6 @@ SPDisplayObject* createDisplayObject(NSString* symbol) {
             displays = [[NSMutableArray alloc] initWithCapacity:[keyframes count]];
             for (BTMovieResourceKeyframe* kf in keyframes) {
                 SPDisplayObject* display = createDisplayObject(kf->libraryItem);
-                NSLog(@"%@", kf->libraryItem);
-
                 [displays addObject:display];
                 display.name = layer->name;
             }
@@ -76,10 +74,9 @@ SPDisplayObject* createDisplayObject(NSString* symbol) {
         changedKeyframe = true;
     }
     if (changedKeyframe && displays) {
-        NSLog(@"Switching at %d to %d", frame, keyframeIdx);
         [movie removeChildAtIndex:layerIdx];
         [movie addChild:[displays objectAtIndex:keyframeIdx] atIndex:layerIdx];
-    } else NSLog(@"No switch at %d from %d", frame, keyframeIdx);
+    }
     changedKeyframe = false;
     BTMovieResourceKeyframe* kf = [self kfAtIdx:keyframeIdx];
     SPDisplayObject* layer = [movie childAtIndex:layerIdx];

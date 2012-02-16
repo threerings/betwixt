@@ -13,6 +13,7 @@
 #import "BTModeStack.h"
 #import "GroupTestMode.h"
 #import "LeakTestMode.h"
+#import "FlipbookMode.h"
 
 #import "BTLoadingMode.h"
 
@@ -23,9 +24,10 @@
 
 - (id)init {
     if (!(self = [super init])) return nil;
-    [self addFiles:@"ResourceTest.xml", @"squaredance/resources.xml", @"shapes/resources.xml", nil];
+    [self addFiles:@"ResourceTest.xml", @"squaredance/resources.xml", @"shapes/resources.xml", @"guybrush/resources.xml", nil];
     [self.loadComplete connectUnit:^{
-        [self.modeStack changeMode:[[NamedNodeMode alloc] init]];
+        [self.modeStack changeMode:[[FlipbookMode alloc] init]];
+        [self.modeStack pushMode:[[NamedNodeMode alloc] init]];
         [self.modeStack pushMode:[[MoveMode alloc] init]];
         [self.modeStack pushMode:[[SelfRemoveMode alloc] init]];
         [self.modeStack pushMode:[[PlayMovieMode alloc] init]];

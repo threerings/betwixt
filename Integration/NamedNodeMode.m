@@ -8,6 +8,7 @@
 #import "BTBlockTask.h"
 #import "BTWaitTask.h"
 #import "BTSequenceTask.h"
+#import "BTModeStack.h"
 
 @implementation NamedNodeMode
 - (id)init {
@@ -24,8 +25,8 @@
             NSAssert([sprite nodeForName:@"mover"] == nil, nil);
             NSAssert(sprite.sprite.x > 0, nil);
             NSAssert(sprite.sprite.x < 100, nil);
+            [self.modeStack popMode];
         }],
-        [BTDetachTask detachParent],
         nil]];
     return self;
 }
