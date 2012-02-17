@@ -41,12 +41,12 @@
     index = [frameEl intAttribute:@"index"];
     duration = [frameEl intAttribute:@"duration" defaultVal:1];
     label = [frameEl stringAttribute:@"name" defaultVal:nil];
-    
-    libraryItem = [NSString stringWithFormat:@"%@_snapshot_%d", name, index];
-    
+
+    libraryItem = [NSString stringWithFormat:@"%@_flipbook_%d", name, index];
+
     scaleX = 1;
     scaleY = 1;
     return self;
-    
+
 }
 @end

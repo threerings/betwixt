@@ -68,11 +68,11 @@
 </DOMSymbolItem>
   </movie>
 <atlas name='guybrush/atlas0' filename='guybrush/atlas0.png'>
-  <texture name='guybrush_snapshot_12' xOffset='-52' yOffset='-75' md5='5ad036306c7fcbb059a313bfd54703ff' xAtlas='0' yAtlas='0' wAtlas='104' hAtlas='150'/>
-  <texture name='guybrush_snapshot_4' xOffset='-52' yOffset='-75' md5='5ad036306c7fcbb059a313bfd54703ff' xAtlas='104' yAtlas='0' wAtlas='104' hAtlas='150'/>
-  <texture name='guybrush_snapshot_8' xOffset='-50' yOffset='-75' md5='5ad036306c7fcbb059a313bfd54703ff' xAtlas='208' yAtlas='0' wAtlas='104' hAtlas='150'/>
-  <texture name='guybrush_snapshot_0' xOffset='-53' yOffset='-75' md5='5ad036306c7fcbb059a313bfd54703ff' xAtlas='312' yAtlas='0' wAtlas='104' hAtlas='150'/>
-  <texture name='guybrush_snapshot_16' xOffset='-52' yOffset='-75' md5='5ad036306c7fcbb059a313bfd54703ff' xAtlas='312' yAtlas='150' wAtlas='104' hAtlas='150'/>
-  <texture name='guybrush_snapshot_20' xOffset='-52' yOffset='-75' md5='5ad036306c7fcbb059a313bfd54703ff' xAtlas='312' yAtlas='300' wAtlas='104' hAtlas='150'/>
+  <texture name='guybrush_flipbook_12' xOffset='-52' yOffset='-75' md5='5ad036306c7fcbb059a313bfd54703ff' xAtlas='0' yAtlas='0' wAtlas='104' hAtlas='150'/>
+  <texture name='guybrush_flipbook_4' xOffset='-52' yOffset='-75' md5='5ad036306c7fcbb059a313bfd54703ff' xAtlas='104' yAtlas='0' wAtlas='104' hAtlas='150'/>
+  <texture name='guybrush_flipbook_8' xOffset='-50' yOffset='-75' md5='5ad036306c7fcbb059a313bfd54703ff' xAtlas='208' yAtlas='0' wAtlas='104' hAtlas='150'/>
+  <texture name='guybrush_flipbook_0' xOffset='-53' yOffset='-75' md5='5ad036306c7fcbb059a313bfd54703ff' xAtlas='312' yAtlas='0' wAtlas='104' hAtlas='150'/>
+  <texture name='guybrush_flipbook_16' xOffset='-52' yOffset='-75' md5='5ad036306c7fcbb059a313bfd54703ff' xAtlas='312' yAtlas='150' wAtlas='104' hAtlas='150'/>
+  <texture name='guybrush_flipbook_20' xOffset='-52' yOffset='-75' md5='5ad036306c7fcbb059a313bfd54703ff' xAtlas='312' yAtlas='300' wAtlas='104' hAtlas='150'/>
 </atlas>
 </resources>
