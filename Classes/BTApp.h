@@ -5,7 +5,7 @@
 @class BTModeStack;
 @class SPView;
 
-@interface BTApp : NSObject {
+@interface BTApp : NSObject <UIApplicationDelegate> {
 @protected
     UIWindow* _window;
     SPView* _view;
@@ -14,7 +14,6 @@
     SPPoint* _viewSize;
 }
 
-+ (void)registerAppClass:(Class)theClass;
 + (BTApp*)app;
 
 - (BTModeStack*)createModeStack;

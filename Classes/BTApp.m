@@ -11,7 +11,6 @@
 #import "BTTextureResource.h"
 #import "BTMovieResource.h"
 
-static Class gClass = nil;
 static BTApp* gInstance = nil;
 
 // We override SPStage in order to handle our own input and update processing.
@@ -21,32 +20,41 @@ static BTApp* gInstance = nil;
 
 @implementation BTApp
 
-+ (void)registerAppClass:(Class)theClass {
-    NSAssert(gClass == nil, @"BTApp class has already been registered");
-    gClass = theClass;
-}
-
-+ (void)create:(UIWindow*)window {
-    @synchronized(self) {
-        NSAssert(gInstance == nil, @"BTApp has already been created");
-        NSAssert(gClass != nil, @"[BTApp registerAppClass:] has not been called");
-        gInstance = [[gClass alloc] init];
-    }
-    gInstance->_window = window;
-    [gInstance runInternal];
-}
-
 + (BTApp*)app {
     return gInstance;
 }
 
 - (id)init {
-    if (!(self = [super init])) {
-        return nil;
-    }
+    NSAssert(gInstance == nil, @"BTApp has already been created");
+    if (!(self = [super init])) return nil;
+    gInstance = self;
+    
+    _window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    _window.rootViewController = [[UIViewController alloc] init];
     _resourceMgr = [[BTResourceManager alloc] init];
     _modeStacks = [NSMutableArray array];
     return self;
+}
+
+- (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions {
+    [self runInternal];
+    [_window makeKeyAndVisible];
+    return YES;
+}
+
+- (void)applicationWillResignActive:(UIApplication*)application {
+    [_view stop];
+}
+
+- (void)applicationDidBecomeActive:(UIApplication*)application {
+    [_view start];
+}
+
+- (void)dealloc {
+    _resourceMgr = nil;
+    _modeStacks = nil;
+    _view = nil;
+    //[SPAudioEngine stop];
 }
 
 - (void)runInternal {
@@ -79,24 +87,9 @@ static BTApp* gInstance = nil;
     [self run:[self createModeStack]];
 }
 
-- (void)cleanup {
-    _resourceMgr = nil;
-    _modeStacks = nil;
-    _view = nil;
-    //[SPAudioEngine stop];
-}
-
 - (void)run:(BTModeStack*)defaultStack {
     NSLog(@"BTApp.run must be implemented by a subclass");
     [self doesNotRecognizeSelector:_cmd];
-}
-
-- (void)appDidBecomeActive {
-    [_view start];
-}
-
-- (void)appWillResignActive {
-    [_view stop];
 }
 
 - (void)update:(float)dt {

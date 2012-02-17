@@ -6,7 +6,6 @@
 
 int main(int argc, char *argv[]) {
     @autoreleasepool {
-        [BTApp registerAppClass:[TestApp class]];
-        return UIApplicationMain(argc, argv, nil, @"BTApplicationDelegate");
+        return UIApplicationMain(argc, argv, nil, NSStringFromClass([TestApp class]));
     }
 }

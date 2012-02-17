@@ -6,7 +6,6 @@
 #import "Sparrow.h"
 
 #import "BTApp.h"
-#import "BTApplicationDelegate.h"
 #import "BTCallbacks.h"
 #import "BTDisplayObject.h"
 #import "BTDragger.h"
