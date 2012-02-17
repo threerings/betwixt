@@ -5,17 +5,9 @@
 @class BTModeStack;
 @class SPView;
 
-@interface BTApp : NSObject <UIApplicationDelegate> {
-@protected
-    UIWindow* _window;
-    SPView* _view;
-    BTResourceManager* _resourceMgr;
-    NSMutableArray* _modeStacks;
-    SPPoint* _viewSize;
-}
+@interface BTApp : NSObject <UIApplicationDelegate>
 
 + (BTApp*)app;
-
 - (BTModeStack*)createModeStack;
 
 /// Returns the framerate that the app is currently running at

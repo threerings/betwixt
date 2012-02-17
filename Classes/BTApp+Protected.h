@@ -6,12 +6,9 @@
 @interface BTApp (protected)
 
 - (void)run:(BTModeStack*)defaultStack;
-- (void)cleanup;
 
 - (void)update:(float)dt;
 - (void)processTouches:(NSSet*)touches;
-
-- (void)appDidBecomeActive;
-- (void)appWillResignActive;
+- (BOOL)supportsUIInterfaceOrientation:(UIInterfaceOrientation)orientation;
 
 @end

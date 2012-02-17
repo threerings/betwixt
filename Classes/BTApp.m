@@ -18,7 +18,35 @@ static BTApp* gInstance = nil;
 @property(nonatomic,weak) BTApp* app;
 @end
 
-@implementation BTApp
+@interface BTViewController : UIViewController
+- (id)initWithApp:(BTApp*)app;
+@end
+@implementation BTViewController {
+    __weak BTApp* _app;
+}
+
+- (id)initWithApp:(BTApp *)app {
+    if (!(self = [super init])) return nil;
+    _app = app;
+    return self;
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
+    return [_app supportsUIInterfaceOrientation:toInterfaceOrientation];
+}
+
+@end
+
+@implementation BTApp {
+@protected
+    UIWindow* _window;
+    BTViewController* _viewController;
+    SPView* _view;
+    SPPoint* _viewSize;
+    
+    BTResourceManager* _resourceMgr;
+    NSMutableArray* _modeStacks;
+}
 
 + (BTApp*)app {
     return gInstance;
@@ -28,16 +56,54 @@ static BTApp* gInstance = nil;
     NSAssert(gInstance == nil, @"BTApp has already been created");
     if (!(self = [super init])) return nil;
     gInstance = self;
-    
-    _window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    _window.rootViewController = [[UIViewController alloc] init];
-    _resourceMgr = [[BTResourceManager alloc] init];
-    _modeStacks = [NSMutableArray array];
     return self;
 }
 
 - (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions {
-    [self runInternal];
+    
+    // Window
+    CGRect windowBounds = [UIScreen mainScreen].bounds;
+    _window = [[UIWindow alloc] initWithFrame:windowBounds];
+    _viewController = [[BTViewController alloc] initWithApp:self];
+    _window.rootViewController = _viewController;
+    
+    CGRect viewBounds = windowBounds;
+    if (![self supportsUIInterfaceOrientation:UIInterfaceOrientationPortrait] &&
+        ![self supportsUIInterfaceOrientation:UIInterfaceOrientationPortraitUpsideDown]) {
+        CGFloat tmp = viewBounds.size.width;
+        viewBounds.size.width = viewBounds.size.height;
+        viewBounds.size.height = tmp;
+    }
+    
+    // View
+    _view = [[SPView alloc] initWithFrame:viewBounds];
+    _view.multipleTouchEnabled = YES;
+    _viewController.view = _view;
+    
+    // // Stage
+    [BTStage setSupportHighResolutions:YES];
+    BTStage* stage = [[BTStage alloc] initWithWidth:viewBounds.size.width 
+                                             height:viewBounds.size.height];
+    stage.app = self;
+    _view.stage = stage;
+    // Framerate must be set after the stage has been attached to the view.
+    stage.frameRate = 60;
+    
+    _viewSize = [SPPoint pointWithX:stage.width y:stage.height];
+    
+    // TODO - figure out why this is throwing an exception. Looks like an iOS 5 bug
+    //[SPAudioEngine start];
+    
+    // Setup ResourceManager
+    _resourceMgr = [[BTResourceManager alloc] init];
+    [_resourceMgr registerFactory:[BTTextureResource sharedFactory] forType:BTTEXTURE_RESOURCE_NAME];
+    [_resourceMgr registerFactory:[BTMovieResource sharedFactory] forType:BTMOVIE_RESOURCE_NAME];
+    [_resourceMgr registerMultiFactory:[BTAtlasFactory sharedFactory] forType:BTATLAS_RESOURCE_NAME];
+    
+    // create default mode stack
+    _modeStacks = [NSMutableArray array];
+    [self run:[self createModeStack]];
+    
     [_window makeKeyAndVisible];
     return YES;
 }
@@ -55,36 +121,6 @@ static BTApp* gInstance = nil;
     _modeStacks = nil;
     _view = nil;
     //[SPAudioEngine stop];
-}
-
-- (void)runInternal {
-    NSAssert(_view == nil, @"runInternal has already been called");
-
-    // Setup Sparrow
-    [BTStage setSupportHighResolutions:YES];
-    BTStage* stage = [[BTStage alloc] init];
-    stage.app = self;
-    
-    _view = [[SPView alloc] initWithFrame:_window.bounds];
-    _view.multipleTouchEnabled = YES;
-    _view.stage = stage;
-    // Framerate must be set after the stage has been attached to the view.
-    _view.stage.frameRate = 60;
-    // Attach the view to the window
-    _window.rootViewController.view = _view;
-    
-    _viewSize = [SPPoint pointWithX:_view.stage.width y:_view.stage.height];
-
-    // TODO - figure out why this is throwing an exception. Looks like an iOS 5 bug
-    //[SPAudioEngine start];
-
-    // Setup ResourceManager
-    [_resourceMgr registerFactory:[BTTextureResource sharedFactory] forType:BTTEXTURE_RESOURCE_NAME];
-    [_resourceMgr registerFactory:[BTMovieResource sharedFactory] forType:BTMOVIE_RESOURCE_NAME];
-    [_resourceMgr registerMultiFactory:[BTAtlasFactory sharedFactory] forType:BTATLAS_RESOURCE_NAME];
-    
-    // create default mode stack
-    [self run:[self createModeStack]];
 }
 
 - (void)run:(BTModeStack*)defaultStack {
@@ -113,6 +149,10 @@ static BTApp* gInstance = nil;
     [_view.stage addChild:stack->_sprite];
     [_modeStacks addObject:stack];
     return stack;
+}
+
+- (BOOL)supportsUIInterfaceOrientation:(UIInterfaceOrientation)orientation {
+    return UIInterfaceOrientationIsPortrait(orientation);
 }
 
 @synthesize resourceManager=_resourceMgr, view=_view, viewSize=_viewSize;
