@@ -47,6 +47,8 @@
 		229B463314D8C439005FC8E9 /* BTHasLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = 229B463214D8C439005FC8E9 /* BTHasLocation.h */; };
 		229B463614D8C525005FC8E9 /* SPDisplayObject+Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 229B463414D8C525005FC8E9 /* SPDisplayObject+Extensions.h */; };
 		229B463714D8C525005FC8E9 /* SPDisplayObject+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 229B463514D8C525005FC8E9 /* SPDisplayObject+Extensions.m */; };
+		22C5353514F5C96D00B7958F /* UIColor+Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 22C5353314F5C96D00B7958F /* UIColor+Extensions.h */; };
+		22C5353614F5C96D00B7958F /* UIColor+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C5353414F5C96D00B7958F /* UIColor+Extensions.m */; };
 		22C85EAD14DB225400F9EC07 /* BTPoints.h in Headers */ = {isa = PBXBuildFile; fileRef = 22C85EAB14DB225400F9EC07 /* BTPoints.h */; };
 		22C85EAE14DB225400F9EC07 /* BTPoints.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C85EAC14DB225400F9EC07 /* BTPoints.m */; };
 		22C85EB614DB344100F9EC07 /* BTNode+Protected.h in Headers */ = {isa = PBXBuildFile; fileRef = 22C85EB514DB344100F9EC07 /* BTNode+Protected.h */; };
@@ -250,6 +252,8 @@
 		229B463214D8C439005FC8E9 /* BTHasLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTHasLocation.h; sourceTree = "<group>"; };
 		229B463414D8C525005FC8E9 /* SPDisplayObject+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SPDisplayObject+Extensions.h"; sourceTree = "<group>"; };
 		229B463514D8C525005FC8E9 /* SPDisplayObject+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SPDisplayObject+Extensions.m"; sourceTree = "<group>"; };
+		22C5353314F5C96D00B7958F /* UIColor+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Extensions.h"; sourceTree = "<group>"; };
+		22C5353414F5C96D00B7958F /* UIColor+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Extensions.m"; sourceTree = "<group>"; };
 		22C85EAB14DB225400F9EC07 /* BTPoints.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTPoints.h; sourceTree = "<group>"; };
 		22C85EAC14DB225400F9EC07 /* BTPoints.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTPoints.m; sourceTree = "<group>"; };
 		22C85EB514DB344100F9EC07 /* BTNode+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BTNode+Protected.h"; sourceTree = "<group>"; };
@@ -504,6 +508,8 @@
 				22448E2814E4A7A0001CF5CE /* SPPoint+Extensions.m */,
 				22448E2B14E4A931001CF5CE /* SPRectangle+Extensions.h */,
 				22448E2C14E4A933001CF5CE /* SPRectangle+Extensions.m */,
+				22C5353314F5C96D00B7958F /* UIColor+Extensions.h */,
+				22C5353414F5C96D00B7958F /* UIColor+Extensions.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -769,6 +775,7 @@
 				CB65CE2F14EC397E00534FAE /* BTAtlasFactory.h in Headers */,
 				CB65CE3314EC3B1F00534FAE /* BTMultiResourceFactory.h in Headers */,
 				CB65CE3714EC400200534FAE /* BTTextureResource+Package.h in Headers */,
+				22C5353514F5C96D00B7958F /* UIColor+Extensions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -970,6 +977,7 @@
 				22448E8D14E603DF001CF5CE /* NSArray+Extensions.m in Sources */,
 				CBC9AC5914E9A4F800E1F9F7 /* BTUtils.m in Sources */,
 				CB65CE3014EC397E00534FAE /* BTAtlasFactory.m in Sources */,
+				22C5353614F5C96D00B7958F /* UIColor+Extensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

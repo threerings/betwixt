@@ -26,6 +26,7 @@
 #import "SPDisplayObject+Extensions.h"
 #import "SPPoint+Extensions.h"
 #import "SPRectangle+Extensions.h"
+#import "UIColor+Extensions.h"
 
 // Resources
 #import "GDataXMLException.h"
