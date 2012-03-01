@@ -46,6 +46,8 @@ static BTApp* gInstance = nil;
     
     BTResourceManager* _resourceMgr;
     NSMutableArray* _modeStacks;
+    
+    float _framerate;
 }
 
 + (BTApp*)app {
@@ -129,13 +131,14 @@ static BTApp* gInstance = nil;
 }
 
 - (void)update:(float)dt {
+    _framerate = 1.0f / dt;
     for (BTModeStack* stack in _modeStacks) {
         [stack update:dt];
     }
 }
 
 - (float)framerate {
-    return _view.stage.frameRate;
+    return _framerate;
 }
 
 - (void)processTouches:(NSSet*)touches {
