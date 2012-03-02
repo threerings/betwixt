@@ -48,11 +48,13 @@ typedef void (^BTTouchBlock)(SPPoint* p);
 /// A Region that triggers on touches that intersect a given rectangle
 @interface BTBoundsRegion : BTInputRegion
 + (BTBoundsRegion*)withInput:(BTInput*)input bounds:(SPRectangle*)bounds;
+- (id)initWithInput:(BTInput*)input bounds:(SPRectangle*)bounds;
 @end
 
 /// A Region that triggers on touches that intersect a SPDisplayObject
 @interface BTDisplayObjectRegion : BTInputRegion
 + (BTDisplayObjectRegion*)withInput:(BTInput*)input disp:(SPDisplayObject*)disp;
+- (id)initWithInput:(BTInput*)input displayObject:(SPDisplayObject*)disp;
 @end
 
 @interface BTInput : NSObject {
