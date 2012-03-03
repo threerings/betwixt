@@ -38,6 +38,8 @@
 		22448E8C14E603DF001CF5CE /* NSArray+Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 22448E8A14E603DF001CF5CE /* NSArray+Extensions.h */; };
 		22448E8D14E603DF001CF5CE /* NSArray+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 22448E8B14E603DF001CF5CE /* NSArray+Extensions.m */; };
 		22448EA514E744AE001CF5CE /* BTMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 22448EA414E744AE001CF5CE /* BTMacros.h */; };
+		2290D8291502C99D009EED3D /* SPMatrix+Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 2290D8271502C99D009EED3D /* SPMatrix+Extensions.h */; };
+		2290D82A1502C99D009EED3D /* SPMatrix+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2290D8281502C99D009EED3D /* SPMatrix+Extensions.m */; };
 		22955A3F14EA1EB1006E5BEE /* LeakTestMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 22955A3E14EA1EB1006E5BEE /* LeakTestMode.m */; };
 		229B45C314D786B6005FC8E9 /* BTDurationTask.h in Headers */ = {isa = PBXBuildFile; fileRef = 229B45C114D786B5005FC8E9 /* BTDurationTask.h */; };
 		229B45C414D786B6005FC8E9 /* BTDurationTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 229B45C214D786B6005FC8E9 /* BTDurationTask.m */; };
@@ -242,6 +244,8 @@
 		22448E8A14E603DF001CF5CE /* NSArray+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Extensions.h"; sourceTree = "<group>"; };
 		22448E8B14E603DF001CF5CE /* NSArray+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Extensions.m"; sourceTree = "<group>"; };
 		22448EA414E744AE001CF5CE /* BTMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTMacros.h; sourceTree = "<group>"; };
+		2290D8271502C99D009EED3D /* SPMatrix+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SPMatrix+Extensions.h"; sourceTree = "<group>"; };
+		2290D8281502C99D009EED3D /* SPMatrix+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SPMatrix+Extensions.m"; sourceTree = "<group>"; };
 		22955A3D14EA1EB1006E5BEE /* LeakTestMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LeakTestMode.h; path = Integration/LeakTestMode.h; sourceTree = "<group>"; };
 		22955A3E14EA1EB1006E5BEE /* LeakTestMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LeakTestMode.m; path = Integration/LeakTestMode.m; sourceTree = "<group>"; };
 		229B45C114D786B5005FC8E9 /* BTDurationTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTDurationTask.h; sourceTree = "<group>"; };
@@ -504,6 +508,8 @@
 				229B463514D8C525005FC8E9 /* SPDisplayObject+Extensions.m */,
 				CB7ABCAC147C52D400EC6AEC /* SPEventDispatcher+BlockListener.h */,
 				CB7ABCAD147C52D400EC6AEC /* SPEventDispatcher+BlockListener.m */,
+				2290D8271502C99D009EED3D /* SPMatrix+Extensions.h */,
+				2290D8281502C99D009EED3D /* SPMatrix+Extensions.m */,
 				22448E2714E4A79D001CF5CE /* SPPoint+Extensions.h */,
 				22448E2814E4A7A0001CF5CE /* SPPoint+Extensions.m */,
 				22448E2B14E4A931001CF5CE /* SPRectangle+Extensions.h */,
@@ -776,6 +782,7 @@
 				CB65CE3314EC3B1F00534FAE /* BTMultiResourceFactory.h in Headers */,
 				CB65CE3714EC400200534FAE /* BTTextureResource+Package.h in Headers */,
 				22C5353514F5C96D00B7958F /* UIColor+Extensions.h in Headers */,
+				2290D8291502C99D009EED3D /* SPMatrix+Extensions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -978,6 +985,7 @@
 				CBC9AC5914E9A4F800E1F9F7 /* BTUtils.m in Sources */,
 				CB65CE3014EC397E00534FAE /* BTAtlasFactory.m in Sources */,
 				22C5353614F5C96D00B7958F /* UIColor+Extensions.m in Sources */,
+				2290D82A1502C99D009EED3D /* SPMatrix+Extensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
