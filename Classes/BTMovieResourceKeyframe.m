@@ -3,6 +3,7 @@
 
 #import "BTMovieResourceKeyframe.h"
 #import "GDataXMLNode+Extensions.h"
+#import "SPMatrix+Extensions.h"
 
 @implementation BTMovieResourceKeyframe
 -initWithFrame:(GDataXMLElement*)frameEl {
@@ -24,14 +25,12 @@
                                                 tx:[matrixEl floatAttribute:@"tx" defaultVal:0]
                                                 ty:[matrixEl floatAttribute:@"ty" defaultVal:0]];
     } else mat = [[SPMatrix alloc] init];
+    
     x = mat.tx;
     y = mat.ty;
-    SPPoint* py = [mat transformPoint:[SPPoint pointWithX:1 y:0]];
-    py.x -= mat.tx;
-    py.y -= mat.ty;
-    rotation = atan2(py.y, py.x);
-    scaleX = sqrt(mat.a * mat.a + mat.b * mat.b);
-    scaleY = sqrt(mat.c * mat.c + mat.d * mat.d);
+    rotation = mat.rotation;
+    scaleX = mat.scaleX;
+    scaleY = mat.scaleY;
     return self;
 }
 
