@@ -101,6 +101,9 @@ SPDisplayObject* createDisplayObject(NSString* symbol) {
         layer.scaleY = kf->scaleY + (nextKf->scaleY - kf->scaleY) * interped;
         layer.rotation = kf->rotation + (nextKf->rotation - kf->rotation) * interped;
     }
+    
+    layer.pivotX = kf->pivotX;
+    layer.pivotY = kf->pivotY;
 }
 @end
 

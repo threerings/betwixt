@@ -9,6 +9,7 @@
 @public
     int index, duration;
     float x, y, rotation, scaleX, scaleY;
+    float pivotX, pivotY;
     NSString* libraryItem;
     NSString* label;
 }

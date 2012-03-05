@@ -26,11 +26,32 @@
                                                 ty:[matrixEl floatAttribute:@"ty" defaultVal:0]];
     } else mat = [[SPMatrix alloc] init];
     
+    // handle "motionTweenRotate" (in this case, the rotation is not embedded in the matrix)
+    if ([frameEl hasAttribute:@"motionTweenRotateTimes"] && duration > 1) {
+        rotation = [frameEl floatAttribute:@"motionTweenRotateTimes"] * TWO_PI;
+        if ([[frameEl stringAttribute:@"motionTweenRotate"] isEqualToString:@"clockwise"]) {
+            rotation *= -1;
+        }
+        
+        mat.rotation = rotation;
+    } else {
+        rotation = mat.rotation;
+    }
+    
     x = mat.tx;
     y = mat.ty;
-    rotation = mat.rotation;
     scaleX = mat.scaleX;
     scaleY = mat.scaleY;
+    
+    // handle pivot point
+    GDataXMLElement* pivotEl = [symbolEl getChild:@"transformationPoint/Point"];
+    if (pivotEl) {
+        pivotX = [pivotEl floatAttribute:@"x" defaultVal:0];
+        pivotY = [pivotEl floatAttribute:@"y" defaultVal:0];
+        x += pivotX;
+        y += pivotY;
+    }
+    
     return self;
 }
 
