@@ -5,4 +5,14 @@
 #import "SPDisplayObject.h"
 
 @interface SPDisplayObject (OOOExtensions) <BTHasLocation>
+
+/// The coordinates of the object relative to the local coordinates of the parent
+@property (nonatomic, copy) SPPoint* loc;
+
+/// The object's origin in its own coordinate space
+@property (nonatomic, copy) SPPoint* pivot;
+
+/// The object's x and y scale factor
+@property (nonatomic, copy) SPPoint* scale;
+
 @end
