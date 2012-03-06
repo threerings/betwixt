@@ -15,8 +15,13 @@
     NSMutableSet* _loadedFiles; // <String>
 }
 
+/// Loads a resource file synchronously
+- (void)loadResourceFile:(NSString*)filename;
+
+/// Loads a resource file in the background
 - (void)loadResourceFile:(NSString*)filename onComplete:(BTCompleteCallback)onComplete
                  onError:(BTErrorCallback)onError;
+
 - (void)unloadResourceFile:(NSString*)filename;
 - (id)getResource:(NSString*)name;
 - (id)requireResource:(NSString*)name;

@@ -11,20 +11,11 @@
 
 #import "GDataXMLNode+Extensions.h"
 
-@interface LoadTask : NSObject {
-@public
-    __weak BTResourceManager* _mgr;
-    NSString* _filename;
-    NSArray* _resources;
-    NSException* _err;
-    BTCompleteCallback _onComplete;
-    BTErrorCallback _onError;
-}
-- (id)initWithManager:(BTResourceManager*)mgr
-             filename:(NSString*)filename
-           onComplete:(BTCompleteCallback)onComplete
-               onError:(BTErrorCallback)onError;
+@interface LoadTask : NSObject
+
+- (id)initWithManager:(BTResourceManager*)mgr filename:(NSString*)filename;
 - (void)load;
+- (void)loadAsync:(BTCompleteCallback)onComplete onError:(BTErrorCallback)onError;
 
 @property (readonly,strong) NSString* filename;
 @property (readonly,strong) NSArray* resources;
@@ -50,14 +41,22 @@
     return [_loadedFiles containsObject:filename] || [_loadingFiles containsObject:filename];
 }
 
-- (void)loadResourceFile:(NSString*)filename onComplete:(BTCompleteCallback)onComplete
-                 onError:(BTErrorCallback)onError {
+- (LoadTask*)createLoadTask:(NSString*)filename {
     NSAssert(![self isResourceFileLoaded:filename],
              @"Resource file '%@' already loaded (or is loading)", filename);
-
+    
     [_loadingFiles addObject:filename];
-    LoadTask* task = [[LoadTask alloc] initWithManager:self filename:filename onComplete:onComplete
-                                               onError:onError];
+    return [[LoadTask alloc] initWithManager:self filename:filename];
+}
+
+- (void)loadResourceFile:(NSString*)filename onComplete:(BTCompleteCallback)onComplete
+                 onError:(BTErrorCallback)onError {
+    LoadTask* task = [self createLoadTask:filename];
+    [task loadAsync:onComplete onError:onError];
+}
+
+- (void)loadResourceFile:(NSString*)filename {
+    LoadTask* task = [self createLoadTask:filename];
     [task load];
 }
 
@@ -144,7 +143,16 @@
 
 @end
 
-@implementation LoadTask
+@implementation LoadTask {
+@public
+    __weak BTResourceManager* _mgr;
+    NSString* _filename;
+    NSArray* _resources;
+    
+    NSException* _err;
+    BTCompleteCallback _onComplete;
+    BTErrorCallback _onError;
+}
 
 @synthesize filename = _filename;
 @synthesize err = _err;
@@ -152,17 +160,12 @@
 @synthesize onComplete = _onComplete;
 @synthesize onError = _onError;
 
-- (id)initWithManager:(BTResourceManager*)mgr
-             filename:(NSString*)filename
-           onComplete:(BTCompleteCallback)onComplete
-              onError:(BTErrorCallback)onError {
+- (id)initWithManager:(BTResourceManager*)mgr filename:(NSString*)filename {
     if (!(self = [super init])) {
         return nil;
     }
     _mgr = mgr;
     _filename = filename;
-    _onComplete = onComplete;
-    _onError = onError;
     return self;
 }
 
@@ -170,22 +173,22 @@
     [_mgr loadTaskCompleted:self];
 }
 
-- (void)begin {
+- (void)loadNow {
     @try {
         if (![BTApp.app.view useNewSharedEAGLContext]) {
             [NSException raise:NSGenericException format:@"Unable to use new EAGLContext"];
         }
         NSString* strippedFilename = [_filename stringByDeletingPathExtension];
-
+        
         NSString* extension = [_filename pathExtension];
-
+        
         NSBundle* bundle = [NSBundle bundleForClass:[self class]];
         NSData* data = [NSData dataWithContentsOfFile:
                         [bundle pathForResource:strippedFilename ofType:extension]];
         if (data == nil) {
             @throw [GDataXMLException withReason:@"Unable to load file '%@'", _filename];
         }
-
+        
         NSError* err;
         GDataXMLDocument* xmldoc = [[GDataXMLDocument alloc] initWithData:data options:0 error:&err];
         if (xmldoc == nil) {
@@ -193,7 +196,7 @@
                                               reason:[err localizedDescription]
                                             userInfo:[err userInfo]];
         }
-
+        
         // Create the resources
         NSMutableArray* resources = [NSMutableArray array];
         GDataXMLElement* root = [xmldoc rootElement];
@@ -210,7 +213,7 @@
                 }
             } else {
                 NSAssert([factory conformsToProtocol:@protocol(BTResourceFactory)], 
-                  @"Factory for '%@', '%@', doesn't conform to BTResourceFactory or BTMultiResourceFactory", type, factory);
+                         @"Factory for '%@', '%@', doesn't conform to BTResourceFactory or BTMultiResourceFactory", type, factory);
                 // create the resource
                 NSString* name = [child stringAttribute:@"name"];
                 BTResource* rsrc = [factory create:child];
@@ -224,11 +227,25 @@
     } @catch (NSException* err) {
         _err = err;
     }
+}
+
+- (void)loadInBackground {
+    [self loadNow];
     [self performSelectorOnMainThread:@selector(complete) withObject:nil waitUntilDone:NO];
 }
 
 - (void)load {
-    [self performSelectorInBackground:@selector(begin) withObject:nil];
+    _onComplete = ^{};
+    _onError = ^(NSException* err) { [err raise]; };
+    
+    [self loadNow];
+    [self complete];
+}
+
+- (void)loadAsync:(BTCompleteCallback)onComplete onError:(BTErrorCallback)onError {
+    _onComplete = onComplete;
+    _onError = onError;
+    [self performSelectorInBackground:@selector(loadInBackground) withObject:nil];
 }
 
 @end
