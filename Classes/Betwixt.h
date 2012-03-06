@@ -27,6 +27,7 @@
 #import "SPMatrix+Extensions.h"
 #import "SPPoint+Extensions.h"
 #import "SPRectangle+Extensions.h"
+#import "SPView+Extensions.h"
 #import "UIColor+Extensions.h"
 
 // Resources

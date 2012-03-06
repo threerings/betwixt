@@ -10,6 +10,7 @@
 #import "GDataXMLException.h"
 
 #import "GDataXMLNode+Extensions.h"
+#import "SPView+Extensions.h"
 
 @interface LoadTask : NSObject
 

@@ -40,6 +40,8 @@
 		22448EA514E744AE001CF5CE /* BTMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 22448EA414E744AE001CF5CE /* BTMacros.h */; };
 		22608BE11505AC4E00CCE0A5 /* MovieTestMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 22608BE01505AC4E00CCE0A5 /* MovieTestMode.m */; };
 		22608BE61505B10100CCE0A5 /* biter in Resources */ = {isa = PBXBuildFile; fileRef = 22608BE51505B10100CCE0A5 /* biter */; };
+		22608C6D1505C2D300CCE0A5 /* SPView+Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 22608C6B1505C2D300CCE0A5 /* SPView+Extensions.h */; };
+		22608C6E1505C2D300CCE0A5 /* SPView+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 22608C6C1505C2D300CCE0A5 /* SPView+Extensions.m */; };
 		2290D8291502C99D009EED3D /* SPMatrix+Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 2290D8271502C99D009EED3D /* SPMatrix+Extensions.h */; };
 		2290D82A1502C99D009EED3D /* SPMatrix+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2290D8281502C99D009EED3D /* SPMatrix+Extensions.m */; };
 		22955A3F14EA1EB1006E5BEE /* LeakTestMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 22955A3E14EA1EB1006E5BEE /* LeakTestMode.m */; };
@@ -249,6 +251,8 @@
 		22608BDF1505AC4E00CCE0A5 /* MovieTestMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MovieTestMode.h; path = Integration/MovieTestMode.h; sourceTree = "<group>"; };
 		22608BE01505AC4E00CCE0A5 /* MovieTestMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MovieTestMode.m; path = Integration/MovieTestMode.m; sourceTree = "<group>"; };
 		22608BE51505B10100CCE0A5 /* biter */ = {isa = PBXFileReference; lastKnownFileType = folder; name = biter; path = Exported/biter; sourceTree = "<group>"; };
+		22608C6B1505C2D300CCE0A5 /* SPView+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SPView+Extensions.h"; sourceTree = "<group>"; };
+		22608C6C1505C2D300CCE0A5 /* SPView+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SPView+Extensions.m"; sourceTree = "<group>"; };
 		2290D8271502C99D009EED3D /* SPMatrix+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SPMatrix+Extensions.h"; sourceTree = "<group>"; };
 		2290D8281502C99D009EED3D /* SPMatrix+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SPMatrix+Extensions.m"; sourceTree = "<group>"; };
 		22955A3D14EA1EB1006E5BEE /* LeakTestMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LeakTestMode.h; path = Integration/LeakTestMode.h; sourceTree = "<group>"; };
@@ -519,6 +523,8 @@
 				22448E2814E4A7A0001CF5CE /* SPPoint+Extensions.m */,
 				22448E2B14E4A931001CF5CE /* SPRectangle+Extensions.h */,
 				22448E2C14E4A933001CF5CE /* SPRectangle+Extensions.m */,
+				22608C6B1505C2D300CCE0A5 /* SPView+Extensions.h */,
+				22608C6C1505C2D300CCE0A5 /* SPView+Extensions.m */,
 				22C5353314F5C96D00B7958F /* UIColor+Extensions.h */,
 				22C5353414F5C96D00B7958F /* UIColor+Extensions.m */,
 			);
@@ -791,6 +797,7 @@
 				CB65CE3714EC400200534FAE /* BTTextureResource+Package.h in Headers */,
 				22C5353514F5C96D00B7958F /* UIColor+Extensions.h in Headers */,
 				2290D8291502C99D009EED3D /* SPMatrix+Extensions.h in Headers */,
+				22608C6D1505C2D300CCE0A5 /* SPView+Extensions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -996,6 +1003,7 @@
 				CB65CE3014EC397E00534FAE /* BTAtlasFactory.m in Sources */,
 				22C5353614F5C96D00B7958F /* UIColor+Extensions.m in Sources */,
 				2290D82A1502C99D009EED3D /* SPMatrix+Extensions.m in Sources */,
+				22608C6E1505C2D300CCE0A5 /* SPView+Extensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
