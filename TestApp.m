@@ -14,6 +14,7 @@
 #import "GroupTestMode.h"
 #import "LeakTestMode.h"
 #import "FlipbookMode.h"
+#import "MovieTestMode.h"
 
 #import "BTLoadingMode.h"
 
@@ -22,9 +23,12 @@
 
 @implementation LoadingMode
 
-- (id)init {
-    if (!(self = [super init])) return nil;
-    [self addFiles:@"ResourceTest.xml", @"squaredance/resources.xml", @"shapes/resources.xml", @"guybrush/resources.xml", nil];
+- (void)setup {
+    [self addFiles:@"ResourceTest.xml", 
+        @"squaredance/resources.xml",
+        @"shapes/resources.xml", 
+        @"guybrush/resources.xml", 
+        nil];
     [self.loadComplete connectUnit:^{
         [self.modeStack changeMode:[[FlipbookMode alloc] init]];
         [self.modeStack pushMode:[[NamedNodeMode alloc] init]];
@@ -36,7 +40,9 @@
         [self.modeStack pushMode:[[GroupTestMode alloc] init]];
         [self.modeStack pushMode:[[LeakTestMode alloc] init]];
     }];
-    return self;
+    
+    /*[self.modeStack changeMode:[[MovieTestMode alloc] initWithResourceName:@"biter/resources.xml" 
+                                                                 movieName:@"test"]];*/
 }
 
 @end
