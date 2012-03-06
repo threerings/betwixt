@@ -38,6 +38,8 @@
 		22448E8C14E603DF001CF5CE /* NSArray+Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 22448E8A14E603DF001CF5CE /* NSArray+Extensions.h */; };
 		22448E8D14E603DF001CF5CE /* NSArray+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 22448E8B14E603DF001CF5CE /* NSArray+Extensions.m */; };
 		22448EA514E744AE001CF5CE /* BTMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 22448EA414E744AE001CF5CE /* BTMacros.h */; };
+		22608BE11505AC4E00CCE0A5 /* MovieTestMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 22608BE01505AC4E00CCE0A5 /* MovieTestMode.m */; };
+		22608BE61505B10100CCE0A5 /* biter in Resources */ = {isa = PBXBuildFile; fileRef = 22608BE51505B10100CCE0A5 /* biter */; };
 		2290D8291502C99D009EED3D /* SPMatrix+Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 2290D8271502C99D009EED3D /* SPMatrix+Extensions.h */; };
 		2290D82A1502C99D009EED3D /* SPMatrix+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2290D8281502C99D009EED3D /* SPMatrix+Extensions.m */; };
 		22955A3F14EA1EB1006E5BEE /* LeakTestMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 22955A3E14EA1EB1006E5BEE /* LeakTestMode.m */; };
@@ -244,6 +246,9 @@
 		22448E8A14E603DF001CF5CE /* NSArray+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Extensions.h"; sourceTree = "<group>"; };
 		22448E8B14E603DF001CF5CE /* NSArray+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Extensions.m"; sourceTree = "<group>"; };
 		22448EA414E744AE001CF5CE /* BTMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTMacros.h; sourceTree = "<group>"; };
+		22608BDF1505AC4E00CCE0A5 /* MovieTestMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MovieTestMode.h; path = Integration/MovieTestMode.h; sourceTree = "<group>"; };
+		22608BE01505AC4E00CCE0A5 /* MovieTestMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MovieTestMode.m; path = Integration/MovieTestMode.m; sourceTree = "<group>"; };
+		22608BE51505B10100CCE0A5 /* biter */ = {isa = PBXFileReference; lastKnownFileType = folder; name = biter; path = Exported/biter; sourceTree = "<group>"; };
 		2290D8271502C99D009EED3D /* SPMatrix+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SPMatrix+Extensions.h"; sourceTree = "<group>"; };
 		2290D8281502C99D009EED3D /* SPMatrix+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SPMatrix+Extensions.m"; sourceTree = "<group>"; };
 		22955A3D14EA1EB1006E5BEE /* LeakTestMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LeakTestMode.h; path = Integration/LeakTestMode.h; sourceTree = "<group>"; };
@@ -649,6 +654,7 @@
 		CB65CE3914EC42DE00534FAE /* Exported */ = {
 			isa = PBXGroup;
 			children = (
+				22608BE51505B10100CCE0A5 /* biter */,
 				CB65CE4114EC7F8300534FAE /* guybrush */,
 				CB65CE3C14EC44FF00534FAE /* shapes */,
 				CB65CE3A14EC42F400534FAE /* squaredance */,
@@ -659,11 +665,17 @@
 		CBAD57921475A33900F7D78E /* Integration */ = {
 			isa = PBXGroup;
 			children = (
-				CBAD57941475A3A000F7D78E /* main.m */,
 				CB65CE3E14EC7EF200534FAE /* FlipbookMode.h */,
 				CB65CE3F14EC7EF200534FAE /* FlipbookMode.m */,
+				22F3373B14E89BAC00A17CCB /* GroupTestMode.h */,
+				22F3373C14E89BAC00A17CCB /* GroupTestMode.m */,
+				22955A3D14EA1EB1006E5BEE /* LeakTestMode.h */,
+				22955A3E14EA1EB1006E5BEE /* LeakTestMode.m */,
+				CBAD57941475A3A000F7D78E /* main.m */,
 				CB24CBCD14A02E10004BAA57 /* MoveMode.h */,
 				CB24CBCE14A02E10004BAA57 /* MoveMode.m */,
+				22608BDF1505AC4E00CCE0A5 /* MovieTestMode.h */,
+				22608BE01505AC4E00CCE0A5 /* MovieTestMode.m */,
 				CB442C7214B3800000EB2821 /* NamedNodeMode.h */,
 				CB442C7314B3800000EB2821 /* NamedNodeMode.m */,
 				CBC4525E14D22F04008CC04D /* PlayMovieMode.h */,
@@ -678,10 +690,6 @@
 				CBAD57CD1475A70100F7D78E /* SubObjectMode.m */,
 				22DBA63E14DCB64900F0F7C8 /* TestApp.h */,
 				22DBA63F14DCB64900F0F7C8 /* TestApp.m */,
-				22F3373B14E89BAC00A17CCB /* GroupTestMode.h */,
-				22F3373C14E89BAC00A17CCB /* GroupTestMode.m */,
-				22955A3D14EA1EB1006E5BEE /* LeakTestMode.h */,
-				22955A3E14EA1EB1006E5BEE /* LeakTestMode.m */,
 			);
 			name = Integration;
 			sourceTree = "<group>";
@@ -909,6 +917,7 @@
 				CB65CE3B14EC42F400534FAE /* squaredance in Resources */,
 				CB65CE3D14EC44FF00534FAE /* shapes in Resources */,
 				CB65CE4214EC7F8300534FAE /* guybrush in Resources */,
+				22608BE61505B10100CCE0A5 /* biter in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -931,6 +940,7 @@
 				22F3373D14E89BAC00A17CCB /* GroupTestMode.m in Sources */,
 				22955A3F14EA1EB1006E5BEE /* LeakTestMode.m in Sources */,
 				CB65CE4014EC7EF200534FAE /* FlipbookMode.m in Sources */,
+				22608BE11505AC4E00CCE0A5 /* MovieTestMode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
