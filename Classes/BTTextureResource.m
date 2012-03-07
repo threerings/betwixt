@@ -36,7 +36,13 @@
 
 - (id)initFromAtlas:(SPTexture*)atlas withXml:(GDataXMLElement*)xml {
     if (!(self = [super init])) return nil;
-    SPRectangle* region = [[SPRectangle alloc] initWithX:[xml floatAttribute:@"xAtlas"] y:[xml floatAttribute:@"yAtlas"] width:[xml floatAttribute:@"wAtlas"] height:[xml floatAttribute:@"hAtlas"]];
+    
+    float scale = atlas.scale;
+    
+    SPRectangle* region = [[SPRectangle alloc] initWithX:[xml floatAttribute:@"xAtlas"] / scale
+                                                       y:[xml floatAttribute:@"yAtlas"] / scale
+                                                   width:[xml floatAttribute:@"wAtlas"] / scale
+                                                  height:[xml floatAttribute:@"hAtlas"] / scale];
     _texture = [[SPTexture alloc] initWithRegion:region ofTexture:atlas];
     _offset = [[SPPoint alloc] initWithX:[xml floatAttribute:@"xOffset" defaultVal:0]
                                        y:[xml floatAttribute:@"yOffset" defaultVal:0]];
