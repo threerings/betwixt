@@ -31,7 +31,8 @@
         [layers addObject:layer];
         frames = layer.frames;
     } else {
-        for (GDataXMLElement* layerEl in layerEls) {
+        // in the XML, the layers are ordered top-to-bottom. We add them bottom-to-top.
+        for (GDataXMLElement* layerEl in [layerEls reverseObjectEnumerator]) {
             BTMovieResourceLayer* layer = [[BTMovieResourceLayer alloc] initWithLayer:layerEl];
             [layers addObject:layer];
             frames = MAX(frames, layer.frames);
