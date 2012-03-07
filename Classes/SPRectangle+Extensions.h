@@ -18,6 +18,12 @@
 /// Expands the bounds of this rectangle to contain the specified point.
 - (void)addPoint:(SPPoint *)p;
 
+/// scales this rectangle by the given amount
+- (void)scaleByX:(float)scaleX y:(float)scaleY;
+
+/// Uniformly scales this rectangle by the given amount
+- (void)scaleBy:(float)scale;
+
 /// Computes the point inside the bounds of the rectangle that's closest to the given point.
 - (SPPoint*)closestInteriorPointTo:(SPPoint*)p;
 

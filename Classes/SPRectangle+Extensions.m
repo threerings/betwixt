@@ -3,7 +3,6 @@
 
 #import "SPRectangle+Extensions.h"
 #import "SPPoint+Extensions.h"
-#import "BTMacros.h"
 #import <math.h>
 
 @implementation SPRectangle (OOOExtensions)
@@ -37,6 +36,17 @@
 
 - (void)addPoint:(SPPoint *)p {
     [self addX:p.x y:p.y];
+}
+
+- (void)scaleByX:(float)scaleX y:(float)scaleY {
+    mX *= scaleX;
+    mWidth *= scaleX;
+    mY *= scaleY;
+    mHeight *= scaleY;
+}
+
+- (void)scaleBy:(float)scale {
+    [self scaleByX:scale y:scale];
 }
 
 - (SPPoint*)closestInteriorPointTo:(SPPoint *)p {
