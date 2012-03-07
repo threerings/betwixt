@@ -24,7 +24,7 @@
 @implementation LoadingMode
 
 - (void)setup {
-    [self addFiles:@"ResourceTest.xml", 
+    [self addFiles: 
         @"squaredance/resources.xml",
         @"shapes/resources.xml", 
         @"guybrush/resources.xml", 
