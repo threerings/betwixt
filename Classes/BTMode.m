@@ -289,6 +289,10 @@
     return [_rootNode nodeForName:name];
 }
 
-@synthesize update=_update, entered=_entered, exited=_exited, modeStack=_modeStack, input=_input;
+- (BTModeStack*)modeStack {
+    return _modeStack;
+}
+
+@synthesize update=_update, entered=_entered, exited=_exited, input=_input;
 
 @end

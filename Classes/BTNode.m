@@ -57,6 +57,8 @@
     return nil;
 }
 
-@synthesize parent=_parent;
+- (id<BTNodeContainer>)parent {
+    return _parent;
+}
 
 @end
