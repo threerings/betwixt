@@ -10,6 +10,7 @@
 #import "GDataXMLNode+Extensions.h"
 #import "BTApp.h"
 #import "BTResourceManager.h"
+#import "NSArray+Extensions.h"
 
 @interface BTMovieResourceFactory : NSObject<BTResourceFactory>
 @end
@@ -25,7 +26,12 @@
     layers = [[NSMutableArray alloc] init];
     GDataXMLElement* layersEl = [xml requireChild:@"DOMSymbolItem/timeline/DOMTimeline/layers"];
     int frames = 0;
-    NSArray* layerEls = [layersEl elements];
+    
+    // Ignore guide layers
+    NSArray* layerEls = [[layersEl elements] filter:^BOOL(GDataXMLElement* l) {
+        return ![[l stringAttribute:@"layerType" defaultVal:nil] isEqualToString:@"guide"];
+    }];
+    
     if ([[[layerEls objectAtIndex:0] stringAttribute:@"name"] isEqualToString:@"flipbook"]) {
         BTMovieResourceLayer* layer = [[BTMovieResourceLayer alloc] initFlipbookNamed:[xml stringAttribute:@"name"] withXml:[layerEls objectAtIndex:0]];
         [layers addObject:layer];
