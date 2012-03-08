@@ -3476,13 +3476,13 @@
 </DOMSymbolItem>
   </movie>
 <atlas name="biter/atlas0" filename="biter/atlas0.png">
-  <texture name="bone_head" xOffset="-46.9" yOffset="-37.5" md5="4f93bba8544087446bfea4efcca34469" xAtlas="0" yAtlas="0" wAtlas="61" hAtlas="45"/>
-  <texture name="bone_body" xOffset="-30.1" yOffset="-23.45" md5="242d5d4f557bb73e79705016444bbdc2" xAtlas="61" yAtlas="0" wAtlas="41" hAtlas="38"/>
-  <texture name="bone_foot" xOffset="-9.7" yOffset="-3.25" md5="adf9dbf82611150fc3a62cf99e343628" xAtlas="102" yAtlas="0" wAtlas="13" hAtlas="31"/>
-  <texture name="bone_calf" xOffset="-2.3" yOffset="-4.3" md5="a1decc57f017de72ef01579589906bea" xAtlas="102" yAtlas="31" wAtlas="14" hAtlas="10"/>
-  <texture name="bone_shadow" xOffset="-27.5" yOffset="-14" md5="5b3bcd9a6827711a62a03eacfcff6f4b" xAtlas="0" yAtlas="45" wAtlas="55" hAtlas="28"/>
-  <texture name="bone_jaw" xOffset="-34.25" yOffset="-6.65" md5="bcd0d01f64ac36f1a1ab42ce5a7eec21" xAtlas="0" yAtlas="73" wAtlas="41" hAtlas="31"/>
-  <texture name="bone_tail" xOffset="-6.5" yOffset="-5.8" md5="1acd600a9fb35f1135b733e723a05b6a" xAtlas="0" yAtlas="104" wAtlas="36" hAtlas="18"/>
-  <texture name="bone_thigh" xOffset="-7.1" yOffset="-6.8" md5="c70706954275051ba8274d36b83daf60" xAtlas="55" yAtlas="45" wAtlas="15" hAtlas="25"/>
+  <texture name="bone_head" xOffset="-46.9" yOffset="-37.5" md5="4f93bba8544087446bfea4efcca34469" xAtlas="1" yAtlas="1" wAtlas="61" hAtlas="45"/>
+  <texture name="bone_body" xOffset="-30.1" yOffset="-23.45" md5="242d5d4f557bb73e79705016444bbdc2" xAtlas="64" yAtlas="1" wAtlas="41" hAtlas="38"/>
+  <texture name="bone_foot" xOffset="-9.7" yOffset="-3.25" md5="adf9dbf82611150fc3a62cf99e343628" xAtlas="107" yAtlas="1" wAtlas="13" hAtlas="31"/>
+  <texture name="bone_calf" xOffset="-2.3" yOffset="-4.3" md5="a1decc57f017de72ef01579589906bea" xAtlas="107" yAtlas="34" wAtlas="14" hAtlas="10"/>
+  <texture name="bone_shadow" xOffset="-27.5" yOffset="-14" md5="5b3bcd9a6827711a62a03eacfcff6f4b" xAtlas="1" yAtlas="48" wAtlas="55" hAtlas="28"/>
+  <texture name="bone_jaw" xOffset="-34.25" yOffset="-6.65" md5="bcd0d01f64ac36f1a1ab42ce5a7eec21" xAtlas="1" yAtlas="78" wAtlas="41" hAtlas="31"/>
+  <texture name="bone_tail" xOffset="-6.5" yOffset="-5.8" md5="1acd600a9fb35f1135b733e723a05b6a" xAtlas="58" yAtlas="48" wAtlas="36" hAtlas="18"/>
+  <texture name="bone_thigh" xOffset="-7.1" yOffset="-6.8" md5="c70706954275051ba8274d36b83daf60" xAtlas="58" yAtlas="68" wAtlas="15" hAtlas="25"/>
 </atlas>
 </resources>
