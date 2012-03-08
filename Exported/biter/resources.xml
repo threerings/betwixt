@@ -3475,7 +3475,7 @@
   </timeline>
 </DOMSymbolItem>
   </movie>
-<atlas name="enemies\biter\biter/atlas0" filename="biter/atlas0.png">
+<atlas name="biter/atlas0" filename="biter/atlas0.png">
   <texture name="bone_head" xOffset="-46.9" yOffset="-37.5" md5="4f93bba8544087446bfea4efcca34469" xAtlas="0" yAtlas="0" wAtlas="61" hAtlas="45"/>
   <texture name="bone_body" xOffset="-30.1" yOffset="-23.45" md5="242d5d4f557bb73e79705016444bbdc2" xAtlas="61" yAtlas="0" wAtlas="41" hAtlas="38"/>
   <texture name="bone_foot" xOffset="-9.7" yOffset="-3.25" md5="adf9dbf82611150fc3a62cf99e343628" xAtlas="102" yAtlas="0" wAtlas="13" hAtlas="31"/>
