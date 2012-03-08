@@ -10,6 +10,9 @@
 #import "BTTextureResource.h"
 #import "BTMovieResourceLayer.h"
 #import "BTJugglerContainer.h"
+#import "BTUtils.h"
+
+#define NO_FRAME -1
 
 NSString * const BTMovieFirstFrame = @"BTMovieFirstFrame";
 NSString * const BTMovieLastFrame = @"BTMovieLastFrame";
@@ -18,7 +21,7 @@ NSString * const BTMovieLastFrame = @"BTMovieLastFrame";
     int keyframeIdx;// The index of the last keyframe drawn in drawFrame
     int layerIdx;// This layer's index in the movie
     NSMutableArray* keyframes;// <BTMovieResourceKeyframe*>
-    // Only created if there are multiple symbols on this layer. If it does exist, the appropriate display is swapped in at keyframe changes. If it doesn't, the display is only added to the parent on layer creation
+    // The DisplayObjects that are shown for each keyframe
     NSMutableArray* displays;// <SPDisplayObject*>
     // The movie this layer belongs to
     __weak BTMovie* movie;
@@ -26,14 +29,7 @@ NSString * const BTMovieLastFrame = @"BTMovieLastFrame";
     BOOL changedKeyframe;
 }
 @end
-SPDisplayObject* createDisplayObject(NSString* symbol);
-SPDisplayObject* createDisplayObject(NSString* symbol) {
-    if (!symbol) return [[SPSprite alloc] init];
-    id<BTDisplayObjectCreator> res = [BTApp.app.resourceManager requireResource:symbol conformingTo:@protocol(BTDisplayObjectCreator)];
-    return [res createDisplayObject];
-}
 
-#define NO_FRAME -1
 @implementation BTMovieLayer
 -(BTMovieResourceKeyframe*)kfAtIdx:(int)idx {
     return (BTMovieResourceKeyframe*)[keyframes objectAtIndex:idx];
@@ -42,31 +38,33 @@ SPDisplayObject* createDisplayObject(NSString* symbol) {
 - (id)initForMovie:(BTMovie*)parent withLayer:(BTMovieResourceLayer*)layer {
     if (!(self = [super init])) return nil;
     keyframes = layer->keyframes;
-    NSString *lastSymbol = nil;
     movie = parent;
-    for (int ii = 0; ii < [keyframes count] && !lastSymbol; ii++) {
-        lastSymbol = [self kfAtIdx:ii]->libraryItem;
+    
+    // Create the DisplayObjects that are attached to each keyframe
+    displays = [[NSMutableArray alloc] initWithCapacity:[keyframes count]];
+    for (int ii = 0; ii < [keyframes count]; ++ii) {
+        [displays addObject:[NSNull null]];
     }
-    if (!lastSymbol) [movie addChild:[[SPSprite alloc] init]];// Label only movie
-    else {
-        BOOL multipleSymbols = false;
-        for (BTMovieResourceKeyframe* kf in keyframes) {
-            if (kf->libraryItem != lastSymbol) {
-                multipleSymbols = true;
-                break;
-            }
+    [layer->keyframesForSymbol enumerateKeysAndObjectsUsingBlock:^(id symbol, NSArray* frameIndices, BOOL *stop) {
+        NSString* symbolName = BTNSNullToNil(symbol);
+        SPDisplayObject* display = nil;
+        if (symbolName == nil) {
+            display = [[SPSprite alloc] init];
+        } else {
+            id<BTDisplayObjectCreator> res = 
+            [BTApp.app.resourceManager requireResource:symbol 
+                                          conformingTo:@protocol(BTDisplayObjectCreator)];
+            display = [res createDisplayObject];
         }
-        if (!multipleSymbols) [movie addChild:createDisplayObject(lastSymbol)];
-        else {
-            displays = [[NSMutableArray alloc] initWithCapacity:[keyframes count]];
-            for (BTMovieResourceKeyframe* kf in keyframes) {
-                SPDisplayObject* display = createDisplayObject(kf->libraryItem);
-                [displays addObject:display];
-                display.name = layer->name;
-            }
-            [movie addChild:[displays objectAtIndex:0]];
+        
+        for (NSNumber* num in frameIndices) {
+            [displays replaceObjectAtIndex:num.integerValue withObject:display];
         }
-    }
+    }];
+    
+    // Add the first keyframe's DisplayObject to the movie
+    [movie addChild:[displays objectAtIndex:0]];
+    
     layerIdx = movie.numChildren - 1;
     [movie childAtIndex:layerIdx].name = layer->name;
     return self;
@@ -77,9 +75,12 @@ SPDisplayObject* createDisplayObject(NSString* symbol) {
         keyframeIdx++;
         changedKeyframe = true;
     }
-    if (changedKeyframe && displays) {// We've got multiple symbols. Swap in the one for this kf
-        [movie removeChildAtIndex:layerIdx];
-        [movie addChild:[displays objectAtIndex:keyframeIdx] atIndex:layerIdx];
+    if (changedKeyframe) {
+        SPDisplayObject* display = [displays objectAtIndex:keyframeIdx];
+        if (display != [movie childAtIndex:layerIdx]) {
+            [movie removeChildAtIndex:layerIdx];
+            [movie addChild:display atIndex:layerIdx];
+        }
     }
     changedKeyframe = false;
 
