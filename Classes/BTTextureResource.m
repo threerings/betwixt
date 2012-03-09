@@ -6,6 +6,7 @@
 #import "GDataXMLNode+Extensions.h"
 #import "BTApp.h"
 #import "BTResourceManager.h"
+#import "SPRectangle+Extensions.h"
 
 @interface BTTextureFactory : NSObject<BTResourceFactory>
 @end
@@ -37,6 +38,7 @@
     if (!(self = [super init])) return nil;
     
     SPRectangle* region = [xml rectangleAttribute:@"rect"];
+    [region scaleBy:1.0f / atlas.scale];
     _texture = [[SPTexture alloc] initWithRegion:region ofTexture:atlas];
     _offset = [xml pointAttribute:@"offset" defaultVal:[SPPoint pointWithX:0 y:0]];
     _name = [xml stringAttribute:@"name"];
