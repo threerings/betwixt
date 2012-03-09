@@ -18,6 +18,12 @@
 - (int)intAttribute:(NSString*)name;
 - (BOOL)boolAttribute:(NSString*)name defaultVal:(BOOL)defaultVal;
 - (BOOL)boolAttribute:(NSString*)name;
+
+- (SPPoint*)pointAttribute:(NSString*)name defaultVal:(SPPoint*)defaultVal;
+- (SPPoint*)pointAttribute:(NSString *)name;
+- (SPRectangle*)rectangleAttribute:(NSString*)name defaultVal:(SPRectangle*)defaultVal;
+- (SPRectangle*)rectangleAttribute:(NSString *)name;
+
 - (GDataXMLElement*)requireChild:(NSString*)path;
 - (GDataXMLElement*)getChild:(NSString*)path;
 
