@@ -3,6 +3,7 @@
 
 #import "GDataXMLNode+Extensions.h"
 #import "GDataXMLException.h"
+#import "NSString+Extensions.h"
 
 @implementation GDataXMLElement (OOOExtensions)
 
@@ -49,11 +50,13 @@
 - (float)floatAttribute:(NSString*)name defaultVal:(float)defaultVal required:(BOOL)required {
     NSString* attr = [self getAttr:name required:required];
     if (attr == nil) return defaultVal;
-    NSScanner* scanner = [[NSScanner alloc] initWithString:attr];
-    float retVal;
-    if ([scanner scanFloat:&retVal] && [scanner isAtEnd]) return retVal;
-    @throw [GDataXMLException withElement:self
-        reason:@"Error reading attribute '%@': could not convert '%@' to int", name, attr];
+    
+    @try {
+        return [attr requireFloatValue];
+    } @catch (NSException* e) {
+        @throw [GDataXMLException withElement:self 
+                                       reason:@"Error reading attribute '%@': %@", name, e.reason];
+    }
 }
 
 - (float)floatAttribute:(NSString*)name defaultVal:(float)defaultVal {
@@ -67,12 +70,13 @@
 - (int)intAttribute:(NSString*)name defaultVal:(int)defaultVal required:(BOOL)required {
     NSString* attr = [self getAttr:name required:required];
     if (attr == nil) return defaultVal;
-
-    NSScanner* scanner = [[NSScanner alloc] initWithString:attr];
-    int retVal;
-    if ([scanner scanInt:&retVal] && [scanner isAtEnd]) return retVal;
-    @throw [GDataXMLException withElement:self
-        reason:@"Error reading attribute '%@': could not convert '%@' to int", name, attr];
+    
+    @try {
+        return [attr requireIntValue];
+    } @catch (NSException* e) {
+        @throw [GDataXMLException withElement:self 
+                                       reason:@"Error reading attribute '%@': %@", name, e.reason];
+    }
 }
 
 - (int)intAttribute:(NSString*)name defaultVal:(int)defaultVal {
@@ -85,18 +89,13 @@
 
 - (BOOL)boolAttribute:(NSString*)name defaultVal:(BOOL)defaultVal required:(BOOL)required {
     NSString* attr = [self getAttr:name required:required];
-    if (attr == nil) {
-        return defaultVal;
-    }
-
-    attr = [attr lowercaseString];
-
-    if ([attr isEqualToString:@"true"]) {
-        return YES;
-    } else if ([attr isEqualToString:@"false"]) {
-        return NO;
-    } else {
-       @throw [GDataXMLException withElement:self reason:@"Error reading attribute '%@': could not convert '%@' to BOOL", name, attr];
+    if (attr == nil) return defaultVal;
+    
+    @try {
+        return [attr requireBoolValue];
+    } @catch (NSException* e) {
+        @throw [GDataXMLException withElement:self 
+                                       reason:@"Error reading attribute '%@': %@", name, e.reason];
     }
 }
 
