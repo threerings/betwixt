@@ -5,6 +5,10 @@
 
 @interface SPPoint (OOOExtensions)
 
+/// Converts a String in the form "x,y" into an SPPoint.
+/// Returns nil if the string could not be converted.
++ (SPPoint*)pointFromString:(NSString*)string;
+
 /// Sets this point's coords to those of the specfied point
 - (void)set:(SPPoint *)pt;
 

@@ -9,6 +9,10 @@
 @property(nonatomic,readonly) float centerY;
 @property(nonatomic,readonly) SPPoint* center;
 
+/// Converts a String in the form "x,y,w,h" into an SPRectangle.
+/// Returns nil if the string could not be converted.
++ (SPRectangle*)rectangleFromString:(NSString*)string;
+
 /// Sets the bounds of the rectangle.
 - (void)setX:(float)x y:(float)y width:(float)width height:(float)height;
 

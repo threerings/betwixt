@@ -3,9 +3,26 @@
 
 #import "SPRectangle+Extensions.h"
 #import "SPPoint+Extensions.h"
+#import "NSString+Extensions.h"
 #import <math.h>
 
 @implementation SPRectangle (OOOExtensions)
+
++ (SPRectangle*)rectangleFromString:(NSString*)string {
+    NSArray* items = [string componentsSeparatedByString:@","];
+    if (items.count != 4) {
+        return nil;
+    }
+    
+    @try {
+        return [SPRectangle rectangleWithX:[[items objectAtIndex:0] requireFloatValue]
+                                         y:[[items objectAtIndex:1] requireFloatValue] 
+                                     width:[[items objectAtIndex:2] requireFloatValue] 
+                                    height:[[items objectAtIndex:3] requireFloatValue]];
+    } @catch (...) {
+        return nil;
+    }
+}
 
 - (float)centerX {
     return mX + (mWidth / 2);

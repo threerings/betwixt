@@ -2,11 +2,26 @@
 // Betwixt - Copyright 2012 Three Rings Design
 
 #import "SPPoint+Extensions.h"
+#import "NSString+Extensions.h"
 #import <math.h>
 
 #define SQ(x) ((x)*(x))
 
 @implementation SPPoint (OOOExtensions)
+
++ (SPPoint*)pointFromString:(NSString*)string {
+    NSArray* items = [string componentsSeparatedByString:@","];
+    if (items.count != 2) {
+        return nil;
+    }
+    
+    @try {
+        return [SPPoint pointWithX:[[items objectAtIndex:0] requireFloatValue] 
+                                 y:[[items objectAtIndex:1] requireFloatValue]];
+    } @catch (...) {
+        return nil;
+    }
+}
 
 - (void)set:(SPPoint *)pt {
     mX = pt.x;
