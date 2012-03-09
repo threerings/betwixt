@@ -40,16 +40,18 @@ NSString * const BTMovieLastFrame = @"BTMovieLastFrame";
     keyframes = layer->keyframes;
     movie = parent;
     
+    SPSprite* emptySprite = [[SPSprite alloc] init];
+    
     // Create the DisplayObjects that are attached to each keyframe
     displays = [[NSMutableArray alloc] initWithCapacity:[keyframes count]];
     for (int ii = 0; ii < [keyframes count]; ++ii) {
-        [displays addObject:[NSNull null]];
+        [displays addObject:emptySprite];
     }
     [layer->keyframesForSymbol enumerateKeysAndObjectsUsingBlock:^(id symbol, NSArray* frameIndices, BOOL *stop) {
         NSString* symbolName = BTNSNullToNil(symbol);
         SPDisplayObject* display = nil;
         if (symbolName == nil) {
-            display = [[SPSprite alloc] init];
+            display = emptySprite;
         } else {
             id<BTDisplayObjectCreator> res = 
             [BTApp.app.resourceManager requireResource:symbol 

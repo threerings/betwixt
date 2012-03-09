@@ -28,7 +28,7 @@
     
     NSArray* layerEls = [xml elementsForName:@"layer"];
     
-    if ([[layerEls objectAtIndex:0] boolAttribute:@"flippbook" defaultVal:NO]) {
+    if ([[layerEls objectAtIndex:0] boolAttribute:@"flipbook" defaultVal:NO]) {
         BTMovieResourceLayer* layer = 
             [[BTMovieResourceLayer alloc] initFlipbookNamed:[xml stringAttribute:@"name"] 
                                                     withXml:[layerEls objectAtIndex:0]];
