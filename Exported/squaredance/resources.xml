@@ -26,10 +26,22 @@
       <kf duration="11" label="moretimepassed"/>
     </layer>
   </movie>
-  <atlas file="squaredance/atlas0.png">
-    <texture name="bluesquare" offset="0,0" rect="1,1,171,171"/>
-  </atlas>
-  <atlas file="squaredance/atlas1.png">
-    <texture name="redsquare" offset="125,100" rect="1,1,133,91"/>
-  </atlas>
+  <textureGroups>
+    <textureGroup target="IPHONE_RETINA">
+      <atlas file="squaredance/atlas0.png">
+        <texture name="bluesquare" offset="0,0" rect="1,1,171,171"/>
+      </atlas>
+      <atlas file="squaredance/atlas1.png">
+        <texture name="redsquare" offset="125,100" rect="1,1,133,91"/>
+      </atlas>
+    </textureGroup>
+    <textureGroup target="IPHONE">
+      <atlas file="squaredance/atlas0.png">
+        <texture name="bluesquare" offset="0,0" rect="1,1,86,86"/>
+      </atlas>
+      <atlas file="squaredance/atlas1.png">
+        <texture name="redsquare" offset="62.5,50" rect="1,1,67,46"/>
+      </atlas>
+    </textureGroup>
+  </textureGroups>
 </resources>

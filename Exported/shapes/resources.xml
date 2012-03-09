@@ -21,11 +21,24 @@
       <kf duration="1" ref="hexagon" loc="277.9992980957031,77.9377685546875" scale="0.9999990616920659,0.9999990616920659" rotation="-0.7237937282189342" pivot="1,0"/>
     </layer>
   </movie>
-  <atlas file="shapes/atlas0.png">
-    <texture name="pentagonparty" offset="-334.05,-314.15" rect="1,1,669,514"/>
-    <texture name="hexagon" offset="-171.5,-198.9" rect="672,1,345,398"/>
-    <texture name="pentagon" offset="-166.25,-175.85" rect="1,517,335,319"/>
-    <texture name="square" offset="-0.5,-0.5" rect="1,838,218,170"/>
-    <texture name="triangle" offset="-144.7,-84.4" rect="338,517,292,253"/>
-  </atlas>
+  <textureGroups>
+    <textureGroup target="IPHONE_RETINA">
+      <atlas file="shapes/atlas0.png">
+        <texture name="pentagonparty" offset="-334.05,-314.15" rect="1,1,669,514"/>
+        <texture name="hexagon" offset="-171.5,-198.9" rect="672,1,345,398"/>
+        <texture name="pentagon" offset="-166.25,-175.85" rect="1,517,335,319"/>
+        <texture name="square" offset="-0.5,-0.5" rect="1,838,218,170"/>
+        <texture name="triangle" offset="-144.7,-84.4" rect="338,517,292,253"/>
+      </atlas>
+    </textureGroup>
+    <textureGroup target="IPHONE">
+      <atlas file="shapes/atlas0.png">
+        <texture name="pentagonparty" offset="-167,-157.1" rect="1,1,334,257"/>
+        <texture name="hexagon" offset="-85.75,-99.45" rect="337,1,173,199"/>
+        <texture name="pentagon" offset="-83.1,-87.9" rect="1,260,168,160"/>
+        <texture name="square" offset="-0.25,-0.25" rect="1,422,109,85"/>
+        <texture name="triangle" offset="-72.35,-42.2" rect="171,260,146,127"/>
+      </atlas>
+    </textureGroup>
+  </textureGroups>
 </resources>

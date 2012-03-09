@@ -1020,39 +1020,80 @@
       <kf duration="1" ref="HairFront" loc="-4.924235534667886,-177.02562255859374" scale="1.06047058105469,1.060302734375" pivot="33.5,4.55"/>
     </layer>
   </movie>
-  <atlas file="bella/atlas0.png">
-    <texture name="HairBack" offset="0,0" rect="1,1,96,185"/>
-    <texture name="Head" offset="0,0" rect="1,188,62,62"/>
-    <texture name="RArmLower" offset="0,0" rect="65,188,23,54"/>
-    <texture name="Mouth1" offset="0,0" rect="65,244,28,9"/>
-    <texture name="HairFront" offset="0,0" rect="99,1,67,94"/>
-    <texture name="Hips" offset="0,0" rect="168,1,48,41"/>
-    <texture name="RFoot" offset="0,0.05" rect="218,1,33,19"/>
-    <texture name="LFoot" offset="0,0" rect="218,22,33,19"/>
-    <texture name="Neck" offset="0,0" rect="168,44,15,42"/>
-    <texture name="nose" offset="0,0" rect="168,88,8,5"/>
-    <texture name="Cheeks" offset="0,0" rect="185,44,40,15"/>
-    <texture name="mouthopen" offset="0,0" rect="227,44,24,12"/>
-    <texture name="Eyelidsclosed" offset="0,0" rect="185,61,38,11"/>
-    <texture name="Eyes" offset="0,0" rect="185,74,34,11"/>
-    <texture name="Brow" offset="0,0" rect="185,87,34,6"/>
-    <texture name="LHand" offset="0,0" rect="225,61,11,27"/>
-    <texture name="RHand" offset="0,0" rect="238,61,12,24"/>
-    <texture name="Torso" offset="0,0" rect="99,97,54,102"/>
-    <texture name="EyelidUpper" offset="0,0" rect="99,201,36,9"/>
-    <texture name="pupils" offset="0,0" rect="99,212,25,8"/>
-    <texture name="Pupil" offset="0,0" rect="126,212,25,8"/>
-    <texture name="EyelidLower" offset="0,0" rect="99,222,33,5"/>
-    <texture name="mouth_symbol" offset="0,0" rect="99,229,24,5"/>
-    <texture name="HairMiddle" offset="0,0" rect="155,97,48,114"/>
-    <texture name="LLegUpper" offset="0,0" rect="205,97,42,111"/>
-  </atlas>
-  <atlas file="bella/atlas1.png">
-    <texture name="RLegUpper" offset="0,0" rect="1,1,32,112"/>
-    <texture name="LLegLower" offset="0,0" rect="1,115,21,80"/>
-    <texture name="LArmLower" offset="0,0" rect="1,197,13,56"/>
-    <texture name="RLegLower" offset="0,0" rect="35,1,18,79"/>
-    <texture name="LArmUpper" offset="0,0" rect="35,82,16,76"/>
-    <texture name="RArmUpper" offset="0,0" rect="35,160,12,75"/>
-  </atlas>
+  <textureGroups>
+    <textureGroup target="IPHONE_RETINA">
+      <atlas file="bella/atlas0.png">
+        <texture name="HairBack" offset="0,0" rect="1,1,96,185"/>
+        <texture name="Head" offset="0,0" rect="1,188,62,62"/>
+        <texture name="RArmLower" offset="0,0" rect="65,188,23,54"/>
+        <texture name="Mouth1" offset="0,0" rect="65,244,28,9"/>
+        <texture name="HairFront" offset="0,0" rect="99,1,67,94"/>
+        <texture name="Hips" offset="0,0" rect="168,1,48,41"/>
+        <texture name="RFoot" offset="0,0.05" rect="218,1,33,19"/>
+        <texture name="LFoot" offset="0,0" rect="218,22,33,19"/>
+        <texture name="Neck" offset="0,0" rect="168,44,15,42"/>
+        <texture name="nose" offset="0,0" rect="168,88,8,5"/>
+        <texture name="Cheeks" offset="0,0" rect="185,44,40,15"/>
+        <texture name="mouthopen" offset="0,0" rect="227,44,24,12"/>
+        <texture name="Eyelidsclosed" offset="0,0" rect="185,61,38,11"/>
+        <texture name="Eyes" offset="0,0" rect="185,74,34,11"/>
+        <texture name="Brow" offset="0,0" rect="185,87,34,6"/>
+        <texture name="LHand" offset="0,0" rect="225,61,11,27"/>
+        <texture name="RHand" offset="0,0" rect="238,61,12,24"/>
+        <texture name="Torso" offset="0,0" rect="99,97,54,102"/>
+        <texture name="EyelidUpper" offset="0,0" rect="99,201,36,9"/>
+        <texture name="pupils" offset="0,0" rect="99,212,25,8"/>
+        <texture name="Pupil" offset="0,0" rect="126,212,25,8"/>
+        <texture name="EyelidLower" offset="0,0" rect="99,222,33,5"/>
+        <texture name="mouth_symbol" offset="0,0" rect="99,229,24,5"/>
+        <texture name="HairMiddle" offset="0,0" rect="155,97,48,114"/>
+        <texture name="LLegUpper" offset="0,0" rect="205,97,42,111"/>
+      </atlas>
+      <atlas file="bella/atlas1.png">
+        <texture name="RLegUpper" offset="0,0" rect="1,1,32,112"/>
+        <texture name="LLegLower" offset="0,0" rect="1,115,21,80"/>
+        <texture name="LArmLower" offset="0,0" rect="1,197,13,56"/>
+        <texture name="RLegLower" offset="0,0" rect="35,1,18,79"/>
+        <texture name="LArmUpper" offset="0,0" rect="35,82,16,76"/>
+        <texture name="RArmUpper" offset="0,0" rect="35,160,12,75"/>
+      </atlas>
+    </textureGroup>
+    <textureGroup target="IPHONE">
+      <atlas file="bella/atlas0.png">
+        <texture name="HairBack" offset="0,0" rect="1,1,48,93"/>
+        <texture name="Head" offset="0,0" rect="1,96,31,31"/>
+        <texture name="RArmLower" offset="0,0" rect="34,96,12,27"/>
+        <texture name="HairFront" offset="0,0" rect="51,1,34,47"/>
+        <texture name="Hips" offset="0,0" rect="87,1,24,21"/>
+        <texture name="Neck" offset="0,0" rect="113,1,8,21"/>
+        <texture name="nose" offset="0,0" rect="123,1,4,3"/>
+        <texture name="RFoot" offset="0,0" rect="87,24,17,10"/>
+        <texture name="LFoot" offset="0,0" rect="87,36,17,10"/>
+        <texture name="Cheeks" offset="0,0" rect="106,24,20,8"/>
+        <texture name="Eyelidsclosed" offset="0,0" rect="106,34,19,6"/>
+        <texture name="Eyes" offset="0,0" rect="106,42,17,6"/>
+        <texture name="Torso" offset="0,0" rect="51,50,27,51"/>
+        <texture name="EyelidUpper" offset="0,0" rect="51,103,18,5"/>
+        <texture name="LHand" offset="0,0" rect="51,110,6,14"/>
+        <texture name="mouthopen" offset="0,0" rect="59,110,12,6"/>
+        <texture name="Mouth1" offset="0,0" rect="59,118,14,5"/>
+        <texture name="HairMiddle" offset="0,0" rect="80,50,24,57"/>
+        <texture name="RHand" offset="0,0" rect="80,109,6,12"/>
+        <texture name="pupils" offset="0,0" rect="88,109,13,4"/>
+        <texture name="Pupil" offset="0,0" rect="88,115,13,4"/>
+        <texture name="EyelidLower" offset="0,0" rect="88,121,16,3"/>
+        <texture name="LLegUpper" offset="0,0" rect="106,50,21,56"/>
+        <texture name="Brow" offset="0,0" rect="106,108,17,3"/>
+        <texture name="mouth_symbol" offset="0,0" rect="106,113,12,3"/>
+      </atlas>
+      <atlas file="bella/atlas1.png">
+        <texture name="RLegUpper" offset="0,0" rect="1,1,16,56"/>
+        <texture name="LLegLower" offset="0,0" rect="1,59,11,40"/>
+        <texture name="RLegLower" offset="0,0" rect="19,1,9,40"/>
+        <texture name="LArmUpper" offset="0,0" rect="19,43,8,38"/>
+        <texture name="RArmUpper" offset="0,0" rect="19,83,6,38"/>
+        <texture name="LArmLower" offset="0,0" rect="30,1,6,28"/>
+      </atlas>
+    </textureGroup>
+  </textureGroups>
 </resources>
