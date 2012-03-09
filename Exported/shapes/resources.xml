@@ -1,24 +1,24 @@
 <resources>
   <movie name="allshapes">
     <layer name="pentagon">
-      <kf index="0" duration="58" ref="pentagon" x="411" y="13" pivotX="1" pivotY="-16.7"/>
-      <kf index="58" duration="1" ref="pentagon" x="-164.8" y="17.3" rotation="1.5707963267948966" pivotX="1" pivotY="-16.7"/>
+      <kf duration="58" ref="pentagon" loc="411,13" pivot="1,-16.7"/>
+      <kf duration="1" ref="pentagon" loc="-149.10000000000002,35" rotation="1.5707963267948966" pivot="1,-16.7"/>
     </layer>
     <layer name="pentagonparty">
-      <kf index="0" duration="58" ref="pentagonparty" x="135" y="607.9000000000001" pivotY="-57.55"/>
-      <kf index="58" duration="1" ref="pentagonparty" y="-114.05" rotation="3.141592653589793" pivotY="-57.55"/>
+      <kf duration="58" ref="pentagonparty" loc="135,607.9000000000001" pivot="0,-57.55"/>
+      <kf duration="1" ref="pentagonparty" loc="0,1.0499999999999972" rotation="3.141592653589793" pivot="0,-57.55"/>
     </layer>
     <layer name="square">
-      <kf index="0" duration="58" ref="square" x="134" y="-109.99999999999999" pivotX="108.5" pivotY="84.45"/>
-      <kf index="58" duration="1" ref="square" x="351" y="58.900000000000006" rotation="3.141592653589793" pivotX="108.5" pivotY="84.45"/>
+      <kf duration="58" ref="square" loc="134,-109.99999999999999" pivot="108.5,84.45"/>
+      <kf duration="1" ref="square" loc="134,-110" rotation="3.141592653589793" pivot="108.5,84.45"/>
     </layer>
     <layer name="triangle">
-      <kf index="0" duration="58" ref="triangle" x="-675.95" y="-12" pivotX="0.9" pivotY="41.8"/>
-      <kf index="58" duration="1" ref="triangle" x="1105.9" y="-35" pivotX="0.9" pivotY="41.8"/>
+      <kf duration="58" ref="triangle" loc="-675.95,-12" pivot="0.9,41.8"/>
+      <kf duration="1" ref="triangle" loc="1105.9,-35" pivot="0.9,41.8"/>
     </layer>
     <layer name="hexagon">
-      <kf index="0" duration="58" ref="hexagon" x="-148" y="93.95" pivotX="1"/>
-      <kf index="58" duration="1" ref="hexagon" x="278.25" y="78.6" scaleX="0.9999990616920659" scaleY="0.9999990616920659" rotation="-0.7237937282189342" pivotX="1"/>
+      <kf duration="58" ref="hexagon" loc="-148,93.95" pivot="1,0"/>
+      <kf duration="1" ref="hexagon" loc="277.9992980957031,77.9377685546875" scale="0.9999990616920659,0.9999990616920659" rotation="-0.7237937282189342" pivot="1,0"/>
     </layer>
   </movie>
   <atlas file="shapes/atlas0.png">

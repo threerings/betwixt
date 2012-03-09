@@ -1,209 +1,209 @@
 <resources>
   <movie name="bone_root">
     <layer name="shadow">
-      <kf index="0" duration="16" ref="bone_shadow" x="1.25" y="-0.4"/>
-      <kf index="16" duration="7" ref="bone_shadow" x="1.25" y="-0.4"/>
-      <kf index="23" duration="8" ref="bone_shadow" x="1.25" y="-0.4"/>
-      <kf index="31" duration="12" ref="bone_shadow" x="-48.75" y="-0.4"/>
-      <kf index="43" duration="4" ref="bone_shadow" x="-48.75" y="-0.4"/>
-      <kf index="47" duration="9" ref="bone_shadow" x="-20.7" y="-0.4"/>
-      <kf index="56" duration="26" ref="bone_shadow" x="1.25" y="-0.4"/>
+      <kf duration="16" ref="bone_shadow" loc="1.25,-0.4"/>
+      <kf duration="7" ref="bone_shadow" loc="1.25,-0.4"/>
+      <kf duration="8" ref="bone_shadow" loc="1.25,-0.4"/>
+      <kf duration="12" ref="bone_shadow" loc="-48.75,-0.4"/>
+      <kf duration="4" ref="bone_shadow" loc="-48.75,-0.4"/>
+      <kf duration="9" ref="bone_shadow" loc="-20.7,-0.4"/>
+      <kf duration="26" ref="bone_shadow" loc="1.25,-0.4"/>
     </layer>
     <layer name="R front foot">
-      <kf index="0" duration="8" ref="bone_foot" x="-12.75" y="-25.15"/>
-      <kf index="8" duration="8" ref="bone_foot" x="-11.35" y="-25.15" scaleX="0.9998162315407911" scaleY="0.9998162315407911" rotation="0.05327289480249875"/>
-      <kf index="16" duration="3" ref="bone_foot" x="-12.75" y="-25.15"/>
-      <kf index="19" duration="4" ref="bone_foot" x="-12.75" y="-25.15"/>
-      <kf index="23" duration="5" ref="bone_foot" x="-9.75" y="-17.45" scaleX="0.9991698964101291" scaleY="0.7456634865205084" rotation="0.25873528706691046"/>
-      <kf index="28" duration="3" ref="bone_foot" x="-37.75" y="-21.55" scaleX="0.999072280302291" scaleY="0.999072280302291" rotation="-1.277491908684351"/>
-      <kf index="31" duration="5" ref="bone_foot" x="-47.75" y="-23.55" scaleX="0.9987583995097826" scaleY="0.6745414168564993" rotation="-1.1596937143727382"/>
-      <kf index="36" duration="4" ref="bone_foot" x="-56.15" y="-29.75" scaleX="0.9994743840559709" scaleY="0.8354181669050631" rotation="0.15363825717409282"/>
-      <kf index="40" duration="3" ref="bone_foot" x="-56.15" y="-29.75" scaleX="0.9994743840559709" scaleY="0.8354181669050631" rotation="0.15363825717409282"/>
-      <kf index="43" duration="4" ref="bone_foot" x="-51.15" y="-28.65" scaleX="0.9515578845975862" scaleY="1.0389285177104404" rotation="0.22351640397443212"/>
-      <kf index="47" duration="8" ref="bone_foot" x="-28.55" y="-49.95" scaleX="0.9988033667792225" scaleY="0.7192816727699325" rotation="0.40283164585216136"/>
-      <kf index="55" duration="3" ref="bone_foot" x="-11.65" y="-26.45" scaleX="0.9991846473079283" scaleY="0.9991846473079283" rotation="-0.2587313797957071"/>
-      <kf index="58" duration="6" ref="bone_foot" x="-6.85" y="-17.15" scaleX="0.9987994011109994" scaleY="0.8242834505623224" rotation="0.40697199479611207"/>
-      <kf index="64" duration="8" ref="bone_foot" x="-12.75" y="-25.15"/>
-      <kf index="72" duration="9" ref="bone_foot" x="-11.35" y="-23.15" scaleX="0.9996897360019331" scaleY="0.9434708304590997" rotation="0.08820011232582113"/>
-      <kf index="81" duration="1" ref="bone_foot" x="-12.75" y="-25.15"/>
+      <kf duration="8" ref="bone_foot" loc="-12.75,-25.15"/>
+      <kf duration="8" ref="bone_foot" loc="-11.35,-25.15" scale="0.9998162315407911,0.9998162315407911" rotation="0.05327289480249875"/>
+      <kf duration="3" ref="bone_foot" loc="-12.75,-25.15"/>
+      <kf duration="4" ref="bone_foot" loc="-12.75,-25.15"/>
+      <kf duration="5" ref="bone_foot" loc="-9.75,-17.45" scale="0.9991698964101291,0.7456634865205084" rotation="0.25873528706691046"/>
+      <kf duration="3" ref="bone_foot" loc="-37.75,-21.55" scale="0.999072280302291,0.999072280302291" rotation="-1.277491908684351"/>
+      <kf duration="5" ref="bone_foot" loc="-47.75,-23.55" scale="0.9987583995097826,0.6745414168564993" rotation="-1.1596937143727382"/>
+      <kf duration="4" ref="bone_foot" loc="-56.15,-29.75" scale="0.9994743840559709,0.8354181669050631" rotation="0.15363825717409282"/>
+      <kf duration="3" ref="bone_foot" loc="-56.15,-29.75" scale="0.9994743840559709,0.8354181669050631" rotation="0.15363825717409282"/>
+      <kf duration="4" ref="bone_foot" loc="-51.15,-28.65" scale="0.9515578845975862,1.0389285177104404" rotation="0.22351640397443212"/>
+      <kf duration="8" ref="bone_foot" loc="-28.55,-49.95" scale="0.9988033667792225,0.7192816727699325" rotation="0.40283164585216136"/>
+      <kf duration="3" ref="bone_foot" loc="-11.65,-26.45" scale="0.9991846473079283,0.9991846473079283" rotation="-0.2587313797957071"/>
+      <kf duration="6" ref="bone_foot" loc="-6.85,-17.15" scale="0.9987994011109994,0.8242834505623224" rotation="0.40697199479611207"/>
+      <kf duration="8" ref="bone_foot" loc="-12.75,-25.15"/>
+      <kf duration="9" ref="bone_foot" loc="-11.35,-23.15" scale="0.9996897360019331,0.9434708304590997" rotation="0.08820011232582113"/>
+      <kf duration="1" ref="bone_foot" loc="-12.75,-25.15"/>
     </layer>
     <layer name="tail">
-      <kf index="0" duration="8" ref="bone_tail" x="18.25" y="-27.95" scaleX="0.9983815442266146" scaleY="0.9983815442266146" rotation="-0.6778224163562135"/>
-      <kf index="8" duration="8" ref="bone_tail" x="18.25" y="-27.95" scaleX="0.9983392112817246" scaleY="0.9983392112817246" rotation="-0.7433011611730953"/>
-      <kf index="16" duration="3" ref="bone_tail" x="18.25" y="-27.95" scaleX="0.9983815442266146" scaleY="0.9983815442266146" rotation="-0.6778224163562135"/>
-      <kf index="19" duration="4" ref="bone_tail" x="18.25" y="-27.95" scaleX="0.9983815442266146" scaleY="0.9983815442266146" rotation="-0.6778224163562135"/>
-      <kf index="23" duration="5" ref="bone_tail" x="27.45" y="-24.95" scaleX="0.9988675840758626" scaleY="0.9988675840758626" rotation="-1.2030072110281225"/>
-      <kf index="28" duration="1" ref="bone_tail" x="-19.45" y="-34.05" scaleX="0.9990178381435735" scaleY="0.9990178381435735" rotation="0.32390956456121184"/>
-      <kf index="29" duration="2" ref="bone_tail" x="-22.35" y="-28.75" scaleX="0.9985069709288199" scaleY="0.9985069709288199" rotation="0.5513326182680865"/>
-      <kf index="31" duration="2" ref="bone_tail" x="-29.45" y="-36.05" scaleX="0.9990178381435735" scaleY="0.9990178381435735" rotation="-0.32390956456121184"/>
-      <kf index="33" duration="1" ref="bone_tail" x="-36.25" y="-31.75" scaleX="0.9983619298351121" scaleY="0.9983619298351121" rotation="-0.8489987421804928"/>
-      <kf index="34" duration="2" ref="bone_tail" x="-39.75" y="-31.95" scaleX="0.9990856901938957" scaleY="0.9990856901938957" rotation="-1.2683414957756904"/>
-      <kf index="36" duration="4" ref="bone_tail" x="-39.85" y="-28.75" scaleX="0.9988435325023497" scaleY="0.9988435325023497" rotation="-0.380188659245184"/>
-      <kf index="40" duration="3" ref="bone_tail" x="-40.25" y="-27.15" scaleX="0.9991019937993687" scaleY="0.9991019937993687" rotation="0.28472328847721995"/>
-      <kf index="43" duration="1" ref="bone_tail" x="-25.85" y="-43.45" scaleX="0.9997760301401968" scaleY="0.9997760301401968" rotation="1.5006088711102992"/>
-      <kf index="44" duration="3" ref="bone_tail" x="-15.05" y="-52.15" scaleX="0.998442068750864" scaleY="0.998442068750864" rotation="2.1879563596477665"/>
-      <kf index="47" duration="8" ref="bone_tail" x="1.45" y="-53.95" scaleX="0.998367342103303" scaleY="0.998367342103303" rotation="2.248649817088773"/>
-      <kf index="55" duration="1" ref="bone_tail" x="8.45" y="-44.25" scaleX="0.9997013410205263" scaleY="0.9997013410205263" rotation="0.08798456711350774"/>
-      <kf index="56" duration="2" ref="bone_tail" x="10.75" y="-40.45" scaleX="0.9351036922445592" scaleY="0.9985454368761596" rotation="-1.0236996246662589"/>
-      <kf index="58" duration="6" ref="bone_tail" x="17.85" y="-33.95" scaleX="0.6693024666879788" scaleY="0.9987343999748567" rotation="-1.1329158415028648"/>
-      <kf index="64" duration="8" ref="bone_tail" x="15.65" y="-27.65"/>
-      <kf index="72" duration="9" ref="bone_tail" x="18.25" y="-25.95" scaleX="0.9983815442266146" scaleY="0.9983815442266146" rotation="-0.6778224163562135"/>
-      <kf index="81" duration="1" ref="bone_tail" x="18.25" y="-27.95" scaleX="0.9983815442266146" scaleY="0.9983815442266146" rotation="-0.6778224163562135"/>
+      <kf duration="8" ref="bone_tail" loc="18.25,-27.95" scale="0.9983815442266146,0.9983815442266146" rotation="-0.6778224163562135"/>
+      <kf duration="8" ref="bone_tail" loc="18.25,-27.95" scale="0.9983392112817246,0.9983392112817246" rotation="-0.7433011611730953"/>
+      <kf duration="3" ref="bone_tail" loc="18.25,-27.95" scale="0.9983815442266146,0.9983815442266146" rotation="-0.6778224163562135"/>
+      <kf duration="4" ref="bone_tail" loc="18.25,-27.95" scale="0.9983815442266146,0.9983815442266146" rotation="-0.6778224163562135"/>
+      <kf duration="5" ref="bone_tail" loc="27.45,-24.95" scale="0.9988675840758626,0.9988675840758626" rotation="-1.2030072110281225"/>
+      <kf duration="1" ref="bone_tail" loc="-19.45,-34.05" scale="0.9990178381435735,0.9990178381435735" rotation="0.32390956456121184"/>
+      <kf duration="2" ref="bone_tail" loc="-22.35,-28.75" scale="0.9985069709288199,0.9985069709288199" rotation="0.5513326182680865"/>
+      <kf duration="2" ref="bone_tail" loc="-29.45,-36.05" scale="0.9990178381435735,0.9990178381435735" rotation="-0.32390956456121184"/>
+      <kf duration="1" ref="bone_tail" loc="-36.25,-31.75" scale="0.9983619298351121,0.9983619298351121" rotation="-0.8489987421804928"/>
+      <kf duration="2" ref="bone_tail" loc="-39.75,-31.95" scale="0.9990856901938957,0.9990856901938957" rotation="-1.2683414957756904"/>
+      <kf duration="4" ref="bone_tail" loc="-39.85,-28.75" scale="0.9988435325023497,0.9988435325023497" rotation="-0.380188659245184"/>
+      <kf duration="3" ref="bone_tail" loc="-40.25,-27.15" scale="0.9991019937993687,0.9991019937993687" rotation="0.28472328847721995"/>
+      <kf duration="1" ref="bone_tail" loc="-25.85,-43.45" scale="0.9997760301401968,0.9997760301401968" rotation="1.5006088711102992"/>
+      <kf duration="3" ref="bone_tail" loc="-15.05,-52.15" scale="0.998442068750864,0.998442068750864" rotation="2.1879563596477665"/>
+      <kf duration="8" ref="bone_tail" loc="1.45,-53.95" scale="0.998367342103303,0.998367342103303" rotation="2.248649817088773"/>
+      <kf duration="1" ref="bone_tail" loc="8.45,-44.25" scale="0.9997013410205263,0.9997013410205263" rotation="0.08798456711350774"/>
+      <kf duration="2" ref="bone_tail" loc="10.75,-40.45" scale="0.9351036922445592,0.9985454368761596" rotation="-1.0236996246662589"/>
+      <kf duration="6" ref="bone_tail" loc="17.85,-33.95" scale="0.6693024666879788,0.9987343999748567" rotation="-1.1329158415028648"/>
+      <kf duration="8" ref="bone_tail" loc="15.65,-27.65"/>
+      <kf duration="9" ref="bone_tail" loc="18.25,-25.95" scale="0.9983815442266146,0.9983815442266146" rotation="-0.6778224163562135"/>
+      <kf duration="1" ref="bone_tail" loc="18.25,-27.95" scale="0.9983815442266146,0.9983815442266146" rotation="-0.6778224163562135"/>
     </layer>
     <layer name="body">
-      <kf index="0" duration="8" ref="bone_body" x="11.65" y="-24.65"/>
-      <kf index="8" duration="8" ref="bone_body" x="12.25" y="-24.05" scaleX="0.9999120168798291" scaleY="0.9999120168798291" rotation="-0.027196907356601026"/>
-      <kf index="16" duration="3" ref="bone_body" x="11.65" y="-24.65"/>
-      <kf index="19" duration="4" ref="bone_body" x="11.65" y="-24.65"/>
-      <kf index="23" duration="5" ref="bone_body" x="20.85" y="-21.65" scaleX="0.999370304049516" scaleY="0.999370304049516" rotation="-0.19321539279538702"/>
-      <kf index="28" duration="3" ref="bone_body" x="-20.65" y="-30.95"/>
-      <kf index="31" duration="3" ref="bone_body" x="-35.65" y="-32.95"/>
-      <kf index="34" duration="2" ref="bone_body" x="-45.75" y="-28.05" scaleX="0.9990295140090015" scaleY="0.9990295140090015" rotation="0.311027881753434"/>
-      <kf index="36" duration="4" ref="bone_body" x="-46.85" y="-27.25" scaleX="0.9987972447198439" scaleY="0.9987972447198439" rotation="0.41153567363408644"/>
-      <kf index="40" duration="3" ref="bone_body" x="-47.25" y="-25.65" scaleX="0.9985643781289443" scaleY="0.9985643781289443" rotation="0.520637748044119"/>
-      <kf index="43" duration="4" ref="bone_body" x="-30.15" y="-41.65" scaleX="0.8556494017215563" scaleY="0.9993592580664215" rotation="0.19297141348250416"/>
-      <kf index="47" duration="8" ref="bone_body" x="-4.15" y="-49.45"/>
-      <kf index="55" duration="4" ref="bone_body" x="3.15" y="-48.15" scaleX="0.9482441530393907" scaleY="1.3868880568999273" rotation="-0.5211280645036773"/>
-      <kf index="59" duration="6" ref="bone_body" x="9.75" y="-26.05" scaleX="0.9999120168798291" scaleY="1.2163467379231683" rotation="-0.027196907356601026"/>
-      <kf index="65" duration="7" ref="bone_body" x="11.65" y="-24.65"/>
-      <kf index="72" duration="9" ref="bone_body" x="11.65" y="-24.15"/>
-      <kf index="81" duration="1" ref="bone_body" x="11.65" y="-24.65"/>
+      <kf duration="8" ref="bone_body" loc="11.65,-24.65"/>
+      <kf duration="8" ref="bone_body" loc="12.25,-24.05" scale="0.9999120168798291,0.9999120168798291" rotation="-0.027196907356601026"/>
+      <kf duration="3" ref="bone_body" loc="11.65,-24.65"/>
+      <kf duration="4" ref="bone_body" loc="11.65,-24.65"/>
+      <kf duration="5" ref="bone_body" loc="20.85,-21.65" scale="0.999370304049516,0.999370304049516" rotation="-0.19321539279538702"/>
+      <kf duration="3" ref="bone_body" loc="-20.65,-30.95"/>
+      <kf duration="3" ref="bone_body" loc="-35.65,-32.95"/>
+      <kf duration="2" ref="bone_body" loc="-45.75,-28.05" scale="0.9990295140090015,0.9990295140090015" rotation="0.311027881753434"/>
+      <kf duration="4" ref="bone_body" loc="-46.85,-27.25" scale="0.9987972447198439,0.9987972447198439" rotation="0.41153567363408644"/>
+      <kf duration="3" ref="bone_body" loc="-47.25,-25.65" scale="0.9985643781289443,0.9985643781289443" rotation="0.520637748044119"/>
+      <kf duration="4" ref="bone_body" loc="-30.15,-41.65" scale="0.8556494017215563,0.9993592580664215" rotation="0.19297141348250416"/>
+      <kf duration="8" ref="bone_body" loc="-4.15,-49.45"/>
+      <kf duration="4" ref="bone_body" loc="3.15,-48.15" scale="0.9482441530393907,1.3868880568999273" rotation="-0.5211280645036773"/>
+      <kf duration="6" ref="bone_body" loc="9.75,-26.05" scale="0.9999120168798291,1.2163467379231683" rotation="-0.027196907356601026"/>
+      <kf duration="7" ref="bone_body" loc="11.65,-24.65"/>
+      <kf duration="9" ref="bone_body" loc="11.65,-24.15"/>
+      <kf duration="1" ref="bone_body" loc="11.65,-24.65"/>
     </layer>
     <layer name="L rear foot">
-      <kf index="0" duration="8" ref="bone_foot" x="22.25" y="-12.75" scaleY="0.731338500976563"/>
-      <kf index="8" duration="8" ref="bone_foot" x="22.65" y="-12.75" scaleX="0.9999188487086625" scaleY="0.7312250889670137" rotation="0.026311323015683587"/>
-      <kf index="16" duration="3" ref="bone_foot" x="22.25" y="-12.75" scaleY="0.731338500976563"/>
-      <kf index="19" duration="4" ref="bone_foot" x="22.25" y="-12.75" scaleY="0.731338500976563"/>
-      <kf index="23" duration="5" ref="bone_foot" x="29.65" y="-10.25" scaleX="0.998552000118229" scaleY="0.7303369316777999" rotation="0.5211381434841187"/>
-      <kf index="28" duration="3" ref="bone_foot" x="-6.35" y="-16.95" scaleX="0.9983670662141818" scaleY="0.988530681748573" rotation="-0.8798641976193937"/>
-      <kf index="31" duration="5" ref="bone_foot" x="-26.85" y="-38.15" scaleX="0.9983553070399598" scaleY="0.7301706292859792" rotation="-0.8798544578485304"/>
-      <kf index="36" duration="4" ref="bone_foot" x="-39.05" y="-18.55" scaleX="0.9988157908603418" scaleY="0.7304358285291016" rotation="0.3888354515485865"/>
-      <kf index="40" duration="3" ref="bone_foot" x="-39.05" y="-18.55" scaleX="0.9988157908603418" scaleY="0.7304358285291016" rotation="0.3888354515485865"/>
-      <kf index="43" duration="4" ref="bone_foot" x="-34.35" y="-26.25" scaleX="0.938109011329582" scaleY="1.0486411317789108" rotation="0.36762693754797254"/>
-      <kf index="47" duration="8" ref="bone_foot" x="5.85" y="-47.05" scaleX="0.9985576367121106" scaleY="0.7302972320007187" rotation="0.52111728330865"/>
-      <kf index="55" duration="3" ref="bone_foot" x="7.15" y="-35.25" scaleX="0.9991620886748734" scaleY="1.0524925599352355" rotation="-0.25870576054595695"/>
-      <kf index="58" duration="6" ref="bone_foot" x="26.95" y="-10.95" scaleX="0.9990943296697703" scaleY="0.7306222604537276" rotation="0.2883716351671437"/>
-      <kf index="64" duration="8" ref="bone_foot" x="22.25" y="-12.75" scaleY="0.731338500976563"/>
-      <kf index="72" duration="9" ref="bone_foot" x="22.95" y="-12.75" scaleX="0.9998526423864459" scaleY="0.731239727481241" rotation="0.035092328205339314"/>
-      <kf index="81" duration="1" ref="bone_foot" x="22.25" y="-12.75" scaleY="0.731338500976563"/>
+      <kf duration="8" ref="bone_foot" loc="22.25,-12.75" scale="1,0.731338500976563"/>
+      <kf duration="8" ref="bone_foot" loc="22.65,-12.75" scale="0.9999188487086625,0.7312250889670137" rotation="0.026311323015683587"/>
+      <kf duration="3" ref="bone_foot" loc="22.25,-12.75" scale="1,0.731338500976563"/>
+      <kf duration="4" ref="bone_foot" loc="22.25,-12.75" scale="1,0.731338500976563"/>
+      <kf duration="5" ref="bone_foot" loc="29.65,-10.25" scale="0.998552000118229,0.7303369316777999" rotation="0.5211381434841187"/>
+      <kf duration="3" ref="bone_foot" loc="-6.35,-16.95" scale="0.9983670662141818,0.988530681748573" rotation="-0.8798641976193937"/>
+      <kf duration="5" ref="bone_foot" loc="-26.85,-38.15" scale="0.9983553070399598,0.7301706292859792" rotation="-0.8798544578485304"/>
+      <kf duration="4" ref="bone_foot" loc="-39.05,-18.55" scale="0.9988157908603418,0.7304358285291016" rotation="0.3888354515485865"/>
+      <kf duration="3" ref="bone_foot" loc="-39.05,-18.55" scale="0.9988157908603418,0.7304358285291016" rotation="0.3888354515485865"/>
+      <kf duration="4" ref="bone_foot" loc="-34.35,-26.25" scale="0.938109011329582,1.0486411317789108" rotation="0.36762693754797254"/>
+      <kf duration="8" ref="bone_foot" loc="5.85,-47.05" scale="0.9985576367121106,0.7302972320007187" rotation="0.52111728330865"/>
+      <kf duration="3" ref="bone_foot" loc="7.15,-35.25" scale="0.9991620886748734,1.0524925599352355" rotation="-0.25870576054595695"/>
+      <kf duration="6" ref="bone_foot" loc="26.95,-10.95" scale="0.9990943296697703,0.7306222604537276" rotation="0.2883716351671437"/>
+      <kf duration="8" ref="bone_foot" loc="22.25,-12.75" scale="1,0.731338500976563"/>
+      <kf duration="9" ref="bone_foot" loc="22.95,-12.75" scale="0.9998526423864459,0.731239727481241" rotation="0.035092328205339314"/>
+      <kf duration="1" ref="bone_foot" loc="22.25,-12.75" scale="1,0.731338500976563"/>
     </layer>
     <layer name="L rear calf">
-      <kf index="0" duration="8" ref="bone_calf" x="9.25" y="-14.15" scaleX="1.33958435058594"/>
-      <kf index="8" duration="8" ref="bone_calf" x="10.25" y="-13.35" scaleX="1.3392833235874035" scaleY="0.9998146070143648" rotation="-0.05322020177103144"/>
-      <kf index="16" duration="3" ref="bone_calf" x="9.25" y="-14.15" scaleX="1.33958435058594"/>
-      <kf index="19" duration="4" ref="bone_calf" x="9.25" y="-14.15" scaleX="1.33958435058594"/>
-      <kf index="23" duration="5" ref="bone_calf" x="16.45" y="-10.95" scaleX="1.3390933359862152" scaleY="0.9996034678384882" rotation="-0.1145178560396384"/>
-      <kf index="28" duration="3" ref="bone_calf" x="-16.35" y="-18.65" scaleX="1.33958435058594"/>
-      <kf index="31" duration="5" ref="bone_calf" x="-27.55" y="-27.85" scaleX="0.9991613024451819" scaleY="0.9975405247723478" rotation="-1.3087714609002976"/>
-      <kf index="36" duration="4" ref="bone_calf" x="-51.95" y="-17.75" scaleX="1.3392990983016808" scaleY="0.9997634613763482" rotation="-0.06620818085835391"/>
-      <kf index="40" duration="3" ref="bone_calf" x="-52.35" y="-16.15" scaleX="1.3392990983016808" scaleY="0.9997634613763482" rotation="-0.06620818085835391"/>
-      <kf index="43" duration="4" ref="bone_calf" x="-40.75" y="-26.65" scaleX="1.3380814601544626" scaleY="0.9988426464880346" rotation="-0.37660156144260665"/>
-      <kf index="47" duration="8" ref="bone_calf" x="-11.75" y="-38.95" scaleX="1.3385243770816977" scaleY="0.9991846473079283" rotation="-0.25872032888224444"/>
-      <kf index="55" duration="3" ref="bone_calf" x="1.65" y="-27.45" scaleX="1.3373934699185788" scaleY="0.998362407571137" rotation="0.7837523665098471"/>
-      <kf index="58" duration="6" ref="bone_calf" x="16.25" y="-9.35" scaleX="0.923243540442484" scaleY="0.9998146070143648" rotation="-0.05322673824518397"/>
-      <kf index="64" duration="8" ref="bone_calf" x="9.25" y="-14.15" scaleX="1.33958435058594"/>
-      <kf index="72" duration="9" ref="bone_calf" x="10.15" y="-13.65" scaleX="1.339599609375"/>
-      <kf index="81" duration="1" ref="bone_calf" x="9.25" y="-14.15" scaleX="1.33958435058594"/>
+      <kf duration="8" ref="bone_calf" loc="9.25,-14.15" scale="1.33958435058594,1"/>
+      <kf duration="8" ref="bone_calf" loc="10.25,-13.35" scale="1.3392833235874035,0.9998146070143648" rotation="-0.05322020177103144"/>
+      <kf duration="3" ref="bone_calf" loc="9.25,-14.15" scale="1.33958435058594,1"/>
+      <kf duration="4" ref="bone_calf" loc="9.25,-14.15" scale="1.33958435058594,1"/>
+      <kf duration="5" ref="bone_calf" loc="16.45,-10.95" scale="1.3390933359862152,0.9996034678384882" rotation="-0.1145178560396384"/>
+      <kf duration="3" ref="bone_calf" loc="-16.35,-18.65" scale="1.33958435058594,1"/>
+      <kf duration="5" ref="bone_calf" loc="-27.55,-27.85" scale="0.9991613024451819,0.9975405247723478" rotation="-1.3087714609002976"/>
+      <kf duration="4" ref="bone_calf" loc="-51.95,-17.75" scale="1.3392990983016808,0.9997634613763482" rotation="-0.06620818085835391"/>
+      <kf duration="3" ref="bone_calf" loc="-52.35,-16.15" scale="1.3392990983016808,0.9997634613763482" rotation="-0.06620818085835391"/>
+      <kf duration="4" ref="bone_calf" loc="-40.75,-26.65" scale="1.3380814601544626,0.9988426464880346" rotation="-0.37660156144260665"/>
+      <kf duration="8" ref="bone_calf" loc="-11.75,-38.95" scale="1.3385243770816977,0.9991846473079283" rotation="-0.25872032888224444"/>
+      <kf duration="3" ref="bone_calf" loc="1.65,-27.45" scale="1.3373934699185788,0.998362407571137" rotation="0.7837523665098471"/>
+      <kf duration="6" ref="bone_calf" loc="16.25,-9.35" scale="0.923243540442484,0.9998146070143648" rotation="-0.05322673824518397"/>
+      <kf duration="8" ref="bone_calf" loc="9.25,-14.15" scale="1.33958435058594,1"/>
+      <kf duration="9" ref="bone_calf" loc="10.15,-13.65" scale="1.339599609375,1"/>
+      <kf duration="1" ref="bone_calf" loc="9.25,-14.15" scale="1.33958435058594,1"/>
     </layer>
     <layer name="L rear thigh">
-      <kf index="0" duration="8" ref="bone_thigh" x="15.25" y="-28.25" scaleX="0.9991464083556241" scaleY="0.9991464083556241" rotation="0.26745619490419126"/>
-      <kf index="8" duration="8" ref="bone_thigh" x="15.45" y="-27.45" scaleX="0.9993428571936249" scaleY="0.9993428571936249" rotation="0.20541781100768775"/>
-      <kf index="16" duration="3" ref="bone_thigh" x="15.25" y="-28.25" scaleX="0.9991464083556241" scaleY="0.9991464083556241" rotation="0.26745619490419126"/>
-      <kf index="19" duration="4" ref="bone_thigh" x="15.25" y="-28.25" scaleX="0.9991464083556241" scaleY="0.9991464083556241" rotation="0.26745619490419126"/>
-      <kf index="23" duration="5" ref="bone_thigh" x="24.45" y="-25.25" scaleX="0.9999993300295991" scaleY="0.9999993300295991" rotation="0.005401641214944997"/>
-      <kf index="28" duration="3" ref="bone_thigh" x="-22.75" y="-30.45" scaleX="1.9999671133325276" scaleY="1.9999671133325276" rotation="-0.5150485134232814"/>
-      <kf index="31" duration="5" ref="bone_thigh" x="-36.75" y="-40.45" scaleX="0.9985766876696132" scaleY="0.9985766876696132" rotation="-0.5157231641929625"/>
-      <kf index="36" duration="4" ref="bone_thigh" x="-42.65" y="-29.25" scaleX="0.9984869575759673" scaleY="0.9984869575759673" rotation="0.5682798655491086"/>
-      <kf index="40" duration="3" ref="bone_thigh" x="-43.05" y="-27.65" scaleX="0.9984869575759673" scaleY="0.9984869575759673" rotation="0.5682798655491086"/>
-      <kf index="43" duration="4" ref="bone_thigh" x="-36.75" y="-38.15" scaleX="0.9992043761549741" scaleY="0.9992043761549741" rotation="0.25435298340364654"/>
-      <kf index="47" duration="8" ref="bone_thigh" x="-0.55" y="-53.05" scaleX="0.9985295388826216" scaleY="0.9985295388826216" rotation="0.5298420997424863"/>
-      <kf index="55" duration="3" ref="bone_thigh" x="10.15" y="-38.75" scaleX="0.9991464083556241" scaleY="0.9991464083556241" rotation="0.26745619490419126"/>
-      <kf index="58" duration="6" ref="bone_thigh" x="17.45" y="-23.45" scaleX="0.9998001820074688" scaleY="0.9998001820074688" rotation="-0.053258467273094044"/>
-      <kf index="64" duration="8" ref="bone_thigh" x="15.25" y="-28.25" scaleX="0.9991464083556241" scaleY="0.9991464083556241" rotation="0.26745619490419126"/>
-      <kf index="72" duration="9" ref="bone_thigh" x="15.35" y="-27.65" scaleX="0.9992574352939819" scaleY="0.9992574352939819" rotation="0.23158992962745165"/>
-      <kf index="81" duration="1" ref="bone_thigh" x="15.25" y="-28.25" scaleX="0.9991464083556241" scaleY="0.9991464083556241" rotation="0.26745619490419126"/>
+      <kf duration="8" ref="bone_thigh" loc="15.25,-28.25" scale="0.9991464083556241,0.9991464083556241" rotation="0.26745619490419126"/>
+      <kf duration="8" ref="bone_thigh" loc="15.45,-27.45" scale="0.9993428571936249,0.9993428571936249" rotation="0.20541781100768775"/>
+      <kf duration="3" ref="bone_thigh" loc="15.25,-28.25" scale="0.9991464083556241,0.9991464083556241" rotation="0.26745619490419126"/>
+      <kf duration="4" ref="bone_thigh" loc="15.25,-28.25" scale="0.9991464083556241,0.9991464083556241" rotation="0.26745619490419126"/>
+      <kf duration="5" ref="bone_thigh" loc="24.45,-25.25" scale="0.9999993300295991,0.9999993300295991" rotation="0.005401641214944997"/>
+      <kf duration="3" ref="bone_thigh" loc="-22.75,-30.45" scale="1.9999671133325276,1.9999671133325276" rotation="-0.5150485134232814"/>
+      <kf duration="5" ref="bone_thigh" loc="-36.75,-40.45" scale="0.9985766876696132,0.9985766876696132" rotation="-0.5157231641929625"/>
+      <kf duration="4" ref="bone_thigh" loc="-42.65,-29.25" scale="0.9984869575759673,0.9984869575759673" rotation="0.5682798655491086"/>
+      <kf duration="3" ref="bone_thigh" loc="-43.05,-27.65" scale="0.9984869575759673,0.9984869575759673" rotation="0.5682798655491086"/>
+      <kf duration="4" ref="bone_thigh" loc="-36.75,-38.15" scale="0.9992043761549741,0.9992043761549741" rotation="0.25435298340364654"/>
+      <kf duration="8" ref="bone_thigh" loc="-0.55,-53.05" scale="0.9985295388826216,0.9985295388826216" rotation="0.5298420997424863"/>
+      <kf duration="3" ref="bone_thigh" loc="10.15,-38.75" scale="0.9991464083556241,0.9991464083556241" rotation="0.26745619490419126"/>
+      <kf duration="6" ref="bone_thigh" loc="17.45,-23.45" scale="0.9998001820074688,0.9998001820074688" rotation="-0.053258467273094044"/>
+      <kf duration="8" ref="bone_thigh" loc="15.25,-28.25" scale="0.9991464083556241,0.9991464083556241" rotation="0.26745619490419126"/>
+      <kf duration="9" ref="bone_thigh" loc="15.35,-27.65" scale="0.9992574352939819,0.9992574352939819" rotation="0.23158992962745165"/>
+      <kf duration="1" ref="bone_thigh" loc="15.25,-28.25" scale="0.9991464083556241,0.9991464083556241" rotation="0.26745619490419126"/>
     </layer>
     <layer name="L front foot">
-      <kf index="0" duration="8" ref="bone_foot" x="-0.15" y="-15.55"/>
-      <kf index="8" duration="8" ref="bone_foot" x="2.45" y="-14.95" scaleX="0.999630113292835" scaleY="0.999630113292835" rotation="0.10143813471445709"/>
-      <kf index="16" duration="3" ref="bone_foot" x="-0.15" y="-15.55"/>
-      <kf index="19" duration="4" ref="bone_foot" x="-0.15" y="-15.55"/>
-      <kf index="23" duration="5" ref="bone_foot" x="7.25" y="-3.55" scaleX="0.9983516357751249" scaleY="0.6554686409071512" rotation="0.7837446292561836"/>
-      <kf index="28" duration="3" ref="bone_foot" x="-26.35" y="-17.55" scaleX="0.9987674657418842" scaleY="1.243775565416152" rotation="-1.1466773756740125"/>
-      <kf index="31" duration="5" ref="bone_foot" x="-42.35" y="-27.55" scaleX="0.9984392863934473" scaleY="0.4872855326513351" rotation="-0.9499001689532125"/>
-      <kf index="36" duration="4" ref="bone_foot" x="-49.85" y="-18.55" scaleX="0.9986629537211384" scaleY="0.6148573584986405" rotation="0.4641190911281284"/>
-      <kf index="40" duration="3" ref="bone_foot" x="-49.85" y="-18.55" scaleX="0.9986629537211384" scaleY="0.6148573584986405" rotation="0.4641190911281284"/>
-      <kf index="43" duration="4" ref="bone_foot" x="-44.15" y="-28.15" scaleX="0.9635158360300936" scaleY="1.0391050814923977" rotation="0.16201924535859227"/>
-      <kf index="47" duration="8" ref="bone_foot" x="-15.95" y="-40.35" scaleX="0.9985192558776074" scaleY="0.5775003685452711" rotation="0.5603017542956452"/>
-      <kf index="55" duration="3" ref="bone_foot" x="-5.35" y="-18.55" scaleX="0.9987732193099189" scaleY="0.9987732193099189" rotation="-0.4028777226405057"/>
-      <kf index="58" duration="6" ref="bone_foot" x="5.75" y="-10.55" scaleX="0.9991736678977107" scaleY="0.8239593353268663" rotation="0.254234742838498"/>
-      <kf index="64" duration="8" ref="bone_foot" x="-0.15" y="-15.55"/>
-      <kf index="72" duration="9" ref="bone_foot" x="0.55" y="-14.85" scaleX="0.9999192502576132" scaleY="0.9852955512090233" rotation="0.026326577755146782"/>
-      <kf index="81" duration="1" ref="bone_foot" x="-0.15" y="-15.55"/>
+      <kf duration="8" ref="bone_foot" loc="-0.15,-15.55"/>
+      <kf duration="8" ref="bone_foot" loc="2.45,-14.95" scale="0.999630113292835,0.999630113292835" rotation="0.10143813471445709"/>
+      <kf duration="3" ref="bone_foot" loc="-0.15,-15.55"/>
+      <kf duration="4" ref="bone_foot" loc="-0.15,-15.55"/>
+      <kf duration="5" ref="bone_foot" loc="7.25,-3.55" scale="0.9983516357751249,0.6554686409071512" rotation="0.7837446292561836"/>
+      <kf duration="3" ref="bone_foot" loc="-26.35,-17.55" scale="0.9987674657418842,1.243775565416152" rotation="-1.1466773756740125"/>
+      <kf duration="5" ref="bone_foot" loc="-42.35,-27.55" scale="0.9984392863934473,0.4872855326513351" rotation="-0.9499001689532125"/>
+      <kf duration="4" ref="bone_foot" loc="-49.85,-18.55" scale="0.9986629537211384,0.6148573584986405" rotation="0.4641190911281284"/>
+      <kf duration="3" ref="bone_foot" loc="-49.85,-18.55" scale="0.9986629537211384,0.6148573584986405" rotation="0.4641190911281284"/>
+      <kf duration="4" ref="bone_foot" loc="-44.15,-28.15" scale="0.9635158360300936,1.0391050814923977" rotation="0.16201924535859227"/>
+      <kf duration="8" ref="bone_foot" loc="-15.95,-40.35" scale="0.9985192558776074,0.5775003685452711" rotation="0.5603017542956452"/>
+      <kf duration="3" ref="bone_foot" loc="-5.35,-18.55" scale="0.9987732193099189,0.9987732193099189" rotation="-0.4028777226405057"/>
+      <kf duration="6" ref="bone_foot" loc="5.75,-10.55" scale="0.9991736678977107,0.8239593353268663" rotation="0.254234742838498"/>
+      <kf duration="8" ref="bone_foot" loc="-0.15,-15.55"/>
+      <kf duration="9" ref="bone_foot" loc="0.55,-14.85" scale="0.9999192502576132,0.9852955512090233" rotation="0.026326577755146782"/>
+      <kf duration="1" ref="bone_foot" loc="-0.15,-15.55"/>
     </layer>
     <layer name="L front calf">
-      <kf index="0" duration="8" ref="bone_calf" x="-9.95" y="-14.75"/>
-      <kf index="8" duration="8" ref="bone_calf" x="-9.95" y="-14.75"/>
-      <kf index="16" duration="3" ref="bone_calf" x="-9.95" y="-14.75"/>
-      <kf index="19" duration="4" ref="bone_calf" x="-9.95" y="-14.75"/>
-      <kf index="23" duration="5" ref="bone_calf" x="5.65" y="-8.95" scaleX="0.9983516357751249" scaleY="0.9983516357751249" rotation="0.7837446292561836"/>
-      <kf index="28" duration="3" ref="bone_calf" x="-31.95" y="-18.35" scaleX="0.9991613024451819" scaleY="0.9991613024451819" rotation="0.26202486589459895"/>
-      <kf index="31" duration="5" ref="bone_calf" x="-48.25" y="-26.75" scaleX="0.9991613024451819" scaleY="0.9991613024451819" rotation="0.26202486589459895"/>
-      <kf index="36" duration="4" ref="bone_calf" x="-61.55" y="-22.85" scaleX="0.9989056407068333" scaleY="0.9989056407068333" rotation="0.3592104845190145"/>
-      <kf index="40" duration="3" ref="bone_calf" x="-61.95" y="-21.25" scaleX="0.9989056407068333" scaleY="0.9989056407068333" rotation="0.3592104845190145"/>
-      <kf index="43" duration="4" ref="bone_calf" x="-44.25" y="-34.05" scaleX="0.9996805086956044" scaleY="0.9996805086956044" rotation="1.4742563898984749"/>
-      <kf index="47" duration="8" ref="bone_calf" x="-25.75" y="-39.55"/>
-      <kf index="55" duration="3" ref="bone_calf" x="-11.95" y="-18.75"/>
-      <kf index="58" duration="6" ref="bone_calf" x="-0.35" y="-13.55"/>
-      <kf index="64" duration="8" ref="bone_calf" x="-9.95" y="-14.75"/>
-      <kf index="72" duration="9" ref="bone_calf" x="-9.95" y="-14.25"/>
-      <kf index="81" duration="1" ref="bone_calf" x="-9.95" y="-14.75"/>
+      <kf duration="8" ref="bone_calf" loc="-9.95,-14.75"/>
+      <kf duration="8" ref="bone_calf" loc="-9.95,-14.75"/>
+      <kf duration="3" ref="bone_calf" loc="-9.95,-14.75"/>
+      <kf duration="4" ref="bone_calf" loc="-9.95,-14.75"/>
+      <kf duration="5" ref="bone_calf" loc="5.65,-8.95" scale="0.9983516357751249,0.9983516357751249" rotation="0.7837446292561836"/>
+      <kf duration="3" ref="bone_calf" loc="-31.95,-18.35" scale="0.9991613024451819,0.9991613024451819" rotation="0.26202486589459895"/>
+      <kf duration="5" ref="bone_calf" loc="-48.25,-26.75" scale="0.9991613024451819,0.9991613024451819" rotation="0.26202486589459895"/>
+      <kf duration="4" ref="bone_calf" loc="-61.55,-22.85" scale="0.9989056407068333,0.9989056407068333" rotation="0.3592104845190145"/>
+      <kf duration="3" ref="bone_calf" loc="-61.95,-21.25" scale="0.9989056407068333,0.9989056407068333" rotation="0.3592104845190145"/>
+      <kf duration="4" ref="bone_calf" loc="-44.25,-34.05" scale="0.9996805086956044,0.9996805086956044" rotation="1.4742563898984749"/>
+      <kf duration="8" ref="bone_calf" loc="-25.75,-39.55"/>
+      <kf duration="3" ref="bone_calf" loc="-11.95,-18.75"/>
+      <kf duration="6" ref="bone_calf" loc="-0.35,-13.55"/>
+      <kf duration="8" ref="bone_calf" loc="-9.95,-14.75"/>
+      <kf duration="9" ref="bone_calf" loc="-9.95,-14.25"/>
+      <kf duration="1" ref="bone_calf" loc="-9.95,-14.75"/>
     </layer>
     <layer name="jaw">
-      <kf index="0" duration="8" ref="bone_jaw" x="6.35" y="-30.05" scaleX="0.9997878092829516" scaleY="0.9997878092829516" rotation="-0.06204942656894225"/>
-      <kf index="8" duration="8" ref="bone_jaw" x="5.85" y="-30.55"/>
-      <kf index="16" duration="3" ref="bone_jaw" x="6.35" y="-30.05" scaleX="0.9997878092829516" scaleY="0.9997878092829516" rotation="-0.06204942656894225"/>
-      <kf index="19" duration="4" ref="bone_jaw" x="6.35" y="-30.05" scaleX="0.9997878092829516" scaleY="0.9997878092829516" rotation="-0.06204942656894225"/>
-      <kf index="23" duration="5" ref="bone_jaw" x="18.65" y="-15.95" scaleX="1.0692878613268415" scaleY="0.7674970737221031" rotation="0.19253439568654868"/>
-      <kf index="28" duration="3" ref="bone_jaw" x="-41.35" y="-34.05" scaleX="0.9986821974563151" scaleY="0.9986821974563151" rotation="-1.1160794922132296"/>
-      <kf index="31" duration="1" ref="bone_jaw" x="-41.35" y="-34.05" scaleX="1.2199271716103088" scaleY="0.5766351471935871" rotation="-0.01337139787443907"/>
-      <kf index="32" duration="2" ref="bone_jaw" x="-41.35" y="-32.55" scaleX="1.2233786261851591" scaleY="0.44999594421678285" rotation="-0.00913011600417245"/>
-      <kf index="34" duration="2" ref="bone_jaw" x="-41.35" y="-32.05" scaleX="1.2199271716103088" scaleY="0.5766351471935871" rotation="-0.01337139787443907"/>
-      <kf index="36" duration="4" ref="bone_jaw" x="-41.35" y="-32.05" scaleX="1.2199271716103088" scaleY="0.5766351471935871" rotation="-0.01337139787443907"/>
-      <kf index="40" duration="3" ref="bone_jaw" x="-41.35" y="-32.05" scaleX="1.2199271716103088" scaleY="0.5766351471935871" rotation="-0.01337139787443907"/>
-      <kf index="43" duration="6" ref="bone_jaw" x="-25.25" y="-53.85" scaleX="1.2185616813871112" scaleY="0.5760231046234351" rotation="-0.3889751148916661"/>
-      <kf index="49" duration="4" ref="bone_jaw" x="-9.45" y="-54.85" scaleX="0.9997878092829516" scaleY="0.9997878092829516" rotation="-0.06204942656894225"/>
-      <kf index="53" duration="4" ref="bone_jaw" x="-2.85" y="-50.55" scaleX="1.0258178739308843" scaleY="0.9999847469153759" rotation="-0.00007437377269561646"/>
-      <kf index="57" duration="6" ref="bone_jaw" x="9.25" y="-23.75" scaleX="1.1859145633219101" scaleY="0.9988170794732969" rotation="0.3940755340065358"/>
-      <kf index="63" duration="7" ref="bone_jaw" x="6.35" y="-30.05" scaleX="0.9986944217327506" scaleY="0.9986944217327506" rotation="-0.4376046405179547"/>
-      <kf index="70" duration="8" ref="bone_jaw" x="6.35" y="-30.05" scaleX="0.999712284358843" scaleY="0.999712284358843" rotation="0.07896214644267996"/>
-      <kf index="78" duration="4" ref="bone_jaw" x="6.35" y="-30.05" scaleX="0.9997878092829516" scaleY="0.9997878092829516" rotation="-0.06204942656894225"/>
+      <kf duration="8" ref="bone_jaw" loc="6.35,-30.05" scale="0.9997878092829516,0.9997878092829516" rotation="-0.06204942656894225"/>
+      <kf duration="8" ref="bone_jaw" loc="5.85,-30.55"/>
+      <kf duration="3" ref="bone_jaw" loc="6.35,-30.05" scale="0.9997878092829516,0.9997878092829516" rotation="-0.06204942656894225"/>
+      <kf duration="4" ref="bone_jaw" loc="6.35,-30.05" scale="0.9997878092829516,0.9997878092829516" rotation="-0.06204942656894225"/>
+      <kf duration="5" ref="bone_jaw" loc="18.65,-15.95" scale="1.0692878613268415,0.7674970737221031" rotation="0.19253439568654868"/>
+      <kf duration="3" ref="bone_jaw" loc="-41.35,-34.05" scale="0.9986821974563151,0.9986821974563151" rotation="-1.1160794922132296"/>
+      <kf duration="1" ref="bone_jaw" loc="-41.35,-34.05" scale="1.2199271716103088,0.5766351471935871" rotation="-0.01337139787443907"/>
+      <kf duration="2" ref="bone_jaw" loc="-41.35,-32.55" scale="1.2233786261851591,0.44999594421678285" rotation="-0.00913011600417245"/>
+      <kf duration="2" ref="bone_jaw" loc="-41.35,-32.05" scale="1.2199271716103088,0.5766351471935871" rotation="-0.01337139787443907"/>
+      <kf duration="4" ref="bone_jaw" loc="-41.35,-32.05" scale="1.2199271716103088,0.5766351471935871" rotation="-0.01337139787443907"/>
+      <kf duration="3" ref="bone_jaw" loc="-41.35,-32.05" scale="1.2199271716103088,0.5766351471935871" rotation="-0.01337139787443907"/>
+      <kf duration="6" ref="bone_jaw" loc="-25.25,-53.85" scale="1.2185616813871112,0.5760231046234351" rotation="-0.3889751148916661"/>
+      <kf duration="4" ref="bone_jaw" loc="-9.45,-54.85" scale="0.9997878092829516,0.9997878092829516" rotation="-0.06204942656894225"/>
+      <kf duration="4" ref="bone_jaw" loc="-2.85,-50.55" scale="1.0258178739308843,0.9999847469153759" rotation="-0.00007437377269561646"/>
+      <kf duration="6" ref="bone_jaw" loc="9.25,-23.75" scale="1.1859145633219101,0.9988170794732969" rotation="0.3940755340065358"/>
+      <kf duration="7" ref="bone_jaw" loc="6.35,-30.05" scale="0.9986944217327506,0.9986944217327506" rotation="-0.4376046405179547"/>
+      <kf duration="8" ref="bone_jaw" loc="6.35,-30.05" scale="0.999712284358843,0.999712284358843" rotation="0.07896214644267996"/>
+      <kf duration="4" ref="bone_jaw" loc="6.35,-30.05" scale="0.9997878092829516,0.9997878092829516" rotation="-0.06204942656894225"/>
     </layer>
     <layer name="head">
-      <kf index="0" duration="8" ref="bone_head" x="4.95" y="-30.15" scaleX="0.9983363618205078" scaleY="0.9983363618205078" rotation="0.7134007716567731"/>
-      <kf index="8" duration="8" ref="bone_head" x="4.45" y="-30.15" scaleX="0.9983980598862794" scaleY="0.9983980598862794" rotation="0.656602304289091"/>
-      <kf index="16" duration="3" ref="bone_head" x="4.95" y="-30.15" scaleX="0.9983363618205078" scaleY="0.9983363618205078" rotation="0.7134007716567731"/>
-      <kf index="19" duration="4" ref="bone_head" x="4.95" y="-30.15" scaleX="0.9983363618205078" scaleY="0.9983363618205078" rotation="0.7134007716567731"/>
-      <kf index="23" duration="5" ref="bone_head" x="21.05" y="-14.15" scaleX="0.9987784936762277" scaleY="0.9987784936762277" rotation="0.4064986150335677"/>
-      <kf index="28" duration="3" ref="bone_head" x="-42.75" y="-33.75" scaleX="0.9994416500003619" scaleY="0.9994416500003619" rotation="1.737260208374678"/>
-      <kf index="31" duration="1" ref="bone_head" x="-42.75" y="-33.75" scaleX="0.9998312372103753" scaleY="0.9998312372103753" rotation="0.04418076081685005"/>
-      <kf index="32" duration="2" ref="bone_head" x="-42.75" y="-32.25" scaleX="0.9998709981475725" scaleY="0.778746153681248" rotation="0.03151868303729878"/>
-      <kf index="34" duration="2" ref="bone_head" x="-42.75" y="-31.75" scaleX="0.9998312372103753" scaleY="0.9998312372103753" rotation="0.04418076081685005"/>
-      <kf index="36" duration="4" ref="bone_head" x="-42.75" y="-31.75" scaleX="0.9998312372103753" scaleY="0.9998312372103753" rotation="0.04418076081685005"/>
-      <kf index="40" duration="3" ref="bone_head" x="-42.75" y="-31.75" scaleX="0.9998312372103753" scaleY="0.9998312372103753" rotation="0.04418076081685005"/>
-      <kf index="43" duration="6" ref="bone_head" x="-26.45" y="-53.05" scaleX="0.99894382932445" scaleY="0.99894382932445" rotation="-0.3280783609627905"/>
-      <kf index="49" duration="4" ref="bone_head" x="-10.85" y="-54.95" scaleX="0.9993707443766078" scaleY="0.9993707443766078" rotation="0.18855004902997752"/>
-      <kf index="53" duration="7" ref="bone_head" x="-5.75" y="-53.25" scaleX="0.9992945844746144" scaleY="0.9992945844746144" rotation="0.20978157184133778"/>
-      <kf index="60" duration="3" ref="bone_head" x="6.45" y="-26.15" scaleX="0.9985433538515448" scaleY="0.9985433538515448" rotation="0.5167787814778435"/>
-      <kf index="63" duration="9" ref="bone_head" x="6.45" y="-26.55" scaleX="0.9983845179750255" scaleY="0.9983845179750255" rotation="0.9232787088558282"/>
-      <kf index="72" duration="8" ref="bone_head" x="4.95" y="-30.15" scaleX="0.9984620714606076" scaleY="0.9984620714606076" rotation="0.6077512694131054"/>
-      <kf index="80" duration="2" ref="bone_head" x="4.95" y="-30.15" scaleX="0.9983363618205078" scaleY="0.9983363618205078" rotation="0.7134007716567731"/>
+      <kf duration="8" ref="bone_head" loc="4.95,-30.15" scale="0.9983363618205078,0.9983363618205078" rotation="0.7134007716567731"/>
+      <kf duration="8" ref="bone_head" loc="4.45,-30.15" scale="0.9983980598862794,0.9983980598862794" rotation="0.656602304289091"/>
+      <kf duration="3" ref="bone_head" loc="4.95,-30.15" scale="0.9983363618205078,0.9983363618205078" rotation="0.7134007716567731"/>
+      <kf duration="4" ref="bone_head" loc="4.95,-30.15" scale="0.9983363618205078,0.9983363618205078" rotation="0.7134007716567731"/>
+      <kf duration="5" ref="bone_head" loc="21.05,-14.15" scale="0.9987784936762277,0.9987784936762277" rotation="0.4064986150335677"/>
+      <kf duration="3" ref="bone_head" loc="-42.75,-33.75" scale="0.9994416500003619,0.9994416500003619" rotation="1.737260208374678"/>
+      <kf duration="1" ref="bone_head" loc="-42.75,-33.75" scale="0.9998312372103753,0.9998312372103753" rotation="0.04418076081685005"/>
+      <kf duration="2" ref="bone_head" loc="-42.75,-32.25" scale="0.9998709981475725,0.778746153681248" rotation="0.03151868303729878"/>
+      <kf duration="2" ref="bone_head" loc="-42.75,-31.75" scale="0.9998312372103753,0.9998312372103753" rotation="0.04418076081685005"/>
+      <kf duration="4" ref="bone_head" loc="-42.75,-31.75" scale="0.9998312372103753,0.9998312372103753" rotation="0.04418076081685005"/>
+      <kf duration="3" ref="bone_head" loc="-42.75,-31.75" scale="0.9998312372103753,0.9998312372103753" rotation="0.04418076081685005"/>
+      <kf duration="6" ref="bone_head" loc="-26.45,-53.05" scale="0.99894382932445,0.99894382932445" rotation="-0.3280783609627905"/>
+      <kf duration="4" ref="bone_head" loc="-10.85,-54.95" scale="0.9993707443766078,0.9993707443766078" rotation="0.18855004902997752"/>
+      <kf duration="7" ref="bone_head" loc="-5.75,-53.25" scale="0.9992945844746144,0.9992945844746144" rotation="0.20978157184133778"/>
+      <kf duration="3" ref="bone_head" loc="6.45,-26.15" scale="0.9985433538515448,0.9985433538515448" rotation="0.5167787814778435"/>
+      <kf duration="9" ref="bone_head" loc="6.45,-26.55" scale="0.9983845179750255,0.9983845179750255" rotation="0.9232787088558282"/>
+      <kf duration="8" ref="bone_head" loc="4.95,-30.15" scale="0.9984620714606076,0.9984620714606076" rotation="0.6077512694131054"/>
+      <kf duration="2" ref="bone_head" loc="4.95,-30.15" scale="0.9983363618205078,0.9983363618205078" rotation="0.7134007716567731"/>
     </layer>
     <layer name="Layer 2">
-      <kf index="0" duration="16" label="idle"/>
-      <kf index="16" duration="3" label="idle_end"/>
-      <kf index="19" duration="62" label="attack"/>
-      <kf index="81" duration="1" label="attack_end"/>
+      <kf duration="16" label="idle"/>
+      <kf duration="3" label="idle_end"/>
+      <kf duration="62" label="attack"/>
+      <kf duration="1" label="attack_end"/>
     </layer>
   </movie>
   <atlas file="biter/atlas0.png">

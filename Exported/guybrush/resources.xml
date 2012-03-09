@@ -1,12 +1,12 @@
 <resources>
   <movie name="guybrush">
     <layer name="flipbook" flipbook="true">
-      <kf index="0" duration="4"/>
-      <kf index="4" duration="4"/>
-      <kf index="8" duration="4"/>
-      <kf index="12" duration="4"/>
-      <kf index="16" duration="4"/>
-      <kf index="20" duration="4"/>
+      <kf duration="4"/>
+      <kf duration="4"/>
+      <kf duration="4"/>
+      <kf duration="4"/>
+      <kf duration="4"/>
+      <kf duration="4"/>
     </layer>
   </movie>
   <atlas file="guybrush/atlas0.png">

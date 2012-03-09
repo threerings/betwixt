@@ -1,29 +1,29 @@
 <resources>
   <movie name="squaredance">
     <layer name="red">
-      <kf index="0" duration="14" ref="redsquare" x="-125" y="-100"/>
-      <kf index="14" duration="15" ref="redsquare" x="72" y="258" scaleX="0.4320068359375" scaleY="1.17282104492188" rotation="-1.5707963267948966" label="redswitch"/>
-      <kf index="29" duration="1" ref="redsquare" x="-126" y="258" scaleX="0.4320068359375" scaleY="1.17282104492188" rotation="-1.5707963267948966"/>
+      <kf duration="14" ref="redsquare" loc="-125,-100"/>
+      <kf duration="15" ref="redsquare" loc="72,258" scale="0.4320068359375,1.17282104492188" rotation="-1.5707963267948966" label="redswitch"/>
+      <kf duration="1" ref="redsquare" loc="-126,258" scale="0.4320068359375,1.17282104492188" rotation="-1.5707963267948966"/>
     </layer>
     <layer name="blue">
-      <kf index="0" duration="14" ref="bluesquare" x="41.5" y="151.5"/>
-      <kf index="14" duration="15" ref="bluesquare" x="295.95" y="204" scaleY="0.623687744140625" rotation="1.5707963267948966" label="blueswitch"/>
-      <kf index="29" duration="1" ref="bluesquare" x="97.95" y="204" scaleY="0.623687744140625" rotation="1.5707963267948966"/>
+      <kf duration="14" ref="bluesquare" loc="41.5,151.5"/>
+      <kf duration="15" ref="bluesquare" loc="295.95,204" scale="1,0.623687744140625" rotation="1.5707963267948966" label="blueswitch"/>
+      <kf duration="1" ref="bluesquare" loc="97.95,204" scale="1,0.623687744140625" rotation="1.5707963267948966"/>
     </layer>
   </movie>
   <movie name="nesteddance">
     <layer name="square1">
-      <kf index="0" duration="29" ref="squaredance" x="131.75"/>
-      <kf index="29" duration="1" ref="squaredance" x="249.25" y="357.7" rotation="-1.5707963267948966"/>
+      <kf duration="29" ref="squaredance" loc="131.75,0"/>
+      <kf duration="1" ref="squaredance" loc="249.25,357.7" rotation="-1.5707963267948966"/>
     </layer>
     <layer name="square 2">
-      <kf index="0" duration="29" ref="squaredance"/>
-      <kf index="29" duration="1" ref="squaredance" x="-192.75" y="246.7" rotation="-1.5707963267948966"/>
+      <kf duration="29" ref="squaredance"/>
+      <kf duration="1" ref="squaredance" loc="-192.75,246.7" rotation="-1.5707963267948966"/>
     </layer>
     <layer name="labels">
-      <kf index="0" duration="9"/>
-      <kf index="9" duration="10" label="timepassed"/>
-      <kf index="19" duration="11" label="moretimepassed"/>
+      <kf duration="9"/>
+      <kf duration="10" label="timepassed"/>
+      <kf duration="11" label="moretimepassed"/>
     </layer>
   </movie>
   <atlas file="squaredance/atlas0.png">
