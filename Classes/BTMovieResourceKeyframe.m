@@ -14,13 +14,28 @@
     label = [frameEl stringAttribute:@"label" defaultVal:nil];
     libraryItem = [frameEl stringAttribute:@"ref" defaultVal:nil];
     
-    x = [frameEl floatAttribute:@"x" defaultVal:0];
-    y = [frameEl floatAttribute:@"y" defaultVal:0];
+    SPPoint* loc = [frameEl pointAttribute:@"loc" defaultVal:nil];
+    if (loc != nil) {
+        x = loc.x;
+        y = loc.y;
+    }
+    
+    SPPoint* scale = [frameEl pointAttribute:@"scale" defaultVal:nil];
+    if (scale != nil) {
+        scaleX = scale.x;
+        scaleY = scale.y;
+    } else {
+        scaleX = 1;
+        scaleY = 1;
+    }
+    
+    SPPoint* pivot = [frameEl pointAttribute:@"pivot" defaultVal:nil];
+    if (pivot != nil) {
+        pivotX = pivot.x;
+        pivotY = pivot.y;
+    }
+    
     rotation = [frameEl floatAttribute:@"rotation" defaultVal:0];
-    scaleX = [frameEl floatAttribute:@"scaleX" defaultVal:1];
-    scaleY = [frameEl floatAttribute:@"scaleY" defaultVal:1];
-    pivotX = [frameEl floatAttribute:@"pivotX" defaultVal:0];
-    pivotY = [frameEl floatAttribute:@"pivotY" defaultVal:0];
     
     return self;
 }

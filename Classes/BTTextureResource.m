@@ -29,23 +29,16 @@
 - (id)initWithXml:(GDataXMLElement*)xml {
     if (!(self = [super init])) return nil;
     _texture = [[SPTexture alloc] initWithContentsOfFile:[xml stringAttribute:@"filename"]];
-    _offset = [[SPPoint alloc] initWithX:[xml intAttribute:@"xOffset" defaultVal:0]
-                                       y:[xml intAttribute:@"yOffset" defaultVal:0]];
+    _offset = [xml pointAttribute:@"offset" defaultVal:[SPPoint pointWithX:0 y:0]];
     return self;
 }
 
 - (id)initFromAtlas:(SPTexture*)atlas withXml:(GDataXMLElement*)xml {
     if (!(self = [super init])) return nil;
     
-    float scale = atlas.scale;
-    
-    SPRectangle* region = [[SPRectangle alloc] initWithX:[xml floatAttribute:@"xAtlas"] / scale
-                                                       y:[xml floatAttribute:@"yAtlas"] / scale
-                                                   width:[xml floatAttribute:@"wAtlas"] / scale
-                                                  height:[xml floatAttribute:@"hAtlas"] / scale];
+    SPRectangle* region = [xml rectangleAttribute:@"rect"];
     _texture = [[SPTexture alloc] initWithRegion:region ofTexture:atlas];
-    _offset = [[SPPoint alloc] initWithX:[xml floatAttribute:@"xOffset" defaultVal:0]
-                                       y:[xml floatAttribute:@"yOffset" defaultVal:0]];
+    _offset = [xml pointAttribute:@"offset" defaultVal:[SPPoint pointWithX:0 y:0]];
     _name = [xml stringAttribute:@"name"];
     return self;
 }
