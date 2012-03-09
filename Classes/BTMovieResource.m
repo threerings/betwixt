@@ -24,30 +24,28 @@
 - (id)initFromXml:(GDataXMLElement*)xml {
     if (!(self = [super init])) return nil;
     layers = [[NSMutableArray alloc] init];
-    GDataXMLElement* layersEl = [xml requireChild:@"DOMSymbolItem/timeline/DOMTimeline/layers"];
-    int frames = 0;
+    int numFrames = 0;
     
-    // Ignore guide layers
-    NSArray* layerEls = [[layersEl elements] filter:^BOOL(GDataXMLElement* l) {
-        return ![[l stringAttribute:@"layerType" defaultVal:nil] isEqualToString:@"guide"];
-    }];
+    NSArray* layerEls = [xml elementsForName:@"layer"];
     
-    if ([[[layerEls objectAtIndex:0] stringAttribute:@"name"] isEqualToString:@"flipbook"]) {
-        BTMovieResourceLayer* layer = [[BTMovieResourceLayer alloc] initFlipbookNamed:[xml stringAttribute:@"name"] withXml:[layerEls objectAtIndex:0]];
+    if ([[layerEls objectAtIndex:0] boolAttribute:@"flippbook" defaultVal:NO]) {
+        BTMovieResourceLayer* layer = 
+            [[BTMovieResourceLayer alloc] initFlipbookNamed:[xml stringAttribute:@"name"] 
+                                                    withXml:[layerEls objectAtIndex:0]];
         [layers addObject:layer];
-        frames = layer.frames;
+        numFrames = layer.numFrames;
     } else {
-        // in the XML, the layers are ordered top-to-bottom. We add them bottom-to-top.
-        for (GDataXMLElement* layerEl in [layerEls reverseObjectEnumerator]) {
+        for (GDataXMLElement* layerEl in layerEls) {
             BTMovieResourceLayer* layer = [[BTMovieResourceLayer alloc] initWithLayer:layerEl];
             [layers addObject:layer];
-            frames = MAX(frames, layer.frames);
+            numFrames = MAX(numFrames, layer.numFrames);
         }
     }
-    labels = [[NSMutableArray alloc] initWithCapacity:frames];
-    for (int ii = 0; ii < frames; ii++) {
+    
+    labels = [[NSMutableArray alloc] initWithCapacity:numFrames];
+    for (int ii = 0; ii < numFrames; ii++) {
         [labels insertObject:[[NSMutableArray alloc] init] atIndex:ii];
-        if (ii == 0 || ii == frames - 1) {
+        if (ii == 0 || ii == numFrames - 1) {
             NSString* label = ii == 0 ? BTMovieFirstFrame : BTMovieLastFrame;
             [[labels lastObject] addObject:label];
         }

@@ -25,7 +25,7 @@
 
 - (NSArray*)create:(GDataXMLElement*)xml {
     NSMutableArray* textures = [[NSMutableArray alloc] init];
-    SPTexture* atlas = [[SPTexture alloc] initWithContentsOfFile:[xml stringAttribute:@"filename"]];
+    SPTexture* atlas = [[SPTexture alloc] initWithContentsOfFile:[xml stringAttribute:@"file"]];
     for (GDataXMLElement* child in [xml elements]) {
         [textures addObject:[[BTTextureResource alloc] initFromAtlas:atlas withXml:child]];
     }

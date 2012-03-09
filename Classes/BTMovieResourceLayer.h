@@ -14,5 +14,5 @@
 -initWithLayer:(GDataXMLElement*)layerEl;
 -initFlipbookNamed:(NSString*)name withXml:(GDataXMLElement*)layerEl;
 
-@property(nonatomic,readonly) int frames;
+@property(nonatomic,readonly) int numFrames;
 @end

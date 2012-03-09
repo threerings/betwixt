@@ -7,12 +7,17 @@
 #import "BTUtils.h"
 
 @implementation BTMovieResourceLayer
--initWithLayer:(GDataXMLElement*)layerEl {
+- (id)initWithLayer:(GDataXMLElement*)layerEl {
     if (!(self = [super init])) return nil;
     keyframes = [[NSMutableArray alloc] init];
     name = [layerEl stringAttribute:@"name"];
-    for (GDataXMLElement* frameEl in [[layerEl requireChild:@"frames"] elements]) {
-        [keyframes addObject:[[BTMovieResourceKeyframe alloc] initWithFrame:frameEl]];
+    
+    int kfIndex = 0;
+    for (GDataXMLElement* frameEl in [layerEl elementsForName:@"kf"]) {
+        BTMovieResourceKeyframe* kf = [[BTMovieResourceKeyframe alloc] initWithIndex:kfIndex 
+                                                                                 xml:frameEl];
+        [keyframes addObject:kf];
+        kfIndex += kf->duration;
     }
     
     // Build a mapping of symbol names -> keyframe indices
@@ -32,17 +37,23 @@
     return self;
 }
 
--(id)initFlipbookNamed:(NSString*)animName withXml:(GDataXMLElement *)layerEl {
+- (id)initFlipbookNamed:(NSString*)animName withXml:(GDataXMLElement *)layerEl {
     if (!(self = [super init])) return nil;
     keyframes = [[NSMutableArray alloc] init];
     name = [layerEl stringAttribute:@"name"];
-    for (GDataXMLElement* frameEl in [[layerEl requireChild:@"frames"] elements]) {
-        [keyframes addObject:[[BTMovieResourceKeyframe alloc] initFlipbookNamed:animName withXml:frameEl]];
+    
+    int kfIndex = 0;
+    for (GDataXMLElement* frameEl in [layerEl elementsForName:@"kf"]) {
+        BTMovieResourceKeyframe* kf = [[BTMovieResourceKeyframe alloc] initFlipbookNamed:animName
+                                                                               withIndex:kfIndex 
+                                                                                     xml:frameEl];
+        [keyframes addObject:kf];
+        kfIndex += kf->duration;
     }
     return self;
 }
 
--(int)frames {
+- (int)numFrames {
     BTMovieResourceKeyframe* lastKf = [keyframes lastObject];
     return lastKf->index + lastKf->duration;
 }

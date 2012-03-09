@@ -6,61 +6,31 @@
 #import "SPMatrix+Extensions.h"
 
 @implementation BTMovieResourceKeyframe
--initWithFrame:(GDataXMLElement*)frameEl {
+- (id)initWithIndex:(int)theIndex xml:(GDataXMLElement*)frameEl {
     if (!(self = [super init])) return nil;
-    index = [frameEl intAttribute:@"index"];
+    
+    index = theIndex;
     duration = [frameEl intAttribute:@"duration" defaultVal:1];
-    label = [frameEl stringAttribute:@"name" defaultVal:nil];
-
-    GDataXMLElement* symbolEl = [frameEl getChild:@"elements/DOMSymbolInstance"];
-    libraryItem = [symbolEl stringAttribute:@"libraryItemName"];
-
-    GDataXMLElement* matrixEl = [symbolEl getChild:@"matrix/Matrix"];
-    SPMatrix* mat;
-    if (matrixEl) {
-        mat = [[SPMatrix alloc] initWithA:[matrixEl floatAttribute:@"a" defaultVal:1]
-                                                 b:[matrixEl floatAttribute:@"b" defaultVal:0]
-                                                 c:[matrixEl floatAttribute:@"c" defaultVal:0]
-                                                 d:[matrixEl floatAttribute:@"d" defaultVal:1]
-                                                tx:[matrixEl floatAttribute:@"tx" defaultVal:0]
-                                                ty:[matrixEl floatAttribute:@"ty" defaultVal:0]];
-    } else mat = [[SPMatrix alloc] init];
+    label = [frameEl stringAttribute:@"label" defaultVal:nil];
+    libraryItem = [frameEl stringAttribute:@"ref" defaultVal:nil];
     
-    // handle "motionTweenRotate" (in this case, the rotation is not embedded in the matrix)
-    if ([frameEl hasAttribute:@"motionTweenRotateTimes"] && duration > 1) {
-        rotation = [frameEl floatAttribute:@"motionTweenRotateTimes"] * TWO_PI;
-        if ([[frameEl stringAttribute:@"motionTweenRotate"] isEqualToString:@"clockwise"]) {
-            rotation *= -1;
-        }
-        
-        mat.rotation = rotation;
-    } else {
-        rotation = mat.rotation;
-    }
-    
-    x = mat.tx;
-    y = mat.ty;
-    scaleX = mat.scaleX;
-    scaleY = mat.scaleY;
-    
-    // handle pivot point
-    GDataXMLElement* pivotEl = [symbolEl getChild:@"transformationPoint/Point"];
-    if (pivotEl) {
-        pivotX = [pivotEl floatAttribute:@"x" defaultVal:0];
-        pivotY = [pivotEl floatAttribute:@"y" defaultVal:0];
-        x += pivotX;
-        y += pivotY;
-    }
+    x = [frameEl floatAttribute:@"x" defaultVal:0];
+    y = [frameEl floatAttribute:@"y" defaultVal:0];
+    rotation = [frameEl floatAttribute:@"rotation" defaultVal:0];
+    scaleX = [frameEl floatAttribute:@"scaleX" defaultVal:1];
+    scaleY = [frameEl floatAttribute:@"scaleY" defaultVal:1];
+    pivotX = [frameEl floatAttribute:@"pivotX" defaultVal:0];
+    pivotY = [frameEl floatAttribute:@"pivotY" defaultVal:0];
     
     return self;
 }
 
 
--initFlipbookNamed:(NSString*)name withXml:(GDataXMLElement*)frameEl {
+- (id)initFlipbookNamed:(NSString*)name withIndex:(int)theIndex xml:(GDataXMLElement*)frameEl {
     if (!(self = [super init])) return nil;
-    index = [frameEl intAttribute:@"index"];
+    index = theIndex;
     duration = [frameEl intAttribute:@"duration" defaultVal:1];
-    label = [frameEl stringAttribute:@"name" defaultVal:nil];
+    label = [frameEl stringAttribute:@"label" defaultVal:nil];
 
     libraryItem = [NSString stringWithFormat:@"%@_flipbook_%d", name, index];
 

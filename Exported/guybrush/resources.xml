@@ -1,78 +1,20 @@
 <resources>
-  <movie name="guybrush" md5="5ad036306c7fcbb059a313bfd54703ff">
-<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="guybrush" itemID="4f3c29eb-00000259" linkageExportForAS="true" linkageClassName="guybrush" lastModified="1329415122">
-  <timeline>
-    <DOMTimeline name="guybrush" currentFrame="20">
-      <layers>
-        <DOMLayer name="flipbook" color="#4FFF4F" current="true" isSelected="true" autoNamed="false">
-          <frames>
-            <DOMFrame index="0" duration="4" keyMode="9728">
-              <elements>
-                <DOMBitmapInstance libraryItemName="gb_walk_0.png">
-                  <matrix>
-                    <Matrix tx="-53" ty="-75"/>
-                  </matrix>
-                </DOMBitmapInstance>
-              </elements>
-            </DOMFrame>
-            <DOMFrame index="4" duration="4" keyMode="9728">
-              <elements>
-                <DOMBitmapInstance libraryItemName="gb_walk_1.png">
-                  <matrix>
-                    <Matrix tx="-52" ty="-75"/>
-                  </matrix>
-                </DOMBitmapInstance>
-              </elements>
-            </DOMFrame>
-            <DOMFrame index="8" duration="4" keyMode="9728">
-              <elements>
-                <DOMBitmapInstance libraryItemName="gb_walk_2.png">
-                  <matrix>
-                    <Matrix tx="-50" ty="-75"/>
-                  </matrix>
-                </DOMBitmapInstance>
-              </elements>
-            </DOMFrame>
-            <DOMFrame index="12" duration="4" keyMode="9728">
-              <elements>
-                <DOMBitmapInstance libraryItemName="gb_walk_3.png">
-                  <matrix>
-                    <Matrix tx="-52" ty="-75"/>
-                  </matrix>
-                </DOMBitmapInstance>
-              </elements>
-            </DOMFrame>
-            <DOMFrame index="16" duration="4" keyMode="9728">
-              <elements>
-                <DOMBitmapInstance libraryItemName="gb_walk_4.png">
-                  <matrix>
-                    <Matrix tx="-52" ty="-75"/>
-                  </matrix>
-                </DOMBitmapInstance>
-              </elements>
-            </DOMFrame>
-            <DOMFrame index="20" duration="4" keyMode="9728">
-              <elements>
-                <DOMBitmapInstance libraryItemName="gb_walk_5.png">
-                  <matrix>
-                    <Matrix tx="-52" ty="-75"/>
-                  </matrix>
-                </DOMBitmapInstance>
-              </elements>
-            </DOMFrame>
-          </frames>
-        </DOMLayer>
-      </layers>
-    </DOMTimeline>
-  </timeline>
-</DOMSymbolItem>
+  <movie name="guybrush">
+    <layer name="flipbook" flipbook="true">
+      <kf index="0" duration="4"/>
+      <kf index="4" duration="4"/>
+      <kf index="8" duration="4"/>
+      <kf index="12" duration="4"/>
+      <kf index="16" duration="4"/>
+      <kf index="20" duration="4"/>
+    </layer>
   </movie>
-<atlas name='guybrush/atlas0' filename='guybrush/atlas0.png'>
-  <texture name='guybrush_flipbook_12' xOffset='-52' yOffset='-75' md5='5ad036306c7fcbb059a313bfd54703ff' xAtlas='0' yAtlas='0' wAtlas='104' hAtlas='150'/>
-  <texture name='guybrush_flipbook_4' xOffset='-52' yOffset='-75' md5='5ad036306c7fcbb059a313bfd54703ff' xAtlas='104' yAtlas='0' wAtlas='104' hAtlas='150'/>
-  <texture name='guybrush_flipbook_8' xOffset='-50' yOffset='-75' md5='5ad036306c7fcbb059a313bfd54703ff' xAtlas='208' yAtlas='0' wAtlas='104' hAtlas='150'/>
-  <texture name='guybrush_flipbook_0' xOffset='-53' yOffset='-75' md5='5ad036306c7fcbb059a313bfd54703ff' xAtlas='312' yAtlas='0' wAtlas='104' hAtlas='150'/>
-  <texture name='guybrush_flipbook_16' xOffset='-52' yOffset='-75' md5='5ad036306c7fcbb059a313bfd54703ff' xAtlas='312' yAtlas='150' wAtlas='104' hAtlas='150'/>
-  <texture name='guybrush_flipbook_20' xOffset='-52' yOffset='-75' md5='5ad036306c7fcbb059a313bfd54703ff' xAtlas='312' yAtlas='300' wAtlas='104' hAtlas='150'/>
-</atlas>
+  <atlas file="guybrush/atlas0.png">
+    <texture name="guybrush_flipbook_12" offset="-52,-75" rect="1,1,104,150"/>
+    <texture name="guybrush_flipbook_4" offset="-52,-75" rect="1,153,104,150"/>
+    <texture name="guybrush_flipbook_8" offset="-50,-75" rect="1,305,104,150"/>
+    <texture name="guybrush_flipbook_0" offset="-53,-75" rect="107,1,104,150"/>
+    <texture name="guybrush_flipbook_16" offset="-52,-75" rect="213,1,104,150"/>
+    <texture name="guybrush_flipbook_20" offset="-52,-75" rect="319,1,104,150"/>
+  </atlas>
 </resources>

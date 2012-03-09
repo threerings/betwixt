@@ -24,7 +24,7 @@
 @implementation LoadingMode
 
 - (void)setup {
-    /*[self addFiles: 
+    [self addFiles: 
         @"squaredance/resources.xml",
         @"shapes/resources.xml", 
         @"guybrush/resources.xml", 
@@ -39,10 +39,10 @@
         [self.modeStack pushMode:[[SubObjectMode alloc] init]];
         [self.modeStack pushMode:[[GroupTestMode alloc] init]];
         [self.modeStack pushMode:[[LeakTestMode alloc] init]];
-    }];*/
+    }];
     
-    [self.modeStack changeMode:[[MovieTestMode alloc] initWithResourceName:@"biter/resources.xml" 
-                                                                 movieName:@"bone_root"]];
+    /*[self.modeStack changeMode:[[MovieTestMode alloc] initWithResourceName:@"biter/resources.xml" 
+                                                                 movieName:@"bone_root"]];*/
 }
 
 @end
