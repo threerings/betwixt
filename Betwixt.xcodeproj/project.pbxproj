@@ -109,8 +109,8 @@
 		CB602C731476603800E52CE2 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE3F093911B7B9DC009D4DB0 /* AudioToolbox.framework */; };
 		CB602C741476603800E52CE2 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE3F097711B7BABD009D4DB0 /* OpenAL.framework */; };
 		CB602C751476603800E52CE2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE4A3D7E10FFB08B00FDA492 /* QuartzCore.framework */; };
-		CB65CE2F14EC397E00534FAE /* BTAtlasFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = CB65CE2D14EC397E00534FAE /* BTAtlasFactory.h */; };
-		CB65CE3014EC397E00534FAE /* BTAtlasFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = CB65CE2E14EC397E00534FAE /* BTAtlasFactory.m */; };
+		CB65CE2F14EC397E00534FAE /* BTTextureGroupFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = CB65CE2D14EC397E00534FAE /* BTTextureGroupFactory.h */; };
+		CB65CE3014EC397E00534FAE /* BTTextureGroupFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = CB65CE2E14EC397E00534FAE /* BTTextureGroupFactory.m */; };
 		CB65CE3314EC3B1F00534FAE /* BTMultiResourceFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = CB65CE3114EC3B1F00534FAE /* BTMultiResourceFactory.h */; };
 		CB65CE3714EC400200534FAE /* BTTextureResource+Package.h in Headers */ = {isa = PBXBuildFile; fileRef = CB65CE3514EC400200534FAE /* BTTextureResource+Package.h */; };
 		CB65CE3B14EC42F400534FAE /* squaredance in Resources */ = {isa = PBXBuildFile; fileRef = CB65CE3A14EC42F400534FAE /* squaredance */; };
@@ -323,8 +323,8 @@
 		CB442C7514B3834200EB2821 /* BTWaitTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTWaitTask.h; sourceTree = "<group>"; };
 		CB442C7614B3834200EB2821 /* BTWaitTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTWaitTask.m; sourceTree = "<group>"; };
 		CB442C7A14B3851A00EB2821 /* BTInterpolationTask+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BTInterpolationTask+Protected.h"; sourceTree = "<group>"; };
-		CB65CE2D14EC397E00534FAE /* BTAtlasFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTAtlasFactory.h; sourceTree = "<group>"; };
-		CB65CE2E14EC397E00534FAE /* BTAtlasFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTAtlasFactory.m; sourceTree = "<group>"; };
+		CB65CE2D14EC397E00534FAE /* BTTextureGroupFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTTextureGroupFactory.h; sourceTree = "<group>"; };
+		CB65CE2E14EC397E00534FAE /* BTTextureGroupFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTTextureGroupFactory.m; sourceTree = "<group>"; };
 		CB65CE3114EC3B1F00534FAE /* BTMultiResourceFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTMultiResourceFactory.h; sourceTree = "<group>"; };
 		CB65CE3514EC400200534FAE /* BTTextureResource+Package.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BTTextureResource+Package.h"; sourceTree = "<group>"; };
 		CB65CE3A14EC42F400534FAE /* squaredance */ = {isa = PBXFileReference; lastKnownFileType = folder; name = squaredance; path = Exported/squaredance; sourceTree = "<group>"; };
@@ -542,8 +542,6 @@
 				22F979D514C0E23F00A6913B /* GDataXMLException.m */,
 				22F979D614C0E23F00A6913B /* GDataXMLNode.h */,
 				22F979D714C0E23F00A6913B /* GDataXMLNode.m */,
-				CB65CE2D14EC397E00534FAE /* BTAtlasFactory.h */,
-				CB65CE2E14EC397E00534FAE /* BTAtlasFactory.m */,
 				22F979DA14C0E23F00A6913B /* BTLoadable.h */,
 				22F979DB14C0E23F00A6913B /* BTLoadable.m */,
 				22F979FA14C0E38000A6913B /* BTLoadable+Protected.h */,
@@ -557,6 +555,8 @@
 				22F979F814C0E36F00A6913B /* BTResourceFactory.h */,
 				22F979E414C0E23F00A6913B /* BTResourceManager.h */,
 				22F979E514C0E23F00A6913B /* BTResourceManager.m */,
+				CB65CE2D14EC397E00534FAE /* BTTextureGroupFactory.h */,
+				CB65CE2E14EC397E00534FAE /* BTTextureGroupFactory.m */,
 				CBD20D0614CF68D600662068 /* BTTextureResource.h */,
 				CBD20D0714CF68D600662068 /* BTTextureResource.m */,
 				CB65CE3514EC400200534FAE /* BTTextureResource+Package.h */,
@@ -792,7 +792,7 @@
 				CB8F0D7C14E85EC4005985C8 /* BTDisplayObjectCreator.h in Headers */,
 				CB8F0D7F14E85EF5005985C8 /* BTJugglerContainer.h in Headers */,
 				CBC9AC5814E9A4F800E1F9F7 /* BTUtils.h in Headers */,
-				CB65CE2F14EC397E00534FAE /* BTAtlasFactory.h in Headers */,
+				CB65CE2F14EC397E00534FAE /* BTTextureGroupFactory.h in Headers */,
 				CB65CE3314EC3B1F00534FAE /* BTMultiResourceFactory.h in Headers */,
 				CB65CE3714EC400200534FAE /* BTTextureResource+Package.h in Headers */,
 				22C5353514F5C96D00B7958F /* UIColor+Extensions.h in Headers */,
@@ -998,7 +998,7 @@
 				22448E2E14E4A938001CF5CE /* SPRectangle+Extensions.m in Sources */,
 				22448E8D14E603DF001CF5CE /* NSArray+Extensions.m in Sources */,
 				CBC9AC5914E9A4F800E1F9F7 /* BTUtils.m in Sources */,
-				CB65CE3014EC397E00534FAE /* BTAtlasFactory.m in Sources */,
+				CB65CE3014EC397E00534FAE /* BTTextureGroupFactory.m in Sources */,
 				22C5353614F5C96D00B7958F /* UIColor+Extensions.m in Sources */,
 				2290D82A1502C99D009EED3D /* SPMatrix+Extensions.m in Sources */,
 				22608C6E1505C2D300CCE0A5 /* SPView+Extensions.m in Sources */,

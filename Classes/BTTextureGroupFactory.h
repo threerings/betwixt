@@ -4,11 +4,9 @@
 #import "BTResource.h"
 #import "BTMultiResourceFactory.h"
 
-#define BTATLAS_RESOURCE_NAME @"atlas"
+#define BT_TEXTURE_GROUP_RESOURCE_NAME @"textureGroups"
 
-@protocol BTMultiResourceFactory;
-
-@interface BTAtlasFactory : NSObject<BTMultiResourceFactory>
+@interface BTTextureGroupFactory : NSObject<BTMultiResourceFactory>
 
 + (id<BTMultiResourceFactory>) sharedFactory;
 
