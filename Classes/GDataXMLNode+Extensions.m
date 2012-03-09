@@ -6,6 +6,7 @@
 #import "NSString+Extensions.h"
 #import "SPPoint+Extensions.h"
 #import "SPRectangle+Extensions.h"
+#import "BTEnum.h"
 
 @implementation GDataXMLElement (OOOExtensions)
 
@@ -107,6 +108,25 @@
 
 - (BOOL)boolAttribute:(NSString*)name {
     return [self boolAttribute:name defaultVal:0 required:YES];
+}
+
+- (id)enumAttribute:(NSString*)name type:(__unsafe_unretained Class)type defaultVal:(BTEnum*)defaultVal required:(BOOL)required {
+    NSString* attr = [self getAttr:name required:required];
+    if (attr == nil) return defaultVal;
+    id theEnum = [type valueOf:attr];
+    if (theEnum == nil) {
+        @throw [GDataXMLException withElement:self 
+           reason:@"Error reading attribute '%@': could not convert '%@' to %@", name, attr, type];
+    }
+    return theEnum;
+}
+
+- (id)enumAttribute:(NSString*)name type:(Class)type defaultVal:(BTEnum*)defaultVal {
+    return [self enumAttribute:name type:type defaultVal:defaultVal required:NO];
+}
+
+- (id)enumAttribute:(NSString*)name type:(Class)type {
+    return [self enumAttribute:name type:type defaultVal:nil required:YES];
 }
 
 - (SPPoint*)pointAttribute:(NSString*)name defaultVal:(SPPoint*)defaultVal required:(BOOL)required {

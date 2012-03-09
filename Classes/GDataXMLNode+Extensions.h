@@ -3,6 +3,8 @@
 
 #import "GDataXMLNode.h"
 
+@class BTEnum;
+
 @interface GDataXMLElement (OOOExtensions)
 
 - (NSArray*)elements; // returns all child elements
@@ -18,6 +20,8 @@
 - (int)intAttribute:(NSString*)name;
 - (BOOL)boolAttribute:(NSString*)name defaultVal:(BOOL)defaultVal;
 - (BOOL)boolAttribute:(NSString*)name;
+- (id)enumAttribute:(NSString*)name type:(Class)type defaultVal:(BTEnum*)defaultVal;
+- (id)enumAttribute:(NSString*)name type:(Class)type;
 
 - (SPPoint*)pointAttribute:(NSString*)name defaultVal:(SPPoint*)defaultVal;
 - (SPPoint*)pointAttribute:(NSString *)name;
