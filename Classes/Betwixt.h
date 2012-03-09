@@ -22,6 +22,7 @@
 // Categories
 #import "GDataXMLNode+Extensions.h"
 #import "NSArray+Extensions.h"
+#import "NSString+Extensions.h"
 #import "SPDisplayObject+Extensions.h"
 #import "SPEventDispatcher+BlockListener.h"
 #import "SPMatrix+Extensions.h"
