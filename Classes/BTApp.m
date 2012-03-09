@@ -10,6 +10,7 @@
 #import "BTAtlasFactory.h"
 #import "BTTextureResource.h"
 #import "BTMovieResource.h"
+#import "BTDeviceType.h"
 
 static BTApp* gInstance = nil;
 
@@ -44,6 +45,8 @@ static BTApp* gInstance = nil;
     SPView* _view;
     SPPoint* _viewSize;
     
+    BTDeviceType* _deviceType;
+    
     BTResourceManager* _resourceMgr;
     NSMutableArray* _modeStacks;
     
@@ -68,6 +71,20 @@ static BTApp* gInstance = nil;
     _window = [[UIWindow alloc] initWithFrame:windowBounds];
     _viewController = [[BTViewController alloc] initWithApp:self];
     _window.rootViewController = _viewController;
+    
+    // Determine the type of device we're on by our resolution
+    int deviceWidth = windowBounds.size.width * [UIScreen mainScreen].scale;
+    int deviceHeight = windowBounds.size.height * [UIScreen mainScreen].scale;
+    for (BTDeviceType* deviceType in BTDeviceType.values) {
+        if ((deviceWidth == deviceType.screenWidth && 
+             deviceHeight == deviceType.screenHeight) ||
+            (deviceWidth == deviceType.screenHeight &&
+             deviceHeight == deviceType.screenWidth)) {
+                
+            _deviceType = deviceType;
+            break;    
+        }
+    }
     
     CGRect viewBounds = windowBounds;
     if (![self supportsUIInterfaceOrientation:UIInterfaceOrientationPortrait] &&
@@ -158,7 +175,7 @@ static BTApp* gInstance = nil;
     return UIInterfaceOrientationIsPortrait(orientation);
 }
 
-@synthesize resourceManager=_resourceMgr, view=_view, viewSize=_viewSize;
+@synthesize resourceManager=_resourceMgr, view=_view, viewSize=_viewSize, deviceType=_deviceType;
 
 @end
 

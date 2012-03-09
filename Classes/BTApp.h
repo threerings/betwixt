@@ -4,6 +4,7 @@
 @class BTResourceManager;
 @class BTModeStack;
 @class SPView;
+@class BTDeviceType;
 
 @interface BTApp : NSObject <UIApplicationDelegate>
 
@@ -15,5 +16,6 @@
 @property(nonatomic,readonly) BTResourceManager* resourceManager;
 @property(nonatomic,readonly) SPView* view;
 @property(nonatomic,readonly) SPPoint* viewSize;
+@property(nonatomic,readonly) BTDeviceType* deviceType;
 
 @end
