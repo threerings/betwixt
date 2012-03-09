@@ -60,6 +60,7 @@
 		22C85F0B14DB784B00F9EC07 /* BTDisplayObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C85F0914DB784A00F9EC07 /* BTDisplayObject.m */; };
 		22DB82181509A9490091B648 /* NSString+Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 22DB82161509A9490091B648 /* NSString+Extensions.h */; };
 		22DB82191509A9490091B648 /* NSString+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DB82171509A9490091B648 /* NSString+Extensions.m */; };
+		22DB822E1509C4210091B648 /* bella in Resources */ = {isa = PBXBuildFile; fileRef = 22DB822D1509C4210091B648 /* bella */; };
 		22DBA63814DCAF6200F0F7C8 /* BTApp+Protected.h in Headers */ = {isa = PBXBuildFile; fileRef = 22DBA63714DCAF6200F0F7C8 /* BTApp+Protected.h */; };
 		22DBA63D14DCB29100F0F7C8 /* BTApp+Package.h in Headers */ = {isa = PBXBuildFile; fileRef = 22DBA63C14DCB29100F0F7C8 /* BTApp+Package.h */; };
 		22DBA64014DCB64900F0F7C8 /* TestApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DBA63F14DCB64900F0F7C8 /* TestApp.m */; };
@@ -269,6 +270,7 @@
 		22C85F0914DB784A00F9EC07 /* BTDisplayObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTDisplayObject.m; sourceTree = "<group>"; };
 		22DB82161509A9490091B648 /* NSString+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extensions.h"; sourceTree = "<group>"; };
 		22DB82171509A9490091B648 /* NSString+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extensions.m"; sourceTree = "<group>"; };
+		22DB822D1509C4210091B648 /* bella */ = {isa = PBXFileReference; lastKnownFileType = folder; name = bella; path = Exported/bella; sourceTree = "<group>"; };
 		22DBA63714DCAF6200F0F7C8 /* BTApp+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BTApp+Protected.h"; sourceTree = "<group>"; };
 		22DBA63C14DCB29100F0F7C8 /* BTApp+Package.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BTApp+Package.h"; sourceTree = "<group>"; };
 		22DBA63E14DCB64900F0F7C8 /* TestApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestApp.h; sourceTree = "<group>"; };
@@ -651,6 +653,7 @@
 		CB65CE3914EC42DE00534FAE /* Exported */ = {
 			isa = PBXGroup;
 			children = (
+				22DB822D1509C4210091B648 /* bella */,
 				22608BE51505B10100CCE0A5 /* biter */,
 				CB65CE4114EC7F8300534FAE /* guybrush */,
 				CB65CE3C14EC44FF00534FAE /* shapes */,
@@ -912,6 +915,7 @@
 				CB65CE3D14EC44FF00534FAE /* shapes in Resources */,
 				CB65CE4214EC7F8300534FAE /* guybrush in Resources */,
 				22608BE61505B10100CCE0A5 /* biter in Resources */,
+				22DB822E1509C4210091B648 /* bella in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
