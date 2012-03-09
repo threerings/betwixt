@@ -9,9 +9,7 @@
 #import "BTResourceManager.h"
 
 
-@implementation BTAtlasFactory {
-    SPTexture* _texture;
-}
+@implementation BTAtlasFactory
 
 + (id<BTMultiResourceFactory>)sharedFactory {
     static BTAtlasFactory* instance = nil;
