@@ -37,10 +37,12 @@
 - (id)initFromAtlas:(SPTexture*)atlas withXml:(GDataXMLElement*)xml {
     if (!(self = [super init])) return nil;
     
+    float scale = 1.0f / atlas.scale;
+    
     SPRectangle* region = [xml rectangleAttribute:@"rect"];
-    [region scaleBy:1.0f / atlas.scale];
+    [region scaleBy:scale];
     _texture = [[SPTexture alloc] initWithRegion:region ofTexture:atlas];
-    _offset = [xml pointAttribute:@"offset" defaultVal:[SPPoint pointWithX:0 y:0]];
+    _offset = [[xml pointAttribute:@"offset" defaultVal:[SPPoint pointWithX:0 y:0]] scaleBy:scale];
     _name = [xml stringAttribute:@"name"];
     return self;
 }
