@@ -1,5 +1,5 @@
-<resources>
-  <movie name="squaredance">
+<resources md5="038bbbfe5d9d84b1367459829969602f">
+  <movie name="squaredance" authoredDevice="IPHONE_RETINA">
     <layer name="red">
       <kf duration="14" ref="redsquare" loc="-125,-100"/>
       <kf duration="15" ref="redsquare" loc="72,258" scale="0.4320068359375,1.17282104492188" rotation="-1.5707963267948966" label="redswitch"/>
@@ -11,7 +11,7 @@
       <kf duration="1" ref="bluesquare" loc="97.95,204" scale="1,0.623687744140625" rotation="1.5707963267948966"/>
     </layer>
   </movie>
-  <movie name="nesteddance">
+  <movie name="nesteddance" authoredDevice="IPHONE_RETINA">
     <layer name="square1">
       <kf duration="29" ref="squaredance" loc="131.75,0"/>
       <kf duration="1" ref="squaredance" loc="249.25,357.7" rotation="-1.5707963267948966"/>

@@ -1,5 +1,5 @@
-<resources>
-  <movie name="guybrush">
+<resources md5="313802143b69af9f64210e2df4d51ef5">
+  <movie name="guybrush" authoredDevice="IPHONE_RETINA">
     <layer name="flipbook" flipbook="true">
       <kf duration="4"/>
       <kf duration="4"/>

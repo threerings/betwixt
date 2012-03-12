@@ -1,5 +1,5 @@
-<resources>
-  <movie name="allshapes">
+<resources md5="a6c4bf9507a5a8278a53ac280f594e8b">
+  <movie name="allshapes" authoredDevice="IPHONE_RETINA">
     <layer name="pentagon">
       <kf duration="58" ref="pentagon" loc="411,13" pivot="1,-16.7"/>
       <kf duration="1" ref="pentagon" loc="-149.10000000000002,35" rotation="1.5707963267948966" pivot="1,-16.7"/>

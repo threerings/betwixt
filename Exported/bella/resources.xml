@@ -1,5 +1,5 @@
-<resources>
-  <movie name="walk">
+<resources md5="48486be4467d2a8e3552d2ad213e404a">
+  <movie name="walk" authoredDevice="IPHONE_RETINA">
     <layer name="Hair Back">
       <kf duration="3" ref="HairBack" loc="3.540211486816503,-191.30828857421875" scale="1.06047058105469,1.060302734375" pivot="38.7,2.35"/>
       <kf duration="4" ref="HairBack" loc="3.55768737792949,-182.0402244567871" scale="1.07901000976562,1.02543640136719" pivot="38.7,2.35"/>
@@ -209,7 +209,7 @@
       <kf duration="1" ref="HairFront" loc="-1.624235534667882,-193.02562255859374" scale="1.06047058105469,1.060302734375" pivot="33.5,4.55"/>
     </layer>
   </movie>
-  <movie name="dance_01">
+  <movie name="dance_01" authoredDevice="IPHONE_RETINA">
     <layer name="Hair Back">
       <kf duration="5" ref="HairBack" loc="1.1351768493653296,-191.2035087585449" scale="1.0601123796608642,1.0599439621369648" rotation="0.05271923316204711" pivot="38.65,2.35"/>
       <kf duration="5" ref="HairBack" loc="-2.350843048095703,-187.824479675293" scale="1.0857678789488063,1.0457193710426378" rotation="0.02178457687495484" pivot="38.65,2.45"/>
@@ -421,7 +421,7 @@
       <kf duration="1" ref="HairFront" loc="-5.48764572143555,-189.31354904174808" scale="1.060281306789626,1.0601136596536205" rotation="-0.04876253609553259" pivot="33.5,4.55"/>
     </layer>
   </movie>
-  <movie name="dance_02">
+  <movie name="dance_02" authoredDevice="IPHONE_RETINA">
     <layer name="Hair Back">
       <kf duration="3" ref="HairBack" loc="0.2747970581055711,-175.1657485961914" scale="1.0597274367123475,1.0595590212875168" rotation="0.05239235218933232" pivot="38.7,2.35"/>
       <kf duration="4" ref="HairBack" loc="-0.2793365478515625,-187.36592788696288" scale="1.059620771766744,1.059482832013335" rotation="0.052397631009146045" pivot="38.7,2.35"/>
