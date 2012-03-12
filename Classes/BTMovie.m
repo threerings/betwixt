@@ -96,8 +96,22 @@ NSString * const BTMovieLastFrame = @"BTMovieLastFrame";
         layer.rotation = kf->rotation;
         layer.alpha = kf->alpha;
     } else {
-        // TODO - interpolation types other than linear
         float interped = (frame - kf->index)/(float)kf->duration;
+        float ease = kf->ease;
+        if (ease != 0) {
+            float t = 0;
+            if (ease < 0) {
+                // Ease in
+                float inv = 1 - interped;
+                t = 1 - inv*inv;
+                ease = -ease;
+            } else {
+                // Ease out
+                t = interped * interped;
+            }
+            interped = ease * t + (1 - ease) * interped;
+        }
+        
         BTMovieResourceKeyframe* nextKf = [self kfAtIdx:keyframeIdx + 1];
         layer.x = kf->x + (nextKf->x - kf->x) * interped;
         layer.y = kf->y + (nextKf->y - kf->y) * interped;
