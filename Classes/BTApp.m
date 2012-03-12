@@ -175,6 +175,10 @@ static BTApp* gInstance = nil;
     return UIInterfaceOrientationIsPortrait(orientation);
 }
 
+- (NSString*)resourcePathPrefix {
+    return @"";
+}
+
 @synthesize resourceManager=_resourceMgr, view=_view, viewSize=_viewSize, deviceType=_deviceType;
 
 @end

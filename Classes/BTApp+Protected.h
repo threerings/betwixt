@@ -10,5 +10,6 @@
 - (void)update:(float)dt;
 - (void)processTouches:(NSSet*)touches;
 - (BOOL)supportsUIInterfaceOrientation:(UIInterfaceOrientation)orientation;
+- (NSString*)resourcePathPrefix;
 
 @end

@@ -3,8 +3,8 @@
 
 #import "BTCallbacks.h"
 
-@protocol BTMultiResourceFactory;
 @class BTResource;
+@protocol BTMultiResourceFactory;
 @protocol BTResourceFactory;
 
 @interface BTResourceManager : NSObject {
@@ -13,6 +13,7 @@
     NSMutableDictionary* _resources;   // <String, BTResource>
     NSMutableSet* _loadingFiles; // <String>
     NSMutableSet* _loadedFiles; // <String>
+    NSString* _pathPrefix;
 }
 
 /// Loads a resource file synchronously
