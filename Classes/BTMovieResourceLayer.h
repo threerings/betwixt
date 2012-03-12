@@ -1,9 +1,8 @@
 //
 // Betwixt - Copyright 2012 Three Rings Design
 
-#import <Foundation/Foundation.h>
-
 @class GDataXMLElement;
+@class BTDeviceType;
 
 @interface BTMovieResourceLayer : NSObject {
 @public
@@ -11,8 +10,9 @@
     NSMutableArray* keyframes;
     NSMutableDictionary* keyframesForSymbol; // Map<symbolName, Array<frame indices>>
 }
--initWithLayer:(GDataXMLElement*)layerEl;
--initFlipbookNamed:(NSString*)name withXml:(GDataXMLElement*)layerEl;
+- (id)initWithAuthoredDevice:(BTDeviceType*)authoredDevice xml:(GDataXMLElement*)layerEl;
+- (id)initFlipbookNamed:(NSString*)animName authoredDevice:(BTDeviceType*)authoredDevice 
+                    xml:(GDataXMLElement*)layerEl;
 
 @property(nonatomic,readonly) int numFrames;
 @end

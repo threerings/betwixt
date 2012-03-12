@@ -11,6 +11,7 @@
 #import "BTApp.h"
 #import "BTResourceManager.h"
 #import "NSArray+Extensions.h"
+#import "BTDeviceType.h"
 
 @interface BTMovieResourceFactory : NSObject<BTResourceFactory>
 @end
@@ -26,17 +27,21 @@
     layers = [[NSMutableArray alloc] init];
     int numFrames = 0;
     
+    BTDeviceType* authoredDevice = [xml enumAttribute:@"authoredDevice" type:[BTDeviceType class]];
+    
     NSArray* layerEls = [xml elementsForName:@"layer"];
     
     if ([[layerEls objectAtIndex:0] boolAttribute:@"flipbook" defaultVal:NO]) {
         BTMovieResourceLayer* layer = 
-            [[BTMovieResourceLayer alloc] initFlipbookNamed:[xml stringAttribute:@"name"] 
-                                                    withXml:[layerEls objectAtIndex:0]];
+        [[BTMovieResourceLayer alloc] initFlipbookNamed:[xml stringAttribute:@"name"]
+                                         authoredDevice:authoredDevice
+                                                    xml:[layerEls objectAtIndex:0]];
         [layers addObject:layer];
         numFrames = layer.numFrames;
     } else {
         for (GDataXMLElement* layerEl in layerEls) {
-            BTMovieResourceLayer* layer = [[BTMovieResourceLayer alloc] initWithLayer:layerEl];
+            BTMovieResourceLayer* layer = 
+                [[BTMovieResourceLayer alloc] initWithAuthoredDevice:authoredDevice xml:layerEl];
             [layers addObject:layer];
             numFrames = MAX(numFrames, layer.numFrames);
         }

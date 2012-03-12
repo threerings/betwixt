@@ -5,20 +5,26 @@
 #import "BTMovieResourceKeyframe.h"
 #import "GDataXMLNode+Extensions.h"
 #import "BTUtils.h"
+#import "BTDeviceType.h"
+#import "BTApp.h"
 
 @interface BTMovieResourceLayer ()
 - (void)buildKeyframeSymbolMap;
 @end
 
 @implementation BTMovieResourceLayer
-- (id)initWithLayer:(GDataXMLElement*)layerEl {
+- (id)initWithAuthoredDevice:(BTDeviceType*)authoredDevice xml:(GDataXMLElement*)layerEl {
     if (!(self = [super init])) return nil;
     keyframes = [[NSMutableArray alloc] init];
     name = [layerEl stringAttribute:@"name"];
     
+    float translationScale = MAX(BTApp.app.viewSize.x, BTApp.app.viewSize.y) / 
+        ((float) authoredDevice.screenWidth);
+    
     int kfIndex = 0;
     for (GDataXMLElement* frameEl in [layerEl elementsForName:@"kf"]) {
-        BTMovieResourceKeyframe* kf = [[BTMovieResourceKeyframe alloc] initWithIndex:kfIndex 
+        BTMovieResourceKeyframe* kf = [[BTMovieResourceKeyframe alloc] initWithIndex:kfIndex
+                                                                    translationScale:translationScale
                                                                                  xml:frameEl];
         [keyframes addObject:kf];
         kfIndex += kf->duration;
@@ -29,7 +35,8 @@
     return self;
 }
 
-- (id)initFlipbookNamed:(NSString*)animName withXml:(GDataXMLElement *)layerEl {
+- (id)initFlipbookNamed:(NSString*)animName authoredDevice:(BTDeviceType*)authoredDevice 
+                    xml:(GDataXMLElement*)layerEl {
     if (!(self = [super init])) return nil;
     keyframes = [[NSMutableArray alloc] init];
     name = [layerEl stringAttribute:@"name"];

@@ -14,7 +14,7 @@
     NSString* label;
 }
 
-- (id)initWithIndex:(int)index xml:(GDataXMLElement*)frameEl;
+- (id)initWithIndex:(int)index translationScale:(float)transScale xml:(GDataXMLElement*)frameEl;
 - (id)initFlipbookNamed:(NSString*)name withIndex:(int)index xml:(GDataXMLElement*)frameEl;
 
 @end
