@@ -10,6 +10,8 @@
     int index, duration;
     float x, y, rotation, scaleX, scaleY;
     float pivotX, pivotY;
+    float alpha;
+    BOOL visible;
     NSString* libraryItem;
     NSString* label;
 }

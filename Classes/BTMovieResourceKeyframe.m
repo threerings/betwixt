@@ -36,6 +36,8 @@
     }
     
     rotation = [frameEl floatAttribute:@"rotation" defaultVal:0];
+    alpha = [frameEl floatAttribute:@"alpha" defaultVal:1];
+    visible = [frameEl boolAttribute:@"visible" defaultVal:YES];
     
     return self;
 }

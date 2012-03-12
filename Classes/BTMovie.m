@@ -94,6 +94,7 @@ NSString * const BTMovieLastFrame = @"BTMovieLastFrame";
         layer.scaleX = kf->scaleX;
         layer.scaleY = kf->scaleY;
         layer.rotation = kf->rotation;
+        layer.alpha = kf->alpha;
     } else {
         // TODO - interpolation types other than linear
         float interped = (frame - kf->index)/(float)kf->duration;
@@ -103,10 +104,12 @@ NSString * const BTMovieLastFrame = @"BTMovieLastFrame";
         layer.scaleX = kf->scaleX + (nextKf->scaleX - kf->scaleX) * interped;
         layer.scaleY = kf->scaleY + (nextKf->scaleY - kf->scaleY) * interped;
         layer.rotation = kf->rotation + (nextKf->rotation - kf->rotation) * interped;
+        layer.alpha = kf->alpha + (nextKf->alpha - kf->alpha) * interped;
     }
     
     layer.pivotX = kf->pivotX;
     layer.pivotY = kf->pivotY;
+    layer.visible = kf->visible;
 }
 @end
 
