@@ -21,8 +21,8 @@
 @property (readonly,strong) NSString* filename;
 @property (readonly,strong) NSArray* resources;
 @property (readonly,strong) NSException* err;
-@property (readonly,strong) BTCompleteCallback onComplete;
-@property (readonly,strong) BTErrorCallback onError;
+@property (copy) BTCompleteCallback onComplete;
+@property (copy) BTErrorCallback onError;
 @end
 
 @implementation BTResourceManager
@@ -236,16 +236,16 @@
 }
 
 - (void)load {
-    _onComplete = ^{};
-    _onError = ^(NSException* err) { [err raise]; };
+    self.onComplete = ^{};
+    self.onError = ^(NSException* err) { [err raise]; };
     
     [self loadNow];
     [self complete];
 }
 
 - (void)loadAsync:(BTCompleteCallback)onComplete onError:(BTErrorCallback)onError {
-    _onComplete = onComplete;
-    _onError = onError;
+    self.onComplete = onComplete;
+    self.onError = onError;
     [self performSelectorInBackground:@selector(loadInBackground) withObject:nil];
 }
 
