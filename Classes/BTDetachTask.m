@@ -30,11 +30,11 @@
 
 @implementation BTDetachTask
 
-+(BTDetachTask*)detachParent {
++ (BTDetachTask*)detachParent {
     return [[BTDetachParentTask alloc] init];
 }
 
-+(BTDetachTask*)detachNode:(BTNode*)node {
++ (BTDetachTask*)detachNode:(BTNode*)node {
     BTDetachNodeTask* task = [[BTDetachNodeTask alloc] init];
     task->_node = node;
     return task;

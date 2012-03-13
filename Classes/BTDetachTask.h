@@ -4,6 +4,6 @@
 #import "BTNode.h"
 
 @interface BTDetachTask : BTNode
-+(BTDetachTask*)detachParent;
-+(BTDetachTask*)detachNode:(BTNode*)node;
++ (BTDetachTask*)detachParent;
++ (BTDetachTask*)detachNode:(BTNode*)node;
 @end
