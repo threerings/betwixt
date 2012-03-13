@@ -6,7 +6,6 @@
 #import "BTMultiResourceFactory.h"
 #import "BTApp.h"
 #import "BTApp+Package.h"
-#import "BTApp+Protected.h"
 #import "BTResource.h"
 #import "GDataXMLException.h"
 
@@ -180,7 +179,7 @@
         if (![BTApp.app.view useNewSharedEAGLContext]) {
             [NSException raise:NSGenericException format:@"Unable to use new EAGLContext"];
         }
-        NSString* name = [BTApp.app.resourcePathPrefix stringByAppendingPathComponent:_filename];
+        NSString* name = [BTApp.app resourcePathFor:_filename];
         name = [name stringByDeletingPathExtension];
         NSString* extension = [_filename pathExtension];
         

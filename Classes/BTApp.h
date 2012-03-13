@@ -10,6 +10,7 @@
 
 + (BTApp*)app;
 - (BTModeStack*)createModeStack;
+- (NSString*)resourcePathFor:(NSString*)resourceName;
 
 /// Returns the framerate that the app is currently running at
 @property(nonatomic,readonly) float framerate;

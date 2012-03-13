@@ -179,6 +179,10 @@ static BTApp* gInstance = nil;
     return @"";
 }
 
+- (NSString*)resourcePathFor:(NSString *)resourceName {
+    return [self.resourcePathPrefix stringByAppendingPathComponent:resourceName];
+}
+
 @synthesize resourceManager=_resourceMgr, view=_view, viewSize=_viewSize, deviceType=_deviceType;
 
 @end

@@ -70,7 +70,8 @@
     
     if (theGroup != nil) {
         for (GDataXMLElement* atlasXml in [theGroup elementsForName:@"atlas"]) {
-            SPTexture* atlas = [[SPTexture alloc] initWithContentsOfFile:[atlasXml stringAttribute:@"file"]];
+            NSString* filename = [BTApp.app resourcePathFor:[atlasXml stringAttribute:@"file"]];
+            SPTexture* atlas = [[SPTexture alloc] initWithContentsOfFile:filename];
             for (GDataXMLElement* child in [atlasXml elements]) {
                 [textures addObject:[[BTTextureResource alloc] initFromAtlas:atlas withXml:child]];
             }
