@@ -19,7 +19,10 @@
 - (SPPoint *)addX:(float)x y:(float)y;
 
 /// Substracts a point from the current point and returns the resulting point.
-- (SPPoint *)subtractX:(float)x y:(float)y;
+- (SPPoint*)subtractX:(float)x y:(float)y;
+
+/// Scales the point by the given x and y scale values, and returns the resulting point
+- (SPPoint*)scaleByX:(float)x y:(float)y;
 
 - (float)distanceSqToPoint:(SPPoint*)p;
 

@@ -33,12 +33,16 @@
     mY = y;
 }
 
-- (SPPoint *)addX:(float)x y:(float)y {
+- (SPPoint*)addX:(float)x y:(float)y {
     return [[SPPoint alloc] initWithX:mX+x y:mY+y];
 }
 
-- (SPPoint *)subtractX:(float)x y:(float)y {
+- (SPPoint*)subtractX:(float)x y:(float)y {
     return [[SPPoint alloc] initWithX:mX-x y:mY-y];
+}
+
+- (SPPoint*)scaleByX:(float)x y:(float)y {
+    return [[SPPoint alloc] initWithX:mX*x y:mY*y];
 }
 
 - (float)distanceSqToPoint:(SPPoint *)p {
