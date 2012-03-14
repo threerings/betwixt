@@ -42,7 +42,7 @@
     }];*/
     
     [self.modeStack changeMode:[[MovieTestMode alloc] initWithResourceName:@"bella/resources.xml" 
-                                                                 movieName:@"walk"]];
+                                                                 movieName:@"bella/walk"]];
 }
 
 @end
