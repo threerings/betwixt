@@ -11,19 +11,19 @@ extern NSString * const BTMovieLastFrame;
 
 @interface BTMovie : SPSprite <SPAnimatable>
 
--(void)loopFromLabel:(NSString*)label;
--(void)loopFromFrame:(int)frame;
--(void)playFromLabel:(NSString*)startLabel toLabel:(NSString*)stopLabel;
--(void)playFromLabel:(NSString*)startLabel toFrame:(int)stopFrame;
--(void)playFromFrame:(int)startFrame toLabel:(NSString*)stopLabel;
--(void)playFromFrame:(int)startFrame toFrame:(int)stopFrame;
--(void)gotoLabel:(NSString*)label;
--(void)gotoFrame:(int)frame;
--(void)playToLabel:(NSString*)label;
--(void)playToFrame:(int)frame;
+- (void)loopFromLabel:(NSString*)label;
+- (void)loopFromFrame:(int)frame;
+- (void)playFromLabel:(NSString*)startLabel toLabel:(NSString*)stopLabel;
+- (void)playFromLabel:(NSString*)startLabel toFrame:(int)stopFrame;
+- (void)playFromFrame:(int)startFrame toLabel:(NSString*)stopLabel;
+- (void)playFromFrame:(int)startFrame toFrame:(int)stopFrame;
+- (void)gotoLabel:(NSString*)label;
+- (void)gotoFrame:(int)frame;
+- (void)playToLabel:(NSString*)label;
+- (void)playToFrame:(int)frame;
 
 // Fires when the given label is fired by labelPassed.
--(RAConnection*) monitorLabel:(NSString*)label withUnit:(RAUnitBlock)slot;
+- (RAConnection*)monitorLabel:(NSString*)label withUnit:(RAUnitBlock)slot;
 
 // Fires when a frame containing a label is entered or passed in an update in the order of the
 // labels in the movie. If the update is longer than the duration of the movie, each label is fired

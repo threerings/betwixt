@@ -17,8 +17,8 @@
     if (!(self = [super init])) {
         return nil;
     }
-    _onComplete = onComplete;
-    _onError = onError;
+    _onComplete = [onComplete copy];
+    _onError = [onError copy];
     return self;
 }
 

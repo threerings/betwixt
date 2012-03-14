@@ -205,7 +205,7 @@
 
 @implementation BTScreenRegion
 - (BOOL)hitTest:(SPPoint*)globalPt { return YES; }
-+ (BTScreenRegion*)withInput:(BTInput *)input {
++ (BTScreenRegion*)withInput:(BTInput*)input {
     return [[BTScreenRegion alloc] initWithInput:input];
 }
 @end
@@ -297,9 +297,9 @@
     if (!(self = [super init])) {
         return nil;
     }
-    _onTouchStart = onTouchStart;
-    _onTouchMove = onTouchMove;
-    _onTouchEnd = onTouchEnd;
+    _onTouchStart = [onTouchStart copy];
+    _onTouchMove = [onTouchMove copy];
+    _onTouchEnd = [onTouchEnd copy];
     return self;
 }
 

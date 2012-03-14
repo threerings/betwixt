@@ -151,15 +151,12 @@
     NSArray* _resources;
     
     NSException* _err;
-    BTCompleteCallback _onComplete;
-    BTErrorCallback _onError;
 }
 
 @synthesize filename = _filename;
 @synthesize err = _err;
 @synthesize resources = _resources;
-@synthesize onComplete = _onComplete;
-@synthesize onError = _onError;
+@synthesize onComplete, onError;
 
 - (id)initWithManager:(BTResourceManager*)mgr filename:(NSString*)filename {
     if (!(self = [super init])) {
@@ -243,9 +240,9 @@
     [self complete];
 }
 
-- (void)loadAsync:(BTCompleteCallback)onComplete onError:(BTErrorCallback)onError {
-    self.onComplete = onComplete;
-    self.onError = onError;
+- (void)loadAsync:(BTCompleteCallback)completeBlock onError:(BTErrorCallback)errBlock {
+    self.onComplete = completeBlock;
+    self.onError = errBlock;
     [self performSelectorInBackground:@selector(loadInBackground) withObject:nil];
 }
 

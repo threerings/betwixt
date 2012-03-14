@@ -6,10 +6,8 @@
 #import "BTUpdatable.h"
 #import "BTNode+Protected.h"
 
-@interface BTBlockTask () {
-@public
-    BTTaskBlock _block;
-}
+@interface BTBlockTask ()
+@property(nonatomic,copy) BTTaskBlock block;
 @end
 
 @interface BTAttachBlockTask : BTBlockTask
@@ -17,7 +15,7 @@
 @implementation BTAttachBlockTask
 - (void)attached {
     [super attached];
-    _block(self);
+    self.block(self);
     [self detach];
 }
 
@@ -27,21 +25,23 @@
 @end
 @implementation BTUpdateBlockTask
 - (void)update:(float)dt {
-    _block(self);
+    self.block(self);
 }
 @end
 
 @implementation BTBlockTask
 
+@synthesize block;
+
 + (BTBlockTask*)onAttach:(BTTaskBlock)block {
     BTBlockTask* task = [[BTAttachBlockTask alloc] init];
-    task->_block = block;
+    task.block = block;
     return task;
 }
 
 + (BTBlockTask*)onUpdate:(BTTaskBlock)block {
     BTBlockTask* task = [[BTUpdateBlockTask alloc] init];
-    task->_block = block;
+    task.block = block;
     return task;
 }
 @end

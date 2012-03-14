@@ -5,12 +5,16 @@
 #import "BTNodeContainer.h"
 #import "BTNode+Protected.h"
 
-@implementation BTRepeatingTask {
-    BTRepeatCreator _creator;
-}
+@interface BTRepeatingTask ()
+@property(nonatomic,copy) BTRepeatCreator creator;
+@end
+
+@implementation BTRepeatingTask
+
+@synthesize creator;
 
 - (void)onRepeat {
-    BTNode* toRepeat = _creator();
+    BTNode* toRepeat = self.creator();
     if (toRepeat == nil) [self detach];
     else {
         [toRepeat.detached connectUnit:^{ [self onRepeat]; }];
@@ -25,7 +29,7 @@
 
 + (BTRepeatingTask*)withTaskCreator:(BTRepeatCreator)creator {
     BTRepeatingTask* task = [[BTRepeatingTask alloc] init];
-    task->_creator = creator;
+    task.creator = creator;
     return task;
 }
 
