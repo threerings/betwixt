@@ -41,8 +41,8 @@
         [self.modeStack pushMode:[[LeakTestMode alloc] init]];
     }];*/
     
-    [self.modeStack changeMode:[[MovieTestMode alloc] initWithResourceName:@"bella/resources.xml" 
-                                                                 movieName:@"bella/walk"]];
+    [self.modeStack changeMode:[[MovieTestMode alloc] initWithResourceName:@"biter/resources.xml" 
+                                                                 movieName:@"biter/bone_root"]];
 }
 
 @end

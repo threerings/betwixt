@@ -1023,72 +1023,74 @@
   <textureGroups>
     <textureGroup target="IPHONE_RETINA">
       <atlas file="bella/atlas0.png">
-        <texture name="bella/HairBack" offset="0,0" rect="1,1,96,185" md5="70ca3f7d5dd0d65c439bf20a7ed71684"/>
-        <texture name="bella/HairFront" offset="0,0" rect="99,1,67,94" md5="03eb3ad8d887f6fd498417e0eb5eca6f"/>
-        <texture name="bella/Head" offset="0,0" rect="168,1,62,62" md5="90c1d4b20033d4c6cc414fefd9317fdf"/>
-        <texture name="bella/RArmLower" offset="0,0" rect="232,1,23,54" md5="e81c9591cf2932b238883d0a5e3c6496"/>
-        <texture name="bella/nose" offset="0,0" rect="232,57,8,5" md5="f2389673e5b103b2db9e5486b5769fd4"/>
-        <texture name="bella/RFoot" offset="0,0.05" rect="168,65,33,19" md5="54831b2b22be8fb6226b5cd408b8f71b"/>
-        <texture name="bella/Mouth1" offset="0,0" rect="168,86,28,9" md5="806c68ecee48713721f447e76f3763ba"/>
-        <texture name="bella/LFoot" offset="0,0" rect="203,65,33,19" md5="8589c87bd410204f7203414c719a0ae7"/>
-        <texture name="bella/pupils" offset="0,0" rect="203,86,25,8" md5="ccad8a72f2121dec202558bffdf972d8"/>
-        <texture name="bella/LHand" offset="0,0" rect="238,65,11,27" md5="ca40aafb71fe0bea39aa561010b2b382"/>
-        <texture name="bella/Hips" offset="0,0" rect="99,97,48,41" md5="36542aa821ef9e7f195e9eeb8d9aa8e0"/>
-        <texture name="bella/Neck" offset="0,0" rect="99,140,15,42" md5="2acefc162eef82104b320746eee96cb4"/>
-        <texture name="bella/mouthopen" offset="0,0" rect="116,140,24,12" md5="37fa567fae8d8a09456e7f9fa4e4fd94"/>
-        <texture name="bella/RHand" offset="0,0" rect="116,154,12,24" md5="60aff5b90bd6a323f18c1c2cd7997e20"/>
-        <texture name="bella/LLegLower" offset="0,0" rect="149,97,21,80" md5="172c3c62ce246b2065ff07ecd73f05ca"/>
-        <texture name="bella/RLegLower" offset="0,0" rect="172,97,18,79" md5="4b0ac75e1cbe8ed751f514aa8f9900a4"/>
-        <texture name="bella/LArmUpper" offset="0,0" rect="192,97,16,76" md5="8fe3b9054a2997157a5963a7101e828c"/>
-        <texture name="bella/RArmUpper" offset="0,0" rect="210,97,12,75" md5="f839aea930ebf14e512487fce3e5b401"/>
-        <texture name="bella/LArmLower" offset="0,0" rect="224,97,13,56" md5="e527d880ab996f337162fc63e2293778"/>
-        <texture name="bella/Pupil" offset="0,0" rect="224,155,25,8" md5="7024dffc95a3dc34490ac35f4f1bcd04"/>
-        <texture name="bella/mouth_symbol" offset="0,0" rect="224,165,24,5" md5="fa9ef1fb95494abc066482d1975a84ef"/>
-        <texture name="bella/Torso" offset="0,0" rect="1,188,54,102" md5="711d1bb9932af95cf9cb41736c258ad2"/>
-        <texture name="bella/Cheeks" offset="0,0" rect="57,188,40,15" md5="dcc3eae856e8c3eb921aa7adaafb77b9"/>
-        <texture name="bella/Eyelidsclosed" offset="0,0" rect="57,205,38,11" md5="9dd3723183e4e255ff3082f29e21d50b"/>
-        <texture name="bella/Eyes" offset="0,0" rect="57,218,34,11" md5="aa0b8c7ddc90cddd93ca309fc640b446"/>
-        <texture name="bella/EyelidUpper" offset="0,0" rect="57,231,36,9" md5="f2276bcd14651591c8fdfb8ca4bd8a5c"/>
-        <texture name="bella/Brow" offset="0,0" rect="57,242,34,6" md5="5c79abbfab81e524f9759379b1bf864a"/>
-        <texture name="bella/EyelidLower" offset="0,0" rect="57,250,33,5" md5="de749e0a9ca98bbd8387c8b8d1c6099e"/>
-        <texture name="bella/HairMiddle" offset="0,0" rect="1,292,48,114" md5="47e2a446c955bb582cd14174829e2f4b"/>
-        <texture name="bella/LLegUpper" offset="0,0" rect="51,292,42,111" md5="a2d353d094fcae57563c740725ccb4c4"/>
-        <texture name="bella/RLegUpper" offset="0,0" rect="95,292,32,112" md5="8300b20d09466526196d03a2d9de00a4"/>
+        <texture name="bella/HairBack" rect="0,0,96,185" md5="70ca3f7d5dd0d65c439bf20a7ed71684"/>
+        <texture name="bella/Head" rect="0,186,62,62" md5="90c1d4b20033d4c6cc414fefd9317fdf"/>
+        <texture name="bella/Brow" rect="0,249,34,6" md5="5c79abbfab81e524f9759379b1bf864a"/>
+        <texture name="bella/mouth_symbol" rect="35,249,24,5" md5="fa9ef1fb95494abc066482d1975a84ef"/>
+        <texture name="bella/RArmLower" rect="63,186,23,54" md5="e81c9591cf2932b238883d0a5e3c6496"/>
+        <texture name="bella/nose" rect="87,186,8,5" md5="f2389673e5b103b2db9e5486b5769fd4"/>
+        <texture name="bella/mouthopen" rect="63,241,24,12" md5="37fa567fae8d8a09456e7f9fa4e4fd94"/>
+        <texture name="bella/HairFront" rect="97,0,67,94" md5="03eb3ad8d887f6fd498417e0eb5eca6f"/>
+        <texture name="bella/Hips" rect="165,0,48,41" md5="36542aa821ef9e7f195e9eeb8d9aa8e0"/>
+        <texture name="bella/RFoot" rect="214,0,33,19" offset="0,0.05" md5="54831b2b22be8fb6226b5cd408b8f71b"/>
+        <texture name="bella/LFoot" rect="214,20,33,19" md5="8589c87bd410204f7203414c719a0ae7"/>
+        <texture name="bella/Neck" rect="165,42,15,42" md5="2acefc162eef82104b320746eee96cb4"/>
+        <texture name="bella/Cheeks" rect="181,42,40,15" md5="dcc3eae856e8c3eb921aa7adaafb77b9"/>
+        <texture name="bella/Mouth1" rect="222,42,28,9" md5="806c68ecee48713721f447e76f3763ba"/>
+        <texture name="bella/EyelidLower" rect="222,52,33,5" md5="de749e0a9ca98bbd8387c8b8d1c6099e"/>
+        <texture name="bella/Eyelidsclosed" rect="181,58,38,11" md5="9dd3723183e4e255ff3082f29e21d50b"/>
+        <texture name="bella/Eyes" rect="181,70,34,11" md5="aa0b8c7ddc90cddd93ca309fc640b446"/>
+        <texture name="bella/EyelidUpper" rect="181,82,36,9" md5="f2276bcd14651591c8fdfb8ca4bd8a5c"/>
+        <texture name="bella/LHand" rect="220,58,11,27" md5="ca40aafb71fe0bea39aa561010b2b382"/>
+        <texture name="bella/RHand" rect="232,58,12,24" md5="60aff5b90bd6a323f18c1c2cd7997e20"/>
+        <texture name="bella/Torso" rect="97,95,54,102" md5="711d1bb9932af95cf9cb41736c258ad2"/>
+        <texture name="bella/LArmLower" rect="97,198,13,56" md5="e527d880ab996f337162fc63e2293778"/>
+        <texture name="bella/pupils" rect="111,198,25,8" md5="ccad8a72f2121dec202558bffdf972d8"/>
+        <texture name="bella/Pupil" rect="111,207,25,8" md5="7024dffc95a3dc34490ac35f4f1bcd04"/>
+        <texture name="bella/HairMiddle" rect="152,95,48,114" md5="47e2a446c955bb582cd14174829e2f4b"/>
+        <texture name="bella/LLegUpper" rect="201,95,42,111" md5="a2d353d094fcae57563c740725ccb4c4"/>
+      </atlas>
+      <atlas file="bella/atlas1.png">
+        <texture name="bella/RLegUpper" rect="0,0,32,112" md5="8300b20d09466526196d03a2d9de00a4"/>
+        <texture name="bella/LLegLower" rect="33,0,21,80" md5="172c3c62ce246b2065ff07ecd73f05ca"/>
+        <texture name="bella/RLegLower" rect="55,0,18,79" md5="4b0ac75e1cbe8ed751f514aa8f9900a4"/>
+        <texture name="bella/LArmUpper" rect="74,0,16,76" md5="8fe3b9054a2997157a5963a7101e828c"/>
+        <texture name="bella/RArmUpper" rect="91,0,12,75" md5="f839aea930ebf14e512487fce3e5b401"/>
       </atlas>
     </textureGroup>
     <textureGroup target="IPHONE">
       <atlas file="bella/atlas0.png">
-        <texture name="bella/HairBack" offset="0,0" rect="1,1,48,93" md5="70ca3f7d5dd0d65c439bf20a7ed71684"/>
-        <texture name="bella/HairFront" offset="0,0" rect="51,1,34,47" md5="03eb3ad8d887f6fd498417e0eb5eca6f"/>
-        <texture name="bella/Head" offset="0,0" rect="87,1,31,31" md5="90c1d4b20033d4c6cc414fefd9317fdf"/>
-        <texture name="bella/LArmLower" offset="0,0" rect="120,1,6,28" md5="e527d880ab996f337162fc63e2293778"/>
-        <texture name="bella/RFoot" offset="0,0" rect="87,34,17,10" md5="54831b2b22be8fb6226b5cd408b8f71b"/>
-        <texture name="bella/LFoot" offset="0,0" rect="106,34,17,10" md5="8589c87bd410204f7203414c719a0ae7"/>
-        <texture name="bella/Hips" offset="0,0" rect="51,50,24,21" md5="36542aa821ef9e7f195e9eeb8d9aa8e0"/>
-        <texture name="bella/Neck" offset="0,0" rect="51,73,8,21" md5="2acefc162eef82104b320746eee96cb4"/>
-        <texture name="bella/LHand" offset="0,0" rect="61,73,6,14" md5="ca40aafb71fe0bea39aa561010b2b382"/>
-        <texture name="bella/nose" offset="0,0" rect="61,89,4,3" md5="f2389673e5b103b2db9e5486b5769fd4"/>
-        <texture name="bella/RHand" offset="0,0" rect="69,73,6,12" md5="60aff5b90bd6a323f18c1c2cd7997e20"/>
-        <texture name="bella/LLegLower" offset="0,0" rect="77,50,11,40" md5="172c3c62ce246b2065ff07ecd73f05ca"/>
-        <texture name="bella/RLegLower" offset="0,0" rect="90,50,9,40" md5="4b0ac75e1cbe8ed751f514aa8f9900a4"/>
-        <texture name="bella/RArmLower" offset="0,0" rect="101,50,12,27" md5="e81c9591cf2932b238883d0a5e3c6496"/>
-        <texture name="bella/mouthopen" offset="0,0" rect="115,50,12,6" md5="37fa567fae8d8a09456e7f9fa4e4fd94"/>
-        <texture name="bella/mouth_symbol" offset="0,0" rect="115,58,12,3" md5="fa9ef1fb95494abc066482d1975a84ef"/>
-        <texture name="bella/Cheeks" offset="0,0" rect="101,79,20,8" md5="dcc3eae856e8c3eb921aa7adaafb77b9"/>
-        <texture name="bella/EyelidUpper" offset="0,0" rect="101,89,18,5" md5="f2276bcd14651591c8fdfb8ca4bd8a5c"/>
-        <texture name="bella/Torso" offset="0,0" rect="1,96,27,51" md5="711d1bb9932af95cf9cb41736c258ad2"/>
-        <texture name="bella/LArmUpper" offset="0,0" rect="30,96,8,38" md5="8fe3b9054a2997157a5963a7101e828c"/>
-        <texture name="bella/RArmUpper" offset="0,0" rect="40,96,6,38" md5="f839aea930ebf14e512487fce3e5b401"/>
-        <texture name="bella/Eyelidsclosed" offset="0,0" rect="48,96,19,6" md5="9dd3723183e4e255ff3082f29e21d50b"/>
-        <texture name="bella/Eyes" offset="0,0" rect="48,104,17,6" md5="aa0b8c7ddc90cddd93ca309fc640b446"/>
-        <texture name="bella/Mouth1" offset="0,0" rect="48,112,14,5" md5="806c68ecee48713721f447e76f3763ba"/>
-        <texture name="bella/pupils" offset="0,0" rect="48,119,13,4" md5="ccad8a72f2121dec202558bffdf972d8"/>
-        <texture name="bella/Pupil" offset="0,0" rect="48,125,13,4" md5="7024dffc95a3dc34490ac35f4f1bcd04"/>
-        <texture name="bella/Brow" offset="0,0" rect="48,131,17,3" md5="5c79abbfab81e524f9759379b1bf864a"/>
-        <texture name="bella/EyelidLower" offset="0,0" rect="48,136,16,3" md5="de749e0a9ca98bbd8387c8b8d1c6099e"/>
-        <texture name="bella/HairMiddle" offset="0,0" rect="1,149,24,57" md5="47e2a446c955bb582cd14174829e2f4b"/>
-        <texture name="bella/LLegUpper" offset="0,0" rect="27,149,21,56" md5="a2d353d094fcae57563c740725ccb4c4"/>
-        <texture name="bella/RLegUpper" offset="0,0" rect="50,149,16,56" md5="8300b20d09466526196d03a2d9de00a4"/>
+        <texture name="bella/HairBack" rect="0,0,48,93" md5="70ca3f7d5dd0d65c439bf20a7ed71684"/>
+        <texture name="bella/HairFront" rect="49,0,34,47" md5="03eb3ad8d887f6fd498417e0eb5eca6f"/>
+        <texture name="bella/Head" rect="84,0,31,31" md5="90c1d4b20033d4c6cc414fefd9317fdf"/>
+        <texture name="bella/Neck" rect="116,0,8,21" md5="2acefc162eef82104b320746eee96cb4"/>
+        <texture name="bella/nose" rect="116,22,4,3" md5="f2389673e5b103b2db9e5486b5769fd4"/>
+        <texture name="bella/RFoot" rect="84,32,17,10" md5="54831b2b22be8fb6226b5cd408b8f71b"/>
+        <texture name="bella/pupils" rect="84,43,13,4" md5="ccad8a72f2121dec202558bffdf972d8"/>
+        <texture name="bella/LFoot" rect="102,32,17,10" md5="8589c87bd410204f7203414c719a0ae7"/>
+        <texture name="bella/Pupil" rect="102,43,13,4" md5="7024dffc95a3dc34490ac35f4f1bcd04"/>
+        <texture name="bella/LHand" rect="120,32,6,14" md5="ca40aafb71fe0bea39aa561010b2b382"/>
+        <texture name="bella/Hips" rect="49,48,24,21" md5="36542aa821ef9e7f195e9eeb8d9aa8e0"/>
+        <texture name="bella/Cheeks" rect="49,70,20,8" md5="dcc3eae856e8c3eb921aa7adaafb77b9"/>
+        <texture name="bella/Eyelidsclosed" rect="49,79,19,6" md5="9dd3723183e4e255ff3082f29e21d50b"/>
+        <texture name="bella/Eyes" rect="49,86,17,6" md5="aa0b8c7ddc90cddd93ca309fc640b446"/>
+        <texture name="bella/LLegLower" rect="74,48,11,40" md5="172c3c62ce246b2065ff07ecd73f05ca"/>
+        <texture name="bella/RLegLower" rect="86,48,9,40" md5="4b0ac75e1cbe8ed751f514aa8f9900a4"/>
+        <texture name="bella/RArmLower" rect="96,48,12,27" md5="e81c9591cf2932b238883d0a5e3c6496"/>
+        <texture name="bella/mouthopen" rect="96,76,12,6" md5="37fa567fae8d8a09456e7f9fa4e4fd94"/>
+        <texture name="bella/mouth_symbol" rect="96,83,12,3" md5="fa9ef1fb95494abc066482d1975a84ef"/>
+        <texture name="bella/LArmUpper" rect="109,48,8,38" md5="8fe3b9054a2997157a5963a7101e828c"/>
+        <texture name="bella/RArmUpper" rect="118,48,6,38" md5="f839aea930ebf14e512487fce3e5b401"/>
+        <texture name="bella/Torso" rect="0,94,27,51" md5="711d1bb9932af95cf9cb41736c258ad2"/>
+        <texture name="bella/LArmLower" rect="28,94,6,28" md5="e527d880ab996f337162fc63e2293778"/>
+        <texture name="bella/RHand" rect="28,123,6,12" md5="60aff5b90bd6a323f18c1c2cd7997e20"/>
+        <texture name="bella/EyelidUpper" rect="35,94,18,5" md5="f2276bcd14651591c8fdfb8ca4bd8a5c"/>
+        <texture name="bella/Mouth1" rect="35,100,14,5" md5="806c68ecee48713721f447e76f3763ba"/>
+        <texture name="bella/Brow" rect="35,106,17,3" md5="5c79abbfab81e524f9759379b1bf864a"/>
+        <texture name="bella/EyelidLower" rect="35,110,16,3" md5="de749e0a9ca98bbd8387c8b8d1c6099e"/>
+        <texture name="bella/HairMiddle" rect="0,146,24,57" md5="47e2a446c955bb582cd14174829e2f4b"/>
+        <texture name="bella/LLegUpper" rect="25,146,21,56" md5="a2d353d094fcae57563c740725ccb4c4"/>
+        <texture name="bella/RLegUpper" rect="47,146,16,56" md5="8300b20d09466526196d03a2d9de00a4"/>
       </atlas>
     </textureGroup>
   </textureGroups>
