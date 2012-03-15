@@ -136,17 +136,18 @@ NSString * const BTMovieLastFrame = @"BTMovieLastFrame";
 }
 @end
 @implementation LabelMonitorConnProxy
--(void) proxiedDispatched {
-    if (_oneShot) [_proxied disconnect];
+- (void)proxiedDispatched {
+    if (_oneShot) [self disconnect];
 }
 
--(RAConnection*) once {
+- (RAConnection*)once {
     _oneShot = YES;
     return self;
 }
 
--(void) disconnect {
+- (void)disconnect {
     [_proxied disconnect];
+    _proxied = nil;
 }
 @end
 
