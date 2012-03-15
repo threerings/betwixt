@@ -77,9 +77,12 @@
     return instance;
 }
 
-+ (BTMovie*)newMovie:(NSString *)name {
-    return [[BTApp.app.resourceManager requireResource:name 
-                                                ofType:[BTMovieResource class]] newMovie];
++ (BTMovieResource*)require:(NSString*)name {
+    return [BTApp.app.resourceManager requireResource:name ofType:[BTMovieResource class]];
+}
+
++ (BTMovie*)newMovie:(NSString*)name {
+    return [[BTMovieResource require:name] newMovie];
 }
 
 @end

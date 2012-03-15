@@ -13,7 +13,8 @@
 
 @interface BTMovieResource : BTResource<BTDisplayObjectCreator>
 
-+ (id<BTResourceFactory>) sharedFactory;
++ (id<BTResourceFactory>)sharedFactory;
++ (BTMovieResource*)require:(NSString*)name;
 + (BTMovie*)newMovie:(NSString*)name;
 
 - (BTMovie*)newMovie;
