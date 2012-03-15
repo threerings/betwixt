@@ -110,10 +110,9 @@
     
     // If the object is BTUpdatable, wire up its update function to the update event
     if ([node conformsToProtocol:@protocol(BTUpdatable)]) {
-        __weak BTNode<BTUpdatable>* obj = (BTNode<BTUpdatable>*)node;
-        [node.conns addConnection:[self.mode.update connectSlot:^(float dt) {
-            [obj update:dt];
-        }]];
+        [node.conns onFloatReactor:self.mode.update connectSlot:^(float dt) {
+            [(BTNode<BTUpdatable>*)node update:dt];
+        }];
     }
     
     // Does the object have a name?
