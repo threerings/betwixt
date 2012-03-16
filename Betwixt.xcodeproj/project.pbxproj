@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		221516AC1513C45900C48FBB /* hero_A_01 in Resources */ = {isa = PBXBuildFile; fileRef = 221516AB1513C45900C48FBB /* hero_A_01 */; };
 		2217E4CD14C79B90000F976A /* BTUpdatable.h in Headers */ = {isa = PBXBuildFile; fileRef = 2217E4CC14C79B90000F976A /* BTUpdatable.h */; };
 		221B6F9814C8BC3200747A18 /* BTMode+Protected.h in Headers */ = {isa = PBXBuildFile; fileRef = 221B6F9714C8BC3200747A18 /* BTMode+Protected.h */; };
 		2221996D14D0EE99009B764F /* BTResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2221996C14D0EE98009B764F /* BTResource.m */; };
@@ -224,6 +225,7 @@
 /* Begin PBXFileReference section */
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		221516AB1513C45900C48FBB /* hero_A_01 */ = {isa = PBXFileReference; lastKnownFileType = folder; name = hero_A_01; path = Exported/hero_A_01; sourceTree = "<group>"; };
 		2217E4CC14C79B90000F976A /* BTUpdatable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTUpdatable.h; sourceTree = "<group>"; };
 		221B6F9714C8BC3200747A18 /* BTMode+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BTMode+Protected.h"; sourceTree = "<group>"; };
 		2221996C14D0EE98009B764F /* BTResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTResource.m; sourceTree = "<group>"; };
@@ -674,6 +676,7 @@
 				22DB822D1509C4210091B648 /* bella */,
 				22608BE51505B10100CCE0A5 /* biter */,
 				CB65CE4114EC7F8300534FAE /* guybrush */,
+				221516AB1513C45900C48FBB /* hero_A_01 */,
 				CB65CE3C14EC44FF00534FAE /* shapes */,
 				CB65CE3A14EC42F400534FAE /* squaredance */,
 			);
@@ -937,6 +940,7 @@
 				CB65CE4214EC7F8300534FAE /* guybrush in Resources */,
 				22608BE61505B10100CCE0A5 /* biter in Resources */,
 				22DB822E1509C4210091B648 /* bella in Resources */,
+				221516AC1513C45900C48FBB /* hero_A_01 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

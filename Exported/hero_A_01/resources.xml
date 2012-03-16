@@ -1,0 +1,592 @@
+<resources md5="b872bd47bfeadd69ba97a0038ca3a59f">
+  <movie name="hero_A_01/~0" md5="8622d8868be09a695542597b60d970d0" authoredDevice="IPHONE_RETINA">
+    <layer name="Layer 3">
+      <kf duration="59" ref="hero_A_01/bone_weapon_hilt" loc="6.5,29.75" pivot="-0.5,18"/>
+      <kf duration="1" ref="hero_A_01/bone_weapon_hilt" loc="6.5,29.75" pivot="-0.5,18"/>
+    </layer>
+    <layer name="Layer 2">
+      <kf duration="29" ref="hero_A_01/bone_starpoint" loc="0,-18.5"/>
+      <kf duration="30" ref="hero_A_01/bone_starpoint" loc="0,-18.5" scale="1,1.1053"/>
+      <kf duration="1" ref="hero_A_01/bone_starpoint" loc="0,-18.5"/>
+    </layer>
+    <layer name="Layer 6">
+      <kf duration="15" ref="hero_A_01/bone_starpoint_small" loc="6.25,-16.25" scale="0.9984,1.225" rotation="0.6954"/>
+      <kf duration="29" ref="hero_A_01/bone_starpoint_small" loc="6.25,-16.25" scale="1,1.4786" rotation="0.6948"/>
+      <kf duration="15" ref="hero_A_01/bone_starpoint_small" loc="6.25,-16.25" rotation="0.6948"/>
+      <kf duration="1" ref="hero_A_01/bone_starpoint_small" loc="6.25,-16.25" scale="0.9984,1.225" rotation="0.6954"/>
+    </layer>
+    <layer name="Layer 8">
+      <kf duration="15" ref="hero_A_01/bone_starpoint_small" loc="-6.45,-16.2" scale="-0.9984,1.2328" rotation="-0.6954"/>
+      <kf duration="29" ref="hero_A_01/bone_starpoint_small" loc="-6.45,-16.25" scale="-1,1" rotation="-0.6948"/>
+      <kf duration="15" ref="hero_A_01/bone_starpoint_small" loc="-6.45,-16.25" scale="-1,1.4786" rotation="-0.6948"/>
+      <kf duration="1" ref="hero_A_01/bone_starpoint_small" loc="-6.45,-16.2" scale="-0.9984,1.2328" rotation="-0.6954"/>
+    </layer>
+    <layer name="Layer 9">
+      <kf duration="30" ref="hero_A_01/bone_starpoint_small" loc="6.3,-9.4" scale="-0.8444,-1.0858" rotation="-1.2025"/>
+      <kf duration="29" ref="hero_A_01/bone_starpoint_small" loc="6.3,-9.4" scale="-0.8444,-0.6989" rotation="-1.2025"/>
+      <kf duration="1" ref="hero_A_01/bone_starpoint_small" loc="6.3,-9.4" scale="-0.8444,-1.0858" rotation="-1.2025"/>
+    </layer>
+    <layer name="Layer 10">
+      <kf duration="30" ref="hero_A_01/bone_starpoint_small" loc="-6.6,-9.4" scale="0.8444,-1.0858" rotation="1.2025"/>
+      <kf duration="29" ref="hero_A_01/bone_starpoint_small" loc="-6.6,-9.4" scale="0.8444,-0.6989" rotation="1.2025"/>
+      <kf duration="1" ref="hero_A_01/bone_starpoint_small" loc="-6.6,-9.4" scale="0.8444,-1.0858" rotation="1.2025"/>
+    </layer>
+  </movie>
+  <movie name="hero_A_01/idle" md5="ca9c816d3fa5d7cc1bc000f2a545f372" authoredDevice="IPHONE_RETINA">
+    <layer name="shadow">
+      <kf duration="10" ref="hero_A_01/bone_shadow" loc="1.25,-0.4" ease="1"/>
+      <kf duration="10" ref="hero_A_01/bone_shadow" loc="1.25,-0.4" ease="-1"/>
+      <kf duration="10" ref="hero_A_01/bone_shadow" loc="1.25,-0.4" ease="1"/>
+      <kf duration="10" ref="hero_A_01/bone_shadow" loc="1.25,-0.4" ease="-1"/>
+      <kf duration="1" ref="hero_A_01/bone_shadow" loc="1.25,-0.4"/>
+    </layer>
+    <layer name="hair">
+      <kf duration="5" ref="hero_A_01/bone_hair" loc="-14.55,-131.7" rotation="-0.0349" ease="1"/>
+      <kf duration="10" ref="hero_A_01/bone_hair" loc="-14,-131.6" scale="0.9999,0.9999" rotation="-0.0142" ease="1"/>
+      <kf duration="10" ref="hero_A_01/bone_hair" loc="-10.75,-130.95" scale="0.9996,0.9996" rotation="0.0349" ease="-1"/>
+      <kf duration="10" ref="hero_A_01/bone_hair" loc="-10.8,-130.95" scale="0.9997,0.9997" rotation="0.0142" ease="1"/>
+      <kf duration="5" ref="hero_A_01/bone_hair" loc="-14,-131.6" scale="0.9999,0.9999" rotation="-0.0316"/>
+      <kf duration="1" ref="hero_A_01/bone_hair" loc="-14.55,-131.7" rotation="-0.0349"/>
+    </layer>
+    <layer name="weapon R">
+      <kf duration="10" ref="hero_A_01/~0" loc="-37.95,-56.6" scale="-1,-1" rotation="1.0291" ease="1"/>
+      <kf duration="10" ref="hero_A_01/~0" loc="-35.55,-56.9" scale="-0.9979,-0.9979" rotation="1.0412" ease="-1"/>
+      <kf duration="10" ref="hero_A_01/~0" loc="-32.9,-57.25" scale="-0.9986,-0.9986" rotation="1.0504" ease="1"/>
+      <kf duration="10" ref="hero_A_01/~0" loc="-35,-57" scale="-0.9979,-0.9979" rotation="1.0412" ease="-1"/>
+      <kf duration="1" ref="hero_A_01/~0" loc="-37.95,-56.6" scale="-1,-1" rotation="1.0291"/>
+    </layer>
+    <layer name="hand R">
+      <kf duration="10" ref="hero_A_01/bone_hand_R" loc="-32.85,-59.85" rotation="0.615" ease="1"/>
+      <kf duration="10" ref="hero_A_01/bone_hand_R" loc="-30.6,-60.2" scale="0.9976,0.9976" rotation="0.6253" ease="-1"/>
+      <kf duration="10" ref="hero_A_01/bone_hand_R" loc="-28.4,-60.6" scale="0.9984,0.9984" rotation="0.6347" ease="1"/>
+      <kf duration="10" ref="hero_A_01/bone_hand_R" loc="-30.65,-60.2" scale="0.9976,0.9976" rotation="0.6253" ease="-1"/>
+      <kf duration="1" ref="hero_A_01/bone_hand_R" loc="-32.85,-59.85" rotation="0.615"/>
+    </layer>
+    <layer name="forearm R">
+      <kf duration="10" ref="hero_A_01/bone_forearm_R" loc="-18.85,-78.9" rotation="0.6987" ease="1"/>
+      <kf duration="10" ref="hero_A_01/bone_forearm_R" loc="-17.2,-78.9" scale="0.9975,0.9687" rotation="0.6961" ease="-1"/>
+      <kf duration="10" ref="hero_A_01/bone_forearm_R" loc="-15.5,-79" scale="0.9983,0.9411" rotation="0.6963" ease="1"/>
+      <kf duration="10" ref="hero_A_01/bone_forearm_R" loc="-17.25,-78.95" scale="0.9975,0.9692" rotation="0.696" ease="-1"/>
+      <kf duration="1" ref="hero_A_01/bone_forearm_R" loc="-18.85,-78.9" rotation="0.6987"/>
+    </layer>
+    <layer name="bicep R">
+      <kf duration="10" ref="hero_A_01/bone_bicep_R" loc="-18.35,-100.4" scale="1,0.8305" rotation="-0.0093" ease="1"/>
+      <kf duration="10" ref="hero_A_01/bone_bicep_R" loc="-16.65,-100.2" scale="0.9999,0.8085" rotation="-0.0175" ease="-1"/>
+      <kf duration="10" ref="hero_A_01/bone_bicep_R" loc="-14.9,-100" scale="0.9999,0.787" rotation="-0.0256" ease="1"/>
+      <kf duration="10" ref="hero_A_01/bone_bicep_R" loc="-16.65,-100.2" scale="0.9999,0.8089" rotation="-0.0142" ease="-1"/>
+      <kf duration="1" ref="hero_A_01/bone_bicep_R" loc="-18.35,-100.4" scale="1,0.8305" rotation="-0.0093"/>
+    </layer>
+    <layer name="foot R">
+      <kf duration="10" ref="hero_A_01/bone_foot_R" loc="-24.9,-10.4" ease="1"/>
+      <kf duration="10" ref="hero_A_01/bone_foot_R" loc="-24.9,-10.4" ease="-1"/>
+      <kf duration="10" ref="hero_A_01/bone_foot_R" loc="-24.9,-10.4" ease="1"/>
+      <kf duration="10" ref="hero_A_01/bone_foot_R" loc="-24.9,-10.4" ease="-1"/>
+      <kf duration="1" ref="hero_A_01/bone_foot_R" loc="-24.9,-10.4"/>
+    </layer>
+    <layer name="calf R">
+      <kf duration="10" ref="hero_A_01/bone_calf_R" loc="-33.4,-39.65" rotation="-0.178" ease="1"/>
+      <kf duration="10" ref="hero_A_01/bone_calf_R" loc="-31.95,-39.4" scale="0.9994,0.9846" rotation="-0.1319" ease="-1"/>
+      <kf duration="10" ref="hero_A_01/bone_calf_R" loc="-30.4,-39.15" scale="0.9997,0.9703" rotation="-0.0919" ease="1"/>
+      <kf duration="10" ref="hero_A_01/bone_calf_R" loc="-31.85,-39.35" scale="0.9994,0.9848" rotation="-0.1354" ease="-1"/>
+      <kf duration="1" ref="hero_A_01/bone_calf_R" loc="-33.4,-39.65" rotation="-0.178"/>
+    </layer>
+    <layer name="thigh R">
+      <kf duration="10" ref="hero_A_01/bone_thigh_R" loc="-1.35,-61.4" rotation="0.9939" ease="1"/>
+      <kf duration="10" ref="hero_A_01/bone_thigh_R" loc="-0.2,-60.8" scale="0.9977,0.9929" rotation="0.9848" ease="-1"/>
+      <kf duration="10" ref="hero_A_01/bone_thigh_R" loc="0.95,-60.2" scale="0.9985,0.9889" rotation="0.9762" ease="1"/>
+      <kf duration="10" ref="hero_A_01/bone_thigh_R" loc="-0.2,-60.85" scale="0.9977,0.993" rotation="0.9848" ease="-1"/>
+      <kf duration="1" ref="hero_A_01/bone_thigh_R" loc="-1.35,-61.4" rotation="0.9939"/>
+    </layer>
+    <layer name="cape/hood">
+      <kf duration="10" ref="hero_A_01/bone_cape" loc="0.05,-100.45" ease="1"/>
+      <kf duration="10" ref="hero_A_01/bone_cape" loc="1.8,-99.6" scale="1.0018,0.9985" rotation="0.1132" ease="-1"/>
+      <kf duration="10" ref="hero_A_01/bone_cape" loc="3.5,-98.75" scale="1.004,0.9973" rotation="0.123" ease="1"/>
+      <kf duration="10" ref="hero_A_01/bone_cape" loc="1.75,-99.65" scale="1.0018,0.9985" rotation="0.0275" ease="-1"/>
+      <kf duration="1" ref="hero_A_01/bone_cape" loc="0.05,-100.45"/>
+    </layer>
+    <layer name="hips">
+      <kf duration="10" ref="hero_A_01/bone_hips" loc="2.3,-58.1" ease="1"/>
+      <kf duration="10" ref="hero_A_01/bone_hips" loc="3.4,-57.45" scale="0.9999,0.9999" rotation="0.0132" ease="-1"/>
+      <kf duration="10" ref="hero_A_01/bone_hips" loc="4.5,-56.8" scale="0.9999,0.9999" rotation="0.0268" ease="1"/>
+      <kf duration="10" ref="hero_A_01/bone_hips" loc="3.4,-57.45" scale="0.9999,0.9999" rotation="0.0131" ease="-1"/>
+      <kf duration="1" ref="hero_A_01/bone_hips" loc="2.3,-58.1"/>
+    </layer>
+    <layer name="chest">
+      <kf duration="10" ref="hero_A_01/bone_chest" loc="-2.6,-74.05" ease="1"/>
+      <kf duration="10" ref="hero_A_01/bone_chest" loc="-1.25,-73.35" scale="1.002,0.9987" rotation="0.0351" ease="-1"/>
+      <kf duration="10" ref="hero_A_01/bone_chest" loc="0.05,-72.65" scale="1.0042,0.9974" rotation="0.0705" ease="1"/>
+      <kf duration="10" ref="hero_A_01/bone_chest" loc="-1.3,-73.35" scale="1.002,0.9987" rotation="0.0317" ease="-1"/>
+      <kf duration="1" ref="hero_A_01/bone_chest" loc="-2.6,-74.05"/>
+    </layer>
+    <layer name="foot L">
+      <kf duration="10" ref="hero_A_01/bone_foot_L" loc="31.5,7.85" ease="1"/>
+      <kf duration="10" ref="hero_A_01/bone_foot_L" loc="31.5,7.85" ease="-1"/>
+      <kf duration="10" ref="hero_A_01/bone_foot_L" loc="31.5,7.85" ease="1"/>
+      <kf duration="10" ref="hero_A_01/bone_foot_L" loc="31.5,7.85" ease="-1"/>
+      <kf duration="1" ref="hero_A_01/bone_foot_L" loc="31.5,7.85"/>
+    </layer>
+    <layer name="calf L">
+      <kf duration="10" ref="hero_A_01/bone_calf_L" loc="18.85,-19.65" rotation="-0.4443" ease="1"/>
+      <kf duration="10" ref="hero_A_01/bone_calf_L" loc="18.8,-18.8" scale="0.998,0.9819" rotation="-0.4588" ease="-1"/>
+      <kf duration="10" ref="hero_A_01/bone_calf_L" loc="18.8,-17.95" scale="0.9987,0.9667" rotation="-0.4723" ease="1"/>
+      <kf duration="10" ref="hero_A_01/bone_calf_L" loc="18.8,-18.85" scale="0.9981,0.9822" rotation="-0.4555" ease="-1"/>
+      <kf duration="1" ref="hero_A_01/bone_calf_L" loc="18.85,-19.65" rotation="-0.4443"/>
+    </layer>
+    <layer name="thigh L">
+      <kf duration="10" ref="hero_A_01/bone_thigh_L" loc="9.05,-60.65" rotation="-0.1871" ease="1"/>
+      <kf duration="10" ref="hero_A_01/bone_thigh_L" loc="10.15,-59.85" scale="0.9993,0.9993" rotation="-0.1539" ease="-1"/>
+      <kf duration="10" ref="hero_A_01/bone_thigh_L" loc="11.3,-59.2" scale="0.9996,0.9996" rotation="-0.1276" ease="1"/>
+      <kf duration="10" ref="hero_A_01/bone_thigh_L" loc="10.15,-59.95" scale="0.9993,0.9993" rotation="-0.1573" ease="-1"/>
+      <kf duration="1" ref="hero_A_01/bone_thigh_L" loc="9.05,-60.65" rotation="-0.1871"/>
+    </layer>
+    <layer name="hand L">
+      <kf duration="10" ref="hero_A_01/bone_hand_L" loc="31.6,-47.2" rotation="-0.5236" ease="1"/>
+      <kf duration="10" ref="hero_A_01/bone_hand_L" loc="31.85,-45.6" scale="0.9979,0.9979" rotation="-0.4809" ease="-1"/>
+      <kf duration="10" ref="hero_A_01/bone_hand_L" loc="31.95,-44" scale="0.9986,0.9986" rotation="-0.4385" ease="1"/>
+      <kf duration="10" ref="hero_A_01/bone_hand_L" loc="31.8,-45.6" scale="0.998,0.998" rotation="-0.481" ease="-1"/>
+      <kf duration="1" ref="hero_A_01/bone_hand_L" loc="31.6,-47.2" rotation="-0.5236"/>
+    </layer>
+    <layer name="forearm L">
+      <kf duration="10" ref="hero_A_01/bone_forearm_L" loc="24.9,-72.5" rotation="-0.309" ease="1"/>
+      <kf duration="10" ref="hero_A_01/bone_forearm_L" loc="26.1,-71.15" scale="0.9987,0.9987" rotation="-0.2631" ease="-1"/>
+      <kf duration="10" ref="hero_A_01/bone_forearm_L" loc="27.35,-69.8" scale="0.9991,0.9991" rotation="-0.224" ease="1"/>
+      <kf duration="10" ref="hero_A_01/bone_forearm_L" loc="26.05,-71.2" scale="0.9987,0.9987" rotation="-0.2666" ease="-1"/>
+      <kf duration="1" ref="hero_A_01/bone_forearm_L" loc="24.9,-72.5" rotation="-0.309"/>
+    </layer>
+    <layer name="bicep L">
+      <kf duration="10" ref="hero_A_01/bone_bicep_L" loc="3.65,-94.9" rotation="-0.7854" ease="1"/>
+      <kf duration="10" ref="hero_A_01/bone_bicep_L" loc="5.2,-93.85" scale="0.9975,0.9975" rotation="-0.7703" ease="-1"/>
+      <kf duration="10" ref="hero_A_01/bone_bicep_L" loc="6.75,-92.8" scale="0.9983,0.9983" rotation="-0.7569" ease="1"/>
+      <kf duration="10" ref="hero_A_01/bone_bicep_L" loc="5.2,-93.85" scale="0.9975,0.9975" rotation="-0.7704" ease="-1"/>
+      <kf duration="1" ref="hero_A_01/bone_bicep_L" loc="3.65,-94.9" rotation="-0.7854"/>
+    </layer>
+    <layer name="neck">
+      <kf duration="10" ref="hero_A_01/bone_neck" loc="-9.8,-98.2" ease="1"/>
+      <kf duration="10" ref="hero_A_01/bone_neck" loc="-8.1,-97.7" scale="0.9999,0.9999" rotation="0.0132" ease="-1"/>
+      <kf duration="10" ref="hero_A_01/bone_neck" loc="-6.45,-97.25" scale="0.9999,0.9999" rotation="0.0268" ease="1"/>
+      <kf duration="10" ref="hero_A_01/bone_neck" loc="-8.2,-97.75" scale="0.9999,0.9999" rotation="0.0131" ease="-1"/>
+      <kf duration="1" ref="hero_A_01/bone_neck" loc="-9.8,-98.2"/>
+    </layer>
+    <layer name="head">
+      <kf duration="10" ref="hero_A_01/bone_head" loc="-15.55,-116.45" ease="1"/>
+      <kf duration="10" ref="hero_A_01/bone_head" loc="-13.45,-116.25" ease="-1"/>
+      <kf duration="10" ref="hero_A_01/bone_head" loc="-11.35,-116.05" ease="1"/>
+      <kf duration="10" ref="hero_A_01/bone_head" loc="-13.45,-116.25" ease="-1"/>
+      <kf duration="1" ref="hero_A_01/bone_head" loc="-15.55,-116.45"/>
+    </layer>
+  </movie>
+  <movie name="hero_A_01/attack" md5="065a5424fcc72755a3da465611a7c569" authoredDevice="IPHONE_RETINA">
+    <layer name="shadow">
+      <kf duration="39" ref="hero_A_01/bone_shadow" loc="1.25,-0.4"/>
+      <kf duration="1" ref="hero_A_01/bone_shadow" loc="1.25,-0.4"/>
+    </layer>
+    <layer name="hair">
+      <kf duration="4" ref="hero_A_01/bone_hair" loc="-14.55,-131.7"/>
+      <kf duration="3" ref="hero_A_01/bone_hair" loc="52.45,-135.85" rotation="0.7854" ease="-0.2"/>
+      <kf duration="3" ref="hero_A_01/bone_hair" loc="-9.35,-112.55" scale="-0.9713,0.8923" rotation="-0.6702"/>
+      <kf duration="1" ref="hero_A_01/bone_hair" loc="-69.9,-89.7" scale="-0.9535,1.186" rotation="-1.5562"/>
+      <kf duration="2" ref="hero_A_01/bone_hair" loc="-55,-85.85" scale="0.9521,-0.6134" rotation="0.5379"/>
+      <kf duration="8" ref="hero_A_01/bone_hair" loc="-25.4,-78.2" scale="0.9535,-0.8784" rotation="-1.5562" ease="-0.8"/>
+      <kf duration="3" ref="hero_A_01/bone_hair" loc="-13.8,-86.35" scale="-0.9821,0.8182" rotation="-0.1314" ease="-1"/>
+      <kf duration="1" ref="hero_A_01/bone_hair" loc="-13,-108.45" scale="-0.9847,0.9998" rotation="-0.2615"/>
+      <kf duration="8" ref="hero_A_01/bone_hair" loc="-13.05,-117.2" rotation="-0.4535" ease="-1"/>
+      <kf duration="3" ref="hero_A_01/bone_hair" loc="-14.55,-131.7" rotation="0.0652" ease="1"/>
+      <kf duration="3" ref="hero_A_01/bone_hair" loc="-14.6,-131.75" scale="0.9999,0.9999" rotation="0.0314" ease="-1"/>
+      <kf duration="1" ref="hero_A_01/bone_hair" loc="-14.55,-131.7"/>
+    </layer>
+    <layer name="weapon R">
+      <kf duration="3" ref="hero_A_01/~0" loc="-37.95,-56.6" scale="-1,-1" rotation="1.0291"/>
+      <kf duration="2" ref="hero_A_01/~0" loc="20.9,-135.4" scale="0.9999,1.0046" rotation="-0.4969" ease="-1"/>
+      <kf duration="2" ref="hero_A_01/~0" loc="58.05,-163.75" scale="-1,-1" rotation="-1.5675" ease="1"/>
+      <kf duration="1" ref="hero_A_01/~0" loc="-83.55,-116.85" scale="1,1.1972" rotation="0.2042"/>
+      <kf duration="4" ref="hero_A_01/~0" loc="-89.35,-34.3" scale="-2.8512,-1.0378" rotation="1.2434" ease="-1"/>
+      <kf duration="5" ref="hero_A_01/~0" loc="32.45,-71.65" scale="-1.0694,-0.8626" rotation="-0.9103" ease="-1"/>
+      <kf duration="4" ref="hero_A_01/~0" loc="46.15,-82.25" scale="-0.9983,-0.6545" rotation="-1.3485" ease="-1"/>
+      <kf duration="4" ref="hero_A_01/~0" loc="45.65,-84.9" scale="-0.9983,-0.6545" rotation="-1.3964" ease="1"/>
+      <kf duration="4" ref="hero_A_01/~0" loc="5.95,-71.95" scale="-0.9985,-0.8212" rotation="-0.1886" ease="-1"/>
+      <kf duration="2" ref="hero_A_01/~0" loc="-36.45,-58.1" scale="-1,-1" rotation="1.0938" ease="1"/>
+      <kf duration="3" ref="hero_A_01/~0" loc="-37.2,-57.4" scale="-0.9986,-0.9986" rotation="1.063" ease="-1"/>
+      <kf duration="5" ref="hero_A_01/~0" loc="-37.95,-56.6" scale="-1,-1" rotation="1.0291" ease="-1"/>
+      <kf duration="1" ref="hero_A_01/~0" loc="-37.95,-56.6" scale="-1,-1" rotation="1.0291"/>
+    </layer>
+    <layer name="star">
+      <kf duration="7" ref="hero_A_01/bone_starpoint_small" loc="-40.9,-188.1" scale="-1.0277,2.1351" rotation="-1.4214" visible="false"/>
+      <kf duration="1" ref="hero_A_01/bone_starpoint_small" loc="-40.9,-188.1" scale="-1.0277,2.1351" rotation="-1.4214"/>
+      <kf duration="1" ref="hero_A_01/bone_starpoint_small" loc="-149.9,-41.6" scale="-1.8991,6.0995" rotation="0.5104"/>
+      <kf duration="1" ref="hero_A_01/bone_starpoint_small" loc="-95.9,-10.1" scale="-1.8795,3.8993" rotation="-0.4116"/>
+      <kf duration="29" ref="hero_A_01/bone_starpoint_small" loc="-95.9,-10.1" scale="-1.8795,3.8993" rotation="-0.4116" visible="false"/>
+      <kf duration="1" ref="hero_A_01/bone_starpoint_small" loc="-95.9,-10.1" scale="-1.8795,3.8993" rotation="-0.4116" visible="false"/>
+    </layer>
+    <layer name="star">
+      <kf duration="6" ref="hero_A_01/bone_starpoint_small" loc="-40.9,-188.1" scale="-1.0277,2.1351" rotation="-1.4214" visible="false"/>
+      <kf duration="1" ref="hero_A_01/bone_starpoint_small" loc="41.55,-169.6" scale="-2.3086,2.851" rotation="-0.7081"/>
+      <kf duration="1" ref="hero_A_01/bone_starpoint_small" loc="-49.9,-168.1" scale="-2.0075,4.1706" rotation="-1.4214"/>
+      <kf duration="1" ref="hero_A_01/bone_starpoint_small" loc="-127.4,-45.1" scale="-2.1406,8.1254" rotation="0.5104"/>
+      <kf duration="1" ref="hero_A_01/bone_starpoint_small" loc="-85.9,-21.1" scale="-2.5708,5.3336" rotation="-0.4116"/>
+      <kf duration="1" ref="hero_A_01/bone_starpoint_small" loc="-32.9,-21.7" scale="-1.8795,6.016" rotation="-0.9351"/>
+      <kf duration="28" ref="hero_A_01/bone_starpoint_small" loc="-95.9,-10.1" scale="-1.8795,3.8993" rotation="-0.4116" visible="false"/>
+      <kf duration="1" ref="hero_A_01/bone_starpoint_small" loc="-95.9,-10.1" scale="-1.8795,3.8993" rotation="-0.4116" visible="false"/>
+    </layer>
+    <layer name="spark">
+      <kf duration="5" ref="hero_A_01/bone_starpoint" loc="-38.95,-190.25" scale="1.6635,0.3914" rotation="0.0579" visible="false"/>
+      <kf duration="3" ref="hero_A_01/bone_starpoint" loc="131.05,-161.25" scale="1.1493,0.2704" rotation="1.1051"/>
+      <kf duration="1" ref="hero_A_01/bone_starpoint" loc="178.55,-146.25" scale="-1.1231,-0.6934" rotation="-1.3619"/>
+      <kf duration="30" ref="hero_A_01/bone_starpoint" loc="10.95,-282.75" scale="1.8883,1.404" rotation="0.0579" visible="false"/>
+      <kf duration="1" ref="hero_A_01/bone_starpoint" loc="10.95,-282.75" scale="1.8883,1.404" rotation="0.0579" visible="false"/>
+    </layer>
+    <layer name="spark">
+      <kf duration="7" ref="hero_A_01/bone_starpoint" loc="-38.95,-190.25" scale="1.6635,0.3914" rotation="0.0579" visible="false"/>
+      <kf duration="3" ref="hero_A_01/bone_starpoint" loc="-38.95,-190.25" scale="1.6635,0.3914" rotation="0.0579"/>
+      <kf duration="1" ref="hero_A_01/bone_starpoint" loc="10.95,-282.75" scale="1.8883,1.404" rotation="0.0579"/>
+      <kf duration="28" ref="hero_A_01/bone_starpoint" loc="10.95,-282.75" scale="1.8883,1.404" rotation="0.0579" visible="false"/>
+      <kf duration="1" ref="hero_A_01/bone_starpoint" loc="10.95,-282.75" scale="1.8883,1.404" rotation="0.0579" visible="false"/>
+    </layer>
+    <layer name="spark">
+      <kf duration="8" ref="hero_A_01/bone_starpoint" loc="-38.95,-190.25" scale="1.6635,0.3914" rotation="0.0579" visible="false"/>
+      <kf duration="3" ref="hero_A_01/bone_starpoint" loc="-122.45,-155.75" scale="1.4868,0.3914" rotation="-0.7612"/>
+      <kf duration="1" ref="hero_A_01/bone_starpoint" loc="-240.95,-280.75" scale="1.4868,1.1441" rotation="-0.7612"/>
+      <kf duration="27" ref="hero_A_01/bone_starpoint" loc="10.95,-282.75" scale="1.8883,1.404" rotation="0.0579" visible="false"/>
+      <kf duration="1" ref="hero_A_01/bone_starpoint" loc="10.95,-282.75" scale="1.8883,1.404" rotation="0.0579" visible="false"/>
+    </layer>
+    <layer name="spark">
+      <kf duration="9" ref="hero_A_01/bone_starpoint" loc="-38.95,-190.25" scale="1.6635,0.3914" rotation="0.0579" visible="false"/>
+      <kf duration="3" ref="hero_A_01/bone_starpoint" loc="-157.4,-31.2" scale="-1.5819,0" rotation="1.5632"/>
+      <kf duration="1" ref="hero_A_01/bone_starpoint" loc="-307.4,-31.2" scale="-1.5819,0" rotation="1.5632"/>
+      <kf duration="26" ref="hero_A_01/bone_starpoint" loc="10.95,-282.75" scale="1.8883,1.404" rotation="0.0579" visible="false"/>
+      <kf duration="1" ref="hero_A_01/bone_starpoint" loc="10.95,-282.75" scale="1.8883,1.404" rotation="0.0579" visible="false"/>
+    </layer>
+    <layer name="spark">
+      <kf duration="10" ref="hero_A_01/bone_starpoint" loc="-38.95,-190.25" scale="1.6635,0.3914" rotation="0.0579" visible="false"/>
+      <kf duration="3" ref="hero_A_01/bone_starpoint" loc="-38,-7.6" scale="-2.5478,-0.2704" rotation="0.5957"/>
+      <kf duration="1" ref="hero_A_01/bone_starpoint" loc="-95.45,49.25" scale="-1.3242,-0.1911" rotation="-0.2473"/>
+      <kf duration="25" ref="hero_A_01/bone_starpoint" loc="10.95,-282.75" scale="1.8883,1.404" rotation="0.0579" visible="false"/>
+      <kf duration="1" ref="hero_A_01/bone_starpoint" loc="10.95,-282.75" scale="1.8883,1.404" rotation="0.0579" visible="false"/>
+    </layer>
+    <layer name="spark">
+      <kf duration="11" ref="hero_A_01/bone_starpoint" loc="-38.95,-190.25" scale="1.6635,0.3914" rotation="0.0579" visible="false"/>
+      <kf duration="3" ref="hero_A_01/bone_starpoint" loc="-13.8,-48.85" scale="-1.0273,-0.2704" rotation="-0.7613"/>
+      <kf duration="1" ref="hero_A_01/bone_starpoint" loc="39.65,0.45" scale="-1.7194,-0.2278" rotation="-0.3148"/>
+      <kf duration="24" ref="hero_A_01/bone_starpoint" loc="10.95,-282.75" scale="1.8883,1.404" rotation="0.0579" visible="false"/>
+      <kf duration="1" ref="hero_A_01/bone_starpoint" loc="10.95,-282.75" scale="1.8883,1.404" rotation="0.0579" visible="false"/>
+    </layer>
+    <layer name="spark">
+      <kf duration="12" ref="hero_A_01/bone_starpoint" loc="-38.95,-190.25" scale="1.6635,0.3914" rotation="0.0579" visible="false"/>
+      <kf duration="3" ref="hero_A_01/bone_starpoint" loc="32.2,-61.85" scale="-1.0273,-0.2704" rotation="-0.7613"/>
+      <kf duration="1" ref="hero_A_01/bone_starpoint" loc="85.05,-32.25" scale="-1.1895,-0.2278" rotation="-0.8384"/>
+      <kf duration="23" ref="hero_A_01/bone_starpoint" loc="10.95,-282.75" scale="1.8883,1.404" rotation="0.0579" visible="false"/>
+      <kf duration="1" ref="hero_A_01/bone_starpoint" loc="10.95,-282.75" scale="1.8883,1.404" rotation="0.0579" visible="false"/>
+    </layer>
+    <layer name="hand R">
+      <kf duration="3" ref="hero_A_01/bone_hand_R" loc="-32.85,-59.85" rotation="0.615"/>
+      <kf duration="2" ref="hero_A_01/bone_hand_R" loc="24,-132.85" scale="-0.9984,-0.9984" rotation="-1.1443" ease="-1"/>
+      <kf duration="2" ref="hero_A_01/bone_hand_R" loc="54.4,-158.2" scale="-1,-1" rotation="0.2138" ease="1"/>
+      <kf duration="1" ref="hero_A_01/bone_hand_R" loc="-78.85,-114.6" scale="-0.9984,-0.9984" rotation="-0.8322"/>
+      <kf duration="4" ref="hero_A_01/bone_hand_R" loc="-83.85,-37.45" scale="0.9995,0.9995" rotation="0.7655" ease="-1"/>
+      <kf duration="5" ref="hero_A_01/bone_hand_R" loc="26.7,-80.8" scale="0.9972,0.9972" rotation="-1.0935" ease="-1"/>
+      <kf duration="4" ref="hero_A_01/bone_hand_R" loc="39.75,-85.9" scale="0.9984,0.9984" rotation="-1.31" ease="-0.4"/>
+      <kf duration="4" ref="hero_A_01/bone_hand_R" loc="39.1,-88.25" scale="0.9984,0.9984" rotation="-1.3579" ease="1"/>
+      <kf duration="4" ref="hero_A_01/bone_hand_R" loc="5,-75.05" scale="0.9981,0.9981" rotation="-0.3715" ease="-1"/>
+      <kf duration="2" ref="hero_A_01/bone_hand_R" loc="-31.2,-60.95" rotation="0.6797" ease="1"/>
+      <kf duration="3" ref="hero_A_01/bone_hand_R" loc="-32.1,-60.4" scale="0.9984,0.9984" rotation="0.6473" ease="-1"/>
+      <kf duration="5" ref="hero_A_01/bone_hand_R" loc="-32.85,-59.85" rotation="0.615"/>
+      <kf duration="1" ref="hero_A_01/bone_hand_R" loc="-32.85,-59.85" rotation="0.615"/>
+    </layer>
+    <layer name="forearm R">
+      <kf duration="3" ref="hero_A_01/bone_forearm_R" loc="-18.85,-78.9" rotation="0.6987"/>
+      <kf duration="2" ref="hero_A_01/bone_forearm_R" loc="31.55,-109.7" scale="-0.9989,-0.9989" rotation="-0.3766" ease="-1"/>
+      <kf duration="2" ref="hero_A_01/bone_forearm_R" loc="39.85,-135.1" scale="-1,-1" rotation="0.5236" ease="1"/>
+      <kf duration="1" ref="hero_A_01/bone_forearm_R" loc="-57.35,-98.4" scale="-0.9984,-0.9984" rotation="-0.875"/>
+      <kf duration="4" ref="hero_A_01/bone_forearm_R" loc="-63.6,-54.35" rotation="0.8949" ease="-1"/>
+      <kf duration="5" ref="hero_A_01/bone_forearm_R" loc="1.45,-81.85" scale="0.9979,0.9983" rotation="-1.4171" ease="-1"/>
+      <kf duration="4" ref="hero_A_01/bone_forearm_R" loc="17.5,-84.6" scale="-0.9985,-0.884" rotation="1.544" ease="-0.4"/>
+      <kf duration="4" ref="hero_A_01/bone_forearm_R" loc="16.95,-85.9" scale="-0.9985,-0.884" rotation="1.4962" ease="1"/>
+      <kf duration="3" ref="hero_A_01/bone_forearm_R" loc="-4.4,-82.5" scale="0.9988,0.9556" rotation="-0.1843" ease="-1"/>
+      <kf duration="2" ref="hero_A_01/bone_forearm_R" loc="-17.35,-80.4" rotation="0.6987" ease="1"/>
+      <kf duration="2" ref="hero_A_01/bone_forearm_R" loc="-18.1,-79.6" scale="0.9984,0.9984" rotation="0.6996" ease="-1"/>
+      <kf duration="7" ref="hero_A_01/bone_forearm_R" loc="-18.85,-78.9" rotation="0.6987" ease="-1"/>
+      <kf duration="1" ref="hero_A_01/bone_forearm_R" loc="-18.85,-78.9" rotation="0.6987"/>
+    </layer>
+    <layer name="bicep R">
+      <kf duration="3" ref="hero_A_01/bone_bicep_R" loc="-18.35,-100.4" scale="1,0.8305" rotation="-0.0093"/>
+      <kf duration="2" ref="hero_A_01/bone_bicep_R" loc="27,-100" scale="-0.9985,-0.5624" rotation="0.4702" ease="-1"/>
+      <kf duration="2" ref="hero_A_01/bone_bicep_R" loc="37.15,-102.35" scale="-1,-1" rotation="0.0603" ease="1"/>
+      <kf duration="1" ref="hero_A_01/bone_bicep_R" loc="-31.7,-86.9" scale="-0.9988,-0.9988" rotation="-1.1727"/>
+      <kf duration="4" ref="hero_A_01/bone_bicep_R" loc="-43.8,-76.65" rotation="0.7604" ease="-1"/>
+      <kf duration="5" ref="hero_A_01/bone_bicep_R" loc="-28.4,-75.3" scale="-0.9984,-0.9314" rotation="1.3431" ease="-1"/>
+      <kf duration="4" ref="hero_A_01/bone_bicep_R" loc="-9.3,-73.5" scale="-0.9995,-0.8485" rotation="1.141" ease="-0.4"/>
+      <kf duration="4" ref="hero_A_01/bone_bicep_R" loc="-9.3,-73.5" scale="-0.9995,-0.8485" rotation="1.0931" ease="1"/>
+      <kf duration="3" ref="hero_A_01/bone_bicep_R" loc="-14,-91.1" scale="0.9982,0.8359" rotation="-0.7791" ease="-1"/>
+      <kf duration="2" ref="hero_A_01/bone_bicep_R" loc="-16.85,-101.9" scale="1,0.8305" rotation="-0.0093" ease="1"/>
+      <kf duration="2" ref="hero_A_01/bone_bicep_R" loc="-17.6,-101.15" scale="1,0.8305" rotation="-0.0089" ease="-1"/>
+      <kf duration="7" ref="hero_A_01/bone_bicep_R" loc="-18.35,-100.4" scale="1,0.8305" rotation="-0.0093" ease="-1"/>
+      <kf duration="1" ref="hero_A_01/bone_bicep_R" loc="-18.35,-100.4" scale="1,0.8305" rotation="-0.0093"/>
+    </layer>
+    <layer name="foot R">
+      <kf duration="3" ref="hero_A_01/bone_foot_R" loc="-24.9,-10.4"/>
+      <kf duration="4" ref="hero_A_01/bone_foot_R" loc="-24.9,-14.9" rotation="-0.2618" ease="1"/>
+      <kf duration="3" ref="hero_A_01/bone_foot_R" loc="-24.9,-12.65" scale="0.9996,0.9996" rotation="-0.1319" ease="-0.5"/>
+      <kf duration="2" ref="hero_A_01/bone_foot_R" loc="-24.9,-10.4" ease="-0.4"/>
+      <kf duration="3" ref="hero_A_01/bone_foot_R" loc="-24.9,-10.4" ease="-1"/>
+      <kf duration="2" ref="hero_A_01/bone_foot_R" loc="-24.9,-10.4" ease="1"/>
+      <kf duration="2" ref="hero_A_01/bone_foot_R" loc="-24.9,-10.4" ease="-1"/>
+      <kf duration="5" ref="hero_A_01/bone_foot_R" loc="-24.9,-10.4" ease="0.6"/>
+      <kf duration="4" ref="hero_A_01/bone_foot_R" loc="-24.9,-10.4" ease="-0.7"/>
+      <kf duration="2" ref="hero_A_01/bone_foot_R" loc="-24.9,-10.4" ease="1"/>
+      <kf duration="2" ref="hero_A_01/bone_foot_R" loc="-24.9,-10.4" ease="-1"/>
+      <kf duration="7" ref="hero_A_01/bone_foot_R" loc="-24.9,-10.4" ease="-1"/>
+      <kf duration="1" ref="hero_A_01/bone_foot_R" loc="-24.9,-10.4"/>
+    </layer>
+    <layer name="calf R">
+      <kf duration="3" ref="hero_A_01/bone_calf_R" loc="-33.4,-39.65" rotation="-0.178"/>
+      <kf duration="4" ref="hero_A_01/bone_calf_R" loc="-20.55,-45.25" rotation="0.2448" ease="1"/>
+      <kf duration="3" ref="hero_A_01/bone_calf_R" loc="-38.6,-30.8" scale="0.9992,0.757" rotation="-0.5097" ease="-0.5"/>
+      <kf duration="2" ref="hero_A_01/bone_calf_R" loc="-55.15,-15.6" rotation="-1.2811" ease="-0.4"/>
+      <kf duration="3" ref="hero_A_01/bone_calf_R" loc="-27.05,-20.2" scale="0.9986,0.4407" rotation="0.0703" ease="-1"/>
+      <kf duration="2" ref="hero_A_01/bone_calf_R" loc="-13.45,-22.45" scale="0.9988,0.5741" rotation="0.8879" ease="1"/>
+      <kf duration="2" ref="hero_A_01/bone_calf_R" loc="-13.9,-22.4" scale="0.9964,0.5726" rotation="0.8275" ease="-1"/>
+      <kf duration="5" ref="hero_A_01/bone_calf_R" loc="-14.35,-22.45" scale="0.9972,0.5731" rotation="0.7661" ease="0.6"/>
+      <kf duration="4" ref="hero_A_01/bone_calf_R" loc="-24.5,-32.95" scale="0.9981,0.8333" rotation="0.2315" ease="-0.7"/>
+      <kf duration="2" ref="hero_A_01/bone_calf_R" loc="-30.9,-39.75" rotation="-0.109" ease="1"/>
+      <kf duration="2" ref="hero_A_01/bone_calf_R" loc="-32.1,-39.7" scale="0.9995,0.9995" rotation="-0.1407" ease="-1"/>
+      <kf duration="7" ref="hero_A_01/bone_calf_R" loc="-33.4,-39.65" rotation="-0.178" ease="-1"/>
+      <kf duration="1" ref="hero_A_01/bone_calf_R" loc="-33.4,-39.65" rotation="-0.178"/>
+    </layer>
+    <layer name="thigh R">
+      <kf duration="3" ref="hero_A_01/bone_thigh_R" loc="-1.35,-61.4" rotation="0.9939"/>
+      <kf duration="4" ref="hero_A_01/bone_thigh_R" loc="13.65,-63.4" rotation="1.1022" ease="1"/>
+      <kf duration="3" ref="hero_A_01/bone_thigh_R" loc="-4.85,-51.6" scale="0.9985,0.9985" rotation="1.0237" ease="-0.5"/>
+      <kf duration="2" ref="hero_A_01/bone_thigh_R" loc="-24.35,-39.2" rotation="0.938" ease="-0.4"/>
+      <kf duration="3" ref="hero_A_01/bone_thigh_R" loc="6.15,-35.75" scale="0.9977,0.9977" rotation="1.1775" ease="-1"/>
+      <kf duration="2" ref="hero_A_01/bone_thigh_R" loc="20.95,-34.1" scale="0.9984,0.9984" rotation="1.2938" ease="1"/>
+      <kf duration="2" ref="hero_A_01/bone_thigh_R" loc="20.65,-33.4" scale="0.9973,0.9973" rotation="1.317" ease="-1"/>
+      <kf duration="5" ref="hero_A_01/bone_thigh_R" loc="20.45,-32.7" scale="0.9977,0.9977" rotation="1.3389" ease="0.6"/>
+      <kf duration="4" ref="hero_A_01/bone_thigh_R" loc="8.05,-51.1" scale="0.9978,0.9978" rotation="1.1027" ease="-0.7"/>
+      <kf duration="2" ref="hero_A_01/bone_thigh_R" loc="0.15,-62.9" rotation="0.9505" ease="1"/>
+      <kf duration="2" ref="hero_A_01/bone_thigh_R" loc="-0.55,-62.15" scale="0.9985,0.9985" rotation="0.9718" ease="-1"/>
+      <kf duration="7" ref="hero_A_01/bone_thigh_R" loc="-1.35,-61.4" rotation="0.9939" ease="-1"/>
+      <kf duration="1" ref="hero_A_01/bone_thigh_R" loc="-1.35,-61.4" rotation="0.9939"/>
+    </layer>
+    <layer name="cape/hood">
+      <kf duration="3" ref="hero_A_01/bone_cape" loc="0.05,-100.45"/>
+      <kf duration="4" ref="hero_A_01/bone_cape" loc="48.95,-96.15" scale="1,1.2176" rotation="0.5236" ease="1"/>
+      <kf duration="3" ref="hero_A_01/bone_cape" loc="2.7,-85.95" scale="0.9987,1.1866" rotation="-0.4506" ease="-0.5"/>
+      <kf duration="2" ref="hero_A_01/bone_cape" loc="-46.2,-75.25" scale="1,-1.1578" rotation="-1.4819" ease="-0.4"/>
+      <kf duration="3" ref="hero_A_01/bone_cape" loc="-21,-70.05" scale="0.9976,0.9976" rotation="-0.5511" ease="-1"/>
+      <kf duration="2" ref="hero_A_01/bone_cape" loc="8.4,-67.55" scale="0.9986,0.9986" rotation="-0.534" ease="1"/>
+      <kf duration="2" ref="hero_A_01/bone_cape" loc="9.6,-66.7" scale="0.9963,0.9963" rotation="-0.6605" ease="-1"/>
+      <kf duration="5" ref="hero_A_01/bone_cape" loc="10.9,-65.85" scale="0.9971,0.9971" rotation="-0.7954" ease="0.6"/>
+      <kf duration="4" ref="hero_A_01/bone_cape" loc="5.25,-87.95" scale="0.9979,0.9979" rotation="-0.3068" ease="-0.7"/>
+      <kf duration="2" ref="hero_A_01/bone_cape" loc="1.55,-101.95" ease="1"/>
+      <kf duration="2" ref="hero_A_01/bone_cape" loc="0.8,-101.2" ease="-1"/>
+      <kf duration="7" ref="hero_A_01/bone_cape" loc="0.05,-100.45" ease="-1"/>
+      <kf duration="1" ref="hero_A_01/bone_cape" loc="0.05,-100.45"/>
+    </layer>
+    <layer name="hips">
+      <kf duration="3" ref="hero_A_01/bone_hips" loc="2.3,-58.1"/>
+      <kf duration="4" ref="hero_A_01/bone_hips" loc="19.8,-64.6" scale="0.911,1.1219" rotation="0.5242" ease="1"/>
+      <kf duration="3" ref="hero_A_01/bone_hips" loc="0.05,-52.95" scale="0.9542,1.0623" rotation="-0.0097" ease="-0.5"/>
+      <kf duration="2" ref="hero_A_01/bone_hips" loc="-20.8,-40.65" rotation="-0.5795" ease="-0.4"/>
+      <kf duration="3" ref="hero_A_01/bone_hips" loc="11.2,-35.65" scale="0.9979,0.9979" rotation="-0.367" ease="-1"/>
+      <kf duration="2" ref="hero_A_01/bone_hips" loc="26.75,-33.2" scale="0.9985,0.9985" rotation="-0.2637" ease="1"/>
+      <kf duration="2" ref="hero_A_01/bone_hips" loc="26.55,-32.4" scale="0.9973,0.9973" rotation="-0.2624" ease="-1"/>
+      <kf duration="5" ref="hero_A_01/bone_hips" loc="26.3,-31.5" scale="0.9977,0.9977" rotation="-0.2625" ease="0.6"/>
+      <kf duration="4" ref="hero_A_01/bone_hips" loc="12.65,-48.6" scale="0.9988,0.9988" rotation="-0.1008" ease="-0.7"/>
+      <kf duration="2" ref="hero_A_01/bone_hips" loc="3.8,-59.6" ease="1"/>
+      <kf duration="2" ref="hero_A_01/bone_hips" loc="3.05,-58.85" ease="-1"/>
+      <kf duration="7" ref="hero_A_01/bone_hips" loc="2.3,-58.1" ease="-1"/>
+      <kf duration="1" ref="hero_A_01/bone_hips" loc="2.3,-58.1"/>
+    </layer>
+    <layer name="chest">
+      <kf duration="3" ref="hero_A_01/bone_chest" loc="-2.6,-74.05"/>
+      <kf duration="4" ref="hero_A_01/bone_chest" loc="28.4,-79.35" scale="1.0019,1" rotation="0.8477" ease="1"/>
+      <kf duration="3" ref="hero_A_01/bone_chest" loc="-1.3,-66.25" scale="1.0121,0.9906" rotation="0.0442" ease="-0.5"/>
+      <kf duration="2" ref="hero_A_01/bone_chest" loc="-32.7,-52.4" scale="1.0231,0.9811" rotation="-0.8009" ease="-0.4"/>
+      <kf duration="3" ref="hero_A_01/bone_chest" loc="3.1,-47.05" scale="1.0766,0.9796" rotation="-0.6903" ease="-1"/>
+      <kf duration="2" ref="hero_A_01/bone_chest" loc="20.45,-44.35" scale="1.1959,0.9812" rotation="0.1157" ease="1"/>
+      <kf duration="2" ref="hero_A_01/bone_chest" loc="20.2,-43.55" scale="1.2947,0.9791" rotation="0.158" ease="-1"/>
+      <kf duration="5" ref="hero_A_01/bone_chest" loc="19.95,-42.7" scale="1.401,0.9797" rotation="0.2079" ease="0.6"/>
+      <kf duration="4" ref="hero_A_01/bone_chest" loc="7.1,-62.75" scale="1.1557,0.9914" rotation="0.0792" ease="-0.7"/>
+      <kf duration="2" ref="hero_A_01/bone_chest" loc="-1.1,-75.55" ease="1"/>
+      <kf duration="2" ref="hero_A_01/bone_chest" loc="-1.85,-74.8" ease="-1"/>
+      <kf duration="7" ref="hero_A_01/bone_chest" loc="-2.6,-74.05" ease="-1"/>
+      <kf duration="1" ref="hero_A_01/bone_chest" loc="-2.6,-74.05"/>
+    </layer>
+    <layer name="foot L">
+      <kf duration="3" ref="hero_A_01/bone_foot_L" loc="31.5,7.85"/>
+      <kf duration="4" ref="hero_A_01/bone_foot_L" loc="31.5,7.85" ease="1"/>
+      <kf duration="3" ref="hero_A_01/bone_foot_L" loc="31.5,7.85" ease="-0.5"/>
+      <kf duration="2" ref="hero_A_01/bone_foot_L" loc="31.5,7.85" ease="-0.4"/>
+      <kf duration="3" ref="hero_A_01/bone_foot_L" loc="31.5,7.85" ease="-1"/>
+      <kf duration="2" ref="hero_A_01/bone_foot_L" loc="31.5,7.85" ease="1"/>
+      <kf duration="2" ref="hero_A_01/bone_foot_L" loc="31.5,7.85" ease="-1"/>
+      <kf duration="5" ref="hero_A_01/bone_foot_L" loc="31.5,7.85" ease="0.6"/>
+      <kf duration="4" ref="hero_A_01/bone_foot_L" loc="31.5,7.85" ease="-0.7"/>
+      <kf duration="2" ref="hero_A_01/bone_foot_L" loc="31.5,7.85" ease="1"/>
+      <kf duration="2" ref="hero_A_01/bone_foot_L" loc="31.5,7.85" ease="-1"/>
+      <kf duration="7" ref="hero_A_01/bone_foot_L" loc="31.5,7.85" ease="-1"/>
+      <kf duration="1" ref="hero_A_01/bone_foot_L" loc="31.5,7.85"/>
+    </layer>
+    <layer name="calf L">
+      <kf duration="3" ref="hero_A_01/bone_calf_L" loc="18.85,-19.65" rotation="-0.4443"/>
+      <kf duration="4" ref="hero_A_01/bone_calf_L" loc="29.15,-20.75" rotation="-0.1179" ease="1"/>
+      <kf duration="3" ref="hero_A_01/bone_calf_L" loc="20.7,-16.95" scale="0.9988,0.9988" rotation="-0.4333" ease="-0.5"/>
+      <kf duration="2" ref="hero_A_01/bone_calf_L" loc="11.8,-12.8" rotation="-0.77" ease="-0.4"/>
+      <kf duration="3" ref="hero_A_01/bone_calf_L" loc="25.45,-5.25" scale="0.998,0.6019" rotation="-0.4375" ease="-1"/>
+      <kf duration="2" ref="hero_A_01/bone_calf_L" loc="32.1,-1.65" scale="0.9983,0.5041" rotation="-0.0123" ease="1"/>
+      <kf duration="2" ref="hero_A_01/bone_calf_L" loc="32.1,-2.1" scale="0.9983,0.5041" rotation="-0.0093" ease="-1"/>
+      <kf duration="5" ref="hero_A_01/bone_calf_L" loc="32.1,-2.6" scale="0.9983,0.5041" rotation="-0.0096" ease="0.6"/>
+      <kf duration="4" ref="hero_A_01/bone_calf_L" loc="25.25,-14" scale="0.9987,0.8065" rotation="-0.2187" ease="-0.7"/>
+      <kf duration="2" ref="hero_A_01/bone_calf_L" loc="21,-21.3" rotation="-0.3533" ease="1"/>
+      <kf duration="2" ref="hero_A_01/bone_calf_L" loc="19.95,-20.45" scale="0.9989,0.9989" rotation="-0.3981" ease="-1"/>
+      <kf duration="7" ref="hero_A_01/bone_calf_L" loc="18.85,-19.65" rotation="-0.4443" ease="-1"/>
+      <kf duration="1" ref="hero_A_01/bone_calf_L" loc="18.85,-19.65" rotation="-0.4443"/>
+    </layer>
+    <layer name="thigh L">
+      <kf duration="3" ref="hero_A_01/bone_thigh_L" loc="9.05,-60.65" rotation="-0.1871"/>
+      <kf duration="4" ref="hero_A_01/bone_thigh_L" loc="24.05,-62.65" rotation="-0.0735" ease="1"/>
+      <kf duration="3" ref="hero_A_01/bone_thigh_L" loc="4.95,-54.1" scale="0.9989,0.9989" rotation="-0.3504" ease="-0.5"/>
+      <kf duration="2" ref="hero_A_01/bone_thigh_L" loc="-15.2,-45.2" rotation="-0.6477" ease="-0.4"/>
+      <kf duration="3" ref="hero_A_01/bone_thigh_L" loc="18.5,-39.6" scale="0.9986,0.9089" rotation="-0.1276" ease="-1"/>
+      <kf duration="2" ref="hero_A_01/bone_thigh_L" loc="34.75,-36.9" scale="0.9985,0.8653" rotation="0.1199" ease="1"/>
+      <kf duration="2" ref="hero_A_01/bone_thigh_L" loc="34.45,-36.15" scale="0.9979,0.8495" rotation="0.1182" ease="-1"/>
+      <kf duration="5" ref="hero_A_01/bone_thigh_L" loc="34.2,-35.2" scale="0.9981,0.8333" rotation="0.1184" ease="0.6"/>
+      <kf duration="4" ref="hero_A_01/bone_thigh_L" loc="19.7,-51.65" scale="0.999,0.9349" rotation="-0.0786" ease="-0.7"/>
+      <kf duration="2" ref="hero_A_01/bone_thigh_L" loc="10.55,-62.15" rotation="-0.2041" ease="1"/>
+      <kf duration="2" ref="hero_A_01/bone_thigh_L" loc="9.8,-61.45" scale="0.9994,0.9994" rotation="-0.193" ease="-1"/>
+      <kf duration="7" ref="hero_A_01/bone_thigh_L" loc="9.05,-60.65" rotation="-0.1871" ease="-1"/>
+      <kf duration="1" ref="hero_A_01/bone_thigh_L" loc="9.05,-60.65" rotation="-0.1871"/>
+    </layer>
+    <layer name="neck">
+      <kf duration="3" ref="hero_A_01/bone_neck" loc="-9.8,-98.2"/>
+      <kf duration="4" ref="hero_A_01/bone_neck" loc="40.45,-101.1" rotation="0.9022" ease="1"/>
+      <kf duration="3" ref="hero_A_01/bone_neck" loc="-5.05,-85.1" scale="0.9998,0.9998" rotation="0.0486" ease="-0.5"/>
+      <kf duration="2" ref="hero_A_01/bone_neck" loc="-53.15,-68.05" rotation="-0.8496" ease="-0.4"/>
+      <kf duration="3" ref="hero_A_01/bone_neck" loc="-21.55,-58.15" scale="0.9973,0.9973" rotation="-0.8003" ease="-1"/>
+      <kf duration="2" ref="hero_A_01/bone_neck" loc="1.25,-60.8" scale="0.9984,0.9984" rotation="-0.7744" ease="1"/>
+      <kf duration="2" ref="hero_A_01/bone_neck" loc="1,-59.95" scale="0.9959,0.9959" rotation="-0.7744" ease="-1"/>
+      <kf duration="5" ref="hero_A_01/bone_neck" loc="0.75,-59.05" scale="0.9967,0.9967" rotation="-0.7744" ease="0.6"/>
+      <kf duration="4" ref="hero_A_01/bone_neck" loc="-4.8,-83.85" scale="0.9978,0.9978" rotation="-0.3014" ease="-0.7"/>
+      <kf duration="2" ref="hero_A_01/bone_neck" loc="-8.3,-99.7" ease="1"/>
+      <kf duration="2" ref="hero_A_01/bone_neck" loc="-9.05,-98.95" ease="-1"/>
+      <kf duration="7" ref="hero_A_01/bone_neck" loc="-9.8,-98.2" ease="-1"/>
+      <kf duration="1" ref="hero_A_01/bone_neck" loc="-9.8,-98.2"/>
+    </layer>
+    <layer name="head">
+      <kf duration="3" ref="hero_A_01/bone_head" loc="-15.55,-116.45"/>
+      <kf duration="4" ref="hero_A_01/bone_head" loc="51.45,-122.6" ease="1"/>
+      <kf duration="3" ref="hero_A_01/bone_head" loc="-7.6,-99.2" scale="0.9999,0.9999" rotation="-0.0307" ease="-0.5"/>
+      <kf duration="2" ref="hero_A_01/bone_head" loc="-70,-74.45" rotation="-0.0643" ease="-0.4"/>
+      <kf duration="3" ref="hero_A_01/bone_head" loc="-42.75,-65.25" scale="0.9997,0.9997" rotation="-0.0575" ease="-1"/>
+      <kf duration="2" ref="hero_A_01/bone_head" loc="-14.65,-68.2" scale="0.9998,0.9998" rotation="-0.0572" ease="1"/>
+      <kf duration="3" ref="hero_A_01/bone_head" loc="-14.8,-67.65" scale="0.9996,0.9996" rotation="-0.0568" ease="-1"/>
+      <kf duration="4" ref="hero_A_01/bone_head" loc="-15.15,-66.45" scale="0.9996,0.9996" rotation="-0.0569" ease="0.6"/>
+      <kf duration="4" ref="hero_A_01/bone_head" loc="-14.6,-92.45" scale="0.9997,0.9997" rotation="-0.0267" ease="-0.7"/>
+      <kf duration="2" ref="hero_A_01/bone_head" loc="-14.05,-117.95" ease="1"/>
+      <kf duration="2" ref="hero_A_01/bone_head" loc="-14.8,-117.2" ease="-1"/>
+      <kf duration="7" ref="hero_A_01/bone_head" loc="-15.55,-116.45" ease="-1"/>
+      <kf duration="1" ref="hero_A_01/bone_head" loc="-15.55,-116.45"/>
+    </layer>
+    <layer name="hand L">
+      <kf duration="3" ref="hero_A_01/bone_hand_L" loc="31.6,-47.2" rotation="-0.5236"/>
+      <kf duration="4" ref="hero_A_01/bone_hand_L" loc="92.5,-57.6" rotation="-0.488" ease="1"/>
+      <kf duration="3" ref="hero_A_01/bone_hand_L" loc="50.1,-61.8" scale="1.0336,0.9972" rotation="-0.4768" ease="-0.5"/>
+      <kf duration="2" ref="hero_A_01/bone_hand_L" loc="5.1,-66.35" scale="1.0719,0.9975" rotation="-0.4666" ease="-0.4"/>
+      <kf duration="3" ref="hero_A_01/bone_hand_L" loc="4.5,-16.4" scale="1.1076,0.9382" rotation="0.289" ease="-1"/>
+      <kf duration="2" ref="hero_A_01/bone_hand_L" loc="-36.05,-31.65" scale="-1.1565,0.999" rotation="-1.3534" ease="1"/>
+      <kf duration="3" ref="hero_A_01/bone_hand_L" loc="-37.1,-32.4" scale="-1.1554,0.9665" rotation="-1.3306" ease="-1"/>
+      <kf duration="4" ref="hero_A_01/bone_hand_L" loc="-39.65,-34.55" scale="-1.1556,-0.8858" rotation="-1.2731" ease="0.6"/>
+      <kf duration="4" ref="hero_A_01/bone_hand_L" loc="-17.3,-37.8" scale="1.0957,0.9273" rotation="1.0681" ease="-0.7"/>
+      <kf duration="6" ref="hero_A_01/bone_hand_L" loc="19.8,-43.15" rotation="-0.2618" ease="-0.75"/>
+      <kf duration="5" ref="hero_A_01/bone_hand_L" loc="31.6,-47.2" rotation="-0.5236" ease="-0.9"/>
+      <kf duration="1" ref="hero_A_01/bone_hand_L" loc="31.6,-47.2" rotation="-0.5236"/>
+    </layer>
+    <layer name="forearm L">
+      <kf duration="3" ref="hero_A_01/bone_forearm_L" loc="24.9,-72.5" rotation="-0.309"/>
+      <kf duration="4" ref="hero_A_01/bone_forearm_L" loc="72.95,-76.15" rotation="-0.7854" ease="1"/>
+      <kf duration="3" ref="hero_A_01/bone_forearm_L" loc="28.65,-73.85" scale="0.9978,0.9622" rotation="-1.0322" ease="-0.5"/>
+      <kf duration="2" ref="hero_A_01/bone_forearm_L" loc="-18.15,-71.45" scale="0.9984,0.9252" rotation="-1.2881" ease="-0.4"/>
+      <kf duration="2" ref="hero_A_01/bone_forearm_L" loc="-3.75,-40.25" scale="0.9974,0.9588" rotation="-0.2525" ease="-1"/>
+      <kf duration="3" ref="hero_A_01/bone_forearm_L" loc="-12.1,-37.9" scale="0.9984,0.9984" rotation="1.2592" ease="1"/>
+      <kf duration="3" ref="hero_A_01/bone_forearm_L" loc="-13.35,-37.45" scale="0.9973,0.9973" rotation="1.3432" ease="-1"/>
+      <kf duration="4" ref="hero_A_01/bone_forearm_L" loc="-14.55,-37" scale="0.9975,0.9975" rotation="1.4295" ease="0.6"/>
+      <kf duration="4" ref="hero_A_01/bone_forearm_L" loc="-1.6,-49.2" scale="0.9968,0.9968" rotation="0.8752" ease="-0.7"/>
+      <kf duration="6" ref="hero_A_01/bone_forearm_L" loc="19.9,-69.3" rotation="-0.0472" ease="-0.75"/>
+      <kf duration="5" ref="hero_A_01/bone_forearm_L" loc="24.9,-72.5" rotation="-0.309" ease="-0.9"/>
+      <kf duration="1" ref="hero_A_01/bone_forearm_L" loc="24.9,-72.5" rotation="-0.309"/>
+    </layer>
+    <layer name="bicep L">
+      <kf duration="3" ref="hero_A_01/bone_bicep_L" loc="3.65,-94.9" rotation="-0.7854"/>
+      <kf duration="4" ref="hero_A_01/bone_bicep_L" loc="51.1,-91.35" rotation="-1.0116" ease="1"/>
+      <kf duration="3" ref="hero_A_01/bone_bicep_L" loc="5.4,-79.75" scale="0.9986,0.9906" rotation="-1.3648" ease="-0.5"/>
+      <kf duration="2" ref="hero_A_01/bone_bicep_L" loc="-42.85,-67.6" scale="-0.9985,-0.9819" rotation="1.4079" ease="-0.4"/>
+      <kf duration="2" ref="hero_A_01/bone_bicep_L" loc="-16.85,-63.7" scale="0.9969,0.818" rotation="-0.5727" ease="-1"/>
+      <kf duration="3" ref="hero_A_01/bone_bicep_L" loc="6.15,-59.65" scale="0.9989,0.9989" rotation="0.6078" ease="1"/>
+      <kf duration="3" ref="hero_A_01/bone_bicep_L" loc="5.85,-58.45" scale="0.9965,0.9965" rotation="0.6475" ease="-1"/>
+      <kf duration="4" ref="hero_A_01/bone_bicep_L" loc="5.45,-57.2" scale="0.9973,0.9973" rotation="0.6908" ease="0.6"/>
+      <kf duration="4" ref="hero_A_01/bone_bicep_L" loc="5.3,-76" scale="0.9983,0.9983" rotation="0.1054" ease="-0.7"/>
+      <kf duration="6" ref="hero_A_01/bone_bicep_L" loc="5.15,-96.4" rotation="-0.5236" ease="-0.75"/>
+      <kf duration="5" ref="hero_A_01/bone_bicep_L" loc="3.65,-94.9" rotation="-0.7854" ease="-0.9"/>
+      <kf duration="1" ref="hero_A_01/bone_bicep_L" loc="3.65,-94.9" rotation="-0.7854"/>
+    </layer>
+  </movie>
+  <textureGroups>
+    <textureGroup target="IPHONE_RETINA">
+      <atlas file="hero_A_01/atlas0.png">
+        <texture name="hero_A_01/bone_hair" rect="0,0,72,99" offset="-55.9,-13" md5="4919aadbaa07da4e42107795bd0f73f9"/>
+        <texture name="hero_A_01/bone_cape" rect="73,0,41,40" offset="-21.5,-14.5" md5="c12e3dc4ef3680055686d489151fc099"/>
+        <texture name="hero_A_01/bone_foot_L" rect="115,0,11,23" offset="-2.5,-2.5" md5="c3c7298eb54398553b6c298da8477a9f"/>
+        <texture name="hero_A_01/bone_starpoint_small" rect="115,24,9,16" offset="-4.5,-14" md5="a949e1db8504156e69bbf10d682b9612"/>
+        <texture name="hero_A_01/bone_chest" rect="73,41,35,41" offset="-20.85,-33.65" md5="04a9a6e26e79156a0f662513ccbe8268"/>
+        <texture name="hero_A_01/bone_foot_R" rect="73,83,23,16" offset="-17,-4" md5="ef27fc20b483fd001c38cc5e65cfde94"/>
+        <texture name="hero_A_01/bone_weapon_hilt" rect="109,41,17,44" offset="-15.45,-32.55" md5="dd71ca7c6103b81bdb15dec3e78c1058"/>
+        <texture name="hero_A_01/bone_head" rect="0,100,66,72" offset="-49.9,-47.5" md5="b771b16ba30f3bd3d5ddb941e335272d"/>
+        <texture name="hero_A_01/bone_thigh_R" rect="67,100,22,53" offset="-11.5,-8.5" md5="6c1a835e589c49aa7da94bbcfc347065"/>
+        <texture name="hero_A_01/bone_hand_L" rect="67,154,15,18" offset="-9,-3.5" md5="0020bc47a745fc5673c0032908b1b6cf"/>
+        <texture name="hero_A_01/bone_hips" rect="90,100,31,37" offset="-14.5,-23.5" md5="fce1a7570465b2796f54629872e50fba"/>
+        <texture name="hero_A_01/bone_neck" rect="90,138,20,29" offset="-13.8,-23.55" md5="9f3e537379d583710cda73b188bd3bfc"/>
+        <texture name="hero_A_01/bone_hand_R" rect="111,138,14,16" offset="-9,-3" md5="b172c3e15e1eb84fe4753759dfe1b534"/>
+        <texture name="hero_A_01/bone_shadow" rect="0,173,89,43" offset="-45.5,-14" md5="7d6e47737a0b1c6c2f295e5877622be7"/>
+        <texture name="hero_A_01/bone_bicep_R" rect="90,173,16,39" offset="-8.5,-6.5" md5="dabb43b43ff52ed8fd89ef939d3e0635"/>
+        <texture name="hero_A_01/bone_bicep_L" rect="107,173,16,37" offset="-8.5,-6" md5="d7f2c2630ab2723d6c1f89b93c906b7e"/>
+        <texture name="hero_A_01/bone_forearm_R" rect="0,217,15,37" offset="-7.5,-6.5" md5="dbef7f4a7214ad8b59cea728c0b428c7"/>
+        <texture name="hero_A_01/bone_forearm_L" rect="16,217,15,36" offset="-7.5,-6" md5="1aefb0f118035b9108adece9635187ef"/>
+        <texture name="hero_A_01/bone_calf_L" rect="32,217,13,38" offset="-5.5,-4.5" md5="03951f164db365c34aa644e0b83775c6"/>
+      </atlas>
+      <atlas file="hero_A_01/atlas1.png">
+        <texture name="hero_A_01/bone_thigh_L" rect="0,0,20,49" offset="-10,-4" md5="031f0e6594e767efc9f898ac0e42c76e"/>
+        <texture name="hero_A_01/bone_starpoint" rect="0,50,11,74" offset="-5.5,-73.75" md5="82a316701bbdb1296d4ea1aa59f5fa35"/>
+        <texture name="hero_A_01/bone_calf_R" rect="12,50,14,39" offset="-5,-4.5" md5="51a1b14654d6755bd586e3064e121c68"/>
+      </atlas>
+    </textureGroup>
+    <textureGroup target="IPHONE">
+      <atlas file="hero_A_01/atlas0.png">
+        <texture name="hero_A_01/bone_hair" rect="0,0,36,50" offset="-27.95,-6.5" md5="4919aadbaa07da4e42107795bd0f73f9"/>
+        <texture name="hero_A_01/bone_cape" rect="37,0,21,20" offset="-10.75,-7.25" md5="c12e3dc4ef3680055686d489151fc099"/>
+        <texture name="hero_A_01/bone_chest" rect="37,21,18,21" offset="-10.4,-16.8" md5="04a9a6e26e79156a0f662513ccbe8268"/>
+        <texture name="hero_A_01/bone_calf_R" rect="56,21,7,20" offset="-2.5,-2.25" md5="51a1b14654d6755bd586e3064e121c68"/>
+        <texture name="hero_A_01/bone_head" rect="0,51,33,36" offset="-24.95,-23.75" md5="b771b16ba30f3bd3d5ddb941e335272d"/>
+        <texture name="hero_A_01/bone_hips" rect="34,51,16,19" offset="-7.25,-11.75" md5="fce1a7570465b2796f54629872e50fba"/>
+        <texture name="hero_A_01/bone_bicep_L" rect="51,51,8,19" offset="-4.25,-3" md5="d7f2c2630ab2723d6c1f89b93c906b7e"/>
+        <texture name="hero_A_01/bone_neck" rect="34,71,10,15" offset="-6.9,-11.8" md5="9f3e537379d583710cda73b188bd3bfc"/>
+        <texture name="hero_A_01/bone_foot_R" rect="45,71,12,8" offset="-8.5,-2" md5="ef27fc20b483fd001c38cc5e65cfde94"/>
+        <texture name="hero_A_01/bone_starpoint_small" rect="58,71,5,8" offset="-2.25,-7" md5="a949e1db8504156e69bbf10d682b9612"/>
+        <texture name="hero_A_01/bone_shadow" rect="0,88,45,22" offset="-22.75,-7" md5="7d6e47737a0b1c6c2f295e5877622be7"/>
+        <texture name="hero_A_01/bone_hand_L" rect="0,111,8,9" offset="-4.5,-1.75" md5="0020bc47a745fc5673c0032908b1b6cf"/>
+        <texture name="hero_A_01/bone_foot_L" rect="9,111,6,12" offset="-1.25,-1.25" md5="c3c7298eb54398553b6c298da8477a9f"/>
+        <texture name="hero_A_01/bone_hand_R" rect="16,111,7,8" offset="-4.5,-1.5" md5="b172c3e15e1eb84fe4753759dfe1b534"/>
+        <texture name="hero_A_01/bone_thigh_R" rect="46,88,11,27" offset="-5.75,-4.25" md5="6c1a835e589c49aa7da94bbcfc347065"/>
+      </atlas>
+      <atlas file="hero_A_01/atlas1.png">
+        <texture name="hero_A_01/bone_thigh_L" rect="0,0,10,25" offset="-5,-2" md5="031f0e6594e767efc9f898ac0e42c76e"/>
+        <texture name="hero_A_01/bone_weapon_hilt" rect="11,0,9,22" offset="-7.7,-16.3" md5="dd71ca7c6103b81bdb15dec3e78c1058"/>
+        <texture name="hero_A_01/bone_bicep_R" rect="21,0,8,20" offset="-4.25,-3.25" md5="dabb43b43ff52ed8fd89ef939d3e0635"/>
+        <texture name="hero_A_01/bone_starpoint" rect="0,26,6,37" offset="-2.75,-36.9" md5="82a316701bbdb1296d4ea1aa59f5fa35"/>
+        <texture name="hero_A_01/bone_forearm_R" rect="7,26,8,19" offset="-3.75,-3.25" md5="dbef7f4a7214ad8b59cea728c0b428c7"/>
+        <texture name="hero_A_01/bone_forearm_L" rect="16,26,8,18" offset="-3.75,-3" md5="1aefb0f118035b9108adece9635187ef"/>
+      </atlas>
+      <atlas file="hero_A_01/atlas2.png">
+        <texture name="hero_A_01/bone_calf_L" rect="0,0,7,19" offset="-2.75,-2.25" md5="03951f164db365c34aa644e0b83775c6"/>
+      </atlas>
+    </textureGroup>
+  </textureGroups>
+</resources>
