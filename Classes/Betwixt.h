@@ -59,6 +59,8 @@
 
 // Utils
 #import "BTEnum.h"
+#import "BTFloatRange.h"
+#import "BTIntRange.h"
 #import "BTLoadingMode.h"
 #import "BTMacros.h"
 #import "BTRandoms.h"

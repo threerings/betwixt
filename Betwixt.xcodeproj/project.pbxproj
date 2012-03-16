@@ -51,6 +51,10 @@
 		229B463314D8C439005FC8E9 /* BTHasLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = 229B463214D8C439005FC8E9 /* BTHasLocation.h */; };
 		229B463614D8C525005FC8E9 /* SPDisplayObject+Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 229B463414D8C525005FC8E9 /* SPDisplayObject+Extensions.h */; };
 		229B463714D8C525005FC8E9 /* SPDisplayObject+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 229B463514D8C525005FC8E9 /* SPDisplayObject+Extensions.m */; };
+		22BC09A71512C3F0006F56DA /* BTFloatRange.h in Headers */ = {isa = PBXBuildFile; fileRef = 22BC09A51512C3F0006F56DA /* BTFloatRange.h */; };
+		22BC09A81512C3F0006F56DA /* BTFloatRange.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BC09A61512C3F0006F56DA /* BTFloatRange.m */; };
+		22BC09AB1512C4E4006F56DA /* BTIntRange.h in Headers */ = {isa = PBXBuildFile; fileRef = 22BC09A91512C4E4006F56DA /* BTIntRange.h */; };
+		22BC09AC1512C4E4006F56DA /* BTIntRange.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BC09AA1512C4E4006F56DA /* BTIntRange.m */; };
 		22C5353514F5C96D00B7958F /* UIColor+Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 22C5353314F5C96D00B7958F /* UIColor+Extensions.h */; };
 		22C5353614F5C96D00B7958F /* UIColor+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C5353414F5C96D00B7958F /* UIColor+Extensions.m */; };
 		22C85EAD14DB225400F9EC07 /* BTPoints.h in Headers */ = {isa = PBXBuildFile; fileRef = 22C85EAB14DB225400F9EC07 /* BTPoints.h */; };
@@ -263,6 +267,10 @@
 		229B463214D8C439005FC8E9 /* BTHasLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTHasLocation.h; sourceTree = "<group>"; };
 		229B463414D8C525005FC8E9 /* SPDisplayObject+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SPDisplayObject+Extensions.h"; sourceTree = "<group>"; };
 		229B463514D8C525005FC8E9 /* SPDisplayObject+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SPDisplayObject+Extensions.m"; sourceTree = "<group>"; };
+		22BC09A51512C3F0006F56DA /* BTFloatRange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTFloatRange.h; sourceTree = "<group>"; };
+		22BC09A61512C3F0006F56DA /* BTFloatRange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTFloatRange.m; sourceTree = "<group>"; };
+		22BC09A91512C4E4006F56DA /* BTIntRange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTIntRange.h; sourceTree = "<group>"; };
+		22BC09AA1512C4E4006F56DA /* BTIntRange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTIntRange.m; sourceTree = "<group>"; };
 		22C5353314F5C96D00B7958F /* UIColor+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Extensions.h"; sourceTree = "<group>"; };
 		22C5353414F5C96D00B7958F /* UIColor+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Extensions.m"; sourceTree = "<group>"; };
 		22C85EAB14DB225400F9EC07 /* BTPoints.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTPoints.h; sourceTree = "<group>"; };
@@ -495,6 +503,10 @@
 			children = (
 				2225C36614DDF1B800962B1B /* BTEnum.h */,
 				2225C36714DDF1B800962B1B /* BTEnum.m */,
+				22BC09A51512C3F0006F56DA /* BTFloatRange.h */,
+				22BC09A61512C3F0006F56DA /* BTFloatRange.m */,
+				22BC09A91512C4E4006F56DA /* BTIntRange.h */,
+				22BC09AA1512C4E4006F56DA /* BTIntRange.m */,
 				2221998D14D0F809009B764F /* BTLoadingMode.h */,
 				2221998E14D0F809009B764F /* BTLoadingMode.m */,
 				22448EA414E744AE001CF5CE /* BTMacros.h */,
@@ -800,6 +812,8 @@
 				22608C6D1505C2D300CCE0A5 /* SPView+Extensions.h in Headers */,
 				22DB82181509A9490091B648 /* NSString+Extensions.h in Headers */,
 				22DB8234150AAA290091B648 /* BTDeviceType.h in Headers */,
+				22BC09A71512C3F0006F56DA /* BTFloatRange.h in Headers */,
+				22BC09AB1512C4E4006F56DA /* BTIntRange.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1004,6 +1018,8 @@
 				22608C6E1505C2D300CCE0A5 /* SPView+Extensions.m in Sources */,
 				22DB82191509A9490091B648 /* NSString+Extensions.m in Sources */,
 				22DB8235150AAA290091B648 /* BTDeviceType.m in Sources */,
+				22BC09A81512C3F0006F56DA /* BTFloatRange.m in Sources */,
+				22BC09AC1512C4E4006F56DA /* BTIntRange.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
