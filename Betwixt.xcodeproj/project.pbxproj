@@ -38,7 +38,6 @@
 		22448E8D14E603DF001CF5CE /* NSArray+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 22448E8B14E603DF001CF5CE /* NSArray+Extensions.m */; };
 		22448EA514E744AE001CF5CE /* BTMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 22448EA414E744AE001CF5CE /* BTMacros.h */; };
 		22608BE11505AC4E00CCE0A5 /* MovieTestMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 22608BE01505AC4E00CCE0A5 /* MovieTestMode.m */; };
-		22608BE61505B10100CCE0A5 /* biter in Resources */ = {isa = PBXBuildFile; fileRef = 22608BE51505B10100CCE0A5 /* biter */; };
 		22608C6D1505C2D300CCE0A5 /* SPView+Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 22608C6B1505C2D300CCE0A5 /* SPView+Extensions.h */; };
 		22608C6E1505C2D300CCE0A5 /* SPView+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 22608C6C1505C2D300CCE0A5 /* SPView+Extensions.m */; };
 		2290D8291502C99D009EED3D /* SPMatrix+Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 2290D8271502C99D009EED3D /* SPMatrix+Extensions.h */; };
@@ -65,7 +64,6 @@
 		22C85F0B14DB784B00F9EC07 /* BTDisplayObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C85F0914DB784A00F9EC07 /* BTDisplayObject.m */; };
 		22DB82181509A9490091B648 /* NSString+Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 22DB82161509A9490091B648 /* NSString+Extensions.h */; };
 		22DB82191509A9490091B648 /* NSString+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DB82171509A9490091B648 /* NSString+Extensions.m */; };
-		22DB822E1509C4210091B648 /* bella in Resources */ = {isa = PBXBuildFile; fileRef = 22DB822D1509C4210091B648 /* bella */; };
 		22DB8234150AAA290091B648 /* BTDeviceType.h in Headers */ = {isa = PBXBuildFile; fileRef = 22DB8232150AAA290091B648 /* BTDeviceType.h */; };
 		22DB8235150AAA290091B648 /* BTDeviceType.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DB8233150AAA290091B648 /* BTDeviceType.m */; };
 		22DBA63814DCAF6200F0F7C8 /* BTApp+Protected.h in Headers */ = {isa = PBXBuildFile; fileRef = 22DBA63714DCAF6200F0F7C8 /* BTApp+Protected.h */; };
@@ -254,7 +252,6 @@
 		22448EA414E744AE001CF5CE /* BTMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTMacros.h; sourceTree = "<group>"; };
 		22608BDF1505AC4E00CCE0A5 /* MovieTestMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MovieTestMode.h; path = Integration/MovieTestMode.h; sourceTree = "<group>"; };
 		22608BE01505AC4E00CCE0A5 /* MovieTestMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MovieTestMode.m; path = Integration/MovieTestMode.m; sourceTree = "<group>"; };
-		22608BE51505B10100CCE0A5 /* biter */ = {isa = PBXFileReference; lastKnownFileType = folder; name = biter; path = Exported/biter; sourceTree = "<group>"; };
 		22608C6B1505C2D300CCE0A5 /* SPView+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SPView+Extensions.h"; sourceTree = "<group>"; };
 		22608C6C1505C2D300CCE0A5 /* SPView+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SPView+Extensions.m"; sourceTree = "<group>"; };
 		2290D8271502C99D009EED3D /* SPMatrix+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SPMatrix+Extensions.h"; sourceTree = "<group>"; };
@@ -282,7 +279,6 @@
 		22C85F0914DB784A00F9EC07 /* BTDisplayObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTDisplayObject.m; sourceTree = "<group>"; };
 		22DB82161509A9490091B648 /* NSString+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extensions.h"; sourceTree = "<group>"; };
 		22DB82171509A9490091B648 /* NSString+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extensions.m"; sourceTree = "<group>"; };
-		22DB822D1509C4210091B648 /* bella */ = {isa = PBXFileReference; lastKnownFileType = folder; name = bella; path = Exported/bella; sourceTree = "<group>"; };
 		22DB8232150AAA290091B648 /* BTDeviceType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTDeviceType.h; sourceTree = "<group>"; };
 		22DB8233150AAA290091B648 /* BTDeviceType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTDeviceType.m; sourceTree = "<group>"; };
 		22DBA63714DCAF6200F0F7C8 /* BTApp+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BTApp+Protected.h"; sourceTree = "<group>"; };
@@ -673,8 +669,6 @@
 		CB65CE3914EC42DE00534FAE /* Exported */ = {
 			isa = PBXGroup;
 			children = (
-				22DB822D1509C4210091B648 /* bella */,
-				22608BE51505B10100CCE0A5 /* biter */,
 				CB65CE4114EC7F8300534FAE /* guybrush */,
 				221516AB1513C45900C48FBB /* hero_A_01 */,
 				CB65CE3C14EC44FF00534FAE /* shapes */,
@@ -938,8 +932,6 @@
 				CB65CE3B14EC42F400534FAE /* squaredance in Resources */,
 				CB65CE3D14EC44FF00534FAE /* shapes in Resources */,
 				CB65CE4214EC7F8300534FAE /* guybrush in Resources */,
-				22608BE61505B10100CCE0A5 /* biter in Resources */,
-				22DB822E1509C4210091B648 /* bella in Resources */,
 				221516AC1513C45900C48FBB /* hero_A_01 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
