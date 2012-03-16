@@ -65,6 +65,10 @@
     return [NSString stringWithFormat:@"%@.%@", [self class].description, self.name];
 }
 
+- (id)copyWithZone:(NSZone*)zone {
+    return self;
+}
+
 + (NSMutableDictionary*)enums {
     static NSMutableDictionary* enums = nil;
     if (enums == nil) {

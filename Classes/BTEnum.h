@@ -22,7 +22,7 @@
     + (id)NAME { return _##NAME; }
 
 
-@interface BTEnum : NSObject
+@interface BTEnum : NSObject <NSCopying>
 
 + (id)valueOf:(NSString*)name;
 + (NSArray*)values;
