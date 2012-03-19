@@ -14,6 +14,8 @@
 
 #define NO_FRAME -1
 
+static const float FRAMERATE = 30.0f;
+
 NSString * const BTMovieFirstFrame = @"BTMovieFirstFrame";
 NSString * const BTMovieLastFrame = @"BTMovieLastFrame";
 @interface BTMovieLayer : NSObject {
@@ -216,7 +218,7 @@ NSString * const BTMovieLastFrame = @"BTMovieLastFrame";
     _frame = newFrame;
     if (fromSkip) {
         [self fireLabelsFrom:newFrame to:newFrame];
-        _playTime = newFrame/30.0f;
+        _playTime = newFrame/FRAMERATE;
     } else if (overDuration) {
         [self fireLabelsFrom:oldFrame + 1 to:[_labels count] - 1];
         [self fireLabelsFrom:0 to:_frame];
@@ -285,7 +287,7 @@ NSString * const BTMovieLastFrame = @"BTMovieLastFrame";
     
     _playTime += dt;
     if (_playTime > _duration) _playTime = fmodf(_playTime, _duration);
-    int newFrame = (int)(_playTime * 30);
+    int newFrame = (int)(_playTime * FRAMERATE);
     BOOL overDuration = dt >= _duration;
     // If the update crosses or goes to the stopFrame, go to the stop frame, stop the movie and
     // clear it
@@ -328,7 +330,7 @@ NSString * const BTMovieLastFrame = @"BTMovieLastFrame";
     _stopFrame = NO_FRAME;
     _frame = NO_FRAME;
     _labels = labels;
-    _duration = [labels count] / 30.0;
+    _duration = [labels count] / FRAMERATE;
     _playing = [[RABoolValue alloc] init];
     _playing.value = YES;
     _labelPassed = [[RAObjectSignal alloc] init];
