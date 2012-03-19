@@ -2,6 +2,7 @@
 // Betwixt - Copyright 2012 Three Rings Design
 
 #import "BTDragger.h"
+#import "SPPoint+Extensions.h"
 
 @interface BTCallbackDragger : BTDragger
 @property(nonatomic,copy) BTDragStartBlock onDragStart;
@@ -49,20 +50,17 @@
 - (void)onDragEnd:(SPPoint*)current start:(SPPoint*)start {}
 
 - (void)onTouchStart:(SPPoint*)globalPt {
-    _start.x = globalPt.x;
-    _start.y = globalPt.y;
+    [_start set:globalPt];
     [self onDragStart:_start];
 }
 
 - (void)onTouchMove:(SPPoint*)globalPt {
-    _current.x = globalPt.x;
-    _current.y = globalPt.y;
+    [_current set:globalPt];
     [self onDragged:_current start:_start];
 }
 
 - (void)onTouchEnd:(SPPoint*)globalPt {
-    _current.x = globalPt.x;
-    _current.y = globalPt.y;
+    [_current set:globalPt];
     [self onDragEnd:_current start:_start];
 }
 
