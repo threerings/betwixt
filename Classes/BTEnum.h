@@ -1,7 +1,7 @@
 //
 // Betwixt - Copyright 2012 Three Rings Design
 
-#define BTENUM(NAME) \
+#define BT_ENUM(NAME) \
     static id _##NAME = nil; \
     + (void)BTEnum_Init##NAME { \
         if (_##NAME == nil) { \
@@ -11,7 +11,7 @@
     } \
     + (id)NAME { return _##NAME; }
 
-#define BTENUM_INIT(NAME, INIT) \
+#define BT_ENUM_INIT(NAME, INIT) \
     static id _##NAME = nil; \
     + (void)BTEnum_Init##NAME { \
         if (_##NAME == nil) { \

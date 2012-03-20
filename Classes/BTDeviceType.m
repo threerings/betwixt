@@ -12,10 +12,10 @@
     int _screenHeight;
 }
 
-BTENUM_INIT(IPHONE, [[BTDeviceType alloc] initWithScreenWidth:480 screenHeight:320]);
-BTENUM_INIT(IPHONE_RETINA, [[BTDeviceType alloc] initWithScreenWidth:960 screenHeight:640]);
-BTENUM_INIT(IPAD, [[BTDeviceType alloc] initWithScreenWidth:1024 screenHeight:768]);
-BTENUM_INIT(IPAD_RETINA, [[BTDeviceType alloc] initWithScreenWidth:2048 screenHeight:1536]);
+BT_ENUM_INIT(IPHONE, [[BTDeviceType alloc] initWithScreenWidth:480 screenHeight:320]);
+BT_ENUM_INIT(IPHONE_RETINA, [[BTDeviceType alloc] initWithScreenWidth:960 screenHeight:640]);
+BT_ENUM_INIT(IPAD, [[BTDeviceType alloc] initWithScreenWidth:1024 screenHeight:768]);
+BT_ENUM_INIT(IPAD_RETINA, [[BTDeviceType alloc] initWithScreenWidth:2048 screenHeight:1536]);
 
 - (id)initWithScreenWidth:(int)screenWidth screenHeight:(int)screenHeight {
     if (!(self = [super init])) {
