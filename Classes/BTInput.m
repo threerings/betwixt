@@ -5,6 +5,7 @@
 #import "BTMode.h"
 #import "SPTouchProcessor.h"
 #import "SPTouch_Internal.h"
+#import "SPPoint+Extensions.h"
 
 @class BTReaction;
 
@@ -196,18 +197,29 @@
 @implementation BTDisplayObjectRegion {
 @private
     SPDisplayObject* _disp;
+    SPRectangle* _bounds;
 }
-- (id)initWithDisplayObject:(SPDisplayObject*)disp {
+
+- (id)initWithDisplayObject:(id)disp bounds:(id)bounds {
     if (!(self = [super init])) {
         return nil;
     }
     _disp = disp;
+    _bounds = bounds;
     return self;
+}
+
+- (id)initWithDisplayObject:(SPDisplayObject*)disp {
+    return [self initWithDisplayObject:disp bounds:nil];
 }
 - (BOOL)canTrigger { return _disp.visible; }
 - (BOOL)hasExpired { return _disp.parent == nil; }
-- (BOOL)hitTest:(SPPoint*)globalPt { 
-    return ([_disp hitTestPoint:[_disp globalToLocal:globalPt] forTouch:NO] != nil); 
+- (BOOL)hitTest:(SPPoint*)globalPt {
+    if (_bounds != nil) {
+        return [_bounds containsPoint:[_disp globalToLocal:globalPt]];
+    } else {
+        return ([_disp hitTestPoint:[_disp globalToLocal:globalPt] forTouch:NO] != nil); 
+    }
 }
 @end
 
@@ -249,7 +261,6 @@
 @end
 
 
-/// Input regions
 @interface BTBlockTouchListener : NSObject <BTTouchListener>
 - (id)initWithOnTouchStart:(BTTouchBlock)onTouchStart 
                onTouchMove:(BTTouchBlock)onTouchMove 

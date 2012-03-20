@@ -36,6 +36,7 @@
 /// A Region that triggers on touches that intersect a SPDisplayObject
 @interface BTDisplayObjectRegion : NSObject <BTInputRegion>
 - (id)initWithDisplayObject:(SPDisplayObject*)disp;
+- (id)initWithDisplayObject:(SPDisplayObject*)disp bounds:(SPRectangle*)bounds;
 @end
 
 typedef void (^BTTouchBlock)(SPPoint* p);
