@@ -15,19 +15,22 @@
 - (void)onTouchEnd:(SPPoint*)globalPt;
 @end
 
-typedef void (^BTTouchBlock)(SPPoint* p);
-
-@interface BTInputRegion : NSObject {
-@protected
-    __weak BTInput* _input;
-}
-- (id)initWithInput:(BTInput*)input;
-/// Returns true if this region can be triggered, false if it's currently invisible.
+@protocol BTInputRegion
+/// Returns true if this region can be triggered, false if it's currently inactive.
 - (BOOL)canTrigger;
 /// Returns true if this region is no longer relevant and should be removed.
 - (BOOL)hasExpired;
 /// Returns true if the (screen-coordinates) point triggers falls in this region.
 - (BOOL)hitTest:(SPPoint*)globalPt;
+@end
+
+typedef void (^BTTouchBlock)(SPPoint* p);
+
+@interface BTInputRegionImpl : NSObject <BTInputRegion> {
+@protected
+    __weak BTInput* _input;
+}
+- (id)initWithInput:(BTInput*)input;
 
 - (BTInputRegistration*)registerListener:(id<BTTouchListener>)l;
 
@@ -41,18 +44,18 @@ typedef void (^BTTouchBlock)(SPPoint* p);
 @end
 
 /// A Region that triggers on any touch
-@interface BTScreenRegion : BTInputRegion
+@interface BTScreenRegion : BTInputRegionImpl
 + (BTScreenRegion*)withInput:(BTInput*)input;
 @end
 
 /// A Region that triggers on touches that intersect a given rectangle
-@interface BTBoundsRegion : BTInputRegion
+@interface BTBoundsRegion : BTInputRegionImpl
 + (BTBoundsRegion*)withInput:(BTInput*)input bounds:(SPRectangle*)bounds;
 - (id)initWithInput:(BTInput*)input bounds:(SPRectangle*)bounds;
 @end
 
 /// A Region that triggers on touches that intersect a SPDisplayObject
-@interface BTDisplayObjectRegion : BTInputRegion
+@interface BTDisplayObjectRegion : BTInputRegionImpl
 + (BTDisplayObjectRegion*)withInput:(BTInput*)input disp:(SPDisplayObject*)disp;
 - (id)initWithInput:(BTInput*)input displayObject:(SPDisplayObject*)disp;
 @end
@@ -64,7 +67,7 @@ typedef void (^BTTouchBlock)(SPPoint* p);
     SPTouch* _lastTouch;
 }
 
-- (BTInputRegistration*)registerListener:(id<BTTouchListener>)listener forRegion:(BTInputRegion*)region;
+- (BTInputRegistration*)registerListener:(id<BTTouchListener>)listener forRegion:(id<BTInputRegion>)region;
 - (void)removeAllListeners;
 
 @end

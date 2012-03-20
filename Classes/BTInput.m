@@ -14,8 +14,8 @@
 
 // Reaction
 @interface BTReaction : NSObject 
-- (id)initWithRegion:(BTInputRegion*)region listener:(id<BTTouchListener>)listener;
-@property(nonatomic,readonly) BTInputRegion* region;
+- (id)initWithRegion:(id<BTInputRegion>)region listener:(id<BTTouchListener>)listener;
+@property(nonatomic,readonly) id<BTInputRegion> region;
 @property(nonatomic,readonly) id<BTTouchListener> listener;
 @end
 
@@ -134,7 +134,7 @@
     }
 }
 
-- (BTInputRegistration*)registerListener:(id<BTTouchListener>)listener forRegion:(BTInputRegion*)region {
+- (BTInputRegistration*)registerListener:(id<BTTouchListener>)listener forRegion:(id<BTInputRegion>)region {
     BTReaction* reaction = [[BTReaction alloc] initWithRegion:region listener:listener];
     [_reactions addObject:reaction];
     return [[BTInputRegistration alloc] initWithInput:self reaction:reaction];
@@ -159,7 +159,7 @@
                 onTouchEnd:(BTTouchBlock)onTouchEnd;
 @end
 
-@implementation BTInputRegion
+@implementation BTInputRegionImpl
 - (id)initWithInput:(BTInput *)input {
     if (!(self = [super init])) {
         return nil;
@@ -232,6 +232,7 @@
 @implementation BTDisplayObjectRegion {
 @private
     SPDisplayObject* _disp;
+    SPRectangle* _bounds;
 }
 - (id)initWithInput:(BTInput*)input displayObject:(SPDisplayObject*)disp {
     if (!(self = [super initWithInput:input])) {
@@ -242,8 +243,12 @@
 }
 - (BOOL)canTrigger { return _disp.visible; }
 - (BOOL)hasExpired { return _disp.parent == nil; }
-- (BOOL)hitTest:(SPPoint*)globalPt { 
-    return ([_disp hitTestPoint:[_disp globalToLocal:globalPt] forTouch:NO] != nil);
+- (BOOL)hitTest:(SPPoint*)globalPt {
+    if (_bounds != nil) {
+        return [_bounds containsPoint:[_disp globalToLocal:globalPt]];
+    } else {
+        return ([_disp hitTestPoint:[_disp globalToLocal:globalPt] forTouch:NO] != nil);
+    }
 }
 + (BTDisplayObjectRegion*)withInput:(BTInput *)input disp:(SPDisplayObject *)disp {
     return [[BTDisplayObjectRegion alloc] initWithInput:input displayObject:disp];
@@ -253,10 +258,10 @@
 
 @implementation BTReaction {
 @protected
-    BTInputRegion* _region;
+    id<BTInputRegion> _region;
     id<BTTouchListener>_listener;
 }
-- (id)initWithRegion:(BTInputRegion*)region listener:(id<BTTouchListener>)listener {
+- (id)initWithRegion:(id<BTInputRegion>) region listener:(id<BTTouchListener>)listener {
     if (!(self = [super init])) {
         return nil;
     }
