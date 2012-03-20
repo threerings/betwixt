@@ -30,6 +30,22 @@
     return self;
 }
 
+- (BTInputRegistrar*)registerRegion:(id<BTInputRegion>)region {
+    return [[BTInputRegistrar alloc] initWithInput:self region:region];
+}
+
+- (BTInputRegistrar*)registerScreenRegion {
+    return [self registerRegion:[[BTScreenRegion alloc] init]];
+}
+
+- (BTInputRegistrar*)registerBounds:(SPRectangle*)bounds {
+    return [self registerRegion:[[BTBoundsRegion alloc] initWithBounds:bounds]];
+}
+
+- (BTInputRegistrar*)registerDisplayObject:(SPDisplayObject*)disp {
+    return [self registerRegion:[[BTDisplayObjectRegion alloc] initWithDisplayObject:disp]];
+}
+
 - (id<BTTouchListener>)hitTest:(SPPoint*)globalPt {
     // take a snapshot of the regions list to avoid concurrent modification if reactions
     // are added or removed during processing
@@ -151,63 +167,12 @@
 
 @end
 
-
 /// Input regions
-@interface BTBlockTouchListener : NSObject <BTTouchListener>
-- (id)initWithOnTouchStart:(BTTouchBlock)onTouchStart 
-               onTouchMove:(BTTouchBlock)onTouchMove 
-                onTouchEnd:(BTTouchBlock)onTouchEnd;
-@end
-
-@implementation BTInputRegionImpl
-- (id)initWithInput:(BTInput *)input {
-    if (!(self = [super init])) {
-        return nil;
-    }
-    _input = input;
-    return self;
-}
-- (BOOL)canTrigger { return YES; }
-- (BOOL)hasExpired { return NO; }
-- (BOOL)hitTest:(SPPoint*)globalPt { return NO; }
-
-- (BTInputRegistration*)registerListener:(id<BTTouchListener>)l {
-    return [_input registerListener:l forRegion:self];
-}
-
-- (BTInputRegistration*)onTouchStart:(BTTouchBlock)onTouchStart 
-                         onTouchMove:(BTTouchBlock)onTouchMove
-                          onTouchEnd:(BTTouchBlock)onTouchEnd {
-    return [self registerListener:[[BTBlockTouchListener alloc] initWithOnTouchStart:onTouchStart 
-                                                                         onTouchMove:onTouchMove 
-                                                                          onTouchEnd:onTouchEnd]];
-    
-}
-- (BTInputRegistration*)onTouchStart:(BTTouchBlock)onTouchStart
-                          onTouchEnd:(BTTouchBlock)onTouchEnd {
-    return [self registerListener:[[BTBlockTouchListener alloc] initWithOnTouchStart:onTouchStart 
-                                                                         onTouchMove:nil 
-                                                                          onTouchEnd:onTouchEnd]];
-    
-}
-- (BTInputRegistration*)onTouchStart:(BTTouchBlock)onTouchStart {
-    return [self registerListener:[[BTBlockTouchListener alloc] initWithOnTouchStart:onTouchStart 
-                                                                         onTouchMove:nil 
-                                                                          onTouchEnd:nil]];
-    
-}
-- (BTInputRegistration*)onTouchEnd:(BTTouchBlock)onTouchEnd {
-    return [self registerListener:[[BTBlockTouchListener alloc] initWithOnTouchStart:nil 
-                                                                         onTouchMove:nil 
-                                                                          onTouchEnd:onTouchEnd]];
-}
-@end
 
 @implementation BTScreenRegion
 - (BOOL)hitTest:(SPPoint*)globalPt { return YES; }
-+ (BTScreenRegion*)withInput:(BTInput*)input {
-    return [[BTScreenRegion alloc] initWithInput:input];
-}
+- (BOOL)canTrigger { return YES; }
+- (BOOL)hasExpired { return NO; }
 @end
 
 
@@ -215,27 +180,25 @@
 @private
     SPRectangle* _bounds;
 }
-- (id)initWithInput:(BTInput*)input bounds:(SPRectangle*)bounds {
-    if (!(self = [super initWithInput:input])) {
+- (id)initWithBounds:(SPRectangle *)bounds {
+    if (!(self = [super init])) {
         return nil;
     }
     _bounds = bounds;
     return self;
 }
 - (BOOL)hitTest:(SPPoint*)globalPt { return [_bounds containsPoint:globalPt]; }
-+ (BTBoundsRegion*)withInput:(BTInput *)input bounds:(SPRectangle *)bounds {
-    return [[BTBoundsRegion alloc] initWithInput:input bounds:bounds];
-}
+- (BOOL)canTrigger { return YES; }
+- (BOOL)hasExpired { return NO; }
 @end
 
 
 @implementation BTDisplayObjectRegion {
 @private
     SPDisplayObject* _disp;
-    SPRectangle* _bounds;
 }
-- (id)initWithInput:(BTInput*)input displayObject:(SPDisplayObject*)disp {
-    if (!(self = [super initWithInput:input])) {
+- (id)initWithDisplayObject:(SPDisplayObject*)disp {
+    if (!(self = [super init])) {
         return nil;
     }
     _disp = disp;
@@ -243,15 +206,8 @@
 }
 - (BOOL)canTrigger { return _disp.visible; }
 - (BOOL)hasExpired { return _disp.parent == nil; }
-- (BOOL)hitTest:(SPPoint*)globalPt {
-    if (_bounds != nil) {
-        return [_bounds containsPoint:[_disp globalToLocal:globalPt]];
-    } else {
-        return ([_disp hitTestPoint:[_disp globalToLocal:globalPt] forTouch:NO] != nil);
-    }
-}
-+ (BTDisplayObjectRegion*)withInput:(BTInput *)input disp:(SPDisplayObject *)disp {
-    return [[BTDisplayObjectRegion alloc] initWithInput:input displayObject:disp];
+- (BOOL)hitTest:(SPPoint*)globalPt { 
+    return ([_disp hitTestPoint:[_disp globalToLocal:globalPt] forTouch:NO] != nil); 
 }
 @end
 
@@ -289,6 +245,60 @@
     [_input removeReaction:_reaction];
     _input = nil;
     _reaction = nil;
+}
+@end
+
+
+/// Input regions
+@interface BTBlockTouchListener : NSObject <BTTouchListener>
+- (id)initWithOnTouchStart:(BTTouchBlock)onTouchStart 
+               onTouchMove:(BTTouchBlock)onTouchMove 
+                onTouchEnd:(BTTouchBlock)onTouchEnd;
+@end
+
+@implementation BTInputRegistrar {
+    BTInput* _input;
+    id<BTInputRegion> _region;
+}
+
+- (id)initWithInput:(BTInput*)input region:(id<BTInputRegion>)region {
+    if (!(self = [super init])) {
+        return nil;
+    }
+    _input = input;
+    _region = region;
+    return self;
+}
+
+- (BTInputRegistration*)listener:(id<BTTouchListener>)l {
+    return [_input registerListener:l forRegion:_region];
+}
+
+- (BTInputRegistration*)onTouchStart:(BTTouchBlock)onTouchStart 
+                         onTouchMove:(BTTouchBlock)onTouchMove
+                          onTouchEnd:(BTTouchBlock)onTouchEnd {
+    return [self listener:[[BTBlockTouchListener alloc] initWithOnTouchStart:onTouchStart 
+                                                                 onTouchMove:onTouchMove 
+                                                                  onTouchEnd:onTouchEnd]];
+    
+}
+- (BTInputRegistration*)onTouchStart:(BTTouchBlock)onTouchStart
+                          onTouchEnd:(BTTouchBlock)onTouchEnd {
+    return [self listener:[[BTBlockTouchListener alloc] initWithOnTouchStart:onTouchStart 
+                                                                 onTouchMove:nil 
+                                                                  onTouchEnd:onTouchEnd]];
+    
+}
+- (BTInputRegistration*)onTouchStart:(BTTouchBlock)onTouchStart {
+    return [self listener:[[BTBlockTouchListener alloc] initWithOnTouchStart:onTouchStart 
+                                                                 onTouchMove:nil 
+                                                                  onTouchEnd:nil]];
+    
+}
+- (BTInputRegistration*)onTouchEnd:(BTTouchBlock)onTouchEnd {
+    return [self listener:[[BTBlockTouchListener alloc] initWithOnTouchStart:nil 
+                                                                 onTouchMove:nil 
+                                                                  onTouchEnd:onTouchEnd]];
 }
 @end
 
