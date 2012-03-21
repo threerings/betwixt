@@ -294,16 +294,22 @@ NSString * const BTMovieLastFrame = @"BTMovieLastFrame";
     if (!_playing.value) return;
     
     _playTime += dt;
-    int numFramesAdvanced = (int)(_playTime * FRAMERATE) - _frame;
+    float actualPlaytime = _playTime;
     if (_playTime > _duration) _playTime = fmodf(_playTime, _duration);
     int newFrame = (int)(_playTime * FRAMERATE);
     BOOL overDuration = dt >= _duration;
     // If the update crosses or goes to the stopFrame, go to the stop frame, stop the movie and
     // clear it
-    if (_stopFrame != NO_FRAME && _frame < _stopFrame && (_frame + numFramesAdvanced) >= _stopFrame) {
-        _playing.value = NO;
-        newFrame = _stopFrame;
-        _stopFrame = NO_FRAME;
+    if (_stopFrame != NO_FRAME) {
+        // how many frames remain to the stopframe?
+        int framesRemaining = 
+            (_frame <= _stopFrame ? _stopFrame - _frame : self.frames - _frame + _stopFrame);
+        int framesElapsed = (int)(actualPlaytime * FRAMERATE) - _frame;
+        if (framesElapsed >= framesRemaining) {
+            _playing.value = NO;
+            newFrame = _stopFrame;
+            _stopFrame = NO_FRAME;
+        }
     }
     [self gotoFrame:newFrame fromSkip:NO overDuration:overDuration];
 }
