@@ -294,13 +294,13 @@ NSString * const BTMovieLastFrame = @"BTMovieLastFrame";
     if (!_playing.value) return;
     
     _playTime += dt;
+    int numFramesAdvanced = (int)(_playTime * FRAMERATE) - _frame;
     if (_playTime > _duration) _playTime = fmodf(_playTime, _duration);
     int newFrame = (int)(_playTime * FRAMERATE);
     BOOL overDuration = dt >= _duration;
     // If the update crosses or goes to the stopFrame, go to the stop frame, stop the movie and
     // clear it
-    if (_stopFrame != NO_FRAME &&
-        ((newFrame >= _stopFrame && (_frame < _stopFrame || newFrame < _frame)) || overDuration)) {
+    if (_stopFrame != NO_FRAME && _frame < _stopFrame && (_frame + numFramesAdvanced) >= _stopFrame) {
         _playing.value = NO;
         newFrame = _stopFrame;
         _stopFrame = NO_FRAME;
