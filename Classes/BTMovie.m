@@ -236,6 +236,14 @@ NSString * const BTMovieLastFrame = @"BTMovieLastFrame";
     }
 }
 
+- (void)playOnce {
+    [self playFromFrame:0 toFrame:self.frames - 1];
+}
+
+- (void)loop {
+    [self loopFromFrame:0];
+}
+
 - (void)playToLabel:(NSString*)label {
   [self playToFrame:[self frameForLabel:label]];
 }

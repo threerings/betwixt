@@ -11,6 +11,9 @@ extern NSString * const BTMovieLastFrame;
 
 @interface BTMovie : SPSprite <SPAnimatable>
 
+- (void)playOnce;
+- (void)loop;
+
 - (void)loopFromLabel:(NSString*)label;
 - (void)loopFromFrame:(int)frame;
 - (void)playFromLabel:(NSString*)startLabel toLabel:(NSString*)stopLabel;
