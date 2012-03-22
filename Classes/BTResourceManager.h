@@ -28,7 +28,7 @@
 - (id)requireResource:(NSString*)name;
 - (id)requireResource:(NSString*)name ofType:(Class)clazz;
 - (id)requireResource:(NSString*)name conformingTo:(Protocol*)proto;
-- (BOOL)isLoaded:(NSString*)name;
+- (BOOL)isResourceLoaded:(NSString*)name;
 - (void)registerFactory:(id<BTResourceFactory>)factory forType:(NSString*)type;
 - (void)registerMultiFactory:(id<BTMultiResourceFactory>)factory forType:(NSString*)type;
 - (void)unloadAll;

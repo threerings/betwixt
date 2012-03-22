@@ -70,7 +70,7 @@
     if (loadErr == nil) {
         @try {
             for (BTResource* rsrc in task.resources) {
-                NSAssert(![self isLoaded:rsrc.name],
+                NSAssert(![self isResourceLoaded:rsrc.name],
                          @"A resource with that name already exists: '%@'", rsrc.name);
                 [_resources setValue:rsrc forKey:rsrc.name];
             }
@@ -111,7 +111,7 @@
     return rsrc;
 }
 
-- (BOOL)isLoaded:(NSString*)name {
+- (BOOL)isResourceLoaded:(NSString*)name {
     return [self getResource:name] != nil;
 }
 
