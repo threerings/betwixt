@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2208FC72151D207800669256 /* BTVisibilityTask.h in Headers */ = {isa = PBXBuildFile; fileRef = 2208FC70151D207800669256 /* BTVisibilityTask.h */; };
+		2208FC73151D207800669256 /* BTVisibilityTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 2208FC71151D207800669256 /* BTVisibilityTask.m */; };
 		221516AC1513C45900C48FBB /* hero_A_01 in Resources */ = {isa = PBXBuildFile; fileRef = 221516AB1513C45900C48FBB /* hero_A_01 */; };
 		2217E4CD14C79B90000F976A /* BTUpdatable.h in Headers */ = {isa = PBXBuildFile; fileRef = 2217E4CC14C79B90000F976A /* BTUpdatable.h */; };
 		221B6F9814C8BC3200747A18 /* BTMode+Protected.h in Headers */ = {isa = PBXBuildFile; fileRef = 221B6F9714C8BC3200747A18 /* BTMode+Protected.h */; };
@@ -223,6 +225,8 @@
 /* Begin PBXFileReference section */
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		2208FC70151D207800669256 /* BTVisibilityTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTVisibilityTask.h; sourceTree = "<group>"; };
+		2208FC71151D207800669256 /* BTVisibilityTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTVisibilityTask.m; sourceTree = "<group>"; };
 		221516AB1513C45900C48FBB /* hero_A_01 */ = {isa = PBXFileReference; lastKnownFileType = folder; name = hero_A_01; path = Exported/hero_A_01; sourceTree = "<group>"; };
 		2217E4CC14C79B90000F976A /* BTUpdatable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTUpdatable.h; sourceTree = "<group>"; };
 		221B6F9714C8BC3200747A18 /* BTMode+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BTMode+Protected.h"; sourceTree = "<group>"; };
@@ -651,6 +655,8 @@
 				22448E0D14E3356A001CF5CE /* BTScaleTask.m */,
 				CBE1F0DF14A1554A00B82344 /* BTSequenceTask.h */,
 				CBE1F0E014A1554A00B82344 /* BTSequenceTask.m */,
+				2208FC70151D207800669256 /* BTVisibilityTask.h */,
+				2208FC71151D207800669256 /* BTVisibilityTask.m */,
 				CB442C7514B3834200EB2821 /* BTWaitTask.h */,
 				CB442C7614B3834200EB2821 /* BTWaitTask.m */,
 			);
@@ -811,6 +817,7 @@
 				22DB8234150AAA290091B648 /* BTDeviceType.h in Headers */,
 				22BC09A71512C3F0006F56DA /* BTFloatRange.h in Headers */,
 				22BC09AB1512C4E4006F56DA /* BTIntRange.h in Headers */,
+				2208FC72151D207800669256 /* BTVisibilityTask.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1016,6 +1023,7 @@
 				22DB8235150AAA290091B648 /* BTDeviceType.m in Sources */,
 				22BC09A81512C3F0006F56DA /* BTFloatRange.m in Sources */,
 				22BC09AC1512C4E4006F56DA /* BTIntRange.m in Sources */,
+				2208FC73151D207800669256 /* BTVisibilityTask.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

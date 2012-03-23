@@ -55,6 +55,7 @@
 #import "BTRotationTask.h"
 #import "BTScaleTask.h"
 #import "BTSequenceTask.h"
+#import "BTVisibilityTask.h"
 #import "BTWaitTask.h"
 
 // Utils
