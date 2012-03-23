@@ -172,6 +172,10 @@
     return [self.namedObjects objectForKey:name];
 }
 
+- (BOOL)hasNodeNamed:(NSString*)name {
+    return [self nodeForName:name] != nil;
+}
+
 - (void)removeInternal {
     // Prevent our _children array from being manipulated while
     // we're iterating it

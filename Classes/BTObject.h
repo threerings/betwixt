@@ -10,6 +10,7 @@
 }
 
 - (id)init;
+- (BOOL)hasNodeNamed:(NSString*)name;
 
 - (OOOBlockToken*)listenToDispatcher:(SPEventDispatcher*)dispatcher forEvent:(NSString*)eventType withBlock:(OOOBlockListener)block;
 - (void)cancelListeningForToken:(OOOBlockToken*)token;
