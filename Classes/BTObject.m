@@ -168,6 +168,13 @@
     [node removeInternal];
 }
 
+- (void)removeNodeNamed:(NSString*)name {
+    BTNode* node = [self nodeForName:name];
+    if (node != nil) {
+        [self removeNode:node];
+    }
+}
+
 - (BTNode*)nodeForName:(NSString*)name {
     return [self.namedObjects objectForKey:name];
 }
