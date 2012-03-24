@@ -59,8 +59,8 @@
 
 - (void)attached {
     [super attached];
-    _startX = _target.x;
-    _startY = _target.y;
+    _startX = _target.scaleX;
+    _startY = _target.scaleY;
 }
 
 - (void)updateValues {
