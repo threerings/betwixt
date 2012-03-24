@@ -100,6 +100,6 @@
             interp = [[BTEaseInOutInterpolator alloc] init];
         }
     }
-    return nil;
+    return interp;
 }
 @end
