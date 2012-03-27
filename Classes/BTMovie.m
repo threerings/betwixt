@@ -195,6 +195,8 @@ NSString * const BTMovieLastFrame = @"BTMovieLastFrame";
 }
 
 - (void)gotoFrame:(int)newFrame fromSkip:(BOOL)fromSkip overDuration:(BOOL)overDuration {
+    NSAssert(newFrame >= 0 && newFrame < _labels.count, @"bad frame: %d", newFrame);
+    
     if (_goingToFrame) {
         _pendingFrame = newFrame;
         return;
@@ -294,7 +296,7 @@ NSString * const BTMovieLastFrame = @"BTMovieLastFrame";
     
     _playTime += dt;
     float actualPlaytime = _playTime;
-    if (_playTime > _duration) _playTime = fmodf(_playTime, _duration);
+    if (_playTime >= _duration) _playTime = fmodf(_playTime, _duration);
     int newFrame = (int)(_playTime * _framerate);
     BOOL overDuration = dt >= _duration;
     // If the update crosses or goes to the stopFrame, go to the stop frame, stop the movie and
