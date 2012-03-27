@@ -36,4 +36,5 @@ extern NSString * const BTMovieLastFrame;
 @property(nonatomic,readonly) float duration;
 @property(nonatomic,readonly) int frame;
 @property(nonatomic,readonly) int frames;
+@property(nonatomic,readonly) float framerate;
 @end

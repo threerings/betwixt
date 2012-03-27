@@ -20,6 +20,7 @@
 @public
     NSMutableArray* layers;
     NSMutableArray* labels;
+    float framerate;
 }
 
 - (id)initFromXml:(GDataXMLElement*)xml {
@@ -27,6 +28,7 @@
     layers = [[NSMutableArray alloc] init];
     int numFrames = 0;
     
+    framerate = [xml floatAttribute:@"frameRate" defaultVal:30];
     BTDeviceType* authoredDevice = [xml enumAttribute:@"authoredDevice" type:[BTDeviceType class]];
     
     NSArray* layerEls = [xml elementsForName:@"layer"];
@@ -64,7 +66,7 @@
 }
 
 - (BTMovie*)newMovie {
-    return [[BTMovie alloc] initWithLayers:layers andLabels:labels];
+    return [[BTMovie alloc] initWithFramerate:framerate layers:layers labels:labels];
 }
 
 - (SPDisplayObject*)createDisplayObject { return [self newMovie]; }

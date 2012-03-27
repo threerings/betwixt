@@ -14,8 +14,6 @@
 
 #define NO_FRAME -1
 
-static const float FRAMERATE = 30.0f;
-
 NSString * const BTMovieFirstFrame = @"BTMovieFirstFrame";
 NSString * const BTMovieLastFrame = @"BTMovieLastFrame";
 @interface BTMovieLayer : NSObject {
@@ -165,6 +163,7 @@ NSString * const BTMovieLastFrame = @"BTMovieLastFrame";
     NSArray* _labels;// <NSArray<NSString>> by frame idx
     NSMutableArray* _layers;// <BTMovieLayer>
     __weak SPJuggler* _juggler;// The juggler advancing us if we're on the stage, or nil if we're not on the display list
+    float _framerate;
 }
 
 - (int)frameForLabel:(NSString*)label {
@@ -218,7 +217,7 @@ NSString * const BTMovieLastFrame = @"BTMovieLastFrame";
     _frame = newFrame;
     if (fromSkip) {
         [self fireLabelsFrom:newFrame to:newFrame];
-        _playTime = newFrame/FRAMERATE;
+        _playTime = newFrame/_framerate;
     } else if (overDuration) {
         [self fireLabelsFrom:oldFrame + 1 to:[_labels count] - 1];
         [self fireLabelsFrom:0 to:_frame];
@@ -296,7 +295,7 @@ NSString * const BTMovieLastFrame = @"BTMovieLastFrame";
     _playTime += dt;
     float actualPlaytime = _playTime;
     if (_playTime > _duration) _playTime = fmodf(_playTime, _duration);
-    int newFrame = (int)(_playTime * FRAMERATE);
+    int newFrame = (int)(_playTime * _framerate);
     BOOL overDuration = dt >= _duration;
     // If the update crosses or goes to the stopFrame, go to the stop frame, stop the movie and
     // clear it
@@ -304,7 +303,7 @@ NSString * const BTMovieLastFrame = @"BTMovieLastFrame";
         // how many frames remain to the stopframe?
         int framesRemaining = 
             (_frame <= _stopFrame ? _stopFrame - _frame : self.frames - _frame + _stopFrame);
-        int framesElapsed = (int)(actualPlaytime * FRAMERATE) - _frame;
+        int framesElapsed = (int)(actualPlaytime * _framerate) - _frame;
         if (framesElapsed >= framesRemaining) {
             _playing.value = NO;
             newFrame = _stopFrame;
@@ -334,8 +333,9 @@ NSString * const BTMovieLastFrame = @"BTMovieLastFrame";
     _juggler = nil;
 }
 
-- (id)initWithLayers:(NSMutableArray*)layers andLabels:(NSArray*)labels {
+- (id)initWithFramerate:(float)framerate layers:(NSMutableArray*)layers labels:(NSArray*)labels {
     if (!(self = [super init])) return nil;
+    _framerate = _framerate;
     _layers = [[NSMutableArray alloc] initWithCapacity:[layers count]];
     for (BTMovieResourceLayer* layer in layers) {
         [_layers addObject:[[BTMovieLayer alloc] initForMovie:self withLayer:layer]];
@@ -344,7 +344,7 @@ NSString * const BTMovieLastFrame = @"BTMovieLastFrame";
     _stopFrame = NO_FRAME;
     _frame = NO_FRAME;
     _labels = labels;
-    _duration = [labels count] / FRAMERATE;
+    _duration = [labels count] / _framerate;
     _playing = [[RABoolValue alloc] init];
     _playing.value = YES;
     _labelPassed = [[RAObjectSignal alloc] init];
@@ -354,5 +354,6 @@ NSString * const BTMovieLastFrame = @"BTMovieLastFrame";
     return self;
 }
 
-@synthesize duration=_duration, playing=_playing, labelPassed=_labelPassed, frame=_frame;
+@synthesize duration=_duration, playing=_playing, labelPassed=_labelPassed, frame=_frame, 
+            framerate=_framerate;
 @end
