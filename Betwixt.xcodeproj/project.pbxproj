@@ -39,6 +39,8 @@
 		22448E8C14E603DF001CF5CE /* NSArray+Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 22448E8A14E603DF001CF5CE /* NSArray+Extensions.h */; };
 		22448E8D14E603DF001CF5CE /* NSArray+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 22448E8B14E603DF001CF5CE /* NSArray+Extensions.m */; };
 		22448EA514E744AE001CF5CE /* BTMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 22448EA414E744AE001CF5CE /* BTMacros.h */; };
+		2244B7B215225856001DEACA /* SPPointI.h in Headers */ = {isa = PBXBuildFile; fileRef = 2244B7B015225855001DEACA /* SPPointI.h */; };
+		2244B7B315225856001DEACA /* SPPointI.m in Sources */ = {isa = PBXBuildFile; fileRef = 2244B7B115225856001DEACA /* SPPointI.m */; };
 		22608BE11505AC4E00CCE0A5 /* MovieTestMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 22608BE01505AC4E00CCE0A5 /* MovieTestMode.m */; };
 		22608C6D1505C2D300CCE0A5 /* SPView+Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 22608C6B1505C2D300CCE0A5 /* SPView+Extensions.h */; };
 		22608C6E1505C2D300CCE0A5 /* SPView+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 22608C6C1505C2D300CCE0A5 /* SPView+Extensions.m */; };
@@ -254,6 +256,8 @@
 		22448E8A14E603DF001CF5CE /* NSArray+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Extensions.h"; sourceTree = "<group>"; };
 		22448E8B14E603DF001CF5CE /* NSArray+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Extensions.m"; sourceTree = "<group>"; };
 		22448EA414E744AE001CF5CE /* BTMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTMacros.h; sourceTree = "<group>"; };
+		2244B7B015225855001DEACA /* SPPointI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPPointI.h; sourceTree = "<group>"; };
+		2244B7B115225856001DEACA /* SPPointI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPPointI.m; sourceTree = "<group>"; };
 		22608BDF1505AC4E00CCE0A5 /* MovieTestMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MovieTestMode.h; path = Integration/MovieTestMode.h; sourceTree = "<group>"; };
 		22608BE01505AC4E00CCE0A5 /* MovieTestMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MovieTestMode.m; path = Integration/MovieTestMode.m; sourceTree = "<group>"; };
 		22608C6B1505C2D300CCE0A5 /* SPView+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SPView+Extensions.h"; sourceTree = "<group>"; };
@@ -518,6 +522,8 @@
 				222199F314D24660009B764F /* BTRandoms.m */,
 				CBC9AC5614E9A4F800E1F9F7 /* BTUtils.h */,
 				CBC9AC5714E9A4F800E1F9F7 /* BTUtils.m */,
+				2244B7B015225855001DEACA /* SPPointI.h */,
+				2244B7B115225856001DEACA /* SPPointI.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -818,6 +824,7 @@
 				22BC09A71512C3F0006F56DA /* BTFloatRange.h in Headers */,
 				22BC09AB1512C4E4006F56DA /* BTIntRange.h in Headers */,
 				2208FC72151D207800669256 /* BTVisibilityTask.h in Headers */,
+				2244B7B215225856001DEACA /* SPPointI.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1024,6 +1031,7 @@
 				22BC09A81512C3F0006F56DA /* BTFloatRange.m in Sources */,
 				22BC09AC1512C4E4006F56DA /* BTIntRange.m in Sources */,
 				2208FC73151D207800669256 /* BTVisibilityTask.m in Sources */,
+				2244B7B315225856001DEACA /* SPPointI.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
