@@ -335,7 +335,7 @@ NSString * const BTMovieLastFrame = @"BTMovieLastFrame";
 
 - (id)initWithFramerate:(float)framerate layers:(NSMutableArray*)layers labels:(NSArray*)labels {
     if (!(self = [super init])) return nil;
-    _framerate = _framerate;
+    _framerate = framerate;
     _layers = [[NSMutableArray alloc] initWithCapacity:[layers count]];
     for (BTMovieResourceLayer* layer in layers) {
         [_layers addObject:[[BTMovieLayer alloc] initForMovie:self withLayer:layer]];
