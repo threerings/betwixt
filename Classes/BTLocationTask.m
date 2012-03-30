@@ -33,7 +33,7 @@
 }
 
 - (id)initWithTime:(float)seconds toX:(float)x toY:(float)y {
-    return [self initWithTime:seconds toX:x toY:x interpolator:BTInterpolator.LINEAR target:nil];
+    return [self initWithTime:seconds toX:x toY:y interpolator:BTInterpolator.LINEAR target:nil];
 }
 
 - (id)initWithTime:(float)seconds toX:(float)x toY:(float)y interpolator:(BTInterpolator*)interp {
