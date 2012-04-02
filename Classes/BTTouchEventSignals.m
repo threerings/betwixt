@@ -75,7 +75,7 @@
         _touchStationary = [[FilteredTouchSignal alloc] initWithTouchEventSignal:_touchEvent 
                                                                            phase:SPTouchPhaseStationary];
     }
-    return _touchMoved;
+    return _touchStationary;
 }
 
 - (RAObjectSignal*)touchEnded {
@@ -83,7 +83,7 @@
         _touchEnded = [[FilteredTouchSignal alloc] initWithTouchEventSignal:_touchEvent 
                                                                            phase:SPTouchPhaseEnded];
     }
-    return _touchMoved;
+    return _touchEnded;
 }
 
 - (RAObjectSignal*)touchCanceled {
@@ -91,7 +91,7 @@
         _touchCanceled = [[FilteredTouchSignal alloc] initWithTouchEventSignal:_touchEvent 
                                                                          phase:SPTouchPhaseCancelled];
     }
-    return _touchMoved;
+    return _touchCanceled;
 }
 
 @end
