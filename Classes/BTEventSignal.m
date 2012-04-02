@@ -6,13 +6,7 @@
 
 @implementation BTEventSignal
 
-+ (BTEventSignal*)eventSignalWithDispatcher:(SPEventDispatcher*)dispatcher eventType:(NSString*)eventType {
-    return [[BTEventSignal alloc] initWithDispatcher:dispatcher eventType:eventType];
-}
-
-+ (BTEventSignal*)touchEventSignalWithDisplayObject:(SPDisplayObject*)disp {
-    return [[BTEventSignal alloc] initWithDispatcher:disp eventType:SP_EVENT_TYPE_TOUCH];
-}
+@synthesize dispatcher = _dispatcher;
 
 - (id)initWithDispatcher:(SPEventDispatcher*)dispatcher eventType:(NSString*)eventType {
     if (!(self = [super init])) {

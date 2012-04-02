@@ -11,8 +11,7 @@
     BOOL _connected;
 }
 
-+ (BTEventSignal*)eventSignalWithDispatcher:(SPEventDispatcher*)dispatcher eventType:(NSString*)eventType;
-+ (BTEventSignal*)touchEventSignalWithDisplayObject:(SPDisplayObject*)disp;
+@property (nonatomic,readonly,weak) SPEventDispatcher* dispatcher;
 
 - (id)initWithDispatcher:(SPEventDispatcher*)dispatcher eventType:(NSString*)eventType;
 
