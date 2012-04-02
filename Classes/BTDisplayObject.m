@@ -3,12 +3,23 @@
 
 #import "BTDisplayObject.h"
 #import "BTNode+Protected.h"
+#import "BTEventSignal.h"
 
 @interface BTSimpleDisplayObject : BTDisplayObject
 - (id)initWithDisplayObject:(SPDisplayObject*)disp;
 @end
 
-@implementation BTDisplayObject
+@implementation BTDisplayObject {
+@protected
+    BTEventSignal* _touched;
+}
+
+- (RAObjectSignal*)touched {
+    if (_touched == nil) {
+        _touched = [BTEventSignal touchEventSignalWithDisplayObject:self.display];
+    }
+    return _touched;
+}
 
 - (float)x {
     return self.display.x;
