@@ -131,8 +131,6 @@
 		CB69E37214D8C66D00E7C18D /* BTRepeatingTask.m in Sources */ = {isa = PBXBuildFile; fileRef = CB69E37014D8C66D00E7C18D /* BTRepeatingTask.m */; };
 		CB69E37914D8D07E00E7C18D /* BTParallelTask.h in Headers */ = {isa = PBXBuildFile; fileRef = CB69E37714D8D07E00E7C18D /* BTParallelTask.h */; };
 		CB69E37A14D8D07E00E7C18D /* BTParallelTask.m in Sources */ = {isa = PBXBuildFile; fileRef = CB69E37814D8D07E00E7C18D /* BTParallelTask.m */; };
-		CB7ABCAE147C52D400EC6AEC /* SPEventDispatcher+BlockListener.h in Headers */ = {isa = PBXBuildFile; fileRef = CB7ABCAC147C52D400EC6AEC /* SPEventDispatcher+BlockListener.h */; };
-		CB7ABCAF147C52D400EC6AEC /* SPEventDispatcher+BlockListener.m in Sources */ = {isa = PBXBuildFile; fileRef = CB7ABCAD147C52D400EC6AEC /* SPEventDispatcher+BlockListener.m */; };
 		CB7ABCB5147C747C00EC6AEC /* BTModeStack+Package.h in Headers */ = {isa = PBXBuildFile; fileRef = CB7ABCB4147C747C00EC6AEC /* BTModeStack+Package.h */; };
 		CB8F0D7C14E85EC4005985C8 /* BTDisplayObjectCreator.h in Headers */ = {isa = PBXBuildFile; fileRef = CB8F0D7A14E85EC4005985C8 /* BTDisplayObjectCreator.h */; };
 		CB8F0D7F14E85EF5005985C8 /* BTJugglerContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = CB8F0D7E14E85EF5005985C8 /* BTJugglerContainer.h */; };
@@ -360,8 +358,6 @@
 		CB69E37814D8D07E00E7C18D /* BTParallelTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTParallelTask.m; sourceTree = "<group>"; };
 		CB72E4A914773ED100F1EC78 /* Square.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Square.h; path = Integration/Square.h; sourceTree = "<group>"; };
 		CB72E4AA14773ED100F1EC78 /* Square.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Square.m; path = Integration/Square.m; sourceTree = "<group>"; };
-		CB7ABCAC147C52D400EC6AEC /* SPEventDispatcher+BlockListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SPEventDispatcher+BlockListener.h"; sourceTree = "<group>"; };
-		CB7ABCAD147C52D400EC6AEC /* SPEventDispatcher+BlockListener.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SPEventDispatcher+BlockListener.m"; sourceTree = "<group>"; };
 		CB7ABCB4147C747C00EC6AEC /* BTModeStack+Package.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BTModeStack+Package.h"; sourceTree = "<group>"; };
 		CB846EED149AE18900B29795 /* react.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = react.xcodeproj; path = ../../../react.xcodeproj; sourceTree = REACT_SRC; };
 		CB8F0D7A14E85EC4005985C8 /* BTDisplayObjectCreator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTDisplayObjectCreator.h; sourceTree = "<group>"; };
@@ -548,8 +544,6 @@
 				22DB82171509A9490091B648 /* NSString+Extensions.m */,
 				229B463414D8C525005FC8E9 /* SPDisplayObject+Extensions.h */,
 				229B463514D8C525005FC8E9 /* SPDisplayObject+Extensions.m */,
-				CB7ABCAC147C52D400EC6AEC /* SPEventDispatcher+BlockListener.h */,
-				CB7ABCAD147C52D400EC6AEC /* SPEventDispatcher+BlockListener.m */,
 				2290D8271502C99D009EED3D /* SPMatrix+Extensions.h */,
 				2290D8281502C99D009EED3D /* SPMatrix+Extensions.m */,
 				22448E2714E4A79D001CF5CE /* SPPoint+Extensions.h */,
@@ -760,7 +754,6 @@
 				CBF2AAA214765EA5000C022D /* BTMode.h in Headers */,
 				CBF2AAA414765EA5000C022D /* BTModeStack.h in Headers */,
 				CBB86EE01476669800D0C57E /* BTObject.h in Headers */,
-				CB7ABCAE147C52D400EC6AEC /* SPEventDispatcher+BlockListener.h in Headers */,
 				CB7ABCB5147C747C00EC6AEC /* BTModeStack+Package.h in Headers */,
 				CB366FE6148ECC84004BE08B /* BTNodeContainer.h in Headers */,
 				CB24CBCB14A028F6004BAA57 /* BTLocationTask.h in Headers */,
@@ -992,7 +985,6 @@
 				CBF2AAA314765EA5000C022D /* BTMode.m in Sources */,
 				CBF2AAA514765EA5000C022D /* BTModeStack.m in Sources */,
 				CBB86EE11476669800D0C57E /* BTObject.m in Sources */,
-				CB7ABCAF147C52D400EC6AEC /* SPEventDispatcher+BlockListener.m in Sources */,
 				CB24CBCC14A028F6004BAA57 /* BTLocationTask.m in Sources */,
 				CB24CBD414A115EF004BAA57 /* BTInterpolator.m in Sources */,
 				CB24CBD914A116AC004BAA57 /* BTSprite.m in Sources */,

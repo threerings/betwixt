@@ -1,8 +1,6 @@
 //
 // Betwixt - Copyright 2012 Three Rings Design
 
-#import "SPEventDispatcher+BlockListener.h"
-
 @class BTNode;
 @class BTMode;
 @class BTDisplayObject;

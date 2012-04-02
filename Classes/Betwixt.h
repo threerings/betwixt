@@ -25,7 +25,6 @@
 #import "NSArray+Extensions.h"
 #import "NSString+Extensions.h"
 #import "SPDisplayObject+Extensions.h"
-#import "SPEventDispatcher+BlockListener.h"
 #import "SPMatrix+Extensions.h"
 #import "SPPoint+Extensions.h"
 #import "SPRectangle+Extensions.h"
