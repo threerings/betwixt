@@ -14,7 +14,6 @@
 
 @interface BTObject ()
 @property (nonatomic, readonly) NSMutableDictionary* namedObjects;
-@property (nonatomic, readonly) NSMutableDictionary* tokenDispatchers;
 @end
 
 @interface BTPendingChildNode : NSObject {
@@ -28,7 +27,6 @@
 @implementation BTPendingChildNode @end
 
 @implementation BTObject {
-    NSMutableDictionary* _tokenDispatchers;
     NSMutableDictionary* _namedObjects;
     NSMutableArray* _pendingChildren;
 }
@@ -36,21 +34,7 @@
 - (id)init {
     if (!(self = [super init])) return nil;
     _children = [[NSMutableSet alloc] init];
-    
-    [self.detached connectUnit:^ {
-        // Copy the set before detaching as detaching modifies the set
-        // Go through _tokenDispatchers instead of tokenDispatchers to keep from instantiating it
-        // if there aren't any listeners
-        for (OOOBlockToken* token in [_tokenDispatchers allKeys]) {
-            [self cancelListeningForToken:token];
-        }
-    }];
     return self;
-}
-
-- (NSMutableDictionary*)tokenDispatchers {
-    if (_tokenDispatchers == nil) _tokenDispatchers = [[NSMutableDictionary alloc] init];
-    return _tokenDispatchers;
 }
 
 - (NSMutableDictionary*)namedObjects {
@@ -61,18 +45,6 @@
 - (NSMutableArray*)pendingChildren {
     if (_pendingChildren == nil) _pendingChildren = [NSMutableArray array];
     return _pendingChildren;
-}
-
-- (OOOBlockToken*)listenToDispatcher:(SPEventDispatcher*)dispatcher forEvent:(NSString*)eventType withBlock:(OOOBlockListener)block {
-    OOOBlockToken* token = [dispatcher addEventListenerForType:eventType listener:block];
-    [self.tokenDispatchers setObject:[NSValue valueWithNonretainedObject:dispatcher] forKey:token];
-    return token;
-}
-
-- (void)cancelListeningForToken:(OOOBlockToken*)token {
-    SPEventDispatcher* observee = [[self.tokenDispatchers objectForKey:token] nonretainedObjectValue];
-    [observee removeListenerWithBlockToken:token];
-    [self.tokenDispatchers removeObjectForKey:token];
 }
 
 - (void)associateNode:(BTNode*)node withName:(NSString*)name {

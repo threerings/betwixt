@@ -257,14 +257,6 @@
     return _rootNode.sprite;
 }
 
-- (OOOBlockToken*)listenToDispatcher:(SPEventDispatcher*)dispatcher forEvent:(NSString*)eventType withBlock:(OOOBlockListener)block {
-    return [_rootNode listenToDispatcher:dispatcher forEvent:eventType withBlock:block];
-}
-
-- (void)cancelListeningForToken:(OOOBlockToken*)token {
-    [_rootNode cancelListeningForToken:token];
-}
-
 - (void)addNode:(BTNode*)object {
     [_rootNode addNode:object];
 }

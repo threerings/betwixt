@@ -13,7 +13,4 @@
 - (BOOL)hasNodeNamed:(NSString*)name;
 - (void)removeNodeNamed:(NSString*)name;
 
-- (OOOBlockToken*)listenToDispatcher:(SPEventDispatcher*)dispatcher forEvent:(NSString*)eventType withBlock:(OOOBlockListener)block;
-- (void)cancelListeningForToken:(OOOBlockToken*)token;
-
 @end
