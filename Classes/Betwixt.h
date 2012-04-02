@@ -9,7 +9,6 @@
 #import "BTCallbacks.h"
 #import "BTDeviceType.h"
 #import "BTDisplayObject.h"
-#import "BTDragger.h"
 #import "BTInput.h"
 #import "BTInterpolator.h"
 #import "BTMode.h"
