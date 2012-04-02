@@ -117,8 +117,8 @@
             _activeListener = [self hitTest:touchPt];
             if (_activeListener != nil) {
                 [_activeListener onTouchStart:touchPt];
+                handled = YES;
             }
-            handled = YES;
             break;
             
         case SPTouchPhaseMoved:
