@@ -76,6 +76,8 @@
 		22E0A755152A311A009FDE09 /* BTEventSignal.h in Headers */ = {isa = PBXBuildFile; fileRef = 22E0A753152A311A009FDE09 /* BTEventSignal.h */; };
 		22E0A756152A311A009FDE09 /* BTEventSignal.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E0A754152A311A009FDE09 /* BTEventSignal.m */; };
 		22E0A75F152A3837009FDE09 /* BTEventSignal+Protected.h in Headers */ = {isa = PBXBuildFile; fileRef = 22E0A75E152A3837009FDE09 /* BTEventSignal+Protected.h */; };
+		22E0A762152A4404009FDE09 /* BTTouchEventSignals.h in Headers */ = {isa = PBXBuildFile; fileRef = 22E0A760152A4404009FDE09 /* BTTouchEventSignals.h */; };
+		22E0A763152A4404009FDE09 /* BTTouchEventSignals.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E0A761152A4404009FDE09 /* BTTouchEventSignals.m */; };
 		22F3373D14E89BAC00A17CCB /* GroupTestMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F3373C14E89BAC00A17CCB /* GroupTestMode.m */; };
 		22F979E614C0E23F00A6913B /* GDataXMLException.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F979D414C0E23F00A6913B /* GDataXMLException.h */; };
 		22F979E714C0E23F00A6913B /* GDataXMLException.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F979D514C0E23F00A6913B /* GDataXMLException.m */; };
@@ -297,6 +299,8 @@
 		22E0A753152A311A009FDE09 /* BTEventSignal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTEventSignal.h; sourceTree = "<group>"; };
 		22E0A754152A311A009FDE09 /* BTEventSignal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTEventSignal.m; sourceTree = "<group>"; };
 		22E0A75E152A3837009FDE09 /* BTEventSignal+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BTEventSignal+Protected.h"; sourceTree = "<group>"; };
+		22E0A760152A4404009FDE09 /* BTTouchEventSignals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTTouchEventSignals.h; sourceTree = "<group>"; };
+		22E0A761152A4404009FDE09 /* BTTouchEventSignals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTTouchEventSignals.m; sourceTree = "<group>"; };
 		22F3373B14E89BAC00A17CCB /* GroupTestMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GroupTestMode.h; path = Integration/GroupTestMode.h; sourceTree = "<group>"; };
 		22F3373C14E89BAC00A17CCB /* GroupTestMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GroupTestMode.m; path = Integration/GroupTestMode.m; sourceTree = "<group>"; };
 		22F979D414C0E23F00A6913B /* GDataXMLException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataXMLException.h; sourceTree = "<group>"; };
@@ -525,6 +529,8 @@
 				22C85EAC14DB225400F9EC07 /* BTPoints.m */,
 				222199F214D24660009B764F /* BTRandoms.h */,
 				222199F314D24660009B764F /* BTRandoms.m */,
+				22E0A760152A4404009FDE09 /* BTTouchEventSignals.h */,
+				22E0A761152A4404009FDE09 /* BTTouchEventSignals.m */,
 				CBC9AC5614E9A4F800E1F9F7 /* BTUtils.h */,
 				CBC9AC5714E9A4F800E1F9F7 /* BTUtils.m */,
 				2244B7B015225855001DEACA /* SPPointI.h */,
@@ -829,6 +835,7 @@
 				2244B7B215225856001DEACA /* SPPointI.h in Headers */,
 				22E0A755152A311A009FDE09 /* BTEventSignal.h in Headers */,
 				22E0A75F152A3837009FDE09 /* BTEventSignal+Protected.h in Headers */,
+				22E0A762152A4404009FDE09 /* BTTouchEventSignals.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1036,6 +1043,7 @@
 				2208FC73151D207800669256 /* BTVisibilityTask.m in Sources */,
 				2244B7B315225856001DEACA /* SPPointI.m in Sources */,
 				22E0A756152A311A009FDE09 /* BTEventSignal.m in Sources */,
+				22E0A763152A4404009FDE09 /* BTTouchEventSignals.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
