@@ -57,7 +57,7 @@
     return nil;
 }
 
-- (id<BTNodeContainer>)parent {
+- (NSObject<BTNodeContainer>*)parent {
     return _parent;
 }
 

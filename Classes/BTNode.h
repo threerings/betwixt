@@ -6,7 +6,7 @@
 
 @interface BTNode : NSObject {
 @package
-    __weak id<BTNodeContainer> _parent;
+    __weak NSObject<BTNodeContainer>* _parent;
     BOOL _isDetached;
     NSUInteger _id;
 @private
@@ -34,7 +34,7 @@
 @property(nonatomic,readonly) RAUnitSignal* detached;
 @property(nonatomic,readonly) BTMode* mode;
 @property(nonatomic,readonly) RAConnectionGroup* conns;
-@property(nonatomic,readonly) id<BTNodeContainer> parent;
+@property(nonatomic,readonly) NSObject<BTNodeContainer>* parent;
 @property(nonatomic,readonly) BOOL isAttached;
 
 @end
