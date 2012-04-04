@@ -11,6 +11,7 @@
 #import "BTNode+Protected.h"
 #import "BTMode.h"
 #import "BTMode+Package.h"
+#import "BTMode+Protected.h"
 
 @interface BTObject ()
 @property (nonatomic, readonly) NSMutableDictionary* namedObjects;
@@ -71,21 +72,8 @@
         return;
     }
     
-    BTMode *mode = self.mode;
-    
     [_children addObject:node];
     node->_parent = self;
-    node->_id = mode->_nextNodeId++;
-    
-    [mode addKeys:node];
-    [mode addGroups:node];
-    
-    // If the object is BTUpdatable, wire up its update function to the update event
-    if ([node conformsToProtocol:@protocol(BTUpdatable)]) {
-        [node.conns onFloatReactor:self.mode.update connectSlot:^(float dt) {
-            [(BTNode<BTUpdatable>*)node update:dt];
-        }];
-    }
     
     // Does the object have a name?
     if (name != nil) {
@@ -99,6 +87,9 @@
     if (parent != nil) {
         [parent addChild:((BTDisplayObject *)node).display];
     }
+    
+    // Register the node with the mode
+    [self.mode registerNode:node];
     
     // Tell the node it's attached
     [node attachedInternal];

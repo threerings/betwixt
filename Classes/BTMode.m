@@ -10,6 +10,7 @@
 #import "BTInput+Package.h"
 #import "SPTouchProcessor.h"
 #import "BTJugglerContainer.h"
+#import "BTUpdatable.h"
 
 @interface BTModeSprite : SPSprite<BTJugglerContainer> {
     SPJuggler* _juggler;
@@ -217,7 +218,17 @@
     _input = nil;
 }
 
-- (void)addKeys:(BTNode*)node {
+- (void)registerNode:(BTNode*)node {
+    node->_id = _nextNodeId++;
+    
+    // If the object is BTUpdatable, wire up its update function to the update event
+    if ([node conformsToProtocol:@protocol(BTUpdatable)]) {
+        [node.conns onFloatReactor:self.update connectSlot:^(float dt) {
+            [(BTNode<BTUpdatable>*)node update:dt];
+        }];
+    }
+    
+    // register keys
     NSArray* keys = node.keys;
     if (keys != nil) {
         [node.detached connectUnit:^ {
@@ -230,9 +241,8 @@
             [_keyedObjects setObject:node forKey:key];
         }
     }
-}
-
-- (void)addGroups:(BTNode*)node {
+    
+    // register groups
     NSArray* groups = node.groups;
     if (groups != nil) {
         [node.detached connectUnit:^ {
