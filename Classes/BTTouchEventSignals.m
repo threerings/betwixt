@@ -4,27 +4,23 @@
 #import "BTTouchEventSignals.h"
 #import "BTEventSignal.h"
 
-@interface FilteredTouchSignal : RAObjectSignal {
-    __weak SPDisplayObject* _disp;
-    SPTouchPhase _phase;
-}
+@interface FilteredTouchSignal : RAObjectSignal
 - (id)initWithTouchEventSignal:(BTEventSignal*)touchEvent phase:(SPTouchPhase)phase;
 @end
 
 @implementation FilteredTouchSignal
-- (id)initWithTouchEventSignal:(BTEventSignal*)touchEvent phase:(SPTouchPhase)thePhase {
+- (id)initWithTouchEventSignal:(BTEventSignal*)touchEvent phase:(SPTouchPhase)phase {
     if (!(self = [super init])) {
         return nil;
     }
-    _disp = (SPDisplayObject*)touchEvent.dispatcher;
-    _phase = thePhase;
     
+    __weak SPDisplayObject* disp = (SPDisplayObject*)touchEvent.dispatcher;
     __weak FilteredTouchSignal* this = self;
     [touchEvent connectSlot:^(SPTouchEvent* event) {
-        if (!this) {
+        if (!this || !disp) {
             return;
         }
-        SPTouch* touch = [[event touchesWithTarget:this->_disp andPhase:this->_phase] anyObject];
+        SPTouch* touch = [[event touchesWithTarget:disp andPhase:phase] anyObject];
         if (touch != nil) {
             [this emitEvent:touch];
         }
