@@ -13,6 +13,9 @@
 
 @implementation BTTextureResource
 
+@synthesize texture = _texture;
+@synthesize offset = _offset;
+
 + (id<BTResourceFactory>)sharedFactory {
     static BTTextureFactory* instance = nil;
     @synchronized(self) {
@@ -58,7 +61,12 @@
     return holder;
 }
 
-@synthesize texture = _texture, offset = _offset;
+- (SPImage*)createImage {
+    SPImage* img = [[SPImage alloc] initWithTexture:_texture];
+    img.pivotX = -_offset.x;
+    img.pivotY = -_offset.y;
+    return img;
+}
 
 @end
 

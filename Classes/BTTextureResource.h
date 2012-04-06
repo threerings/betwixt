@@ -19,6 +19,7 @@
 + (BTTextureResource*)require:(NSString*)name;
 
 - (id)initWithXml:(GDataXMLElement*)xml;
+- (SPImage*)createImage;
 
 @property(nonatomic,readonly) SPTexture* texture;
 @property(nonatomic,readonly) SPPoint* offset;
