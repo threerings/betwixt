@@ -68,4 +68,5 @@
 #import "BTMovieButton.h"
 #import "BTRandoms.h"
 #import "BTUtils.h"
+#import "BTWeightedArray.h"
 #import "SPPointI.h"

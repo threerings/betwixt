@@ -60,6 +60,8 @@
 		229B463314D8C439005FC8E9 /* BTHasLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = 229B463214D8C439005FC8E9 /* BTHasLocation.h */; };
 		229B463614D8C525005FC8E9 /* SPDisplayObject+Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 229B463414D8C525005FC8E9 /* SPDisplayObject+Extensions.h */; };
 		229B463714D8C525005FC8E9 /* SPDisplayObject+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 229B463514D8C525005FC8E9 /* SPDisplayObject+Extensions.m */; };
+		22BB62BF152F77D7001247D3 /* BTWeightedArray.h in Headers */ = {isa = PBXBuildFile; fileRef = 22BB62BD152F77D7001247D3 /* BTWeightedArray.h */; };
+		22BB62C0152F77D7001247D3 /* BTWeightedArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BB62BE152F77D7001247D3 /* BTWeightedArray.m */; };
 		22BC09A71512C3F0006F56DA /* BTFloatRange.h in Headers */ = {isa = PBXBuildFile; fileRef = 22BC09A51512C3F0006F56DA /* BTFloatRange.h */; };
 		22BC09A81512C3F0006F56DA /* BTFloatRange.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BC09A61512C3F0006F56DA /* BTFloatRange.m */; };
 		22BC09AB1512C4E4006F56DA /* BTIntRange.h in Headers */ = {isa = PBXBuildFile; fileRef = 22BC09A91512C4E4006F56DA /* BTIntRange.h */; };
@@ -287,6 +289,8 @@
 		229B463214D8C439005FC8E9 /* BTHasLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTHasLocation.h; sourceTree = "<group>"; };
 		229B463414D8C525005FC8E9 /* SPDisplayObject+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SPDisplayObject+Extensions.h"; sourceTree = "<group>"; };
 		229B463514D8C525005FC8E9 /* SPDisplayObject+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SPDisplayObject+Extensions.m"; sourceTree = "<group>"; };
+		22BB62BD152F77D7001247D3 /* BTWeightedArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTWeightedArray.h; sourceTree = "<group>"; };
+		22BB62BE152F77D7001247D3 /* BTWeightedArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTWeightedArray.m; sourceTree = "<group>"; };
 		22BC09A51512C3F0006F56DA /* BTFloatRange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTFloatRange.h; sourceTree = "<group>"; };
 		22BC09A61512C3F0006F56DA /* BTFloatRange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTFloatRange.m; sourceTree = "<group>"; };
 		22BC09A91512C4E4006F56DA /* BTIntRange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTIntRange.h; sourceTree = "<group>"; };
@@ -548,6 +552,8 @@
 				22E0A761152A4404009FDE09 /* BTTouchEventSignals.m */,
 				CBC9AC5614E9A4F800E1F9F7 /* BTUtils.h */,
 				CBC9AC5714E9A4F800E1F9F7 /* BTUtils.m */,
+				22BB62BD152F77D7001247D3 /* BTWeightedArray.h */,
+				22BB62BE152F77D7001247D3 /* BTWeightedArray.m */,
 				2244B7B015225855001DEACA /* SPPointI.h */,
 				2244B7B115225856001DEACA /* SPPointI.m */,
 			);
@@ -854,6 +860,7 @@
 				220F63AF152E878B0051B383 /* BTButton+Protected.h in Headers */,
 				220F63B0152E878B0051B383 /* BTDisplayObjectButton.h in Headers */,
 				220F63B2152E878B0051B383 /* BTMovieButton.h in Headers */,
+				22BB62BF152F77D7001247D3 /* BTWeightedArray.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1064,6 +1071,7 @@
 				220F63AE152E878B0051B383 /* BTButton.m in Sources */,
 				220F63B1152E878B0051B383 /* BTDisplayObjectButton.m in Sources */,
 				220F63B3152E878B0051B383 /* BTMovieButton.m in Sources */,
+				22BB62C0152F77D7001247D3 /* BTWeightedArray.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
