@@ -1,6 +1,5 @@
 #import "SubObjectMode.h"
 #import "Square.h"
-#import "SPEventDispatcher+BlockListener.h"
 
 #import "BTModeStack.h"
 

@@ -4,7 +4,6 @@
 #import "Square.h"
 #import "BTNode+Protected.h"
 #import "BTMode.h"
-#import "SPEventDispatcher+BlockListener.h"
 
 @implementation Square
 
