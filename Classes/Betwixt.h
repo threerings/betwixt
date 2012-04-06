@@ -57,12 +57,15 @@
 #import "BTWaitTask.h"
 
 // Utils
+#import "BTButton.h"
+#import "BTDisplayObjectButton.h"
 #import "BTEnum.h"
 #import "BTEventSignal.h"
 #import "BTFloatRange.h"
 #import "BTIntRange.h"
 #import "BTLoadingMode.h"
 #import "BTMacros.h"
+#import "BTMovieButton.h"
 #import "BTRandoms.h"
 #import "BTUtils.h"
 #import "SPPointI.h"

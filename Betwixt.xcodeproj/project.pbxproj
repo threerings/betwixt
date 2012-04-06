@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		2208FC72151D207800669256 /* BTVisibilityTask.h in Headers */ = {isa = PBXBuildFile; fileRef = 2208FC70151D207800669256 /* BTVisibilityTask.h */; };
 		2208FC73151D207800669256 /* BTVisibilityTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 2208FC71151D207800669256 /* BTVisibilityTask.m */; };
+		220F63AD152E878B0051B383 /* BTButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 220F63A6152E878B0051B383 /* BTButton.h */; };
+		220F63AE152E878B0051B383 /* BTButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 220F63A7152E878B0051B383 /* BTButton.m */; };
+		220F63AF152E878B0051B383 /* BTButton+Protected.h in Headers */ = {isa = PBXBuildFile; fileRef = 220F63A8152E878B0051B383 /* BTButton+Protected.h */; };
+		220F63B0152E878B0051B383 /* BTDisplayObjectButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 220F63A9152E878B0051B383 /* BTDisplayObjectButton.h */; };
+		220F63B1152E878B0051B383 /* BTDisplayObjectButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 220F63AA152E878B0051B383 /* BTDisplayObjectButton.m */; };
+		220F63B2152E878B0051B383 /* BTMovieButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 220F63AB152E878B0051B383 /* BTMovieButton.h */; };
+		220F63B3152E878B0051B383 /* BTMovieButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 220F63AC152E878B0051B383 /* BTMovieButton.m */; };
 		221516AC1513C45900C48FBB /* hero_A_01 in Resources */ = {isa = PBXBuildFile; fileRef = 221516AB1513C45900C48FBB /* hero_A_01 */; };
 		2217E4CD14C79B90000F976A /* BTUpdatable.h in Headers */ = {isa = PBXBuildFile; fileRef = 2217E4CC14C79B90000F976A /* BTUpdatable.h */; };
 		221B6F9814C8BC3200747A18 /* BTMode+Protected.h in Headers */ = {isa = PBXBuildFile; fileRef = 221B6F9714C8BC3200747A18 /* BTMode+Protected.h */; };
@@ -230,6 +237,13 @@
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2208FC70151D207800669256 /* BTVisibilityTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTVisibilityTask.h; sourceTree = "<group>"; };
 		2208FC71151D207800669256 /* BTVisibilityTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTVisibilityTask.m; sourceTree = "<group>"; };
+		220F63A6152E878B0051B383 /* BTButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTButton.h; sourceTree = "<group>"; };
+		220F63A7152E878B0051B383 /* BTButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTButton.m; sourceTree = "<group>"; };
+		220F63A8152E878B0051B383 /* BTButton+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BTButton+Protected.h"; sourceTree = "<group>"; };
+		220F63A9152E878B0051B383 /* BTDisplayObjectButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTDisplayObjectButton.h; sourceTree = "<group>"; };
+		220F63AA152E878B0051B383 /* BTDisplayObjectButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTDisplayObjectButton.m; sourceTree = "<group>"; };
+		220F63AB152E878B0051B383 /* BTMovieButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTMovieButton.h; sourceTree = "<group>"; };
+		220F63AC152E878B0051B383 /* BTMovieButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTMovieButton.m; sourceTree = "<group>"; };
 		221516AB1513C45900C48FBB /* hero_A_01 */ = {isa = PBXFileReference; lastKnownFileType = folder; name = hero_A_01; path = Exported/hero_A_01; sourceTree = "<group>"; };
 		2217E4CC14C79B90000F976A /* BTUpdatable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTUpdatable.h; sourceTree = "<group>"; };
 		221B6F9714C8BC3200747A18 /* BTMode+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BTMode+Protected.h"; sourceTree = "<group>"; };
@@ -507,6 +521,11 @@
 		2221998C14D0F7DA009B764F /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				220F63A8152E878B0051B383 /* BTButton+Protected.h */,
+				220F63A6152E878B0051B383 /* BTButton.h */,
+				220F63A7152E878B0051B383 /* BTButton.m */,
+				220F63A9152E878B0051B383 /* BTDisplayObjectButton.h */,
+				220F63AA152E878B0051B383 /* BTDisplayObjectButton.m */,
 				2225C36614DDF1B800962B1B /* BTEnum.h */,
 				2225C36714DDF1B800962B1B /* BTEnum.m */,
 				22E0A75E152A3837009FDE09 /* BTEventSignal+Protected.h */,
@@ -519,6 +538,8 @@
 				2221998D14D0F809009B764F /* BTLoadingMode.h */,
 				2221998E14D0F809009B764F /* BTLoadingMode.m */,
 				22448EA414E744AE001CF5CE /* BTMacros.h */,
+				220F63AB152E878B0051B383 /* BTMovieButton.h */,
+				220F63AC152E878B0051B383 /* BTMovieButton.m */,
 				22C85EAB14DB225400F9EC07 /* BTPoints.h */,
 				22C85EAC14DB225400F9EC07 /* BTPoints.m */,
 				222199F214D24660009B764F /* BTRandoms.h */,
@@ -829,6 +850,10 @@
 				22E0A755152A311A009FDE09 /* BTEventSignal.h in Headers */,
 				22E0A75F152A3837009FDE09 /* BTEventSignal+Protected.h in Headers */,
 				22E0A762152A4404009FDE09 /* BTTouchEventSignals.h in Headers */,
+				220F63AD152E878B0051B383 /* BTButton.h in Headers */,
+				220F63AF152E878B0051B383 /* BTButton+Protected.h in Headers */,
+				220F63B0152E878B0051B383 /* BTDisplayObjectButton.h in Headers */,
+				220F63B2152E878B0051B383 /* BTMovieButton.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1036,6 +1061,9 @@
 				2244B7B315225856001DEACA /* SPPointI.m in Sources */,
 				22E0A756152A311A009FDE09 /* BTEventSignal.m in Sources */,
 				22E0A763152A4404009FDE09 /* BTTouchEventSignals.m in Sources */,
+				220F63AE152E878B0051B383 /* BTButton.m in Sources */,
+				220F63B1152E878B0051B383 /* BTDisplayObjectButton.m in Sources */,
+				220F63B3152E878B0051B383 /* BTMovieButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
