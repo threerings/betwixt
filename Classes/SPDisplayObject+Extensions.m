@@ -14,6 +14,21 @@
     self.y = loc.y;
 }
 
+- (SPPoint*)globalLoc {
+    SPPoint* loc = self.loc;
+    if (self.parent != nil) {
+        loc = [self.parent localToGlobal:loc];
+    }
+    return loc;
+}
+
+- (void)setGlobalLoc:(SPPoint*)globalLoc {
+    if (self.parent != nil) {
+        globalLoc = [self.parent globalToLocal:globalLoc];
+    }
+    self.loc = globalLoc;
+}
+
 - (SPPoint*)pivot {
     return [SPPoint pointWithX:self.pivotX y:self.pivotY];
 }
