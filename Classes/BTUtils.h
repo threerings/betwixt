@@ -4,6 +4,7 @@
 id BTNilToNSNull(id obj);
 id BTNSNullToNil(id obj);
 
-/// return: (a<b):-1 (a>b):1 (a==b):0
-int BTCompareInts (int a, int b);
-int BTCompareFloats (float a, float b);
+NSComparisonResult BTCompareBooleans (BOOL a, BOOL b);
+NSComparisonResult BTCompareInts (int a, int b);
+NSComparisonResult BTCompareFloats (float a, float b);
+NSComparisonResult BTCompareDoubles (double a, double b);
