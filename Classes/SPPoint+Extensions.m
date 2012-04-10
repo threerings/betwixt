@@ -24,7 +24,7 @@
 }
 
 - (BOOL)isEquivalent:(SPPoint*)p {
-    return fabsf(mX - p->mX) < SP_FLOAT_EPSILON && fabsf(mY - p->mY) < SP_FLOAT_EPSILON;
+    return SP_IS_FLOAT_EQUAL(mX, p->mX) && SP_IS_FLOAT_EQUAL(mY, p->mY);
 }
 
 - (void)set:(SPPoint *)pt {
