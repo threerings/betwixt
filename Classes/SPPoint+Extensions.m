@@ -7,6 +7,8 @@
 
 #define SQ(x) ((x)*(x))
 
+static const float EPSILON = 0.00001f;
+
 @implementation SPPoint (OOOExtensions)
 
 + (SPPoint*)pointFromString:(NSString*)string {
@@ -21,6 +23,10 @@
     } @catch (...) {
         return nil;
     }
+}
+
+- (BOOL)isEquivalent:(SPPoint*)p {
+    return fabsf(mX - p->mX) < EPSILON && fabsf(mY - p->mY) < EPSILON;
 }
 
 - (void)set:(SPPoint *)pt {
