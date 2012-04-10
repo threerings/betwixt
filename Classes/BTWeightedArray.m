@@ -66,7 +66,7 @@
     int hiIdx = _objects.count - 1;
     for (;;) {
         NSAssert(loIdx <= hiIdx, @"something's broken");
-        int idx = loIdx + ((hiIdx - loIdx) / 2);
+        int idx = ((unsigned int)loIdx + (unsigned int)hiIdx) >> 1;
         WeightedObject* wo = [_objects objectAtIndex:idx];
         if (val < wo.min) {
             // too high
