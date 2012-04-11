@@ -84,6 +84,7 @@
     // Check to see if we need to rewind our index
     // (if nodes have been deleted during the iteration)
     if (_group.count > 0) {
+        index = MIN(index, _group.count - 1);
         while (index > 0) {
             BTNode* prevNode = [_group objectAtIndex:index - 1];
             if (prevNode->_id >= minNodeId) {
