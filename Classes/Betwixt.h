@@ -60,6 +60,7 @@
 // Utils
 #import "BTButton.h"
 #import "BTDisplayObjectButton.h"
+#import "BTDragger.h"
 #import "BTEnum.h"
 #import "BTEventSignal.h"
 #import "BTFloatRange.h"
