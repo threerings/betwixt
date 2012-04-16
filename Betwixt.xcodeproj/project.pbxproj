@@ -77,6 +77,8 @@
 		22C85F0B14DB784B00F9EC07 /* BTDisplayObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C85F0914DB784A00F9EC07 /* BTDisplayObject.m */; };
 		22D46A941538DEB4005BAD6D /* BTDragger.h in Headers */ = {isa = PBXBuildFile; fileRef = 22D46A921538DEB4005BAD6D /* BTDragger.h */; };
 		22D46A951538DEB4005BAD6D /* BTDragger.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D46A931538DEB4005BAD6D /* BTDragger.m */; };
+		22D46A9E153CCE79005BAD6D /* BTSignalTask.h in Headers */ = {isa = PBXBuildFile; fileRef = 22D46A9C153CCE79005BAD6D /* BTSignalTask.h */; };
+		22D46A9F153CCE79005BAD6D /* BTSignalTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D46A9D153CCE79005BAD6D /* BTSignalTask.m */; };
 		22DB82181509A9490091B648 /* NSString+Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 22DB82161509A9490091B648 /* NSString+Extensions.h */; };
 		22DB82191509A9490091B648 /* NSString+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DB82171509A9490091B648 /* NSString+Extensions.m */; };
 		22DB8234150AAA290091B648 /* BTDeviceType.h in Headers */ = {isa = PBXBuildFile; fileRef = 22DB8232150AAA290091B648 /* BTDeviceType.h */; };
@@ -310,6 +312,8 @@
 		22C85F0914DB784A00F9EC07 /* BTDisplayObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTDisplayObject.m; sourceTree = "<group>"; };
 		22D46A921538DEB4005BAD6D /* BTDragger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTDragger.h; sourceTree = "<group>"; };
 		22D46A931538DEB4005BAD6D /* BTDragger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTDragger.m; sourceTree = "<group>"; };
+		22D46A9C153CCE79005BAD6D /* BTSignalTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTSignalTask.h; sourceTree = "<group>"; };
+		22D46A9D153CCE79005BAD6D /* BTSignalTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTSignalTask.m; sourceTree = "<group>"; };
 		22DB82161509A9490091B648 /* NSString+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extensions.h"; sourceTree = "<group>"; };
 		22DB82171509A9490091B648 /* NSString+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extensions.m"; sourceTree = "<group>"; };
 		22DB8232150AAA290091B648 /* BTDeviceType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTDeviceType.h; sourceTree = "<group>"; };
@@ -703,6 +707,8 @@
 				22448E0D14E3356A001CF5CE /* BTScaleTask.m */,
 				CBE1F0DF14A1554A00B82344 /* BTSequenceTask.h */,
 				CBE1F0E014A1554A00B82344 /* BTSequenceTask.m */,
+				22D46A9C153CCE79005BAD6D /* BTSignalTask.h */,
+				22D46A9D153CCE79005BAD6D /* BTSignalTask.m */,
 				2208FC70151D207800669256 /* BTVisibilityTask.h */,
 				2208FC71151D207800669256 /* BTVisibilityTask.m */,
 				CB442C7514B3834200EB2821 /* BTWaitTask.h */,
@@ -875,6 +881,7 @@
 				22BB62BF152F77D7001247D3 /* BTWeightedArray.h in Headers */,
 				227339651534F3BE004719BF /* NSMutableArray+Extensions.h in Headers */,
 				22D46A941538DEB4005BAD6D /* BTDragger.h in Headers */,
+				22D46A9E153CCE79005BAD6D /* BTSignalTask.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1088,6 +1095,7 @@
 				22BB62C0152F77D7001247D3 /* BTWeightedArray.m in Sources */,
 				227339661534F3BE004719BF /* NSMutableArray+Extensions.m in Sources */,
 				22D46A951538DEB4005BAD6D /* BTDragger.m in Sources */,
+				22D46A9F153CCE79005BAD6D /* BTSignalTask.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
