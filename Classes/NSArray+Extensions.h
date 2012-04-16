@@ -3,9 +3,9 @@
 
 @interface NSArray (OOOExtensions)
 
-- (NSMutableArray*)filter:(BOOL (^)(id object))block;
-- (NSMutableArray*)map:(id (^)(id object))block;
-- (id)findObject:(BOOL (^)(id object))block;
+- (NSMutableArray*)filter:(BOOL (^)(id object))pred;
+- (NSMutableArray*)map:(id (^)(id object))transformer;
+- (id)findObject:(BOOL (^)(id object))pred;
 
 /**
  * Performs a binary search, attempting to locate the specified

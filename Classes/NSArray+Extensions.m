@@ -3,34 +3,20 @@
 
 #import "NSArray+Extensions.h"
 #import "BTUtils.h"
+#import "BTCollections.h"
 
 @implementation NSArray (OOOExtensions)
 
-- (NSMutableArray*)filter:(BOOL (^)(id))block {
-    NSMutableArray *array = [[NSMutableArray alloc] init];
-    for (id obj in self) {
-        if (block(obj)) {
-            [array addObject:obj];
-        }
-    }
-    return array;
+- (NSMutableArray*)filter:(BOOL (^)(id))pred {
+    return [BTCollections filter:self pred:pred];
 }
 
-- (NSMutableArray*)map:(id (^)(id))block {
-    NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:self.count];
-    for (id obj in self) {
-        [array addObject:BTNilToNSNull(block(obj))];
-    }
-    return array;
+- (NSMutableArray*)map:(id (^)(id))transformer {
+    return [BTCollections map:self transformer:transformer];
 }
 
-- (id)findObject:(BOOL (^)(id))block {
-    for (id obj in self) {
-        if (block(obj)) {
-            return obj;
-        }
-    }
-    return nil;
+- (id)findObject:(BOOL (^)(id))pred {
+    return [BTCollections findObject:self pred:pred];
 }
 
 - (int)binarySearch:(id)object offset:(int)offset length:(int)length comp:(NSComparator)comp {

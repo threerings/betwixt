@@ -61,6 +61,7 @@
 
 // Utils
 #import "BTButton.h"
+#import "BTCollections.h"
 #import "BTDisplayObjectButton.h"
 #import "BTDragger.h"
 #import "BTEnum.h"
