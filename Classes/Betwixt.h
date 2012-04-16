@@ -49,6 +49,7 @@
 #import "BTDisplayObjectTask.h"
 #import "BTInterpolationTask.h"
 #import "BTLocationTask.h"
+#import "BTMovieTask.h"
 #import "BTParallelTask.h"
 #import "BTRepeatingTask.h"
 #import "BTRotationTask.h"
