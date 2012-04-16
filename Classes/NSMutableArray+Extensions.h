@@ -3,6 +3,10 @@
 
 @interface NSMutableArray (OOOExtensions)
 
+/// Creates a mutable array from an NSFastEnumeration.
+/// nil objects in the enumeration will be converted to NSNulls in the array.
++ (NSMutableArray*)arrayFromEnumeration:(id<NSFastEnumeration>)e;
+
 /**
  * Inserts an object into a sorted Array in its correct, sorted location.
  *
