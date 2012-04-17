@@ -31,7 +31,6 @@
 		2225C36914DDF1B800962B1B /* BTEnum.m in Sources */ = {isa = PBXBuildFile; fileRef = 2225C36714DDF1B800962B1B /* BTEnum.m */; };
 		22448DF914E09B20001CF5CE /* BTInput.h in Headers */ = {isa = PBXBuildFile; fileRef = 22448DF714E09B20001CF5CE /* BTInput.h */; };
 		22448DFA14E09B20001CF5CE /* BTInput.m in Sources */ = {isa = PBXBuildFile; fileRef = 22448DF814E09B20001CF5CE /* BTInput.m */; };
-		22448E0814E0C1ED001CF5CE /* BTInput+Package.h in Headers */ = {isa = PBXBuildFile; fileRef = 22448E0714E0C1ED001CF5CE /* BTInput+Package.h */; };
 		22448E0E14E3356A001CF5CE /* BTScaleTask.h in Headers */ = {isa = PBXBuildFile; fileRef = 22448E0C14E3356A001CF5CE /* BTScaleTask.h */; };
 		22448E0F14E3356A001CF5CE /* BTScaleTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 22448E0D14E3356A001CF5CE /* BTScaleTask.m */; };
 		22448E2914E4A7A4001CF5CE /* SPPoint+Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 22448E2714E4A79D001CF5CE /* SPPoint+Extensions.h */; };
@@ -271,7 +270,6 @@
 		2225C36714DDF1B800962B1B /* BTEnum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTEnum.m; sourceTree = "<group>"; };
 		22448DF714E09B20001CF5CE /* BTInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTInput.h; sourceTree = "<group>"; };
 		22448DF814E09B20001CF5CE /* BTInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTInput.m; sourceTree = "<group>"; };
-		22448E0714E0C1ED001CF5CE /* BTInput+Package.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BTInput+Package.h"; sourceTree = "<group>"; };
 		22448E0C14E3356A001CF5CE /* BTScaleTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTScaleTask.h; sourceTree = "<group>"; };
 		22448E0D14E3356A001CF5CE /* BTScaleTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTScaleTask.m; sourceTree = "<group>"; };
 		22448E2714E4A79D001CF5CE /* SPPoint+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SPPoint+Extensions.h"; sourceTree = "<group>"; };
@@ -498,7 +496,6 @@
 				22C85F0814DB784900F9EC07 /* BTDisplayObject.h */,
 				22C85F0914DB784A00F9EC07 /* BTDisplayObject.m */,
 				229B463214D8C439005FC8E9 /* BTHasLocation.h */,
-				22448E0714E0C1ED001CF5CE /* BTInput+Package.h */,
 				22448DF714E09B20001CF5CE /* BTInput.h */,
 				22448DF814E09B20001CF5CE /* BTInput.m */,
 				CB24CBD114A115EF004BAA57 /* BTInterpolator.m */,
@@ -862,7 +859,6 @@
 				22DBA63D14DCB29100F0F7C8 /* BTApp+Package.h in Headers */,
 				2225C36814DDF1B800962B1B /* BTEnum.h in Headers */,
 				22448DF914E09B20001CF5CE /* BTInput.h in Headers */,
-				22448E0814E0C1ED001CF5CE /* BTInput+Package.h in Headers */,
 				22448E0E14E3356A001CF5CE /* BTScaleTask.h in Headers */,
 				22448E2914E4A7A4001CF5CE /* SPPoint+Extensions.h in Headers */,
 				22448E2D14E4A938001CF5CE /* SPRectangle+Extensions.h in Headers */,

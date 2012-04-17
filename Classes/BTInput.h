@@ -2,23 +2,28 @@
 // Betwixt - Copyright 2012 Three Rings Design
 
 @class BTMode;
-@class SPTouchProcessor;
 
 @interface BTInputRegistration : NSObject
 - (void)cancel;
 @end
 
 @protocol BTTouchListener
-- (BOOL)onTouchStart:(SPPoint*)globalPt;
-- (BOOL)onTouchMove:(SPPoint*)globalPt;
-- (BOOL)onTouchEnd:(SPPoint*)globalPt;
+- (BOOL)onTouchStart:(SPTouch*)touch;
+- (BOOL)onTouchMove:(SPTouch*)touch;
+- (BOOL)onTouchEnd:(SPTouch*)touch;
 @end
 
 @interface BTInput : NSObject {
-    SPTouchProcessor* _touchProcessor;
+@protected
+    SPDisplayObjectContainer* _root;
     NSMutableArray* _listeners;
-    SPTouch* _lastTouch;
+    NSMutableSet *_currentTouches;
+    int _touchIdCounter;
 }
+
+- (id)initWithRoot:(SPDisplayObjectContainer*)root;
+
+- (void)processTouches:(NSSet*)touches;
 
 - (BTInputRegistration*)registerListener:(id<BTTouchListener>)l;
 - (void)removeAllListeners;

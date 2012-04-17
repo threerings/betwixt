@@ -15,12 +15,13 @@
 
 @implementation BTInput
 
-- (id)initWithMode:(BTMode*)mode {
+- (id)initWithRoot:(SPDisplayObjectContainer*)root {
     if (!(self = [super init])) {
         return nil;
     }
-    _touchProcessor = [[SPTouchProcessor alloc] initWithRoot:mode.sprite];
+    _root = root;
     _listeners = [NSMutableArray array];
+    _currentTouches = [[NSMutableSet alloc] initWithCapacity:2];
     return self;
 }
 
@@ -37,89 +38,103 @@
     [_listeners removeObject:l];
 }
 
-- (void)processTouches:(NSSet*)touches {
-    // we currently only process one touch
+
+
+- (void)processTouches:(NSSet*)touches
+{   
+    NSMutableSet *processedTouches = [[NSMutableSet alloc] init];
+    
     // process new touches
-    SPTouch* currentTouch = nil;
-    
-    if (_lastTouch != nil) {
-        for (SPTouch* touch in touches) {
-            if ((_lastTouch.globalX == touch.previousGlobalX &&
-                 _lastTouch.globalY == touch.previousGlobalY) ||
-                (_lastTouch.globalX == touch.globalX &&
-                 _lastTouch.globalY == touch.globalY)) {
-             
+    for (SPTouch *touch in touches) {
+        SPTouch *currentTouch = nil;
+        
+        for (SPTouch *existingTouch in _currentTouches) {
+            if (existingTouch.phase == SPTouchPhaseEnded || existingTouch.phase == SPTouchPhaseCancelled) {
+                continue;
+            }
+            
+            if ((existingTouch.globalX == touch.previousGlobalX &&
+                 existingTouch.globalY == touch.previousGlobalY) ||
+                (existingTouch.globalX == touch.globalX &&
+                 existingTouch.globalY == touch.globalY)) {
                 // existing touch; update values
-                _lastTouch.timestamp = touch.timestamp;
-                _lastTouch.previousGlobalX = touch.previousGlobalX;
-                _lastTouch.previousGlobalY = touch.previousGlobalY;
-                _lastTouch.globalX = touch.globalX;
-                _lastTouch.globalY = touch.globalY;
-                _lastTouch.phase = touch.phase;
-                _lastTouch.tapCount = touch.tapCount;
-                    
-                currentTouch = _lastTouch;
-                break;
-            }  
-        }
-    }
-    
-    if (currentTouch == nil) {
-        // find a new touch
-        for (SPTouch* touch in touches) {
-            if (touch.phase == SPTouchPhaseBegan) {
-                // new touch!
-                currentTouch = [SPTouch touch];
-                currentTouch.timestamp = touch.timestamp;
-                currentTouch.globalX = touch.globalX;
-                currentTouch.globalY = touch.globalY;
-                currentTouch.previousGlobalX = touch.previousGlobalX;
-                currentTouch.previousGlobalY = touch.previousGlobalY;
-                currentTouch.phase = touch.phase;
-                currentTouch.tapCount = touch.tapCount;
+                existingTouch.timestamp = touch.timestamp;
+                existingTouch.previousGlobalX = touch.previousGlobalX;
+                existingTouch.previousGlobalY = touch.previousGlobalY;
+                existingTouch.globalX = touch.globalX;
+                existingTouch.globalY = touch.globalY;
+                existingTouch.phase = touch.phase;
+                existingTouch.tapCount = touch.tapCount;
                 
-                break;
-            }
-        }
-    }
-    
-    // Send the touch to our listeners - they can interrupt any input
-    BOOL handled = NO;
-    if (currentTouch != nil && currentTouch.phase != SPTouchPhaseStationary && _listeners.count > 0) {
-        NSArray* listeners = [NSArray arrayWithArray:_listeners];
-        SPPoint* touchPt = [SPPoint pointWithX:currentTouch.globalX y:currentTouch.globalY];
-        for (id<BTTouchListener> l in listeners) {
-            switch (currentTouch.phase) {
-            case SPTouchPhaseBegan:
-                handled = [l onTouchStart:touchPt];
-                break;
-            
-            case SPTouchPhaseMoved:
-                handled = [l onTouchMove:touchPt];
-                break;
+                if (!existingTouch.target.stage) {
+                    // target could have been removed from stage -> find new target in that case
+                    SPPoint *touchPosition = [SPPoint pointWithX:touch.globalX y:touch.globalY];
+                    existingTouch.target = [_root hitTestPoint:touchPosition forTouch:YES];       
+                }
                 
-            case SPTouchPhaseEnded:
-            case SPTouchPhaseCancelled:
-                handled = [l onTouchEnd:touchPt];
-                break;
-                    
-            case SPTouchPhaseStationary:
-                handled = NO;
-                break;
-            }
-            
-            if (handled) {
+                currentTouch = existingTouch;
                 break;
             }
         }
+        
+        if (!currentTouch) {
+            // new touch!
+            currentTouch = [SPTouch touch];
+            currentTouch.timestamp = touch.timestamp;
+            currentTouch.touchId = _touchIdCounter++;
+            currentTouch.globalX = touch.globalX;
+            currentTouch.globalY = touch.globalY;
+            currentTouch.previousGlobalX = touch.previousGlobalX;
+            currentTouch.previousGlobalY = touch.previousGlobalY;
+            currentTouch.phase = touch.phase;
+            currentTouch.tapCount = touch.tapCount;
+            SPPoint *touchPosition = [SPPoint pointWithX:touch.globalX y:touch.globalY];
+            currentTouch.target = [_root hitTestPoint:touchPosition forTouch:YES];
+        }
+        
+        [processedTouches addObject:currentTouch];
     }
     
-    _lastTouch = currentTouch;
-    
-    // If it wasn't handled by any listeners, let the touch processor do its thing
-    if (!handled) {
-        [_touchProcessor processTouches:touches];
+    // For each touch, first send it to our listeners who get first chance at all input.
+    // If a listener doesn't handle the touch, dispatch it to the display list.
+    for (SPTouch *touch in processedTouches) {
+        BOOL handled = NO;
+        if (touch.phase != SPTouchPhaseStationary && _listeners.count > 0) {
+            NSArray* listeners = [NSArray arrayWithArray:_listeners];
+            for (id<BTTouchListener> l in listeners) {
+                switch (touch.phase) {
+                    case SPTouchPhaseBegan:
+                        handled = [l onTouchStart:touch];
+                        break;
+                        
+                    case SPTouchPhaseMoved:
+                        handled = [l onTouchMove:touch];
+                        break;
+                        
+                    case SPTouchPhaseEnded:
+                    case SPTouchPhaseCancelled:
+                        handled = [l onTouchEnd:touch];
+                        break;
+                        
+                    case SPTouchPhaseStationary:
+                        handled = NO;
+                        break;
+                }
+                
+                if (handled) {
+                    break;
+                }
+            }
+        }
+        
+        if (!handled) {
+            SPTouchEvent *touchEvent = [[SPTouchEvent alloc] initWithType:SP_EVENT_TYPE_TOUCH 
+                                                                  touches:processedTouches];
+            [touch.target dispatchEvent:touchEvent];
+        }
     }
+    
+    _currentTouches = processedTouches;    
 }
 
 @end

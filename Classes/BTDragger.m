@@ -29,25 +29,25 @@
     [self onDragStart:_start];
 }
 
-- (BOOL)onTouchStart:(SPPoint*)globalPt {
+- (BOOL)onTouchStart:(SPTouch*)touch {
     // this should never get called.
-    return NO;
+    return YES;
 }
 
-- (BOOL)onTouchMove:(SPPoint*)globalPt {
+- (BOOL)onTouchMove:(SPTouch*)touch {
     if (!self.dragging) {
         return NO;
     }
-    _current = [globalPt copy];
+    _current = [SPPoint pointWithX:touch.globalX y:touch.globalY];
     [self onDragged:_current start:_start];
     return YES;
 }
 
-- (BOOL)onTouchEnd:(SPPoint*)globalPt {
+- (BOOL)onTouchEnd:(SPTouch*)touch {
     if (!self.dragging) {
         return NO;
     }
-    _current = [globalPt copy];
+    _current = [SPPoint pointWithX:touch.globalX y:touch.globalY];
     [self onDragEnd:_current start:_start];
     [self cancelDrag];
     return YES;

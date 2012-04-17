@@ -2,12 +2,12 @@
 // Betwixt - Copyright 2012 Three Rings Design
 
 #import "BTMode.h"
+#import "BTInput.h"
 #import "BTModeStack.h"
 #import "BTMode+Protected.h"
 #import "BTMode+Package.h"
 #import "BTSprite.h"
 #import "BTNode+Protected.h"
-#import "BTInput+Package.h"
 #import "SPTouchProcessor.h"
 #import "BTJugglerContainer.h"
 #import "BTUpdatable.h"
@@ -152,7 +152,7 @@
     _juggler = [[SPJuggler alloc] init];
     _rootNode = [[BTRootNode alloc] initWithMode:self];
     
-    _input = [[BTInput alloc] initWithMode:self];
+    _input = [[BTInput alloc] initWithRoot:_rootNode.sprite];
     _update = [[RAFloatSignal alloc] init];
     _entered = [[RAUnitSignal alloc] init];
     _exited = [[RAUnitSignal alloc] init];
