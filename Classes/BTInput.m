@@ -98,8 +98,9 @@
     // For each touch, first send it to our listeners who get first chance at all input.
     // If a listener doesn't handle the touch, dispatch it to the display list.
     for (SPTouch *touch in processedTouches) {
-        BOOL handled = NO;
-        if (touch.phase != SPTouchPhaseStationary && _listeners.count > 0) {
+        // touch listeners don't handle SPTouchPhaseStationary. We throw those away.
+        BOOL handled = (_listeners.count > 0 && touch.phase == SPTouchPhaseStationary);
+        if (!handled && _listeners.count > 0) {
             NSArray* listeners = [NSArray arrayWithArray:_listeners];
             for (id<BTTouchListener> l in listeners) {
                 switch (touch.phase) {
@@ -116,8 +117,9 @@
                         handled = [l onTouchEnd:touch];
                         break;
                         
+                    // avoid warning for not handling all cases.
                     case SPTouchPhaseStationary:
-                        handled = NO;
+                        handled = YES;
                         break;
                 }
                 
