@@ -11,13 +11,13 @@
     SPPoint* _start;
     SPPoint* _current;
     BTInputRegistration* _dragReg;
+    int _touchId;
 }
 
 @property (nonatomic,readonly) BOOL dragging;
 
 /// While a drag is in progress, no other displayObjects will receive touch events.
 - (void)startDragWithTouch:(SPTouch*)touch;
-- (void)startDragWithScreenLoc:(SPPoint*)globalLoc;
 - (void)cancelDrag;
 
 /// subclasses should override these to do something

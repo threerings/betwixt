@@ -6,9 +6,7 @@
 #import "BTDisplayObject.h"
 #import "BTMode.h"
 
-@implementation BTDragger {
-    BTInputRegistration* _draggerReg;
-}
+@implementation BTDragger
 
 - (void)cleanup {
     [self cancelDrag];
@@ -16,30 +14,28 @@
 }
 
 - (BOOL)dragging {
-    return _draggerReg != nil;
+    return _dragReg != nil;
 }
 
 - (void)startDragWithTouch:(SPTouch*)touch {
-    [self startDragWithScreenLoc:[SPPoint pointWithX:touch.globalX y:touch.globalY]];
-}
-
-- (void)startDragWithScreenLoc:(SPPoint*)globalLoc {
-    _draggerReg = [self.mode.input registerListener:self];
-    _start = [globalLoc copy];
+    _dragReg = [self.mode.input registerListener:self];
+    _start = [SPPoint pointWithX:touch.globalX y:touch.globalY];
+    _touchId = touch.touchId;
     [self onDragStart:_start];
 }
 
 - (BOOL)onTouchStart:(SPTouch*)touch {
-    // this should never get called.
-    return YES;
+    return self.dragging;
 }
 
 - (BOOL)onTouchMove:(SPTouch*)touch {
     if (!self.dragging) {
         return NO;
     }
-    _current = [SPPoint pointWithX:touch.globalX y:touch.globalY];
-    [self onDragged:_current start:_start];
+    if (touch.touchId == _touchId) {
+        _current = [SPPoint pointWithX:touch.globalX y:touch.globalY];
+        [self onDragged:_current start:_start];
+    }
     return YES;
 }
 
@@ -47,15 +43,17 @@
     if (!self.dragging) {
         return NO;
     }
-    _current = [SPPoint pointWithX:touch.globalX y:touch.globalY];
-    [self onDragEnd:_current start:_start];
-    [self cancelDrag];
+    if (touch.touchId == _touchId) {
+        _current = [SPPoint pointWithX:touch.globalX y:touch.globalY];
+        [self onDragEnd:_current start:_start];
+        [self cancelDrag];
+    }
     return YES;
 }
 
 - (void)cancelDrag {
-    [_draggerReg cancel];
-    _draggerReg = nil;
+    [_dragReg cancel];
+    _dragReg = nil;
 }
 
 - (void)onDragStart:(SPPoint*)start {}
