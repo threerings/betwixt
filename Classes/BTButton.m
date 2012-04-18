@@ -87,11 +87,13 @@
         return NO;
     }
     if (_touch == touch) {
+        [self setState:BT_BUTTON_STATE_UP];
+        [self cancelCapture];
+        // Emit the signal after doing everything else, because a
+        // signal handler could change our state.
         if ([self hitTest:touch]) {
             [_clicked emit];
         }
-        [self setState:BT_BUTTON_STATE_UP];
-        [self cancelCapture];
     }
     return YES;
 }
