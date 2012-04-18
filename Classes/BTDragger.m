@@ -20,7 +20,7 @@
 - (void)startDragWithTouch:(SPTouch*)touch {
     _dragReg = [self.mode.input registerListener:self];
     _start = [SPPoint pointWithX:touch.globalX y:touch.globalY];
-    _touchId = touch.touchId;
+    _touch = touch;
     [self onDragStart:_start];
 }
 
@@ -32,7 +32,7 @@
     if (!self.dragging) {
         return NO;
     }
-    if (touch.touchId == _touchId) {
+    if (touch == _touch) {
         _current = [SPPoint pointWithX:touch.globalX y:touch.globalY];
         [self onDragged:_current start:_start];
     }
@@ -43,7 +43,7 @@
     if (!self.dragging) {
         return NO;
     }
-    if (touch.touchId == _touchId) {
+    if (touch == _touch) {
         _current = [SPPoint pointWithX:touch.globalX y:touch.globalY];
         [self onDragEnd:_current start:_start];
         [self cancelDrag];

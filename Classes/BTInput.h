@@ -18,7 +18,6 @@
     SPDisplayObjectContainer* _root;
     NSMutableArray* _listeners;
     NSMutableSet *_currentTouches;
-    int _touchIdCounter;
 }
 
 - (id)initWithRoot:(SPDisplayObjectContainer*)root;

@@ -11,7 +11,7 @@
     SPPoint* _start;
     SPPoint* _current;
     BTInputRegistration* _dragReg;
-    int _touchId;
+    SPTouch* _touch;
 }
 
 @property (nonatomic,readonly) BOOL dragging;
