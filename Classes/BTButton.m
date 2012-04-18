@@ -14,7 +14,7 @@
 }
 
 - (void)setState:(BTButtonState)state;
-- (BOOL)hitTest:(SPPoint*)p;
+- (BOOL)hitTest:(SPTouch*)touch;
 - (void)cancelCapture;
 @end
 
@@ -54,47 +54,52 @@
     _enabled = !_enabled;
     self.enabled = !_enabled;
     
-    [self.conns onReactor:self.touchBegan connectUnit:^{
+    [self.conns addConnection:[self.touchBegan connectSlot:^(SPTouch* touch) {
         if (_enabled) {
+            _touch = touch;
             [self setState:BT_BUTTON_STATE_DOWN];
             // capture all input until the touch ends
             _captureReg = [self.mode.input registerListener:self];
         }
-    }];
+    }]];
 }
 
 - (void)cleanup {
     [self cancelCapture];
 }
 
-- (BOOL)onTouchStart:(SPPoint*)globalPt {
-    // this should never get called
-    return NO;
-}
-
-- (BOOL)onTouchMove:(SPPoint*)globalPt {
-    if (!_enabled) {
-        return NO;
-    }
-    [self setState:[self hitTest:globalPt] ? BT_BUTTON_STATE_DOWN : BT_BUTTON_STATE_UP];
+- (BOOL)onTouchStart:(SPTouch*)touch {
     return YES;
 }
 
-- (BOOL)onTouchEnd:(SPPoint*)globalPt {
+- (BOOL)onTouchMove:(SPTouch*)touch {
     if (!_enabled) {
         return NO;
     }
-    if ([self hitTest:globalPt]) {
-        [_clicked emit];
+    if (touch == _touch) {
+        [self setState:[self hitTest:touch] ? BT_BUTTON_STATE_DOWN : BT_BUTTON_STATE_UP];
     }
-    [self setState:BT_BUTTON_STATE_UP];
-    [self cancelCapture];
+    return YES;
+}
+
+- (BOOL)onTouchEnd:(SPTouch*)touch {
+    if (!_enabled) {
+        return NO;
+    }
+    if (_touch == touch) {
+        if ([self hitTest:touch]) {
+            [_clicked emit];
+        }
+        [self setState:BT_BUTTON_STATE_UP];
+        [self cancelCapture];
+    }
     return YES;
 }
 
 - (void)cancelCapture {
     [_captureReg cancel];
     _captureReg = nil;
+    _touch = nil;
 }
 
 - (void)setEnabled:(BOOL)enabled {
@@ -123,8 +128,9 @@
     return nil;
 }
 
-- (BOOL)hitTest:(SPPoint*)p {
-    return [self.clickBounds containsPoint:[_sprite globalToLocal:p]];
+- (BOOL)hitTest:(SPTouch*)touch {
+    return [self.clickBounds containsPoint:
+            [_sprite globalToLocal:[SPPoint pointWithX:touch.globalX y:touch.globalY]]];
 }
              
 

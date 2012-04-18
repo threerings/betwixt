@@ -8,6 +8,7 @@
 @protected
     RAUnitSignal* _clicked;
     BTInputRegistration* _captureReg;
+    SPTouch* _touch;
     
     BOOL _enabled;
 }
