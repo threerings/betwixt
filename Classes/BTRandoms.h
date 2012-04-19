@@ -46,4 +46,7 @@
  */
 - (BOOL)getProbability:(float)p;
 
+/// Randomly returns an element from the given Array
+- (id)getObject:(NSArray*)array;
+
 @end

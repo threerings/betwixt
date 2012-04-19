@@ -122,6 +122,10 @@
     return [self getFloat:1] < p;
 }
 
+- (id)getObject:(NSArray*)array {
+    return (array.count > 0 ? [array objectAtIndex:[self getInt:array.count]] : nil);
+}
+
 /* initializes mt[N] with a seed */
 - (void)init_genrand:(unsigned long)s {
     mt[0]= s & 0xffffffffUL;
