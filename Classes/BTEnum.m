@@ -12,8 +12,9 @@
 
 @implementation BTEnum {
     NSString* _name;
-    int _ordinal;
 }
+
+@synthesize name = _name;
 
 + (id)valueOf:(NSString*)name {
     for (BTEnum* theEnum in [self values]) {
@@ -43,8 +44,6 @@
         [[BTEnum enums] setObject:array forKey:clazz];
     }
     [array addObject:self];
-    
-    _ordinal = array.count - 1;
     return self;
 }
 
@@ -71,16 +70,20 @@
 
 + (NSMutableDictionary*)enums {
     static NSMutableDictionary* enums = nil;
-    if (enums == nil) {
-        enums = [NSMutableDictionary dictionary];
+        @synchronized(self) {
+        if (enums == nil) {
+            enums = [NSMutableDictionary dictionary];
+        }
     }
     return enums;
 }
 
 + (NSMutableSet*)blocked {
     static NSMutableSet* blocked = nil;
-    if (blocked == nil) {
-        blocked = [NSMutableSet set];
+    @synchronized(self) {
+        if (blocked == nil) {
+            blocked = [NSMutableSet set];
+        }
     }
     return blocked;
 }
@@ -105,8 +108,6 @@
         
     [[BTEnum blocked] addObject:self];
 }
-
-@synthesize name=_name, ordinal=_ordinal;
 
 @end
 

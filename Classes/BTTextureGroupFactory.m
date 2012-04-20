@@ -8,6 +8,7 @@
 #import "BTApp.h"
 #import "BTResourceManager.h"
 #import "BTDeviceType.h"
+#import "BTUtils.h"
 
 
 @implementation BTTextureGroupFactory {
@@ -38,12 +39,8 @@
             return -1;
         } else if (b == BTApp.app.deviceType) {
             return 1;
-        } else if (a.ordinal < b.ordinal) {
-            return -1;
-        } else if (a.ordinal > b.ordinal) {
-            return 1;
         } else {
-            return 0;
+            return BTCompareInts(a.screenWidth * a.screenHeight, b.screenWidth * b.screenHeight);
         }
     }];
     

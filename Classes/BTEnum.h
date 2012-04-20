@@ -28,6 +28,5 @@
 + (NSArray*)values;
 
 @property(readonly) NSString* name;
-@property(readonly) int ordinal;
 
 @end
