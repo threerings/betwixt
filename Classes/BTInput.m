@@ -2,16 +2,13 @@
 // Betwixt - Copyright 2012 Three Rings Design
 
 #import "BTInput.h"
+#import "BTCancelable.h"
 #import "BTMode.h"
 #import "SPTouchProcessor.h"
 #import "SPTouch_Internal.h"
 #import "SPPoint+Extensions.h"
 
 @class BTReaction;
-
-@interface BTInputRegistration ()
-- (id)initWithInput:(BTInput*)input listener:(id<BTTouchListener>)l;
-@end
 
 @implementation BTInput
 
@@ -25,9 +22,14 @@
     return self;
 }
 
-- (BTInputRegistration*)registerListener:(id<BTTouchListener>)l {
+- (id<BTCancelable>)registerListener:(id<BTTouchListener>)l {
     [_listeners addObject:l];
-    return [[BTInputRegistration alloc] initWithInput:self listener:l];
+    
+    __weak BTInput* this = self;
+    __weak id<BTTouchListener> weakListener = l;
+    return [BTCancelableFactory withBlock:^{
+        [this removeListener:weakListener];
+    }];
 }
 
 - (void)removeAllListeners {
@@ -37,8 +39,6 @@
 - (void)removeListener:(id<BTTouchListener>)l {
     [_listeners removeObject:l];
 }
-
-
 
 - (void)processTouches:(NSSet*)touches
 {   
@@ -138,24 +138,4 @@
     _currentTouches = processedTouches;    
 }
 
-@end
-
-@implementation BTInputRegistration {
-@protected
-    __weak BTInput* _input;
-    __weak id<BTTouchListener> _listener;
-}
-- (id)initWithInput:(BTInput*)input listener:(id<BTTouchListener>)l {
-    if (!(self = [super init])) {
-        return nil;
-    }
-    _input = input;
-    _listener = l;
-    return self;
-}
-- (void)cancel {
-    [_input removeListener:_listener];
-    _input = nil;
-    _listener = nil;
-}
 @end

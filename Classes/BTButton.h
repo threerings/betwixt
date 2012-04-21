@@ -7,7 +7,7 @@
 @interface BTButton : BTSprite <BTTouchListener> {
 @protected
     RAUnitSignal* _clicked;
-    BTInputRegistration* _captureReg;
+    id<BTCancelable> _captureReg;
     SPTouch* _touch;
     
     BOOL _enabled;
