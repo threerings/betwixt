@@ -29,6 +29,7 @@
 		222199F514D24660009B764F /* BTRandoms.m in Sources */ = {isa = PBXBuildFile; fileRef = 222199F314D24660009B764F /* BTRandoms.m */; };
 		2225C36814DDF1B800962B1B /* BTEnum.h in Headers */ = {isa = PBXBuildFile; fileRef = 2225C36614DDF1B800962B1B /* BTEnum.h */; };
 		2225C36914DDF1B800962B1B /* BTEnum.m in Sources */ = {isa = PBXBuildFile; fileRef = 2225C36714DDF1B800962B1B /* BTEnum.m */; };
+		223663AE15423D5A00F64F21 /* BTCancelable.m in Sources */ = {isa = PBXBuildFile; fileRef = 223663AD15423D5A00F64F21 /* BTCancelable.m */; };
 		22448DF914E09B20001CF5CE /* BTInput.h in Headers */ = {isa = PBXBuildFile; fileRef = 22448DF714E09B20001CF5CE /* BTInput.h */; };
 		22448DFA14E09B20001CF5CE /* BTInput.m in Sources */ = {isa = PBXBuildFile; fileRef = 22448DF814E09B20001CF5CE /* BTInput.m */; };
 		22448E0E14E3356A001CF5CE /* BTScaleTask.h in Headers */ = {isa = PBXBuildFile; fileRef = 22448E0C14E3356A001CF5CE /* BTScaleTask.h */; };
@@ -268,6 +269,8 @@
 		222199F314D24660009B764F /* BTRandoms.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTRandoms.m; sourceTree = "<group>"; };
 		2225C36614DDF1B800962B1B /* BTEnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTEnum.h; sourceTree = "<group>"; };
 		2225C36714DDF1B800962B1B /* BTEnum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTEnum.m; sourceTree = "<group>"; };
+		223663AC15423B7100F64F21 /* BTCancelable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTCancelable.h; sourceTree = "<group>"; };
+		223663AD15423D5A00F64F21 /* BTCancelable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTCancelable.m; sourceTree = "<group>"; };
 		22448DF714E09B20001CF5CE /* BTInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTInput.h; sourceTree = "<group>"; };
 		22448DF814E09B20001CF5CE /* BTInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTInput.m; sourceTree = "<group>"; };
 		22448E0C14E3356A001CF5CE /* BTScaleTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTScaleTask.h; sourceTree = "<group>"; };
@@ -491,6 +494,8 @@
 				2221999114D1F020009B764F /* BTApp.h */,
 				2221999214D1F021009B764F /* BTApp.m */,
 				222199A814D2271D009B764F /* BTCallbacks.h */,
+				223663AC15423B7100F64F21 /* BTCancelable.h */,
+				223663AD15423D5A00F64F21 /* BTCancelable.m */,
 				22DB8232150AAA290091B648 /* BTDeviceType.h */,
 				22DB8233150AAA290091B648 /* BTDeviceType.m */,
 				22C85F0814DB784900F9EC07 /* BTDisplayObject.h */,
@@ -1108,6 +1113,7 @@
 				22D46A9F153CCE79005BAD6D /* BTSignalTask.m in Sources */,
 				22D46AA3153CD2A2005BAD6D /* BTMovieTask.m in Sources */,
 				22D46AA7153CDC8F005BAD6D /* BTCollections.m in Sources */,
+				223663AE15423D5A00F64F21 /* BTCancelable.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

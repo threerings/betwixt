@@ -7,6 +7,7 @@
 
 #import "BTApp.h"
 #import "BTCallbacks.h"
+#import "BTCancelable.h"
 #import "BTDeviceType.h"
 #import "BTDisplayObject.h"
 #import "BTInput.h"
