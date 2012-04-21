@@ -2,7 +2,7 @@
 // nod - Copyright 2012 Three Rings Design
 
 #import "BTButton.h"
-#import "BTCancelable.h"
+#import "BTRegistration.h"
 #import "BTButton+Protected.h"
 #import "BTNode+Protected.h"
 #import "BTDisplayObjectButton.h"

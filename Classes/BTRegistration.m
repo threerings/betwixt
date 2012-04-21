@@ -1,11 +1,11 @@
 //
 // Betwixt - Copyright 2012 Three Rings Design
 
-#import "BTCancelable.h"
+#import "BTRegistration.h"
 
 typedef void (^BTCancelBlock)();
 
-@interface BTCanceler : NSObject <BTCancelable> {
+@interface BTCanceler : NSObject <BTRegistration> {
 @protected
     BTCancelBlock _block;
 }
@@ -30,8 +30,8 @@ typedef void (^BTCancelBlock)();
 }
 @end
 
-@implementation BTCancelableFactory
-+ (id<BTCancelable>)withBlock:(BTCancelBlock)cancelBlock {
+@implementation BTRegistrationFactory
++ (id<BTRegistration>)withBlock:(BTCancelBlock)cancelBlock {
     return [[BTCanceler alloc] initWithBlock:cancelBlock];
 }
 @end

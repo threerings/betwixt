@@ -10,7 +10,7 @@
 @protected
     SPPoint* _start;
     SPPoint* _current;
-    id<BTCancelable> _dragReg;
+    id<BTRegistration> _dragReg;
     SPTouch* _touch;
 }
 
