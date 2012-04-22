@@ -110,8 +110,8 @@ static BTApp* gInstance = nil;
     
     _viewSize = [SPPoint pointWithX:stage.width y:stage.height];
     
-    // TODO - figure out why this is throwing an exception. Looks like an iOS 5 bug
-    //[SPAudioEngine start];
+    // Set up audio
+    [SPAudioEngine start];
     
     // Setup ResourceManager
     _resourceMgr = [[BTResourceManager alloc] init];
@@ -139,7 +139,7 @@ static BTApp* gInstance = nil;
     _resourceMgr = nil;
     _modeStacks = nil;
     _view = nil;
-    //[SPAudioEngine stop];
+    [SPAudioEngine stop];
 }
 
 - (void)run:(BTModeStack*)defaultStack {

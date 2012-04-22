@@ -46,6 +46,10 @@
 		22448EA514E744AE001CF5CE /* BTMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 22448EA414E744AE001CF5CE /* BTMacros.h */; };
 		2244B7B215225856001DEACA /* SPPointI.h in Headers */ = {isa = PBXBuildFile; fileRef = 2244B7B015225855001DEACA /* SPPointI.h */; };
 		2244B7B315225856001DEACA /* SPPointI.m in Sources */ = {isa = PBXBuildFile; fileRef = 2244B7B115225856001DEACA /* SPPointI.m */; };
+		22518E03154385F8006E8494 /* BTAudioControls.h in Headers */ = {isa = PBXBuildFile; fileRef = 22518E01154385F8006E8494 /* BTAudioControls.h */; };
+		22518E04154385F8006E8494 /* BTAudioControls.m in Sources */ = {isa = PBXBuildFile; fileRef = 22518E02154385F8006E8494 /* BTAudioControls.m */; };
+		22518E0715438628006E8494 /* BTAudioState.h in Headers */ = {isa = PBXBuildFile; fileRef = 22518E0515438628006E8494 /* BTAudioState.h */; };
+		22518E0815438628006E8494 /* BTAudioState.m in Sources */ = {isa = PBXBuildFile; fileRef = 22518E0615438628006E8494 /* BTAudioState.m */; };
 		22608BE11505AC4E00CCE0A5 /* MovieTestMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 22608BE01505AC4E00CCE0A5 /* MovieTestMode.m */; };
 		22608C6D1505C2D300CCE0A5 /* SPView+Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 22608C6B1505C2D300CCE0A5 /* SPView+Extensions.h */; };
 		22608C6E1505C2D300CCE0A5 /* SPView+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 22608C6C1505C2D300CCE0A5 /* SPView+Extensions.m */; };
@@ -284,6 +288,10 @@
 		22448EA414E744AE001CF5CE /* BTMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTMacros.h; sourceTree = "<group>"; };
 		2244B7B015225855001DEACA /* SPPointI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPPointI.h; sourceTree = "<group>"; };
 		2244B7B115225856001DEACA /* SPPointI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPPointI.m; sourceTree = "<group>"; };
+		22518E01154385F8006E8494 /* BTAudioControls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTAudioControls.h; sourceTree = "<group>"; };
+		22518E02154385F8006E8494 /* BTAudioControls.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTAudioControls.m; sourceTree = "<group>"; };
+		22518E0515438628006E8494 /* BTAudioState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTAudioState.h; sourceTree = "<group>"; };
+		22518E0615438628006E8494 /* BTAudioState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTAudioState.m; sourceTree = "<group>"; };
 		22608BDF1505AC4E00CCE0A5 /* MovieTestMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MovieTestMode.h; path = Integration/MovieTestMode.h; sourceTree = "<group>"; };
 		22608BE01505AC4E00CCE0A5 /* MovieTestMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MovieTestMode.m; path = Integration/MovieTestMode.m; sourceTree = "<group>"; };
 		22608C6B1505C2D300CCE0A5 /* SPView+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SPView+Extensions.h"; sourceTree = "<group>"; };
@@ -526,6 +534,7 @@
 				CB24CBD614A116AB004BAA57 /* BTSprite.h */,
 				CB24CBD714A116AB004BAA57 /* BTSprite.m */,
 				2217E4CC14C79B90000F976A /* BTUpdatable.h */,
+				22518DFD154384A5006E8494 /* Audio */,
 				22448E8914E602FF001CF5CE /* Categories */,
 				CBC4524414D21692008CC04D /* Impl */,
 				22C7178C14C0E0000014B656 /* Resources */,
@@ -611,6 +620,17 @@
 				22C5353414F5C96D00B7958F /* UIColor+Extensions.m */,
 			);
 			name = Categories;
+			sourceTree = "<group>";
+		};
+		22518DFD154384A5006E8494 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				22518E01154385F8006E8494 /* BTAudioControls.h */,
+				22518E02154385F8006E8494 /* BTAudioControls.m */,
+				22518E0515438628006E8494 /* BTAudioState.h */,
+				22518E0615438628006E8494 /* BTAudioState.m */,
+			);
+			name = Audio;
 			sourceTree = "<group>";
 		};
 		22C7178C14C0E0000014B656 /* Resources */ = {
@@ -897,6 +917,8 @@
 				22D46A9E153CCE79005BAD6D /* BTSignalTask.h in Headers */,
 				22D46AA2153CD2A2005BAD6D /* BTMovieTask.h in Headers */,
 				22D46AA6153CDC8F005BAD6D /* BTCollections.h in Headers */,
+				22518E03154385F8006E8494 /* BTAudioControls.h in Headers */,
+				22518E0715438628006E8494 /* BTAudioState.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1114,6 +1136,8 @@
 				22D46AA3153CD2A2005BAD6D /* BTMovieTask.m in Sources */,
 				22D46AA7153CDC8F005BAD6D /* BTCollections.m in Sources */,
 				223663AE15423D5A00F64F21 /* BTRegistration.m in Sources */,
+				22518E04154385F8006E8494 /* BTAudioControls.m in Sources */,
+				22518E0815438628006E8494 /* BTAudioState.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
