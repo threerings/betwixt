@@ -104,7 +104,7 @@
     return rsrc;
 }
 
-- (id)requireResource:(NSString*)name conformingTo:(Protocol *)proto {
+- (id)requireResource:(NSString*)name conformingTo:(Protocol*)proto {
     BTResource* rsrc = [self requireResource:name];
     NSAssert([rsrc conformsToProtocol:proto], @"Resource is the wrong type " 
              "[name='%@' expectedType=%@ actualType=%@]", name, proto, [rsrc class]);
