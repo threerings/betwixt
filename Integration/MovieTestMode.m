@@ -25,23 +25,23 @@
 
 - (void)setup {
     [super setup];
-    [BTApp.app.resourceManager loadResourceFile:_resourceName];
+    [BTApp.resourceManager loadResourceFile:_resourceName];
     
     // draw a background
-    SPQuad* quad = [[SPQuad alloc] initWithWidth:BTApp.app.viewSize.x height:BTApp.app.viewSize.y];
+    SPQuad* quad = [[SPQuad alloc] initWithWidth:BTApp.viewSize.x height:BTApp.viewSize.y];
     quad.color = 0xFF00FF;
     [self.sprite addChild:quad];
     
     BTMovie* movie = [BTMovieResource newMovie:_movieName];
     SPRectangle* bounds = [movie bounds];
-    movie.x = ((BTApp.app.viewSize.x - bounds.width) * 0.5f) - bounds.x;
-    movie.y = ((BTApp.app.viewSize.y - bounds.height) * 0.5f) - bounds.y;
+    movie.x = ((BTApp.viewSize.x - bounds.width) * 0.5f) - bounds.x;
+    movie.y = ((BTApp.viewSize.y - bounds.height) * 0.5f) - bounds.y;
     
     [self.sprite addChild:movie];
 }
 
 - (void)destroy {
-    [BTApp.app.resourceManager unloadResourceFile:_resourceName];
+    [BTApp.resourceManager unloadResourceFile:_resourceName];
     [super destroy];
 }
 
