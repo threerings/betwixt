@@ -38,20 +38,13 @@ static BTApp* gInstance = nil;
 
 @end
 
-@implementation BTApp {
-@protected
-    UIWindow* _window;
-    BTViewController* _viewController;
-    SPView* _view;
-    SPPoint* _viewSize;
-    
-    BTDeviceType* _deviceType;
-    
-    BTResourceManager* _resourceMgr;
-    NSMutableArray* _modeStacks;
-    
-    float _framerate;
-}
+@implementation BTApp
+
+@synthesize framerate = _framerate;
+@synthesize resourceManager = _resourceMgr;
+@synthesize view = _view;
+@synthesize viewSize = _viewSize;
+@synthesize deviceType = _deviceType;
 
 + (BTApp*)app {
     return gInstance;
@@ -62,6 +55,10 @@ static BTApp* gInstance = nil;
     if (!(self = [super init])) return nil;
     gInstance = self;
     return self;
+}
+
+- (double)timeNow {
+    return CACurrentMediaTime();
 }
 
 - (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions {
@@ -110,9 +107,6 @@ static BTApp* gInstance = nil;
     
     _viewSize = [SPPoint pointWithX:stage.width y:stage.height];
     
-    // Set up audio
-    [SPAudioEngine start];
-    
     // Setup ResourceManager
     _resourceMgr = [[BTResourceManager alloc] init];
     [_resourceMgr registerFactory:[BTTextureResource sharedFactory] forType:BT_TEXTURE_RESOURCE_NAME];
@@ -137,9 +131,9 @@ static BTApp* gInstance = nil;
 
 - (void)dealloc {
     _resourceMgr = nil;
+    _resourceMgr = nil;
     _modeStacks = nil;
     _view = nil;
-    [SPAudioEngine stop];
 }
 
 - (void)run:(BTModeStack*)defaultStack {
@@ -152,10 +146,6 @@ static BTApp* gInstance = nil;
     for (BTModeStack* stack in _modeStacks) {
         [stack update:dt];
     }
-}
-
-- (float)framerate {
-    return _framerate;
 }
 
 - (void)processTouches:(NSSet*)touches {
@@ -182,8 +172,6 @@ static BTApp* gInstance = nil;
 - (NSString*)resourcePathFor:(NSString *)resourceName {
     return [self.resourcePathPrefix stringByAppendingPathComponent:resourceName];
 }
-
-@synthesize resourceManager=_resourceMgr, view=_view, viewSize=_viewSize, deviceType=_deviceType;
 
 @end
 
