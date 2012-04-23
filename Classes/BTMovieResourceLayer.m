@@ -18,7 +18,7 @@
     keyframes = [[NSMutableArray alloc] init];
     name = [layerEl stringAttribute:@"name"];
     
-    float translationScale = MAX(BTApp.app.viewSize.x, BTApp.app.viewSize.y) / 
+    float translationScale = MAX(BTApp.viewSize.x, BTApp.viewSize.y) / 
         ((float) authoredDevice.screenWidth);
     
     int kfIndex = 0;

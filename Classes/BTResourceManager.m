@@ -173,10 +173,10 @@
 
 - (void)loadNow {
     @try {
-        if (![BTApp.app.view useNewSharedEAGLContext]) {
+        if (![BTApp.view useNewSharedEAGLContext]) {
             [NSException raise:NSGenericException format:@"Unable to use new EAGLContext"];
         }
-        NSString* name = [BTApp.app resourcePathFor:_filename];
+        NSString* name = [BTApp resourcePathFor:_filename];
         name = [name stringByDeletingPathExtension];
         NSString* extension = [_filename pathExtension];
         

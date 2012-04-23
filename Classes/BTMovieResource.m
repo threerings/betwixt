@@ -80,7 +80,7 @@
 }
 
 + (BTMovieResource*)require:(NSString*)name {
-    return [BTApp.app.resourceManager requireResource:name ofType:[BTMovieResource class]];
+    return [BTApp.resourceManager requireResource:name ofType:[BTMovieResource class]];
 }
 
 + (BTMovie*)newMovie:(NSString*)name {

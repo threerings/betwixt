@@ -23,16 +23,15 @@
 }
 
 + (BTApp*)app;
-- (BTModeStack*)createModeStack;
-- (NSString*)resourcePathFor:(NSString*)resourceName;
-
-/// the framerate that the app is currently running at
-@property (nonatomic,readonly) float framerate;
-@property (nonatomic,readonly) BTResourceManager* resourceManager;
-@property (nonatomic,readonly) SPView* view;
-@property (nonatomic,readonly) SPPoint* viewSize;
-@property (nonatomic,readonly) BTDeviceType* deviceType;
++ (float)framerate;
++ (BTResourceManager*)resourceManager;
++ (SPView*)view;
++ (SPPoint*)viewSize;
++ (BTDeviceType*)deviceType;
 /// current absolute time in seconds
-@property (nonatomic,readonly) double timeNow;
++ (double)timeNow;
+
++ (BTModeStack*)createModeStack;
++ (NSString*)resourcePathFor:(NSString*)resourceName;
 
 @end

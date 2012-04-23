@@ -35,9 +35,9 @@
     // - textures for lower-res devices
     // - textures for higher-res devices
     _targetDevicePrefs = [[BTDeviceType values] sortedArrayUsingComparator:^NSComparisonResult(BTDeviceType* a, BTDeviceType* b) {
-        if (a == BTApp.app.deviceType) {
+        if (a == BTApp.deviceType) {
             return -1;
-        } else if (b == BTApp.app.deviceType) {
+        } else if (b == BTApp.deviceType) {
             return 1;
         } else {
             return BTCompareInts(a.screenWidth * a.screenHeight, b.screenWidth * b.screenHeight);
@@ -67,7 +67,7 @@
     
     if (theGroup != nil) {
         for (GDataXMLElement* atlasXml in [theGroup elementsForName:@"atlas"]) {
-            NSString* filename = [BTApp.app resourcePathFor:[atlasXml stringAttribute:@"file"]];
+            NSString* filename = [BTApp resourcePathFor:[atlasXml stringAttribute:@"file"]];
             SPTexture* atlas = [[SPTexture alloc] initWithContentsOfFile:filename];
             for (GDataXMLElement* child in [atlasXml elements]) {
                 [textures addObject:[[BTTextureResource alloc] initFromAtlas:atlas withXml:child]];

@@ -108,7 +108,7 @@ static const double SOUND_PLAYED_RECENTLY_DELTA = 1.0 / 20.0;
     
     // iterate the active channels to determine if this sound has been played
     // recently
-    double timeNow = BTApp.app.timeNow;
+    double timeNow = BTApp.timeNow;
     for (BTAudioChannel* activeChannel in _activeChannels) {
         if (activeChannel.isPlaying && activeChannel.sound == soundResource && 
             (timeNow - activeChannel->_startTime) < SOUND_PLAYED_RECENTLY_DELTA) {

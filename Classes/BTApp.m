@@ -40,14 +40,40 @@ static BTApp* gInstance = nil;
 
 @implementation BTApp
 
-@synthesize framerate = _framerate;
-@synthesize resourceManager = _resourceMgr;
-@synthesize view = _view;
-@synthesize viewSize = _viewSize;
-@synthesize deviceType = _deviceType;
-
 + (BTApp*)app {
     return gInstance;
+}
+
++ (float)framerate {
+    return gInstance->_framerate;
+}
+
++ (BTResourceManager*)resourceManager {
+    return gInstance->_resourceMgr;
+}
+
++ (SPView*)view {
+    return gInstance->_view;
+}
+
++ (SPPoint*)viewSize {
+    return gInstance->_viewSize;
+}
+
++ (BTDeviceType*)deviceType {
+    return gInstance->_deviceType;
+}
+
++ (double)timeNow {
+    return CACurrentMediaTime();
+}
+
++ (BTModeStack*)createModeStack {
+    return [gInstance createModeStack];
+}
+
++ (NSString*)resourcePathFor:(NSString*)resourceName {
+    return [gInstance resourcePathFor:resourceName];
 }
 
 - (id)init {
@@ -55,10 +81,6 @@ static BTApp* gInstance = nil;
     if (!(self = [super init])) return nil;
     gInstance = self;
     return self;
-}
-
-- (double)timeNow {
-    return CACurrentMediaTime();
 }
 
 - (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions {

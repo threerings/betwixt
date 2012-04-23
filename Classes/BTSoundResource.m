@@ -29,12 +29,12 @@
 }
 
 + (BTSoundResource*)require:(NSString*)name {
-    return [BTApp.app.resourceManager requireResource:name ofType:[BTSoundResource class]];
+    return [BTApp.resourceManager requireResource:name ofType:[BTSoundResource class]];
 }
 
 - (id)initWithXml:(GDataXMLElement*)xml {
     if ((self = [super init])) {
-        NSString* filename = [BTApp.app resourcePathFor:[xml stringAttribute:@"filename"]];
+        NSString* filename = [BTApp resourcePathFor:[xml stringAttribute:@"filename"]];
         _sound = [SPSound soundWithContentsOfFile:filename];
         _type = [xml enumAttribute:@"type" type:[BTSoundType class] defaultVal:BTSoundType.SFX];
         _volume = [xml floatAttribute:@"volume" defaultVal:1];

@@ -54,8 +54,8 @@ NSString * const BTMovieLastFrame = @"BTMovieLastFrame";
             display = emptySprite;
         } else {
             id<BTDisplayObjectCreator> res = 
-            [BTApp.app.resourceManager requireResource:symbol 
-                                          conformingTo:@protocol(BTDisplayObjectCreator)];
+            [BTApp.resourceManager requireResource:symbol 
+                                      conformingTo:@protocol(BTDisplayObjectCreator)];
             display = [res createDisplayObject];
         }
         
