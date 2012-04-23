@@ -193,6 +193,8 @@
 		CBC4524B14D216A1008CC04D /* BTMovieResourceLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = CBC4524714D216A1008CC04D /* BTMovieResourceLayer.h */; };
 		CBC4524C14D216A1008CC04D /* BTMovieResourceLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC4524814D216A1008CC04D /* BTMovieResourceLayer.m */; };
 		CBC4524E14D21700008CC04D /* BTMovie+Package.h in Headers */ = {isa = PBXBuildFile; fileRef = CBC4524D14D21700008CC04D /* BTMovie+Package.h */; };
+		CBC88FC115459209005553D9 /* iPad in Resources */ = {isa = PBXBuildFile; fileRef = CBC88FBF15459209005553D9 /* iPad */; };
+		CBC88FC215459209005553D9 /* iPhone in Resources */ = {isa = PBXBuildFile; fileRef = CBC88FC015459209005553D9 /* iPhone */; };
 		CBC9AC5814E9A4F800E1F9F7 /* BTUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = CBC9AC5614E9A4F800E1F9F7 /* BTUtils.h */; };
 		CBC9AC5914E9A4F800E1F9F7 /* BTUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC9AC5714E9A4F800E1F9F7 /* BTUtils.m */; };
 		CBD20D0814CF68D600662068 /* BTTextureResource.h in Headers */ = {isa = PBXBuildFile; fileRef = CBD20D0614CF68D600662068 /* BTTextureResource.h */; };
@@ -445,6 +447,8 @@
 		CBC4524D14D21700008CC04D /* BTMovie+Package.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BTMovie+Package.h"; sourceTree = "<group>"; };
 		CBC4525E14D22F04008CC04D /* PlayMovieMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayMovieMode.h; path = Integration/PlayMovieMode.h; sourceTree = "<group>"; };
 		CBC4525F14D22F04008CC04D /* PlayMovieMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayMovieMode.m; path = Integration/PlayMovieMode.m; sourceTree = "<group>"; };
+		CBC88FBF15459209005553D9 /* iPad */ = {isa = PBXFileReference; lastKnownFileType = folder; name = iPad; path = Exported/iPad; sourceTree = "<group>"; };
+		CBC88FC015459209005553D9 /* iPhone */ = {isa = PBXFileReference; lastKnownFileType = folder; name = iPhone; path = Exported/iPhone; sourceTree = "<group>"; };
 		CBC9AC5614E9A4F800E1F9F7 /* BTUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTUtils.h; sourceTree = "<group>"; };
 		CBC9AC5714E9A4F800E1F9F7 /* BTUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTUtils.m; sourceTree = "<group>"; };
 		CBD20D0614CF68D600662068 /* BTTextureResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTTextureResource.h; sourceTree = "<group>"; };
@@ -790,6 +794,8 @@
 		CB65CE3914EC42DE00534FAE /* Exported */ = {
 			isa = PBXGroup;
 			children = (
+				CBC88FBF15459209005553D9 /* iPad */,
+				CBC88FC015459209005553D9 /* iPhone */,
 				CB65CE4114EC7F8300534FAE /* guybrush */,
 				221516AB1513C45900C48FBB /* hero_A_01 */,
 				CB65CE3C14EC44FF00534FAE /* shapes */,
@@ -1073,6 +1079,8 @@
 				CB65CE3D14EC44FF00534FAE /* shapes in Resources */,
 				CB65CE4214EC7F8300534FAE /* guybrush in Resources */,
 				221516AC1513C45900C48FBB /* hero_A_01 in Resources */,
+				CBC88FC115459209005553D9 /* iPad in Resources */,
+				CBC88FC215459209005553D9 /* iPhone in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

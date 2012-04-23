@@ -13,18 +13,14 @@
 @end
 
 @implementation BTMovieResourceLayer
-- (id)initWithAuthoredDevice:(BTDeviceType*)authoredDevice xml:(GDataXMLElement*)layerEl {
+- (id)initWithXml:(GDataXMLElement*)layerEl {
     if (!(self = [super init])) return nil;
     keyframes = [[NSMutableArray alloc] init];
     name = [layerEl stringAttribute:@"name"];
     
-    float translationScale = MAX(BTApp.viewSize.x, BTApp.viewSize.y) / 
-        ((float) authoredDevice.screenWidth);
-    
     int kfIndex = 0;
     for (GDataXMLElement* frameEl in [layerEl elementsForName:@"kf"]) {
         BTMovieResourceKeyframe* kf = [[BTMovieResourceKeyframe alloc] initWithIndex:kfIndex
-                                                                    translationScale:translationScale
                                                                                  xml:frameEl];
         [keyframes addObject:kf];
         kfIndex += kf->duration;
@@ -35,8 +31,7 @@
     return self;
 }
 
-- (id)initFlipbookNamed:(NSString*)animName authoredDevice:(BTDeviceType*)authoredDevice 
-                    xml:(GDataXMLElement*)layerEl {
+- (id)initFlipbookNamed:(NSString*)animName xml:(GDataXMLElement*)layerEl {
     if (!(self = [super init])) return nil;
     keyframes = [[NSMutableArray alloc] init];
     name = [layerEl stringAttribute:@"name"];

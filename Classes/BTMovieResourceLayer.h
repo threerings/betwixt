@@ -10,9 +10,8 @@
     NSMutableArray* keyframes;
     NSMutableDictionary* keyframesForSymbol; // Map<symbolName, Array<frame indices>>
 }
-- (id)initWithAuthoredDevice:(BTDeviceType*)authoredDevice xml:(GDataXMLElement*)layerEl;
-- (id)initFlipbookNamed:(NSString*)animName authoredDevice:(BTDeviceType*)authoredDevice 
-                    xml:(GDataXMLElement*)layerEl;
+- (id)initWithXml:(GDataXMLElement*)layerEl;
+- (id)initFlipbookNamed:(NSString*)animName xml:(GDataXMLElement*)layerEl;
 
 @property(nonatomic,readonly) int numFrames;
 @end

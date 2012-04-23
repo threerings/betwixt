@@ -5,6 +5,7 @@
 #import "BTMultiResourceFactory.h"
 #import "BTTextureResource+Package.h"
 #import "GDataXMLNode+Extensions.h"
+#import "GDataXMLException.h"
 #import "BTApp.h"
 #import "BTResourceManager.h"
 #import "BTDeviceType.h"
@@ -51,18 +52,15 @@
     NSMutableArray* textures = [[NSMutableArray alloc] init];
     
     GDataXMLElement* theGroup = nil;
-    for (BTDeviceType* type in _targetDevicePrefs) {
-        for (GDataXMLElement* groupXml in [xml elementsForName:@"textureGroup"]) {
-            BTDeviceType* targetType = [groupXml enumAttribute:@"target" type:[BTDeviceType class]];
-            if (targetType == type) {
-                theGroup = groupXml;
-                break;
-            }
-        }
-        
-        if (theGroup != nil) {
+    for (GDataXMLElement* groupXml in [xml elementsForName:@"textureGroup"]) {
+        BOOL retina = [groupXml boolAttribute:@"retina"];
+        if (retina == BTApp.deviceType.retina) {
+            theGroup = groupXml;
             break;
         }
+    }
+    if (theGroup == nil) {
+        @throw [GDataXMLException withElement:xml reason:@"Missing texture group for density of %@", BTApp.deviceType.name];
     }
     
     if (theGroup != nil) {

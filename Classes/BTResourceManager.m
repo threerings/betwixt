@@ -176,13 +176,9 @@
         if (![BTApp.view useNewSharedEAGLContext]) {
             [NSException raise:NSGenericException format:@"Unable to use new EAGLContext"];
         }
-        NSString* name = [BTApp resourcePathFor:_filename];
-        name = [name stringByDeletingPathExtension];
-        NSString* extension = [_filename pathExtension];
+        NSString* path = [BTApp resourcePathFor:_filename];
         
-        NSBundle* bundle = [NSBundle bundleForClass:[self class]];
-        NSData* data = [NSData dataWithContentsOfFile:
-                        [bundle pathForResource:name ofType:extension]];
+        NSData* data = [NSData dataWithContentsOfFile:path];
         if (data == nil) {
             @throw [GDataXMLException withReason:@"Unable to load file '%@'", _filename];
         }
