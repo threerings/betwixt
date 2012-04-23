@@ -115,8 +115,8 @@ static BTApp* gInstance = nil;
     
     // Setup ResourceManager
     _resourceMgr = [[BTResourceManager alloc] init];
-    [_resourceMgr registerFactory:[BTTextureResource sharedFactory] forType:BTTEXTURE_RESOURCE_NAME];
-    [_resourceMgr registerFactory:[BTMovieResource sharedFactory] forType:BTMOVIE_RESOURCE_NAME];
+    [_resourceMgr registerFactory:[BTTextureResource sharedFactory] forType:BT_TEXTURE_RESOURCE_NAME];
+    [_resourceMgr registerFactory:[BTMovieResource sharedFactory] forType:BT_MOVIE_RESOURCE_NAME];
     [_resourceMgr registerMultiFactory:[BTTextureGroupFactory sharedFactory] forType:BT_TEXTURE_GROUP_RESOURCE_NAME];
     
     // create default mode stack

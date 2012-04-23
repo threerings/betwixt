@@ -6,7 +6,7 @@
 #import "BTResource.h"
 #import "BTDisplayObjectCreator.h"
 
-#define BTMOVIE_RESOURCE_NAME @"movie"
+#define BT_MOVIE_RESOURCE_NAME @"movie"
 
 @protocol BTResourceFactory;
 @class BTMovie;

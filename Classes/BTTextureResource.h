@@ -4,7 +4,7 @@
 #import "BTResource.h"
 #import "BTDisplayObjectCreator.h"
 
-#define BTTEXTURE_RESOURCE_NAME @"texture"
+#define BT_TEXTURE_RESOURCE_NAME @"texture"
 
 @protocol BTResourceFactory;
 @class GDataXMLElement;
@@ -15,13 +15,13 @@
     SPPoint* _offset;
 }
 
-+ (id<BTResourceFactory>) sharedFactory;
+@property (nonatomic,readonly) SPTexture* texture;
+@property (nonatomic,readonly) SPPoint* offset;
+
++ (id<BTResourceFactory>)sharedFactory;
 + (BTTextureResource*)require:(NSString*)name;
 
 - (id)initWithXml:(GDataXMLElement*)xml;
 - (SPImage*)createImage;
-
-@property(nonatomic,readonly) SPTexture* texture;
-@property(nonatomic,readonly) SPPoint* offset;
 
 @end
