@@ -12,6 +12,9 @@
 #import "BTMovieResource.h"
 #import "BTDeviceType.h"
 
+#import "BTAudioManager.h"
+#import "BTSoundResource.h"
+
 static BTApp* gInstance = nil;
 
 // We override SPStage in order to handle our own input and update processing.
@@ -50,6 +53,10 @@ static BTApp* gInstance = nil;
 
 + (BTResourceManager*)resourceManager {
     return gInstance->_resourceMgr;
+}
+
++ (BTAudioManager*)audio {
+    return gInstance->_audio;
 }
 
 + (SPView*)view {
@@ -118,7 +125,7 @@ static BTApp* gInstance = nil;
     _view.multipleTouchEnabled = YES;
     _viewController.view = _view;
     
-    // // Stage
+    // Stage
     [BTStage setSupportHighResolutions:YES];
     BTStage* stage = [[BTStage alloc] initWithWidth:viewBounds.size.width 
                                              height:viewBounds.size.height];
@@ -131,9 +138,13 @@ static BTApp* gInstance = nil;
     
     // Setup ResourceManager
     _resourceMgr = [[BTResourceManager alloc] init];
+    [_resourceMgr registerFactory:[BTSoundResource sharedFactory] forType:BT_SOUND_RESOURCE_NAME];
     [_resourceMgr registerFactory:[BTTextureResource sharedFactory] forType:BT_TEXTURE_RESOURCE_NAME];
     [_resourceMgr registerFactory:[BTMovieResource sharedFactory] forType:BT_MOVIE_RESOURCE_NAME];
     [_resourceMgr registerMultiFactory:[BTTextureGroupFactory sharedFactory] forType:BT_TEXTURE_GROUP_RESOURCE_NAME];
+    
+    // Setup AudioManager
+    _audio = [[BTAudioManager alloc] init];
     
     // create default mode stack
     _modeStacks = [NSMutableArray array];
@@ -156,6 +167,8 @@ static BTApp* gInstance = nil;
     _resourceMgr = nil;
     _modeStacks = nil;
     _view = nil;
+    [_audio shutdown];
+    _audio = nil;
 }
 
 - (void)run:(BTModeStack*)defaultStack {
