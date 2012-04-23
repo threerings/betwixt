@@ -10,6 +10,8 @@
     BTSoundResource* _sound;
     SPSoundChannel* _spChannel;
     BTAudioControls* _controls;
+    BOOL _loop;
+    double _startTime;
 }
 
 
@@ -17,6 +19,8 @@
 /// dispatch after it has completed looping.
 /// The signal will not dispatch if the channel is manually stopped.
 @property (nonatomic,readonly) RAReactor* completed;
+@property (nonatomic,readonly) BTSoundResource* sound;
+@property (nonatomic,readonly) BOOL loop;
 @property (nonatomic,readonly) BOOL isPlaying;
 @property (nonatomic,readonly) BOOL isPaused;
 @property (nonatomic,readonly) BTAudioControls* controls;
