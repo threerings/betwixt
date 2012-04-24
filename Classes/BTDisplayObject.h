@@ -7,7 +7,7 @@
 
 @interface BTDisplayObject : BTObject
 
-@property(nonatomic,readonly) SPDisplayObject* display; // abstract
+@property (nonatomic,readonly) SPDisplayObject* display; // abstract
 
 @property (nonatomic,readonly) BTEventSignal* touchEvent;  // <SPTouchEvent>
 @property (nonatomic,readonly) RAObjectSignal* touchBegan; // <SPTouch>
