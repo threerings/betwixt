@@ -29,13 +29,20 @@
         scaleY = 1;
     }
     
+    SPPoint* skew = [frameEl pointAttribute:@"skew" defaultVal:nil];
+    if (skew != nil) {
+        skewX = skew.x;
+        skewY = skew.y;
+    } else {
+        skewX = skewY = [frameEl floatAttribute:@"rotation" defaultVal:0];
+    }   
+    
     SPPoint* pivot = [frameEl pointAttribute:@"pivot" defaultVal:nil];
     if (pivot != nil) {
         pivotX = pivot.x;
         pivotY = pivot.y;
     }
     
-    rotation = [frameEl floatAttribute:@"rotation" defaultVal:0];
     alpha = [frameEl floatAttribute:@"alpha" defaultVal:1];
     visible = [frameEl boolAttribute:@"visible" defaultVal:YES];
     ease = [frameEl floatAttribute:@"ease" defaultVal:0];

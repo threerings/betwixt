@@ -93,7 +93,8 @@ NSString * const BTMovieLastFrame = @"BTMovieLastFrame";
         layer.y = kf->y;
         layer.scaleX = kf->scaleX;
         layer.scaleY = kf->scaleY;
-        layer.rotation = kf->rotation;
+        layer.skewX = kf->skewX;
+        layer.skewY = kf->skewY;
         layer.alpha = kf->alpha;
     } else {
         float interped = (frame - kf->index)/(float)kf->duration;
@@ -117,7 +118,8 @@ NSString * const BTMovieLastFrame = @"BTMovieLastFrame";
         layer.y = kf->y + (nextKf->y - kf->y) * interped;
         layer.scaleX = kf->scaleX + (nextKf->scaleX - kf->scaleX) * interped;
         layer.scaleY = kf->scaleY + (nextKf->scaleY - kf->scaleY) * interped;
-        layer.rotation = kf->rotation + (nextKf->rotation - kf->rotation) * interped;
+        layer.skewX = kf->skewX + (nextKf->skewX - kf->skewX) * interped;
+        layer.skewY = kf->skewY + (nextKf->skewY - kf->skewY) * interped;
         layer.alpha = kf->alpha + (nextKf->alpha - kf->alpha) * interped;
     }
     
