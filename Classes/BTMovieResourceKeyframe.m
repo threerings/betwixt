@@ -6,7 +6,7 @@
 #import "SPMatrix+Extensions.h"
 
 @implementation BTMovieResourceKeyframe
-- (id)initWithIndex:(int)theIndex translationScale:(float)transScale xml:(GDataXMLElement*)frameEl {
+- (id)initWithIndex:(int)theIndex xml:(GDataXMLElement*)frameEl {
     if (!(self = [super init])) return nil;
     
     index = theIndex;
@@ -16,8 +16,8 @@
     
     SPPoint* loc = [frameEl pointAttribute:@"loc" defaultVal:nil];
     if (loc != nil) {
-        x = loc.x * transScale;
-        y = loc.y * transScale;
+        x = loc.x;
+        y = loc.y;
     }
     
     SPPoint* scale = [frameEl pointAttribute:@"scale" defaultVal:nil];
@@ -31,8 +31,8 @@
     
     SPPoint* pivot = [frameEl pointAttribute:@"pivot" defaultVal:nil];
     if (pivot != nil) {
-        pivotX = pivot.x * transScale;
-        pivotY = pivot.y * transScale;
+        pivotX = pivot.x;
+        pivotY = pivot.y;
     }
     
     rotation = [frameEl floatAttribute:@"rotation" defaultVal:0];

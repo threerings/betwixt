@@ -41,8 +41,8 @@
         [self.modeStack pushMode:[[LeakTestMode alloc] init]];
     }];*/
     
-    [self.modeStack changeMode:[[MovieTestMode alloc] initWithResourceName:@"hero_A_01/resources.xml" 
-                                                                 movieName:@"hero_A_01/attack"]];
+    [self.modeStack changeMode:[[MovieTestMode alloc] initWithResourceName:@"bella/resources.xml"
+                                                                 movieName:@"bella/dance_01"]];
 }
 
 @end

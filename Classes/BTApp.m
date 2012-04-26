@@ -192,7 +192,16 @@ static BTApp* gInstance = nil;
 }
 
 - (NSString*)resourcePathFor:(NSString *)resourceName {
-    return [self.resourcePathPrefix stringByAppendingPathComponent:resourceName];
+    NSBundle* bundle = [NSBundle bundleForClass:[self class]];
+    
+    NSString* devicePath = [[self.resourcePathPrefix stringByAppendingPathComponent:_deviceType.deviceClass] stringByAppendingPathComponent:resourceName];
+    devicePath = [bundle pathForResource:devicePath];
+    if (devicePath) {
+        return devicePath;
+    }
+    NSString *resourcePath = [self.resourcePathPrefix stringByAppendingPathComponent:resourceName];
+    resourcePath = [bundle pathForResource:resourcePath];
+    return resourcePath;
 }
 
 @end

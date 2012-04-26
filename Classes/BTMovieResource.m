@@ -29,21 +29,18 @@
     int numFrames = 0;
     
     framerate = [xml floatAttribute:@"frameRate" defaultVal:30];
-    BTDeviceType* authoredDevice = [xml enumAttribute:@"authoredDevice" type:[BTDeviceType class]];
     
     NSArray* layerEls = [xml elementsForName:@"layer"];
     
     if ([[layerEls objectAtIndex:0] boolAttribute:@"flipbook" defaultVal:NO]) {
         BTMovieResourceLayer* layer = 
         [[BTMovieResourceLayer alloc] initFlipbookNamed:[xml stringAttribute:@"name"]
-                                         authoredDevice:authoredDevice
                                                     xml:[layerEls objectAtIndex:0]];
         [layers addObject:layer];
         numFrames = layer.numFrames;
     } else {
         for (GDataXMLElement* layerEl in layerEls) {
-            BTMovieResourceLayer* layer = 
-                [[BTMovieResourceLayer alloc] initWithAuthoredDevice:authoredDevice xml:layerEl];
+            BTMovieResourceLayer* layer = [[BTMovieResourceLayer alloc] initWithXml:layerEl];
             [layers addObject:layer];
             numFrames = MAX(numFrames, layer.numFrames);
         }
