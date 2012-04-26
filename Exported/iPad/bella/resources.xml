@@ -1,0 +1,506 @@
+<resources md5="bb3f7761f0112f118089d767fd8d2bf4">
+  <movie name="bella/dance_01" md5="cef28ea64d660dccc6a6f730467358fb" frameRate="30">
+    <layer name="Hair Back">
+      <kf duration="5" ref="bella/HairBack" loc="0.9081600000000001,-152.9628" scale="1.0601,1.0599" rotation="0.0527" pivot="30.92,1.8800000000000001"/>
+      <kf duration="5" ref="bella/HairBack" loc="-1.88064,-150.2596" scale="1.0858,1.0457" rotation="0.0218" pivot="30.92,1.9600000000000002"/>
+      <kf duration="5" ref="bella/HairBack" loc="-4.49736,-147.7672" scale="1.0599,1.0597" rotation="0.0134" pivot="30.92,1.8800000000000001"/>
+      <kf duration="5" ref="bella/HairBack" loc="-0.87736,-151.13072" scale="0.9799,1.0596" rotation="0.0487" pivot="31,1.8800000000000001"/>
+      <kf duration="6" ref="bella/HairBack" loc="0.9081600000000001,-152.9628" scale="1.0601,1.0599" rotation="0.0527" pivot="30.92,1.8800000000000001"/>
+      <kf duration="5" ref="bella/HairBack" loc="-1.88064,-150.2596" scale="1.0858,1.0457" rotation="0.0218" pivot="30.92,1.9600000000000002"/>
+      <kf duration="5" ref="bella/HairBack" loc="-4.49736,-147.7672" scale="1.0599,1.0597" rotation="0.0134" pivot="30.92,1.8800000000000001"/>
+      <kf duration="5" ref="bella/HairBack" loc="-0.87736,-151.13072" scale="0.9799,1.0596" rotation="0.0487" pivot="31,1.8800000000000001"/>
+      <kf duration="1" ref="bella/HairBack" loc="0.9081600000000001,-152.9628" scale="1.0601,1.0599" rotation="0.0527" pivot="30.92,1.8800000000000001"/>
+    </layer>
+    <layer name="R Arm Upper">
+      <kf duration="10" ref="bella/RArmUpper" loc="-13.61744,-82.52832000000001" scale="1.0549,1.0547" rotation="0.5452" pivot="5.920000000000001,2.92"/>
+      <kf duration="10" ref="bella/RArmUpper" loc="-19.297600000000003,-76.7684" scale="1.0528,1.0526" rotation="0.1556" pivot="6.120000000000001,2.84"/>
+      <kf duration="5" ref="bella/RArmUpper" loc="-13.62312,-82.53496000000001" scale="1.0544,1.0543" rotation="0.0691" pivot="5.960000000000001,2.92"/>
+      <kf duration="6" ref="bella/RArmUpper" loc="-15.53152,-80.66040000000001" scale="1.0531,1.0529" rotation="-0.0531" pivot="5.920000000000001,2.92"/>
+      <kf duration="10" ref="bella/RArmUpper" loc="-19.342,-76.77152" scale="1.0523,1.0521" rotation="-0.0061" pivot="6.120000000000001,2.84"/>
+      <kf duration="1" ref="bella/RArmUpper" loc="-13.61744,-82.52832000000001" scale="1.0549,1.0547" rotation="0.5452" pivot="5.920000000000001,2.92"/>
+    </layer>
+    <layer name="R Arm Lower">
+      <kf duration="10" ref="bella/RArmLower" loc="-43.501920000000005,-39.29672" scale="1.0553,1.0551" rotation="-0.1527" pivot="16.040000000000003,1.8"/>
+      <kf duration="10" ref="bella/RArmLower" loc="-30.652960000000004,-22.98096" scale="1.054,1.0539" rotation="0.1727" pivot="16.040000000000003,1.92"/>
+      <kf duration="5" ref="bella/RArmLower" loc="-20.15968,-32.27984" scale="1.0568,1.0566" rotation="0.4453" pivot="16,1.8"/>
+      <kf duration="6" ref="bella/RArmLower" loc="-15.54072,-32.039280000000005" scale="1.0548,1.0546" rotation="0.3583" pivot="15.96,1.8"/>
+      <kf duration="10" ref="bella/RArmLower" loc="-22.702,-22.5896" scale="1.0536,1.0535" rotation="0.0635" pivot="16.040000000000003,1.92"/>
+      <kf duration="1" ref="bella/RArmLower" loc="-43.501920000000005,-39.29672" scale="1.0553,1.0551" rotation="-0.1527" pivot="16.040000000000003,1.8"/>
+    </layer>
+    <layer name="R Hand">
+      <kf duration="10" ref="bella/RHand" loc="-52.432320000000004,4.10856" scale="1.0564,1.0564" rotation="-0.3102" pivot="5.16,2.16"/>
+      <kf duration="10" ref="bella/RHand" loc="-51.01504,11.20256" scale="1.0541,1.054" rotation="0.8321" pivot="5.2,2.2399999999999998"/>
+      <kf duration="5" ref="bella/RHand" loc="-52.369200000000006,-2.0610399999999998" scale="1.0556,1.0556" rotation="1.9738" pivot="5.2,2.2"/>
+      <kf duration="6" ref="bella/RHand" loc="-45.512480000000004,0.9616" scale="1.055,1.0549" rotation="1.6064" pivot="5.2,2.16"/>
+      <kf duration="10" ref="bella/RHand" loc="-41.095040000000004,17.202560000000002" scale="1.0541,1.054" rotation="0.8321" pivot="5.2,2.2399999999999998"/>
+      <kf duration="1" ref="bella/RHand" loc="-52.432320000000004,4.10856" scale="1.0564,1.0564" rotation="-0.3102" pivot="5.16,2.16"/>
+    </layer>
+    <layer name="R Leg lower">
+      <kf duration="10" ref="bella/RLegLower" loc="-12.51672,74.70968" scale="1.0585,1.0582" rotation="-0.0183" pivot="3.4000000000000004,4.4"/>
+      <kf duration="10" ref="bella/RLegLower" loc="-26.052080000000004,80.06280000000001" scale="1.0567,1.0566" rotation="-0.2631" pivot="3.44,4.36"/>
+      <kf duration="11" ref="bella/RLegLower" loc="-12.51672,74.70968" scale="1.0585,1.0582" rotation="-0.0183" pivot="3.4000000000000004,4.4"/>
+      <kf duration="10" ref="bella/RLegLower" loc="-26.052080000000004,80.06280000000001" scale="1.0567,1.0566" rotation="-0.2631" pivot="3.44,4.36"/>
+      <kf duration="1" ref="bella/RLegLower" loc="-12.51672,74.70968" scale="1.0585,1.0582" rotation="-0.0183" pivot="3.4000000000000004,4.4"/>
+    </layer>
+    <layer name="R Foot">
+      <kf duration="10" ref="bella/RFoot" loc="-3.4708799999999997,135.11512000000002" scale="1.0557,1.0557" rotation="0.0346" pivot="24.96,2.2399999999999998"/>
+      <kf duration="10" ref="bella/RFoot" loc="-3.4619999999999997,135.116" scale="1.0555,1.0556" rotation="0.0316" pivot="25,2.2399999999999998"/>
+      <kf duration="11" ref="bella/RFoot" loc="-3.4708799999999997,135.11512000000002" scale="1.0557,1.0557" rotation="0.0346" pivot="24.96,2.2399999999999998"/>
+      <kf duration="10" ref="bella/RFoot" loc="-3.4619999999999997,135.116" scale="1.0555,1.0556" rotation="0.0316" pivot="25,2.2399999999999998"/>
+      <kf duration="1" ref="bella/RFoot" loc="-3.4708799999999997,135.11512000000002" scale="1.0557,1.0557" rotation="0.0346" pivot="24.96,2.2399999999999998"/>
+    </layer>
+    <layer name="R Leg Upper">
+      <kf duration="10" ref="bella/RLegUpper" loc="-34.629039999999996,-4.09992" scale="1.0581,1.082" rotation="-0.1721" pivot="5.920000000000001,9.28"/>
+      <kf duration="10" ref="bella/RLegUpper" loc="-28.666000000000004,0.26776" scale="1.057,1.0808" rotation="0.0745" pivot="5.920000000000001,9.28"/>
+      <kf duration="11" ref="bella/RLegUpper" loc="-34.629039999999996,-4.09992" scale="1.0581,1.082" rotation="-0.1721" pivot="5.920000000000001,9.28"/>
+      <kf duration="10" ref="bella/RLegUpper" loc="-28.666000000000004,0.26776" scale="1.057,1.0808" rotation="0.0745" pivot="5.920000000000001,9.28"/>
+      <kf duration="1" ref="bella/RLegUpper" loc="-34.629039999999996,-4.09992" scale="1.0581,1.082" rotation="-0.1721" pivot="5.920000000000001,9.28"/>
+    </layer>
+    <layer name="hips">
+      <kf duration="10" ref="bella/Hips" loc="-18.93688,-2.5776800000000004" scale="1.0599,1.0597" rotation="0.1621" pivot="19.16,16.240000000000002"/>
+      <kf duration="10" ref="bella/Hips" loc="-12.890080000000001,1.87368" scale="1.0593,1.0592" rotation="0.0834" pivot="19.16,16.28"/>
+      <kf duration="11" ref="bella/Hips" loc="-18.93688,-2.5776800000000004" scale="1.0599,1.0597" rotation="0.1621" pivot="19.16,16.240000000000002"/>
+      <kf duration="10" ref="bella/Hips" loc="-12.890080000000001,1.87368" scale="1.0593,1.0592" rotation="0.0834" pivot="19.16,16.28"/>
+      <kf duration="1" ref="bella/Hips" loc="-18.93688,-2.5776800000000004" scale="1.0599,1.0597" rotation="0.1621" pivot="19.16,16.240000000000002"/>
+    </layer>
+    <layer name="L Leg Lower">
+      <kf duration="10" ref="bella/LLegLower" loc="-19.397360000000003,76.52504" scale="1.0588,1.1583" rotation="-0.4902" pivot="4.64,7.240000000000001"/>
+      <kf duration="10" ref="bella/LLegLower" loc="-23.97152,81.33496000000001" scale="1.0568,1.156" rotation="-0.6123" pivot="4.6000000000000005,7.240000000000001"/>
+      <kf duration="11" ref="bella/LLegLower" loc="-19.397360000000003,76.52504" scale="1.0588,1.1583" rotation="-0.4902" pivot="4.64,7.240000000000001"/>
+      <kf duration="10" ref="bella/LLegLower" loc="-23.97152,81.33496000000001" scale="1.0568,1.156" rotation="-0.6123" pivot="4.6000000000000005,7.240000000000001"/>
+      <kf duration="1" ref="bella/LLegLower" loc="-19.397360000000003,76.52504" scale="1.0588,1.1583" rotation="-0.4902" pivot="4.64,7.240000000000001"/>
+    </layer>
+    <layer name="L Foot">
+      <kf duration="10" ref="bella/LFoot" loc="18.492160000000002,125.63535999999999" scale="1.0541,1.054" rotation="-1.9993" pivot="24.560000000000002,1.6800000000000002"/>
+      <kf duration="10" ref="bella/LFoot" loc="18.95688,125.5204" scale="1.0514,1.0513" rotation="-2.0392" pivot="24.560000000000002,1.6800000000000002"/>
+      <kf duration="11" ref="bella/LFoot" loc="18.492160000000002,125.63535999999999" scale="1.0541,1.054" rotation="-1.9993" pivot="24.560000000000002,1.6800000000000002"/>
+      <kf duration="10" ref="bella/LFoot" loc="18.95688,125.5204" scale="1.0514,1.0513" rotation="-2.0392" pivot="24.560000000000002,1.6800000000000002"/>
+      <kf duration="1" ref="bella/LFoot" loc="18.492160000000002,125.63535999999999" scale="1.0541,1.054" rotation="-1.9993" pivot="24.560000000000002,1.6800000000000002"/>
+    </layer>
+    <layer name="L Leg Upper">
+      <kf duration="10" ref="bella/LLegUpper" loc="-9.878720000000001,-6.594480000000001" scale="1.0574,1.0573" rotation="0.3301" pivot="14.600000000000001,9"/>
+      <kf duration="10" ref="bella/LLegUpper" loc="-4.21688,1.6401599999999998" scale="1.055,1.0548" rotation="0.4641" pivot="14.64,9.040000000000001"/>
+      <kf duration="11" ref="bella/LLegUpper" loc="-9.878720000000001,-6.594480000000001" scale="1.0574,1.0573" rotation="0.3301" pivot="14.600000000000001,9"/>
+      <kf duration="10" ref="bella/LLegUpper" loc="-4.21688,1.6401599999999998" scale="1.055,1.0548" rotation="0.4641" pivot="14.64,9.040000000000001"/>
+      <kf duration="1" ref="bella/LLegUpper" loc="-9.878720000000001,-6.594480000000001" scale="1.0574,1.0573" rotation="0.3301" pivot="14.600000000000001,9"/>
+    </layer>
+    <layer name="torso">
+      <kf duration="10" ref="bella/Torso" loc="-14.35744,-9.49096" scale="1.0597,1.0331" rotation="0.1714" pivot="19.36,76.36"/>
+      <kf duration="10" ref="bella/Torso" loc="-10.22624,-3.8528000000000002" scale="1.0592,1.0325" rotation="0.0052" pivot="19.400000000000002,76.36"/>
+      <kf duration="11" ref="bella/Torso" loc="-14.35744,-9.49096" scale="1.0597,1.0331" rotation="0.1714" pivot="19.36,76.36"/>
+      <kf duration="10" ref="bella/Torso" loc="-10.22624,-3.8528000000000002" scale="1.0592,1.0325" rotation="0.0052" pivot="19.400000000000002,76.36"/>
+      <kf duration="1" ref="bella/Torso" loc="-14.35744,-9.49096" scale="1.0597,1.0331" rotation="0.1714" pivot="19.36,76.36"/>
+    </layer>
+    <layer name="L Arm Upper">
+      <kf duration="5" ref="bella/LArmUpper" loc="17.987280000000002,-79.70456000000001" scale="1.0592,1.059" rotation="0.1626" pivot="4.04,1.8399999999999999"/>
+      <kf duration="5" ref="bella/LArmUpper" loc="16.605439999999998,-79.49288000000001" scale="1.0581,1.0579" rotation="0.1849" pivot="4.08,1.8399999999999999"/>
+      <kf duration="10" ref="bella/LArmUpper" loc="10.6148,-78.47096" scale="1.056,1.0558" rotation="-0.0839" pivot="4.12,1.8"/>
+      <kf duration="6" ref="bella/LArmUpper" loc="17.98696,-79.72872000000001" scale="1.0575,1.0573" rotation="-0.4767" pivot="4.08,1.8"/>
+      <kf duration="5" ref="bella/LArmUpper" loc="15.63912,-79.33096" scale="1.0557,1.0556" rotation="-0.4778" pivot="4.08,1.7600000000000002"/>
+      <kf duration="10" ref="bella/LArmUpper" loc="10.592400000000001,-78.45664000000001" scale="1.0564,1.0563" rotation="-0.3425" pivot="4.08,1.8399999999999999"/>
+      <kf duration="1" ref="bella/LArmUpper" loc="17.987280000000002,-79.70456000000001" scale="1.0592,1.059" rotation="0.1626" pivot="4.04,1.8399999999999999"/>
+    </layer>
+    <layer name="L Arm Lower">
+      <kf duration="5" ref="bella/LArmLower" loc="14.979040000000001,-25.311840000000004" scale="1.0586,1.0585" rotation="0.0231" pivot="3.64,1.36"/>
+      <kf duration="5" ref="bella/LArmLower" loc="12.64864,-24.90368" scale="1.0576,1.0575" rotation="0.1799" pivot="3.6,1.36"/>
+      <kf duration="10" ref="bella/LArmLower" loc="22.529920000000004,-23.77184" scale="1.0567,1.0566" rotation="0.1795" pivot="3.6799999999999997,1.36"/>
+      <kf duration="6" ref="bella/LArmLower" loc="50.56016,-31.25696" scale="1.0572,1.0571" rotation="0.483" pivot="3.64,1.32"/>
+      <kf duration="5" ref="bella/LArmLower" loc="47.240640000000006,-32.140080000000005" scale="1.0554,1.0553" rotation="0.2621" pivot="3.64,1.2800000000000002"/>
+      <kf duration="10" ref="bella/LArmLower" loc="35.93608,-27.37664" scale="1.0563,1.0562" rotation="0.048" pivot="3.7200000000000006,1.36"/>
+      <kf duration="1" ref="bella/LArmLower" loc="14.979040000000001,-25.311840000000004" scale="1.0586,1.0585" rotation="0.0231" pivot="3.64,1.36"/>
+    </layer>
+    <layer name="L Hand">
+      <kf duration="5" ref="bella/LHand" loc="18.23536,20.061760000000003" scale="1.055,1.0548" rotation="-1.2602" pivot="3.44,1.4800000000000002"/>
+      <kf duration="5" ref="bella/LHand" loc="9.674880000000002,19.5424" scale="1.0518,1.0517" rotation="-0.7744" pivot="3.44,1.4800000000000002"/>
+      <kf duration="10" ref="bella/LHand" loc="19.25448,19.4388" scale="1.053,1.0529" rotation="0.3585" pivot="3.5200000000000005,1.56"/>
+      <kf duration="6" ref="bella/LHand" loc="33.095600000000005,9.48008" scale="1.0542,1.0539" rotation="0.6656" pivot="3.4000000000000004,1.4800000000000002"/>
+      <kf duration="5" ref="bella/LHand" loc="39.661120000000004,11.95512" scale="1.0513,1.0512" rotation="0.8524" pivot="3.4000000000000004,1.4800000000000002"/>
+      <kf duration="10" ref="bella/LHand" loc="38.820800000000006,15.83936" scale="1.0533,1.0531" rotation="0.2879" pivot="3.5600000000000005,1.52"/>
+      <kf duration="1" ref="bella/LHand" loc="18.23536,20.061760000000003" scale="1.055,1.0548" rotation="-1.2602" pivot="3.44,1.4800000000000002"/>
+    </layer>
+    <layer name="neck">
+      <kf duration="10" ref="bella/Neck" loc="0.4756,-83.17888" scale="1.0605,1.0603" pivot="5.88,30.200000000000003"/>
+      <kf duration="10" ref="bella/Neck" loc="-8.478720000000001,-77.02072" scale="1.0594,1.179" rotation="0.1665" pivot="5.84,30.200000000000003"/>
+      <kf duration="11" ref="bella/Neck" loc="0.4756,-83.17888" scale="1.0605,1.0603" pivot="5.88,30.200000000000003"/>
+      <kf duration="10" ref="bella/Neck" loc="-8.478720000000001,-77.02072" scale="1.0594,1.179" rotation="0.1665" pivot="5.84,30.200000000000003"/>
+      <kf duration="1" ref="bella/Neck" loc="0.4756,-83.17888" scale="1.0605,1.0603" pivot="5.88,30.200000000000003"/>
+    </layer>
+    <layer name="Hair Middle">
+      <kf duration="5" ref="bella/HairMiddle" loc="-6.192640000000001,-154.79976" scale="1.0605,1.0603" pivot="25.92,3.3200000000000003"/>
+      <kf duration="5" ref="bella/HairMiddle" loc="-6.742000000000001,-151.99072" scale="1.0952,1.0322" rotation="0.0489" pivot="25.880000000000003,3.4000000000000004"/>
+      <kf duration="4" ref="bella/HairMiddle" loc="-7.14352,-149.4624" scale="1.0597,1.0596" rotation="0.1006" pivot="25.92,3.3200000000000003"/>
+      <kf duration="6" ref="bella/HairMiddle" loc="-6.784560000000001,-151.3492" scale="1.001,1.0936" rotation="0.0797" pivot="26,3.3200000000000003"/>
+      <kf duration="6" ref="bella/HairMiddle" loc="-6.192640000000001,-154.79976" scale="1.0605,1.0603" pivot="25.92,3.3200000000000003"/>
+      <kf duration="5" ref="bella/HairMiddle" loc="-6.742000000000001,-151.99072" scale="1.0952,1.0322" rotation="0.0489" pivot="25.880000000000003,3.4000000000000004"/>
+      <kf duration="4" ref="bella/HairMiddle" loc="-7.14352,-149.4624" scale="1.0597,1.0596" rotation="0.1006" pivot="25.92,3.3200000000000003"/>
+      <kf duration="6" ref="bella/HairMiddle" loc="-6.784560000000001,-151.3492" scale="1.001,1.0936" rotation="0.0797" pivot="26,3.3200000000000003"/>
+      <kf duration="1" ref="bella/HairMiddle" loc="-6.192640000000001,-154.79976" scale="1.0605,1.0603" pivot="25.92,3.3200000000000003"/>
+    </layer>
+    <layer name="head">
+      <kf duration="10" ref="bella/Head" loc="8.27512,-109.01368000000001" scale="1.0583,1.0581" rotation="-0.2717" pivot="30.32,43.400000000000006"/>
+      <kf duration="10" ref="bella/Head" loc="2.57856,-102.77072000000001" scale="1.0573,1.0572" rotation="-0.1704" pivot="30.28,43.44"/>
+      <kf duration="11" ref="bella/Head" loc="8.27512,-109.01368000000001" scale="1.0583,1.0581" rotation="-0.2717" pivot="30.32,43.400000000000006"/>
+      <kf duration="10" ref="bella/Head" loc="2.57856,-102.77072000000001" scale="1.0573,1.0572" rotation="-0.1704" pivot="30.28,43.44"/>
+      <kf duration="1" ref="bella/Head" loc="8.27512,-109.01368000000001" scale="1.0583,1.0581" rotation="-0.2717" pivot="30.32,43.400000000000006"/>
+    </layer>
+    <layer name="Cheeks">
+      <kf duration="10" ref="bella/Cheeks" loc="-8.48016,-111.28888" scale="1.0583,1.0581" rotation="-0.2717" pivot="16.040000000000003,5.5200000000000005"/>
+      <kf duration="10" ref="bella/Cheeks" loc="-13.6624,-106.6936" scale="1.0573,1.0572" rotation="-0.1704" pivot="16.080000000000002,5.48"/>
+      <kf duration="11" ref="bella/Cheeks" loc="-8.48016,-111.28888" scale="1.0583,1.0581" rotation="-0.2717" pivot="16.040000000000003,5.5200000000000005"/>
+      <kf duration="10" ref="bella/Cheeks" loc="-13.6624,-106.6936" scale="1.0573,1.0572" rotation="-0.1704" pivot="16.080000000000002,5.48"/>
+      <kf duration="1" ref="bella/Cheeks" loc="-8.48016,-111.28888" scale="1.0583,1.0581" rotation="-0.2717" pivot="16.040000000000003,5.5200000000000005"/>
+    </layer>
+    <layer name="mouthlayer">
+      <kf duration="10" ref="bella/mouth_symbol" loc="-7.21728,-106.23720000000002" scale="1.0583,1.0581" rotation="-0.2717" pivot="9.56,1.9600000000000002"/>
+      <kf duration="10" ref="bella/mouth_symbol" loc="-13.023200000000001,-101.66816" scale="1.0573,1.0572" rotation="-0.1704" pivot="9.520000000000001,1.8800000000000001"/>
+      <kf duration="11" ref="bella/mouth_symbol" loc="-7.33288,-106.3368" scale="1.0583,1.0581" rotation="-0.2717" pivot="9.48,1.8399999999999999"/>
+      <kf duration="10" ref="bella/mouth_symbol" loc="-13.023200000000001,-101.66816" scale="1.0573,1.0572" rotation="-0.1704" pivot="9.520000000000001,1.8800000000000001"/>
+      <kf duration="1" ref="bella/mouth_symbol" loc="-7.33288,-106.3368" scale="1.0583,1.0581" rotation="-0.2717" pivot="9.48,1.8399999999999999"/>
+    </layer>
+    <layer name="nose">
+      <kf duration="10" ref="bella/nose" loc="-14.477920000000001,-110.59224" scale="1.0583,1.0581" rotation="-0.2717" pivot="2.92,1.92"/>
+      <kf duration="10" ref="bella/nose" loc="-19.660400000000003,-106.60488000000001" scale="1.0573,1.0572" rotation="-0.1704" pivot="2.92,1.8800000000000001"/>
+      <kf duration="11" ref="bella/nose" loc="-14.477920000000001,-110.59224" scale="1.0583,1.0581" rotation="-0.2717" pivot="2.92,1.92"/>
+      <kf duration="10" ref="bella/nose" loc="-19.660400000000003,-106.60488000000001" scale="1.0573,1.0572" rotation="-0.1704" pivot="2.92,1.8800000000000001"/>
+      <kf duration="1" ref="bella/nose" loc="-14.477920000000001,-110.59224" scale="1.0583,1.0581" rotation="-0.2717" pivot="2.92,1.92"/>
+    </layer>
+    <layer name="eyes">
+      <kf duration="10" ref="bella/Eyes" loc="-12.072320000000001,-119.20224000000002" scale="1.0583,1.0581" rotation="-0.2717" pivot="13.4,4.32"/>
+      <kf duration="10" ref="bella/Eyes" loc="-16.5012,-114.86887999999999" scale="1.0573,1.0572" rotation="-0.1704" pivot="13.440000000000001,4.32"/>
+      <kf duration="11" ref="bella/Eyes" loc="-12.072320000000001,-119.20224000000002" scale="1.0583,1.0581" rotation="-0.2717" pivot="13.4,4.32"/>
+      <kf duration="10" ref="bella/Eyes" loc="-16.5012,-114.86887999999999" scale="1.0573,1.0572" rotation="-0.1704" pivot="13.440000000000001,4.32"/>
+      <kf duration="1" ref="bella/Eyes" loc="-12.072320000000001,-119.20224000000002" scale="1.0583,1.0581" rotation="-0.2717" pivot="13.4,4.32"/>
+    </layer>
+    <layer name="Pupil">
+      <kf duration="10" ref="bella/Pupil" loc="-13.569360000000001,-119.67472000000001" scale="1.0583,1.0581" rotation="-0.2717" pivot="9.76,2.9600000000000004"/>
+      <kf duration="10" ref="bella/Pupil" loc="-17.89784,-115.47312" scale="1.0573,1.0572" rotation="-0.1704" pivot="9.8,2.9600000000000004"/>
+      <kf duration="11" ref="bella/Pupil" loc="-13.569360000000001,-119.67472000000001" scale="1.0583,1.0581" rotation="-0.2717" pivot="9.76,2.9600000000000004"/>
+      <kf duration="10" ref="bella/Pupil" loc="-17.89784,-115.47312" scale="1.0573,1.0572" rotation="-0.1704" pivot="9.8,2.9600000000000004"/>
+      <kf duration="1" ref="bella/Pupil" loc="-13.569360000000001,-119.67472000000001" scale="1.0583,1.0581" rotation="-0.2717" pivot="9.76,2.9600000000000004"/>
+    </layer>
+    <layer name="Eyelid Lower">
+      <kf duration="10" ref="bella/EyelidLower" loc="-11.34392,-116.33928000000002" scale="1.0583,1.0581" rotation="-0.2717" pivot="12.72,1.72"/>
+      <kf duration="10" ref="bella/EyelidLower" loc="-16.0792,-111.96144" scale="1.0573,1.0572" rotation="-0.1704" pivot="12.68,1.72"/>
+      <kf duration="11" ref="bella/EyelidLower" loc="-11.34392,-116.33928000000002" scale="1.0583,1.0581" rotation="-0.2717" pivot="12.72,1.72"/>
+      <kf duration="10" ref="bella/EyelidLower" loc="-16.0792,-111.96144" scale="1.0573,1.0572" rotation="-0.1704" pivot="12.68,1.72"/>
+      <kf duration="1" ref="bella/EyelidLower" loc="-11.34392,-116.33928000000002" scale="1.0583,1.0581" rotation="-0.2717" pivot="12.72,1.72"/>
+    </layer>
+    <layer name="Eyelid Upper">
+      <kf duration="10" ref="bella/EyelidUpper" loc="-12.50976,-121.76096000000001" scale="1.0583,1.0581" rotation="-0.2717" pivot="14.040000000000001,3.44"/>
+      <kf duration="10" ref="bella/EyelidUpper" loc="-16.640960000000003,-117.45496000000001" scale="1.0573,1.0572" rotation="-0.1704" pivot="14.040000000000001,3.4000000000000004"/>
+      <kf duration="11" ref="bella/EyelidUpper" loc="-12.50976,-121.76096000000001" scale="1.0583,1.0581" rotation="-0.2717" pivot="14.040000000000001,3.44"/>
+      <kf duration="10" ref="bella/EyelidUpper" loc="-16.640960000000003,-117.45496000000001" scale="1.0573,1.0572" rotation="-0.1704" pivot="14.040000000000001,3.4000000000000004"/>
+      <kf duration="1" ref="bella/EyelidUpper" loc="-12.50976,-121.76096000000001" scale="1.0583,1.0581" rotation="-0.2717" pivot="14.040000000000001,3.44"/>
+    </layer>
+    <layer name="Brow">
+      <kf duration="10" ref="bella/Brow" loc="-14.617519999999999,-131.11928" scale="1.0583,1.0581" rotation="-0.2717" pivot="13.4,2.4000000000000004"/>
+      <kf duration="10" ref="bella/Brow" loc="-18.32544,-127.50920000000002" scale="1.0573,1.0572" rotation="-0.1704" pivot="13.440000000000001,2.4000000000000004"/>
+      <kf duration="11" ref="bella/Brow" loc="-14.617519999999999,-131.11928" scale="1.0583,1.0581" rotation="-0.2717" pivot="13.4,2.4000000000000004"/>
+      <kf duration="10" ref="bella/Brow" loc="-17.44544,-127.50920000000002" scale="1.0573,1.0572" rotation="-0.1704" pivot="13.440000000000001,2.4000000000000004"/>
+      <kf duration="1" ref="bella/Brow" loc="-14.617519999999999,-131.11928" scale="1.0583,1.0581" rotation="-0.2717" pivot="13.4,2.4000000000000004"/>
+    </layer>
+    <layer name="Hair Front">
+      <kf duration="5" ref="bella/HairFront" loc="-4.39008,-151.45088" scale="1.0603,1.0601" rotation="-0.0488" pivot="26.8,3.64"/>
+      <kf duration="5" ref="bella/HairFront" loc="-5.024560000000001,-148.65592" scale="1.1185,1.0371" rotation="0.0003" pivot="26.8,3.64"/>
+      <kf duration="4" ref="bella/HairFront" loc="-5.61984,-145.95239999999998" scale="1.0597,1.0596" rotation="0.0491" pivot="26.84,3.64"/>
+      <kf duration="6" ref="bella/HairFront" loc="-5.2229600000000005,-148.15304" scale="1.0605,1.0942" rotation="0.0531" pivot="26.880000000000003,3.6"/>
+      <kf duration="6" ref="bella/HairFront" loc="-4.39008,-151.45088" scale="1.0603,1.0601" rotation="-0.0488" pivot="26.8,3.64"/>
+      <kf duration="5" ref="bella/HairFront" loc="-5.024560000000001,-148.65592" scale="1.1185,1.0371" rotation="0.0003" pivot="26.8,3.64"/>
+      <kf duration="4" ref="bella/HairFront" loc="-5.61984,-145.95239999999998" scale="1.0597,1.0596" rotation="0.0491" pivot="26.84,3.64"/>
+      <kf duration="6" ref="bella/HairFront" loc="-5.2229600000000005,-148.15304" scale="1.0605,1.0942" rotation="0.0531" pivot="26.880000000000003,3.6"/>
+      <kf duration="1" ref="bella/HairFront" loc="-4.39008,-151.45088" scale="1.0603,1.0601" rotation="-0.0488" pivot="26.8,3.64"/>
+    </layer>
+  </movie>
+  <movie name="bella/dance_scene" md5="5441700a3c55eea00c947d33c042c0ad" frameRate="30">
+    <layer name="Layer 1">
+      <kf duration="1" ref="bella/background" loc="256.8,192" pivot="256.8,192"/>
+    </layer>
+    <layer name="Layer 2">
+      <kf duration="1" ref="bella/dance_01" loc="435.1600000000001,204.92" pivot="-5.5200000000000005,-4.4"/>
+    </layer>
+  </movie>
+  <movie name="bella/walk" md5="aeee59d21f2e8a290439b1e080a498bb" frameRate="30">
+    <layer name="Hair Back">
+      <kf duration="3" ref="bella/HairBack" loc="2.83216,-153.04664" scale="1.0605,1.0603" pivot="30.960000000000004,1.8800000000000001"/>
+      <kf duration="4" ref="bella/HairBack" loc="2.84568,-145.63216" scale="1.079,1.0254" pivot="30.960000000000004,1.8800000000000001"/>
+      <kf duration="4" ref="bella/HairBack" loc="2.83216,-142.88904" scale="1.0605,1.0603" pivot="30.960000000000004,1.8399999999999999"/>
+      <kf duration="3" ref="bella/HairBack" loc="2.84376,-145.11751999999998" scale="1.0234,1.0864" pivot="30.960000000000004,1.8800000000000001"/>
+      <kf duration="4" ref="bella/HairBack" loc="2.83216,-153.04664" scale="1.0605,1.0603" pivot="30.960000000000004,1.8800000000000001"/>
+      <kf duration="4" ref="bella/HairBack" loc="2.84568,-145.63216" scale="1.079,1.0254" pivot="30.960000000000004,1.8800000000000001"/>
+      <kf duration="4" ref="bella/HairBack" loc="2.83216,-142.88904" scale="1.0605,1.0603" pivot="30.960000000000004,1.8399999999999999"/>
+      <kf duration="3" ref="bella/HairBack" loc="2.84376,-145.11751999999998" scale="1.0234,1.0864" pivot="30.960000000000004,1.8800000000000001"/>
+      <kf duration="1" ref="bella/HairBack" loc="2.83216,-153.04664" scale="1.0605,1.0603" pivot="30.960000000000004,1.8800000000000001"/>
+    </layer>
+    <layer name="R Arm Upper">
+      <kf duration="7" ref="bella/RArmUpper" loc="-7.30992,-82.02392" scale="1.0605,1.0603" pivot="6.120000000000001,2.92"/>
+      <kf duration="7" ref="bella/RArmUpper" loc="-7.30992,-71.88792" scale="1.0603,1.0602" rotation="-0.04" pivot="6.16,2.92"/>
+      <kf duration="8" ref="bella/RArmUpper" loc="-7.30992,-82.02392" scale="1.0605,1.0603" pivot="6.120000000000001,2.92"/>
+      <kf duration="4" ref="bella/RArmUpper" loc="-7.30992,-71.86392" scale="1.0605,1.0603" pivot="6.120000000000001,2.92"/>
+      <kf duration="3" ref="bella/RArmUpper" loc="-7.334160000000001,-74.10056" scale="1.0604,1.0602" rotation="-0.0182" pivot="6.120000000000001,2.9600000000000004"/>
+      <kf duration="1" ref="bella/RArmUpper" loc="-7.30992,-82.02392" scale="1.0605,1.0603" pivot="6.120000000000001,2.92"/>
+    </layer>
+    <layer name="R Arm Lower">
+      <kf duration="7" ref="bella/RArmLower" loc="-8.29744,-31.52648" scale="1.0601,1.0599" rotation="-0.1224" pivot="15.92,1.8"/>
+      <kf duration="7" ref="bella/RArmLower" loc="-5.9423200000000005,-20.631680000000003" scale="1.06,1.0598" rotation="-0.1443" pivot="16,1.8"/>
+      <kf duration="8" ref="bella/RArmLower" loc="-8.30128,-31.528080000000003" scale="1.0597,1.0595" rotation="-0.2495" pivot="15.96,1.8"/>
+      <kf duration="4" ref="bella/RArmLower" loc="-8.274880000000001,-21.37384" scale="1.0605,1.0603" pivot="15.96,1.7600000000000002"/>
+      <kf duration="3" ref="bella/RArmLower" loc="-6.5586400000000005,-21.050880000000003" scale="1.0602,1.0601" rotation="0.0355" pivot="15.96,1.8399999999999999"/>
+      <kf duration="1" ref="bella/RArmLower" loc="-8.29744,-31.52648" scale="1.0601,1.0599" rotation="-0.1224" pivot="15.92,1.8"/>
+    </layer>
+    <layer name="R Hand">
+      <kf duration="7" ref="bella/RHand" loc="-17.826240000000002,11.471200000000001" scale="1.0597,1.0596" rotation="0.2102" pivot="5.2,2.2399999999999998"/>
+      <kf duration="7" ref="bella/RHand" loc="-15.2112,20.790080000000003" scale="1.0599,1.0598" rotation="0.1443" pivot="5.24,2.2800000000000002"/>
+      <kf duration="8" ref="bella/RHand" loc="-13.9792,14.71856" scale="1.0596,1.0593" rotation="-0.2888" pivot="5.16,2.32"/>
+      <kf duration="4" ref="bella/RHand" loc="-23.565520000000003,19.977520000000002" scale="1.0605,1.0603" pivot="5.2,2.2800000000000002"/>
+      <kf duration="3" ref="bella/RHand" loc="-24.83424,18.99248" scale="1.0585,1.0586" rotation="0.5552" pivot="5.2,2.2800000000000002"/>
+      <kf duration="1" ref="bella/RHand" loc="-17.826240000000002,11.471200000000001" scale="1.0597,1.0596" rotation="0.2102" pivot="5.2,2.2399999999999998"/>
+    </layer>
+    <layer name="R Leg lower">
+      <kf duration="7" ref="bella/RLegLower" loc="-28.113920000000004,67.08512" scale="1.0596,1.0594" rotation="-0.2592" pivot="3.3200000000000003,4.44"/>
+      <kf duration="7" ref="bella/RLegLower" loc="-31.89536,81.81496" scale="1.0593,1.0592" rotation="0.2321" pivot="3.44,4.44"/>
+      <kf duration="8" ref="bella/RLegLower" loc="9.8856,73.87768" scale="1.0605,1.1256" pivot="3.4000000000000004,4.44"/>
+      <kf duration="7" ref="bella/RLegLower" loc="16.76592,81.38936000000001" scale="1.0589,1.0314" rotation="-0.2919" pivot="3.4000000000000004,4.44"/>
+      <kf duration="1" ref="bella/RLegLower" loc="-28.113920000000004,67.08512" scale="1.0596,1.0594" rotation="-0.2592" pivot="3.3200000000000003,4.44"/>
+    </layer>
+    <layer name="R Foot">
+      <kf duration="7" ref="bella/RFoot" loc="-4.05744,123.42728" scale="1.0567,1.0567" rotation="-1.2254" pivot="24.92,2.2399999999999998"/>
+      <kf duration="7" ref="bella/RFoot" loc="-38.550560000000004,142.7028" scale="1.0586,1.0585" rotation="0.2583" pivot="24.880000000000003,2.2800000000000002"/>
+      <kf duration="8" ref="bella/RFoot" loc="17.18208,139.38472" scale="1.0598,1.0597" rotation="0.1756" pivot="24.880000000000003,2.2800000000000002"/>
+      <kf duration="7" ref="bella/RFoot" loc="39.988240000000005,136.89408" scale="1.2178,1.055" rotation="-0.1394" pivot="24.8,2.32"/>
+      <kf duration="1" ref="bella/RFoot" loc="-4.05744,123.42728" scale="1.0567,1.0567" rotation="-1.2254" pivot="24.92,2.2399999999999998"/>
+    </layer>
+    <layer name="R Leg Upper">
+      <kf duration="7" ref="bella/RLegUpper" loc="-17.044,-7.603440000000001" scale="1.0595,1.0595" rotation="0.236" pivot="5.800000000000001,9.28"/>
+      <kf duration="7" ref="bella/RLegUpper" loc="-20.27064,5.63664" scale="1.0596,1.0595" rotation="0.2283" pivot="5.760000000000001,9.24"/>
+      <kf duration="8" ref="bella/RLegUpper" loc="-17.55144,-5.31456" scale="1.0597,1.0882" rotation="-0.2258" pivot="5.720000000000001,9.28"/>
+      <kf duration="7" ref="bella/RLegUpper" loc="-16.374000000000002,7.430320000000001" scale="1.059,1.0588" rotation="-0.3144" pivot="5.720000000000001,9.24"/>
+      <kf duration="1" ref="bella/RLegUpper" loc="-17.044,-7.603440000000001" scale="1.0595,1.0595" rotation="0.236" pivot="5.800000000000001,9.28"/>
+    </layer>
+    <layer name="hips">
+      <kf duration="7" ref="bella/Hips" loc="-1.3238400000000001,-5.820720000000001" scale="1.0605,1.0603" pivot="19.12,16.240000000000002"/>
+      <kf duration="7" ref="bella/Hips" loc="-3.1304800000000004,5.32144" scale="1.0601,1.0599" rotation="0.1093" pivot="19.12,16.240000000000002"/>
+      <kf duration="8" ref="bella/Hips" loc="-1.3238400000000001,-5.820720000000001" scale="1.0605,1.0603" pivot="19.12,16.240000000000002"/>
+      <kf duration="7" ref="bella/Hips" loc="3.2709600000000005,9.383360000000001" scale="1.059,1.0587" rotation="-0.4603" pivot="19.92,16.44"/>
+      <kf duration="1" ref="bella/Hips" loc="-1.3238400000000001,-5.820720000000001" scale="1.0605,1.0603" pivot="19.12,16.240000000000002"/>
+    </layer>
+    <layer name="L Leg Lower">
+      <kf duration="7" ref="bella/LLegLower" loc="24.240560000000002,80.63864000000001" scale="1.0605,1.16" pivot="4.64,7.240000000000001"/>
+      <kf duration="7" ref="bella/LLegLower" loc="28.84584,88.33584" scale="1.0594,1.1402" rotation="-0.3548" pivot="4.6000000000000005,7.359999999999999"/>
+      <kf duration="8" ref="bella/LLegLower" loc="-18.58256,79.65176000000001" scale="1.0591,1.0589" rotation="-0.4334" pivot="4.64,7.28"/>
+      <kf duration="7" ref="bella/LLegLower" loc="-12.12448,89.144" scale="1.0588,1.0858" rotation="0.4424" pivot="4.68,7.32"/>
+      <kf duration="1" ref="bella/LLegLower" loc="24.240560000000002,80.63864000000001" scale="1.0605,1.16" pivot="4.64,7.240000000000001"/>
+    </layer>
+    <layer name="L Foot">
+      <kf duration="7" ref="bella/LFoot" loc="34.82792,144.44368" scale="1.0588,1.0587" rotation="0.2188" pivot="24.480000000000004,1.72"/>
+      <kf duration="7" ref="bella/LFoot" loc="59.96472,141.87784" scale="1.0554,1.0552" rotation="-0.0036" pivot="24.52,1.64"/>
+      <kf duration="4" ref="bella/LFoot" loc="16.39768,126.01112" scale="1.0558,1.0559" rotation="-1.4921" pivot="24.480000000000004,1.64"/>
+      <kf duration="4" ref="bella/LFoot" loc="-9.917520000000001,142.0932" scale="1.0563,1.0563" rotation="-0.3409" pivot="24.52,1.6800000000000002"/>
+      <kf duration="7" ref="bella/LFoot" loc="-27.803600000000003,147.91192" scale="1.0583,1.0582" rotation="0.36" pivot="24.480000000000004,1.64"/>
+      <kf duration="1" ref="bella/LFoot" loc="34.82792,144.44368" scale="1.0588,1.0587" rotation="0.2188" pivot="24.480000000000004,1.72"/>
+    </layer>
+    <layer name="L Leg Upper">
+      <kf duration="7" ref="bella/LLegUpper" loc="7.416800000000001,-0.91344" scale="1.0604,1.0602" rotation="-0.014" pivot="14.64,9.040000000000001"/>
+      <kf duration="7" ref="bella/LLegUpper" loc="5.70936,11.40392" scale="1.06,1.0598" rotation="-0.0745" pivot="14.600000000000001,9.08"/>
+      <kf duration="8" ref="bella/LLegUpper" loc="8.25024,0.36256" scale="1.0586,1.0587" rotation="0.5339" pivot="14.64,9.08"/>
+      <kf duration="7" ref="bella/LLegUpper" loc="13.20232,10.94424" scale="1.0579,1.058" rotation="0.4915" pivot="14.64,9"/>
+      <kf duration="1" ref="bella/LLegUpper" loc="7.416800000000001,-0.91344" scale="1.0604,1.0602" rotation="-0.014" pivot="14.64,9.040000000000001"/>
+    </layer>
+    <layer name="torso">
+      <kf duration="7" ref="bella/Torso" loc="-0.35656,-7.350480000000001" scale="1.0605,1.0603" pivot="19.240000000000002,76.44"/>
+      <kf duration="7" ref="bella/Torso" loc="-2.67896,3.61232" scale="1.0784,1.0766" rotation="0.031" pivot="19.36,76.36"/>
+      <kf duration="8" ref="bella/Torso" loc="-0.35656,-7.350480000000001" scale="1.0605,1.0603" pivot="19.240000000000002,76.44"/>
+      <kf duration="7" ref="bella/Torso" loc="1.89176,4.65416" scale="1.1036,1.0825" rotation="-0.0569" pivot="19.080000000000002,76.44"/>
+      <kf duration="1" ref="bella/Torso" loc="-0.35656,-7.350480000000001" scale="1.0605,1.0603" pivot="19.240000000000002,76.44"/>
+    </layer>
+    <layer name="L Arm Upper">
+      <kf duration="7" ref="bella/LArmUpper" loc="19.578960000000002,-80.39600000000002" scale="1.0595,1.0593" rotation="0.0699" pivot="4.08,1.8"/>
+      <kf duration="4" ref="bella/LArmUpper" loc="19.576400000000003,-70.2168" scale="1.0596,1.0594" rotation="0.1829" pivot="4.08,1.8399999999999999"/>
+      <kf duration="3" ref="bella/LArmUpper" loc="19.55632,-72.40088" scale="1.0572,1.0571" rotation="0.2534" pivot="3.9200000000000004,1.72"/>
+      <kf duration="8" ref="bella/LArmUpper" loc="19.54248,-80.39088000000001" scale="1.0594,1.0592" rotation="0.1006" pivot="4.04,1.8399999999999999"/>
+      <kf duration="7" ref="bella/LArmUpper" loc="19.5636,-70.18632000000001" scale="1.0597,1.0596" rotation="-0.0223" pivot="4.04,1.8399999999999999"/>
+      <kf duration="1" ref="bella/LArmUpper" loc="19.578960000000002,-80.39600000000002" scale="1.0595,1.0593" rotation="0.0699" pivot="4.08,1.8"/>
+    </layer>
+    <layer name="L Arm Lower">
+      <kf duration="7" ref="bella/LArmLower" loc="22.05912,-26.517680000000002" scale="1.059,1.0588" rotation="0.1176" pivot="3.64,1.36"/>
+      <kf duration="4" ref="bella/LArmLower" loc="15.93776,-17.231440000000003" scale="1.0587,1.0586" rotation="0.124" pivot="3.5600000000000005,1.2400000000000002"/>
+      <kf duration="3" ref="bella/LArmLower" loc="12.0064,-18.24744" scale="1.0567,1.0566" rotation="0.1753" pivot="3.5600000000000005,1.4000000000000001"/>
+      <kf duration="8" ref="bella/LArmLower" loc="20.6712,-24.832160000000002" scale="1.0582,1.058" rotation="0.0661" pivot="3.64,1.32"/>
+      <kf duration="7" ref="bella/LArmLower" loc="26.50304,-16.77664" scale="1.059,1.0588" rotation="-0.1606" pivot="3.5200000000000005,1.32"/>
+      <kf duration="1" ref="bella/LArmLower" loc="22.05912,-26.517680000000002" scale="1.059,1.0588" rotation="0.1176" pivot="3.64,1.36"/>
+    </layer>
+    <layer name="L Hand">
+      <kf duration="7" ref="bella/LHand" loc="21.31696,16.04272" scale="1.0573,1.057" rotation="-0.4506" pivot="3.4000000000000004,1.4800000000000002"/>
+      <kf duration="4" ref="bella/LHand" loc="14.545760000000001,28.27672" scale="1.0554,1.0551" rotation="-0.4764" pivot="3.3600000000000003,1.56"/>
+      <kf duration="3" ref="bella/LHand" loc="8.251040000000001,26.55752" scale="1.0551,1.0549" rotation="-0.08" pivot="3.28,1.4400000000000002"/>
+      <kf duration="8" ref="bella/LHand" loc="22.62056,19.1096" scale="1.0511,1.0509" rotation="-0.0352" pivot="3.3200000000000003,1.4400000000000002"/>
+      <kf duration="7" ref="bella/LHand" loc="38.45384000000001,22.84944" scale="1.0587,1.0585" rotation="-0.2324" pivot="3.44,1.6"/>
+      <kf duration="1" ref="bella/LHand" loc="21.31696,16.04272" scale="1.0573,1.057" rotation="-0.4506" pivot="3.4000000000000004,1.4800000000000002"/>
+    </layer>
+    <layer name="neck">
+      <kf duration="7" ref="bella/Neck" loc="2.3956,-83.25888" scale="1.0605,1.0603" pivot="5.88,30.200000000000003"/>
+      <kf duration="7" ref="bella/Neck" loc="2.3956,-73.05648000000001" scale="1.0605,1.0603" pivot="5.88,30.24"/>
+      <kf duration="8" ref="bella/Neck" loc="2.3956,-83.25888" scale="1.0605,1.0603" pivot="5.88,30.200000000000003"/>
+      <kf duration="7" ref="bella/Neck" loc="2.3956,-73.05648000000001" scale="1.0605,1.0603" pivot="5.88,30.24"/>
+      <kf duration="1" ref="bella/Neck" loc="2.3956,-83.25888" scale="1.0605,1.0603" pivot="5.88,30.200000000000003"/>
+    </layer>
+    <layer name="Hair Middle">
+      <kf duration="3" ref="bella/HairMiddle" loc="-4.27264,-154.87976000000003" scale="1.0605,1.0603" pivot="25.92,3.3200000000000003"/>
+      <kf duration="4" ref="bella/HairMiddle" loc="-4.284000000000001,-147.49712" scale="1.0801,1.0069" pivot="25.92,3.3200000000000003"/>
+      <kf duration="4" ref="bella/HairMiddle" loc="-4.27264,-144.67976000000002" scale="1.0605,1.0603" pivot="25.92,3.3200000000000003"/>
+      <kf duration="3" ref="bella/HairMiddle" loc="-4.28136,-146.92696" scale="1.0277,1.0943" pivot="25.92,3.3200000000000003"/>
+      <kf duration="4" ref="bella/HairMiddle" loc="-4.27264,-154.87976000000003" scale="1.0605,1.0603" pivot="25.92,3.3200000000000003"/>
+      <kf duration="4" ref="bella/HairMiddle" loc="-4.284000000000001,-147.49712" scale="1.0801,1.0069" pivot="25.92,3.3200000000000003"/>
+      <kf duration="4" ref="bella/HairMiddle" loc="-4.27264,-144.67976000000002" scale="1.0605,1.0603" pivot="25.92,3.3200000000000003"/>
+      <kf duration="3" ref="bella/HairMiddle" loc="-4.28136,-146.92696" scale="1.0277,1.0943" pivot="25.92,3.3200000000000003"/>
+      <kf duration="1" ref="bella/HairMiddle" loc="-4.27264,-154.87976000000003" scale="1.0605,1.0603" pivot="25.92,3.3200000000000003"/>
+    </layer>
+    <layer name="head">
+      <kf duration="7" ref="bella/Head" loc="8.292959999999999,-107.95968" scale="1.0599,1.0597" rotation="-0.1621" pivot="30.32,43.36000000000001"/>
+      <kf duration="7" ref="bella/Head" loc="7.61368,-97.46600000000001" scale="1.0601,1.0599" rotation="-0.1276" pivot="30.32,43.400000000000006"/>
+      <kf duration="8" ref="bella/Head" loc="8.292959999999999,-107.95968" scale="1.0599,1.0597" rotation="-0.1621" pivot="30.32,43.36000000000001"/>
+      <kf duration="7" ref="bella/Head" loc="7.61368,-97.46600000000001" scale="1.0601,1.0599" rotation="-0.1276" pivot="30.32,43.400000000000006"/>
+      <kf duration="1" ref="bella/Head" loc="8.292959999999999,-107.95968" scale="1.0599,1.0597" rotation="-0.1621" pivot="30.32,43.36000000000001"/>
+    </layer>
+    <layer name="Cheeks">
+      <kf duration="7" ref="bella/Cheeks" loc="-8.14584,-112.00064" scale="1.0599,1.0597" rotation="-0.1621" pivot="16,5.6000000000000005"/>
+      <kf duration="7" ref="bella/Cheeks" loc="-8.69888,-102.06384000000001" scale="1.0601,1.0599" rotation="-0.1276" pivot="15.96,5.640000000000001"/>
+      <kf duration="8" ref="bella/Cheeks" loc="-8.14584,-112.00064" scale="1.0599,1.0597" rotation="-0.1621" pivot="16,5.6000000000000005"/>
+      <kf duration="7" ref="bella/Cheeks" loc="-8.69888,-102.06384000000001" scale="1.0601,1.0599" rotation="-0.1276" pivot="15.96,5.640000000000001"/>
+      <kf duration="1" ref="bella/Cheeks" loc="-8.14584,-112.00064" scale="1.0599,1.0597" rotation="-0.1621" pivot="16,5.6000000000000005"/>
+    </layer>
+    <layer name="mouth">
+      <kf duration="7" ref="bella/mouth_symbol" loc="-7.56912,-106.97752000000001" scale="1.0599,1.0597" rotation="-0.1621" pivot="9.48,1.8399999999999999"/>
+      <kf duration="7" ref="bella/mouth_symbol" loc="-8.3012,-97.01704000000001" scale="1.0601,1.0599" rotation="-0.1276" pivot="9.440000000000001,1.8800000000000001"/>
+      <kf duration="8" ref="bella/mouth_symbol" loc="-7.56912,-106.97752000000001" scale="1.0599,1.0597" rotation="-0.1621" pivot="9.48,1.8399999999999999"/>
+      <kf duration="7" ref="bella/mouth_symbol" loc="-8.3012,-97.01704000000001" scale="1.0601,1.0599" rotation="-0.1276" pivot="9.440000000000001,1.8800000000000001"/>
+      <kf duration="1" ref="bella/mouth_symbol" loc="-7.56912,-106.97752000000001" scale="1.0599,1.0597" rotation="-0.1621" pivot="9.48,1.8399999999999999"/>
+    </layer>
+    <layer name="nose">
+      <kf duration="7" ref="bella/nose" loc="-14.184000000000001,-112.05336" scale="1.0599,1.0597" rotation="-0.1621" pivot="2.92,1.8800000000000001"/>
+      <kf duration="7" ref="bella/nose" loc="-14.712960000000002,-102.33008000000001" scale="1.0601,1.0599" rotation="-0.1276" pivot="2.8800000000000003,1.92"/>
+      <kf duration="8" ref="bella/nose" loc="-14.184000000000001,-112.05336" scale="1.0599,1.0597" rotation="-0.1621" pivot="2.92,1.8800000000000001"/>
+      <kf duration="7" ref="bella/nose" loc="-14.712960000000002,-102.33008000000001" scale="1.0601,1.0599" rotation="-0.1276" pivot="2.8800000000000003,1.92"/>
+      <kf duration="1" ref="bella/nose" loc="-14.184000000000001,-112.05336" scale="1.0599,1.0597" rotation="-0.1621" pivot="2.92,1.8800000000000001"/>
+    </layer>
+    <layer name="eyes">
+      <kf duration="7" ref="bella/Eyes" loc="-10.9,-120.33127999999999" scale="1.0599,1.0597" rotation="-0.1621" pivot="13.36,4.24"/>
+      <kf duration="7" ref="bella/Eyes" loc="-11.15008,-110.59432" scale="1.0601,1.0599" rotation="-0.1276" pivot="13.4,4.16"/>
+      <kf duration="8" ref="bella/Eyes" loc="-10.9,-120.33127999999999" scale="1.0599,1.0597" rotation="-0.1621" pivot="13.36,4.24"/>
+      <kf duration="7" ref="bella/Eyes" loc="-11.15008,-110.59432" scale="1.0601,1.0599" rotation="-0.1276" pivot="13.4,4.16"/>
+      <kf duration="1" ref="bella/Eyes" loc="-10.9,-120.33127999999999" scale="1.0599,1.0597" rotation="-0.1621" pivot="13.36,4.24"/>
+    </layer>
+    <layer name="Pupil">
+      <kf duration="7" ref="bella/Pupil" loc="-12.33144,-120.93592000000001" scale="1.0599,1.0597" rotation="-0.1621" pivot="9.76,2.92"/>
+      <kf duration="7" ref="bella/Pupil" loc="-12.57904,-110.9648" scale="1.0601,1.0599" rotation="-0.1276" pivot="9.76,2.9600000000000004"/>
+      <kf duration="8" ref="bella/Pupil" loc="-12.33144,-120.93592000000001" scale="1.0599,1.0597" rotation="-0.1621" pivot="9.76,2.92"/>
+      <kf duration="7" ref="bella/Pupil" loc="-12.57904,-110.9648" scale="1.0601,1.0599" rotation="-0.1276" pivot="9.76,2.9600000000000004"/>
+      <kf duration="1" ref="bella/Pupil" loc="-12.33144,-120.93592000000001" scale="1.0599,1.0597" rotation="-0.1621" pivot="9.76,2.92"/>
+    </layer>
+    <layer name="Eyelid Lower">
+      <kf duration="7" ref="bella/EyelidLower" loc="-10.423200000000001,-117.30736" scale="1.0599,1.0597" rotation="-0.1621" pivot="12.8,1.8"/>
+      <kf duration="7" ref="bella/EyelidLower" loc="-10.746,-107.5292" scale="1.0601,1.0599" rotation="-0.1276" pivot="12.880000000000003,1.72"/>
+      <kf duration="8" ref="bella/EyelidLower" loc="-10.423200000000001,-117.30736" scale="1.0599,1.0597" rotation="-0.1621" pivot="12.8,1.8"/>
+      <kf duration="7" ref="bella/EyelidLower" loc="-10.746,-107.5292" scale="1.0601,1.0599" rotation="-0.1276" pivot="12.880000000000003,1.72"/>
+      <kf duration="1" ref="bella/EyelidLower" loc="-10.423200000000001,-117.30736" scale="1.0599,1.0597" rotation="-0.1621" pivot="12.8,1.8"/>
+    </layer>
+    <layer name="Eyelid Upper">
+      <kf duration="7" ref="bella/EyelidUpper" loc="-11.047440000000002,-122.87744" scale="1.0599,1.0597" rotation="-0.1621" pivot="14,3.44"/>
+      <kf duration="7" ref="bella/EyelidUpper" loc="-11.21104,-113.03008" scale="1.0601,1.0599" rotation="-0.1276" pivot="14,3.48"/>
+      <kf duration="8" ref="bella/EyelidUpper" loc="-11.047440000000002,-122.87744" scale="1.0599,1.0597" rotation="-0.1621" pivot="14,3.44"/>
+      <kf duration="7" ref="bella/EyelidUpper" loc="-11.21104,-113.03008" scale="1.0601,1.0599" rotation="-0.1276" pivot="14,3.48"/>
+      <kf duration="1" ref="bella/EyelidUpper" loc="-11.047440000000002,-122.87744" scale="1.0599,1.0597" rotation="-0.1621" pivot="14,3.44"/>
+    </layer>
+    <layer name="Brow">
+      <kf duration="7" ref="bella/Brow" loc="-12.057920000000001,-132.47112" scale="1.0599,1.0597" rotation="-0.1621" pivot="13.440000000000001,2.3600000000000003"/>
+      <kf duration="7" ref="bella/Brow" loc="-12.00376,-123.93064" scale="1.0601,1.0599" rotation="-0.1276" pivot="13.4,2.2800000000000002"/>
+      <kf duration="8" ref="bella/Brow" loc="-12.057920000000001,-132.47112" scale="1.0599,1.0597" rotation="-0.1621" pivot="13.440000000000001,2.3600000000000003"/>
+      <kf duration="7" ref="bella/Brow" loc="-12.00376,-123.93064" scale="1.0601,1.0599" rotation="-0.1276" pivot="13.4,2.2800000000000002"/>
+      <kf duration="1" ref="bella/Brow" loc="-12.057920000000001,-132.47112" scale="1.0599,1.0597" rotation="-0.1621" pivot="13.440000000000001,2.3600000000000003"/>
+    </layer>
+    <layer name="Hair Front">
+      <kf duration="3" ref="bella/HairFront" loc="-1.29936,-154.42048" scale="1.0605,1.0603" pivot="26.8,3.64"/>
+      <kf duration="4" ref="bella/HairFront" loc="-1.3141600000000002,-146.98463999999998" scale="1.1554,1.0364" pivot="26.8,3.7200000000000006"/>
+      <kf duration="4" ref="bella/HairFront" loc="-1.29936,-144.21808000000001" scale="1.0605,1.0603" pivot="26.8,3.6799999999999997"/>
+      <kf duration="3" ref="bella/HairFront" loc="-1.3320800000000002,-145.078" scale="1.013,1.1201" pivot="26.760000000000005,3.6799999999999997"/>
+      <kf duration="4" ref="bella/HairFront" loc="-1.29936,-154.42048" scale="1.0605,1.0603" pivot="26.8,3.64"/>
+      <kf duration="4" ref="bella/HairFront" loc="-1.3076,-148.07016000000002" scale="1.1079,1.0244" pivot="26.8,3.6799999999999997"/>
+      <kf duration="4" ref="bella/HairFront" loc="-1.29936,-144.21808000000001" scale="1.0605,1.0603" pivot="26.8,3.6799999999999997"/>
+      <kf duration="3" ref="bella/HairFront" loc="-1.31688,-145.24984" scale="0.9971,1.0962" pivot="26.8,3.64"/>
+      <kf duration="1" ref="bella/HairFront" loc="-1.29936,-154.42048" scale="1.0605,1.0603" pivot="26.8,3.64"/>
+    </layer>
+  </movie>
+  <textureGroups>
+    <textureGroup retina="false">
+      <atlas file="iPad/bella/atlas0.png">
+        <texture name="bella/background" rect="0,0,512,384" offset="0,0" md5="d53697300008ab7139cee34419566717"/>
+        <texture name="bella/HairFront" rect="0,385,54,75" offset="0,0" md5="f3f01e0cab9134864c338282734736df"/>
+        <texture name="bella/Head" rect="0,461,50,50" offset="0,0" md5="fe5528b3625ba934e1856a9a79e0dfad"/>
+        <texture name="bella/HairMiddle" rect="55,385,39,91" offset="0,0" md5="bd5a2c2d57f5dffd328bd02975d78185"/>
+        <texture name="bella/Hips" rect="55,477,39,33" offset="0,0" md5="bcf092f7d368afea57498a6f5ebfbc2b"/>
+        <texture name="bella/Torso" rect="95,385,43,82" offset="0,0" md5="50932cc8c7ea8601665f6e7ed57f32a8"/>
+        <texture name="bella/RArmLower" rect="95,468,18,43" offset="0,0" md5="cb1764c683eff03b04528d2203438ae9"/>
+        <texture name="bella/Neck" rect="114,468,12,34" offset="0,0" md5="ea88b74269447324852361eee0c65330"/>
+        <texture name="bella/nose" rect="114,503,6,4" offset="0,0" md5="64c09faa2ad7ff64ca92df6c56cdc95d"/>
+        <texture name="bella/LHand" rect="127,468,9,22" offset="0,0" md5="0e899859e6563b3307230e28f44fde64"/>
+        <texture name="bella/RHand" rect="127,491,9,19" offset="0,0" md5="64f4f1c35ce9ede3b67877efa7133bce"/>
+        <texture name="bella/LLegUpper" rect="139,385,34,89" offset="0,0" md5="65e6430b484c9b85506a9cf504c744c2"/>
+        <texture name="bella/LFoot" rect="139,475,27,15" offset="0,0" md5="6ad469f6b4fd013e48792e72c3cdb500"/>
+        <texture name="bella/RFoot" rect="139,491,26,15" offset="0,0.05" md5="4374b5d8eb314fdc15e1dbbc3cabffea"/>
+        <texture name="bella/EyelidLower" rect="139,507,26,4" offset="0,0" md5="c1b9be9af6e4c293d3271bafd961507a"/>
+        <texture name="bella/RLegUpper" rect="174,385,26,89" offset="0,0" md5="1097c0d3695c357542ca2c407a3ba157"/>
+        <texture name="bella/mouthopen" rect="174,475,19,10" offset="0,0" md5="ac8747a6d4c0def92a5d248726bc6549"/>
+        <texture name="bella/Mouth1" rect="174,486,23,7" offset="0,0" md5="fc00c2942a2de62f33941d0586cee36b"/>
+        <texture name="bella/Pupil" rect="174,494,20,6" offset="0,0" md5="7024dffc95a3dc34490ac35f4f1bcd04"/>
+        <texture name="bella/pupils" rect="174,501,20,6" offset="0,0" md5="42d57a6e2e330b3c46024b76960b27a4"/>
+        <texture name="bella/LLegLower" rect="201,385,17,64" offset="0,0" md5="a210065403fa20e458bf508d726cfb94"/>
+        <texture name="bella/LArmUpper" rect="201,450,13,61" offset="0,0" md5="c68442b72ae8d096728bff29d9effafa"/>
+        <texture name="bella/RLegLower" rect="219,385,15,63" offset="0,0" md5="0b19f2960a5f2cf695ad0a0f4aa136ad"/>
+        <texture name="bella/RArmUpper" rect="219,449,10,60" offset="0,0" md5="537d6770ca325e53369038b8f14dd3ca"/>
+        <texture name="bella/LArmLower" rect="235,385,10,45" offset="0,0" md5="fd1b1235ab1319320e8bcc03d91ffdad"/>
+        <texture name="bella/Cheeks" rect="246,385,32,12" offset="0,0" md5="dc1c5a1d78a27ba9252d5148a043d08a"/>
+        <texture name="bella/Eyelidsclosed" rect="246,398,30,9" offset="0,0" md5="bb85c52eb56be2a340c3534d65257c10"/>
+        <texture name="bella/Eyes" rect="246,408,27,9" offset="0,0" md5="b86ace80ea8f0516d92cb80541fad4fe"/>
+        <texture name="bella/EyelidUpper" rect="246,418,29,7" offset="0,0" md5="33bc5cff1deda1f8c2e192bc42f5c5ab"/>
+        <texture name="bella/Brow" rect="246,426,27,5" offset="0,0" md5="f8b5bb5d3c35bb4d858a9469c8a0b4a5"/>
+        <texture name="bella/mouth_symbol" rect="246,432,19,4" offset="0,0" md5="2f3f078634fafda013d3b455085e2b31"/>
+        <texture name="bella/HairBack" rect="513,0,77,148" offset="0,0" md5="881a3c66b2d0d88399a518bad4194bd0"/>
+      </atlas>
+    </textureGroup>
+    <textureGroup retina="true">
+      <atlas file="iPad/bella/atlas0@2x.png">
+        <texture name="bella/background" rect="0,0,1024,768" offset="0,0" md5="d53697300008ab7139cee34419566717"/>
+        <texture name="bella/HairFront" rect="0,769,108,150" offset="0,0" md5="f3f01e0cab9134864c338282734736df"/>
+        <texture name="bella/Head" rect="0,920,99,99" offset="0,0" md5="fe5528b3625ba934e1856a9a79e0dfad"/>
+        <texture name="bella/HairMiddle" rect="109,769,77,182" offset="0,0" md5="bd5a2c2d57f5dffd328bd02975d78185"/>
+        <texture name="bella/Hips" rect="109,952,77,66" offset="0,0" md5="bcf092f7d368afea57498a6f5ebfbc2b"/>
+        <texture name="bella/Torso" rect="187,769,85,163" offset="0,0" md5="50932cc8c7ea8601665f6e7ed57f32a8"/>
+        <texture name="bella/RArmLower" rect="187,933,36,85" offset="0,0" md5="cb1764c683eff03b04528d2203438ae9"/>
+        <texture name="bella/LArmLower" rect="224,933,20,90" offset="0,0" md5="fd1b1235ab1319320e8bcc03d91ffdad"/>
+        <texture name="bella/Neck" rect="245,933,24,67" offset="0,0" md5="ea88b74269447324852361eee0c65330"/>
+        <texture name="bella/nose" rect="245,1001,12,8" offset="0,0" md5="64c09faa2ad7ff64ca92df6c56cdc95d"/>
+        <texture name="bella/LLegUpper" rect="273,769,67,177" offset="0,0" md5="65e6430b484c9b85506a9cf504c744c2"/>
+        <texture name="bella/LFoot" rect="273,947,53,30" offset="0,0" md5="6ad469f6b4fd013e48792e72c3cdb500"/>
+        <texture name="bella/RFoot" rect="273,978,52,30" offset="0,0.1" md5="4374b5d8eb314fdc15e1dbbc3cabffea"/>
+        <texture name="bella/EyelidUpper" rect="273,1009,57,14" offset="0,0" md5="33bc5cff1deda1f8c2e192bc42f5c5ab"/>
+        <texture name="bella/RLegUpper" rect="341,769,51,178" offset="0,0" md5="1097c0d3695c357542ca2c407a3ba157"/>
+        <texture name="bella/LHand" rect="341,948,17,43" offset="0,0" md5="0e899859e6563b3307230e28f44fde64"/>
+        <texture name="bella/RHand" rect="359,948,18,38" offset="0,0" md5="64f4f1c35ce9ede3b67877efa7133bce"/>
+        <texture name="bella/LLegLower" rect="393,769,33,128" offset="0,0" md5="a210065403fa20e458bf508d726cfb94"/>
+        <texture name="bella/LArmUpper" rect="393,898,25,121" offset="0,0" md5="c68442b72ae8d096728bff29d9effafa"/>
+        <texture name="bella/RLegLower" rect="427,769,29,126" offset="0,0" md5="0b19f2960a5f2cf695ad0a0f4aa136ad"/>
+        <texture name="bella/RArmUpper" rect="427,896,19,119" offset="0,0" md5="537d6770ca325e53369038b8f14dd3ca"/>
+        <texture name="bella/Cheeks" rect="457,769,64,23" offset="0,0" md5="dc1c5a1d78a27ba9252d5148a043d08a"/>
+        <texture name="bella/Eyelidsclosed" rect="457,793,60,17" offset="0,0" md5="bb85c52eb56be2a340c3534d65257c10"/>
+        <texture name="bella/Eyes" rect="457,811,54,17" offset="0,0" md5="b86ace80ea8f0516d92cb80541fad4fe"/>
+        <texture name="bella/mouthopen" rect="457,829,38,19" offset="0,0" md5="ac8747a6d4c0def92a5d248726bc6549"/>
+        <texture name="bella/Mouth1" rect="457,849,45,14" offset="0,0" md5="fc00c2942a2de62f33941d0586cee36b"/>
+        <texture name="bella/Brow" rect="457,864,54,10" offset="0,0" md5="f8b5bb5d3c35bb4d858a9469c8a0b4a5"/>
+        <texture name="bella/Pupil" rect="457,875,40,12" offset="0,0" md5="7024dffc95a3dc34490ac35f4f1bcd04"/>
+        <texture name="bella/pupils" rect="457,888,40,12" offset="0,0" md5="42d57a6e2e330b3c46024b76960b27a4"/>
+        <texture name="bella/EyelidLower" rect="457,901,52,7" offset="0,0" md5="c1b9be9af6e4c293d3271bafd961507a"/>
+        <texture name="bella/mouth_symbol" rect="457,909,38,8" offset="0,0" md5="2f3f078634fafda013d3b455085e2b31"/>
+        <texture name="bella/HairBack" rect="1025,0,154,296" offset="0,0" md5="881a3c66b2d0d88399a518bad4194bd0"/>
+      </atlas>
+    </textureGroup>
+  </textureGroups>
+</resources>

@@ -13,5 +13,7 @@
 
 @property(nonatomic,readonly) int screenWidth;
 @property(nonatomic,readonly) int screenHeight;
+@property(nonatomic,readonly) NSString* deviceClass;
+@property(nonatomic,readonly) BOOL retina;
 
 @end

@@ -71,7 +71,7 @@
     [sprite detach];
     _sprite = sprite;
     
-    BTMovie *movie = [[BTApp.app.resourceManager requireResource:@"squaredance"] newMovie];
+    BTMovie *movie = [[BTApp.resourceManager requireResource:@"squaredance"] newMovie];
     BTSprite* movieSprite = [BTSprite withSprite:movie];
     [self addNode:movieSprite displayOn:self.sprite];
     [movieSprite detach];
