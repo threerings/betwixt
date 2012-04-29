@@ -126,6 +126,14 @@
     return (array.count > 0 ? [array objectAtIndex:[self getInt:array.count]] : nil);
 }
 
+- (int)getDiceRoll:(int)numDice d:(int)numFaces {
+    int sum = 0;
+    for (int ii = 0; ii < numDice; ++ii) {
+        sum += [self getIntLow:1 high:numFaces + 1];
+    }
+    return sum;
+}
+
 /* initializes mt[N] with a seed */
 - (void)init_genrand:(unsigned long)s {
     mt[0]= s & 0xffffffffUL;
