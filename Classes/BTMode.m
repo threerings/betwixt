@@ -171,7 +171,7 @@
     return [_groups objectForKey:group];
 }
 
-- (int)countNodesInGroup:(NSString *)group {
+- (int)countNodesInGroup:(NSString*)group {
     BTNodeGroup* nodeGroup = [_groups objectForKey:group];
     return [nodeGroup count];
 }
