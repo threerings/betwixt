@@ -10,8 +10,9 @@
 }
 
 - (id)initWithNodes:(NSArray*)nodes {
-    if (!(self = [super init])) return nil;
-    _nodes = nodes;
+    if ((self = [super init])) {
+        _nodes = nodes;
+    }
     return self;
 }
 

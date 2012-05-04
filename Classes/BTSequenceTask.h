@@ -5,4 +5,5 @@
 
 @interface BTSequenceTask : BTNode
 + (BTSequenceTask*)withNodes:(BTNode*)node, ... NS_REQUIRES_NIL_TERMINATION;
+- (id)initWithNodes:(NSArray*)nodes;
 @end
