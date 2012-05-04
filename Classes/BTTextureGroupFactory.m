@@ -52,7 +52,13 @@
     NSMutableArray* textures = [[NSMutableArray alloc] init];
     
     GDataXMLElement* theGroup = nil;
-    for (GDataXMLElement* groupXml in [xml elementsForName:@"textureGroup"]) {
+    NSArray* groupElements = [xml elementsForName:@"textureGroup"];
+    if (groupElements.count > 2) {
+        @throw [GDataXMLException withElement:xml 
+                                       reason:@"Too many texture groups (expected no more than 2)"];
+    }
+    
+    for (GDataXMLElement* groupXml in groupElements) {
         BOOL retina = [groupXml boolAttribute:@"retina"];
         if (retina == BTApp.deviceType.retina) {
             theGroup = groupXml;
