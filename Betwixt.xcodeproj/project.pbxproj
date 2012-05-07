@@ -484,7 +484,6 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				CB8F0D7A14E85EC4005985C8 /* BTDisplayObjectCreator.h */,
 				22F97A8F14C0EC8B00A6913B /* Betwixt.h */,
 				22DBA63C14DCB29100F0F7C8 /* BTApp+Package.h */,
 				22DBA63714DCAF6200F0F7C8 /* BTApp+Protected.h */,
@@ -493,6 +492,7 @@
 				222199A814D2271D009B764F /* BTCallbacks.h */,
 				22DB8232150AAA290091B648 /* BTDeviceType.h */,
 				22DB8233150AAA290091B648 /* BTDeviceType.m */,
+				CB8F0D7A14E85EC4005985C8 /* BTDisplayObjectCreator.h */,
 				22C85F0814DB784900F9EC07 /* BTDisplayObject.h */,
 				22C85F0914DB784A00F9EC07 /* BTDisplayObject.m */,
 				229B463214D8C439005FC8E9 /* BTHasLocation.h */,
@@ -508,9 +508,6 @@
 				CB7ABCB4147C747C00EC6AEC /* BTModeStack+Package.h */,
 				CBF2AA9E14765EA5000C022D /* BTModeStack.h */,
 				CBF2AA9F14765EA5000C022D /* BTModeStack.m */,
-				CBC4524D14D21700008CC04D /* BTMovie+Package.h */,
-				CBC4524014D20051008CC04D /* BTMovie.h */,
-				CBC4524114D20051008CC04D /* BTMovie.m */,
 				CBE1F0D914A14D9E00B82344 /* BTNode+Package.h */,
 				22C85EB514DB344100F9EC07 /* BTNode+Protected.h */,
 				CBE1F0D714A14D9E00B82344 /* BTNode.h */,
@@ -525,8 +522,8 @@
 				2217E4CC14C79B90000F976A /* BTUpdatable.h */,
 				22518DFD154384A5006E8494 /* Audio */,
 				22448E8914E602FF001CF5CE /* Categories */,
-				CBC4524414D21692008CC04D /* Impl */,
 				22C7178C14C0E0000014B656 /* Resources */,
+				CBC4524414D21692008CC04D /* Movie */,
 				CB24CBBB149FF75C004BAA57 /* Tasks */,
 				2221998C14D0F7DA009B764F /* Utils */,
 			);
@@ -620,8 +617,6 @@
 		22C7178C14C0E0000014B656 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				CBD20D0A14CF693700662068 /* BTMovieResource.h */,
-				CBD20D0B14CF693700662068 /* BTMovieResource.m */,
 				CB65CE3114EC3B1F00534FAE /* BTMultiResourceFactory.h */,
 				22F979DF14C0E23F00A6913B /* BTResource.h */,
 				2221996C14D0EE98009B764F /* BTResource.m */,
@@ -781,15 +776,20 @@
 			name = Integration;
 			sourceTree = "<group>";
 		};
-		CBC4524414D21692008CC04D /* Impl */ = {
+		CBC4524414D21692008CC04D /* Movie */ = {
 			isa = PBXGroup;
 			children = (
+				CBC4524D14D21700008CC04D /* BTMovie+Package.h */,
+				CBC4524014D20051008CC04D /* BTMovie.h */,
+				CBC4524114D20051008CC04D /* BTMovie.m */,
+				CBD20D0A14CF693700662068 /* BTMovieResource.h */,
+				CBD20D0B14CF693700662068 /* BTMovieResource.m */,
 				CBC4524514D216A1008CC04D /* BTMovieResourceKeyframe.h */,
 				CBC4524614D216A1008CC04D /* BTMovieResourceKeyframe.m */,
 				CBC4524714D216A1008CC04D /* BTMovieResourceLayer.h */,
 				CBC4524814D216A1008CC04D /* BTMovieResourceLayer.m */,
 			);
-			name = Impl;
+			name = Movie;
 			sourceTree = "<group>";
 		};
 		DE4A3DAB10FFB0DB00FDA492 /* Products */ = {

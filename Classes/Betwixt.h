@@ -14,7 +14,6 @@
 #import "BTInterpolator.h"
 #import "BTMode.h"
 #import "BTModeStack.h"
-#import "BTMovie.h"
 #import "BTNode.h"
 #import "BTNodeContainer.h"
 #import "BTObject.h"
@@ -30,11 +29,14 @@
 #import "SPView+BTExtensions.h"
 
 // Resources
-#import "BTMovieResource.h"
 #import "BTResource.h"
 #import "BTResourceFactory.h"
 #import "BTResourceManager.h"
 #import "BTTextureResource.h"
+
+// Movie
+#import "BTMovieResource.h"
+#import "BTMovie.h"
 
 // Tasks
 #import "BTAlphaTask.h"
