@@ -1,9 +1,6 @@
 //
 // Betwixt - Copyright 2012 Three Rings Design
 
-
-@class GDataXMLElement;
-
 @interface BTMovieResourceKeyframe : NSObject {
 @public
     int index, duration;

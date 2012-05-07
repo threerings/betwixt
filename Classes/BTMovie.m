@@ -171,10 +171,11 @@ NSString * const BTMovieLastFrame = @"BTMovieLastFrame";
     for (int ii = 0; ii < [_labels count]; ii++) {
         if ([[_labels objectAtIndex:ii] containsObject:label]) return ii;
     }
-    @throw([NSException
-        exceptionWithName:@"UnknownLabel"
-        reason:[NSString stringWithFormat:@"Unknown label '%@'", label]
-        userInfo:nil]);
+    
+    @throw [NSException
+            exceptionWithName:@"UnknownLabel"
+            reason:[NSString stringWithFormat:@"Unknown label '%@'", label]
+            userInfo:nil];
 }
 
 - (RAConnection*)monitorLabel:(NSString*)label withUnit:(RAUnitBlock)slot {
@@ -316,7 +317,7 @@ NSString * const BTMovieLastFrame = @"BTMovieLastFrame";
     [self gotoFrame:newFrame fromSkip:NO overDuration:overDuration];
 }
 
-- (BOOL) isComplete { return NO; }
+- (BOOL)isComplete { return NO; }
 
 - (void)addedToStage:(SPEvent*)event {
     SPDisplayObject* parent = self.parent;

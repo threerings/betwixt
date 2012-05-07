@@ -1,5 +1,5 @@
 //
-// nod - Copyright 2012 Three Rings Design
+// Betwixt - Copyright 2012 Three Rings Design
 
 #import "BTButton.h"
 #import "BTButton+Protected.h"
