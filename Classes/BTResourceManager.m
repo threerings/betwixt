@@ -16,13 +16,13 @@
 
 - (id)initWithManager:(BTResourceManager*)mgr filename:(NSString*)filename;
 - (void)load;
-- (void)loadAsync:(BTCompleteCallback)onComplete onError:(BTErrorCallback)onError;
+- (void)loadAsync:(OOOCompleteCallback)onComplete onError:(OOOErrorCallback)onError;
 
 @property (readonly,strong) NSString* filename;
 @property (readonly,strong) NSArray* resources;
 @property (readonly,strong) NSException* err;
-@property (copy) BTCompleteCallback onComplete;
-@property (copy) BTErrorCallback onError;
+@property (copy) OOOCompleteCallback onComplete;
+@property (copy) OOOErrorCallback onError;
 @end
 
 @implementation BTResourceManager
@@ -50,8 +50,8 @@
     return [[LoadTask alloc] initWithManager:self filename:filename];
 }
 
-- (void)loadResourceFile:(NSString*)filename onComplete:(BTCompleteCallback)onComplete
-                 onError:(BTErrorCallback)onError {
+- (void)loadResourceFile:(NSString*)filename onComplete:(OOOCompleteCallback)onComplete
+                 onError:(OOOErrorCallback)onError {
     LoadTask* task = [self createLoadTask:filename];
     [task loadAsync:onComplete onError:onError];
 }
@@ -236,7 +236,7 @@
     [self complete];
 }
 
-- (void)loadAsync:(BTCompleteCallback)completeBlock onError:(BTErrorCallback)errBlock {
+- (void)loadAsync:(OOOCompleteCallback)completeBlock onError:(OOOErrorCallback)errBlock {
     self.onComplete = completeBlock;
     self.onError = errBlock;
     [self performSelectorInBackground:@selector(loadInBackground) withObject:nil];

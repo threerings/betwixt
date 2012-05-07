@@ -1,8 +1,6 @@
 //
 // Betwixt - Copyright 2012 Three Rings Design
 
-#import "BTCallbacks.h"
-
 @class BTResource;
 @protocol BTMultiResourceFactory;
 @protocol BTResourceFactory;
@@ -20,8 +18,8 @@
 - (void)loadResourceFile:(NSString*)filename;
 
 /// Loads a resource file in the background
-- (void)loadResourceFile:(NSString*)filename onComplete:(BTCompleteCallback)onComplete
-                 onError:(BTErrorCallback)onError;
+- (void)loadResourceFile:(NSString*)filename onComplete:(OOOCompleteCallback)onComplete
+                 onError:(OOOErrorCallback)onError;
 
 - (void)unloadResourceFile:(NSString*)filename;
 - (id)getResource:(NSString*)name;
