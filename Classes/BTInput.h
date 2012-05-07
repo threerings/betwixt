@@ -2,7 +2,7 @@
 // Betwixt - Copyright 2012 Three Rings Design
 
 @class BTMode;
-@protocol BTRegistration;
+@protocol OOORegistration;
 
 @protocol BTTouchListener
 - (BOOL)onTouchStart:(SPTouch*)touch;
@@ -21,7 +21,7 @@
 
 - (void)processTouches:(NSSet*)touches;
 
-- (id<BTRegistration>)registerListener:(id<BTTouchListener>)l;
+- (id<OOORegistration>)registerListener:(id<BTTouchListener>)l;
 - (void)removeAllListeners;
 
 @end

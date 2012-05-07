@@ -17,7 +17,6 @@
 #import "BTNode.h"
 #import "BTNodeContainer.h"
 #import "BTObject.h"
-#import "BTRegistration.h"
 #import "BTSprite.h"
 
 // Categories

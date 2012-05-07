@@ -5,7 +5,6 @@
 #import "BTNode+Protected.h"
 #import "BTDisplayObject.h"
 #import "BTMode.h"
-#import "BTRegistration.h"
 
 @implementation BTDragger
 

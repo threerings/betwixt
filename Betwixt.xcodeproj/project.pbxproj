@@ -25,7 +25,6 @@
 		2221999314D1F021009B764F /* BTApp.h in Headers */ = {isa = PBXBuildFile; fileRef = 2221999114D1F020009B764F /* BTApp.h */; };
 		2221999414D1F021009B764F /* BTApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 2221999214D1F021009B764F /* BTApp.m */; };
 		222199A914D2271D009B764F /* BTCallbacks.h in Headers */ = {isa = PBXBuildFile; fileRef = 222199A814D2271D009B764F /* BTCallbacks.h */; };
-		223663AE15423D5A00F64F21 /* BTRegistration.m in Sources */ = {isa = PBXBuildFile; fileRef = 223663AD15423D5A00F64F21 /* BTRegistration.m */; };
 		22400B1C1544CA5000B00D5E /* BTAudioChannel.h in Headers */ = {isa = PBXBuildFile; fileRef = 22400B1A1544CA5000B00D5E /* BTAudioChannel.h */; };
 		22400B1D1544CA5000B00D5E /* BTAudioChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = 22400B1B1544CA5000B00D5E /* BTAudioChannel.m */; };
 		22400B231544CD1400B00D5E /* BTSoundResource.h in Headers */ = {isa = PBXBuildFile; fileRef = 22400B211544CD1400B00D5E /* BTSoundResource.h */; };
@@ -277,8 +276,6 @@
 		2221999114D1F020009B764F /* BTApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTApp.h; sourceTree = "<group>"; };
 		2221999214D1F021009B764F /* BTApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTApp.m; sourceTree = "<group>"; };
 		222199A814D2271D009B764F /* BTCallbacks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTCallbacks.h; sourceTree = "<group>"; };
-		223663AC15423B7100F64F21 /* BTRegistration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTRegistration.h; sourceTree = "<group>"; };
-		223663AD15423D5A00F64F21 /* BTRegistration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTRegistration.m; sourceTree = "<group>"; };
 		22400B1A1544CA5000B00D5E /* BTAudioChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTAudioChannel.h; sourceTree = "<group>"; };
 		22400B1B1544CA5000B00D5E /* BTAudioChannel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTAudioChannel.m; sourceTree = "<group>"; };
 		22400B211544CD1400B00D5E /* BTSoundResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTSoundResource.h; sourceTree = "<group>"; };
@@ -515,8 +512,6 @@
 				CB366FE4148ECC84004BE08B /* BTNodeContainer.h */,
 				CBB86EDE1476669800D0C57E /* BTObject.h */,
 				CBB86EDF1476669800D0C57E /* BTObject.m */,
-				223663AC15423B7100F64F21 /* BTRegistration.h */,
-				223663AD15423D5A00F64F21 /* BTRegistration.m */,
 				CB24CBD614A116AB004BAA57 /* BTSprite.h */,
 				CB24CBD714A116AB004BAA57 /* BTSprite.m */,
 				2217E4CC14C79B90000F976A /* BTUpdatable.h */,
@@ -1108,7 +1103,6 @@
 				22D46A951538DEB4005BAD6D /* BTDragger.m in Sources */,
 				22D46A9F153CCE79005BAD6D /* BTSignalTask.m in Sources */,
 				22D46AA3153CD2A2005BAD6D /* BTMovieTask.m in Sources */,
-				223663AE15423D5A00F64F21 /* BTRegistration.m in Sources */,
 				22518E04154385F8006E8494 /* BTAudioControls.m in Sources */,
 				22518E0815438628006E8494 /* BTAudioState.m in Sources */,
 				22400B1D1544CA5000B00D5E /* BTAudioChannel.m in Sources */,

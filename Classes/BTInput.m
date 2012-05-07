@@ -2,7 +2,6 @@
 // Betwixt - Copyright 2012 Three Rings Design
 
 #import "BTInput.h"
-#import "BTRegistration.h"
 #import "BTMode.h"
 #import "SPTouchProcessor.h"
 #import "SPTouch_Internal.h"
@@ -22,12 +21,12 @@
     return self;
 }
 
-- (id<BTRegistration>)registerListener:(id<BTTouchListener>)l {
+- (id<OOORegistration>)registerListener:(id<BTTouchListener>)l {
     [_listeners addObject:l];
     
     __weak BTInput* this = self;
     __weak id<BTTouchListener> weakListener = l;
-    return [BTRegistrationFactory withBlock:^{
+    return [OOORegistrationFactory withBlock:^{
         [this removeListener:weakListener];
     }];
 }
