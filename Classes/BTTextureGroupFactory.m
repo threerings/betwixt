@@ -4,7 +4,7 @@
 #import "BTTextureGroupFactory.h"
 #import "BTMultiResourceFactory.h"
 #import "BTTextureResource+Package.h"
-#import "GDataXMLNode+BetwixtExtensions.h"
+#import "GDataXMLNode+BTExtensions.h"
 #import "GDataXMLException.h"
 #import "BTApp.h"
 #import "BTResourceManager.h"

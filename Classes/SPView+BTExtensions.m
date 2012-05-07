@@ -1,9 +1,9 @@
 //
 // Betwixt - Copyright 2012 Three Rings Design
 
-#import "SPView+Extensions.h"
+#import "SPView+BTExtensions.h"
 
-@implementation SPView (OOOExtensions)
+@implementation SPView (BTExtensions)
 
 - (BOOL)useNewSharedEAGLContext {
     EAGLContext *threadContext = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES1 sharegroup:mContext.sharegroup];

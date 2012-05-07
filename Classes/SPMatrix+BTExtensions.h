@@ -3,7 +3,7 @@
 
 #import "SPMatrix.h"
 
-@interface SPMatrix (OOOExtensions)
+@interface SPMatrix (BTExtensions)
 
 @property(nonatomic,assign) float scaleX;
 @property(nonatomic,assign) float scaleY;

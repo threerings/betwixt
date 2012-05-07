@@ -22,12 +22,12 @@
 #import "BTSprite.h"
 
 // Categories
-#import "GDataXMLNode+BetwixtExtensions.h"
-#import "SPDisplayObject+Extensions.h"
-#import "SPMatrix+Extensions.h"
-#import "SPPoint+Extensions.h"
-#import "SPRectangle+Extensions.h"
-#import "SPView+Extensions.h"
+#import "GDataXMLNode+BTExtensions.h"
+#import "SPDisplayObject+BTExtensions.h"
+#import "SPMatrix+BTExtensions.h"
+#import "SPPoint+BTExtensions.h"
+#import "SPRectangle+BTExtensions.h"
+#import "SPView+BTExtensions.h"
 
 // Resources
 #import "BTLoadable.h"

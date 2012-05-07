@@ -7,5 +7,5 @@
     #import "Sparrow.h"
     #import "React.h"
     #import "cooocoa.h"
-    #import "SPDisplayObject+Extensions.h"
+    #import "SPDisplayObject+BTExtensions.h"
 #endif

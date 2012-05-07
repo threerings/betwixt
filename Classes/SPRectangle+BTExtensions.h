@@ -3,7 +3,7 @@
 
 #import "SPRectangle.h"
 
-@interface SPRectangle (OOOExtensions)
+@interface SPRectangle (BTExtensions)
 
 @property(nonatomic,readonly) float centerX;
 @property(nonatomic,readonly) float centerY;

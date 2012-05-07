@@ -7,10 +7,9 @@
 #import "BTResourceFactory.h"
 #import "BTMovie.h"
 #import "BTMovie+Package.h"
-#import "GDataXMLNode+BetwixtExtensions.h"
+#import "GDataXMLNode+BTExtensions.h"
 #import "BTApp.h"
 #import "BTResourceManager.h"
-#import "NSArray+Extensions.h"
 #import "BTDeviceType.h"
 
 @interface BTMovieResourceFactory : NSObject<BTResourceFactory>

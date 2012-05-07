@@ -4,7 +4,7 @@
 #import "BTHasLocation.h"
 #import "SPDisplayObject.h"
 
-@interface SPDisplayObject (OOOExtensions) <BTHasLocation>
+@interface SPDisplayObject (BTExtensions) <BTHasLocation>
 
 /// The coordinates of the object relative to the local coordinates of the parent
 @property (nonatomic,copy) SPPoint* loc;

@@ -1,7 +1,7 @@
 //
 // Betwixt - Copyright 2012 Three Rings Design
 
-@interface GDataXMLElement (BetwixtExtensions)
+@interface GDataXMLElement (BTExtensions)
 
 - (SPPoint*)pointAttribute:(NSString*)name defaultVal:(SPPoint*)defaultVal;
 - (SPPoint*)pointAttribute:(NSString *)name;

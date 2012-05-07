@@ -1,9 +1,9 @@
 //
 // Betwixt - Copyright 2012 Three Rings Design
 
-#import "SPMatrix+Extensions.h"
+#import "SPMatrix+BTExtensions.h"
 
-@implementation SPMatrix (OOOExtensions)
+@implementation SPMatrix (BTExtensions)
 
 - (float)scaleX {
     return sqrtf(mA * mA + mB * mB);

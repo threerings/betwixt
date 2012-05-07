@@ -3,7 +3,7 @@
 
 #import "BTMovieResourceLayer.h"
 #import "BTMovieResourceKeyframe.h"
-#import "GDataXMLNode+BetwixtExtensions.h"
+#import "GDataXMLNode+BTExtensions.h"
 #import "BTDeviceType.h"
 #import "BTApp.h"
 

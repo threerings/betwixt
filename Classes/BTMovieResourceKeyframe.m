@@ -2,8 +2,8 @@
 // Betwixt - Copyright 2012 Three Rings Design
 
 #import "BTMovieResourceKeyframe.h"
-#import "GDataXMLNode+BetwixtExtensions.h"
-#import "SPMatrix+Extensions.h"
+#import "GDataXMLNode+BTExtensions.h"
+#import "SPMatrix+BTExtensions.h"
 
 @implementation BTMovieResourceKeyframe
 - (id)initWithIndex:(int)theIndex xml:(GDataXMLElement*)frameEl {

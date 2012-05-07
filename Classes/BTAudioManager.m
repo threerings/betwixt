@@ -8,7 +8,6 @@
 #import "BTSoundType.h"
 #import "BTAudioState.h"
 #import "BTApp.h"
-#import "NSArray+Extensions.h"
 
 static const double SOUND_PLAYED_RECENTLY_DELTA = 1.0 / 20.0;
 

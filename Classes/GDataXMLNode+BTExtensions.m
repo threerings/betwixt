@@ -1,13 +1,12 @@
 //
 // Betwixt - Copyright 2012 Three Rings Design
 
-#import "GDataXMLNode+BetwixtExtensions.h"
+#import "GDataXMLNode+BTExtensions.h"
 #import "GDataXMLException.h"
-#import "NSString+Extensions.h"
-#import "SPPoint+Extensions.h"
-#import "SPRectangle+Extensions.h"
+#import "SPPoint+BTExtensions.h"
+#import "SPRectangle+BTExtensions.h"
 
-@implementation GDataXMLElement (BetwixtExtensions)
+@implementation GDataXMLElement (BTExtensions)
 
 - (SPPoint*)pointAttribute:(NSString*)name defaultVal:(SPPoint*)defaultVal required:(BOOL)required {
     NSString* attr = [self getAttr:name required:required];

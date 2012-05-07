@@ -6,7 +6,7 @@
 #import "BTMode.h"
 #import "SPTouchProcessor.h"
 #import "SPTouch_Internal.h"
-#import "SPPoint+Extensions.h"
+#import "SPPoint+BTExtensions.h"
 
 @class BTReaction;
 

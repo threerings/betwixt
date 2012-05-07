@@ -1,9 +1,9 @@
 //
 // Betwixt - Copyright 2012 Three Rings Design
 
-#import "SPDisplayObject+Extensions.h"
+#import "SPDisplayObject+BTExtensions.h"
 
-@implementation SPDisplayObject (OOOExtensions)
+@implementation SPDisplayObject (BTExtensions)
 
 - (SPPoint*)loc {
     return [SPPoint pointWithX:self.x y:self.y];

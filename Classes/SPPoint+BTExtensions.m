@@ -1,13 +1,12 @@
 //
 // Betwixt - Copyright 2012 Three Rings Design
 
-#import "SPPoint+Extensions.h"
-#import "NSString+Extensions.h"
+#import "SPPoint+BTExtensions.h"
 #import <math.h>
 
 #define SQ(x) ((x)*(x))
 
-@implementation SPPoint (OOOExtensions)
+@implementation SPPoint (BTExtensions)
 
 + (SPPoint*)pointFromString:(NSString*)string {
     NSArray* items = [string componentsSeparatedByString:@","];

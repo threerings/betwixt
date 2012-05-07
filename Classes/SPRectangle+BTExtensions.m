@@ -1,12 +1,11 @@
 //
 // Betwixt - Copyright 2012 Three Rings Design
 
-#import "SPRectangle+Extensions.h"
-#import "SPPoint+Extensions.h"
-#import "NSString+Extensions.h"
+#import "SPRectangle+BTExtensions.h"
+#import "SPPoint+BTExtensions.h"
 #import <math.h>
 
-@implementation SPRectangle (OOOExtensions)
+@implementation SPRectangle (BTExtensions)
 
 + (SPRectangle*)rectangleFromString:(NSString*)string {
     NSArray* items = [string componentsSeparatedByString:@","];

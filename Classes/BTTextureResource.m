@@ -3,10 +3,10 @@
 
 #import "BTTextureResource.h"
 #import "BTResourceFactory.h"
-#import "GDataXMLNode+BetwixtExtensions.h"
+#import "GDataXMLNode+BTExtensions.h"
 #import "BTApp.h"
 #import "BTResourceManager.h"
-#import "SPRectangle+Extensions.h"
+#import "SPRectangle+BTExtensions.h"
 
 @interface BTTextureFactory : NSObject<BTResourceFactory>
 @end

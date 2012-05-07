@@ -9,8 +9,8 @@
 #import "BTResource.h"
 #import "GDataXMLException.h"
 
-#import "GDataXMLNode+BetwixtExtensions.h"
-#import "SPView+Extensions.h"
+#import "GDataXMLNode+BTExtensions.h"
+#import "SPView+BTExtensions.h"
 
 @interface LoadTask : NSObject
 

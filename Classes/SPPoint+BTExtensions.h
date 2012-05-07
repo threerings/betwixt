@@ -3,7 +3,7 @@
 
 #import "SPPoint.h"
 
-@interface SPPoint (OOOExtensions)
+@interface SPPoint (BTExtensions)
 
 /// Converts a String in the form "x,y" into an SPPoint.
 /// Returns nil if the string could not be converted.
