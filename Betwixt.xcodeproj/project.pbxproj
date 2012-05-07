@@ -91,15 +91,10 @@
 		22F3373D14E89BAC00A17CCB /* GroupTestMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F3373C14E89BAC00A17CCB /* GroupTestMode.m */; };
 		22F979EA14C0E23F00A6913B /* GDataXMLNode+BTExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F979D814C0E23F00A6913B /* GDataXMLNode+BTExtensions.h */; };
 		22F979EB14C0E23F00A6913B /* GDataXMLNode+BTExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F979D914C0E23F00A6913B /* GDataXMLNode+BTExtensions.m */; };
-		22F979EC14C0E23F00A6913B /* BTLoadable.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F979DA14C0E23F00A6913B /* BTLoadable.h */; };
-		22F979ED14C0E23F00A6913B /* BTLoadable.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F979DB14C0E23F00A6913B /* BTLoadable.m */; };
-		22F979EF14C0E23F00A6913B /* BTLoadableBatch.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F979DD14C0E23F00A6913B /* BTLoadableBatch.h */; };
-		22F979F014C0E23F00A6913B /* BTLoadableBatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F979DE14C0E23F00A6913B /* BTLoadableBatch.m */; };
 		22F979F114C0E23F00A6913B /* BTResource.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F979DF14C0E23F00A6913B /* BTResource.h */; };
 		22F979F614C0E23F00A6913B /* BTResourceManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F979E414C0E23F00A6913B /* BTResourceManager.h */; };
 		22F979F714C0E23F00A6913B /* BTResourceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F979E514C0E23F00A6913B /* BTResourceManager.m */; };
 		22F979F914C0E36F00A6913B /* BTResourceFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F979F814C0E36F00A6913B /* BTResourceFactory.h */; };
-		22F979FB14C0E38000A6913B /* BTLoadable+Protected.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F979FA14C0E38000A6913B /* BTLoadable+Protected.h */; };
 		22F97A9014C0EC8B00A6913B /* Betwixt.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F97A8F14C0EC8B00A6913B /* Betwixt.h */; };
 		CB24CBCB14A028F6004BAA57 /* BTLocationTask.h in Headers */ = {isa = PBXBuildFile; fileRef = CB24CBC914A028F5004BAA57 /* BTLocationTask.h */; };
 		CB24CBCC14A028F6004BAA57 /* BTLocationTask.m in Sources */ = {isa = PBXBuildFile; fileRef = CB24CBCA14A028F6004BAA57 /* BTLocationTask.m */; };
@@ -350,15 +345,10 @@
 		22F3373C14E89BAC00A17CCB /* GroupTestMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GroupTestMode.m; path = Integration/GroupTestMode.m; sourceTree = "<group>"; };
 		22F979D814C0E23F00A6913B /* GDataXMLNode+BTExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GDataXMLNode+BTExtensions.h"; sourceTree = "<group>"; };
 		22F979D914C0E23F00A6913B /* GDataXMLNode+BTExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GDataXMLNode+BTExtensions.m"; sourceTree = "<group>"; };
-		22F979DA14C0E23F00A6913B /* BTLoadable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTLoadable.h; sourceTree = "<group>"; };
-		22F979DB14C0E23F00A6913B /* BTLoadable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTLoadable.m; sourceTree = "<group>"; };
-		22F979DD14C0E23F00A6913B /* BTLoadableBatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTLoadableBatch.h; sourceTree = "<group>"; };
-		22F979DE14C0E23F00A6913B /* BTLoadableBatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTLoadableBatch.m; sourceTree = "<group>"; };
 		22F979DF14C0E23F00A6913B /* BTResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTResource.h; sourceTree = "<group>"; };
 		22F979E414C0E23F00A6913B /* BTResourceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTResourceManager.h; sourceTree = "<group>"; };
 		22F979E514C0E23F00A6913B /* BTResourceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTResourceManager.m; sourceTree = "<group>"; };
 		22F979F814C0E36F00A6913B /* BTResourceFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTResourceFactory.h; sourceTree = "<group>"; };
-		22F979FA14C0E38000A6913B /* BTLoadable+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BTLoadable+Protected.h"; sourceTree = "<group>"; };
 		22F97A8F14C0EC8B00A6913B /* Betwixt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Betwixt.h; sourceTree = "<group>"; };
 		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		32CA4F630368D1EE00C91783 /* Betwixt_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Betwixt_Prefix.pch; sourceTree = "<group>"; };
@@ -404,7 +394,7 @@
 		CB72E4A914773ED100F1EC78 /* Square.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Square.h; path = Integration/Square.h; sourceTree = "<group>"; };
 		CB72E4AA14773ED100F1EC78 /* Square.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Square.m; path = Integration/Square.m; sourceTree = "<group>"; };
 		CB7ABCB4147C747C00EC6AEC /* BTModeStack+Package.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BTModeStack+Package.h"; sourceTree = "<group>"; };
-		CB846EED149AE18900B29795 /* react.xcodeproj */ = {isa = PBXFileReference; name = react.xcodeproj; path = ../../../react.xcodeproj; sourceTree = REACT_SRC; };
+		CB846EED149AE18900B29795 /* react.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = react.xcodeproj; path = ../../../react.xcodeproj; sourceTree = REACT_SRC; };
 		CB8F0D7A14E85EC4005985C8 /* BTDisplayObjectCreator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTDisplayObjectCreator.h; sourceTree = "<group>"; };
 		CB8F0D7E14E85EF5005985C8 /* BTJugglerContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTJugglerContainer.h; sourceTree = "<group>"; };
 		CBAD57941475A3A000F7D78E /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Integration/main.m; sourceTree = "<group>"; };
@@ -447,7 +437,7 @@
 		DE3F097711B7BABD009D4DB0 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		DE4A3D7910FFB08200FDA492 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		DE4A3D7E10FFB08B00FDA492 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		DE4A3DA210FFB0D400FDA492 /* Sparrow.xcodeproj */ = {isa = PBXFileReference; path = Sparrow.xcodeproj; sourceTree = SPARROW_SRC; };
+		DE4A3DA210FFB0D400FDA492 /* Sparrow.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Sparrow.xcodeproj; sourceTree = SPARROW_SRC; };
 		DE5C4E6D138ED109004892CA /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -630,11 +620,6 @@
 		22C7178C14C0E0000014B656 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				22F979DA14C0E23F00A6913B /* BTLoadable.h */,
-				22F979DB14C0E23F00A6913B /* BTLoadable.m */,
-				22F979FA14C0E38000A6913B /* BTLoadable+Protected.h */,
-				22F979DD14C0E23F00A6913B /* BTLoadableBatch.h */,
-				22F979DE14C0E23F00A6913B /* BTLoadableBatch.m */,
 				CBD20D0A14CF693700662068 /* BTMovieResource.h */,
 				CBD20D0B14CF693700662068 /* BTMovieResource.m */,
 				CB65CE3114EC3B1F00534FAE /* BTMultiResourceFactory.h */,
@@ -842,12 +827,9 @@
 				CB442C7B14B3851A00EB2821 /* BTInterpolationTask+Protected.h in Headers */,
 				CB395DBE14B3D7F90093E37F /* BTDetachTask.h in Headers */,
 				22F979EA14C0E23F00A6913B /* GDataXMLNode+BTExtensions.h in Headers */,
-				22F979EC14C0E23F00A6913B /* BTLoadable.h in Headers */,
-				22F979EF14C0E23F00A6913B /* BTLoadableBatch.h in Headers */,
 				22F979F114C0E23F00A6913B /* BTResource.h in Headers */,
 				22F979F614C0E23F00A6913B /* BTResourceManager.h in Headers */,
 				22F979F914C0E36F00A6913B /* BTResourceFactory.h in Headers */,
-				22F979FB14C0E38000A6913B /* BTLoadable+Protected.h in Headers */,
 				22F97A9014C0EC8B00A6913B /* Betwixt.h in Headers */,
 				2217E4CD14C79B90000F976A /* BTUpdatable.h in Headers */,
 				221B6F9814C8BC3200747A18 /* BTMode+Protected.h in Headers */,
@@ -1092,8 +1074,6 @@
 				CBE1F0E614A1707500B82344 /* BTBlockTask.m in Sources */,
 				CB395DBF14B3D7F90093E37F /* BTDetachTask.m in Sources */,
 				22F979EB14C0E23F00A6913B /* GDataXMLNode+BTExtensions.m in Sources */,
-				22F979ED14C0E23F00A6913B /* BTLoadable.m in Sources */,
-				22F979F014C0E23F00A6913B /* BTLoadableBatch.m in Sources */,
 				22F979F714C0E23F00A6913B /* BTResourceManager.m in Sources */,
 				CBD20D0914CF68D600662068 /* BTTextureResource.m in Sources */,
 				CBD20D0D14CF693700662068 /* BTMovieResource.m in Sources */,

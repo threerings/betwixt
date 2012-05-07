@@ -30,8 +30,6 @@
 #import "SPView+BTExtensions.h"
 
 // Resources
-#import "BTLoadable.h"
-#import "BTLoadableBatch.h"
 #import "BTMovieResource.h"
 #import "BTResource.h"
 #import "BTResourceFactory.h"
