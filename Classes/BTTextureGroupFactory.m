@@ -4,12 +4,11 @@
 #import "BTTextureGroupFactory.h"
 #import "BTMultiResourceFactory.h"
 #import "BTTextureResource+Package.h"
-#import "GDataXMLNode+Extensions.h"
+#import "GDataXMLNode+BetwixtExtensions.h"
 #import "GDataXMLException.h"
 #import "BTApp.h"
 #import "BTResourceManager.h"
 #import "BTDeviceType.h"
-#import "BTUtils.h"
 
 
 @implementation BTTextureGroupFactory {
@@ -41,7 +40,7 @@
         } else if (b == BTApp.deviceType) {
             return 1;
         } else {
-            return BTCompareInts(a.screenWidth * a.screenHeight, b.screenWidth * b.screenHeight);
+            return OOOCompareInts(a.screenWidth * a.screenHeight, b.screenWidth * b.screenHeight);
         }
     }];
     

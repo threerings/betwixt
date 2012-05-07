@@ -4,6 +4,6 @@
 #import "BTSoundType.h"
 
 @implementation BTSoundType
-BT_ENUM(SFX);
-BT_ENUM(MUSIC);
+OOO_ENUM(SFX);
+OOO_ENUM(MUSIC);
 @end

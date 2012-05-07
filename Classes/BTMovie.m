@@ -10,7 +10,6 @@
 #import "BTTextureResource.h"
 #import "BTMovieResourceLayer.h"
 #import "BTJugglerContainer.h"
-#import "BTUtils.h"
 
 #define NO_FRAME -1
 
@@ -48,7 +47,7 @@ NSString * const BTMovieLastFrame = @"BTMovieLastFrame";
         [displays addObject:emptySprite];
     }
     [layer->keyframesForSymbol enumerateKeysAndObjectsUsingBlock:^(id symbol, NSArray* frameIndices, BOOL *stop) {
-        NSString* symbolName = BTNSNullToNil(symbol);
+        NSString* symbolName = OOONSNullToNil(symbol);
         SPDisplayObject* display = nil;
         if (symbolName == nil) {
             display = emptySprite;

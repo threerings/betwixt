@@ -1,7 +1,11 @@
+//
+// Betwixt - Copyright 2012 Three Rings Design
+
 #ifdef __OBJC__
     #import <Foundation/Foundation.h>
     #import <UIKit/UIKit.h>
-    #import "Sparrow.h" 
+    #import "Sparrow.h"
     #import "React.h"
+    #import "cooocoa.h"
     #import "SPDisplayObject+Extensions.h"
 #endif

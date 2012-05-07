@@ -7,7 +7,7 @@
 #import "BTResourceFactory.h"
 #import "BTMovie.h"
 #import "BTMovie+Package.h"
-#import "GDataXMLNode+Extensions.h"
+#import "GDataXMLNode+BetwixtExtensions.h"
 #import "BTApp.h"
 #import "BTResourceManager.h"
 #import "NSArray+Extensions.h"

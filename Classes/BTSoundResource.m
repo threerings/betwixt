@@ -4,7 +4,7 @@
 #import "BTSoundResource.h"
 #import "BTResourceFactory.h"
 #import "BTSoundType.h"
-#import "GDataXMLNode+Extensions.h"
+#import "GDataXMLNode+BetwixtExtensions.h"
 #import "BTApp.h"
 #import "BTResourceManager.h"
 

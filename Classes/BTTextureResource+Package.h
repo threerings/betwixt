@@ -3,7 +3,7 @@
 
 #import "BTTextureResource.h"
 
-#import "GDataXMLNode+Extensions.h"
+@class GDataXMLElement;
 
 @interface BTTextureResource (package)
 - (id)initFromAtlas:(SPTexture*)atlas withXml:(GDataXMLElement*)xml;

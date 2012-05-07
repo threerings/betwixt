@@ -3,8 +3,7 @@
 
 #import "BTMovieResourceLayer.h"
 #import "BTMovieResourceKeyframe.h"
-#import "GDataXMLNode+Extensions.h"
-#import "BTUtils.h"
+#import "GDataXMLNode+BetwixtExtensions.h"
 #import "BTDeviceType.h"
 #import "BTApp.h"
 
@@ -55,7 +54,7 @@
     keyframesForSymbol = [[NSMutableDictionary alloc] init];
     int kfnum = 0;
     for (BTMovieResourceKeyframe* kf in keyframes) {
-        id key = BTNilToNSNull(kf->libraryItem);
+        id key = OOONilToNSNull(kf->libraryItem);
         NSMutableArray* symbolIndices = [keyframesForSymbol objectForKey:key];
         if (symbolIndices == nil) {
             symbolIndices = [[NSMutableArray alloc] init];

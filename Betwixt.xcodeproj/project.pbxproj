@@ -25,10 +25,6 @@
 		2221999314D1F021009B764F /* BTApp.h in Headers */ = {isa = PBXBuildFile; fileRef = 2221999114D1F020009B764F /* BTApp.h */; };
 		2221999414D1F021009B764F /* BTApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 2221999214D1F021009B764F /* BTApp.m */; };
 		222199A914D2271D009B764F /* BTCallbacks.h in Headers */ = {isa = PBXBuildFile; fileRef = 222199A814D2271D009B764F /* BTCallbacks.h */; };
-		222199F414D24660009B764F /* BTRandoms.h in Headers */ = {isa = PBXBuildFile; fileRef = 222199F214D24660009B764F /* BTRandoms.h */; };
-		222199F514D24660009B764F /* BTRandoms.m in Sources */ = {isa = PBXBuildFile; fileRef = 222199F314D24660009B764F /* BTRandoms.m */; };
-		2225C36814DDF1B800962B1B /* BTEnum.h in Headers */ = {isa = PBXBuildFile; fileRef = 2225C36614DDF1B800962B1B /* BTEnum.h */; };
-		2225C36914DDF1B800962B1B /* BTEnum.m in Sources */ = {isa = PBXBuildFile; fileRef = 2225C36714DDF1B800962B1B /* BTEnum.m */; };
 		223663AE15423D5A00F64F21 /* BTRegistration.m in Sources */ = {isa = PBXBuildFile; fileRef = 223663AD15423D5A00F64F21 /* BTRegistration.m */; };
 		22400B1C1544CA5000B00D5E /* BTAudioChannel.h in Headers */ = {isa = PBXBuildFile; fileRef = 22400B1A1544CA5000B00D5E /* BTAudioChannel.h */; };
 		22400B1D1544CA5000B00D5E /* BTAudioChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = 22400B1B1544CA5000B00D5E /* BTAudioChannel.m */; };
@@ -50,9 +46,6 @@
 		22448E7414E5D4C1001CF5CE /* PlayMovieMode.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC4525F14D22F04008CC04D /* PlayMovieMode.m */; };
 		22448E7514E5D4D5001CF5CE /* RepeatingMode.m in Sources */ = {isa = PBXBuildFile; fileRef = CB69E37414D8CADE00E7C18D /* RepeatingMode.m */; };
 		22448E7614E5D4DD001CF5CE /* Square.m in Sources */ = {isa = PBXBuildFile; fileRef = CB72E4AA14773ED100F1EC78 /* Square.m */; };
-		22448E8C14E603DF001CF5CE /* NSArray+Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 22448E8A14E603DF001CF5CE /* NSArray+Extensions.h */; };
-		22448E8D14E603DF001CF5CE /* NSArray+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 22448E8B14E603DF001CF5CE /* NSArray+Extensions.m */; };
-		22448EA514E744AE001CF5CE /* BTMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 22448EA414E744AE001CF5CE /* BTMacros.h */; };
 		2244B7B215225856001DEACA /* SPPointI.h in Headers */ = {isa = PBXBuildFile; fileRef = 2244B7B015225855001DEACA /* SPPointI.h */; };
 		2244B7B315225856001DEACA /* SPPointI.m in Sources */ = {isa = PBXBuildFile; fileRef = 2244B7B115225856001DEACA /* SPPointI.m */; };
 		22518E03154385F8006E8494 /* BTAudioControls.h in Headers */ = {isa = PBXBuildFile; fileRef = 22518E01154385F8006E8494 /* BTAudioControls.h */; };
@@ -62,8 +55,6 @@
 		22608BE11505AC4E00CCE0A5 /* MovieTestMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 22608BE01505AC4E00CCE0A5 /* MovieTestMode.m */; };
 		22608C6D1505C2D300CCE0A5 /* SPView+Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 22608C6B1505C2D300CCE0A5 /* SPView+Extensions.h */; };
 		22608C6E1505C2D300CCE0A5 /* SPView+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 22608C6C1505C2D300CCE0A5 /* SPView+Extensions.m */; };
-		227339651534F3BE004719BF /* NSMutableArray+Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 227339631534F3BE004719BF /* NSMutableArray+Extensions.h */; };
-		227339661534F3BE004719BF /* NSMutableArray+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 227339641534F3BE004719BF /* NSMutableArray+Extensions.m */; };
 		2290D8291502C99D009EED3D /* SPMatrix+Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 2290D8271502C99D009EED3D /* SPMatrix+Extensions.h */; };
 		2290D82A1502C99D009EED3D /* SPMatrix+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2290D8281502C99D009EED3D /* SPMatrix+Extensions.m */; };
 		22955A3F14EA1EB1006E5BEE /* LeakTestMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 22955A3E14EA1EB1006E5BEE /* LeakTestMode.m */; };
@@ -75,14 +66,7 @@
 		229B463314D8C439005FC8E9 /* BTHasLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = 229B463214D8C439005FC8E9 /* BTHasLocation.h */; };
 		229B463614D8C525005FC8E9 /* SPDisplayObject+Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 229B463414D8C525005FC8E9 /* SPDisplayObject+Extensions.h */; };
 		229B463714D8C525005FC8E9 /* SPDisplayObject+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 229B463514D8C525005FC8E9 /* SPDisplayObject+Extensions.m */; };
-		22BB62BF152F77D7001247D3 /* BTWeightedArray.h in Headers */ = {isa = PBXBuildFile; fileRef = 22BB62BD152F77D7001247D3 /* BTWeightedArray.h */; };
-		22BB62C0152F77D7001247D3 /* BTWeightedArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BB62BE152F77D7001247D3 /* BTWeightedArray.m */; };
-		22BC09A71512C3F0006F56DA /* BTFloatRange.h in Headers */ = {isa = PBXBuildFile; fileRef = 22BC09A51512C3F0006F56DA /* BTFloatRange.h */; };
-		22BC09A81512C3F0006F56DA /* BTFloatRange.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BC09A61512C3F0006F56DA /* BTFloatRange.m */; };
-		22BC09AB1512C4E4006F56DA /* BTIntRange.h in Headers */ = {isa = PBXBuildFile; fileRef = 22BC09A91512C4E4006F56DA /* BTIntRange.h */; };
-		22BC09AC1512C4E4006F56DA /* BTIntRange.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BC09AA1512C4E4006F56DA /* BTIntRange.m */; };
-		22C5353514F5C96D00B7958F /* UIColor+Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 22C5353314F5C96D00B7958F /* UIColor+Extensions.h */; };
-		22C5353614F5C96D00B7958F /* UIColor+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C5353414F5C96D00B7958F /* UIColor+Extensions.m */; };
+		229E28641557505A001452E5 /* libcooocoa.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 229E285F1557503C001452E5 /* libcooocoa.a */; };
 		22C85EAD14DB225400F9EC07 /* BTPoints.h in Headers */ = {isa = PBXBuildFile; fileRef = 22C85EAB14DB225400F9EC07 /* BTPoints.h */; };
 		22C85EAE14DB225400F9EC07 /* BTPoints.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C85EAC14DB225400F9EC07 /* BTPoints.m */; };
 		22C85EB614DB344100F9EC07 /* BTNode+Protected.h in Headers */ = {isa = PBXBuildFile; fileRef = 22C85EB514DB344100F9EC07 /* BTNode+Protected.h */; };
@@ -94,10 +78,6 @@
 		22D46A9F153CCE79005BAD6D /* BTSignalTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D46A9D153CCE79005BAD6D /* BTSignalTask.m */; };
 		22D46AA2153CD2A2005BAD6D /* BTMovieTask.h in Headers */ = {isa = PBXBuildFile; fileRef = 22D46AA0153CD2A1005BAD6D /* BTMovieTask.h */; };
 		22D46AA3153CD2A2005BAD6D /* BTMovieTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D46AA1153CD2A2005BAD6D /* BTMovieTask.m */; };
-		22D46AA6153CDC8F005BAD6D /* BTCollections.h in Headers */ = {isa = PBXBuildFile; fileRef = 22D46AA4153CDC8F005BAD6D /* BTCollections.h */; };
-		22D46AA7153CDC8F005BAD6D /* BTCollections.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D46AA5153CDC8F005BAD6D /* BTCollections.m */; };
-		22DB82181509A9490091B648 /* NSString+Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 22DB82161509A9490091B648 /* NSString+Extensions.h */; };
-		22DB82191509A9490091B648 /* NSString+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DB82171509A9490091B648 /* NSString+Extensions.m */; };
 		22DB8234150AAA290091B648 /* BTDeviceType.h in Headers */ = {isa = PBXBuildFile; fileRef = 22DB8232150AAA290091B648 /* BTDeviceType.h */; };
 		22DB8235150AAA290091B648 /* BTDeviceType.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DB8233150AAA290091B648 /* BTDeviceType.m */; };
 		22DBA63814DCAF6200F0F7C8 /* BTApp+Protected.h in Headers */ = {isa = PBXBuildFile; fileRef = 22DBA63714DCAF6200F0F7C8 /* BTApp+Protected.h */; };
@@ -109,12 +89,8 @@
 		22E0A762152A4404009FDE09 /* BTTouchEventSignals.h in Headers */ = {isa = PBXBuildFile; fileRef = 22E0A760152A4404009FDE09 /* BTTouchEventSignals.h */; };
 		22E0A763152A4404009FDE09 /* BTTouchEventSignals.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E0A761152A4404009FDE09 /* BTTouchEventSignals.m */; };
 		22F3373D14E89BAC00A17CCB /* GroupTestMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F3373C14E89BAC00A17CCB /* GroupTestMode.m */; };
-		22F979E614C0E23F00A6913B /* GDataXMLException.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F979D414C0E23F00A6913B /* GDataXMLException.h */; };
-		22F979E714C0E23F00A6913B /* GDataXMLException.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F979D514C0E23F00A6913B /* GDataXMLException.m */; };
-		22F979E814C0E23F00A6913B /* GDataXMLNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F979D614C0E23F00A6913B /* GDataXMLNode.h */; };
-		22F979E914C0E23F00A6913B /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F979D714C0E23F00A6913B /* GDataXMLNode.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		22F979EA14C0E23F00A6913B /* GDataXMLNode+Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F979D814C0E23F00A6913B /* GDataXMLNode+Extensions.h */; };
-		22F979EB14C0E23F00A6913B /* GDataXMLNode+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F979D914C0E23F00A6913B /* GDataXMLNode+Extensions.m */; };
+		22F979EA14C0E23F00A6913B /* GDataXMLNode+BetwixtExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F979D814C0E23F00A6913B /* GDataXMLNode+BetwixtExtensions.h */; };
+		22F979EB14C0E23F00A6913B /* GDataXMLNode+BetwixtExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F979D914C0E23F00A6913B /* GDataXMLNode+BetwixtExtensions.m */; };
 		22F979EC14C0E23F00A6913B /* BTLoadable.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F979DA14C0E23F00A6913B /* BTLoadable.h */; };
 		22F979ED14C0E23F00A6913B /* BTLoadable.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F979DB14C0E23F00A6913B /* BTLoadable.m */; };
 		22F979EF14C0E23F00A6913B /* BTLoadableBatch.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F979DD14C0E23F00A6913B /* BTLoadableBatch.h */; };
@@ -195,8 +171,6 @@
 		CBC4524E14D21700008CC04D /* BTMovie+Package.h in Headers */ = {isa = PBXBuildFile; fileRef = CBC4524D14D21700008CC04D /* BTMovie+Package.h */; };
 		CBC88FC115459209005553D9 /* iPad in Resources */ = {isa = PBXBuildFile; fileRef = CBC88FBF15459209005553D9 /* iPad */; };
 		CBC88FC215459209005553D9 /* iPhone in Resources */ = {isa = PBXBuildFile; fileRef = CBC88FC015459209005553D9 /* iPhone */; };
-		CBC9AC5814E9A4F800E1F9F7 /* BTUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = CBC9AC5614E9A4F800E1F9F7 /* BTUtils.h */; };
-		CBC9AC5914E9A4F800E1F9F7 /* BTUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC9AC5714E9A4F800E1F9F7 /* BTUtils.m */; };
 		CBD20D0814CF68D600662068 /* BTTextureResource.h in Headers */ = {isa = PBXBuildFile; fileRef = CBD20D0614CF68D600662068 /* BTTextureResource.h */; };
 		CBD20D0914CF68D600662068 /* BTTextureResource.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD20D0714CF68D600662068 /* BTTextureResource.m */; };
 		CBD20D0C14CF693700662068 /* BTMovieResource.h in Headers */ = {isa = PBXBuildFile; fileRef = CBD20D0A14CF693700662068 /* BTMovieResource.h */; };
@@ -215,6 +189,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		229E285E1557503C001452E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 229E28561557503B001452E5 /* cooocoa.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 229E27B11557473D001452E5;
+			remoteInfo = cooocoa;
+		};
+		229E28601557503C001452E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 229E28561557503B001452E5 /* cooocoa.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 229E27C11557473D001452E5;
+			remoteInfo = cooocoaTests;
+		};
+		229E286215575052001452E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 229E28561557503B001452E5 /* cooocoa.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 229E27B01557473D001452E5;
+			remoteInfo = cooocoa;
+		};
 		22C7176E14C0D7C80014B656 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CB846EED149AE18900B29795 /* react.xcodeproj */;
@@ -228,6 +223,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = DEFE4BC1101B317600E22471;
 			remoteInfo = Sparrow;
+		};
+		22E7697F15575D26006E96DB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CBB8CB901475A06400445316;
+			remoteInfo = Betwixt;
 		};
 		CB24CBE614A119EB004BAA57 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -280,10 +282,6 @@
 		2221999114D1F020009B764F /* BTApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTApp.h; sourceTree = "<group>"; };
 		2221999214D1F021009B764F /* BTApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTApp.m; sourceTree = "<group>"; };
 		222199A814D2271D009B764F /* BTCallbacks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTCallbacks.h; sourceTree = "<group>"; };
-		222199F214D24660009B764F /* BTRandoms.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTRandoms.h; sourceTree = "<group>"; };
-		222199F314D24660009B764F /* BTRandoms.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTRandoms.m; sourceTree = "<group>"; };
-		2225C36614DDF1B800962B1B /* BTEnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTEnum.h; sourceTree = "<group>"; };
-		2225C36714DDF1B800962B1B /* BTEnum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTEnum.m; sourceTree = "<group>"; };
 		223663AC15423B7100F64F21 /* BTRegistration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTRegistration.h; sourceTree = "<group>"; };
 		223663AD15423D5A00F64F21 /* BTRegistration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTRegistration.m; sourceTree = "<group>"; };
 		22400B1A1544CA5000B00D5E /* BTAudioChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTAudioChannel.h; sourceTree = "<group>"; };
@@ -303,9 +301,6 @@
 		22448E2814E4A7A0001CF5CE /* SPPoint+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SPPoint+Extensions.m"; sourceTree = "<group>"; };
 		22448E2B14E4A931001CF5CE /* SPRectangle+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SPRectangle+Extensions.h"; sourceTree = "<group>"; };
 		22448E2C14E4A933001CF5CE /* SPRectangle+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SPRectangle+Extensions.m"; sourceTree = "<group>"; };
-		22448E8A14E603DF001CF5CE /* NSArray+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Extensions.h"; sourceTree = "<group>"; };
-		22448E8B14E603DF001CF5CE /* NSArray+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Extensions.m"; sourceTree = "<group>"; };
-		22448EA414E744AE001CF5CE /* BTMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTMacros.h; sourceTree = "<group>"; };
 		2244B7B015225855001DEACA /* SPPointI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPPointI.h; sourceTree = "<group>"; };
 		2244B7B115225856001DEACA /* SPPointI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPPointI.m; sourceTree = "<group>"; };
 		22518E01154385F8006E8494 /* BTAudioControls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTAudioControls.h; sourceTree = "<group>"; };
@@ -316,8 +311,6 @@
 		22608BE01505AC4E00CCE0A5 /* MovieTestMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MovieTestMode.m; path = Integration/MovieTestMode.m; sourceTree = "<group>"; };
 		22608C6B1505C2D300CCE0A5 /* SPView+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SPView+Extensions.h"; sourceTree = "<group>"; };
 		22608C6C1505C2D300CCE0A5 /* SPView+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SPView+Extensions.m"; sourceTree = "<group>"; };
-		227339631534F3BE004719BF /* NSMutableArray+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+Extensions.h"; sourceTree = "<group>"; };
-		227339641534F3BE004719BF /* NSMutableArray+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+Extensions.m"; sourceTree = "<group>"; };
 		2290D8271502C99D009EED3D /* SPMatrix+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SPMatrix+Extensions.h"; sourceTree = "<group>"; };
 		2290D8281502C99D009EED3D /* SPMatrix+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SPMatrix+Extensions.m"; sourceTree = "<group>"; };
 		22955A3D14EA1EB1006E5BEE /* LeakTestMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LeakTestMode.h; path = Integration/LeakTestMode.h; sourceTree = "<group>"; };
@@ -330,14 +323,7 @@
 		229B463214D8C439005FC8E9 /* BTHasLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTHasLocation.h; sourceTree = "<group>"; };
 		229B463414D8C525005FC8E9 /* SPDisplayObject+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SPDisplayObject+Extensions.h"; sourceTree = "<group>"; };
 		229B463514D8C525005FC8E9 /* SPDisplayObject+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SPDisplayObject+Extensions.m"; sourceTree = "<group>"; };
-		22BB62BD152F77D7001247D3 /* BTWeightedArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTWeightedArray.h; sourceTree = "<group>"; };
-		22BB62BE152F77D7001247D3 /* BTWeightedArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTWeightedArray.m; sourceTree = "<group>"; };
-		22BC09A51512C3F0006F56DA /* BTFloatRange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTFloatRange.h; sourceTree = "<group>"; };
-		22BC09A61512C3F0006F56DA /* BTFloatRange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTFloatRange.m; sourceTree = "<group>"; };
-		22BC09A91512C4E4006F56DA /* BTIntRange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTIntRange.h; sourceTree = "<group>"; };
-		22BC09AA1512C4E4006F56DA /* BTIntRange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTIntRange.m; sourceTree = "<group>"; };
-		22C5353314F5C96D00B7958F /* UIColor+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Extensions.h"; sourceTree = "<group>"; };
-		22C5353414F5C96D00B7958F /* UIColor+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Extensions.m"; sourceTree = "<group>"; };
+		229E28561557503B001452E5 /* cooocoa.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cooocoa.xcodeproj; path = ../cooocoa/cooocoa.xcodeproj; sourceTree = "<group>"; };
 		22C85EAB14DB225400F9EC07 /* BTPoints.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTPoints.h; sourceTree = "<group>"; };
 		22C85EAC14DB225400F9EC07 /* BTPoints.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTPoints.m; sourceTree = "<group>"; };
 		22C85EB514DB344100F9EC07 /* BTNode+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BTNode+Protected.h"; sourceTree = "<group>"; };
@@ -349,10 +335,6 @@
 		22D46A9D153CCE79005BAD6D /* BTSignalTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTSignalTask.m; sourceTree = "<group>"; };
 		22D46AA0153CD2A1005BAD6D /* BTMovieTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTMovieTask.h; sourceTree = "<group>"; };
 		22D46AA1153CD2A2005BAD6D /* BTMovieTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTMovieTask.m; sourceTree = "<group>"; };
-		22D46AA4153CDC8F005BAD6D /* BTCollections.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTCollections.h; sourceTree = "<group>"; };
-		22D46AA5153CDC8F005BAD6D /* BTCollections.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTCollections.m; sourceTree = "<group>"; };
-		22DB82161509A9490091B648 /* NSString+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extensions.h"; sourceTree = "<group>"; };
-		22DB82171509A9490091B648 /* NSString+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extensions.m"; sourceTree = "<group>"; };
 		22DB8232150AAA290091B648 /* BTDeviceType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTDeviceType.h; sourceTree = "<group>"; };
 		22DB8233150AAA290091B648 /* BTDeviceType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTDeviceType.m; sourceTree = "<group>"; };
 		22DBA63714DCAF6200F0F7C8 /* BTApp+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BTApp+Protected.h"; sourceTree = "<group>"; };
@@ -366,12 +348,8 @@
 		22E0A761152A4404009FDE09 /* BTTouchEventSignals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTTouchEventSignals.m; sourceTree = "<group>"; };
 		22F3373B14E89BAC00A17CCB /* GroupTestMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GroupTestMode.h; path = Integration/GroupTestMode.h; sourceTree = "<group>"; };
 		22F3373C14E89BAC00A17CCB /* GroupTestMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GroupTestMode.m; path = Integration/GroupTestMode.m; sourceTree = "<group>"; };
-		22F979D414C0E23F00A6913B /* GDataXMLException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataXMLException.h; sourceTree = "<group>"; };
-		22F979D514C0E23F00A6913B /* GDataXMLException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDataXMLException.m; sourceTree = "<group>"; };
-		22F979D614C0E23F00A6913B /* GDataXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataXMLNode.h; sourceTree = "<group>"; };
-		22F979D714C0E23F00A6913B /* GDataXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDataXMLNode.m; sourceTree = "<group>"; };
-		22F979D814C0E23F00A6913B /* GDataXMLNode+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GDataXMLNode+Extensions.h"; sourceTree = "<group>"; };
-		22F979D914C0E23F00A6913B /* GDataXMLNode+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GDataXMLNode+Extensions.m"; sourceTree = "<group>"; };
+		22F979D814C0E23F00A6913B /* GDataXMLNode+BetwixtExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GDataXMLNode+BetwixtExtensions.h"; sourceTree = "<group>"; };
+		22F979D914C0E23F00A6913B /* GDataXMLNode+BetwixtExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GDataXMLNode+BetwixtExtensions.m"; sourceTree = "<group>"; };
 		22F979DA14C0E23F00A6913B /* BTLoadable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTLoadable.h; sourceTree = "<group>"; };
 		22F979DB14C0E23F00A6913B /* BTLoadable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTLoadable.m; sourceTree = "<group>"; };
 		22F979DD14C0E23F00A6913B /* BTLoadableBatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTLoadableBatch.h; sourceTree = "<group>"; };
@@ -449,8 +427,6 @@
 		CBC4525F14D22F04008CC04D /* PlayMovieMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayMovieMode.m; path = Integration/PlayMovieMode.m; sourceTree = "<group>"; };
 		CBC88FBF15459209005553D9 /* iPad */ = {isa = PBXFileReference; lastKnownFileType = folder; name = iPad; path = Exported/iPad; sourceTree = "<group>"; };
 		CBC88FC015459209005553D9 /* iPhone */ = {isa = PBXFileReference; lastKnownFileType = folder; name = iPhone; path = Exported/iPhone; sourceTree = "<group>"; };
-		CBC9AC5614E9A4F800E1F9F7 /* BTUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTUtils.h; sourceTree = "<group>"; };
-		CBC9AC5714E9A4F800E1F9F7 /* BTUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTUtils.m; sourceTree = "<group>"; };
 		CBD20D0614CF68D600662068 /* BTTextureResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTTextureResource.h; sourceTree = "<group>"; };
 		CBD20D0714CF68D600662068 /* BTTextureResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTTextureResource.m; sourceTree = "<group>"; };
 		CBD20D0A14CF693700662068 /* BTMovieResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTMovieResource.h; sourceTree = "<group>"; };
@@ -497,6 +473,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				229E28641557505A001452E5 /* libcooocoa.a in Frameworks */,
 				CB323C6114A11A530039A2F1 /* libreact.a in Frameworks */,
 				CBAD578D1475A28C00F7D78E /* libSparrow.a in Frameworks */,
 				CB602C711476603800E52CE2 /* libz.dylib in Frameworks */,
@@ -581,36 +558,21 @@
 				220F63A8152E878B0051B383 /* BTButton+Protected.h */,
 				220F63A6152E878B0051B383 /* BTButton.h */,
 				220F63A7152E878B0051B383 /* BTButton.m */,
-				22D46AA4153CDC8F005BAD6D /* BTCollections.h */,
-				22D46AA5153CDC8F005BAD6D /* BTCollections.m */,
 				220F63A9152E878B0051B383 /* BTDisplayObjectButton.h */,
 				220F63AA152E878B0051B383 /* BTDisplayObjectButton.m */,
 				22D46A921538DEB4005BAD6D /* BTDragger.h */,
 				22D46A931538DEB4005BAD6D /* BTDragger.m */,
-				2225C36614DDF1B800962B1B /* BTEnum.h */,
-				2225C36714DDF1B800962B1B /* BTEnum.m */,
 				22E0A75E152A3837009FDE09 /* BTEventSignal+Protected.h */,
 				22E0A753152A311A009FDE09 /* BTEventSignal.h */,
 				22E0A754152A311A009FDE09 /* BTEventSignal.m */,
-				22BC09A51512C3F0006F56DA /* BTFloatRange.h */,
-				22BC09A61512C3F0006F56DA /* BTFloatRange.m */,
-				22BC09A91512C4E4006F56DA /* BTIntRange.h */,
-				22BC09AA1512C4E4006F56DA /* BTIntRange.m */,
 				2221998D14D0F809009B764F /* BTLoadingMode.h */,
 				2221998E14D0F809009B764F /* BTLoadingMode.m */,
-				22448EA414E744AE001CF5CE /* BTMacros.h */,
 				220F63AB152E878B0051B383 /* BTMovieButton.h */,
 				220F63AC152E878B0051B383 /* BTMovieButton.m */,
 				22C85EAB14DB225400F9EC07 /* BTPoints.h */,
 				22C85EAC14DB225400F9EC07 /* BTPoints.m */,
-				222199F214D24660009B764F /* BTRandoms.h */,
-				222199F314D24660009B764F /* BTRandoms.m */,
 				22E0A760152A4404009FDE09 /* BTTouchEventSignals.h */,
 				22E0A761152A4404009FDE09 /* BTTouchEventSignals.m */,
-				CBC9AC5614E9A4F800E1F9F7 /* BTUtils.h */,
-				CBC9AC5714E9A4F800E1F9F7 /* BTUtils.m */,
-				22BB62BD152F77D7001247D3 /* BTWeightedArray.h */,
-				22BB62BE152F77D7001247D3 /* BTWeightedArray.m */,
 				2244B7B015225855001DEACA /* SPPointI.h */,
 				2244B7B115225856001DEACA /* SPPointI.m */,
 			);
@@ -620,14 +582,8 @@
 		22448E8914E602FF001CF5CE /* Categories */ = {
 			isa = PBXGroup;
 			children = (
-				22F979D814C0E23F00A6913B /* GDataXMLNode+Extensions.h */,
-				22F979D914C0E23F00A6913B /* GDataXMLNode+Extensions.m */,
-				22448E8A14E603DF001CF5CE /* NSArray+Extensions.h */,
-				22448E8B14E603DF001CF5CE /* NSArray+Extensions.m */,
-				227339631534F3BE004719BF /* NSMutableArray+Extensions.h */,
-				227339641534F3BE004719BF /* NSMutableArray+Extensions.m */,
-				22DB82161509A9490091B648 /* NSString+Extensions.h */,
-				22DB82171509A9490091B648 /* NSString+Extensions.m */,
+				22F979D814C0E23F00A6913B /* GDataXMLNode+BetwixtExtensions.h */,
+				22F979D914C0E23F00A6913B /* GDataXMLNode+BetwixtExtensions.m */,
 				229B463414D8C525005FC8E9 /* SPDisplayObject+Extensions.h */,
 				229B463514D8C525005FC8E9 /* SPDisplayObject+Extensions.m */,
 				2290D8271502C99D009EED3D /* SPMatrix+Extensions.h */,
@@ -638,8 +594,6 @@
 				22448E2C14E4A933001CF5CE /* SPRectangle+Extensions.m */,
 				22608C6B1505C2D300CCE0A5 /* SPView+Extensions.h */,
 				22608C6C1505C2D300CCE0A5 /* SPView+Extensions.m */,
-				22C5353314F5C96D00B7958F /* UIColor+Extensions.h */,
-				22C5353414F5C96D00B7958F /* UIColor+Extensions.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -664,13 +618,18 @@
 			name = Audio;
 			sourceTree = "<group>";
 		};
+		229E28571557503B001452E5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				229E285F1557503C001452E5 /* libcooocoa.a */,
+				229E28611557503C001452E5 /* cooocoaTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		22C7178C14C0E0000014B656 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				22F979D414C0E23F00A6913B /* GDataXMLException.h */,
-				22F979D514C0E23F00A6913B /* GDataXMLException.m */,
-				22F979D614C0E23F00A6913B /* GDataXMLNode.h */,
-				22F979D714C0E23F00A6913B /* GDataXMLNode.m */,
 				22F979DA14C0E23F00A6913B /* BTLoadable.h */,
 				22F979DB14C0E23F00A6913B /* BTLoadable.m */,
 				22F979FA14C0E38000A6913B /* BTLoadable+Protected.h */,
@@ -696,6 +655,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				229E28561557503B001452E5 /* cooocoa.xcodeproj */,
 				CB846EED149AE18900B29795 /* react.xcodeproj */,
 				DE4A3DA210FFB0D400FDA492 /* Sparrow.xcodeproj */,
 				080E96DDFE201D6D7F000001 /* Classes */,
@@ -881,9 +841,7 @@
 				CB442C7114B3788800EB2821 /* BTMode+Package.h in Headers */,
 				CB442C7B14B3851A00EB2821 /* BTInterpolationTask+Protected.h in Headers */,
 				CB395DBE14B3D7F90093E37F /* BTDetachTask.h in Headers */,
-				22F979E614C0E23F00A6913B /* GDataXMLException.h in Headers */,
-				22F979E814C0E23F00A6913B /* GDataXMLNode.h in Headers */,
-				22F979EA14C0E23F00A6913B /* GDataXMLNode+Extensions.h in Headers */,
+				22F979EA14C0E23F00A6913B /* GDataXMLNode+BetwixtExtensions.h in Headers */,
 				22F979EC14C0E23F00A6913B /* BTLoadable.h in Headers */,
 				22F979EF14C0E23F00A6913B /* BTLoadableBatch.h in Headers */,
 				22F979F114C0E23F00A6913B /* BTResource.h in Headers */,
@@ -902,7 +860,6 @@
 				CBC4524914D216A1008CC04D /* BTMovieResourceKeyframe.h in Headers */,
 				CBC4524B14D216A1008CC04D /* BTMovieResourceLayer.h in Headers */,
 				CBC4524E14D21700008CC04D /* BTMovie+Package.h in Headers */,
-				222199F414D24660009B764F /* BTRandoms.h in Headers */,
 				229B45C314D786B6005FC8E9 /* BTDurationTask.h in Headers */,
 				229B45C914D787F5005FC8E9 /* BTDurationTask+Protected.h in Headers */,
 				229B460014D87E05005FC8E9 /* BTDisplayObjectTask.h in Headers */,
@@ -915,26 +872,18 @@
 				22C85F0A14DB784B00F9EC07 /* BTDisplayObject.h in Headers */,
 				22DBA63814DCAF6200F0F7C8 /* BTApp+Protected.h in Headers */,
 				22DBA63D14DCB29100F0F7C8 /* BTApp+Package.h in Headers */,
-				2225C36814DDF1B800962B1B /* BTEnum.h in Headers */,
 				22448DF914E09B20001CF5CE /* BTInput.h in Headers */,
 				22448E0E14E3356A001CF5CE /* BTScaleTask.h in Headers */,
 				22448E2914E4A7A4001CF5CE /* SPPoint+Extensions.h in Headers */,
 				22448E2D14E4A938001CF5CE /* SPRectangle+Extensions.h in Headers */,
-				22448E8C14E603DF001CF5CE /* NSArray+Extensions.h in Headers */,
-				22448EA514E744AE001CF5CE /* BTMacros.h in Headers */,
 				CB8F0D7C14E85EC4005985C8 /* BTDisplayObjectCreator.h in Headers */,
 				CB8F0D7F14E85EF5005985C8 /* BTJugglerContainer.h in Headers */,
-				CBC9AC5814E9A4F800E1F9F7 /* BTUtils.h in Headers */,
 				CB65CE2F14EC397E00534FAE /* BTTextureGroupFactory.h in Headers */,
 				CB65CE3314EC3B1F00534FAE /* BTMultiResourceFactory.h in Headers */,
 				CB65CE3714EC400200534FAE /* BTTextureResource+Package.h in Headers */,
-				22C5353514F5C96D00B7958F /* UIColor+Extensions.h in Headers */,
 				2290D8291502C99D009EED3D /* SPMatrix+Extensions.h in Headers */,
 				22608C6D1505C2D300CCE0A5 /* SPView+Extensions.h in Headers */,
-				22DB82181509A9490091B648 /* NSString+Extensions.h in Headers */,
 				22DB8234150AAA290091B648 /* BTDeviceType.h in Headers */,
-				22BC09A71512C3F0006F56DA /* BTFloatRange.h in Headers */,
-				22BC09AB1512C4E4006F56DA /* BTIntRange.h in Headers */,
 				2208FC72151D207800669256 /* BTVisibilityTask.h in Headers */,
 				2244B7B215225856001DEACA /* SPPointI.h in Headers */,
 				22E0A755152A311A009FDE09 /* BTEventSignal.h in Headers */,
@@ -944,12 +893,9 @@
 				220F63AF152E878B0051B383 /* BTButton+Protected.h in Headers */,
 				220F63B0152E878B0051B383 /* BTDisplayObjectButton.h in Headers */,
 				220F63B2152E878B0051B383 /* BTMovieButton.h in Headers */,
-				22BB62BF152F77D7001247D3 /* BTWeightedArray.h in Headers */,
-				227339651534F3BE004719BF /* NSMutableArray+Extensions.h in Headers */,
 				22D46A941538DEB4005BAD6D /* BTDragger.h in Headers */,
 				22D46A9E153CCE79005BAD6D /* BTSignalTask.h in Headers */,
 				22D46AA2153CD2A2005BAD6D /* BTMovieTask.h in Headers */,
-				22D46AA6153CDC8F005BAD6D /* BTCollections.h in Headers */,
 				22518E03154385F8006E8494 /* BTAudioControls.h in Headers */,
 				22518E0715438628006E8494 /* BTAudioState.h in Headers */,
 				22400B1C1544CA5000B00D5E /* BTAudioChannel.h in Headers */,
@@ -974,6 +920,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				22E7698015575D26006E96DB /* PBXTargetDependency */,
 			);
 			name = "Betwixt Integration";
 			productName = BetwixtIntegration;
@@ -991,6 +938,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				229E286315575052001452E5 /* PBXTargetDependency */,
 				22C7177314C0D7CE0014B656 /* PBXTargetDependency */,
 				22C7176F14C0D7C80014B656 /* PBXTargetDependency */,
 			);
@@ -1023,6 +971,10 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = 229E28571557503B001452E5 /* Products */;
+					ProjectRef = 229E28561557503B001452E5 /* cooocoa.xcodeproj */;
+				},
+				{
 					ProductGroup = CB24CBE214A119EB004BAA57 /* Products */;
 					ProjectRef = CB846EED149AE18900B29795 /* react.xcodeproj */;
 				},
@@ -1040,6 +992,20 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		229E285F1557503C001452E5 /* libcooocoa.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libcooocoa.a;
+			remoteRef = 229E285E1557503C001452E5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		229E28611557503C001452E5 /* cooocoaTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = cooocoaTests.octest;
+			remoteRef = 229E28601557503C001452E5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		CB24CBE714A119EB004BAA57 /* libreact.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -1125,9 +1091,7 @@
 				CBE1F0E214A1554A00B82344 /* BTSequenceTask.m in Sources */,
 				CBE1F0E614A1707500B82344 /* BTBlockTask.m in Sources */,
 				CB395DBF14B3D7F90093E37F /* BTDetachTask.m in Sources */,
-				22F979E714C0E23F00A6913B /* GDataXMLException.m in Sources */,
-				22F979E914C0E23F00A6913B /* GDataXMLNode.m in Sources */,
-				22F979EB14C0E23F00A6913B /* GDataXMLNode+Extensions.m in Sources */,
+				22F979EB14C0E23F00A6913B /* GDataXMLNode+BetwixtExtensions.m in Sources */,
 				22F979ED14C0E23F00A6913B /* BTLoadable.m in Sources */,
 				22F979F014C0E23F00A6913B /* BTLoadableBatch.m in Sources */,
 				22F979F714C0E23F00A6913B /* BTResourceManager.m in Sources */,
@@ -1139,7 +1103,6 @@
 				CBC4524314D20051008CC04D /* BTMovie.m in Sources */,
 				CBC4524A14D216A1008CC04D /* BTMovieResourceKeyframe.m in Sources */,
 				CBC4524C14D216A1008CC04D /* BTMovieResourceLayer.m in Sources */,
-				222199F514D24660009B764F /* BTRandoms.m in Sources */,
 				229B45C414D786B6005FC8E9 /* BTDurationTask.m in Sources */,
 				229B460114D87E05005FC8E9 /* BTDisplayObjectTask.m in Sources */,
 				CB69E37214D8C66D00E7C18D /* BTRepeatingTask.m in Sources */,
@@ -1147,21 +1110,14 @@
 				CB69E37A14D8D07E00E7C18D /* BTParallelTask.m in Sources */,
 				22C85EAE14DB225400F9EC07 /* BTPoints.m in Sources */,
 				22C85F0B14DB784B00F9EC07 /* BTDisplayObject.m in Sources */,
-				2225C36914DDF1B800962B1B /* BTEnum.m in Sources */,
 				22448DFA14E09B20001CF5CE /* BTInput.m in Sources */,
 				22448E0F14E3356A001CF5CE /* BTScaleTask.m in Sources */,
 				22448E2A14E4A7A4001CF5CE /* SPPoint+Extensions.m in Sources */,
 				22448E2E14E4A938001CF5CE /* SPRectangle+Extensions.m in Sources */,
-				22448E8D14E603DF001CF5CE /* NSArray+Extensions.m in Sources */,
-				CBC9AC5914E9A4F800E1F9F7 /* BTUtils.m in Sources */,
 				CB65CE3014EC397E00534FAE /* BTTextureGroupFactory.m in Sources */,
-				22C5353614F5C96D00B7958F /* UIColor+Extensions.m in Sources */,
 				2290D82A1502C99D009EED3D /* SPMatrix+Extensions.m in Sources */,
 				22608C6E1505C2D300CCE0A5 /* SPView+Extensions.m in Sources */,
-				22DB82191509A9490091B648 /* NSString+Extensions.m in Sources */,
 				22DB8235150AAA290091B648 /* BTDeviceType.m in Sources */,
-				22BC09A81512C3F0006F56DA /* BTFloatRange.m in Sources */,
-				22BC09AC1512C4E4006F56DA /* BTIntRange.m in Sources */,
 				2208FC73151D207800669256 /* BTVisibilityTask.m in Sources */,
 				2244B7B315225856001DEACA /* SPPointI.m in Sources */,
 				22E0A756152A311A009FDE09 /* BTEventSignal.m in Sources */,
@@ -1169,12 +1125,9 @@
 				220F63AE152E878B0051B383 /* BTButton.m in Sources */,
 				220F63B1152E878B0051B383 /* BTDisplayObjectButton.m in Sources */,
 				220F63B3152E878B0051B383 /* BTMovieButton.m in Sources */,
-				22BB62C0152F77D7001247D3 /* BTWeightedArray.m in Sources */,
-				227339661534F3BE004719BF /* NSMutableArray+Extensions.m in Sources */,
 				22D46A951538DEB4005BAD6D /* BTDragger.m in Sources */,
 				22D46A9F153CCE79005BAD6D /* BTSignalTask.m in Sources */,
 				22D46AA3153CD2A2005BAD6D /* BTMovieTask.m in Sources */,
-				22D46AA7153CDC8F005BAD6D /* BTCollections.m in Sources */,
 				223663AE15423D5A00F64F21 /* BTRegistration.m in Sources */,
 				22518E04154385F8006E8494 /* BTAudioControls.m in Sources */,
 				22518E0815438628006E8494 /* BTAudioState.m in Sources */,
@@ -1188,6 +1141,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		229E286315575052001452E5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = cooocoa;
+			targetProxy = 229E286215575052001452E5 /* PBXContainerItemProxy */;
+		};
 		22C7176F14C0D7C80014B656 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = react;
@@ -1197,6 +1155,11 @@
 			isa = PBXTargetDependency;
 			name = Sparrow;
 			targetProxy = 22C7177214C0D7CE0014B656 /* PBXContainerItemProxy */;
+		};
+		22E7698015575D26006E96DB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CBB8CB901475A06400445316 /* Betwixt */;
+			targetProxy = 22E7697F15575D26006E96DB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1211,6 +1174,7 @@
 				GCC_THUMB_SUPPORT = NO;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -1219,7 +1183,7 @@
 				);
 				PRODUCT_NAME = Betwixt;
 				SDKROOT = iphoneos;
-				USER_HEADER_SEARCH_PATHS = "${REACT_SRC}/** ${SPARROW_SRC}/**";
+				USER_HEADER_SEARCH_PATHS = "${REACT_SRC}/** ${SPARROW_SRC}/** ${COOOCOA_SRC}/**";
 			};
 			name = Debug;
 		};
@@ -1233,6 +1197,7 @@
 				GCC_THUMB_SUPPORT = NO;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -1241,7 +1206,7 @@
 				);
 				PRODUCT_NAME = Betwixt;
 				SDKROOT = iphoneos;
-				USER_HEADER_SEARCH_PATHS = "${REACT_SRC}/** ${SPARROW_SRC}/**";
+				USER_HEADER_SEARCH_PATHS = "${REACT_SRC}/** ${SPARROW_SRC}/** ${COOOCOA_SRC}/**";
 			};
 			name = Release;
 		};
@@ -1263,11 +1228,9 @@
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
-				HEADER_SEARCH_PATHS = Classes;
 				INFOPLIST_FILE = "Integration/Integration-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "${REACT_SRC}/** ${SPARROW_SRC}/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1283,12 +1246,10 @@
 				GCC_PREFIX_HEADER = Betwixt_Prefix.pch;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
-				HEADER_SEARCH_PATHS = Classes;
 				INFOPLIST_FILE = "Integration/Integration-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "${REACT_SRC}/** ${SPARROW_SRC}/**";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};
@@ -1312,9 +1273,11 @@
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
-				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -1331,9 +1294,11 @@
 				GCC_PREFIX_HEADER = Betwixt_Prefix.pch;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
-				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				VALIDATE_PRODUCT = YES;

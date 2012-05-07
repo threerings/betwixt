@@ -1,9 +1,9 @@
 //
 // Betwixt - Copyright 2012 Three Rings Design
 
-#import "BTEnum.h"
+#import "OOOEnum.h"
 
-@interface BTSoundType : BTEnum
+@interface BTSoundType : OOOEnum
 + (BTSoundType*)SFX;
 + (BTSoundType*)MUSIC;
 @end
