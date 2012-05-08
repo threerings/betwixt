@@ -64,7 +64,6 @@
 		229B463314D8C439005FC8E9 /* BTHasLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = 229B463214D8C439005FC8E9 /* BTHasLocation.h */; };
 		229B463614D8C525005FC8E9 /* SPDisplayObject+BTExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 229B463414D8C525005FC8E9 /* SPDisplayObject+BTExtensions.h */; };
 		229B463714D8C525005FC8E9 /* SPDisplayObject+BTExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 229B463514D8C525005FC8E9 /* SPDisplayObject+BTExtensions.m */; };
-		229E28641557505A001452E5 /* libcooocoa.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 229E285F1557503C001452E5 /* libcooocoa.a */; };
 		22C85EAD14DB225400F9EC07 /* BTPoints.h in Headers */ = {isa = PBXBuildFile; fileRef = 22C85EAB14DB225400F9EC07 /* BTPoints.h */; };
 		22C85EAE14DB225400F9EC07 /* BTPoints.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C85EAC14DB225400F9EC07 /* BTPoints.m */; };
 		22C85EB614DB344100F9EC07 /* BTNode+Protected.h in Headers */ = {isa = PBXBuildFile; fileRef = 22C85EB514DB344100F9EC07 /* BTNode+Protected.h */; };
@@ -182,27 +181,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		229E285E1557503C001452E5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 229E28561557503B001452E5 /* cooocoa.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 229E27B11557473D001452E5;
-			remoteInfo = cooocoa;
-		};
-		229E28601557503C001452E5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 229E28561557503B001452E5 /* cooocoa.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 229E27C11557473D001452E5;
-			remoteInfo = cooocoaTests;
-		};
-		229E286215575052001452E5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 229E28561557503B001452E5 /* cooocoa.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 229E27B01557473D001452E5;
-			remoteInfo = cooocoa;
-		};
 		22C7176E14C0D7C80014B656 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CB846EED149AE18900B29795 /* react.xcodeproj */;
@@ -313,7 +291,7 @@
 		229B463214D8C439005FC8E9 /* BTHasLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTHasLocation.h; sourceTree = "<group>"; };
 		229B463414D8C525005FC8E9 /* SPDisplayObject+BTExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SPDisplayObject+BTExtensions.h"; sourceTree = "<group>"; };
 		229B463514D8C525005FC8E9 /* SPDisplayObject+BTExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SPDisplayObject+BTExtensions.m"; sourceTree = "<group>"; };
-		229E28561557503B001452E5 /* cooocoa.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cooocoa.xcodeproj; path = ../cooocoa/cooocoa.xcodeproj; sourceTree = "<group>"; };
+		229E28561557503B001452E5 /* cooocoa.xcodeproj */ = {isa = PBXFileReference; name = cooocoa.xcodeproj; path = ../cooocoa.xcodeproj; sourceTree = COOOCOA_SRC; };
 		22C85EAB14DB225400F9EC07 /* BTPoints.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTPoints.h; sourceTree = "<group>"; };
 		22C85EAC14DB225400F9EC07 /* BTPoints.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTPoints.m; sourceTree = "<group>"; };
 		22C85EB514DB344100F9EC07 /* BTNode+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BTNode+Protected.h"; sourceTree = "<group>"; };
@@ -458,7 +436,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				229E28641557505A001452E5 /* libcooocoa.a in Frameworks */,
 				CB323C6114A11A530039A2F1 /* libreact.a in Frameworks */,
 				CBAD578D1475A28C00F7D78E /* libSparrow.a in Frameworks */,
 				CB602C711476603800E52CE2 /* libz.dylib in Frameworks */,
@@ -595,15 +572,6 @@
 				22400B261544CEAE00B00D5E /* BTSoundType.m */,
 			);
 			name = Audio;
-			sourceTree = "<group>";
-		};
-		229E28571557503B001452E5 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				229E285F1557503C001452E5 /* libcooocoa.a */,
-				229E28611557503C001452E5 /* cooocoaTests.octest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		22C7178C14C0E0000014B656 /* Resources */ = {
@@ -911,7 +879,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				229E286315575052001452E5 /* PBXTargetDependency */,
 				22C7177314C0D7CE0014B656 /* PBXTargetDependency */,
 				22C7176F14C0D7C80014B656 /* PBXTargetDependency */,
 			);
@@ -944,10 +911,6 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 229E28571557503B001452E5 /* Products */;
-					ProjectRef = 229E28561557503B001452E5 /* cooocoa.xcodeproj */;
-				},
-				{
 					ProductGroup = CB24CBE214A119EB004BAA57 /* Products */;
 					ProjectRef = CB846EED149AE18900B29795 /* react.xcodeproj */;
 				},
@@ -965,20 +928,6 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		229E285F1557503C001452E5 /* libcooocoa.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libcooocoa.a;
-			remoteRef = 229E285E1557503C001452E5 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		229E28611557503C001452E5 /* cooocoaTests.octest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = cooocoaTests.octest;
-			remoteRef = 229E28601557503C001452E5 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		CB24CBE714A119EB004BAA57 /* libreact.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -1111,11 +1060,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		229E286315575052001452E5 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = cooocoa;
-			targetProxy = 229E286215575052001452E5 /* PBXContainerItemProxy */;
-		};
 		22C7176F14C0D7C80014B656 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = react;
