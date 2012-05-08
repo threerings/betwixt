@@ -224,8 +224,9 @@
     
     // If the object is BTUpdatable, wire up its update function to the update event
     if ([node conformsToProtocol:@protocol(BTUpdatable)]) {
-        [node.conns onFloatReactor:self.update connectSlot:^(float dt) {
-            [(BTNode<BTUpdatable>*)node update:dt];
+        BTNode<BTUpdatable>* updatable = (BTNode<BTUpdatable>*)node;
+        [updatable.conns onFloatReactor:self.update connectSlot:^(float dt) {
+            [updatable update:dt];
         }];
     }
     
