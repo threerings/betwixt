@@ -195,6 +195,20 @@
 			remoteGlobalIDString = DEFE4BC1101B317600E22471;
 			remoteInfo = Sparrow;
 		};
+		22E43A591559B0BC003A43B8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 229E28561557503B001452E5 /* cooocoa.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 229E27B11557473D001452E5;
+			remoteInfo = cooocoa;
+		};
+		22E43A5B1559B0BC003A43B8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 229E28561557503B001452E5 /* cooocoa.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 229E27C11557473D001452E5;
+			remoteInfo = cooocoaTests;
+		};
 		22E7697F15575D26006E96DB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
@@ -291,7 +305,7 @@
 		229B463214D8C439005FC8E9 /* BTHasLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTHasLocation.h; sourceTree = "<group>"; };
 		229B463414D8C525005FC8E9 /* SPDisplayObject+BTExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SPDisplayObject+BTExtensions.h"; sourceTree = "<group>"; };
 		229B463514D8C525005FC8E9 /* SPDisplayObject+BTExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SPDisplayObject+BTExtensions.m"; sourceTree = "<group>"; };
-		229E28561557503B001452E5 /* cooocoa.xcodeproj */ = {isa = PBXFileReference; name = cooocoa.xcodeproj; path = ../cooocoa.xcodeproj; sourceTree = COOOCOA_SRC; };
+		229E28561557503B001452E5 /* cooocoa.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cooocoa.xcodeproj; path = ../cooocoa.xcodeproj; sourceTree = COOOCOA_SRC; };
 		22C85EAB14DB225400F9EC07 /* BTPoints.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTPoints.h; sourceTree = "<group>"; };
 		22C85EAC14DB225400F9EC07 /* BTPoints.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTPoints.m; sourceTree = "<group>"; };
 		22C85EB514DB344100F9EC07 /* BTNode+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BTNode+Protected.h"; sourceTree = "<group>"; };
@@ -590,6 +604,15 @@
 				CB65CE3514EC400200534FAE /* BTTextureResource+Package.h */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		22E43A551559B0BC003A43B8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				22E43A5A1559B0BC003A43B8 /* libcooocoa.a */,
+				22E43A5C1559B0BC003A43B8 /* cooocoaTests.octest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
@@ -911,6 +934,10 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = 22E43A551559B0BC003A43B8 /* Products */;
+					ProjectRef = 229E28561557503B001452E5 /* cooocoa.xcodeproj */;
+				},
+				{
 					ProductGroup = CB24CBE214A119EB004BAA57 /* Products */;
 					ProjectRef = CB846EED149AE18900B29795 /* react.xcodeproj */;
 				},
@@ -928,6 +955,20 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		22E43A5A1559B0BC003A43B8 /* libcooocoa.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libcooocoa.a;
+			remoteRef = 22E43A591559B0BC003A43B8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		22E43A5C1559B0BC003A43B8 /* cooocoaTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = cooocoaTests.octest;
+			remoteRef = 22E43A5B1559B0BC003A43B8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		CB24CBE714A119EB004BAA57 /* libreact.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
