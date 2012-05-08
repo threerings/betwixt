@@ -85,6 +85,7 @@
 		22E0A75F152A3837009FDE09 /* BTEventSignal+Protected.h in Headers */ = {isa = PBXBuildFile; fileRef = 22E0A75E152A3837009FDE09 /* BTEventSignal+Protected.h */; };
 		22E0A762152A4404009FDE09 /* BTTouchEventSignals.h in Headers */ = {isa = PBXBuildFile; fileRef = 22E0A760152A4404009FDE09 /* BTTouchEventSignals.h */; };
 		22E0A763152A4404009FDE09 /* BTTouchEventSignals.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E0A761152A4404009FDE09 /* BTTouchEventSignals.m */; };
+		22E43AB21559CF81003A43B8 /* libcooocoa.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E43A5A1559B0BC003A43B8 /* libcooocoa.a */; };
 		22F3373D14E89BAC00A17CCB /* GroupTestMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F3373C14E89BAC00A17CCB /* GroupTestMode.m */; };
 		22F979EA14C0E23F00A6913B /* GDataXMLNode+BTExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F979D814C0E23F00A6913B /* GDataXMLNode+BTExtensions.h */; };
 		22F979EB14C0E23F00A6913B /* GDataXMLNode+BTExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F979D914C0E23F00A6913B /* GDataXMLNode+BTExtensions.m */; };
@@ -208,6 +209,13 @@
 			proxyType = 2;
 			remoteGlobalIDString = 229E27C11557473D001452E5;
 			remoteInfo = cooocoaTests;
+		};
+		22E43AAB1559CF7B003A43B8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 229E28561557503B001452E5 /* cooocoa.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 229E27B01557473D001452E5;
+			remoteInfo = cooocoa;
 		};
 		22E7697F15575D26006E96DB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -450,6 +458,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22E43AB21559CF81003A43B8 /* libcooocoa.a in Frameworks */,
 				CB323C6114A11A530039A2F1 /* libreact.a in Frameworks */,
 				CBAD578D1475A28C00F7D78E /* libSparrow.a in Frameworks */,
 				CB602C711476603800E52CE2 /* libz.dylib in Frameworks */,
@@ -902,6 +911,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				22E43AAC1559CF7B003A43B8 /* PBXTargetDependency */,
 				22C7177314C0D7CE0014B656 /* PBXTargetDependency */,
 				22C7176F14C0D7C80014B656 /* PBXTargetDependency */,
 			);
@@ -1110,6 +1120,11 @@
 			isa = PBXTargetDependency;
 			name = Sparrow;
 			targetProxy = 22C7177214C0D7CE0014B656 /* PBXContainerItemProxy */;
+		};
+		22E43AAC1559CF7B003A43B8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = cooocoa;
+			targetProxy = 22E43AAB1559CF7B003A43B8 /* PBXContainerItemProxy */;
 		};
 		22E7698015575D26006E96DB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
