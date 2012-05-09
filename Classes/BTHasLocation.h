@@ -3,7 +3,7 @@
 
 @protocol BTHasLocation
 
-@property(nonatomic,assign) float x;
-@property(nonatomic,assign) float y;
+@property (nonatomic,assign) float x;
+@property (nonatomic,assign) float y;
 
 @end

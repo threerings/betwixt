@@ -5,6 +5,10 @@
 
 @implementation SPDisplayObject (BTExtensions)
 
+// implemented by SPDisplayObject
+@dynamic x;
+@dynamic y;
+
 - (SPPoint*)loc {
     return [SPPoint pointWithX:self.x y:self.y];
 }
@@ -47,9 +51,5 @@
     self.scaleX = scale.x;
     self.scaleY = scale.y;
 }
-
-// These are already implemented by SPDisplayObject
-@dynamic x;
-@dynamic y;
 
 @end

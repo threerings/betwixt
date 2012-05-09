@@ -5,6 +5,9 @@
 
 @interface SPPoint (BTExtensions)
 
+@property (nonatomic,assign) float length;
+@property (nonatomic,assign) float angle;
+
 /// Converts a String in the form "x,y" into an SPPoint.
 /// Returns nil if the string could not be converted.
 + (SPPoint*)pointFromString:(NSString*)string;
@@ -36,8 +39,5 @@
 + (float)distanceFromX:(float)fromX fromY:(float)fromY toX:(float)toX toY:(float)toY;
 
 + (float)distanceSqFromX:(float)fromX fromY:(float)fromY toX:(float)toX toY:(float)toY;
-
-@property(nonatomic,assign) float length;
-@property(nonatomic,assign) float angle;
 
 @end
