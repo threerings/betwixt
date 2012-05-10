@@ -16,7 +16,7 @@
 
 - (id)init {
     if (!(self = [super init])) return nil;
-    NSAssert(nil == [self nodesForGroup:@"squares"], @"Incorrect squares in group");
+    NSAssert(nil == [self nodesInGroup:@"squares"], @"Incorrect squares in group");
     [self addNode:[self createAndMonitorSquareWithColor:0xff0000 andName:@"red"] 
                    displayOn:self.sprite];
     NSAssert(1 == [self countNodesInGroup:@"squares"], @"Incorrect squares in group");
@@ -30,7 +30,7 @@
             NSAssert(2 == [self countNodesInGroup:@"squares"], @"Incorrect squares in group");
         } else if (_ticks == 3) {
             NSAssert(_squaresRemoved == 2, @"Squares not removed");
-            NSAssert(nil == [self nodesForGroup:@"squares"], @"Squares not removed from group");
+            NSAssert(nil == [self nodesInGroup:@"squares"], @"Squares not removed from group");
             NSAssert(nil == [self nodeForKey:@"red"], @"Square key not cleared");
         } else if (_ticks == 4) {
             [_modeStack popMode];

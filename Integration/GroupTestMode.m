@@ -25,7 +25,7 @@ static NSString * GROUP = @"Group";
     
     do {
         int count = 0;
-        for (BTNode* node in [self nodesForGroup:GROUP]) {
+        for (BTNode* node in [self nodesInGroup:GROUP]) {
             count++;
         }
         NSAssert(count == 10, @"Missing grouped nodes");
@@ -33,7 +33,7 @@ static NSString * GROUP = @"Group";
     
     do {
         int count = 0;
-        for (BTNode* node in [self nodesForGroup:GROUP]) {
+        for (BTNode* node in [self nodesInGroup:GROUP]) {
             [node detach];
             count++;
         }

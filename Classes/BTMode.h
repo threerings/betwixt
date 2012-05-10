@@ -25,7 +25,7 @@
 
 - (BTNode*)nodeForKey:(NSString*)key;
 /// Returns the nodes in the group or nil if there are no nodes in the group.
-- (id<NSFastEnumeration>)nodesForGroup:(NSString*)group;
+- (id<NSFastEnumeration>)nodesInGroup:(NSString*)group;
 - (int)countNodesInGroup:(NSString*)group;
 
 @property(nonatomic,readonly) RAFloatSignal* update;

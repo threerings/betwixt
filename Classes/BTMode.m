@@ -35,10 +35,11 @@
     BTMode* _mode;
     NSMutableArray* _group;
 }
+@property (nonatomic,readonly) NSUInteger count;
+
 - (id)initWithMode:(BTMode*)mode;
 - (void)addNode:(BTNode*)node;
 - (void)removeNode:(BTNode*)node;
-- (NSUInteger)count;
 @end
 
 @implementation BTNodeGroup
@@ -63,7 +64,7 @@
     return _group.count;
 }
 
-- (NSUInteger)countByEnumeratingWithState:(NSFastEnumerationState *)state 
+- (NSUInteger)countByEnumeratingWithState:(NSFastEnumerationState*)state 
                                   objects:(__unsafe_unretained id [])buffer 
                                     count:(NSUInteger)len {
     if (state->state == 0) {
@@ -163,17 +164,17 @@
     return self;
 }
 
-- (BTNode*)nodeForKey:(NSString*) key {
+- (BTNode*)nodeForKey:(NSString*)key {
     return [_keyedObjects objectForKey:key];
 }
 
-- (id<NSFastEnumeration>)nodesForGroup:(NSString*)group {
+- (id<NSFastEnumeration>)nodesInGroup:(NSString*)group {
     return [_groups objectForKey:group];
 }
 
 - (int)countNodesInGroup:(NSString*)group {
     BTNodeGroup* nodeGroup = [_groups objectForKey:group];
-    return [nodeGroup count];
+    return nodeGroup.count;
 }
 
 - (BTMode*)mode {
