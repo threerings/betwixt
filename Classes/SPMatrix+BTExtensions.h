@@ -5,10 +5,10 @@
 
 @interface SPMatrix (BTExtensions)
 
-@property(nonatomic,assign) float scaleX;
-@property(nonatomic,assign) float scaleY;
-@property(nonatomic,assign) float skewX;
-@property(nonatomic,assign) float skewY;
-@property(nonatomic,assign) float rotation;
+@property (nonatomic,assign) float scaleX;
+@property (nonatomic,assign) float scaleY;
+@property (nonatomic,assign) float skewX;
+@property (nonatomic,assign) float skewY;
+@property (nonatomic,assign) float rotation;
 
 @end
