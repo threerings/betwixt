@@ -85,8 +85,12 @@
     return self;
 }
 
-- (BTAudioControls*)setPaused:(BOOL)paused {
-    return [self setPaused:paused after:0];
+- (BTAudioControls*)pause {
+    return [self setPaused:YES after:0];
+}
+
+- (BTAudioControls*)resume {
+    return [self setPaused:NO after:0];
 }
 
 - (BTAudioControls*)setPaused:(BOOL)paused after:(float)time {
@@ -97,8 +101,12 @@
     return self;
 }
 
-- (BTAudioControls*)setMuted:(BOOL)mute {
-    return [self setMuted:mute after:0];
+- (BTAudioControls*)mute {
+    return [self setMuted:YES after:0];
+}
+
+- (BTAudioControls*)unmute {
+    return [self setMuted:NO after:0];
 }
 
 - (BTAudioControls*)setMuted:(BOOL)mute after:(float)time {
@@ -109,8 +117,12 @@
     return self;
 }
 
-- (BTAudioControls*)setStopped:(BOOL)stop {
-    return [self setStopped:stop after:0];
+- (BTAudioControls*)stop {
+    return [self setStopped:YES after:0];
+}
+
+- (BTAudioControls*)play {
+    return [self setStopped:NO after:0];
 }
 
 - (BTAudioControls*)setStopped:(BOOL)stop after:(float)time {

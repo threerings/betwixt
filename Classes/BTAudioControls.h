@@ -44,11 +44,14 @@
 - (BTAudioControls*)fadeOutAndStop:(float)time;
 - (BTAudioControls*)setPan:(float)pan;
 - (BTAudioControls*)setPan:(float)pan overTime:(float)time;
-- (BTAudioControls*)setPaused:(BOOL)paused;
+- (BTAudioControls*)pause;
+- (BTAudioControls*)resume;
 - (BTAudioControls*)setPaused:(BOOL)paused after:(float)time;
-- (BTAudioControls*)setMuted:(BOOL)mute;
+- (BTAudioControls*)mute;
+- (BTAudioControls*)unmute;
 - (BTAudioControls*)setMuted:(BOOL)mute after:(float)time;
-- (BTAudioControls*)setStopped:(BOOL)stop;
+- (BTAudioControls*)stop;
+- (BTAudioControls*)play;
 - (BTAudioControls*)setStopped:(BOOL)stop after:(float)time;
 
 - (void)update:(float)dt parentState:(BTAudioState*)parentState;
