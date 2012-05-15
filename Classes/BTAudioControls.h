@@ -35,6 +35,8 @@
 - (id)init;
 - (id)initWithParentControls:(BTAudioControls*)parentControls;
 
+- (BTAudioControls*)createChild;
+
 - (BTAudioControls*)setVolume:(float)volume;
 - (BTAudioControls*)setVolume:(float)volume overTime:(float)time;
 - (BTAudioControls*)fadeOut:(float)time;

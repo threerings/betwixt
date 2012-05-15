@@ -27,6 +27,10 @@
     return self;
 }
 
+- (BTAudioControls*)createChild {
+    return [[BTAudioControls alloc] initWithParentControls:self];
+}
+
 - (void)attachChild:(BTAudioControls*)child {
     [_children addObject:[NSValue valueWithNonretainedObject:child]];
 }

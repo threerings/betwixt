@@ -118,7 +118,7 @@ static const double SOUND_PLAYED_RECENTLY_DELTA = 1.0 / 20.0;
     
     // create the channel
     BTAudioChannel* channel = [[BTAudioChannel alloc] init];
-    channel->_controls = [[BTAudioControls alloc] initWithParentControls:parentControls];
+    channel->_controls = [parentControls createChild];
     channel->_sound = soundResource;
     channel->_startTime = timeNow;
     channel->_loop = loop;
