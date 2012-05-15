@@ -32,9 +32,6 @@
                         loop:(BOOL)loop;
 
 - (void)stopAllSounds;
-- (void)stop:(BTAudioChannel*)channel;
-- (void)pause:(BTAudioChannel*)channel;
-- (void)resume:(BTAudioChannel*)channel;
 
 - (void)update:(float)dt;
 - (void)shutdown;

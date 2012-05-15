@@ -178,6 +178,7 @@ static BTApp* gInstance = nil;
 
 - (void)update:(float)dt {
     _framerate = 1.0f / dt;
+    [_audio update:dt];
     for (BTModeStack* stack in _modeStacks) {
         [stack update:dt];
     }

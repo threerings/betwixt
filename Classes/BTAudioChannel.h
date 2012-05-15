@@ -5,7 +5,7 @@
 @class BTSoundResource;
 
 @interface BTAudioChannel : NSObject {
-@package
+@protected
     RAUnitSignal* _completed;
     BTSoundResource* _sound;
     SPSoundChannel* _spChannel;
@@ -14,12 +14,12 @@
     double _startTime;
 }
 
-
 /// Dispatched when the AudioChannel has completed playing. If the channel loops, the signal will
 /// dispatch after it has completed looping.
 /// The signal will not dispatch if the channel is manually stopped.
 @property (nonatomic,readonly) RAReactor* completed;
 @property (nonatomic,readonly) BTSoundResource* sound;
+@property (nonatomic,readonly) double startTime;
 @property (nonatomic,readonly) BOOL loop;
 @property (nonatomic,readonly) BOOL isPlaying;
 @property (nonatomic,readonly) BOOL isPaused;

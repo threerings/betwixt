@@ -11,10 +11,6 @@
 
 static const double SOUND_PLAYED_RECENTLY_DELTA = 1.0 / 20.0;
 
-@interface BTAudioManager ()
-- (void)playChannel:(BTAudioChannel*)channel state:(BTAudioState*)state;
-@end
-
 @implementation BTAudioManager
 
 @synthesize masterControls = _masterControls;
@@ -53,13 +49,16 @@ static const double SOUND_PLAYED_RECENTLY_DELTA = 1.0 / 20.0;
             BTAudioState* audioState = channel.controls.state;
             BOOL channelPaused = channel.isPaused;
             if (audioState.stopped) {
-                [self stop:channel];
+                [channel stop];
             } else if (audioState.paused && !channelPaused) {
-                [self pause:channel];
+                [channel pause];
             } else if (!audioState.paused && channelPaused) {
-                [self resume:channel];
-            } else if (!channelPaused) {
-                channel->_spChannel.volume = audioState.actualVolume * channel.sound.volume;
+                [channel resume];
+                channelPaused = NO;
+            } 
+            
+            if (!channelPaused) {
+                [channel setVolume:audioState.actualVolume * channel.sound.volume];
             }
         }
         
@@ -110,53 +109,29 @@ static const double SOUND_PLAYED_RECENTLY_DELTA = 1.0 / 20.0;
     double timeNow = BTApp.timeNow;
     for (BTAudioChannel* activeChannel in _activeChannels) {
         if (activeChannel.isPlaying && activeChannel.sound == soundResource && 
-            (timeNow - activeChannel->_startTime) < SOUND_PLAYED_RECENTLY_DELTA) {
+            (timeNow - activeChannel.startTime) < SOUND_PLAYED_RECENTLY_DELTA) {
             NSLog(@"Discarding sound '%@' (recently played)", soundResource.name);
             return [[BTAudioChannel alloc] init];
         }
     }
     
     // create the channel
-    BTAudioChannel* channel = [[BTAudioChannel alloc] init];
-    channel->_controls = [parentControls createChild];
-    channel->_sound = soundResource;
-    channel->_startTime = timeNow;
-    channel->_loop = loop;
+    BTAudioChannel* channel = [[BTAudioChannel alloc] initWithControls:[parentControls createChild] 
+                                                                 sound:soundResource 
+                                                             startTime:timeNow 
+                                                                  loop:loop];
     
     // start playing
-    if (!audioState.paused) {
-        [self playChannel:channel state:audioState];
-    }
-    
+    [channel playWithState:audioState];
     [_activeChannels addObject:channel];
     return channel;
 }
 
-- (void)playChannel:(BTAudioChannel*)channel state:(BTAudioState*)state {
-    [channel playWithState:state];
-}
-
 - (void)stopAllSounds {
     for (BTAudioChannel* channel in _activeChannels) {
-        [self stop:channel];
+        [channel stop];
     }
     [_activeChannels removeAllObjects];
-}
-
-- (void)stop:(BTAudioChannel*)channel {
-    [channel stop];
-}
-
-- (void)pause:(BTAudioChannel*)channel {
-    if (channel.isPlaying && !channel.isPaused) {
-        [channel->_spChannel pause];
-    }
-}
-
-- (void)resume:(BTAudioChannel*)channel {
-    if (channel.isPlaying && channel.isPaused) {
-        [channel->_spChannel play];
-    }
 }
 
 - (void)shutdown {

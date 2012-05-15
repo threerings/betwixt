@@ -17,15 +17,31 @@ static BTAudioControls* GetDummyControls () {
 
 @implementation BTAudioChannel
 
-@synthesize completed = _completed;
 @synthesize sound = _sound;
 @synthesize loop = _loop;
+@synthesize startTime = _startTime;
 
-- (id)init {
+- (id)initWithControls:(BTAudioControls*)controls sound:(BTSoundResource*)sound 
+             startTime:(double)startTime loop:(BOOL)loop {
     if ((self = [super init])) {
-        _completed = [[RAUnitSignal alloc] init];
+        _controls = controls;
+        _sound = sound;
+        _startTime = startTime;
+        _loop = loop;
     }
     return self;
+}
+
+- (RAUnitSignal*)completed {
+    // lazily created
+    if (_completed == nil) {
+        _completed = [[RAUnitSignal alloc] init];
+    }
+    return _completed;
+}
+
+- (void)setVolume:(float)volume {
+    _spChannel.volume = volume;
 }
 
 - (BOOL)isPlaying {
@@ -34,6 +50,18 @@ static BTAudioControls* GetDummyControls () {
 
 - (BOOL)isPaused {
     return (_sound != nil && _spChannel.isPaused);
+}
+
+- (void)pause {
+    if (self.isPlaying && !self.isPaused) {
+        [_spChannel pause];
+    }
+}
+
+- (void)resume {
+    if (self.isPlaying && self.isPaused) {
+        [_spChannel play];
+    }
 }
 
 - (BTAudioControls*)controls {
@@ -48,7 +76,11 @@ static BTAudioControls* GetDummyControls () {
     _spChannel.loop = _loop;
     _spChannel.volume = state.actualVolume * _sound.volume;
     //_spChannel.pan = state.pan * _sound.pan;
-    [_spChannel play];
+    if (state.paused) {
+        [_spChannel pause];
+    } else {
+        [_spChannel play];
+    }
 }
 
 - (void)stop {
