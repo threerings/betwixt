@@ -18,6 +18,14 @@
 #import "BTObject.h"
 #import "BTSprite.h"
 
+// Audio
+#import "BTAudioChannel.h"
+#import "BTAudioControls.h"
+#import "BTAudioManager.h"
+#import "BTAudioState.h"
+#import "BTSoundResource.h"
+#import "BTSoundType.h"
+
 // Categories
 #import "GDataXMLNode+BTExtensions.h"
 #import "SPDisplayObject+BTExtensions.h"
