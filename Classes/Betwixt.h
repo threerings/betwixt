@@ -69,4 +69,7 @@
 #import "BTEventSignal.h"
 #import "BTLoadingMode.h"
 #import "BTMovieButton.h"
+#import "BTPoints.h"
+#import "BTTouchEventSignals.h"
+#import "BTUserSettings.h"
 #import "SPPointI.h"

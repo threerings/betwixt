@@ -86,6 +86,8 @@
 		22E0A762152A4404009FDE09 /* BTTouchEventSignals.h in Headers */ = {isa = PBXBuildFile; fileRef = 22E0A760152A4404009FDE09 /* BTTouchEventSignals.h */; };
 		22E0A763152A4404009FDE09 /* BTTouchEventSignals.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E0A761152A4404009FDE09 /* BTTouchEventSignals.m */; };
 		22E43AB21559CF81003A43B8 /* libcooocoa.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E43A5A1559B0BC003A43B8 /* libcooocoa.a */; };
+		22EA32251563248300557886 /* BTUserSettings.h in Headers */ = {isa = PBXBuildFile; fileRef = 22EA32231563248300557886 /* BTUserSettings.h */; };
+		22EA32261563248300557886 /* BTUserSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EA32241563248300557886 /* BTUserSettings.m */; };
 		22F3373D14E89BAC00A17CCB /* GroupTestMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F3373C14E89BAC00A17CCB /* GroupTestMode.m */; };
 		22F979EA14C0E23F00A6913B /* GDataXMLNode+BTExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F979D814C0E23F00A6913B /* GDataXMLNode+BTExtensions.h */; };
 		22F979EB14C0E23F00A6913B /* GDataXMLNode+BTExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F979D914C0E23F00A6913B /* GDataXMLNode+BTExtensions.m */; };
@@ -336,6 +338,8 @@
 		22E0A75E152A3837009FDE09 /* BTEventSignal+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BTEventSignal+Protected.h"; sourceTree = "<group>"; };
 		22E0A760152A4404009FDE09 /* BTTouchEventSignals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTTouchEventSignals.h; sourceTree = "<group>"; };
 		22E0A761152A4404009FDE09 /* BTTouchEventSignals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTTouchEventSignals.m; sourceTree = "<group>"; };
+		22EA32231563248300557886 /* BTUserSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTUserSettings.h; sourceTree = "<group>"; };
+		22EA32241563248300557886 /* BTUserSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTUserSettings.m; sourceTree = "<group>"; };
 		22F3373B14E89BAC00A17CCB /* GroupTestMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GroupTestMode.h; path = Integration/GroupTestMode.h; sourceTree = "<group>"; };
 		22F3373C14E89BAC00A17CCB /* GroupTestMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GroupTestMode.m; path = Integration/GroupTestMode.m; sourceTree = "<group>"; };
 		22F979D814C0E23F00A6913B /* GDataXMLNode+BTExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GDataXMLNode+BTExtensions.h"; sourceTree = "<group>"; };
@@ -552,6 +556,8 @@
 				22C85EAC14DB225400F9EC07 /* BTPoints.m */,
 				22E0A760152A4404009FDE09 /* BTTouchEventSignals.h */,
 				22E0A761152A4404009FDE09 /* BTTouchEventSignals.m */,
+				22EA32231563248300557886 /* BTUserSettings.h */,
+				22EA32241563248300557886 /* BTUserSettings.m */,
 				2244B7B015225855001DEACA /* SPPointI.h */,
 				2244B7B115225856001DEACA /* SPPointI.m */,
 			);
@@ -876,6 +882,7 @@
 				22400B271544CEAE00B00D5E /* BTSoundType.h in Headers */,
 				22400B2B1544E22500B00D5E /* BTAudioManager.h in Headers */,
 				22400B2E1544F7A000B00D5E /* BTAudioChannel+Package.h in Headers */,
+				22EA32251563248300557886 /* BTUserSettings.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1105,6 +1112,7 @@
 				22400B241544CD1400B00D5E /* BTSoundResource.m in Sources */,
 				22400B281544CEAE00B00D5E /* BTSoundType.m in Sources */,
 				22400B2C1544E22500B00D5E /* BTAudioManager.m in Sources */,
+				22EA32261563248300557886 /* BTUserSettings.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
