@@ -93,6 +93,10 @@
     return [self setPaused:NO after:0];
 }
 
+- (BTAudioControls*)setPaused:(BOOL)paused {
+    return [self setPaused:paused after:0];
+}
+
 - (BTAudioControls*)setPaused:(BOOL)paused after:(float)time {
     _pauseCountdown = time;
     if (time <= 0) {
@@ -109,6 +113,10 @@
     return [self setMuted:NO after:0];
 }
 
+- (BTAudioControls*)setMuted:(BOOL)mute {
+    return [self setMuted:mute after:0];
+}
+
 - (BTAudioControls*)setMuted:(BOOL)mute after:(float)time {
     _muteCountdown = time;
     if (time <= 0) {
@@ -123,6 +131,10 @@
 
 - (BTAudioControls*)play {
     return [self setStopped:NO after:0];
+}
+
+- (BTAudioControls*)setStopped:(BOOL)stop {
+    return [self setStopped:stop after:0];
 }
 
 - (BTAudioControls*)setStopped:(BOOL)stop after:(float)time {
