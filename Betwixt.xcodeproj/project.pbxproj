@@ -91,6 +91,8 @@
 		22EA322D15633CBB00557886 /* BTAudioSettings.h in Headers */ = {isa = PBXBuildFile; fileRef = 22EA322B15633CBB00557886 /* BTAudioSettings.h */; };
 		22EA322E15633CBB00557886 /* BTAudioSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EA322C15633CBB00557886 /* BTAudioSettings.m */; };
 		22EA323015633DA600557886 /* BTAudioManager+Package.h in Headers */ = {isa = PBXBuildFile; fileRef = 22EA322F15633DA500557886 /* BTAudioManager+Package.h */; };
+		22EA32341563436300557886 /* BTCheckbox.h in Headers */ = {isa = PBXBuildFile; fileRef = 22EA32321563436300557886 /* BTCheckbox.h */; };
+		22EA32351563436300557886 /* BTCheckbox.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EA32331563436300557886 /* BTCheckbox.m */; };
 		22F3373D14E89BAC00A17CCB /* GroupTestMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F3373C14E89BAC00A17CCB /* GroupTestMode.m */; };
 		22F979EA14C0E23F00A6913B /* GDataXMLNode+BTExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F979D814C0E23F00A6913B /* GDataXMLNode+BTExtensions.h */; };
 		22F979EB14C0E23F00A6913B /* GDataXMLNode+BTExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F979D914C0E23F00A6913B /* GDataXMLNode+BTExtensions.m */; };
@@ -346,6 +348,8 @@
 		22EA322B15633CBB00557886 /* BTAudioSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTAudioSettings.h; sourceTree = "<group>"; };
 		22EA322C15633CBB00557886 /* BTAudioSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTAudioSettings.m; sourceTree = "<group>"; };
 		22EA322F15633DA500557886 /* BTAudioManager+Package.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BTAudioManager+Package.h"; sourceTree = "<group>"; };
+		22EA32321563436300557886 /* BTCheckbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTCheckbox.h; sourceTree = "<group>"; };
+		22EA32331563436300557886 /* BTCheckbox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTCheckbox.m; sourceTree = "<group>"; };
 		22F3373B14E89BAC00A17CCB /* GroupTestMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GroupTestMode.h; path = Integration/GroupTestMode.h; sourceTree = "<group>"; };
 		22F3373C14E89BAC00A17CCB /* GroupTestMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GroupTestMode.m; path = Integration/GroupTestMode.m; sourceTree = "<group>"; };
 		22F979D814C0E23F00A6913B /* GDataXMLNode+BTExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GDataXMLNode+BTExtensions.h"; sourceTree = "<group>"; };
@@ -637,6 +641,8 @@
 				220F63A8152E878B0051B383 /* BTButton+Protected.h */,
 				220F63A6152E878B0051B383 /* BTButton.h */,
 				220F63A7152E878B0051B383 /* BTButton.m */,
+				22EA32321563436300557886 /* BTCheckbox.h */,
+				22EA32331563436300557886 /* BTCheckbox.m */,
 				220F63A9152E878B0051B383 /* BTDisplayObjectButton.h */,
 				220F63AA152E878B0051B383 /* BTDisplayObjectButton.m */,
 				22D46A921538DEB4005BAD6D /* BTDragger.h */,
@@ -902,6 +908,7 @@
 				22EA32251563248300557886 /* BTUserSettings.h in Headers */,
 				22EA322D15633CBB00557886 /* BTAudioSettings.h in Headers */,
 				22EA323015633DA600557886 /* BTAudioManager+Package.h in Headers */,
+				22EA32341563436300557886 /* BTCheckbox.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1133,6 +1140,7 @@
 				22400B2C1544E22500B00D5E /* BTAudioManager.m in Sources */,
 				22EA32261563248300557886 /* BTUserSettings.m in Sources */,
 				22EA322E15633CBB00557886 /* BTAudioSettings.m in Sources */,
+				22EA32351563436300557886 /* BTCheckbox.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

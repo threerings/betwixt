@@ -47,6 +47,7 @@
 
 // Objects
 #import "BTButton.h"
+#import "BTCheckbox.h"
 #import "BTDisplayObjectButton.h"
 #import "BTDragger.h"
 #import "BTMovieButton.h"
