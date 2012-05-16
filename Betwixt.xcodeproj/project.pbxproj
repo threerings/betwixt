@@ -88,6 +88,9 @@
 		22E43AB21559CF81003A43B8 /* libcooocoa.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E43A5A1559B0BC003A43B8 /* libcooocoa.a */; };
 		22EA32251563248300557886 /* BTUserSettings.h in Headers */ = {isa = PBXBuildFile; fileRef = 22EA32231563248300557886 /* BTUserSettings.h */; };
 		22EA32261563248300557886 /* BTUserSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EA32241563248300557886 /* BTUserSettings.m */; };
+		22EA322D15633CBB00557886 /* BTAudioSettings.h in Headers */ = {isa = PBXBuildFile; fileRef = 22EA322B15633CBB00557886 /* BTAudioSettings.h */; };
+		22EA322E15633CBB00557886 /* BTAudioSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EA322C15633CBB00557886 /* BTAudioSettings.m */; };
+		22EA323015633DA600557886 /* BTAudioManager+Package.h in Headers */ = {isa = PBXBuildFile; fileRef = 22EA322F15633DA500557886 /* BTAudioManager+Package.h */; };
 		22F3373D14E89BAC00A17CCB /* GroupTestMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F3373C14E89BAC00A17CCB /* GroupTestMode.m */; };
 		22F979EA14C0E23F00A6913B /* GDataXMLNode+BTExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F979D814C0E23F00A6913B /* GDataXMLNode+BTExtensions.h */; };
 		22F979EB14C0E23F00A6913B /* GDataXMLNode+BTExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F979D914C0E23F00A6913B /* GDataXMLNode+BTExtensions.m */; };
@@ -340,6 +343,9 @@
 		22E0A761152A4404009FDE09 /* BTTouchEventSignals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTTouchEventSignals.m; sourceTree = "<group>"; };
 		22EA32231563248300557886 /* BTUserSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTUserSettings.h; sourceTree = "<group>"; };
 		22EA32241563248300557886 /* BTUserSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTUserSettings.m; sourceTree = "<group>"; };
+		22EA322B15633CBB00557886 /* BTAudioSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTAudioSettings.h; sourceTree = "<group>"; };
+		22EA322C15633CBB00557886 /* BTAudioSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTAudioSettings.m; sourceTree = "<group>"; };
+		22EA322F15633DA500557886 /* BTAudioManager+Package.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BTAudioManager+Package.h"; sourceTree = "<group>"; };
 		22F3373B14E89BAC00A17CCB /* GroupTestMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GroupTestMode.h; path = Integration/GroupTestMode.h; sourceTree = "<group>"; };
 		22F3373C14E89BAC00A17CCB /* GroupTestMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GroupTestMode.m; path = Integration/GroupTestMode.m; sourceTree = "<group>"; };
 		22F979D814C0E23F00A6913B /* GDataXMLNode+BTExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GDataXMLNode+BTExtensions.h"; sourceTree = "<group>"; };
@@ -591,8 +597,11 @@
 				22400B1B1544CA5000B00D5E /* BTAudioChannel.m */,
 				22518E01154385F8006E8494 /* BTAudioControls.h */,
 				22518E02154385F8006E8494 /* BTAudioControls.m */,
+				22EA322F15633DA500557886 /* BTAudioManager+Package.h */,
 				22400B291544E22500B00D5E /* BTAudioManager.h */,
 				22400B2A1544E22500B00D5E /* BTAudioManager.m */,
+				22EA322B15633CBB00557886 /* BTAudioSettings.h */,
+				22EA322C15633CBB00557886 /* BTAudioSettings.m */,
 				22518E0515438628006E8494 /* BTAudioState.h */,
 				22518E0615438628006E8494 /* BTAudioState.m */,
 				22400B211544CD1400B00D5E /* BTSoundResource.h */,
@@ -883,6 +892,8 @@
 				22400B2B1544E22500B00D5E /* BTAudioManager.h in Headers */,
 				22400B2E1544F7A000B00D5E /* BTAudioChannel+Package.h in Headers */,
 				22EA32251563248300557886 /* BTUserSettings.h in Headers */,
+				22EA322D15633CBB00557886 /* BTAudioSettings.h in Headers */,
+				22EA323015633DA600557886 /* BTAudioManager+Package.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1113,6 +1124,7 @@
 				22400B281544CEAE00B00D5E /* BTSoundType.m in Sources */,
 				22400B2C1544E22500B00D5E /* BTAudioManager.m in Sources */,
 				22EA32261563248300557886 /* BTUserSettings.m in Sources */,
+				22EA322E15633CBB00557886 /* BTAudioSettings.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

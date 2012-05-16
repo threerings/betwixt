@@ -22,6 +22,7 @@
 #import "BTAudioChannel.h"
 #import "BTAudioControls.h"
 #import "BTAudioManager.h"
+#import "BTAudioSettings.h"
 #import "BTAudioState.h"
 #import "BTSoundResource.h"
 #import "BTSoundType.h"

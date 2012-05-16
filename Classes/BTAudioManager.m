@@ -1,12 +1,13 @@
 //
 // Betwixt - Copyright 2012 Three Rings Design
 
-#import "BTAudioManager.h"
+#import "BTAudioManager+Package.h"
 #import "BTAudioControls.h"
 #import "BTAudioChannel+Package.h"
 #import "BTSoundResource.h"
 #import "BTSoundType.h"
 #import "BTAudioState.h"
+#import "BTAudioSettings.h"
 #import "BTApp.h"
 
 static const double SOUND_PLAYED_RECENTLY_DELTA = 1.0 / 20.0;
@@ -16,10 +17,10 @@ static const double SOUND_PLAYED_RECENTLY_DELTA = 1.0 / 20.0;
 @synthesize masterControls = _masterControls;
 @synthesize sfxControls = _sfxControls;
 @synthesize musicControls = _musicControls;
+@synthesize settings = _settings;
 
 - (id)init {
     if ((self = [super init])) {
-        [SPAudioEngine start];
         _masterControls = [[BTAudioControls alloc] init];
         _sfxControls = [[BTAudioControls alloc] initWithParentControls:_masterControls];
         _musicControls = [[BTAudioControls alloc] initWithParentControls:_masterControls];
@@ -27,6 +28,16 @@ static const double SOUND_PLAYED_RECENTLY_DELTA = 1.0 / 20.0;
         _activeChannels = [[NSMutableArray alloc] init];
     }
     return self;
+}
+
+- (void)setup {
+    [SPAudioEngine start];
+    _settings = [[BTAudioSettings alloc] initWithAudio:self];
+}
+
+- (void)shutdown {
+    [self stopAllSounds];
+    [SPAudioEngine stop];
 }
 
 - (BTAudioControls*)getControlsForSoundType:(BTSoundType*)type {
@@ -132,11 +143,6 @@ static const double SOUND_PLAYED_RECENTLY_DELTA = 1.0 / 20.0;
         [channel stop];
     }
     [_activeChannels removeAllObjects];
-}
-
-- (void)shutdown {
-    [self stopAllSounds];
-    [SPAudioEngine stop];
 }
 
 @end

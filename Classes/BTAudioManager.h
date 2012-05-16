@@ -6,6 +6,7 @@
 @class BTSoundResource;
 @class BTSoundType;
 @class BTAudioState;
+@class BTAudioSettings;
 
 @interface BTAudioManager : NSObject {
 @protected
@@ -14,11 +15,13 @@
     BTAudioControls* _musicControls;
     BTAudioState* _defaultState;
     NSMutableArray* _activeChannels;
+    BTAudioSettings* _settings;
 }
 
 @property (nonatomic,readonly) BTAudioControls* masterControls;
 @property (nonatomic,readonly) BTAudioControls* sfxControls;
 @property (nonatomic,readonly) BTAudioControls* musicControls;
+@property (nonatomic,readonly) BTAudioSettings* settings;
 
 - (BTAudioControls*)getControlsForSoundType:(BTSoundType*)type;
 
@@ -32,8 +35,5 @@
                         loop:(BOOL)loop;
 
 - (void)stopAllSounds;
-
-- (void)update:(float)dt;
-- (void)shutdown;
 
 @end

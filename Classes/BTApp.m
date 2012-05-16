@@ -13,6 +13,7 @@
 #import "BTDeviceType.h"
 
 #import "BTAudioManager.h"
+#import "BTAudioManager+Package.h"
 #import "BTSoundResource.h"
 
 static BTApp* gInstance = nil;
@@ -145,6 +146,7 @@ static BTApp* gInstance = nil;
     
     // Setup AudioManager
     _audio = [[BTAudioManager alloc] init];
+    [_audio setup];
     
     // create default mode stack
     _modeStacks = [NSMutableArray array];
