@@ -526,6 +526,7 @@
 				22448E8914E602FF001CF5CE /* Categories */,
 				22C7178C14C0E0000014B656 /* Resources */,
 				CBC4524414D21692008CC04D /* Movie */,
+				22EA32311563413000557886 /* Objects */,
 				CB24CBBB149FF75C004BAA57 /* Tasks */,
 				2221998C14D0F7DA009B764F /* Utils */,
 			);
@@ -544,20 +545,11 @@
 		2221998C14D0F7DA009B764F /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				220F63A8152E878B0051B383 /* BTButton+Protected.h */,
-				220F63A6152E878B0051B383 /* BTButton.h */,
-				220F63A7152E878B0051B383 /* BTButton.m */,
-				220F63A9152E878B0051B383 /* BTDisplayObjectButton.h */,
-				220F63AA152E878B0051B383 /* BTDisplayObjectButton.m */,
-				22D46A921538DEB4005BAD6D /* BTDragger.h */,
-				22D46A931538DEB4005BAD6D /* BTDragger.m */,
 				22E0A75E152A3837009FDE09 /* BTEventSignal+Protected.h */,
 				22E0A753152A311A009FDE09 /* BTEventSignal.h */,
 				22E0A754152A311A009FDE09 /* BTEventSignal.m */,
 				2221998D14D0F809009B764F /* BTLoadingMode.h */,
 				2221998E14D0F809009B764F /* BTLoadingMode.m */,
-				220F63AB152E878B0051B383 /* BTMovieButton.h */,
-				220F63AC152E878B0051B383 /* BTMovieButton.m */,
 				22C85EAB14DB225400F9EC07 /* BTPoints.h */,
 				22C85EAC14DB225400F9EC07 /* BTPoints.m */,
 				22E0A760152A4404009FDE09 /* BTTouchEventSignals.h */,
@@ -637,6 +629,22 @@
 				22E43A5C1559B0BC003A43B8 /* cooocoaTests.octest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		22EA32311563413000557886 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				220F63A8152E878B0051B383 /* BTButton+Protected.h */,
+				220F63A6152E878B0051B383 /* BTButton.h */,
+				220F63A7152E878B0051B383 /* BTButton.m */,
+				220F63A9152E878B0051B383 /* BTDisplayObjectButton.h */,
+				220F63AA152E878B0051B383 /* BTDisplayObjectButton.m */,
+				22D46A921538DEB4005BAD6D /* BTDragger.h */,
+				22D46A931538DEB4005BAD6D /* BTDragger.m */,
+				220F63AB152E878B0051B383 /* BTMovieButton.h */,
+				220F63AC152E878B0051B383 /* BTMovieButton.m */,
+			);
+			name = Objects;
 			sourceTree = "<group>";
 		};
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {

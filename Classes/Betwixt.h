@@ -45,6 +45,12 @@
 #import "BTMovieResource.h"
 #import "BTMovie.h"
 
+// Objects
+#import "BTButton.h"
+#import "BTDisplayObjectButton.h"
+#import "BTDragger.h"
+#import "BTMovieButton.h"
+
 // Tasks
 #import "BTAlphaTask.h"
 #import "BTBlockTask.h"
@@ -64,12 +70,8 @@
 #import "BTWaitTask.h"
 
 // Utils
-#import "BTButton.h"
-#import "BTDisplayObjectButton.h"
-#import "BTDragger.h"
 #import "BTEventSignal.h"
 #import "BTLoadingMode.h"
-#import "BTMovieButton.h"
 #import "BTPoints.h"
 #import "BTTouchEventSignals.h"
 #import "BTUserSettings.h"
