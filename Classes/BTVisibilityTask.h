@@ -3,7 +3,11 @@
 
 #import "BTDisplayObjectTask.h"
 
-@interface BTVisibilityTask : BTNode <BTUpdatable>
+@interface BTVisibilityTask : BTNode <BTUpdatable> {
+    BOOL _visible;
+    __weak SPDisplayObject* _target;
+}
+
 + (BTVisibilityTask*)setVisible:(BOOL)visible;
 + (BTVisibilityTask*)setVisible:(BOOL)visible target:(SPDisplayObject*)target;
 

@@ -23,12 +23,13 @@ static BTApp* gInstance = nil;
 @property(nonatomic,weak) BTApp* app;
 @end
 
-@interface BTViewController : UIViewController
-- (id)initWithApp:(BTApp*)app;
-@end
-@implementation BTViewController {
+@interface BTViewController : UIViewController {
     __weak BTApp* _app;
 }
+- (id)initWithApp:(BTApp*)app;
+@end
+
+@implementation BTViewController
 
 - (id)initWithApp:(BTApp *)app {
     if (!(self = [super init])) return nil;

@@ -30,16 +30,7 @@
 }
 @end
 
-@implementation LeakTestMode {
-    __weak BTObject* _parent;
-    __weak BTObject* _child;
-    __weak BTObject* _child2;
-    __weak Updater* _updater;
-    __weak Listener* _listener;
-    __weak BTSprite* _sprite;
-    __weak BTMovie* _movie;
-    int _ticks;
-}
+@implementation LeakTestMode
 
 - (void)setup {
     BTObject* parent = [[BTObject alloc] init];

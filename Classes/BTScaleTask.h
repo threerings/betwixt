@@ -3,7 +3,13 @@
 
 #import "BTDisplayObjectTask.h"
 
-@interface BTScaleTask : BTDisplayObjectTask
+@interface BTScaleTask : BTDisplayObjectTask {
+@protected
+    float _startX;
+    float _startY;
+    float _endX;
+    float _endY;
+}
 
 + (BTScaleTask*)withTime:(float)seconds scaleX:(float)scaleX scaleY:(float)scaleY;
 + (BTScaleTask*)withTime:(float)seconds scaleX:(float)scaleX scaleY:(float)scaleY 

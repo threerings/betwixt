@@ -5,12 +5,7 @@
 #import "BTInterpolator.h"
 #import "BTInterpolationTask+Protected.h"
 
-@implementation BTScaleTask {
-    float _startX;
-    float _startY;
-    float _endX;
-    float _endY;
-}
+@implementation BTScaleTask
 
 + (BTScaleTask*)withTime:(float)seconds scaleX:(float)scaleX scaleY:(float)scaleY {
     return [[BTScaleTask alloc] initWithTime:seconds scaleX:scaleX scaleY:scaleY];

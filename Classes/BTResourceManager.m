@@ -12,7 +12,14 @@
 #import "GDataXMLNode+BTExtensions.h"
 #import "SPView+BTExtensions.h"
 
-@interface LoadTask : NSObject
+@interface LoadTask : NSObject {
+@public
+    __weak BTResourceManager* _mgr;
+    NSString* _filename;
+    NSArray* _resources;
+    
+    NSException* _err;
+}
 
 - (id)initWithManager:(BTResourceManager*)mgr filename:(NSString*)filename;
 - (void)load;
@@ -144,14 +151,7 @@
 
 @end
 
-@implementation LoadTask {
-@public
-    __weak BTResourceManager* _mgr;
-    NSString* _filename;
-    NSArray* _resources;
-    
-    NSException* _err;
-}
+@implementation LoadTask
 
 @synthesize filename = _filename;
 @synthesize err = _err;

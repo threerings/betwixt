@@ -8,13 +8,7 @@
 #import "BTHasLocation.h"
 #import "BTDisplayObject.h"
 
-@implementation BTLocationTask {
-    float _startX;
-    float _startY;
-    float _endX;
-    float _endY;
-    __weak id<BTHasLocation> _target;
-}
+@implementation BTLocationTask
 
 + (BTLocationTask*)withTime:(float)seconds toX:(float)x toY:(float)y {
     return [[BTLocationTask alloc] initWithTime:seconds toX:x toY:y];

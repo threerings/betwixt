@@ -5,18 +5,21 @@
 #import "BTNode+Protected.h"
 #import "BTTouchEventSignals.h"
 
-@interface BTSimpleDisplayObject : BTDisplayObject
+@interface BTSimpleDisplayObject : BTDisplayObject {
+@private
+    SPDisplayObject* _disp;
+}
 - (id)initWithDisplayObject:(SPDisplayObject*)disp;
 @end
 
-@interface BTDisplayObject ()
-@property (nonatomic,readonly) BTTouchEventSignals* touchEventSignals;
-@end
-
-@implementation BTDisplayObject {
+@interface BTDisplayObject () {
 @protected
     BTTouchEventSignals* _touchEventSignals;
 }
+@property (nonatomic,readonly) BTTouchEventSignals* touchEventSignals;
+@end
+
+@implementation BTDisplayObject
 
 - (BTTouchEventSignals*)touchEventSignals {
     if (_touchEventSignals == nil) {
@@ -90,10 +93,7 @@
 
 @end
 
-@implementation BTSimpleDisplayObject {
-@private
-    SPDisplayObject* _disp;
-}
+@implementation BTSimpleDisplayObject
 
 - (id)initWithDisplayObject:(SPDisplayObject*)disp {
     if (!(self = [super init])) {

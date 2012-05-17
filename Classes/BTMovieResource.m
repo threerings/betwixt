@@ -15,12 +15,7 @@
 @interface BTMovieResourceFactory : NSObject<BTResourceFactory>
 @end
 
-@implementation BTMovieResource {
-@public
-    NSMutableArray* layers;
-    NSMutableArray* labels;
-    float framerate;
-}
+@implementation BTMovieResource
 
 - (id)initFromXml:(GDataXMLElement*)xml {
     if (!(self = [super init])) return nil;

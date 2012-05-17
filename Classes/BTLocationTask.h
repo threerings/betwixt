@@ -5,7 +5,15 @@
 
 @protocol BTHasLocation;
 
-@interface BTLocationTask : BTInterpolationTask
+@interface BTLocationTask : BTInterpolationTask {
+@protected
+    float _startX;
+    float _startY;
+    float _endX;
+    float _endY;
+    __weak id<BTHasLocation> _target;
+}
+
 + (BTLocationTask*)withTime:(float)seconds toX:(float)x toY:(float)y;
 + (BTLocationTask*)withTime:(float)seconds toX:(float)x toY:(float)y interpolator:(BTInterpolator*)interp;
 + (BTLocationTask*)withTime:(float)seconds toX:(float)x toY:(float)y target:(id<BTHasLocation>)target;

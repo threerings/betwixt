@@ -12,13 +12,13 @@
 #import "BTJugglerContainer.h"
 #import "BTUpdatable.h"
 
-@interface BTModeSprite : SPSprite<BTJugglerContainer>
-@end
-
-@implementation BTModeSprite {
+@interface BTModeSprite : SPSprite<BTJugglerContainer> {
 @private
     SPJuggler* _juggler;
 }
+@end
+
+@implementation BTModeSprite
 
 @synthesize juggler = _juggler;
 
@@ -31,7 +31,12 @@
 }
 @end
 
-@interface BTNodeGroup : NSObject <NSFastEnumeration>
+@interface BTNodeGroup : NSObject <NSFastEnumeration> {
+@private
+    BTMode* _mode;
+    NSMutableArray* _group;
+}
+
 @property (nonatomic,readonly) NSUInteger count;
 
 - (id)initWithMode:(BTMode*)mode;
@@ -39,11 +44,7 @@
 - (void)removeNode:(BTNode*)node;
 @end
 
-@implementation BTNodeGroup {
-@private
-    BTMode* _mode;
-    NSMutableArray* _group;
-}
+@implementation BTNodeGroup
 
 - (id)initWithMode:(BTMode *)mode {
     if (!(self = [super init])) {

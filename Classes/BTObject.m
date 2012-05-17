@@ -13,7 +13,11 @@
 #import "BTMode+Package.h"
 #import "BTMode+Protected.h"
 
-@interface BTObject ()
+@interface BTObject () {
+@protected
+    NSMutableDictionary* _namedObjects;
+    NSMutableArray* _pendingChildren;
+}
 @property (nonatomic, readonly) NSMutableDictionary* namedObjects;
 @end
 
@@ -27,10 +31,7 @@
 @end
 @implementation BTPendingChildNode @end
 
-@implementation BTObject {
-    NSMutableDictionary* _namedObjects;
-    NSMutableArray* _pendingChildren;
-}
+@implementation BTObject
 
 - (id)init {
     if (!(self = [super init])) return nil;

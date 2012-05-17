@@ -11,9 +11,7 @@
 - (void)loadNextFile;
 @end
 
-@implementation BTLoadingMode {
-    RAUnitSignal* _loadComplete;
-}
+@implementation BTLoadingMode
 
 - (id)init {
     if (!(self = [super init])) return nil;

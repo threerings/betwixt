@@ -7,6 +7,7 @@
 
 @interface BTLoadingMode : BTMode {
 @protected
+    RAUnitSignal* _loadComplete;
     NSMutableArray* _filenames;
     int _filenameIdx;
 }

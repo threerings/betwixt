@@ -3,7 +3,11 @@
 
 #import "BTDisplayObjectTask.h"
 
-@interface BTRotationTask : BTDisplayObjectTask
+@interface BTRotationTask : BTDisplayObjectTask {
+@protected
+    float _startRotation;
+    float _endRotation;
+}
 
 + (BTRotationTask*)withTime:(float)seconds rotation:(float)rads;
 + (BTRotationTask*)withTime:(float)seconds rotation:(float)rads interpolator:(BTInterpolator*)interp;

@@ -3,9 +3,7 @@
 
 #import "BTModeStack.h"
 
-@implementation SubObjectMode {
-    int _ticks, _squaresRemoved, _squaresAdded;
-}
+@implementation SubObjectMode
 
 - (Square*) createAndMonitorSquareWithColor:(int)color andName:(NSString*)name {
     Square *square = [[Square alloc] initWithColor:color andName:name];

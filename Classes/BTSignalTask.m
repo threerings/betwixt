@@ -4,9 +4,7 @@
 #import "BTSignalTask.h"
 #import "BTNode+Protected.h"
 
-@implementation BTSignalTask {
-    __weak RAReactor* _sig;
-}
+@implementation BTSignalTask
 
 + (BTSignalTask*)waitForSignal:(RAReactor*)signal {
     return [[BTSignalTask alloc] initWithSignal:signal];

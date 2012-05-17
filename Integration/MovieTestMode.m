@@ -8,11 +8,7 @@
 #import "BTMovie.h"
 #import "BTMovieResource.h"
 
-@implementation MovieTestMode {
-@protected
-    NSString* _resourceName;
-    NSString* _movieName;
-}
+@implementation MovieTestMode
 
 - (id)initWithResourceName:(NSString *)resourceName movieName:(NSString *)movieName {
     if (!(self = [super init])) {

@@ -10,10 +10,7 @@
 #import "BTResourceManager.h"
 #import "BTDeviceType.h"
 
-
-@implementation BTTextureGroupFactory {
-    NSArray* _targetDevicePrefs;
-}
+@implementation BTTextureGroupFactory
 
 + (id<BTMultiResourceFactory>)sharedFactory {
     static BTTextureGroupFactory* instance = nil;

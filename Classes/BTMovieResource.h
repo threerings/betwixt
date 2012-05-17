@@ -11,7 +11,12 @@
 @protocol BTResourceFactory;
 @class BTMovie;
 
-@interface BTMovieResource : BTResource <BTDisplayObjectCreator>
+@interface BTMovieResource : BTResource <BTDisplayObjectCreator> {
+@protected
+    NSMutableArray* layers;
+    NSMutableArray* labels;
+    float framerate;
+}
 
 + (id<BTResourceFactory>)sharedFactory;
 + (BTMovieResource*)require:(NSString*)name;

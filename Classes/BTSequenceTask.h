@@ -3,7 +3,12 @@
 
 #import "BTNode.h"
 
-@interface BTSequenceTask : BTNode
+@interface BTSequenceTask : BTNode {
+@protected
+    NSArray* _nodes;
+    int _position;
+}
+
 + (BTSequenceTask*)withNodes:(BTNode*)node, ... NS_REQUIRES_NIL_TERMINATION;
 - (id)initWithNodes:(NSArray*)nodes;
 @end

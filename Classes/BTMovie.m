@@ -152,20 +152,7 @@ NSString * const BTMovieLastFrame = @"BTMovieLastFrame";
 }
 @end
 
-@implementation BTMovie {
-    BOOL _goingToFrame;// If a call to gotoFrame is active
-    int _pendingFrame;// Latest frame given to gotoFrame while _goingToFrame, or NO_FRAME if there isn't a queued frame move
-    int _frame;// Last drawn frame
-    int _stopFrame;// Frame on which playing stops, or NO_FRAME if we're looping or already stopped
-    RABoolValue* _playing;
-    float _playTime;// Time position of the playhead. Does not snap to frame boundaries.
-    float _duration;// Length of the movie in seconds
-    RAObjectSignal* _labelPassed;
-    NSArray* _labels;// <NSArray<NSString>> by frame idx
-    NSMutableArray* _layers;// <BTMovieLayer>
-    __weak SPJuggler* _juggler;// The juggler advancing us if we're on the stage, or nil if we're not on the display list
-    float _framerate;
-}
+@implementation BTMovie
 
 - (int)frameForLabel:(NSString*)label {
     for (int ii = 0; ii < [_labels count]; ii++) {

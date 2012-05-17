@@ -31,7 +31,7 @@
 
 @end
 
-@implementation BTTouchEventSignals {
+@interface BTTouchEventSignals () {
     // these are all lazily initialized
     FilteredTouchSignal* _touchBegan;
     FilteredTouchSignal* _touchMoved;
@@ -39,6 +39,9 @@
     FilteredTouchSignal* _touchEnded;
     FilteredTouchSignal* _touchCanceled;
 }
+@end
+
+@implementation BTTouchEventSignals
 
 @synthesize touchEvent = _touchEvent;
 

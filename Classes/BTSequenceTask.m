@@ -5,10 +5,7 @@
 #import "BTNodeContainer.h"
 #import "BTNode+Protected.h"
 
-@implementation BTSequenceTask {
-    NSArray* _nodes;
-    int _position;
-}
+@implementation BTSequenceTask
 
 - (id)initWithNodes:(NSArray*)nodes {
     if ((self = [super init])) {

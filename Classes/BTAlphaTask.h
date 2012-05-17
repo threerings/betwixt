@@ -3,7 +3,11 @@
 
 #import "BTDisplayObjectTask.h"
 
-@interface BTAlphaTask : BTDisplayObjectTask
+@interface BTAlphaTask : BTDisplayObjectTask {
+@protected
+    float _startAlpha;
+    float _endAlpha;
+}
 
 + (BTAlphaTask*)withTime:(float)seconds alpha:(float)alpha;
 + (BTAlphaTask*)withTime:(float)seconds alpha:(float)alpha interpolator:(BTInterpolator*)interp;

@@ -5,10 +5,7 @@
 #import "BTInterpolationTask+Protected.h"
 #import "BTInterpolator.h"
 
-@implementation BTAlphaTask {
-    float _startAlpha;
-    float _endAlpha;
-}
+@implementation BTAlphaTask
 
 + (BTAlphaTask*)withTime:(float)seconds alpha:(float)alpha {
     return [[BTAlphaTask alloc] initWithTime:seconds alpha:alpha];

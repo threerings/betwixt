@@ -3,16 +3,17 @@
 
 #import "BTDeviceType.h"
 
-@interface BTDeviceType ()
-- (id)initWithScreenWidth:(int)screenWidth screenHeight:(int)screenHeight deviceClass:(NSString*)deviceClass retina:(BOOL)retina;
-@end
-
-@implementation BTDeviceType {
+@interface BTDeviceType () {
+@protected
     int _screenWidth;
     int _screenHeight;
     NSString* _deviceClass;
     BOOL _retina;
 }
+- (id)initWithScreenWidth:(int)screenWidth screenHeight:(int)screenHeight deviceClass:(NSString*)deviceClass retina:(BOOL)retina;
+@end
+
+@implementation BTDeviceType
 
 @synthesize screenWidth = _screenWidth;
 @synthesize screenHeight = _screenHeight;

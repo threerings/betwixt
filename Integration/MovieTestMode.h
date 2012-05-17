@@ -3,7 +3,11 @@
 
 #import "BTMode.h"
 
-@interface MovieTestMode : BTMode
+@interface MovieTestMode : BTMode {
+@protected
+    NSString* _resourceName;
+    NSString* _movieName;
+}
 
 - (id)initWithResourceName:(NSString*)resourceName movieName:(NSString*)movieName;
 

@@ -5,9 +5,7 @@
 #import "BTNodeContainer.h"
 #import "BTNode+Protected.h"
 
-@implementation BTParallelTask {
-    NSArray *_nodes;
-}
+@implementation BTParallelTask 
 
 - (id)initWithNodes:(NSArray*)nodes {
     if ((self = [super init])) {

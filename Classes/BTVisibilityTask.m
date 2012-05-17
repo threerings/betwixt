@@ -5,10 +5,7 @@
 #import "BTDisplayObject.h"
 #import "BTNode+Protected.h"
 
-@implementation BTVisibilityTask {
-    BOOL _visible;
-    __weak SPDisplayObject* _target;
-}
+@implementation BTVisibilityTask
 
 + (BTVisibilityTask*)setVisible:(BOOL)visible {
     return [[BTVisibilityTask alloc] initWithVisible:visible target:nil];

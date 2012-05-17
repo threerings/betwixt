@@ -6,10 +6,7 @@
 #import "BTInterpolationTask+Protected.h"
 #import "BTNode+Protected.h"
 
-@implementation BTRotationTask {
-    float _startRotation;
-    float _endRotation;
-}
+@implementation BTRotationTask
 
 + (BTRotationTask*)withTime:(float)seconds rotation:(float)rads {
     return [[BTRotationTask alloc] initWithTime:seconds rotation:rads];

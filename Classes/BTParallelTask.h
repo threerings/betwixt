@@ -3,7 +3,10 @@
 
 #import "BTNode.h"
 
-@interface BTParallelTask : BTNode
+@interface BTParallelTask : BTNode {
+@protected
+    NSArray *_nodes;
+}
 + (BTParallelTask*)withNodes:(BTNode*)node, ... NS_REQUIRES_NIL_TERMINATION;
 - (id)initWithNodes:(NSArray*)nodes;
 @end
