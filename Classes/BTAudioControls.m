@@ -32,7 +32,7 @@
 }
 
 - (void)attachChild:(BTAudioControls*)child {
-    [_children addObject:[NSValue valueWithNonretainedObject:child]];
+    [_children addObject:[OOOBoxedWeakRef createWith:child]];
 }
 
 - (BTAudioState*)state {
@@ -191,7 +191,7 @@
     
     // update children
     for (int ii = 0; ii < _children.count; ++ii) {
-        __weak BTAudioControls* child = ((NSValue*) [_children objectAtIndex:ii]).nonretainedObjectValue;
+        __weak BTAudioControls* child = ((OOOBoxedWeakRef*) [_children objectAtIndex:ii]).value;
         if (child == nil) {
             // Nobody's holding a reference to the child
             [_children removeObjectAtIndex:ii--];
