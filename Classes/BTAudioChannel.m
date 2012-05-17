@@ -75,7 +75,7 @@ static BTAudioControls* GetDummyControls () {
 
 - (void)playWithState:(BTAudioState*)state {
     _spChannel = [_sound.sound createChannel];
-    [_spChannel addEventListener:@selector(handleComplete) 
+    [_spChannel addEventListener:@selector(handleComplete:) 
                         atObject:self 
                          forType:SP_EVENT_TYPE_SOUND_COMPLETED];
     _spChannel.loop = _loop;
@@ -91,7 +91,7 @@ static BTAudioControls* GetDummyControls () {
 - (void)stop {
     if (self.isPlaying) {
         if (_spChannel != nil) {
-            [_spChannel removeEventListener:@selector(handleComplete) 
+            [_spChannel removeEventListener:@selector(handleComplete:) 
                                    atObject:self 
                                     forType:SP_EVENT_TYPE_SOUND_COMPLETED];
             [_spChannel stop];
@@ -102,7 +102,7 @@ static BTAudioControls* GetDummyControls () {
     }
 }
 
-- (void)handleComplete {
+- (void)handleComplete:(SPEvent*)event {
     [self stop];
     [_completed emit];
 }

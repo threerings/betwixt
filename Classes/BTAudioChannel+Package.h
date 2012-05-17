@@ -13,5 +13,5 @@
 - (void)playWithState:(BTAudioState*)state;
 - (void)update;
 - (void)stop;
-- (void)handleComplete;
+- (void)handleComplete:(SPEvent*)event;
 @end
