@@ -35,6 +35,9 @@
 + (double)timeNow;
 
 + (BTModeStack*)createModeStack;
+/// Returns the path for the given resource file.
 + (NSString*)resourcePathFor:(NSString*)resourceName;
+/// Returns the path for the given resource file. Throws an exception if the file does not exist. 
++ (NSString*)requireResourcePathFor:(NSString*)resourceName;
 
 @end

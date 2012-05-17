@@ -84,6 +84,10 @@ static BTApp* gInstance = nil;
     return [gInstance resourcePathFor:resourceName];
 }
 
++ (NSString*)requireResourcePathFor:(NSString*)resourceName {
+    return [gInstance requireResourcePathFor:resourceName];
+}
+
 - (id)init {
     NSAssert(gInstance == nil, @"BTApp has already been created");
     if (!(self = [super init])) return nil;
@@ -207,7 +211,16 @@ static BTApp* gInstance = nil;
     return @"";
 }
 
-- (NSString*)resourcePathFor:(NSString *)resourceName {
+- (NSString*)requireResourcePathFor:(NSString*)resourceName {
+    NSString* path = [self resourcePathFor:resourceName];
+    if (path == nil) {
+        [NSException raise:NSGenericException 
+                    format:@"required resource does not exist: '%@'", resourceName];
+    }
+    return path;
+}
+
+- (NSString*)resourcePathFor:(NSString*)resourceName {
     NSBundle* bundle = [NSBundle bundleForClass:[self class]];
     
     NSString* devicePath = [[self.resourcePathPrefix stringByAppendingPathComponent:_deviceType.deviceClass] stringByAppendingPathComponent:resourceName];

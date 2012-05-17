@@ -198,7 +198,11 @@
             NSString* type = [child name];
             // find the resource factory for this type
             id factory = [_mgr getFactory:type];
-            NSAssert(factory, @"No ResourceFactory for '%@'", type);
+            if (factory == nil) {
+                @throw [GDataXMLException withElement:child 
+                                               reason:@"No ResourceFactory for '%@'", type];
+            }
+            
             if ([factory conformsToProtocol:@protocol(BTMultiResourceFactory)]) {
                 for (BTResource* rsrc in [((id<BTMultiResourceFactory>)factory) create:child]) {
                     rsrc->_group = _filename;

@@ -32,7 +32,7 @@
 
 - (id)initWithXml:(GDataXMLElement*)xml {
     if (!(self = [super init])) return nil;
-    NSString* filename = [BTApp resourcePathFor:[xml stringAttribute:@"filename"]];
+    NSString* filename = [BTApp requireResourcePathFor:[xml stringAttribute:@"filename"]];
     _texture = [[SPTexture alloc] initWithContentsOfFile:filename];
     _texture.repeat = [xml boolAttribute:@"repeat" defaultVal:NO];
     _offset = [xml pointAttribute:@"offset" defaultVal:[SPPoint pointWithX:0 y:0]];
