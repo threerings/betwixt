@@ -8,11 +8,10 @@
 @class BTSoundResource;
 
 @interface BTAudioChannel (package)
-- (id)initWithControls:(BTAudioControls*)controls sound:(BTSoundResource*)sound startTime:(double)startTime loop:(BOOL)loop;
+- (id)initWithControls:(BTAudioControls*)controls sound:(BTSoundResource*)sound 
+             startTime:(double)startTime loop:(BOOL)loop;
 - (void)playWithState:(BTAudioState*)state;
-- (void)setVolume:(float)volume;
+- (void)update;
 - (void)stop;
-- (void)pause;
-- (void)resume;
 - (void)handleComplete;
 @end

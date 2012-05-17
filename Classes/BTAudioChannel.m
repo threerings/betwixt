@@ -40,6 +40,23 @@ static BTAudioControls* GetDummyControls () {
     return _completed;
 }
 
+- (void)update {
+    if (self.isPlaying) {
+        BTAudioState* state = _controls.state;
+        if (state.stopped) {
+            [self stop];
+        } else if (state.paused && !self.isPaused) {
+            [_spChannel pause];
+        } else if (!state.paused && self.isPaused) {
+            [_spChannel play];
+        }
+        
+        if (self.isPlaying && !self.isPaused) {
+            _spChannel.volume = state.actualVolume * _sound.volume;
+        }
+    }
+}
+
 - (void)setVolume:(float)volume {
     _spChannel.volume = volume;
 }
@@ -50,18 +67,6 @@ static BTAudioControls* GetDummyControls () {
 
 - (BOOL)isPaused {
     return (_sound != nil && _spChannel.isPaused);
-}
-
-- (void)pause {
-    if (self.isPlaying && !self.isPaused) {
-        [_spChannel pause];
-    }
-}
-
-- (void)resume {
-    if (self.isPlaying && self.isPaused) {
-        [_spChannel play];
-    }
 }
 
 - (BTAudioControls*)controls {

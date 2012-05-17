@@ -34,7 +34,7 @@
 
 - (id)initWithXml:(GDataXMLElement*)xml {
     if ((self = [super init])) {
-        NSString* filename = [BTApp resourcePathFor:[xml stringAttribute:@"filename"]];
+        NSString* filename = [BTApp requireResourcePathFor:[xml stringAttribute:@"filename"]];
         _sound = [SPSound soundWithContentsOfFile:filename];
         _type = [xml enumAttribute:@"type" type:[BTSoundType class] defaultVal:BTSoundType.SFX];
         _volume = [xml floatAttribute:@"volume" defaultVal:1];

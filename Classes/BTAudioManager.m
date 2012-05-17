@@ -56,23 +56,7 @@ static const double SOUND_PLAYED_RECENTLY_DELTA = 1.0 / 20.0;
     // update all playing sound channels
     BOOL hasStoppedChannels = NO;
     for (BTAudioChannel* channel in _activeChannels) {
-        if (channel.isPlaying) {
-            BTAudioState* audioState = channel.controls.state;
-            BOOL channelPaused = channel.isPaused;
-            if (audioState.stopped) {
-                [channel stop];
-            } else if (audioState.paused && !channelPaused) {
-                [channel pause];
-            } else if (!audioState.paused && channelPaused) {
-                [channel resume];
-                channelPaused = NO;
-            } 
-            
-            if (!channelPaused) {
-                [channel setVolume:audioState.actualVolume * channel.sound.volume];
-            }
-        }
-        
+        [channel update];
         if (!channel.isPlaying) {
             hasStoppedChannels = YES;
         }
@@ -80,7 +64,7 @@ static const double SOUND_PLAYED_RECENTLY_DELTA = 1.0 / 20.0;
     
     // Remove inactive channels
     if (hasStoppedChannels) {
-        [_activeChannels = _activeChannels filter:^BOOL(BTAudioChannel* channel) {
+        _activeChannels = [_activeChannels filter:^BOOL(BTAudioChannel* channel) {
             return channel.isPlaying;
         }];
     }
