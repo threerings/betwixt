@@ -64,6 +64,8 @@
 		229B463314D8C439005FC8E9 /* BTHasLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = 229B463214D8C439005FC8E9 /* BTHasLocation.h */; };
 		229B463614D8C525005FC8E9 /* SPDisplayObject+BTExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 229B463414D8C525005FC8E9 /* SPDisplayObject+BTExtensions.h */; };
 		229B463714D8C525005FC8E9 /* SPDisplayObject+BTExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 229B463514D8C525005FC8E9 /* SPDisplayObject+BTExtensions.m */; };
+		22B432D51567081F009B0404 /* BTDisplayObjects.h in Headers */ = {isa = PBXBuildFile; fileRef = 22B432D31567081F009B0404 /* BTDisplayObjects.h */; };
+		22B432D61567081F009B0404 /* BTDisplayObjects.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B432D41567081F009B0404 /* BTDisplayObjects.m */; };
 		22C85EAD14DB225400F9EC07 /* BTPoints.h in Headers */ = {isa = PBXBuildFile; fileRef = 22C85EAB14DB225400F9EC07 /* BTPoints.h */; };
 		22C85EAE14DB225400F9EC07 /* BTPoints.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C85EAC14DB225400F9EC07 /* BTPoints.m */; };
 		22C85EB614DB344100F9EC07 /* BTNode+Protected.h in Headers */ = {isa = PBXBuildFile; fileRef = 22C85EB514DB344100F9EC07 /* BTNode+Protected.h */; };
@@ -321,6 +323,8 @@
 		229B463414D8C525005FC8E9 /* SPDisplayObject+BTExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SPDisplayObject+BTExtensions.h"; sourceTree = "<group>"; };
 		229B463514D8C525005FC8E9 /* SPDisplayObject+BTExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SPDisplayObject+BTExtensions.m"; sourceTree = "<group>"; };
 		229E28561557503B001452E5 /* cooocoa.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cooocoa.xcodeproj; path = ../cooocoa.xcodeproj; sourceTree = COOOCOA_SRC; };
+		22B432D31567081F009B0404 /* BTDisplayObjects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTDisplayObjects.h; sourceTree = "<group>"; };
+		22B432D41567081F009B0404 /* BTDisplayObjects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTDisplayObjects.m; sourceTree = "<group>"; };
 		22C85EAB14DB225400F9EC07 /* BTPoints.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTPoints.h; sourceTree = "<group>"; };
 		22C85EAC14DB225400F9EC07 /* BTPoints.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTPoints.m; sourceTree = "<group>"; };
 		22C85EB514DB344100F9EC07 /* BTNode+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BTNode+Protected.h"; sourceTree = "<group>"; };
@@ -549,6 +553,8 @@
 		2221998C14D0F7DA009B764F /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				22B432D31567081F009B0404 /* BTDisplayObjects.h */,
+				22B432D41567081F009B0404 /* BTDisplayObjects.m */,
 				22E0A75E152A3837009FDE09 /* BTEventSignal+Protected.h */,
 				22E0A753152A311A009FDE09 /* BTEventSignal.h */,
 				22E0A754152A311A009FDE09 /* BTEventSignal.m */,
@@ -909,6 +915,7 @@
 				22EA322D15633CBB00557886 /* BTAudioSettings.h in Headers */,
 				22EA323015633DA600557886 /* BTAudioManager+Package.h in Headers */,
 				22EA32341563436300557886 /* BTCheckbox.h in Headers */,
+				22B432D51567081F009B0404 /* BTDisplayObjects.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1141,6 +1148,7 @@
 				22EA32261563248300557886 /* BTUserSettings.m in Sources */,
 				22EA322E15633CBB00557886 /* BTAudioSettings.m in Sources */,
 				22EA32351563436300557886 /* BTCheckbox.m in Sources */,
+				22B432D61567081F009B0404 /* BTDisplayObjects.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
