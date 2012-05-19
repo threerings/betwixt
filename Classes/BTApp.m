@@ -9,6 +9,7 @@
 
 #import "BTTextureGroupFactory.h"
 #import "BTTextureResource.h"
+#import "BTFontResource.h"
 #import "BTMovieResource.h"
 #import "BTDeviceType.h"
 
@@ -146,6 +147,7 @@ static BTApp* gInstance = nil;
     _resourceMgr = [[BTResourceManager alloc] init];
     [_resourceMgr registerFactory:[BTSoundResource sharedFactory] forType:BT_SOUND_RESOURCE_NAME];
     [_resourceMgr registerFactory:[BTTextureResource sharedFactory] forType:BT_TEXTURE_RESOURCE_NAME];
+    [_resourceMgr registerFactory:[BTFontResource sharedFactory] forType:BT_FONT_RESOURCE_NAME];
     [_resourceMgr registerFactory:[BTMovieResource sharedFactory] forType:BT_MOVIE_RESOURCE_NAME];
     [_resourceMgr registerMultiFactory:[BTTextureGroupFactory sharedFactory] forType:BT_TEXTURE_GROUP_RESOURCE_NAME];
     

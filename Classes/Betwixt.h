@@ -36,6 +36,7 @@
 #import "SPView+BTExtensions.h"
 
 // Resources
+#import "BTFontResource.h"
 #import "BTResource.h"
 #import "BTResourceFactory.h"
 #import "BTResourceManager.h"

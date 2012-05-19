@@ -7,6 +7,7 @@
 #import "BTApp.h"
 #import "BTApp+Package.h"
 #import "BTResource.h"
+#import "BTResource+Protected.h"
 #import "GDataXMLException.h"
 
 #import "GDataXMLNode+BTExtensions.h"
@@ -30,6 +31,7 @@
 @property (readonly,strong) NSException* err;
 @property (copy) OOOCompleteCallback onComplete;
 @property (copy) OOOErrorCallback onError;
+@property BOOL canceled;
 @end
 
 @implementation BTResourceManager
@@ -71,26 +73,33 @@
 - (void)loadTaskCompleted:(LoadTask*)task {
     NSAssert([_loadingFiles containsObject:task.filename], @"");
     [_loadingFiles removeObject:task.filename];
-
-    NSException* loadErr = task.err;
-
-    if (loadErr == nil) {
-        @try {
-            for (BTResource* rsrc in task.resources) {
-                NSAssert(![self isResourceLoaded:rsrc.name],
-                         @"A resource with that name already exists: '%@'", rsrc.name);
-                [_resources setValue:rsrc forKey:rsrc.name];
-            }
-        } @catch (NSException* err) {
-            [self unloadResourceFile:task.filename];
-            loadErr = err;
+    
+    if (task.canceled) {
+        for (BTResource* rsrc in task.resources) {
+            [rsrc unload];
         }
-    }
+        
+    } else {
+        NSException* loadErr = task.err;
 
-    if (loadErr) task.onError(loadErr);
-    else {
-        [_loadedFiles addObject:task.filename];
-        task.onComplete();
+        if (loadErr == nil) {
+            @try {
+                for (BTResource* rsrc in task.resources) {
+                    NSAssert(![self isResourceLoaded:rsrc.name],
+                             @"A resource with that name already exists: '%@'", rsrc.name);
+                    [_resources setValue:rsrc forKey:rsrc.name];
+                }
+            } @catch (NSException* err) {
+                [self unloadResourceFile:task.filename];
+                loadErr = err;
+            }
+        }
+
+        if (loadErr) task.onError(loadErr);
+        else {
+            [_loadedFiles addObject:task.filename];
+            task.onComplete();
+        }
     }
 }
 
@@ -123,18 +132,25 @@
 }
 
 - (void)unloadResourceFile:(NSString*)filename {
-    for (BTResource* rsrc in [_resources allValues]) {
+    for (BTResource* rsrc in _resources.allValues) {
         if ([rsrc.group isEqualToString:filename]) {
             [_resources removeObjectForKey:rsrc.name];
+            [rsrc unload];
         }
     }
     [_loadedFiles removeObject:filename];
 }
 
 - (void)unloadAll {
+    for (BTResource* rsrc in _resources.allValues) {
+        [rsrc unload];
+    }
     [_resources removeAllObjects];
     [_loadedFiles removeAllObjects];
-    // TODO: what to do with loading files?
+    
+    for (LoadTask* task in _loadingFiles) {
+        task.canceled = YES;
+    }
 }
 
 - (void)registerFactory:(id<BTResourceFactory>)factory forType:(NSString*)type {
@@ -156,7 +172,7 @@
 @synthesize filename = _filename;
 @synthesize err = _err;
 @synthesize resources = _resources;
-@synthesize onComplete, onError;
+@synthesize onComplete, onError, canceled;
 
 - (id)initWithManager:(BTResourceManager*)mgr filename:(NSString*)filename {
     if (!(self = [super init])) {
@@ -172,6 +188,10 @@
 }
 
 - (void)loadNow {
+    if (self.canceled) {
+        return;
+    }
+    
     @try {
         if (![BTApp.view useNewSharedEAGLContext]) {
             [NSException raise:NSGenericException format:@"Unable to use new EAGLContext"];
