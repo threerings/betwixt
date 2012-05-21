@@ -13,18 +13,18 @@
 
 + (BTScaleTask*)withTime:(float)seconds scaleX:(float)scaleX scaleY:(float)scaleY;
 + (BTScaleTask*)withTime:(float)seconds scaleX:(float)scaleX scaleY:(float)scaleY 
-      interpolator:(BTInterpolator*)interp;
+      interpolator:(id<OOOInterpolator>)interp;
 + (BTScaleTask*)withTime:(float)seconds scaleX:(float)scaleX scaleY:(float)scaleY 
             target:(SPDisplayObject*)target;
 + (BTScaleTask*)withTime:(float)seconds scaleX:(float)scaleX scaleY:(float)scaleY 
-      interpolator:(BTInterpolator*)interp target:(SPDisplayObject*)target;
+      interpolator:(id<OOOInterpolator>)interp target:(SPDisplayObject*)target;
 
 - (id)initWithTime:(float)seconds scaleX:(float)scaleX scaleY:(float)scaleY;
 - (id)initWithTime:(float)seconds scaleX:(float)scaleX scaleY:(float)scaleY 
-      interpolator:(BTInterpolator*)interp;
+      interpolator:(id<OOOInterpolator>)interp;
 - (id)initWithTime:(float)seconds scaleX:(float)scaleX scaleY:(float)scaleY 
             target:(SPDisplayObject*)target;
 - (id)initWithTime:(float)seconds scaleX:(float)scaleX scaleY:(float)scaleY 
-      interpolator:(BTInterpolator*)interp target:(SPDisplayObject*)target;
+      interpolator:(id<OOOInterpolator>)interp target:(SPDisplayObject*)target;
 
 @end

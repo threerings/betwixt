@@ -2,7 +2,6 @@
 // Betwixt - Copyright 2012 Three Rings Design
 
 #import "BTRotationTask.h"
-#import "BTInterpolator.h"
 #import "BTInterpolationTask+Protected.h"
 #import "BTNode+Protected.h"
 
@@ -12,7 +11,7 @@
     return [[BTRotationTask alloc] initWithTime:seconds rotation:rads];
 }
 
-+ (BTRotationTask*)withTime:(float)seconds rotation:(float)rads interpolator:(BTInterpolator*)interp {
++ (BTRotationTask*)withTime:(float)seconds rotation:(float)rads interpolator:(id<OOOInterpolator>)interp {
     return [[BTRotationTask alloc] initWithTime:seconds rotation:rads interpolator:interp];
 }
 
@@ -20,24 +19,24 @@
     return [[BTRotationTask alloc] initWithTime:seconds rotation:rads target:target];
 }
 
-+ (BTRotationTask*)withTime:(float)seconds rotation:(float)rads interpolator:(BTInterpolator*)interp 
++ (BTRotationTask*)withTime:(float)seconds rotation:(float)rads interpolator:(id<OOOInterpolator>)interp 
                       target:(SPDisplayObject*)target {
     return [[BTRotationTask alloc] initWithTime:seconds rotation:rads interpolator:interp target:target];
 }
 
 - (id)initWithTime:(float)seconds rotation:(float)rads {
-    return [self initWithTime:seconds rotation:rads interpolator:BTInterpolator.LINEAR target:nil];
+    return [self initWithTime:seconds rotation:rads interpolator:OOOEasing.linear target:nil];
 }
 
-- (id)initWithTime:(float)seconds rotation:(float)rads interpolator:(BTInterpolator*)interp {
+- (id)initWithTime:(float)seconds rotation:(float)rads interpolator:(id<OOOInterpolator>)interp {
     return [self initWithTime:seconds rotation:rads interpolator:interp target:nil];
 }
 
 - (id)initWithTime:(float)seconds rotation:(float)rads target:(SPDisplayObject*)target {
-    return [self initWithTime:seconds rotation:rads interpolator:BTInterpolator.LINEAR target:target];
+    return [self initWithTime:seconds rotation:rads interpolator:OOOEasing.linear target:target];
 }
 
-- (id)initWithTime:(float)seconds rotation:(float)rads interpolator:(BTInterpolator*)interp target:(SPDisplayObject*)target {
+- (id)initWithTime:(float)seconds rotation:(float)rads interpolator:(id<OOOInterpolator>)interp target:(SPDisplayObject*)target {
     if (!(self = [super initWithTime:seconds interpolator:interp target:target])) return nil;
     
     _endRotation = rads;

@@ -2,7 +2,7 @@
 // Betwixt - Copyright 2012 Three Rings Design
 
 #import "BTScaleTask.h"
-#import "BTInterpolator.h"
+#import "OOOEasing.h"
 #import "BTInterpolationTask+Protected.h"
 
 @implementation BTScaleTask
@@ -12,7 +12,7 @@
 }
 
 + (BTScaleTask*)withTime:(float)seconds scaleX:(float)scaleX scaleY:(float)scaleY 
-             interpolator:(BTInterpolator*)interp {
+             interpolator:(id<OOOInterpolator>)interp {
     return [[BTScaleTask alloc] initWithTime:seconds scaleX:scaleX scaleY:scaleY interpolator:interp];
 }
 
@@ -22,17 +22,17 @@
 }
 
 + (BTScaleTask*)withTime:(float)seconds scaleX:(float)scaleX scaleY:(float)scaleY 
-             interpolator:(BTInterpolator*)interp target:(SPDisplayObject*)target {
+             interpolator:(id<OOOInterpolator>)interp target:(SPDisplayObject*)target {
     return [[BTScaleTask alloc] initWithTime:seconds scaleX:scaleX scaleY:scaleY interpolator:interp target:target];
 }
 
 - (id)initWithTime:(float)seconds scaleX:(float)scaleX scaleY:(float)scaleY {
     return [self initWithTime:seconds scaleX:(float)scaleX scaleY:(float)scaleY 
-                 interpolator:BTInterpolator.LINEAR target:nil];
+                 interpolator:OOOEasing.linear target:nil];
 }
 
 - (id)initWithTime:(float)seconds scaleX:(float)scaleX scaleY:(float)scaleY 
-      interpolator:(BTInterpolator*)interp {
+      interpolator:(id<OOOInterpolator>)interp {
     return [self initWithTime:seconds scaleX:(float)scaleX scaleY:(float)scaleY interpolator:interp 
                        target:nil];
 }
@@ -40,11 +40,11 @@
 - (id)initWithTime:(float)seconds scaleX:(float)scaleX scaleY:(float)scaleY 
             target:(SPDisplayObject*)target {
     return [self initWithTime:seconds scaleX:(float)scaleX scaleY:(float)scaleY 
-                 interpolator:BTInterpolator.LINEAR target:target];
+                 interpolator:OOOEasing.linear target:target];
 }
 
 - (id)initWithTime:(float)seconds scaleX:(float)scaleX scaleY:(float)scaleY 
-      interpolator:(BTInterpolator*)interp target:(SPDisplayObject*)target {
+      interpolator:(id<OOOInterpolator>)interp target:(SPDisplayObject*)target {
     if (!(self = [super initWithTime:seconds interpolator:interp target:target])) return nil;
     
     _endX = scaleX;

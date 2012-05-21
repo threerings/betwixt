@@ -109,8 +109,6 @@
 		CB24CBCB14A028F6004BAA57 /* BTLocationTask.h in Headers */ = {isa = PBXBuildFile; fileRef = CB24CBC914A028F5004BAA57 /* BTLocationTask.h */; };
 		CB24CBCC14A028F6004BAA57 /* BTLocationTask.m in Sources */ = {isa = PBXBuildFile; fileRef = CB24CBCA14A028F6004BAA57 /* BTLocationTask.m */; };
 		CB24CBCF14A02E10004BAA57 /* MoveMode.m in Sources */ = {isa = PBXBuildFile; fileRef = CB24CBCE14A02E10004BAA57 /* MoveMode.m */; };
-		CB24CBD414A115EF004BAA57 /* BTInterpolator.m in Sources */ = {isa = PBXBuildFile; fileRef = CB24CBD114A115EF004BAA57 /* BTInterpolator.m */; };
-		CB24CBD514A115EF004BAA57 /* BTInterpolator.h in Headers */ = {isa = PBXBuildFile; fileRef = CB24CBD214A115EF004BAA57 /* BTInterpolator.h */; };
 		CB24CBD814A116AC004BAA57 /* BTSprite.h in Headers */ = {isa = PBXBuildFile; fileRef = CB24CBD614A116AB004BAA57 /* BTSprite.h */; };
 		CB24CBD914A116AC004BAA57 /* BTSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = CB24CBD714A116AB004BAA57 /* BTSprite.m */; };
 		CB323C6114A11A530039A2F1 /* libreact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB24CBE714A119EB004BAA57 /* libreact.a */; };
@@ -376,8 +374,6 @@
 		CB24CBCA14A028F6004BAA57 /* BTLocationTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTLocationTask.m; sourceTree = "<group>"; };
 		CB24CBCD14A02E10004BAA57 /* MoveMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MoveMode.h; path = Integration/MoveMode.h; sourceTree = "<group>"; };
 		CB24CBCE14A02E10004BAA57 /* MoveMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MoveMode.m; path = Integration/MoveMode.m; sourceTree = "<group>"; };
-		CB24CBD114A115EF004BAA57 /* BTInterpolator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTInterpolator.m; sourceTree = "<group>"; };
-		CB24CBD214A115EF004BAA57 /* BTInterpolator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTInterpolator.h; sourceTree = "<group>"; };
 		CB24CBD614A116AB004BAA57 /* BTSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTSprite.h; sourceTree = "<group>"; };
 		CB24CBD714A116AB004BAA57 /* BTSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTSprite.m; sourceTree = "<group>"; };
 		CB323C6214A132390039A2F1 /* BTInterpolationTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTInterpolationTask.h; sourceTree = "<group>"; };
@@ -516,8 +512,6 @@
 				229B463214D8C439005FC8E9 /* BTHasLocation.h */,
 				22448DF714E09B20001CF5CE /* BTInput.h */,
 				22448DF814E09B20001CF5CE /* BTInput.m */,
-				CB24CBD114A115EF004BAA57 /* BTInterpolator.m */,
-				CB24CBD214A115EF004BAA57 /* BTInterpolator.h */,
 				CB8F0D7E14E85EF5005985C8 /* BTJugglerContainer.h */,
 				CB442C6E14B3788800EB2821 /* BTMode+Package.h */,
 				221B6F9714C8BC3200747A18 /* BTMode+Protected.h */,
@@ -850,7 +844,6 @@
 				CB7ABCB5147C747C00EC6AEC /* BTModeStack+Package.h in Headers */,
 				CB366FE6148ECC84004BE08B /* BTNodeContainer.h in Headers */,
 				CB24CBCB14A028F6004BAA57 /* BTLocationTask.h in Headers */,
-				CB24CBD514A115EF004BAA57 /* BTInterpolator.h in Headers */,
 				CB24CBD814A116AC004BAA57 /* BTSprite.h in Headers */,
 				CB323C6414A132390039A2F1 /* BTInterpolationTask.h in Headers */,
 				CB323C6814A134B60039A2F1 /* BTRotationTask.h in Headers */,
@@ -1106,7 +1099,6 @@
 				CBF2AAA514765EA5000C022D /* BTModeStack.m in Sources */,
 				CBB86EE11476669800D0C57E /* BTObject.m in Sources */,
 				CB24CBCC14A028F6004BAA57 /* BTLocationTask.m in Sources */,
-				CB24CBD414A115EF004BAA57 /* BTInterpolator.m in Sources */,
 				CB24CBD914A116AC004BAA57 /* BTSprite.m in Sources */,
 				CB323C6514A132390039A2F1 /* BTInterpolationTask.m in Sources */,
 				CB323C6914A134B60039A2F1 /* BTRotationTask.m in Sources */,

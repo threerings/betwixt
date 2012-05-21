@@ -2,13 +2,13 @@
 // Betwixt - Copyright 2012 Three Rings Design
 
 #import "BTInterpolationTask+Protected.h"
-#import "BTInterpolator.h"
 
 @implementation BTInterpolationTask
 
-- (id)initWithTime:(float)seconds interpolator:(BTInterpolator*)interp {
-    if (!(self = [super initWithTime:seconds])) return nil;
-    _interpolator = interp;
+- (id)initWithTime:(float)seconds interpolator:(id<OOOInterpolator>)interp {
+    if ((self = [super initWithTime:seconds])) {
+        _interpolator = interp;
+    }
     return self;
 }
 

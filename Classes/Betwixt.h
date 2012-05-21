@@ -10,7 +10,6 @@
 #import "BTDeviceType.h"
 #import "BTDisplayObject.h"
 #import "BTInput.h"
-#import "BTInterpolator.h"
 #import "BTMode.h"
 #import "BTModeStack.h"
 #import "BTNode.h"

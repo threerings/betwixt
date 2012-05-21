@@ -3,12 +3,12 @@
 
 #import "BTDurationTask.h"
 
-@class BTInterpolator;
+@protocol OOOInterpolator;
 
 @interface BTInterpolationTask : BTDurationTask {
 @protected
-    BTInterpolator* _interpolator;
+    id<OOOInterpolator> _interpolator;
 }
 
-- (id)initWithTime:(float)seconds interpolator:(BTInterpolator*)interp;
+- (id)initWithTime:(float)seconds interpolator:(id<OOOInterpolator>)interp;
 @end
