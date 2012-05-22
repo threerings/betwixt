@@ -63,11 +63,7 @@
 - (SPDisplayObject*)createDisplayObject { return [self newMovie]; }
 
 + (id<BTResourceFactory>)sharedFactory {
-    static BTMovieResourceFactory* instance;
-    @synchronized(self) {
-        if (instance == nil) instance = [[BTMovieResourceFactory alloc] init];
-    }
-    return instance;
+    return OOO_SINGLETON([[BTMovieResourceFactory alloc] init]);
 }
 
 + (BTMovieResource*)require:(NSString*)name {

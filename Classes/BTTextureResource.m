@@ -8,7 +8,7 @@
 #import "BTResourceManager.h"
 #import "SPRectangle+BTExtensions.h"
 
-@interface BTTextureFactory : NSObject<BTResourceFactory>
+@interface BTTextureResourceFactory : NSObject<BTResourceFactory>
 @end
 
 @implementation BTTextureResource
@@ -17,13 +17,7 @@
 @synthesize offset = _offset;
 
 + (id<BTResourceFactory>)sharedFactory {
-    static BTTextureFactory* instance = nil;
-    @synchronized(self) {
-        if (instance == nil) {
-            instance = [[BTTextureFactory alloc] init];
-        }
-    }
-    return instance;
+    return OOO_SINGLETON([[BTTextureResourceFactory alloc] init]);
 }
 
 + (BTTextureResource*)require:(NSString*)name {
@@ -70,7 +64,7 @@
 
 @end
 
-@implementation BTTextureFactory
+@implementation BTTextureResourceFactory
 
 - (BTResource*)create:(GDataXMLElement*)xml {
     return [[BTTextureResource alloc] initWithXml:xml];

@@ -8,7 +8,7 @@
 #import "BTApp.h"
 #import "BTResourceManager.h"
 
-@interface BTSoundFactory : NSObject <BTResourceFactory>
+@interface BTSoundResourceFactory : NSObject <BTResourceFactory>
 @end
 
 @implementation BTSoundResource
@@ -19,13 +19,7 @@
 @synthesize pan = _pan;
 
 + (id<BTResourceFactory>)sharedFactory {
-    static BTSoundFactory* instance = nil;
-    @synchronized(self) {
-        if (instance == nil) {
-            instance = [[BTSoundFactory alloc] init];
-        }
-    }
-    return instance;
+    return OOO_SINGLETON([[BTSoundResourceFactory alloc] init]);
 }
 
 + (BTSoundResource*)require:(NSString*)name {
@@ -45,7 +39,7 @@
 
 @end
 
-@implementation BTSoundFactory
+@implementation BTSoundResourceFactory
 
 - (BTResource*)create:(GDataXMLElement*)xml {
     return [[BTSoundResource alloc] initWithXml:xml];

@@ -13,13 +13,7 @@
 @implementation BTTextureGroupFactory
 
 + (id<BTMultiResourceFactory>)sharedFactory {
-    static BTTextureGroupFactory* instance = nil;
-    @synchronized(self) {
-        if (instance == nil) {
-            instance = [[BTTextureGroupFactory alloc] init];
-        }
-    }
-    return instance;
+    return OOO_SINGLETON([[BTTextureGroupFactory alloc] init]);
 }
 
 - (id)init {

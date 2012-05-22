@@ -14,13 +14,7 @@
 @implementation BTFontResource
 
 + (id<BTResourceFactory>)sharedFactory {
-    static BTFontFactory* instance = nil;
-    @synchronized(self) {
-        if (instance == nil) {
-            instance = [[BTFontFactory alloc] init];
-        }
-    }
-    return instance;
+    return OOO_SINGLETON([[BTFontFactory alloc] init]);
 }
 
 + (BTFontResource*)require:(NSString*)name {
