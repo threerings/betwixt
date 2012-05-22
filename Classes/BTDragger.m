@@ -8,9 +8,10 @@
 
 @implementation BTDragger
 
-- (void)cleanup {
-    [self cancelDrag];
-    [super cleanup];
+- (void)attached {
+    [self.conns onReactor:self.detached connectUnit:^{
+        [self cancelDrag];
+    }];
 }
 
 - (BOOL)dragging {
