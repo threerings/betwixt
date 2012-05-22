@@ -8,6 +8,7 @@
 #import "BTMode+Package.h"
 #import "BTSprite.h"
 #import "BTNode+Protected.h"
+#import "BTNode+Package.h"
 #import "SPTouchProcessor.h"
 #import "BTJugglerContainer.h"
 #import "BTUpdatable.h"
@@ -218,7 +219,7 @@
     [_entered disconnectAll];
     [_exited disconnectAll];
     [_conns disconnectAll];
-    [_rootNode cleanup];
+    [_rootNode cleanupInternal];
     _rootNode = nil;
     _input = nil;
 }

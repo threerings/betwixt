@@ -31,11 +31,11 @@
 /// Alternately, if your groups are defined dynamically, you can use BT_GROUPS(...)
 - (NSArray*)groups;
 
-@property(nonatomic,readonly) RAUnitSignal* detached;
-@property(nonatomic,readonly) BTMode* mode;
-@property(nonatomic,readonly) RAConnectionGroup* conns;
-@property(nonatomic,readonly) NSObject<BTNodeContainer>* parent;
-@property(nonatomic,readonly) BOOL isAttached;
+@property (nonatomic,readonly) RAUnitSignal* detached;
+@property (nonatomic,readonly) BTMode* mode;
+@property (nonatomic,readonly) RAConnectionGroup* conns;
+@property (nonatomic,readonly) NSObject<BTNodeContainer>* parent;
+@property (nonatomic,readonly) BOOL isAttached;
 
 @end
 

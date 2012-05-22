@@ -129,7 +129,7 @@
 - (void)removeNode:(BTNode*)node {
     if (![_children member:node]) return;
     [_children removeObject:node];
-    [node removeInternal];
+    [node detachedInternal];
 }
 
 - (void)removeNodeNamed:(NSString*)name {
@@ -147,25 +147,25 @@
     return [self nodeForName:name] != nil;
 }
 
-- (void)removeInternal {
+- (void)detachedInternal {
     // Prevent our _children array from being manipulated while
     // we're iterating it
     NSMutableSet* kids = _children;
     _children = nil;
     for (BTObject* child in kids) {
-        [child removeInternal];
+        [child detachedInternal];
     }
     _children = kids;
-    [super removeInternal];
+    [super detachedInternal];
 }
 
-- (void)cleanup {
+- (void)cleanupInternal {
     NSMutableSet* kids = _children;
     _children = nil;
     for (BTObject* child in kids) {
-        [child cleanup];
+        [child cleanupInternal];
     }
-    [super cleanup];
+    [super cleanupInternal];
 }
 
 @end

@@ -8,11 +8,10 @@
 
 @implementation BTNode
 
-- (void)attachedInternal {
-    [self attached];
+- (void)attached {
 }
 
-- (void)attached {
+- (void)cleanup {
 }
 
 - (void)detach {
@@ -33,13 +32,18 @@
     return _conns;
 }
 
-- (void)removeInternal {
-    _parent = nil;
-    [_detached emit];
-    [self cleanup];
+- (void)attachedInternal {
+    [self attached];
 }
 
-- (void)cleanup {
+- (void)detachedInternal {
+    _parent = nil;
+    [_detached emit];
+    [self cleanupInternal];
+}
+
+- (void)cleanupInternal {
+    [self cleanup];
     [_detached disconnectAll];
     [_conns disconnectAll];
     _isDetached = YES;
