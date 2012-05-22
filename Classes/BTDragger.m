@@ -46,18 +46,28 @@
     if (touch == _touch) {
         _current = [SPPoint pointWithX:touch.globalX y:touch.globalY];
         [self onDragEnd:_current start:_start];
-        [self cancelDrag];
+        [self stopDragWithSuccess:YES];
     }
     return YES;
 }
 
 - (void)cancelDrag {
-    [_dragReg cancel];
-    _dragReg = nil;
+    [self stopDragWithSuccess:NO];
+}
+
+- (void)stopDragWithSuccess:(BOOL)dragCompleted {
+    if (_dragReg != nil) {
+        [_dragReg cancel];
+        _dragReg = nil;
+        if (!dragCompleted) {
+            [self onDragCanceled:(_current != nil ? _current : _start) start:_start];
+        }
+    }
 }
 
 - (void)onDragStart:(SPPoint*)start {}
 - (void)onDragged:(SPPoint*)current start:(SPPoint*)start {}
 - (void)onDragEnd:(SPPoint*)current start:(SPPoint*)start {}
+- (void)onDragCanceled:(SPPoint*)last start:(SPPoint*)start {}
 
 @end

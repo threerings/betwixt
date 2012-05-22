@@ -24,5 +24,6 @@
 - (void)onDragStart:(SPPoint*)start;
 - (void)onDragged:(SPPoint*)current start:(SPPoint*)start;
 - (void)onDragEnd:(SPPoint*)current start:(SPPoint*)start;
+- (void)onDragCanceled:(SPPoint*)last start:(SPPoint*)start;
 
 @end
