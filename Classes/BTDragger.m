@@ -46,8 +46,10 @@
     }
     if (touch == _touch) {
         _current = [SPPoint pointWithX:touch.globalX y:touch.globalY];
-        [self onDragEnd:_current start:_start];
+        // stop the drag before calling onDragEnd, to allow safe destruction of the 
+        // dragger from within onDragEnd
         [self stopDragWithSuccess:YES];
+        [self onDragEnd:_current start:_start];
     }
     return YES;
 }
