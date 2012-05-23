@@ -8,8 +8,8 @@
 
 @implementation BTDragger
 
-- (void)attached {
-    [self.conns onReactor:self.detached connectUnit:^{
+- (void)added {
+    [self.conns onReactor:self.removed connectUnit:^{
         [self cancelDrag];
     }];
 }

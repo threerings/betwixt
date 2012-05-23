@@ -14,13 +14,13 @@
     return self;
 }
 
-- (void)attached {
-    [super attached];
+- (void)added {
+    [super added];
     
-    __block int toDetach = [_nodes count];
+    __block int toRemove = [_nodes count];
     for (BTNode* node in _nodes) {
         [self.parent addNode:node]; 
-        [node.detached connectUnit:^{ if (--toDetach == 0) [self detach]; }];
+        [node.removed connectUnit:^{ if (--toRemove == 0) [self removeSelf]; }];
     }
 }
 

@@ -24,8 +24,8 @@
     return self;
 }
 
-- (void)attached {
-    [super attached];
+- (void)added {
+    [super added];
     if (!_target) {
         _target = ((BTDisplayObject*)self.parent).display;
     }
@@ -33,7 +33,7 @@
 
 - (void)update:(float)dt {
     _target.visible = _visible;
-    [self detach];
+    [self removeSelf];
 }
 
 @end

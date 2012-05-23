@@ -7,8 +7,8 @@
 
 - (Square*) createAndMonitorSquareWithColor:(int)color andName:(NSString*)name {
     Square *square = [[Square alloc] initWithColor:color andName:name];
-    [square.conns onReactor:square.onAttached connectUnit:^ { _squaresAdded++; }];
-    [square.conns onReactor:square.detached connectUnit:^ { _squaresRemoved++; }];
+    [square.conns onReactor:square.onAdded connectUnit:^ { _squaresAdded++; }];
+    [square.conns onReactor:square.removed connectUnit:^ { _squaresRemoved++; }];
     return square;
 }
 

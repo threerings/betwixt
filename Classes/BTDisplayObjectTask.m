@@ -14,8 +14,8 @@
     return self;
 }
 
-- (void)attached {
-    [super attached];
+- (void)added {
+    [super added];
     if (!_target) {
         _target = ((BTDisplayObject*)self.parent).display;
     }

@@ -19,7 +19,7 @@
     _elapsedTime = MIN(_elapsedTime + dt, _totalTime);
     [self updateValues];
     if (_elapsedTime == _totalTime) {
-        [self detach];
+        [self removeSelf];
     }
 }
 

@@ -8,13 +8,13 @@
 
 @implementation BTNode
 
-- (void)attached {
+- (void)added {
 }
 
 - (void)cleanup {
 }
 
-- (void)detach {
+- (void)removeSelf {
     [_parent removeNode:self];
 }
 
@@ -22,9 +22,9 @@
     return _parent.mode;
 }
 
-- (RAUnitSignal*)detached {
-    if (_detached == nil) _detached = [[RAUnitSignal alloc] init];
-    return _detached;
+- (RAUnitSignal*)removed {
+    if (_removed == nil) _removed = [[RAUnitSignal alloc] init];
+    return _removed;
 }
 
 - (RAConnectionGroup*)conns {
@@ -32,24 +32,24 @@
     return _conns;
 }
 
-- (void)attachedInternal {
-    [self attached];
+- (void)addedInternal {
+    [self added];
 }
 
-- (void)detachedInternal {
+- (void)removedInternal {
     _parent = nil;
-    [_detached emit];
+    [_removed emit];
     [self cleanupInternal];
 }
 
 - (void)cleanupInternal {
     [self cleanup];
-    [_detached disconnectAll];
+    [_removed disconnectAll];
     [_conns disconnectAll];
-    _isDetached = YES;
+    _wasRemoved = YES;
 }
 
-- (BOOL)isAttached {
+- (BOOL)isLive {
     return (_parent != nil);
 }
 

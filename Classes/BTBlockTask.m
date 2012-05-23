@@ -10,13 +10,13 @@
 @property(nonatomic,copy) BTTaskBlock block;
 @end
 
-@interface BTAttachBlockTask : BTBlockTask
+@interface BTDoBlockOnceTask : BTBlockTask
 @end
-@implementation BTAttachBlockTask
-- (void)attached {
-    [super attached];
+@implementation BTDoBlockOnceTask
+- (void)added {
+    [super added];
     self.block(self);
-    [self detach];
+    [self removeSelf];
 }
 
 @end
@@ -33,8 +33,8 @@
 
 @synthesize block;
 
-+ (BTBlockTask*)onAttach:(BTTaskBlock)block {
-    BTBlockTask* task = [[BTAttachBlockTask alloc] init];
++ (BTBlockTask*)once:(BTTaskBlock)block {
+    BTBlockTask* task = [[BTDoBlockOnceTask alloc] init];
     task.block = block;
     return task;
 }

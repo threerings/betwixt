@@ -3,7 +3,6 @@
 
 #import "PlayMovieMode.h"
 
-#import "BTDetachTask.h"
 #import "BTMovieResource.h"
 #import "BTMovie.h"
 #import "BTModeStack.h"

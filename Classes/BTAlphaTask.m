@@ -41,8 +41,8 @@
     return self;
 }
 
-- (void)attached {
-    [super attached];
+- (void)added {
+    [super added];
     _startAlpha = _target.alpha;
 }
 

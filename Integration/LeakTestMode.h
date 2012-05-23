@@ -3,6 +3,11 @@
 
 #import "BTMode.h"
 
+@class BTObject;
+@class Updater;
+@class Listener;
+@class BTMovie;
+
 @interface LeakTestMode : BTMode {
 @protected
     __weak BTObject* _parent;

@@ -51,19 +51,19 @@
 
 - (void)associateNode:(BTNode*)node withName:(NSString*)name {
     NSAssert(![self.namedObjects objectForKey:name], @"Object name '%@' already used", name);
-    [node.detached connectUnit:^{ [self.namedObjects removeObjectForKey:name]; }];
+    [node.removed connectUnit:^{ [self.namedObjects removeObjectForKey:name]; }];
     [self.namedObjects setObject:node forKey:name];
 }
 
 - (void)addNodeInternal:(BTNode*)node withName:(NSString*)name 
         replaceExisting:(BOOL)replaceExisting parent:(SPDisplayObjectContainer*)parent {
     
-    NSAssert(!_isDetached, @"Adding object to detached object");
-    NSAssert(!node.isAttached, @"Cannot add an already-attached object");
-    NSAssert(!node->_isDetached, @"Cannot re-add a detached object");
+    NSAssert(!_wasRemoved, @"Adding object to removed object");
+    NSAssert(!node.isLive, @"Cannot add an already-added object");
+    NSAssert(!node->_wasRemoved, @"Cannot re-add a removed object");
     
     // If we're not yet attached to the mode, we'll attach this node when we are
-    if (!self.isAttached) {
+    if (!self.isLive) {
         BTPendingChildNode *pendingChild = [[BTPendingChildNode alloc] init];
         pendingChild->node = node;
         pendingChild->name = name;
@@ -79,7 +79,7 @@
     // Does the object have a name?
     if (name != nil) {
         if (replaceExisting) {
-            [[self nodeForName:name] detach];
+            [[self nodeForName:name] removeSelf];
         }
         [self associateNode:node withName:name];
     }
@@ -93,10 +93,10 @@
     [self.mode registerNode:node];
     
     // Tell the node it's attached
-    [node attachedInternal];
+    [node addedInternal];
 }
 
-- (void)attachedInternal {
+- (void)addedInternal {
     if (_pendingChildren != nil) {
         // Attach all our pending children
         for (BTPendingChildNode *pending in _pendingChildren) {
@@ -107,7 +107,7 @@
         }
         _pendingChildren = nil;
     }
-    [super attachedInternal];
+    [super addedInternal];
 }
 
 - (void)addNode:(BTNode*)node {
@@ -129,7 +129,7 @@
 - (void)removeNode:(BTNode*)node {
     if (![_children member:node]) return;
     [_children removeObject:node];
-    [node detachedInternal];
+    [node removedInternal];
 }
 
 - (void)removeNodeNamed:(NSString*)name {
@@ -147,16 +147,16 @@
     return [self nodeForName:name] != nil;
 }
 
-- (void)detachedInternal {
+- (void)removedInternal {
     // Prevent our _children array from being manipulated while
     // we're iterating it
     NSMutableSet* kids = _children;
     _children = nil;
     for (BTObject* child in kids) {
-        [child detachedInternal];
+        [child removedInternal];
     }
     _children = kids;
-    [super detachedInternal];
+    [super removedInternal];
 }
 
 - (void)cleanupInternal {

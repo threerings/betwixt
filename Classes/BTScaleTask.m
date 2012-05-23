@@ -52,8 +52,8 @@
     return self;
 }
 
-- (void)attached {
-    [super attached];
+- (void)added {
+    [super added];
     _startX = _target.scaleX;
     _startY = _target.scaleY;
 }

@@ -119,8 +119,8 @@
 		CB323C6C14A138190039A2F1 /* BTAlphaTask.h in Headers */ = {isa = PBXBuildFile; fileRef = CB323C6A14A138190039A2F1 /* BTAlphaTask.h */; };
 		CB323C6D14A138190039A2F1 /* BTAlphaTask.m in Sources */ = {isa = PBXBuildFile; fileRef = CB323C6B14A138190039A2F1 /* BTAlphaTask.m */; };
 		CB366FE6148ECC84004BE08B /* BTNodeContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = CB366FE4148ECC84004BE08B /* BTNodeContainer.h */; };
-		CB395DBE14B3D7F90093E37F /* BTDetachTask.h in Headers */ = {isa = PBXBuildFile; fileRef = CB395DBC14B3D7F90093E37F /* BTDetachTask.h */; };
-		CB395DBF14B3D7F90093E37F /* BTDetachTask.m in Sources */ = {isa = PBXBuildFile; fileRef = CB395DBD14B3D7F90093E37F /* BTDetachTask.m */; };
+		CB395DBE14B3D7F90093E37F /* BTRemoveTask.h in Headers */ = {isa = PBXBuildFile; fileRef = CB395DBC14B3D7F90093E37F /* BTRemoveTask.h */; };
+		CB395DBF14B3D7F90093E37F /* BTRemoveTask.m in Sources */ = {isa = PBXBuildFile; fileRef = CB395DBD14B3D7F90093E37F /* BTRemoveTask.m */; };
 		CB442C7114B3788800EB2821 /* BTMode+Package.h in Headers */ = {isa = PBXBuildFile; fileRef = CB442C6E14B3788800EB2821 /* BTMode+Package.h */; };
 		CB442C7414B3800000EB2821 /* NamedNodeMode.m in Sources */ = {isa = PBXBuildFile; fileRef = CB442C7314B3800000EB2821 /* NamedNodeMode.m */; };
 		CB442C7914B3834E00EB2821 /* BTWaitTask.m in Sources */ = {isa = PBXBuildFile; fileRef = CB442C7614B3834200EB2821 /* BTWaitTask.m */; };
@@ -383,8 +383,8 @@
 		CB323C6A14A138190039A2F1 /* BTAlphaTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTAlphaTask.h; sourceTree = "<group>"; };
 		CB323C6B14A138190039A2F1 /* BTAlphaTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTAlphaTask.m; sourceTree = "<group>"; };
 		CB366FE4148ECC84004BE08B /* BTNodeContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTNodeContainer.h; sourceTree = "<group>"; };
-		CB395DBC14B3D7F90093E37F /* BTDetachTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTDetachTask.h; sourceTree = "<group>"; };
-		CB395DBD14B3D7F90093E37F /* BTDetachTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTDetachTask.m; sourceTree = "<group>"; };
+		CB395DBC14B3D7F90093E37F /* BTRemoveTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTRemoveTask.h; sourceTree = "<group>"; };
+		CB395DBD14B3D7F90093E37F /* BTRemoveTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTRemoveTask.m; sourceTree = "<group>"; };
 		CB442C6E14B3788800EB2821 /* BTMode+Package.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BTMode+Package.h"; sourceTree = "<group>"; };
 		CB442C7214B3800000EB2821 /* NamedNodeMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NamedNodeMode.h; path = Integration/NamedNodeMode.h; sourceTree = "<group>"; };
 		CB442C7314B3800000EB2821 /* NamedNodeMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NamedNodeMode.m; path = Integration/NamedNodeMode.m; sourceTree = "<group>"; };
@@ -718,8 +718,6 @@
 				CB323C6B14A138190039A2F1 /* BTAlphaTask.m */,
 				CBE1F0E314A1707500B82344 /* BTBlockTask.h */,
 				CBE1F0E414A1707500B82344 /* BTBlockTask.m */,
-				CB395DBC14B3D7F90093E37F /* BTDetachTask.h */,
-				CB395DBD14B3D7F90093E37F /* BTDetachTask.m */,
 				229B45FE14D87E05005FC8E9 /* BTDisplayObjectTask.h */,
 				229B45FF14D87E05005FC8E9 /* BTDisplayObjectTask.m */,
 				229B45C814D787F4005FC8E9 /* BTDurationTask+Protected.h */,
@@ -734,6 +732,8 @@
 				22D46AA1153CD2A2005BAD6D /* BTMovieTask.m */,
 				CB69E37714D8D07E00E7C18D /* BTParallelTask.h */,
 				CB69E37814D8D07E00E7C18D /* BTParallelTask.m */,
+				CB395DBC14B3D7F90093E37F /* BTRemoveTask.h */,
+				CB395DBD14B3D7F90093E37F /* BTRemoveTask.m */,
 				CB69E36F14D8C66D00E7C18D /* BTRepeatingTask.h */,
 				CB69E37014D8C66D00E7C18D /* BTRepeatingTask.m */,
 				CB323C6614A134B60039A2F1 /* BTRotationTask.h */,
@@ -854,7 +854,7 @@
 				CBE1F0E514A1707500B82344 /* BTBlockTask.h in Headers */,
 				CB442C7114B3788800EB2821 /* BTMode+Package.h in Headers */,
 				CB442C7B14B3851A00EB2821 /* BTInterpolationTask+Protected.h in Headers */,
-				CB395DBE14B3D7F90093E37F /* BTDetachTask.h in Headers */,
+				CB395DBE14B3D7F90093E37F /* BTRemoveTask.h in Headers */,
 				22F979EA14C0E23F00A6913B /* GDataXMLNode+BTExtensions.h in Headers */,
 				22F979F114C0E23F00A6913B /* BTResource.h in Headers */,
 				22F979F614C0E23F00A6913B /* BTResourceManager.h in Headers */,
@@ -1106,7 +1106,7 @@
 				CBE1F0DB14A14D9E00B82344 /* BTNode.m in Sources */,
 				CBE1F0E214A1554A00B82344 /* BTSequenceTask.m in Sources */,
 				CBE1F0E614A1707500B82344 /* BTBlockTask.m in Sources */,
-				CB395DBF14B3D7F90093E37F /* BTDetachTask.m in Sources */,
+				CB395DBF14B3D7F90093E37F /* BTRemoveTask.m in Sources */,
 				22F979EB14C0E23F00A6913B /* GDataXMLNode+BTExtensions.m in Sources */,
 				22F979F714C0E23F00A6913B /* BTResourceManager.m in Sources */,
 				CBD20D0914CF68D600662068 /* BTTextureResource.m in Sources */,

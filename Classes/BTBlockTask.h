@@ -8,6 +8,6 @@
 typedef void (^BTTaskBlock)(BTBlockTask* task);
 
 @interface BTBlockTask : BTNode
-+ (BTBlockTask*)onAttach:(BTTaskBlock)block;
++ (BTBlockTask*)once:(BTTaskBlock)block;
 + (BTBlockTask*)onUpdate:(BTTaskBlock)block;
 @end

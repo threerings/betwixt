@@ -33,8 +33,8 @@
     return self;
 }
 
-- (void)attached {
-    [super attached];
+- (void)added {
+    [super added];
     [self addNode:_checkedButton displayOn:_sprite];
     [self addNode:_uncheckedButton displayOn:_sprite];
     

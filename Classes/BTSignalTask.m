@@ -18,13 +18,13 @@
     return self;
 }
 
-- (void)attached {
-    [super attached];
+- (void)added {
+    [super added];
     if (_sig == nil) {
         NSLog(@"BTSignalTask: signal was destroyed. Task will never complete");
     } else {
         [self.conns onReactor:_sig connectUnit:^{
-            [self detach];
+            [self removeSelf];
         }];
     }
 }

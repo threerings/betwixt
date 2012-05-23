@@ -45,8 +45,8 @@
     return self;
 }
 
-- (void)attached {
-    [super attached];
+- (void)added {
+    [super added];
     
     _curState = (BTButtonState) -1;
     [self setState:BT_BUTTON_STATE_UP];

@@ -25,7 +25,7 @@
 
 @implementation Listener
 @synthesize ticks;
-- (void)attached {
+- (void)added {
     [self.conns onFloatReactor:self.mode.update connectSlot:^(float dt) { self.ticks++; }];
 }
 @end
@@ -37,7 +37,7 @@
     BTObject* child = [[BTObject alloc] init];
     [self addNode:parent];
     [parent addNode:child];
-    [parent detach];
+    [parent removeSelf];
     _parent = parent;
     _child = child;
     
@@ -45,12 +45,12 @@
     BTObject* child2 = [[BTObject alloc] init];
     [parent2 addNode:child2];
     [self addNode:parent2];
-    [child2 detach];
+    [child2 removeSelf];
     _child2 = child2;
     
     Updater* updater = [[Updater alloc] init];
     [self addNode:updater];
-    [updater detach];
+    [updater removeSelf];
     _updater = updater;
     
     Listener* listener = [[Listener alloc] init];
@@ -59,13 +59,13 @@
     
     BTSprite* sprite = [BTSprite sprite];
     [self addNode:sprite displayOn:self.sprite];
-    [sprite detach];
+    [sprite removeSelf];
     _sprite = sprite;
     
     BTMovie *movie = [[BTApp.resourceManager requireResource:@"squaredance"] newMovie];
     BTSprite* movieSprite = [BTSprite withSprite:movie];
     [self addNode:movieSprite displayOn:self.sprite];
-    [movieSprite detach];
+    [movieSprite removeSelf];
     _movie = movie;
 }
 
@@ -79,7 +79,7 @@
         NSAssert(_updater == nil, @"Updater leaked");
         NSAssert(_sprite == nil, @"Sprite leaked");
         NSAssert(_movie == nil, @"Movie leaked");
-        [_listener detach];
+        [_listener removeSelf];
     } else if (_ticks == 3) {
         NSAssert(_listener == nil, @"Listener leaked");
         [self.modeStack popMode];

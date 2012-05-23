@@ -3,7 +3,7 @@
 
 #import "SelfRemoveMode.h"
 
-#import "BTDetachTask.h"
+#import "BTRemoveTask.h"
 #import "BTModeStack.h"
 #import "BTObject.h"
 #import "RAConnection.h"
@@ -19,7 +19,7 @@
 }
 
 - (void)update:(float)dt {
-    [self detach];
+    [self removeSelf];
 }
 
 @end
@@ -27,26 +27,26 @@
 @implementation SelfRemoveMode
 
 - (void)testDestroyParentTask {
-    __block BOOL detached = NO;
+    __block BOOL removed = NO;
     BTObject *holder = [[BTObject alloc] init];
-    [holder.detached connectUnit:^{ detached = YES; }];
+    [holder.removed connectUnit:^{ removed = YES; }];
     [self addNode:holder];
-    [holder addNode:[BTDetachTask detachParent]];
+    [holder addNode:[BTRemoveTask removeNode]];
     [[self.update connectUnit:^ {
-        NSAssert(detached, @"Parent removed");
+        NSAssert(removed, @"Parent removed");
         [self.modeStack popMode];
     }] once];
 }
 
 - (void)testSubobjectRemoval {
-    __block BOOL detached = NO;
+    __block BOOL removed = NO;
     BTObject *holder = [[BTObject alloc] init];
     SelfRemoveObject *subremover = [[SelfRemoveObject alloc] init];
-    [subremover.detached connectUnit:^{ detached = YES; }];
+    [subremover.removed connectUnit:^{ removed = YES; }];
     [self addNode:holder];
     [holder addNode:subremover];
     [[self.update connectUnit:^ {
-        NSAssert(detached, @"Subremover removed");
+        NSAssert(removed, @"Subremover removed");
         [self testDestroyParentTask];
     }] once];
 }
@@ -54,11 +54,11 @@
 - (id)init {
     if (!(self = [super init])) return nil;
     SelfRemoveObject *remover = [[SelfRemoveObject alloc] init];
-    __block BOOL detached = NO;
-    [remover.detached connectUnit:^{ detached = YES; }];
+    __block BOOL removed = NO;
+    [remover.removed connectUnit:^{ removed = YES; }];
     [self addNode:remover];
     [[self.update connectUnit:^ {
-        NSAssert(detached, @"Remover removed");
+        NSAssert(removed, @"Remover removed");
         [self testSubobjectRemoval];
     }] once];
     return self;

@@ -55,7 +55,7 @@
 // Tasks
 #import "BTAlphaTask.h"
 #import "BTBlockTask.h"
-#import "BTDetachTask.h"
+#import "BTRemoveTask.h"
 #import "BTDurationTask.h"
 #import "BTDisplayObjectTask.h"
 #import "BTInterpolationTask.h"

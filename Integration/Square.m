@@ -13,19 +13,19 @@
     _quad = [SPQuad quadWithWidth:100 height:100 color:color];
     _quad.x = 50;
     _quad.y = 50;
-    _attached = [[RAUnitSignal alloc] init];
-    [self.detached connectUnit:^ { [((BTMode*)self.mode).sprite removeChild:_quad]; }];
+    _added = [[RAUnitSignal alloc] init];
+    [self.removed connectUnit:^ { [((BTMode*)self.mode).sprite removeChild:_quad]; }];
     return self;
 }
 
-- (void)attached {
-    [super attached];
-    [_attached emit];
+- (void)added {
+    [super added];
+    [_added emit];
 }
 
 - (void)update:(float)dt {
     _quad.x += 1;
-    if (_quad.x >= 52) { [self detach]; }
+    if (_quad.x >= 52) { [self removeSelf]; }
 }
 
 - (NSArray*)groups {
@@ -36,6 +36,6 @@
     return BT_KEYS(_name);
 }
 
-@synthesize display=_quad, onAttached=_attached;
+@synthesize display=_quad, onAdded=_added;
 
 @end

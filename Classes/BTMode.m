@@ -102,7 +102,7 @@
     
     NSUInteger batchCount = 0;
     // Limit our batchCount to 1, so that enumerators
-    // are guaranteed not to see nodes that have been detached.
+    // are guaranteed not to see nodes that have been removed.
     // This is slightly slower, but more correct than just returning
     // 'len' items, some of which may no longer be valid when the
     // iteration reaches them.
@@ -145,7 +145,7 @@
 - (BTMode*)mode {
     return _mode;
 }
-- (BOOL)isAttached {
+- (BOOL)isLive {
     return YES;
 }
 @end
@@ -238,7 +238,7 @@
     // register keys
     NSArray* keys = node.keys;
     if (keys != nil) {
-        [node.detached connectUnit:^ {
+        [node.removed connectUnit:^ {
             for (NSString* key in keys) {
                 [_keyedObjects removeObjectForKey:key];
             }
@@ -252,7 +252,7 @@
     // register groups
     NSArray* groups = node.groups;
     if (groups != nil) {
-        [node.detached connectUnit:^ {
+        [node.removed connectUnit:^ {
             for (NSString* group in groups) {
                 BTNodeGroup* members = [_groups objectForKey:group];
                 [members removeNode:node];

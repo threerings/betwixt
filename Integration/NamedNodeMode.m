@@ -4,7 +4,6 @@
 #import "NamedNodeMode.h"
 #import "BTSprite.h"
 #import "BTLocationTask.h"
-#import "BTDetachTask.h"
 #import "BTBlockTask.h"
 #import "BTWaitTask.h"
 #import "BTSequenceTask.h"
@@ -19,9 +18,12 @@
     [sprite addNode:[[BTLocationTask alloc] initWithTime:1 toX:300 toY:200] withName:@"mover"];
     [sprite addNode:[BTSequenceTask withNodes:
         [BTWaitTask waitFor:.25f],
-        [BTDetachTask detachNode:[sprite nodeForName:@"mover"]],
+        [BTBlockTask once:^(BTBlockTask *task) {
+            [[sprite nodeForName:@"mover"] removeSelf];
+        
+        }],
         [BTWaitTask waitFor:.25f],
-        [BTBlockTask onAttach:^(BTBlockTask *task) {
+        [BTBlockTask once:^(BTBlockTask *task) {
             NSAssert([sprite nodeForName:@"mover"] == nil, nil);
             NSAssert(sprite.sprite.x > 0, nil);
             NSAssert(sprite.sprite.x < 100, nil);

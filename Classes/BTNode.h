@@ -7,16 +7,16 @@
 @interface BTNode : NSObject {
 @package
     __weak NSObject<BTNodeContainer>* _parent;
-    BOOL _isDetached;
+    BOOL _wasRemoved;
     NSUInteger _id;
 @private
-    RAUnitSignal* _detached;
+    RAUnitSignal* _removed;
     RAConnectionGroup* _conns;
 }
 
-/// Detaches the node from its mode. Once a node has been detached, it can't
-/// be reattached or reused.
-- (void)detach;
+/// Removes the node from its mode. Once a node has been removed, it can't
+/// be readded or reused.
+- (void)removeSelf;
 
 /// "Keyed" objects are uniquely identified in their containing BTMode
 /// No two nodes can share the same key in a given mode.
@@ -31,11 +31,11 @@
 /// Alternately, if your groups are defined dynamically, you can use BT_GROUPS(...)
 - (NSArray*)groups;
 
-@property (nonatomic,readonly) RAUnitSignal* detached;
+@property (nonatomic,readonly) RAUnitSignal* removed;
 @property (nonatomic,readonly) BTMode* mode;
 @property (nonatomic,readonly) RAConnectionGroup* conns;
 @property (nonatomic,readonly) NSObject<BTNodeContainer>* parent;
-@property (nonatomic,readonly) BOOL isAttached;
+@property (nonatomic,readonly) BOOL isLive;
 
 @end
 

@@ -15,15 +15,15 @@
 
 - (void)onRepeat {
     BTNode* toRepeat = self.creator();
-    if (toRepeat == nil) [self detach];
+    if (toRepeat == nil) [self removeSelf];
     else {
-        [toRepeat.detached connectUnit:^{ [self onRepeat]; }];
+        [toRepeat.removed connectUnit:^{ [self onRepeat]; }];
         [self.parent addNode:toRepeat];
     }
 }
 
-- (void)attached {
-    [super attached];
+- (void)added {
+    [super added];
     [self onRepeat];
 }
 

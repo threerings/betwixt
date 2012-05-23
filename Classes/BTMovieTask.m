@@ -27,10 +27,10 @@
     return self;
 }
 
-- (void)attached {
-    [super attached];
+- (void)added {
+    [super added];
     [self.conns addConnection:[_movie monitorLabel:_label withUnit:^{
-        [self detach];
+        [self removeSelf];
     }]];
 }
 

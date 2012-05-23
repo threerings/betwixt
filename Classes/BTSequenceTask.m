@@ -14,19 +14,19 @@
     return self;
 }
 
-- (void)attached {
-    [super attached];
+- (void)added {
+    [super added];
 
-    [self.conns onReactor:self.detached connectUnit:^{
+    [self.conns onReactor:self.removed connectUnit:^{
         if (_position == [_nodes count]) return;
-        BTNode* toDetach = [_nodes objectAtIndex:_position];
+        BTNode* toRemove = [_nodes objectAtIndex:_position];
         _position = [_nodes count];
-        [toDetach detach];
+        [toRemove removeSelf];
     }];
 
     for (BTNode* node in _nodes) {
-        [node.detached connectUnit:^{
-            if (++_position >= [_nodes count]) [self detach];
+        [node.removed connectUnit:^{
+            if (++_position >= [_nodes count]) [self removeSelf];
             else [self.parent addNode:[_nodes objectAtIndex:_position]];
         }];
     }
