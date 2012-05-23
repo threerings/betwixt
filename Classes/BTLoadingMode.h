@@ -16,6 +16,7 @@
 
 - (id)init;
 - (void)addFiles:(NSString*)filename, ... NS_REQUIRES_NIL_TERMINATION;
+- (void)addFilesFromArray:(NSArray*)filenames;
 
 @end
 

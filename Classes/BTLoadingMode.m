@@ -13,6 +13,8 @@
 
 @implementation BTLoadingMode
 
+@synthesize loadComplete = _loadComplete;
+
 - (id)init {
     if (!(self = [super init])) return nil;
     _loadComplete = [[RAUnitSignal alloc] init];
@@ -40,9 +42,8 @@
     va_end(args);
 }
 
-- (BTLoadingMode*)add:(NSString*)filename {
-    [_filenames addObject:filename];
-    return self;
+- (void)addFilesFromArray:(NSArray*)filenames {
+    [_filenames addObjectsFromArray:filenames];
 }
 
 - (void)onError:(NSException*)err {
@@ -63,7 +64,5 @@
         [this onError:err];
     }];
 }
-
-@synthesize loadComplete=_loadComplete;
 
 @end
