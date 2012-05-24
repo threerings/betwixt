@@ -127,7 +127,13 @@
 }
 
 - (void)removeNode:(BTNode*)node {
-    if (![_children member:node]) return;
+    // if _children is nil, we're in the middle of being removed ourselves.
+    if (node->_parent == nil || _children == nil) {
+        return;
+    }
+    
+    NSAssert(node->_parent == self, @"node doesn't belong to us");
+    NSAssert([_children containsObject:node], @"node not in _children");
     [_children removeObject:node];
     [node removedInternal];
 }
