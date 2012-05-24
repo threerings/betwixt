@@ -181,8 +181,7 @@ static BTApp* gInstance = nil;
 }
 
 - (void)run:(BTModeStack*)defaultStack {
-    NSLog(@"BTApp.run must be implemented by a subclass");
-    [self doesNotRecognizeSelector:_cmd];
+    OOO_IS_ABSTRACT();
 }
 
 - (void)update:(float)dt {

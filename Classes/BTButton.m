@@ -122,11 +122,11 @@
 }
 
 - (void)displayState:(BTButtonState)state {
-    [self doesNotRecognizeSelector:_cmd];
+    OOO_IS_ABSTRACT();
 }
 
 - (SPRectangle*)clickBounds {
-    [self doesNotRecognizeSelector:_cmd];
+    OOO_IS_ABSTRACT();
     return nil;
 }
 

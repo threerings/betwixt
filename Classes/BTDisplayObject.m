@@ -78,7 +78,7 @@
 }
 
 - (SPDisplayObject*)display {
-    [self doesNotRecognizeSelector:_cmd];
+    OOO_IS_ABSTRACT();
     return nil;
 }
 
