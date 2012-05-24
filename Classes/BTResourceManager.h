@@ -18,8 +18,8 @@
 - (void)loadResourceFile:(NSString*)filename;
 
 /// Loads a resource file in the background
-- (void)loadResourceFile:(NSString*)filename onComplete:(OOOCompleteCallback)onComplete
-                 onError:(OOOErrorCallback)onError;
+- (void)loadResourceFile:(NSString*)filename onComplete:(OOOUnitBlock)onComplete
+                 onError:(OOOErrorBlock)onError;
 
 - (void)unloadResourceFile:(NSString*)filename;
 - (id)getResource:(NSString*)name;
