@@ -106,6 +106,8 @@
 		22F979F714C0E23F00A6913B /* BTResourceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F979E514C0E23F00A6913B /* BTResourceManager.m */; };
 		22F979F914C0E36F00A6913B /* BTResourceFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F979F814C0E36F00A6913B /* BTResourceFactory.h */; };
 		22F97A9014C0EC8B00A6913B /* Betwixt.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F97A8F14C0EC8B00A6913B /* Betwixt.h */; };
+		22FBCA29156EFEC9009C19CF /* SPTextField+BTExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 22FBCA27156EFEC9009C19CF /* SPTextField+BTExtensions.h */; };
+		22FBCA2A156EFEC9009C19CF /* SPTextField+BTExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FBCA28156EFEC9009C19CF /* SPTextField+BTExtensions.m */; };
 		CB24CBCB14A028F6004BAA57 /* BTLocationTask.h in Headers */ = {isa = PBXBuildFile; fileRef = CB24CBC914A028F5004BAA57 /* BTLocationTask.h */; };
 		CB24CBCC14A028F6004BAA57 /* BTLocationTask.m in Sources */ = {isa = PBXBuildFile; fileRef = CB24CBCA14A028F6004BAA57 /* BTLocationTask.m */; };
 		CB24CBCF14A02E10004BAA57 /* MoveMode.m in Sources */ = {isa = PBXBuildFile; fileRef = CB24CBCE14A02E10004BAA57 /* MoveMode.m */; };
@@ -367,6 +369,8 @@
 		22F979E514C0E23F00A6913B /* BTResourceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTResourceManager.m; sourceTree = "<group>"; };
 		22F979F814C0E36F00A6913B /* BTResourceFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTResourceFactory.h; sourceTree = "<group>"; };
 		22F97A8F14C0EC8B00A6913B /* Betwixt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Betwixt.h; sourceTree = "<group>"; };
+		22FBCA27156EFEC9009C19CF /* SPTextField+BTExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SPTextField+BTExtensions.h"; sourceTree = "<group>"; };
+		22FBCA28156EFEC9009C19CF /* SPTextField+BTExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SPTextField+BTExtensions.m"; sourceTree = "<group>"; };
 		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		32CA4F630368D1EE00C91783 /* Betwixt_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Betwixt_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Application-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Application-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
@@ -585,6 +589,8 @@
 				22448E2814E4A7A0001CF5CE /* SPPoint+BTExtensions.m */,
 				22448E2B14E4A931001CF5CE /* SPRectangle+BTExtensions.h */,
 				22448E2C14E4A933001CF5CE /* SPRectangle+BTExtensions.m */,
+				22FBCA27156EFEC9009C19CF /* SPTextField+BTExtensions.h */,
+				22FBCA28156EFEC9009C19CF /* SPTextField+BTExtensions.m */,
 				22608C6B1505C2D300CCE0A5 /* SPView+BTExtensions.h */,
 				22608C6C1505C2D300CCE0A5 /* SPView+BTExtensions.m */,
 			);
@@ -920,6 +926,7 @@
 				22A8700915684E2400101F6D /* BTFontResource.h in Headers */,
 				22A870111568530B00101F6D /* BTResource+Protected.h in Headers */,
 				22A870151568675E00101F6D /* SPBitmapFont+BTExtensions.h in Headers */,
+				22FBCA29156EFEC9009C19CF /* SPTextField+BTExtensions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1153,6 +1160,7 @@
 				22EA32351563436300557886 /* BTCheckbox.m in Sources */,
 				22A8700A15684E2400101F6D /* BTFontResource.m in Sources */,
 				22A870161568675E00101F6D /* SPBitmapFont+BTExtensions.m in Sources */,
+				22FBCA2A156EFEC9009C19CF /* SPTextField+BTExtensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

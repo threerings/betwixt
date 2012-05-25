@@ -32,6 +32,7 @@
 #import "SPMatrix+BTExtensions.h"
 #import "SPPoint+BTExtensions.h"
 #import "SPRectangle+BTExtensions.h"
+#import "SPTextField+BTExtensions.h"
 #import "SPView+BTExtensions.h"
 
 // Resources
