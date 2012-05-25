@@ -16,8 +16,8 @@ static void sizeText (SPTextField* tf) {
 
 static const float PADDING = 4;
 static const uint BG_COLOR_UP = 0x6699CC;
-static const uint BG_COLOR_DOWN = 0x0066FF;
-static const uint TEXT_COLOR_UP = 0x0066FF;
+static const uint BG_COLOR_DOWN = 0x0F3792;
+static const uint TEXT_COLOR_UP = 0x0F3792;
 static const uint TEXT_COLOR_DOWN = 0x6699CC;
 
 @implementation BTSimpleTextButton
