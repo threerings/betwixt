@@ -91,6 +91,8 @@
 		22E0A762152A4404009FDE09 /* BTTouchEventSignals.h in Headers */ = {isa = PBXBuildFile; fileRef = 22E0A760152A4404009FDE09 /* BTTouchEventSignals.h */; };
 		22E0A763152A4404009FDE09 /* BTTouchEventSignals.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E0A761152A4404009FDE09 /* BTTouchEventSignals.m */; };
 		22E43AB21559CF81003A43B8 /* libcooocoa.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E43A5A1559B0BC003A43B8 /* libcooocoa.a */; };
+		22E4F41615703205002AA4D1 /* BTSimpleTextButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 22E4F41415703205002AA4D1 /* BTSimpleTextButton.h */; };
+		22E4F41715703205002AA4D1 /* BTSimpleTextButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E4F41515703205002AA4D1 /* BTSimpleTextButton.m */; };
 		22EA32251563248300557886 /* BTUserSettings.h in Headers */ = {isa = PBXBuildFile; fileRef = 22EA32231563248300557886 /* BTUserSettings.h */; };
 		22EA32261563248300557886 /* BTUserSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EA32241563248300557886 /* BTUserSettings.m */; };
 		22EA322D15633CBB00557886 /* BTAudioSettings.h in Headers */ = {isa = PBXBuildFile; fileRef = 22EA322B15633CBB00557886 /* BTAudioSettings.h */; };
@@ -353,6 +355,8 @@
 		22E0A75E152A3837009FDE09 /* BTEventSignal+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BTEventSignal+Protected.h"; sourceTree = "<group>"; };
 		22E0A760152A4404009FDE09 /* BTTouchEventSignals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTTouchEventSignals.h; sourceTree = "<group>"; };
 		22E0A761152A4404009FDE09 /* BTTouchEventSignals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTTouchEventSignals.m; sourceTree = "<group>"; };
+		22E4F41415703205002AA4D1 /* BTSimpleTextButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTSimpleTextButton.h; sourceTree = "<group>"; };
+		22E4F41515703205002AA4D1 /* BTSimpleTextButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTSimpleTextButton.m; sourceTree = "<group>"; };
 		22EA32231563248300557886 /* BTUserSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTUserSettings.h; sourceTree = "<group>"; };
 		22EA32241563248300557886 /* BTUserSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTUserSettings.m; sourceTree = "<group>"; };
 		22EA322B15633CBB00557886 /* BTAudioSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTAudioSettings.h; sourceTree = "<group>"; };
@@ -664,6 +668,8 @@
 				22D46A931538DEB4005BAD6D /* BTDragger.m */,
 				220F63AB152E878B0051B383 /* BTMovieButton.h */,
 				220F63AC152E878B0051B383 /* BTMovieButton.m */,
+				22E4F41415703205002AA4D1 /* BTSimpleTextButton.h */,
+				22E4F41515703205002AA4D1 /* BTSimpleTextButton.m */,
 			);
 			name = Objects;
 			sourceTree = "<group>";
@@ -927,6 +933,7 @@
 				22A870111568530B00101F6D /* BTResource+Protected.h in Headers */,
 				22A870151568675E00101F6D /* SPBitmapFont+BTExtensions.h in Headers */,
 				22FBCA29156EFEC9009C19CF /* SPTextField+BTExtensions.h in Headers */,
+				22E4F41615703205002AA4D1 /* BTSimpleTextButton.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1161,6 +1168,7 @@
 				22A8700A15684E2400101F6D /* BTFontResource.m in Sources */,
 				22A870161568675E00101F6D /* SPBitmapFont+BTExtensions.m in Sources */,
 				22FBCA2A156EFEC9009C19CF /* SPTextField+BTExtensions.m in Sources */,
+				22E4F41715703205002AA4D1 /* BTSimpleTextButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

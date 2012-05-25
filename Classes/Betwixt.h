@@ -52,6 +52,7 @@
 #import "BTDisplayObjectButton.h"
 #import "BTDragger.h"
 #import "BTMovieButton.h"
+#import "BTSimpleTextButton.h"
 
 // Tasks
 #import "BTAlphaTask.h"
