@@ -4,16 +4,6 @@
 #import "BTSimpleTextButton.h"
 #import "BTButton+Protected.h"
 
-static void sizeText (SPTextField* tf) {
-    float fontSize = (tf.fontSize == SP_NATIVE_FONT_SIZE ? SP_DEFAULT_FONT_SIZE : tf.fontSize);
-    CGSize textSize = [tf.text sizeWithFont:[UIFont fontWithName:tf.fontName size:fontSize]];
-    
-    tf.width = textSize.width;
-    tf.height = textSize.height;
-    tf.hAlign = SPHAlignLeft;
-    tf.vAlign = SPVAlignTop;
-}
-
 static const float PADDING = 4;
 static const uint BG_COLOR_UP = 0x6699CC;
 static const uint BG_COLOR_DOWN = 0x0F3792;
@@ -32,7 +22,7 @@ static const uint TEXT_COLOR_DOWN = 0x6699CC;
         _tf.color = TEXT_COLOR_UP;
         _tf.x = PADDING;
         _tf.y = PADDING;
-        sizeText(_tf);
+        _tf.autoSize = SPAutoSizeSingleLine;
         
         // draw a rectangle
         _bg = [[SPQuad alloc] initWithWidth:_tf.width + (PADDING * 2) 
