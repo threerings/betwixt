@@ -8,10 +8,7 @@
 @protocol BTResourceFactory;
 @class GDataXMLElement;
 
-@interface BTFontResource : BTResource {
-@protected
-    NSString* _fontName;
-}
+@interface BTFontResource : BTResource
 
 + (id<BTResourceFactory>)sharedFactory;
 + (BTFontResource*)require:(NSString*)name;

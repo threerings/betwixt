@@ -24,13 +24,13 @@
 - (id)initWithXml:(GDataXMLElement*)xml {
     if ((self = [super init])) {
         NSString* filename = [BTApp requireResourcePathFor:[xml stringAttribute:@"filename"]];
-        _fontName = [SPTextField registerBitmapFontFromFile:filename];
+        [SPTextField registerBitmapFontFromFile:filename name:[xml stringAttribute:@"name"]];
     }
     return self;
 }
 
 - (void)unload {
-    [SPTextField unregisterBitmapFont:_fontName];
+    [SPTextField unregisterBitmapFont:_name];
 }
 
 @end
