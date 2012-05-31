@@ -5,6 +5,8 @@
 
 @implementation BTSprite
 
+@synthesize sprite = _sprite;
+
 + (BTSprite*)sprite {
     return [[BTSprite alloc] init];
 }
@@ -14,21 +16,18 @@
 }
 
 - (id)init {
-    if (!(self = [super init])) return nil;
-    _sprite = [[SPSprite alloc] init];
-    return self;
+    return [self initWithSprite:[SPSprite sprite]];
 }
 
 - (id)initWithSprite:(SPSprite*)sprite {
-    if (!(self = [super init])) return nil;
-    _sprite = sprite;
+    if ((self = [super init])) {
+        _sprite = sprite;
+    }
     return self;
 }
 
 - (SPDisplayObject*)display {
-    return _sprite;
+    return self.sprite;
 }
-
-@synthesize sprite=_sprite;
 
 @end
