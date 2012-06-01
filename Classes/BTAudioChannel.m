@@ -6,13 +6,10 @@
 #import "BTSoundResource.h"
 #import "BTAudioControls.h"
 #import "BTAudioState.h"
+#import "SPSoundChannel+BTExtensions.h"
 
 static BTAudioControls* GetDummyControls () {
-    static BTAudioControls* gDummyControls = nil;
-    if (gDummyControls == nil) {
-        gDummyControls = [[BTAudioControls alloc] init];
-    }
-    return gDummyControls;
+    return OOO_SINGLETON([[BTAudioControls alloc] init]);
 }
 
 @implementation BTAudioChannel
@@ -53,12 +50,12 @@ static BTAudioControls* GetDummyControls () {
         
         if (self.isPlaying && !self.isPaused) {
             _spChannel.volume = state.actualVolume * _sound.volume;
+            if (state.pitch != _lastPitch) {
+                _spChannel.pitch = state.pitch;
+                _lastPitch = state.pitch;
+            }
         }
     }
-}
-
-- (void)setVolume:(float)volume {
-    _spChannel.volume = volume;
 }
 
 - (BOOL)isPlaying {
@@ -80,6 +77,8 @@ static BTAudioControls* GetDummyControls () {
                          forType:SP_EVENT_TYPE_SOUND_COMPLETED];
     _spChannel.loop = _loop;
     _spChannel.volume = state.actualVolume * _sound.volume;
+    _spChannel.pitch = state.pitch;
+    _lastPitch = state.pitch;
     //_spChannel.pan = state.pan * _sound.pan;
     if (state.paused) {
         [_spChannel pause];

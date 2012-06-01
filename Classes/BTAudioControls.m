@@ -6,33 +6,53 @@
 
 @interface BTAudioControls ()
 - (void)attachChild:(BTAudioControls*)child;
+- (NSMutableArray*)children;
 @end
 
 @implementation BTAudioControls
 
-- (id)init {
-    return [self initWithParentControls:nil];
-}
-
-- (id)initWithParentControls:(BTAudioControls*)parentControls {
+- (id)initWithState:(BTAudioState*)state parentControls:(BTAudioControls*)parentControls {
     if ((self = [super init])) {
         if (parentControls != nil) {
             _parent = parentControls;
             [_parent attachChild:self];
         }
-        _localState = [[BTAudioState alloc] init];
-        _globalState = [[BTAudioState alloc] init];
-        _children = [[NSMutableArray alloc] init];
+        _localState = state;
+        _globalState = [BTAudioState defaultState];
     }
     return self;
 }
 
+- (id)initWithParentControls:(BTAudioControls*)parentControls {
+    return [self initWithState:[BTAudioState defaultState] parentControls:parentControls];
+}
+
+- (id)initWithState:(BTAudioState*)state {
+    return [self initWithState:state parentControls:nil];
+}
+
+- (id)init {
+    return [self initWithState:[BTAudioState defaultState] parentControls:nil];
+}
+
+- (NSMutableArray*)children {
+    // lazily-initialized
+    if (_children == nil) {
+        _children = [[NSMutableArray alloc] init];
+    }
+    return _children;
+}
+
+- (BTAudioControls*)createChild:(BTAudioState*)initialState {
+    return [[BTAudioControls alloc] initWithState:initialState parentControls:self];
+}
+
 - (BTAudioControls*)createChild {
-    return [[BTAudioControls alloc] initWithParentControls:self];
+    return [[BTAudioControls alloc] initWithState:[BTAudioState defaultState] parentControls:self];
 }
 
 - (void)attachChild:(BTAudioControls*)child {
-    [_children addObject:[OOOBoxedWeakRef createWith:child]];
+    [self.children addObject:[OOOBoxedWeakRef createWith:child]];
 }
 
 - (BTAudioState*)state {
@@ -52,6 +72,22 @@
         _initialVolume = _localState.volume;
         _targetVolumeDelta = volume - _initialVolume;
         _targetVolumeElapsedTime = 0;
+    }
+    return self;
+}
+
+- (BTAudioControls*)setPitch:(float)pitch {
+    return [self setPitch:pitch overTime:0];
+}
+
+- (BTAudioControls*)setPitch:(float)pitch overTime:(float)time {
+    _targetPitchTotalTime = time;
+    if (time <= 0) {
+        _localState.pitch = pitch;
+    } else {
+        _initialPitch = _localState.pitch;
+        _targetPitchDelta = pitch - _initialPitch;
+        _targetPitchElapsedTime = 0;
     }
     return self;
 }
@@ -165,6 +201,15 @@
         }
     }
     
+    if (_targetPitchTotalTime > 0) {
+        _targetPitchElapsedTime = MIN(_targetPitchElapsedTime + dt, _targetPitchTotalTime);
+        _localState.pitch = _initialPitch + 
+            (_targetPitchDelta * (_targetPitchElapsedTime / _targetPitchTotalTime));
+        if (_targetPitchElapsedTime >= _targetPitchTotalTime) {
+            _targetPitchTotalTime = 0;
+        }
+    }
+    
     if (_pauseCountdown > 0) {
         _pauseCountdown -= dt;
         if (_pauseCountdown <= 0) {
@@ -190,13 +235,15 @@
     [BTAudioState combine:_localState with:parentState into:_globalState];
     
     // update children
-    for (int ii = 0; ii < _children.count; ++ii) {
-        __weak BTAudioControls* child = ((OOOBoxedWeakRef*) [_children objectAtIndex:ii]).value;
-        if (child == nil) {
-            // Nobody's holding a reference to the child
-            [_children removeObjectAtIndex:ii--];
-        } else {
-            [child update:dt parentState:_globalState];
+    if (_children != nil) {
+        for (int ii = 0; ii < _children.count; ++ii) {
+            __weak BTAudioControls* child = ((OOOBoxedWeakRef*) [_children objectAtIndex:ii]).value;
+            if (child == nil) {
+                // Nobody's holding a reference to the child
+                [_children removeObjectAtIndex:ii--];
+            } else {
+                [child update:dt parentState:_globalState];
+            }
         }
     }
 }

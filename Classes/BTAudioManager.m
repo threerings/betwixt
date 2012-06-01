@@ -70,21 +70,31 @@ static const double SOUND_PLAYED_RECENTLY_DELTA = 1.0 / 20.0;
     }
 }
 
-- (BTAudioChannel*)playSoundNamed:(NSString*)name 
+- (BTAudioChannel*)playSoundNamed:(NSString*)name
+                     initialState:(BTAudioState*)initialState
                    parentControls:(BTAudioControls*)parentControls 
                              loop:(BOOL)loop {
-    return [self playSound:[BTSoundResource require:name] parentControls:parentControls loop:loop];
+    return [self playSound:[BTSoundResource require:name] initialState:initialState 
+            parentControls:parentControls loop:loop];
 }
 
 - (BTAudioChannel*)playSoundNamed:(NSString*)name loop:(BOOL)loop {
-    return [self playSoundNamed:name parentControls:nil loop:loop];
+    return [self playSound:[BTSoundResource require:name] initialState:nil parentControls:nil 
+                      loop:loop];
 }
 
 - (BTAudioChannel*)playSoundNamed:(NSString*)name {
-    return [self playSoundNamed:name parentControls:nil loop:NO];
+    return [self playSound:[BTSoundResource require:name] initialState:nil parentControls:nil 
+                      loop:NO];
+}
+
+- (BTAudioChannel*)playSoundNamed:(NSString*)name initialState:(BTAudioState*)initialState {
+    return [self playSound:[BTSoundResource require:name] initialState:initialState 
+            parentControls:nil loop:NO];
 }
 
 - (BTAudioChannel*)playSound:(BTSoundResource*)soundResource 
+                initialState:(BTAudioState*)initialState
               parentControls:(BTAudioControls*)parentControls 
                         loop:(BOOL)loop {
     // get the appropriate parent controls
@@ -92,9 +102,15 @@ static const double SOUND_PLAYED_RECENTLY_DELTA = 1.0 / 20.0;
         parentControls = [self getControlsForSoundType:soundResource.type];
     }
     
+    // don't play the sound if its initial state is stopped
+    if (initialState != nil && initialState.stopped) {
+        NSLog(@"Discarding sound '%@' (initialState is stopped)", soundResource.name);
+        return [[BTAudioChannel alloc] init];
+    }
+    
     // don't play the sound if its parent controls are stopped
-    BTAudioState* audioState = [parentControls updateStateNow];
-    if (audioState.stopped) {
+    BTAudioState* parentState = [parentControls updateStateNow];
+    if (parentState.stopped) {
         NSLog(@"Discarding sound '%@' (parent controls are stopped)", soundResource.name);
         return [[BTAudioChannel alloc] init];
     }
@@ -110,14 +126,18 @@ static const double SOUND_PLAYED_RECENTLY_DELTA = 1.0 / 20.0;
         }
     }
     
+    if (initialState == nil) {
+        initialState = [[BTAudioState alloc] init];
+    }
+    
     // create the channel
-    BTAudioChannel* channel = [[BTAudioChannel alloc] initWithControls:[parentControls createChild] 
+    BTAudioChannel* channel = [[BTAudioChannel alloc] initWithControls:[parentControls createChild:initialState] 
                                                                  sound:soundResource 
                                                              startTime:timeNow 
                                                                   loop:loop];
     
     // start playing
-    [channel playWithState:audioState];
+    [channel playWithState:[BTAudioState combine:parentState with:initialState]];
     [_activeChannels addObject:channel];
     return channel;
 }

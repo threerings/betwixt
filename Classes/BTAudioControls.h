@@ -20,6 +20,11 @@
     float _targetPanElapsedTime;
     float _targetPanTotalTime;
     
+    float _initialPitch;
+    float _targetPitchDelta;
+    float _targetPitchElapsedTime;
+    float _targetPitchTotalTime;
+    
     BOOL _targetPause;
     float _pauseCountdown;
     
@@ -32,13 +37,18 @@
 
 @property (nonatomic,readonly) BTAudioState* state;
 
-- (id)init;
+- (id)initWithState:(BTAudioState*)initialState parentControls:(BTAudioControls*)parentControls;
 - (id)initWithParentControls:(BTAudioControls*)parentControls;
+- (id)initWithState:(BTAudioState*)initialState;
+- (id)init;
 
+- (BTAudioControls*)createChild:(BTAudioState*)initialState;
 - (BTAudioControls*)createChild;
 
 - (BTAudioControls*)setVolume:(float)volume;
 - (BTAudioControls*)setVolume:(float)volume overTime:(float)time;
+- (BTAudioControls*)setPitch:(float)pitch;
+- (BTAudioControls*)setPitch:(float)pitch overTime:(float)time;
 - (BTAudioControls*)fadeOut:(float)time;
 - (BTAudioControls*)fadeIn:(float)time;
 - (BTAudioControls*)fadeOutAndStop:(float)time;

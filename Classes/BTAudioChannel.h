@@ -12,6 +12,7 @@
     BTAudioControls* _controls;
     BOOL _loop;
     double _startTime;
+    float _lastPitch;
 }
 
 /// Dispatched when the AudioChannel has completed playing. If the channel loops, the signal will

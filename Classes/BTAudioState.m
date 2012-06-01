@@ -7,6 +7,7 @@
 
 @synthesize volume;
 @synthesize pan;
+@synthesize pitch;
 @synthesize paused;
 @synthesize muted;
 @synthesize stopped;
@@ -25,6 +26,7 @@
     }
     into.volume = a.volume * b.volume;
     into.pan = (a.pan + b.pan) * 0.5f;
+    into.pitch = a.pitch * b.pitch;
     into.paused = a.paused || b.paused;
     into.muted = a.muted || b.muted;
     into.stopped = a.stopped || b.stopped;
@@ -34,6 +36,7 @@
 - (id)init {
     if ((self = [super init])) {
         volume = 1;
+        pitch = 1;
     }
     return self;
 }

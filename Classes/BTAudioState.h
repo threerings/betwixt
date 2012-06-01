@@ -3,11 +3,12 @@
 
 @interface BTAudioState : NSObject
 
-@property (nonatomic) float volume;
-@property (nonatomic) float pan;
-@property (nonatomic) BOOL paused;
-@property (nonatomic) BOOL muted;
-@property (nonatomic) BOOL stopped;
+@property (nonatomic,assign) float volume;
+@property (nonatomic,assign) float pan;
+@property (nonatomic,assign) float pitch;
+@property (nonatomic,assign) BOOL paused;
+@property (nonatomic,assign) BOOL muted;
+@property (nonatomic,assign) BOOL stopped;
 @property (nonatomic,readonly) float actualVolume;
 
 + (BTAudioState*)defaultState;
