@@ -37,12 +37,9 @@
 
 @property (nonatomic,readonly) BTAudioState* state;
 
-- (id)initWithState:(BTAudioState*)initialState parentControls:(BTAudioControls*)parentControls;
 - (id)initWithParentControls:(BTAudioControls*)parentControls;
-- (id)initWithState:(BTAudioState*)initialState;
 - (id)init;
 
-- (BTAudioControls*)createChild:(BTAudioState*)initialState;
 - (BTAudioControls*)createChild;
 
 - (BTAudioControls*)setVolume:(float)volume;

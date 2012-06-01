@@ -16,6 +16,7 @@
     BTAudioState* _defaultState;
     NSMutableArray* _activeChannels;
     BTAudioSettings* _settings;
+    OOORandoms* _rands;
 }
 
 @property (nonatomic,readonly) BTAudioControls* masterControls;
@@ -26,14 +27,10 @@
 - (BTAudioControls*)getControlsForSoundType:(BTSoundType*)type;
 
 - (BTAudioChannel*)playSoundNamed:(NSString*)name;
-- (BTAudioChannel*)playSoundNamed:(NSString*)name initialState:(BTAudioState*)initialState;
 - (BTAudioChannel*)playSoundNamed:(NSString*)name loop:(BOOL)loop;
-- (BTAudioChannel*)playSoundNamed:(NSString*)name 
-                     initialState:(BTAudioState*)initialState
-                   parentControls:(BTAudioControls*)parentControls 
+- (BTAudioChannel*)playSoundNamed:(NSString*)name parentControls:(BTAudioControls*)parentControls 
                              loop:(BOOL)loop;
 - (BTAudioChannel*)playSound:(BTSoundResource*)soundResource
-                initialState:(BTAudioState*)initialState
               parentControls:(BTAudioControls*)parentControls 
                         loop:(BOOL)loop;
 

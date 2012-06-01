@@ -17,6 +17,9 @@
 @synthesize type = _type;
 @synthesize volume = _volume;
 @synthesize pan = _pan;
+@synthesize randomizePitch = _randomizePitch;
+@synthesize pitchShiftMin = _pitchShiftMin;
+@synthesize pitchShiftMax = _pitchShiftMax;
 
 + (id<BTResourceFactory>)sharedFactory {
     return OOO_SINGLETON([[BTSoundResourceFactory alloc] init]);
@@ -33,6 +36,13 @@
         _type = [xml enumAttribute:@"type" type:[BTSoundType class] defaultVal:BTSoundType.SFX];
         _volume = [xml floatAttribute:@"volume" defaultVal:1];
         _pan = [xml floatAttribute:@"pan" defaultVal:0];
+        
+        SPPoint* randomizePitch = [xml pointAttribute:@"randomizePitch" defaultVal:nil];
+        if (randomizePitch != nil) {
+            _randomizePitch = YES;
+            _pitchShiftMin = randomizePitch.x;
+            _pitchShiftMax = randomizePitch.y;
+        }
     }
     return self;
 }

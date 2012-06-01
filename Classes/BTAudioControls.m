@@ -11,28 +11,20 @@
 
 @implementation BTAudioControls
 
-- (id)initWithState:(BTAudioState*)state parentControls:(BTAudioControls*)parentControls {
+- (id)initWithParentControls:(BTAudioControls*)parentControls {
     if ((self = [super init])) {
         if (parentControls != nil) {
             _parent = parentControls;
             [_parent attachChild:self];
         }
-        _localState = state;
+        _localState = [BTAudioState defaultState];
         _globalState = [BTAudioState defaultState];
     }
     return self;
 }
 
-- (id)initWithParentControls:(BTAudioControls*)parentControls {
-    return [self initWithState:[BTAudioState defaultState] parentControls:parentControls];
-}
-
-- (id)initWithState:(BTAudioState*)state {
-    return [self initWithState:state parentControls:nil];
-}
-
 - (id)init {
-    return [self initWithState:[BTAudioState defaultState] parentControls:nil];
+    return [self initWithParentControls:nil];
 }
 
 - (NSMutableArray*)children {
@@ -43,12 +35,8 @@
     return _children;
 }
 
-- (BTAudioControls*)createChild:(BTAudioState*)initialState {
-    return [[BTAudioControls alloc] initWithState:initialState parentControls:self];
-}
-
 - (BTAudioControls*)createChild {
-    return [[BTAudioControls alloc] initWithState:[BTAudioState defaultState] parentControls:self];
+    return [[BTAudioControls alloc] initWithParentControls:self];
 }
 
 - (void)attachChild:(BTAudioControls*)child {

@@ -26,6 +26,7 @@ static const double SOUND_PLAYED_RECENTLY_DELTA = 1.0 / 20.0;
         _musicControls = [[BTAudioControls alloc] initWithParentControls:_masterControls];
         _defaultState = [BTAudioState defaultState];
         _activeChannels = [[NSMutableArray alloc] init];
+        _rands = [[OOORandoms alloc] init];
     }
     return self;
 }
@@ -70,42 +71,25 @@ static const double SOUND_PLAYED_RECENTLY_DELTA = 1.0 / 20.0;
     }
 }
 
-- (BTAudioChannel*)playSoundNamed:(NSString*)name
-                     initialState:(BTAudioState*)initialState
-                   parentControls:(BTAudioControls*)parentControls 
+- (BTAudioChannel*)playSoundNamed:(NSString*)name parentControls:(BTAudioControls*)parentControls 
                              loop:(BOOL)loop {
-    return [self playSound:[BTSoundResource require:name] initialState:initialState 
-            parentControls:parentControls loop:loop];
+    return [self playSound:[BTSoundResource require:name] parentControls:parentControls loop:loop];
 }
 
 - (BTAudioChannel*)playSoundNamed:(NSString*)name loop:(BOOL)loop {
-    return [self playSound:[BTSoundResource require:name] initialState:nil parentControls:nil 
-                      loop:loop];
+    return [self playSound:[BTSoundResource require:name] parentControls:nil loop:loop];
 }
 
 - (BTAudioChannel*)playSoundNamed:(NSString*)name {
-    return [self playSound:[BTSoundResource require:name] initialState:nil parentControls:nil 
-                      loop:NO];
-}
-
-- (BTAudioChannel*)playSoundNamed:(NSString*)name initialState:(BTAudioState*)initialState {
-    return [self playSound:[BTSoundResource require:name] initialState:initialState 
-            parentControls:nil loop:NO];
+    return [self playSound:[BTSoundResource require:name] parentControls:nil loop:NO];
 }
 
 - (BTAudioChannel*)playSound:(BTSoundResource*)soundResource 
-                initialState:(BTAudioState*)initialState
-              parentControls:(BTAudioControls*)parentControls 
-                        loop:(BOOL)loop {
+              parentControls:(BTAudioControls*)parentControls loop:(BOOL)loop {
+    
     // get the appropriate parent controls
     if (parentControls == nil) {
         parentControls = [self getControlsForSoundType:soundResource.type];
-    }
-    
-    // don't play the sound if its initial state is stopped
-    if (initialState != nil && initialState.stopped) {
-        NSLog(@"Discarding sound '%@' (initialState is stopped)", soundResource.name);
-        return [[BTAudioChannel alloc] init];
     }
     
     // don't play the sound if its parent controls are stopped
@@ -126,18 +110,23 @@ static const double SOUND_PLAYED_RECENTLY_DELTA = 1.0 / 20.0;
         }
     }
     
-    if (initialState == nil) {
-        initialState = [[BTAudioState alloc] init];
-    }
-    
     // create the channel
-    BTAudioChannel* channel = [[BTAudioChannel alloc] initWithControls:[parentControls createChild:initialState] 
+    BTAudioChannel* channel = [[BTAudioChannel alloc] initWithControls:[parentControls createChild] 
                                                                  sound:soundResource 
                                                              startTime:timeNow 
                                                                   loop:loop];
     
+    BTAudioState* initialState = parentState;
+    
+    // randomize the pitch if the sound requires it
+    if (soundResource.randomizePitch) {
+        float pitch = [_rands getFloatLow:soundResource.pitchShiftMin high:soundResource.pitchShiftMax];
+        [channel.controls setPitch:pitch];
+        initialState = [channel.controls updateStateNow];
+    }
+    
     // start playing
-    [channel playWithState:[BTAudioState combine:parentState with:initialState]];
+    [channel playWithState:initialState];
     [_activeChannels addObject:channel];
     return channel;
 }
