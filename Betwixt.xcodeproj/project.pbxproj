@@ -69,6 +69,8 @@
 		22A870111568530B00101F6D /* BTResource+Protected.h in Headers */ = {isa = PBXBuildFile; fileRef = 22A8700F1568530B00101F6D /* BTResource+Protected.h */; };
 		22A870151568675E00101F6D /* SPBitmapFont+BTExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 22A870131568675E00101F6D /* SPBitmapFont+BTExtensions.h */; };
 		22A870161568675E00101F6D /* SPBitmapFont+BTExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A870141568675E00101F6D /* SPBitmapFont+BTExtensions.m */; };
+		22B785C31578512600871699 /* SPSoundChannel+BTExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 22B785C11578512600871699 /* SPSoundChannel+BTExtensions.h */; };
+		22B785C41578512600871699 /* SPSoundChannel+BTExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B785C21578512600871699 /* SPSoundChannel+BTExtensions.m */; };
 		22C85EAD14DB225400F9EC07 /* BTPoints.h in Headers */ = {isa = PBXBuildFile; fileRef = 22C85EAB14DB225400F9EC07 /* BTPoints.h */; };
 		22C85EAE14DB225400F9EC07 /* BTPoints.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C85EAC14DB225400F9EC07 /* BTPoints.m */; };
 		22C85EB614DB344100F9EC07 /* BTNode+Protected.h in Headers */ = {isa = PBXBuildFile; fileRef = 22C85EB514DB344100F9EC07 /* BTNode+Protected.h */; };
@@ -333,6 +335,8 @@
 		22A8700F1568530B00101F6D /* BTResource+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BTResource+Protected.h"; sourceTree = "<group>"; };
 		22A870131568675E00101F6D /* SPBitmapFont+BTExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SPBitmapFont+BTExtensions.h"; sourceTree = "<group>"; };
 		22A870141568675E00101F6D /* SPBitmapFont+BTExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SPBitmapFont+BTExtensions.m"; sourceTree = "<group>"; };
+		22B785C11578512600871699 /* SPSoundChannel+BTExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SPSoundChannel+BTExtensions.h"; sourceTree = "<group>"; };
+		22B785C21578512600871699 /* SPSoundChannel+BTExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SPSoundChannel+BTExtensions.m"; sourceTree = "<group>"; };
 		22C85EAB14DB225400F9EC07 /* BTPoints.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTPoints.h; sourceTree = "<group>"; };
 		22C85EAC14DB225400F9EC07 /* BTPoints.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTPoints.m; sourceTree = "<group>"; };
 		22C85EB514DB344100F9EC07 /* BTNode+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BTNode+Protected.h"; sourceTree = "<group>"; };
@@ -593,6 +597,8 @@
 				22448E2814E4A7A0001CF5CE /* SPPoint+BTExtensions.m */,
 				22448E2B14E4A931001CF5CE /* SPRectangle+BTExtensions.h */,
 				22448E2C14E4A933001CF5CE /* SPRectangle+BTExtensions.m */,
+				22B785C11578512600871699 /* SPSoundChannel+BTExtensions.h */,
+				22B785C21578512600871699 /* SPSoundChannel+BTExtensions.m */,
 				22FBCA27156EFEC9009C19CF /* SPTextField+BTExtensions.h */,
 				22FBCA28156EFEC9009C19CF /* SPTextField+BTExtensions.m */,
 				22608C6B1505C2D300CCE0A5 /* SPView+BTExtensions.h */,
@@ -934,6 +940,7 @@
 				22A870151568675E00101F6D /* SPBitmapFont+BTExtensions.h in Headers */,
 				22FBCA29156EFEC9009C19CF /* SPTextField+BTExtensions.h in Headers */,
 				22E4F41615703205002AA4D1 /* BTSimpleTextButton.h in Headers */,
+				22B785C31578512600871699 /* SPSoundChannel+BTExtensions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1169,6 +1176,7 @@
 				22A870161568675E00101F6D /* SPBitmapFont+BTExtensions.m in Sources */,
 				22FBCA2A156EFEC9009C19CF /* SPTextField+BTExtensions.m in Sources */,
 				22E4F41715703205002AA4D1 /* BTSimpleTextButton.m in Sources */,
+				22B785C41578512600871699 /* SPSoundChannel+BTExtensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
