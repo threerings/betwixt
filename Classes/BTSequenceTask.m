@@ -36,13 +36,6 @@
 }
 
 + (BTSequenceTask*)withNodes:(BTNode*)node, ... {
-    va_list ap;
-    va_start(ap, node);
-    NSMutableArray* nodes = [[NSMutableArray alloc] init];
-    for (; node != nil; node = va_arg(ap, BTNode*)) {
-        [nodes addObject:node];
-    }
-    va_end(ap);
-    return [[BTSequenceTask alloc] initWithNodes:nodes];
+    return [[BTSequenceTask alloc] initWithNodes:OOO_VARARGS_TO_ARRAY(BTNode*, node)];
 }
 @end

@@ -25,11 +25,6 @@
 }
 
 + (BTParallelTask*)withNodes:(BTNode*)node, ... {
-    va_list ap;
-    va_start(ap, node);
-    NSMutableArray* nodes = [[NSMutableArray alloc] init];
-    for (; node != nil; node = va_arg(ap, BTNode*)) [nodes addObject:node];
-    va_end(ap);
-    return [[BTParallelTask alloc] initWithNodes:nodes];
+    return [[BTParallelTask alloc] initWithNodes:OOO_VARARGS_TO_ARRAY(BTNode*, node)];
 }
 @end
