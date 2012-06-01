@@ -4,7 +4,7 @@
 #import "BTObject.h"
 #import "BTInput.h"
 
-@class BTDisplayObject;
+@class BTViewObject;
 
 @interface BTDragger : BTObject <BTTouchListener> {
 @protected

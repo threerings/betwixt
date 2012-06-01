@@ -1,7 +1,7 @@
 //
 // Betwixt - Copyright 2012 Three Rings Design
 
-#import "BTSprite.h"
+#import "BTSpriteObject.h"
 #import "BTUpdatable.h"
 
 @class RABoolValue;

@@ -2,11 +2,11 @@
 // Betwixt - Copyright 2012 Three Rings Design
 
 #import "BTCheckbox.h"
-#import "BTSprite.h"
+#import "BTSpriteObject.h"
 
 @class BTButton;
 
-@interface BTCheckbox : BTSprite {
+@interface BTCheckbox : BTSpriteObject {
 @protected
     RABoolSignal* _valueChanged;
     BTButton* _checkedButton;

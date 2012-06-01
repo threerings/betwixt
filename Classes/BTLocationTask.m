@@ -5,7 +5,7 @@
 #import "BTNode+Protected.h"
 #import "BTInterpolationTask+Protected.h"
 #import "BTHasLocation.h"
-#import "BTDisplayObject.h"
+#import "BTViewObject.h"
 
 @implementation BTLocationTask
 
@@ -51,7 +51,7 @@
 - (void)added {
     [super added];
     if (_target == nil) {
-        _target = ((BTDisplayObject*)self.parent).display;
+        _target = ((BTViewObject*)self.parent).display;
     }
     _startX = _target.x;
     _startY = _target.y;

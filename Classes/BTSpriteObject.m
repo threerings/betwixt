@@ -1,18 +1,18 @@
 //
 // Betwixt - Copyright 2012 Three Rings Design
 
-#import "BTSprite.h"
+#import "BTSpriteObject.h"
 
-@implementation BTSprite
+@implementation BTSpriteObject
 
 @synthesize sprite = _sprite;
 
-+ (BTSprite*)sprite {
-    return [[BTSprite alloc] init];
++ (BTSpriteObject*)sprite {
+    return [[BTSpriteObject alloc] init];
 }
 
-+ (BTSprite*)withSprite:(SPSprite *)sprite {
-    return [[BTSprite alloc] initWithSprite:sprite];
++ (BTSpriteObject*)withSprite:(SPSprite *)sprite {
+    return [[BTSpriteObject alloc] initWithSprite:sprite];
 }
 
 - (id)init {

@@ -5,7 +5,8 @@
 
 @class BTEventSignal;
 
-@interface BTDisplayObject : BTObject
+/// A BTObject that wraps an SPDisplayObject
+@interface BTViewObject : BTObject
 
 @property (nonatomic,readonly) SPDisplayObject* display; // abstract
 
@@ -16,6 +17,6 @@
 @property (nonatomic,readonly) RAObjectSignal* touchEnded; // <SPTouch>
 @property (nonatomic,readonly) RAObjectSignal* touchCanceled; // <SPTouch>
 
-+ (BTDisplayObject*)create:(SPDisplayObject*)disp;
++ (BTViewObject*)create:(SPDisplayObject*)disp;
 
 @end

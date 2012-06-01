@@ -4,9 +4,9 @@
 #import "BTNodeContainer.h"
 
 @class BTModeStack;
-@class BTSprite;
+@class BTSpriteObject;
 @class BTInput;
-@class BTDisplayObject;
+@class BTViewObject;
 
 @interface BTMode : NSObject <BTNodeContainer> {
 @package
@@ -16,7 +16,7 @@
     RAUnitSignal* _entered;
     RAUnitSignal* _exited;
     RAConnectionGroup* _conns;
-    BTSprite* _rootNode;
+    BTSpriteObject* _rootNode;
     NSMutableDictionary* _keyedObjects;
     NSMutableDictionary* _groups;
     SPJuggler* _juggler;

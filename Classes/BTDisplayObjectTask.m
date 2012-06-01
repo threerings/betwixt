@@ -2,7 +2,7 @@
 // Betwixt - Copyright 2012 Three Rings Design
 
 #import "BTDisplayObjectTask.h"
-#import "BTDisplayObject.h"
+#import "BTViewObject.h"
 #import "BTNode+Protected.h"
 
 @implementation BTDisplayObjectTask
@@ -17,7 +17,7 @@
 - (void)added {
     [super added];
     if (!_target) {
-        _target = ((BTDisplayObject*)self.parent).display;
+        _target = ((BTViewObject*)self.parent).display;
     }
 }
 

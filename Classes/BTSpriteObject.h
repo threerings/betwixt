@@ -1,15 +1,15 @@
 //
 // Betwixt - Copyright 2012 Three Rings Design
 
-#import "BTDisplayObject.h"
+#import "BTViewObject.h"
 
-@interface BTSprite : BTDisplayObject {
+@interface BTSpriteObject : BTViewObject {
 @protected
     SPSprite* _sprite;
 }
 
-+ (BTSprite*)sprite;
-+ (BTSprite*)withSprite:(SPSprite*)sprite;
++ (BTSpriteObject*)sprite;
++ (BTSpriteObject*)withSprite:(SPSprite*)sprite;
 
 - (id)init;
 - (id)initWithSprite:(SPSprite*)sprite;

@@ -6,7 +6,7 @@
 #import "BTModeStack.h"
 #import "BTMode+Protected.h"
 #import "BTMode+Package.h"
-#import "BTSprite.h"
+#import "BTSpriteObject.h"
 #import "BTNode+Protected.h"
 #import "BTNode+Package.h"
 #import "SPTouchProcessor.h"
@@ -126,7 +126,7 @@
 
 @end
 
-@interface BTRootNode : BTSprite {
+@interface BTRootNode : BTSpriteObject {
 @private
     __weak BTMode* _mode;
 }
@@ -286,7 +286,7 @@
     [_rootNode addNode:node withName:name replaceExisting:replaceExisting];
 }
 
-- (void)addNode:(BTDisplayObject*)node displayOn:(SPDisplayObjectContainer*)displayParent {
+- (void)addNode:(BTViewObject*)node displayOn:(SPDisplayObjectContainer*)displayParent {
     [_rootNode addNode:node displayOn:displayParent];
 }
 

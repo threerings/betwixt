@@ -5,7 +5,7 @@
 
 #import "BTUpdatable.h"
 #import "BTObject.h"
-#import "BTDisplayObject.h"
+#import "BTViewObject.h"
 
 #import "BTNode+Package.h"
 #import "BTNode+Protected.h"
@@ -86,7 +86,7 @@
     
     // Does the object have a display parent?
     if (parent != nil) {
-        [parent addChild:((BTDisplayObject *)node).display];
+        [parent addChild:((BTViewObject *)node).display];
     }
     
     // Register the node with the mode
@@ -122,7 +122,7 @@
     [self addNodeInternal:node withName:name replaceExisting:replaceExisting parent:nil];
 }
 
-- (void)addNode:(BTDisplayObject*)node displayOn:(SPDisplayObjectContainer*)displayParent {
+- (void)addNode:(BTViewObject*)node displayOn:(SPDisplayObjectContainer*)displayParent {
     [self addNodeInternal:node withName:nil replaceExisting:NO parent:displayParent];
 }
 

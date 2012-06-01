@@ -8,14 +8,14 @@
 
 #import "BTApp.h"
 #import "BTDeviceType.h"
-#import "BTDisplayObject.h"
+#import "BTViewObject.h"
 #import "BTInput.h"
 #import "BTMode.h"
 #import "BTModeStack.h"
 #import "BTNode.h"
 #import "BTNodeContainer.h"
 #import "BTObject.h"
-#import "BTSprite.h"
+#import "BTSpriteObject.h"
 
 // Audio
 #import "BTAudioChannel.h"

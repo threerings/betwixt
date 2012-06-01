@@ -7,7 +7,7 @@
 #import "BTSequenceTask.h"
 #import "BTAlphaTask.h"
 #import "BTRotationTask.h"
-#import "BTSprite.h"
+#import "BTSpriteObject.h"
 #import "BTLocationTask.h"
 #import "BTModeStack.h"
 
@@ -18,7 +18,7 @@
     [self.sprite addChild:directquad];
     [self addNode:[BTLocationTask withTime:0.5 toX:100 toY:100 target:directquad]];
     [self addNode:[BTAlphaTask withTime:0.5 alpha:0 target:directquad]];
-    BTSprite *sprite = [[BTSprite alloc] init];
+    BTSpriteObject *sprite = [[BTSpriteObject alloc] init];
     [self addNode:sprite displayOn:self.sprite];
     [sprite.sprite addChild:[SPQuad quadWithWidth:100 height:100 color:0x00ff00]];
     [sprite addNode:[BTSequenceTask withNodes:

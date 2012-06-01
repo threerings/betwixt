@@ -3,7 +3,7 @@
 
 #import "BTDragger.h"
 #import "BTNode+Protected.h"
-#import "BTDisplayObject.h"
+#import "BTViewObject.h"
 #import "BTMode.h"
 
 @implementation BTDragger

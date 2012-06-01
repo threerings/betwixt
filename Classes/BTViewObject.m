@@ -1,25 +1,25 @@
 //
 // Betwixt - Copyright 2012 Three Rings Design
 
-#import "BTDisplayObject.h"
+#import "BTViewObject.h"
 #import "BTNode+Protected.h"
 #import "BTTouchEventSignals.h"
 
-@interface BTSimpleDisplayObject : BTDisplayObject {
+@interface BTSimpleDisplayObject : BTViewObject {
 @private
     SPDisplayObject* _disp;
 }
 - (id)initWithDisplayObject:(SPDisplayObject*)disp;
 @end
 
-@interface BTDisplayObject () {
+@interface BTViewObject () {
 @protected
     BTTouchEventSignals* _touchEventSignals;
 }
 @property (nonatomic,readonly) BTTouchEventSignals* touchEventSignals;
 @end
 
-@implementation BTDisplayObject
+@implementation BTViewObject
 
 - (BTTouchEventSignals*)touchEventSignals {
     if (_touchEventSignals == nil) {
@@ -87,7 +87,7 @@
     [super cleanup];
 }
 
-+ (BTDisplayObject*)create:(SPDisplayObject*)disp {
++ (BTViewObject*)create:(SPDisplayObject*)disp {
     return [[BTSimpleDisplayObject alloc] initWithDisplayObject:disp];
 }
 

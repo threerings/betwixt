@@ -1,12 +1,12 @@
 //
 // Betwixt - Copyright 2012 Three Rings Design
 
-#import "BTDisplayObject.h"
+#import "BTViewObject.h"
 #import "BTUpdatable.h"
 
 #define SQUARE_FRAME_PRIORITY RA_DEFAULT_PRIORITY
 
-@interface Square : BTDisplayObject <BTUpdatable> {
+@interface Square : BTViewObject <BTUpdatable> {
 @private
     SPQuad *_quad;
     NSString *_name;

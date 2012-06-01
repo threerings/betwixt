@@ -1,10 +1,10 @@
 //
 // Betwixt - Copyright 2012 Three Rings Design
 
-#import "BTSprite.h"
+#import "BTSpriteObject.h"
 #import "BTInput.h"
 
-@interface BTButton : BTSprite <BTTouchListener> {
+@interface BTButton : BTSpriteObject <BTTouchListener> {
 @protected
     RAUnitSignal* _clicked;
     id<OOORegistration> _captureReg;

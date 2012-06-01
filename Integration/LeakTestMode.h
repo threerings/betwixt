@@ -15,7 +15,7 @@
     __weak BTObject* _child2;
     __weak Updater* _updater;
     __weak Listener* _listener;
-    __weak BTSprite* _sprite;
+    __weak BTSpriteObject* _sprite;
     __weak BTMovie* _movie;
     int _ticks;
 }

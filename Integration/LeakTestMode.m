@@ -7,7 +7,7 @@
 #import "BTNode+Protected.h"
 #import "BTModeStack.h"
 #import "BTUpdatable.h"
-#import "BTSprite.h"
+#import "BTSpriteObject.h"
 #import "BTResourceManager.h"
 #import "BTMovieResource.h"
 #import "BTMovie.h"
@@ -57,13 +57,13 @@
     [self addNode:listener];
     _listener = listener;
     
-    BTSprite* sprite = [BTSprite sprite];
+    BTSpriteObject* sprite = [BTSpriteObject sprite];
     [self addNode:sprite displayOn:self.sprite];
     [sprite removeSelf];
     _sprite = sprite;
     
     BTMovie *movie = [[BTApp.resourceManager requireResource:@"squaredance"] newMovie];
-    BTSprite* movieSprite = [BTSprite withSprite:movie];
+    BTSpriteObject* movieSprite = [BTSpriteObject withSprite:movie];
     [self addNode:movieSprite displayOn:self.sprite];
     [movieSprite removeSelf];
     _movie = movie;
