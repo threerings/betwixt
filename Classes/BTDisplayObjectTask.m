@@ -8,9 +8,10 @@
 @implementation BTDisplayObjectTask
 
 - (id)initWithTime:(float)seconds interpolator:(id<OOOInterpolator>)interp 
-           target:(SPDisplayObject*)target {
-    if (!(self = [super initWithTime:seconds interpolator:interp])) return nil;
-    _target = target;
+            target:(SPDisplayObject*)target {
+    if ((self = [super initWithTime:seconds interpolator:interp])) {
+        _target = target;
+    }
     return self;
 }
 

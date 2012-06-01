@@ -24,10 +24,9 @@
 @synthesize juggler = _juggler;
 
 - (id)initWithJuggler:(SPJuggler*)juggler {
-    if (!(self = [super init])) {
-        return nil;
+    if ((self = [super init])) {
+        _juggler = juggler;
     }
-    _juggler = juggler;
     return self;
 }
 @end
@@ -48,11 +47,10 @@
 @implementation BTNodeGroup
 
 - (id)initWithMode:(BTMode *)mode {
-    if (!(self = [super init])) {
-        return nil;
+    if ((self = [super init])) {
+        _mode = mode;
+        _group = [NSMutableArray array];
     }
-    _mode = mode;
-    _group = [NSMutableArray array];
     return self;
 }
 
@@ -136,10 +134,9 @@
 
 @implementation BTRootNode
 - (id)initWithMode:(BTMode*)mode{
-    if (!(self = [super initWithSprite:[[BTModeSprite alloc] initWithJuggler:mode->_juggler]])) {
-        return nil;
+    if ((self = [super initWithSprite:[[BTModeSprite alloc] initWithJuggler:mode->_juggler]])) {
+        _mode = mode;
     }
-    _mode = mode;
     return self;
 }
 - (BTMode*)mode {
@@ -153,17 +150,18 @@
 @implementation BTMode
 
 - (id)init {
-    if (!(self = [super init])) return nil;
-    _juggler = [[SPJuggler alloc] init];
-    _rootNode = [[BTRootNode alloc] initWithMode:self];
-    
-    _input = [[BTInput alloc] initWithRoot:_rootNode.sprite];
-    _update = [[RAFloatSignal alloc] init];
-    _entered = [[RAUnitSignal alloc] init];
-    _exited = [[RAUnitSignal alloc] init];
-    _conns = [[RAConnectionGroup alloc] init];
-    _keyedObjects = [[NSMutableDictionary alloc] init];
-    _groups = [[NSMutableDictionary alloc] init];
+    if ((self = [super init])) {
+        _juggler = [[SPJuggler alloc] init];
+        _rootNode = [[BTRootNode alloc] initWithMode:self];
+        
+        _input = [[BTInput alloc] initWithRoot:_rootNode.sprite];
+        _update = [[RAFloatSignal alloc] init];
+        _entered = [[RAUnitSignal alloc] init];
+        _exited = [[RAUnitSignal alloc] init];
+        _conns = [[RAConnectionGroup alloc] init];
+        _keyedObjects = [[NSMutableDictionary alloc] init];
+        _groups = [[NSMutableDictionary alloc] init];
+    }
     
     return self;
 }

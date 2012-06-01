@@ -19,11 +19,10 @@
 }
 
 - (id)initWithMovie:(BTMovie*)movie label:(NSString*)label {
-    if (!(self = [super init])) {
-        return nil;
+    if ((self = [super init])) {
+        _movie = movie;
+        _label = label;
     }
-    _movie = movie;
-    _label = label;
     return self;
 }
 

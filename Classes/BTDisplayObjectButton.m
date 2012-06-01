@@ -8,13 +8,12 @@
 
 - (id)initWithUpState:(SPDisplayObject*)upState downState:(SPDisplayObject*)downState 
         disabledState:(SPDisplayObject*)disabledState {
-    if (!(self = [super init])) {
-        return nil;
+    if ((self = [super init])) {
+        _upState = upState;
+        _downState = downState;
+        _disabledState = disabledState;
+        _clickBounds = [_upState bounds];
     }
-    _upState = upState;
-    _downState = downState;
-    _disabledState = disabledState;
-    _clickBounds = [_upState bounds];
     return self;
 }
 

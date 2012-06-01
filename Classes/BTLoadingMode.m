@@ -16,17 +16,18 @@
 @synthesize loadComplete = _loadComplete;
 
 - (id)init {
-    if (!(self = [super init])) return nil;
-    _loadComplete = [[RAUnitSignal alloc] init];
-    _filenames = [NSMutableArray array];
-    _filenameIdx = -1;
-    
-    [_conns onReactor:self.entered connectUnit:^{
-        if (_filenameIdx < 0) {
-            // Start the load
-            [self loadNextFile];
-        }
-    }];
+    if ((self = [super init])) {
+        _loadComplete = [[RAUnitSignal alloc] init];
+        _filenames = [NSMutableArray array];
+        _filenameIdx = -1;
+        
+        [_conns onReactor:self.entered connectUnit:^{
+            if (_filenameIdx < 0) {
+                // Start the load
+                [self loadNextFile];
+            }
+        }];
+    }
     
     return self;
 }

@@ -7,11 +7,9 @@
 @implementation BTDurationTask
 
 - (id)initWithTime:(float)time {
-    if (!(self = [super init])) {
-        return nil;
+    if ((self = [super init])) {
+        _totalTime = time;
     }
-    
-    _totalTime = time;
     return self;
 }
 

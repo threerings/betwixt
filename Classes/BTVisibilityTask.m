@@ -16,11 +16,10 @@
 }
 
 - (id)initWithVisible:(BOOL)visible target:(SPDisplayObject*)target {
-    if (!(self = [super init])) {
-        return nil;
+    if ((self = [super init])) {
+        _target = target;
+        _visible = visible;
     }
-    _target = target;
-    _visible = visible;
     return self;
 }
 

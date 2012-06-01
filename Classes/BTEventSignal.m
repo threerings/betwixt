@@ -9,11 +9,10 @@
 @synthesize dispatcher = _dispatcher;
 
 - (id)initWithDispatcher:(SPEventDispatcher*)dispatcher eventType:(NSString*)eventType {
-    if (!(self = [super init])) {
-        return nil;
+    if ((self = [super init])) {
+        _dispatcher = dispatcher;
+        _eventType = eventType;
     }
-    _dispatcher = dispatcher;
-    _eventType = eventType;
     return self;
 }
 

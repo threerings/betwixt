@@ -9,22 +9,21 @@
 @end
 
 @implementation FilteredTouchSignal
+
 - (id)initWithTouchEventSignal:(BTEventSignal*)touchEvent phase:(SPTouchPhase)phase {
-    if (!(self = [super init])) {
-        return nil;
+    if ((self = [super init])) {
+        __weak SPDisplayObject* disp = (SPDisplayObject*)touchEvent.dispatcher;
+        __weak FilteredTouchSignal* this = self;
+        [touchEvent connectSlot:^(SPTouchEvent* event) {
+            if (!this || !disp) {
+                return;
+            }
+            SPTouch* touch = [[event touchesWithTarget:disp andPhase:phase] anyObject];
+            if (touch != nil) {
+                [this emitEvent:touch];
+            }
+        }];
     }
-    
-    __weak SPDisplayObject* disp = (SPDisplayObject*)touchEvent.dispatcher;
-    __weak FilteredTouchSignal* this = self;
-    [touchEvent connectSlot:^(SPTouchEvent* event) {
-        if (!this || !disp) {
-            return;
-        }
-        SPTouch* touch = [[event touchesWithTarget:disp andPhase:phase] anyObject];
-        if (touch != nil) {
-            [this emitEvent:touch];
-        }
-    }];
     
     return self;
 }
@@ -46,10 +45,9 @@
 @synthesize touchEvent = _touchEvent;
 
 - (id)initWithDisplayObject:(SPDisplayObject*)disp {
-    if (!(self = [super init])) {
-        return nil;
+    if ((self = [super init])) {
+        _touchEvent = [[BTEventSignal alloc] initWithDispatcher:disp eventType:SP_EVENT_TYPE_TOUCH];
     }
-    _touchEvent = [[BTEventSignal alloc] initWithDispatcher:disp eventType:SP_EVENT_TYPE_TOUCH];
     return self;
 }
 

@@ -45,10 +45,10 @@
 
 - (id)initWithTime:(float)seconds scaleX:(float)scaleX scaleY:(float)scaleY 
       interpolator:(id<OOOInterpolator>)interp target:(SPDisplayObject*)target {
-    if (!(self = [super initWithTime:seconds interpolator:interp target:target])) return nil;
-    
-    _endX = scaleX;
-    _endY = scaleY;
+    if ((self = [super initWithTime:seconds interpolator:interp target:target])) {
+        _endX = scaleX;
+        _endY = scaleY;
+    }
     return self;
 }
 

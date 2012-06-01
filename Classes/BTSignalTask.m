@@ -11,10 +11,9 @@
 }
 
 - (id)initWithSignal:(RAReactor*)sig {
-    if (!(self = [super init])) {
-        return nil;
+    if ((self = [super init])) {
+        _sig = sig;
     }
-    _sig = sig;
     return self;
 }
 

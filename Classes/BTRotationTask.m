@@ -37,9 +37,9 @@
 }
 
 - (id)initWithTime:(float)seconds rotation:(float)rads interpolator:(id<OOOInterpolator>)interp target:(SPDisplayObject*)target {
-    if (!(self = [super initWithTime:seconds interpolator:interp target:target])) return nil;
-    
-    _endRotation = rads;
+    if ((self = [super initWithTime:seconds interpolator:interp target:target])) {
+        _endRotation = rads;
+    }
     return self;
 }
 

@@ -17,23 +17,21 @@
 }
 
 - (id)init {
-    if (!(self = [super init])) {
-        return nil;
+    if ((self = [super init])) {
+        // Build a list of device types, in the order that we prefer textures:
+        // - textures for our device
+        // - textures for lower-res devices
+        // - textures for higher-res devices
+        _targetDevicePrefs = [[BTDeviceType values] sortedArrayUsingComparator:^NSComparisonResult(BTDeviceType* a, BTDeviceType* b) {
+            if (a == BTApp.deviceType) {
+                return -1;
+            } else if (b == BTApp.deviceType) {
+                return 1;
+            } else {
+                return OOOCompareInts(a.screenWidth * a.screenHeight, b.screenWidth * b.screenHeight);
+            }
+        }];
     }
-    
-    // Build a list of device types, in the order that we prefer textures:
-    // - textures for our device
-    // - textures for lower-res devices
-    // - textures for higher-res devices
-    _targetDevicePrefs = [[BTDeviceType values] sortedArrayUsingComparator:^NSComparisonResult(BTDeviceType* a, BTDeviceType* b) {
-        if (a == BTApp.deviceType) {
-            return -1;
-        } else if (b == BTApp.deviceType) {
-            return 1;
-        } else {
-            return OOOCompareInts(a.screenWidth * a.screenHeight, b.screenWidth * b.screenHeight);
-        }
-    }];
     
     return self;
 }

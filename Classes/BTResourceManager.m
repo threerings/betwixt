@@ -37,13 +37,12 @@
 @implementation BTResourceManager
 
 - (id)init {
-    if (!(self = [super init])) {
-        return nil;
+    if ((self = [super init])) {
+        _factories = [[NSMutableDictionary alloc] init];
+        _resources = [[NSMutableDictionary alloc] init];
+        _loadingFiles = [[NSMutableSet alloc] init];
+        _loadedFiles = [[NSMutableSet alloc] init];
     }
-    _factories = [[NSMutableDictionary alloc] init];
-    _resources = [[NSMutableDictionary alloc] init];
-    _loadingFiles = [[NSMutableSet alloc] init];
-    _loadedFiles = [[NSMutableSet alloc] init];
     return self;
 }
 
@@ -175,11 +174,10 @@
 @synthesize onComplete, onError, canceled;
 
 - (id)initWithManager:(BTResourceManager*)mgr filename:(NSString*)filename {
-    if (!(self = [super init])) {
-        return nil;
+    if ((self = [super init])) {
+        _mgr = mgr;
+        _filename = filename;
     }
-    _mgr = mgr;
-    _filename = filename;
     return self;
 }
 

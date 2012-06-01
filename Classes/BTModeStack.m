@@ -25,12 +25,11 @@ typedef enum {
 
 @implementation PendingModeTransition
 - (id)init:(ModeTransitionType)theType mode:(BTMode*)theMode index:(int)theIndex {
-    if (!(self = [super init])) {
-        return nil;
+    if ((self = [super init])) {
+        type = theType;
+        mode = theMode;
+        index = theIndex;
     }
-    type = theType;
-    mode = theMode;
-    index = theIndex;
     return self;
 }
 @end
@@ -38,10 +37,11 @@ typedef enum {
 @implementation BTModeStack
 
 - (id)init {
-    if (!(self = [super init])) return nil;
-    _sprite = [[SPSprite alloc] init];
-    _stack = [NSMutableArray array];
-    _pendingModeTransitions = [NSMutableArray array];
+    if ((self = [super init])) {
+        _sprite = [[SPSprite alloc] init];
+        _stack = [NSMutableArray array];
+        _pendingModeTransitions = [NSMutableArray array];
+    }
     return self;
 }
 

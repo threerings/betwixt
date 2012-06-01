@@ -95,14 +95,13 @@
 
 @implementation BTSimpleDisplayObject
 
+@synthesize display = _disp;
+
 - (id)initWithDisplayObject:(SPDisplayObject*)disp {
-    if (!(self = [super init])) {
-        return nil;
+    if ((self = [super init])) {
+        _disp = disp;
     }
-    _disp = disp;
     return self;
 }
-
-@synthesize display=_disp;
 
 @end

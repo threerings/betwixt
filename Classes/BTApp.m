@@ -33,8 +33,9 @@ static BTApp* gInstance = nil;
 @implementation BTViewController
 
 - (id)initWithApp:(BTApp *)app {
-    if (!(self = [super init])) return nil;
-    _app = app;
+    if ((self = [super init])) {
+        _app = app;
+    }
     return self;
 }
 
@@ -239,6 +240,8 @@ static BTApp* gInstance = nil;
 
 @implementation BTStage
 
+@synthesize app;
+
 - (void)advanceTime:(double)seconds {
     [self.juggler advanceTime:seconds];
     [self.app update:(float) seconds];
@@ -247,7 +250,5 @@ static BTApp* gInstance = nil;
 - (void)processTouches:(NSSet*)touches {
     [self.app processTouches:touches];
 }
-
-@synthesize app;
 
 @end

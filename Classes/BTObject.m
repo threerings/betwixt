@@ -34,8 +34,9 @@
 @implementation BTObject
 
 - (id)init {
-    if (!(self = [super init])) return nil;
-    _children = [[NSMutableSet alloc] init];
+    if ((self = [super init])) {
+        _children = [[NSMutableSet alloc] init];
+    }
     return self;
 }
 

@@ -12,12 +12,11 @@
 @implementation BTInput
 
 - (id)initWithRoot:(SPDisplayObjectContainer*)root {
-    if (!(self = [super init])) {
-        return nil;
+    if ((self = [super init])) {
+        _root = root;
+        _listeners = [NSMutableArray array];
+        _currentTouches = [[NSMutableSet alloc] initWithCapacity:2];
     }
-    _root = root;
-    _listeners = [NSMutableArray array];
-    _currentTouches = [[NSMutableSet alloc] initWithCapacity:2];
     return self;
 }
 

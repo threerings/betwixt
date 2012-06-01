@@ -30,44 +30,47 @@ NSString * const BTMovieLastFrame = @"BTMovieLastFrame";
 @end
 
 @implementation BTMovieLayer
--(BTMovieResourceKeyframe*)kfAtIdx:(int)idx {
+
+- (BTMovieResourceKeyframe*)kfAtIdx:(int)idx {
     return (BTMovieResourceKeyframe*)[keyframes objectAtIndex:idx];
 }
 
 - (id)initForMovie:(BTMovie*)parent withLayer:(BTMovieResourceLayer*)layer {
-    if (!(self = [super init])) return nil;
-    keyframes = layer->keyframes;
-    movie = parent;
-    
-    SPSprite* emptySprite = [[SPSprite alloc] init];
-    
-    // Create the DisplayObjects that are attached to each keyframe
-    displays = [[NSMutableArray alloc] initWithCapacity:[keyframes count]];
-    for (int ii = 0; ii < [keyframes count]; ++ii) {
-        [displays addObject:emptySprite];
-    }
-    [layer->keyframesForSymbol enumerateKeysAndObjectsUsingBlock:^(id symbol, NSArray* frameIndices, BOOL *stop) {
-        NSString* symbolName = OOONSNullToNil(symbol);
-        SPDisplayObject* display = nil;
-        if (symbolName == nil) {
-            display = emptySprite;
-        } else {
-            id<BTDisplayObjectCreator> res = 
-            [BTApp.resourceManager requireResource:symbol 
-                                      conformingTo:@protocol(BTDisplayObjectCreator)];
-            display = [res createDisplayObject];
-        }
+    if ((self = [super init])) {
+        keyframes = layer->keyframes;
+        movie = parent;
         
-        for (NSNumber* num in frameIndices) {
-            [displays replaceObjectAtIndex:num.integerValue withObject:display];
+        SPSprite* emptySprite = [[SPSprite alloc] init];
+        
+        // Create the DisplayObjects that are attached to each keyframe
+        displays = [[NSMutableArray alloc] initWithCapacity:[keyframes count]];
+        for (int ii = 0; ii < [keyframes count]; ++ii) {
+            [displays addObject:emptySprite];
         }
-    }];
+        [layer->keyframesForSymbol enumerateKeysAndObjectsUsingBlock:^(id symbol, NSArray* frameIndices, BOOL *stop) {
+            NSString* symbolName = OOONSNullToNil(symbol);
+            SPDisplayObject* display = nil;
+            if (symbolName == nil) {
+                display = emptySprite;
+            } else {
+                id<BTDisplayObjectCreator> res = 
+                [BTApp.resourceManager requireResource:symbol 
+                                          conformingTo:@protocol(BTDisplayObjectCreator)];
+                display = [res createDisplayObject];
+            }
+            
+            for (NSNumber* num in frameIndices) {
+                [displays replaceObjectAtIndex:num.integerValue withObject:display];
+            }
+        }];
+        
+        // Add the first keyframe's DisplayObject to the movie
+        [movie addChild:[displays objectAtIndex:0]];
+        
+        layerIdx = movie.numChildren - 1;
+        [movie childAtIndex:layerIdx].name = layer->name;
+    }
     
-    // Add the first keyframe's DisplayObject to the movie
-    [movie addChild:[displays objectAtIndex:0]];
-    
-    layerIdx = movie.numChildren - 1;
-    [movie childAtIndex:layerIdx].name = layer->name;
     return self;
 }
 
@@ -153,6 +156,12 @@ NSString * const BTMovieLastFrame = @"BTMovieLastFrame";
 @end
 
 @implementation BTMovie
+
+@synthesize duration = _duration;
+@synthesize playing = _playing;
+@synthesize labelPassed = _labelPassed;
+@synthesize frame = _frame;
+@synthesize framerate = _framerate;
 
 - (int)frameForLabel:(NSString*)label {
     for (int ii = 0; ii < [_labels count]; ii++) {
@@ -326,26 +335,26 @@ NSString * const BTMovieLastFrame = @"BTMovieLastFrame";
 }
 
 - (id)initWithFramerate:(float)framerate layers:(NSMutableArray*)layers labels:(NSArray*)labels {
-    if (!(self = [super init])) return nil;
-    _framerate = framerate;
-    _layers = [[NSMutableArray alloc] initWithCapacity:[layers count]];
-    for (BTMovieResourceLayer* layer in layers) {
-        [_layers addObject:[[BTMovieLayer alloc] initForMovie:self withLayer:layer]];
+    if ((self = [super init])) {
+        _framerate = framerate;
+        _layers = [[NSMutableArray alloc] initWithCapacity:[layers count]];
+        for (BTMovieResourceLayer* layer in layers) {
+            [_layers addObject:[[BTMovieLayer alloc] initForMovie:self withLayer:layer]];
+        }
+        _pendingFrame = NO_FRAME;
+        _stopFrame = NO_FRAME;
+        _frame = NO_FRAME;
+        _labels = labels;
+        _duration = [labels count] / _framerate;
+        _playing = [[RABoolValue alloc] init];
+        _playing.value = YES;
+        _labelPassed = [[RAObjectSignal alloc] init];
+        [self gotoFrame:0 fromSkip:YES overDuration:NO];
+        [self addEventListener:@selector(addedToStage:) atObject:self 
+                       forType:SP_EVENT_TYPE_ADDED_TO_STAGE];
+        [self addEventListener:@selector(removedFromStage:) atObject:self 
+                       forType:SP_EVENT_TYPE_REMOVED_FROM_STAGE];
     }
-    _pendingFrame = NO_FRAME;
-    _stopFrame = NO_FRAME;
-    _frame = NO_FRAME;
-    _labels = labels;
-    _duration = [labels count] / _framerate;
-    _playing = [[RABoolValue alloc] init];
-    _playing.value = YES;
-    _labelPassed = [[RAObjectSignal alloc] init];
-    [self gotoFrame:0 fromSkip:YES overDuration:NO];
-    [self addEventListener:@selector(addedToStage:) atObject:self forType:SP_EVENT_TYPE_ADDED_TO_STAGE];
-    [self addEventListener:@selector(removedFromStage:) atObject:self forType:SP_EVENT_TYPE_REMOVED_FROM_STAGE];
     return self;
 }
-
-@synthesize duration=_duration, playing=_playing, labelPassed=_labelPassed, frame=_frame, 
-            framerate=_framerate;
 @end

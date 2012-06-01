@@ -36,8 +36,9 @@
 }
 
 - (id)initWithTime:(float)seconds alpha:(float)alpha interpolator:(id<OOOInterpolator>)interp target:(SPDisplayObject*)target {
-    if (!(self = [super initWithTime:seconds interpolator:interp target:target])) return nil;
-    _endAlpha = alpha;
+    if ((self = [super initWithTime:seconds interpolator:interp target:target])) {
+        _endAlpha = alpha;
+    }
     return self;
 }
 

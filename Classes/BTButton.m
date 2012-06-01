@@ -37,11 +37,10 @@
 }
 
 - (id)init {
-    if (!(self = [super init])) {
-        return nil;
+    if ((self = [super init])) {
+        _clicked = [[RAUnitSignal alloc] init];
+        _enabled = YES;
     }
-    _clicked = [[RAUnitSignal alloc] init];
-    _enabled = YES;
     return self;
 }
 
