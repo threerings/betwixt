@@ -17,6 +17,6 @@
 @property (nonatomic,readonly) RAObjectSignal* touchEnded; // <SPTouch>
 @property (nonatomic,readonly) RAObjectSignal* touchCanceled; // <SPTouch>
 
-+ (BTViewObject*)create:(SPDisplayObject*)disp;
++ (BTViewObject*)viewObjectWithDisplay:(SPDisplayObject*)disp;
 
 @end

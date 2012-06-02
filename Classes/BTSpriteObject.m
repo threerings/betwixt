@@ -7,11 +7,11 @@
 
 @synthesize sprite = _sprite;
 
-+ (BTSpriteObject*)sprite {
++ (BTSpriteObject*)spriteObject {
     return [[BTSpriteObject alloc] init];
 }
 
-+ (BTSpriteObject*)withSprite:(SPSprite *)sprite {
++ (BTSpriteObject*)spriteObjectWithSprite:(SPSprite *)sprite {
     return [[BTSpriteObject alloc] initWithSprite:sprite];
 }
 

@@ -8,12 +8,12 @@
     SPSprite* _sprite;
 }
 
-+ (BTSpriteObject*)sprite;
-+ (BTSpriteObject*)withSprite:(SPSprite*)sprite;
+@property(nonatomic,readonly) SPSprite* sprite;
+
++ (BTSpriteObject*)spriteObject;
++ (BTSpriteObject*)spriteObjectWithSprite:(SPSprite*)sprite;
 
 - (id)init;
 - (id)initWithSprite:(SPSprite*)sprite;
-
-@property(nonatomic,readonly) SPSprite* sprite;
 
 @end

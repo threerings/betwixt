@@ -87,7 +87,7 @@
     [super cleanup];
 }
 
-+ (BTViewObject*)create:(SPDisplayObject*)disp {
++ (BTViewObject*)viewObjectWithDisplay:(SPDisplayObject *)disp {
     return [[BTSimpleDisplayObject alloc] initWithDisplayObject:disp];
 }
 
