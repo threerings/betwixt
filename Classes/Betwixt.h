@@ -8,7 +8,6 @@
 
 #import "BTApp.h"
 #import "BTDeviceType.h"
-#import "BTViewObject.h"
 #import "BTInput.h"
 #import "BTMode.h"
 #import "BTModeStack.h"
@@ -16,6 +15,9 @@
 #import "BTNodeContainer.h"
 #import "BTObject.h"
 #import "BTSpriteObject.h"
+#import "BTTouchable.h"
+#import "BTUpdatable.h"
+#import "BTViewObject.h"
 
 // Audio
 #import "BTAudioChannel.h"
@@ -76,6 +78,5 @@
 #import "BTEventSignal.h"
 #import "BTLoadingMode.h"
 #import "BTPoints.h"
-#import "BTTouchEventSignals.h"
 #import "BTUserSettings.h"
 #import "SPPointI.h"

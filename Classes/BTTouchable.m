@@ -1,7 +1,7 @@
 //
 // Betwixt - Copyright 2012 Three Rings Design
 
-#import "BTTouchEventSignals.h"
+#import "BTTouchable.h"
 #import "BTEventSignal.h"
 
 @interface FilteredTouchSignal : RAObjectSignal
@@ -30,7 +30,7 @@
 
 @end
 
-@interface BTTouchEventSignals () {
+@interface BTTouchableDisplayObject () {
     // these are all lazily initialized
     FilteredTouchSignal* _touchBegan;
     FilteredTouchSignal* _touchMoved;
@@ -40,7 +40,7 @@
 }
 @end
 
-@implementation BTTouchEventSignals
+@implementation BTTouchableDisplayObject
 
 @synthesize touchEvent = _touchEvent;
 

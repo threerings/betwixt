@@ -3,7 +3,7 @@
 
 #import "BTViewObject.h"
 #import "BTNode+Protected.h"
-#import "BTTouchEventSignals.h"
+#import "BTTouchable.h"
 
 @interface BTSimpleDisplayObject : BTViewObject {
 @private
@@ -14,42 +14,42 @@
 
 @interface BTViewObject () {
 @protected
-    BTTouchEventSignals* _touchEventSignals;
+    BTTouchableDisplayObject* _touchable;
 }
-@property (nonatomic,readonly) BTTouchEventSignals* touchEventSignals;
+@property (nonatomic,readonly) BTTouchableDisplayObject* touchable;
 @end
 
 @implementation BTViewObject
 
-- (BTTouchEventSignals*)touchEventSignals {
-    if (_touchEventSignals == nil) {
-        _touchEventSignals = [[BTTouchEventSignals alloc] initWithDisplayObject:self.display];
+- (BTTouchableDisplayObject*)touchable {
+    if (_touchable == nil) {
+        _touchable = [[BTTouchableDisplayObject alloc] initWithDisplayObject:self.display];
     }
-    return _touchEventSignals;
+    return _touchable;
 }
 
 - (BTEventSignal*)touchEvent {
-    return self.touchEventSignals.touchEvent;
+    return self.touchable.touchEvent;
 }
 
 - (RAObjectSignal*)touchBegan {
-    return self.touchEventSignals.touchBegan;
+    return self.touchable.touchBegan;
 }
 
 - (RAObjectSignal*)touchMoved {
-    return self.touchEventSignals.touchMoved;
+    return self.touchable.touchMoved;
 }
 
 - (RAObjectSignal*)touchStationary {
-    return self.touchEventSignals.touchStationary;
+    return self.touchable.touchStationary;
 }
 
 - (RAObjectSignal*)touchEnded {
-    return self.touchEventSignals.touchEnded;
+    return self.touchable.touchEnded;
 }
 
 - (RAObjectSignal*)touchCanceled {
-    return self.touchEventSignals.touchCanceled;
+    return self.touchable.touchCanceled;
 }
 
 - (float)x {

@@ -90,8 +90,7 @@
 		22E0A755152A311A009FDE09 /* BTEventSignal.h in Headers */ = {isa = PBXBuildFile; fileRef = 22E0A753152A311A009FDE09 /* BTEventSignal.h */; };
 		22E0A756152A311A009FDE09 /* BTEventSignal.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E0A754152A311A009FDE09 /* BTEventSignal.m */; };
 		22E0A75F152A3837009FDE09 /* BTEventSignal+Protected.h in Headers */ = {isa = PBXBuildFile; fileRef = 22E0A75E152A3837009FDE09 /* BTEventSignal+Protected.h */; };
-		22E0A762152A4404009FDE09 /* BTTouchEventSignals.h in Headers */ = {isa = PBXBuildFile; fileRef = 22E0A760152A4404009FDE09 /* BTTouchEventSignals.h */; };
-		22E0A763152A4404009FDE09 /* BTTouchEventSignals.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E0A761152A4404009FDE09 /* BTTouchEventSignals.m */; };
+		22E0A763152A4404009FDE09 /* BTTouchable.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E0A761152A4404009FDE09 /* BTTouchable.m */; };
 		22E43AB21559CF81003A43B8 /* libcooocoa.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E43A5A1559B0BC003A43B8 /* libcooocoa.a */; };
 		22E4F41615703205002AA4D1 /* BTSimpleTextButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 22E4F41415703205002AA4D1 /* BTSimpleTextButton.h */; };
 		22E4F41715703205002AA4D1 /* BTSimpleTextButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E4F41515703205002AA4D1 /* BTSimpleTextButton.m */; };
@@ -313,6 +312,7 @@
 		22518E02154385F8006E8494 /* BTAudioControls.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTAudioControls.m; sourceTree = "<group>"; };
 		22518E0515438628006E8494 /* BTAudioState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTAudioState.h; sourceTree = "<group>"; };
 		22518E0615438628006E8494 /* BTAudioState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTAudioState.m; sourceTree = "<group>"; };
+		225F16A7157996BC00CF1A47 /* BTTouchable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTTouchable.h; sourceTree = "<group>"; };
 		22608BDF1505AC4E00CCE0A5 /* MovieTestMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MovieTestMode.h; path = Integration/MovieTestMode.h; sourceTree = "<group>"; };
 		22608BE01505AC4E00CCE0A5 /* MovieTestMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MovieTestMode.m; path = Integration/MovieTestMode.m; sourceTree = "<group>"; };
 		22608C6B1505C2D300CCE0A5 /* SPView+BTExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SPView+BTExtensions.h"; sourceTree = "<group>"; };
@@ -357,8 +357,7 @@
 		22E0A753152A311A009FDE09 /* BTEventSignal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTEventSignal.h; sourceTree = "<group>"; };
 		22E0A754152A311A009FDE09 /* BTEventSignal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTEventSignal.m; sourceTree = "<group>"; };
 		22E0A75E152A3837009FDE09 /* BTEventSignal+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BTEventSignal+Protected.h"; sourceTree = "<group>"; };
-		22E0A760152A4404009FDE09 /* BTTouchEventSignals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTTouchEventSignals.h; sourceTree = "<group>"; };
-		22E0A761152A4404009FDE09 /* BTTouchEventSignals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTTouchEventSignals.m; sourceTree = "<group>"; };
+		22E0A761152A4404009FDE09 /* BTTouchable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTTouchable.m; sourceTree = "<group>"; };
 		22E4F41415703205002AA4D1 /* BTSimpleTextButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTSimpleTextButton.h; sourceTree = "<group>"; };
 		22E4F41515703205002AA4D1 /* BTSimpleTextButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTSimpleTextButton.m; sourceTree = "<group>"; };
 		22EA32231563248300557886 /* BTUserSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTUserSettings.h; sourceTree = "<group>"; };
@@ -539,6 +538,8 @@
 				CBB86EDF1476669800D0C57E /* BTObject.m */,
 				CB24CBD614A116AB004BAA57 /* BTSpriteObject.h */,
 				CB24CBD714A116AB004BAA57 /* BTSpriteObject.m */,
+				225F16A7157996BC00CF1A47 /* BTTouchable.h */,
+				22E0A761152A4404009FDE09 /* BTTouchable.m */,
 				2217E4CC14C79B90000F976A /* BTUpdatable.h */,
 				22C85F0814DB784900F9EC07 /* BTViewObject.h */,
 				22C85F0914DB784A00F9EC07 /* BTViewObject.m */,
@@ -572,8 +573,6 @@
 				2221998E14D0F809009B764F /* BTLoadingMode.m */,
 				22C85EAB14DB225400F9EC07 /* BTPoints.h */,
 				22C85EAC14DB225400F9EC07 /* BTPoints.m */,
-				22E0A760152A4404009FDE09 /* BTTouchEventSignals.h */,
-				22E0A761152A4404009FDE09 /* BTTouchEventSignals.m */,
 				22EA32231563248300557886 /* BTUserSettings.h */,
 				22EA32241563248300557886 /* BTUserSettings.m */,
 				2244B7B015225855001DEACA /* SPPointI.h */,
@@ -916,7 +915,6 @@
 				2244B7B215225856001DEACA /* SPPointI.h in Headers */,
 				22E0A755152A311A009FDE09 /* BTEventSignal.h in Headers */,
 				22E0A75F152A3837009FDE09 /* BTEventSignal+Protected.h in Headers */,
-				22E0A762152A4404009FDE09 /* BTTouchEventSignals.h in Headers */,
 				220F63AD152E878B0051B383 /* BTButton.h in Headers */,
 				220F63AF152E878B0051B383 /* BTButton+Protected.h in Headers */,
 				220F63B0152E878B0051B383 /* BTDisplayObjectButton.h in Headers */,
@@ -1156,7 +1154,7 @@
 				2208FC73151D207800669256 /* BTVisibilityTask.m in Sources */,
 				2244B7B315225856001DEACA /* SPPointI.m in Sources */,
 				22E0A756152A311A009FDE09 /* BTEventSignal.m in Sources */,
-				22E0A763152A4404009FDE09 /* BTTouchEventSignals.m in Sources */,
+				22E0A763152A4404009FDE09 /* BTTouchable.m in Sources */,
 				220F63AE152E878B0051B383 /* BTButton.m in Sources */,
 				220F63B1152E878B0051B383 /* BTDisplayObjectButton.m in Sources */,
 				220F63B3152E878B0051B383 /* BTMovieButton.m in Sources */,
