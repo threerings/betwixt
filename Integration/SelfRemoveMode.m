@@ -13,11 +13,6 @@
 @end
 @implementation SelfRemoveObject
 
-- (id)init {
-    if (!(self = [super init])) return nil;
-    return self;
-}
-
 - (void)update:(float)dt {
     [self removeSelf];
 }
@@ -52,15 +47,16 @@
 }
 
 - (id)init {
-    if (!(self = [super init])) return nil;
-    SelfRemoveObject *remover = [[SelfRemoveObject alloc] init];
-    __block BOOL removed = NO;
-    [remover.removed connectUnit:^{ removed = YES; }];
-    [self addNode:remover];
-    [[self.update connectUnit:^ {
-        NSAssert(removed, @"Remover removed");
-        [self testSubobjectRemoval];
-    }] once];
+    if ((self = [super init])) {
+        SelfRemoveObject *remover = [[SelfRemoveObject alloc] init];
+        __block BOOL removed = NO;
+        [remover.removed connectUnit:^{ removed = YES; }];
+        [self addNode:remover];
+        [[self.update connectUnit:^ {
+            NSAssert(removed, @"Remover removed");
+            [self testSubobjectRemoval];
+        }] once];
+    }
     return self;
 }
 

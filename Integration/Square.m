@@ -8,13 +8,14 @@
 @implementation Square
 
 - (id)initWithColor:(int)color andName:(NSString *)name {
-    if (!(self = [super init])) return nil;
-    _name = name;
-    _quad = [SPQuad quadWithWidth:100 height:100 color:color];
-    _quad.x = 50;
-    _quad.y = 50;
-    _added = [[RAUnitSignal alloc] init];
-    [self.removed connectUnit:^ { [((BTMode*)self.mode).sprite removeChild:_quad]; }];
+    if ((self = [super init])) {
+        _name = name;
+        _quad = [SPQuad quadWithWidth:100 height:100 color:color];
+        _quad.x = 50;
+        _quad.y = 50;
+        _added = [[RAUnitSignal alloc] init];
+        [self.removed connectUnit:^ { [((BTMode*)self.mode).sprite removeChild:_quad]; }];
+    }
     return self;
 }
 

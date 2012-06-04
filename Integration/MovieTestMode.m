@@ -11,11 +11,10 @@
 @implementation MovieTestMode
 
 - (id)initWithResourceName:(NSString *)resourceName movieName:(NSString *)movieName {
-    if (!(self = [super init])) {
-        return nil;
+    if ((self = [super init])) {
+        _resourceName = resourceName;
+        _movieName = movieName;
     }
-    _resourceName = resourceName;
-    _movieName = movieName;
     return self;
 }
 

@@ -93,8 +93,9 @@ static BTApp* gInstance = nil;
 
 - (id)init {
     NSAssert(gInstance == nil, @"BTApp has already been created");
-    if (!(self = [super init])) return nil;
-    gInstance = self;
+    if ((self = [super init])) {
+        gInstance = self;
+    }
     return self;
 }
 
