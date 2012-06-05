@@ -83,6 +83,10 @@
 }
 
 - (void)cleanup {
+    if (_touchable != nil) {
+        [_touchable disconnectAll];
+        _touchable = nil;
+    }
     [self.display removeFromParent];
     [super cleanup];
 }

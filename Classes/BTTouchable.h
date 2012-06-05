@@ -21,5 +21,6 @@
 }
 
 - (id)initWithDisplayObject:(SPDisplayObject*)disp;
+- (void)disconnectAll;
 
 @end

@@ -40,6 +40,8 @@
 }
 @end
 
+#define BT_TOUCHABLE_DISCONNECT(signal) if (signal) { [signal disconnectAll]; signal = nil; }
+
 @implementation BTTouchableDisplayObject
 
 @synthesize touchEvent = _touchEvent;
@@ -49,6 +51,14 @@
         _touchEvent = [[BTEventSignal alloc] initWithDispatcher:disp eventType:SP_EVENT_TYPE_TOUCH];
     }
     return self;
+}
+
+- (void)disconnectAll {
+    BT_TOUCHABLE_DISCONNECT(_touchBegan);
+    BT_TOUCHABLE_DISCONNECT(_touchMoved);
+    BT_TOUCHABLE_DISCONNECT(_touchStationary);
+    BT_TOUCHABLE_DISCONNECT(_touchEnded);
+    BT_TOUCHABLE_DISCONNECT(_touchCanceled);
 }
 
 - (RAObjectSignal*)touchBegan {
