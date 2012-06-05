@@ -26,7 +26,9 @@
     __weak BTInput* this = self;
     __weak id<BTTouchListener> weakListener = l;
     return [OOORegistrationFactory withBlock:^{
-        [this removeListener:weakListener];
+        if (this && weakListener) {
+            [this->_listeners removeObject:weakListener];
+        }
     }];
 }
 
@@ -34,12 +36,7 @@
     [_listeners removeAllObjects];
 }
 
-- (void)removeListener:(id<BTTouchListener>)l {
-    [_listeners removeObject:l];
-}
-
-- (void)processTouches:(NSSet*)touches
-{   
+- (void)processTouches:(NSSet*)touches {   
     NSMutableSet *processedTouches = [[NSMutableSet alloc] init];
     
     // process new touches
