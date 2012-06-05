@@ -99,7 +99,7 @@
         BOOL handled = (_listeners.count > 0 && touch.phase == SPTouchPhaseStationary);
         if (!handled && _listeners.count > 0) {
             NSArray* listeners = [NSArray arrayWithArray:_listeners];
-            for (id<BTTouchListener> l in listeners) {
+            for (id<BTTouchListener> l in listeners.reverseObjectEnumerator) {
                 switch (touch.phase) {
                     case SPTouchPhaseBegan:
                         handled = [l onTouchStart:touch];
