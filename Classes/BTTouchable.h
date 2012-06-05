@@ -6,6 +6,9 @@
 @protocol BTTouchable
 
 @property (nonatomic,readonly) BTEventSignal* touchEvent;  // <SPTouchEvent>
+
+- (RAObjectSignal*)signalForPhase:(SPTouchPhase)phase;
+
 @property (nonatomic,readonly) RAObjectSignal* touchBegan; // <SPTouch>
 @property (nonatomic,readonly) RAObjectSignal* touchMoved; // <SPTouch>
 @property (nonatomic,readonly) RAObjectSignal* touchStationary; // <SPTouch>

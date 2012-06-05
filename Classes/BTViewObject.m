@@ -32,6 +32,10 @@
     return self.touchable.touchEvent;
 }
 
+- (RAObjectSignal*)signalForPhase:(SPTouchPhase)phase {
+    return [self.touchable signalForPhase:phase];
+}
+
 - (RAObjectSignal*)touchBegan {
     return self.touchable.touchBegan;
 }
