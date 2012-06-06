@@ -30,6 +30,7 @@
 
 // Categories
 #import "GDataXMLNode+BTExtensions.h"
+#import "RAConnection+BTExtensions.h"
 #import "SPDisplayObject+BTExtensions.h"
 #import "SPMatrix+BTExtensions.h"
 #import "SPPoint+BTExtensions.h"

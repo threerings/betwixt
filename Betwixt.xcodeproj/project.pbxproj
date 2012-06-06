@@ -71,6 +71,8 @@
 		22A870161568675E00101F6D /* SPBitmapFont+BTExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A870141568675E00101F6D /* SPBitmapFont+BTExtensions.m */; };
 		22B785C31578512600871699 /* SPSoundChannel+BTExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 22B785C11578512600871699 /* SPSoundChannel+BTExtensions.h */; };
 		22B785C41578512600871699 /* SPSoundChannel+BTExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B785C21578512600871699 /* SPSoundChannel+BTExtensions.m */; };
+		22BAAA80158014B4000B905B /* RAConnection+BTExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 22BAAA7E158014B4000B905B /* RAConnection+BTExtensions.h */; };
+		22BAAA81158014B4000B905B /* RAConnection+BTExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BAAA7F158014B4000B905B /* RAConnection+BTExtensions.m */; };
 		22C85EAD14DB225400F9EC07 /* BTPoints.h in Headers */ = {isa = PBXBuildFile; fileRef = 22C85EAB14DB225400F9EC07 /* BTPoints.h */; };
 		22C85EAE14DB225400F9EC07 /* BTPoints.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C85EAC14DB225400F9EC07 /* BTPoints.m */; };
 		22C85EB614DB344100F9EC07 /* BTNode+Protected.h in Headers */ = {isa = PBXBuildFile; fileRef = 22C85EB514DB344100F9EC07 /* BTNode+Protected.h */; };
@@ -337,6 +339,8 @@
 		22A870141568675E00101F6D /* SPBitmapFont+BTExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SPBitmapFont+BTExtensions.m"; sourceTree = "<group>"; };
 		22B785C11578512600871699 /* SPSoundChannel+BTExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SPSoundChannel+BTExtensions.h"; sourceTree = "<group>"; };
 		22B785C21578512600871699 /* SPSoundChannel+BTExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SPSoundChannel+BTExtensions.m"; sourceTree = "<group>"; };
+		22BAAA7E158014B4000B905B /* RAConnection+BTExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RAConnection+BTExtensions.h"; sourceTree = "<group>"; };
+		22BAAA7F158014B4000B905B /* RAConnection+BTExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RAConnection+BTExtensions.m"; sourceTree = "<group>"; };
 		22C85EAB14DB225400F9EC07 /* BTPoints.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTPoints.h; sourceTree = "<group>"; };
 		22C85EAC14DB225400F9EC07 /* BTPoints.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTPoints.m; sourceTree = "<group>"; };
 		22C85EB514DB344100F9EC07 /* BTNode+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BTNode+Protected.h"; sourceTree = "<group>"; };
@@ -586,6 +590,8 @@
 			children = (
 				22F979D814C0E23F00A6913B /* GDataXMLNode+BTExtensions.h */,
 				22F979D914C0E23F00A6913B /* GDataXMLNode+BTExtensions.m */,
+				22BAAA7E158014B4000B905B /* RAConnection+BTExtensions.h */,
+				22BAAA7F158014B4000B905B /* RAConnection+BTExtensions.m */,
 				22A870131568675E00101F6D /* SPBitmapFont+BTExtensions.h */,
 				22A870141568675E00101F6D /* SPBitmapFont+BTExtensions.m */,
 				229B463414D8C525005FC8E9 /* SPDisplayObject+BTExtensions.h */,
@@ -939,6 +945,7 @@
 				22FBCA29156EFEC9009C19CF /* SPTextField+BTExtensions.h in Headers */,
 				22E4F41615703205002AA4D1 /* BTSimpleTextButton.h in Headers */,
 				22B785C31578512600871699 /* SPSoundChannel+BTExtensions.h in Headers */,
+				22BAAA80158014B4000B905B /* RAConnection+BTExtensions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1175,6 +1182,7 @@
 				22FBCA2A156EFEC9009C19CF /* SPTextField+BTExtensions.m in Sources */,
 				22E4F41715703205002AA4D1 /* BTSimpleTextButton.m in Sources */,
 				22B785C41578512600871699 /* SPSoundChannel+BTExtensions.m in Sources */,
+				22BAAA81158014B4000B905B /* RAConnection+BTExtensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
