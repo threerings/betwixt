@@ -15,197 +15,141 @@
 
 @implementation SPBitmapFont (BTExtensions)
 
-- (SPPoint*)getSizeForText:(NSString*)text fontSize:(float)fontSize kerning:(BOOL)kerning {
-    return [self getSizeForText:text fontSize:fontSize kerning:kerning maxWidth:0];
-}
-
-- (SPPoint*)getSizeForText:(NSString*)text fontSize:(float)fontSize kerning:(BOOL)kerning 
-                  maxWidth:(float)maxWidth {
-    SPPoint* size = [SPPoint point];
-    [self layoutTextWithMaxWidth:maxWidth maxHeight:0 text:text fontSize:fontSize color:0 
-                          hAlign:SPHAlignLeft kerning:kerning draw:NO outSize:size];
-    return size; 
-}
-
-- (SPDisplayObject*)createDisplayObjectWithText:(NSString*)text 
-                                       fontSize:(float)size 
-                                          color:(uint)color
-                                        kerning:(BOOL)kerning {
-    return [self layoutTextWithMaxWidth:0 maxHeight:0 text:text fontSize:size color:color
-                                 hAlign:SPHAlignLeft kerning:kerning draw:YES outSize:nil];
-}
-
-- (SPDisplayObject*)createDisplayObjectWithMaxWidth:(float)maxWidth 
-                                               text:(NSString*)text 
-                                           fontSize:(float)size 
-                                              color:(uint)color 
-                                             hAlign:(SPHAlign)hAlign 
-                                            kerning:(BOOL)kerning {
-    return [self layoutTextWithMaxWidth:maxWidth maxHeight:0 text:text fontSize:size color:color
-                                 hAlign:hAlign kerning:kerning draw:YES outSize:nil];
-}
-
-- (SPDisplayObject*)createDisplayObjectWithMaxWidth:(float)maxWidth 
-                                          maxHeight:(float)maxHeight 
-                                               text:(NSString*)text 
-                                           fontSize:(float)size 
-                                              color:(uint)color 
-                                             hAlign:(SPHAlign)hAlign
-                                            kerning:(BOOL)kerning {
-    return [self layoutTextWithMaxWidth:maxWidth maxHeight:maxHeight text:text fontSize:size 
-                                  color:color hAlign:hAlign kerning:kerning draw:YES outSize:nil];
-}
-
-- (SPDisplayObject*)layoutTextWithMaxWidth:(float)maxWidth 
-                                 maxHeight:(float)maxHeight 
-                                      text:(NSString*)text 
-                                  fontSize:(float)size 
-                                     color:(uint)color
-                                    hAlign:(SPHAlign)hAlign
-                                   kerning:(BOOL)kerning 
-                                      draw:(BOOL)draw
-                                   outSize:(SPPoint*)outSize {
-    
-    if (size == SP_NATIVE_FONT_SIZE) {
-        size = mSize;
++ (float)getLineWidth:(SPSprite *)line
+{
+    float lineWidth = 0;
+    if (line.numChildren != 0)
+    {
+        SPDisplayObject *lastChar = [line childAtIndex:line.numChildren-1];
+        lineWidth = lastChar.x + lastChar.width;
     }
+    return lineWidth;
+}
+
+- (SPDisplayObject*)createDisplayObjectWithMaxWidth:(float)maxWidth maxHeight:(float)maxHeight 
+                                               text:(NSString*)text fontSize:(float)size 
+                                              color:(uint)color hAlign:(SPHAlign)hAlign
+                                             border:(BOOL)border kerning:(BOOL)kerning
+{
+    if (size == SP_NATIVE_FONT_SIZE) size = mSize;
     
     float scale = size / mSize;
-    float containerWidth = maxWidth / scale;
-    float containerHeight = maxHeight / scale;
-    
-    BOOL multiline = (containerWidth > 0);
-    BOOL hasMaxHeight = (maxHeight > 0);
+    maxWidth = (maxWidth < FLT_MAX ? maxWidth / scale : FLT_MAX);
+    maxHeight = (maxHeight < FLT_MAX ? maxHeight / scale : FLT_MAX);
     
     int lastWhiteSpace = -1;
     int lastCharID = -1;
     float currentX = 0;
-    int currentLineStartIdx = 0;
     
     float totalWidth = 0;
     float totalHeight = 0;
     
-    SPSprite* lineContainer = nil;
-    SPSprite* currentLine = nil;
-    if (draw) {
-        lineContainer = [SPSprite sprite];
-        lineContainer.scaleX = lineContainer.scaleY = scale;
-        currentLine = [SPSprite sprite];
-    }
+    SPSprite *lineContainer = [SPSprite sprite];
+    lineContainer.scaleX = lineContainer.scaleY = scale;
+    SPSprite *currentLine = [SPSprite sprite];
     
-    for (int ii = 0; ii < text.length; ++ii) {
+    for (int i = 0; i < text.length; ++i) 
+    {
         BOOL lineFull = NO;
         
-        int charID = [text characterAtIndex:ii];    
-        if (multiline && charID == CHAR_NEWLINE) {
+        int charID = [text characterAtIndex:i];    
+        if (charID == CHAR_NEWLINE) 
+        {
             lineFull = YES;
-            
-        } else {
-            if (!multiline && charID == CHAR_NEWLINE) {
-                charID = CHAR_SPACE;
-            }
-            
-            if (charID == CHAR_SPACE || charID == CHAR_TAB) {     
-                lastWhiteSpace = ii;
-            }
+        } 
+        else 
+        {
+            if (charID == CHAR_SPACE || charID == CHAR_TAB) 
+                lastWhiteSpace = i;
             
             SPBitmapChar *bitmapChar = GET_CHAR(charID);
             
-            if (kerning) {
+            if (kerning)
                 currentX += [bitmapChar kerningToChar:lastCharID];
-            }
             
-            if (draw) {
-                SPImage *charImage = [bitmapChar createImage];
-                charImage.x = currentX + bitmapChar.xOffset;
-                charImage.y = bitmapChar.yOffset;
-                
-                charImage.color = color;
-                [currentLine addChild:charImage];
-            }
+            SPImage *charImage = [bitmapChar createImage];
+            charImage.x = currentX + bitmapChar.xOffset;
+            charImage.y = bitmapChar.yOffset;
+            
+            charImage.color = color;
+            [currentLine addChild:charImage];
             
             currentX += bitmapChar.xAdvance;
 			lastCharID = charID;
             
-            if (multiline && currentX > containerWidth) {
-                // remove characters and add them again to next line
-                int numCharsToRemove = lastWhiteSpace == -1 ? 1 : ii - lastWhiteSpace;
-                int currentLineCharacterCount = (ii - currentLineStartIdx) + 1;
-                
-                SPBitmapChar* lastBitmapChar = nil;
-                for (int jj = ii - numCharsToRemove + 1; jj <= ii; ++jj) {
-                    if (draw) {
-                        [currentLine removeChildAtIndex:currentLine.numChildren - 1];
-                    }
-                    
-                    int charID = [text characterAtIndex:jj];
-                    SPBitmapChar* bitmapChar = GET_CHAR(charID);
-                    currentX -= bitmapChar.xAdvance;
-                    
-                    if (kerning) {
-                        if (lastBitmapChar == nil && jj - 1 >= currentLineStartIdx) {
-                            SPBitmapChar* lastBitmapChar = GET_CHAR(jj - 1);
-                            currentX -= [lastBitmapChar kerningToChar:charID];
-                        }
-                        
-                        lastBitmapChar = bitmapChar;
-                    }
-                }
-                
-                currentLineCharacterCount -= numCharsToRemove;
-                if (currentLineCharacterCount <= 0) {
-                    break;
-                }
-                
-                ii -= numCharsToRemove;
+            if (currentX > maxWidth)
+            {
                 lineFull = YES;
+                // remove characters and add them again to next line
+                int numCharsToRemove = lastWhiteSpace == -1 ? 1 : i - lastWhiteSpace;
+                int removeIndex = currentLine.numChildren - numCharsToRemove;
+                
+                for (int i=0; i<numCharsToRemove; ++i)
+                    [currentLine removeChildAtIndex:removeIndex];
+                
+                if (currentLine.numChildren == 0)
+                    break;
+                
+                SPDisplayObject *lastChar = [currentLine childAtIndex:currentLine.numChildren-1];
+                currentX = lastChar.x + lastChar.width;
+                
+                i -= numCharsToRemove;
             }
         }
         
-        if (lineFull || ii == text.length - 1) {
-            totalWidth = MAX(totalWidth, currentX);
-            totalHeight += mLineHeight;
+        if (lineFull || i == text.length - 1) 
+        {
+            totalWidth = MAX([SPBitmapFont getLineWidth:currentLine] * scale, totalWidth);
+            totalHeight += (mLineHeight * scale);
             
-            if (draw) {
-                [lineContainer addChild:currentLine];
-            }
+            [lineContainer addChild:currentLine];
             
-            if (!hasMaxHeight || totalHeight <= containerHeight) {
-                if (draw) {
-                    currentLine = [SPSprite sprite];
-                    currentLine.y = totalHeight;
-                }
+            if (totalHeight < maxHeight) 
+            {
+                currentLine = [SPSprite sprite];
+                currentLine.y = totalHeight;
                 
                 currentX = 0;
-                currentLineStartIdx = ii + 1;
                 lastWhiteSpace = -1;
                 lastCharID = -1;
             }
-            else {
+            else 
+            {
                 break;
             }
         }
     }
     
-    SPSprite* outerContainer = nil;
-    if (draw) {
-        // hAlign
-        if (hAlign != SPHAlignLeft) {
-            for (SPSprite* line in lineContainer)  {
-                SPDisplayObject* lastChar = [line childAtIndex:line.numChildren-1];
-                float lineWidth = lastChar.x + lastChar.width;
-                float widthDiff = containerWidth - lineWidth;
-                line.x = (int) (hAlign == SPHAlignRight ? widthDiff : widthDiff / 2);
-            }
+    // hAlign
+    if (hAlign != SPHAlignLeft) 
+    {
+        for (SPSprite* line in lineContainer)  
+        {
+            float lineWidth = [SPBitmapFont getLineWidth:line];
+            float widthDiff = (totalWidth / scale) - lineWidth;
+            line.x = (int) (hAlign == SPHAlignRight ? widthDiff : widthDiff / 2);
         }
-    
-        outerContainer = [SPCompiledSprite sprite];
-        [outerContainer addChild:lineContainer];
     }
     
-    if (outSize != nil) {
-        outSize.x = totalWidth;
-        outSize.y = totalHeight;
+    SPSprite *outerContainer = [SPCompiledSprite sprite];
+    [outerContainer addChild:lineContainer];
+    
+    if (border)
+    {
+        SPQuad *topBorder = [SPQuad quadWithWidth:totalWidth height:1];
+        SPQuad *bottomBorder = [SPQuad quadWithWidth:totalWidth height:1];
+        SPQuad *leftBorder = [SPQuad quadWithWidth:1 height:totalHeight-2];
+        SPQuad *rightBorder = [SPQuad quadWithWidth:1 height:totalHeight-2];
+        
+        topBorder.color = bottomBorder.color = leftBorder.color = rightBorder.color = color;
+        bottomBorder.y = totalHeight - 1;
+        leftBorder.y = rightBorder.y = 1;
+        rightBorder.x = totalWidth - 1;
+        
+        [outerContainer addChild:topBorder];
+        [outerContainer addChild:bottomBorder];
+        [outerContainer addChild:leftBorder];
+        [outerContainer addChild:rightBorder];        
     }
     
     return outerContainer;

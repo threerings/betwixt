@@ -3,6 +3,7 @@
 
 #import "BTSimpleTextButton.h"
 #import "BTButton+Protected.h"
+#import "SPTextField+BTExtensions.h"
 
 static const float PADDING = 4;
 static const uint BG_COLOR_UP = 0x6699CC;
@@ -17,12 +18,12 @@ static const uint TEXT_COLOR_DOWN = 0x6699CC;
         _container = [[SPSprite alloc] init];
         [_sprite addChild:_container];
         
-        _tf = [[SPTextField alloc] initWithText:text];
+        _tf = [[SPTextField alloc] init];
         _tf.fontSize = size;
         _tf.color = TEXT_COLOR_UP;
+        [_tf autoSizeText:text];
         _tf.x = PADDING;
         _tf.y = PADDING;
-        _tf.autoSize = SPAutoSizeSingleLine;
         
         // draw a rectangle
         _bg = [[SPQuad alloc] initWithWidth:_tf.width + (PADDING * 2) 
