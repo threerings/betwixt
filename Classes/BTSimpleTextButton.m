@@ -47,7 +47,6 @@ static const uint TEXT_COLOR_DOWN = 0x6699CC;
     _tf.color = (state == BT_BUTTON_STATE_DOWN ? TEXT_COLOR_DOWN : TEXT_COLOR_UP);
     
     _container.alpha = (state == BT_BUTTON_STATE_DISABLED ? 0.4f : 1.0f);
-    _container.y = (state == BT_BUTTON_STATE_DOWN ? 2 : 0);
 }
 
 @end
