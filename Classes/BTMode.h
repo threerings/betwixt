@@ -21,6 +21,8 @@
     NSMutableDictionary* _groups;
     SPJuggler* _juggler;
     NSUInteger _nextNodeId;
+    
+    float _runningTime;
 }
 
 @property (nonatomic,readonly) RAFloatSignal* update;
@@ -29,6 +31,7 @@
 @property (nonatomic,readonly) BTModeStack* modeStack;
 @property (nonatomic,readonly) SPSprite* sprite;
 @property (nonatomic,readonly) BTInput* input;
+@property (nonatomic,readonly) float runningTime; // the number of seconds this mode has been active
 
 - (BTNode*)nodeForKey:(NSString*)key;
 /// Returns the nodes in the group or nil if there are no nodes in the group.

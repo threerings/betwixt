@@ -149,6 +149,12 @@
 
 @implementation BTMode
 
+@synthesize update = _update;
+@synthesize entered = _entered;
+@synthesize exited = _exited;
+@synthesize input = _input;
+@synthesize runningTime = _runningTime;
+
 - (id)init {
     if ((self = [super init])) {
         _juggler = [[SPJuggler alloc] init];
@@ -190,6 +196,7 @@
 }
 
 - (void)update:(float)dt {
+    _runningTime += dt;
     [_juggler advanceTime:dt];
     [_update emitEvent:dt];
 }
@@ -299,7 +306,5 @@
 - (BTModeStack*)modeStack {
     return _modeStack;
 }
-
-@synthesize update=_update, entered=_entered, exited=_exited, input=_input;
 
 @end
