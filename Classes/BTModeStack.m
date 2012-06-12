@@ -83,45 +83,44 @@ typedef enum {
     }
     
     __block BTMode* initialTopMode = self.topMode;
-    __weak BTModeStack* this = self;
     
     typedef void (^InsertModeBlock)(BTMode* mode, int index);
     typedef void (^RemoveModeBlock)(int index);
     
     InsertModeBlock doInsertMode = ^(BTMode* newMode, int index) {
         if (index < 0) {
-            index = this->_stack.count + index;
+            index = _stack.count + index;
         }
         index = MAX(index, 0);
-        index = MIN(index, this->_stack.count);
+        index = MIN(index, _stack.count);
         
         if (index == _stack.count) {
-            [this->_stack addObject:newMode];
-            [this->_sprite addChild:newMode.sprite];
+            [_stack addObject:newMode];
+            [_sprite addChild:newMode.sprite];
         } else {
-            [this->_stack insertObject:newMode atIndex:index];
-            [this->_sprite addChild:newMode.sprite atIndex:index];
+            [_stack insertObject:newMode atIndex:index];
+            [_sprite addChild:newMode.sprite atIndex:index];
         }
     };
     
     RemoveModeBlock doRemoveMode = ^(int index) {
-        NSAssert(this->_stack.count > 0, @"Can't remove from an empty modestack");
+        NSAssert(_stack.count > 0, @"Can't remove from an empty modestack");
         
         if (index < 0) {
-            index = this->_stack.count + index;
+            index = _stack.count + index;
         }
         index = MAX(index, 0);
-        index = MIN(index, this->_stack.count - 1);
+        index = MIN(index, _stack.count - 1);
         
         // if the top mode is removed, make sure it's exited first
-        BTMode* removedMode = [this->_stack objectAtIndex:index];
+        BTMode* removedMode = [_stack objectAtIndex:index];
         if (removedMode == initialTopMode) {
             [initialTopMode exitInternal];
             initialTopMode = nil;
         }
         
-        [this->_stack removeObjectAtIndex:index];
-        [this->_sprite removeChild:removedMode.sprite];
+        [_stack removeObjectAtIndex:index];
+        [_sprite removeChild:removedMode.sprite];
         
         // It's possible that the mode's setup function wasn't called -
         // if this is the case, don't call its shutdown function.
