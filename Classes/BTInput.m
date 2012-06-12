@@ -23,9 +23,10 @@
 - (id<OOORegistration>)registerListener:(id<BTTouchListener>)l {
     [_listeners addObject:l];
     
-    __weak BTInput* this = self;
+    __weak BTInput* weakSelf = self;
     __weak id<BTTouchListener> weakListener = l;
     return [OOORegistrationFactory withBlock:^{
+        BTInput* this = weakSelf;
         if (this && weakListener) {
             [this->_listeners removeObject:weakListener];
         }
