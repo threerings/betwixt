@@ -7,6 +7,8 @@
 
 @protocol BTNodeContainer
 
+@property (nonatomic,readonly) BOOL isLive;
+
 - (BTMode*)mode;
 
 - (void)addNode:(BTNode*)node;

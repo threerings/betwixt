@@ -154,6 +154,7 @@
 @synthesize exited = _exited;
 @synthesize input = _input;
 @synthesize runningTime = _runningTime;
+@synthesize isLive = _isLive;
 
 - (id)init {
     if ((self = [super init])) {
@@ -214,11 +215,13 @@
 }
 
 - (void)setupInternal {
+    _isLive = YES;
     [self setup];
 }
 
 - (void)shutdownInternal {
     [self destroy];
+    _isLive = NO;
     _modeStack = nil;
     [_update disconnectAll];
     [_entered disconnectAll];

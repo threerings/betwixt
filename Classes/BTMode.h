@@ -11,6 +11,7 @@
 @interface BTMode : NSObject <BTNodeContainer> {
 @package
     __weak BTModeStack* _modeStack;
+    BOOL _isLive;
     BTInput* _input;
     RAFloatSignal* _update;
     RAUnitSignal* _entered;

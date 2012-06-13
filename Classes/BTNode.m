@@ -62,7 +62,7 @@
 }
 
 - (NSObject<BTNodeContainer>*)parent {
-    return _parent;
+    return (_parent.isLive ? _parent : nil);
 }
 
 @end
