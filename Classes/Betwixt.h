@@ -32,6 +32,7 @@
 #import "GDataXMLNode+BTExtensions.h"
 #import "RAConnection+BTExtensions.h"
 #import "SPDisplayObject+BTExtensions.h"
+#import "SPDisplayObjectContainer+BTExtensions.h"
 #import "SPMatrix+BTExtensions.h"
 #import "SPPoint+BTExtensions.h"
 #import "SPRectangle+BTExtensions.h"
