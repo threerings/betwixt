@@ -240,8 +240,12 @@ NSString * const BTMovieLastFrame = @"BTMovieLastFrame";
     [self playFromFrame:0 toFrame:self.frames - 1];
 }
 
-- (void)loop {
-    [self loopFromFrame:0];
+- (void)play {
+    [self playFromFrame:self.frame];
+}
+
+- (void)stop {
+    [self gotoFrame:self.frame];
 }
 
 - (void)playToLabel:(NSString*)label {
@@ -269,11 +273,11 @@ NSString * const BTMovieLastFrame = @"BTMovieLastFrame";
     [self gotoFrame:startFrame fromSkip:YES overDuration:NO];
 }
 
-- (void)loopFromLabel:(NSString*)label {
-    [self loopFromFrame:[self frameForLabel:label]];
+- (void)playFromLabel:(NSString*)label {
+    [self playFromFrame:[self frameForLabel:label]];
 }
 
-- (void)loopFromFrame:(int)frame {
+- (void)playFromFrame:(int)frame {
     _playing.value = YES;
     _stopFrame = NO_FRAME;
     [self gotoFrame:frame fromSkip:YES overDuration:NO];

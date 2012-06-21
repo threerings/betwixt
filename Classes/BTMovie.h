@@ -36,10 +36,11 @@ extern NSString * const BTMovieLastFrame;
 @property (nonatomic,readonly) float framerate;
 
 - (void)playOnce;
-- (void)loop;
+- (void)play;
+- (void)stop;
 
-- (void)loopFromLabel:(NSString*)label;
-- (void)loopFromFrame:(int)frame;
+- (void)playFromLabel:(NSString*)label;
+- (void)playFromFrame:(int)frame;
 - (void)playFromLabel:(NSString*)startLabel toLabel:(NSString*)stopLabel;
 - (void)playFromLabel:(NSString*)startLabel toFrame:(int)stopFrame;
 - (void)playFromFrame:(int)startFrame toLabel:(NSString*)stopLabel;

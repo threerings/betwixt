@@ -18,7 +18,7 @@
             movie.x = movie.width + ii / 3 * movie.width;
             movie.y = movie.height + ii % 3 * movie.height - 50;
             [self.sprite addChild:movie];
-            [movie loopFromFrame:0];
+            [movie playFromFrame:0];
             [self addNode:[BTRepeatingTask withTaskCreator:^BTNode*  {
                 return [BTSequenceTask withNodes:
                          [BTRotationTask withTime:1.0 rotation:1 * ii target:movie],
