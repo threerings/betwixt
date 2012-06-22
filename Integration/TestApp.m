@@ -30,14 +30,14 @@
         nil];
     [self.loadComplete connectUnit:^{
         [self.modeStack changeMode:[[FlipbookMode alloc] init]];
-        /*[self.modeStack pushMode:[[NamedNodeMode alloc] init]];
+        [self.modeStack pushMode:[[NamedNodeMode alloc] init]];
         [self.modeStack pushMode:[[MoveMode alloc] init]];
         [self.modeStack pushMode:[[SelfRemoveMode alloc] init]];
         [self.modeStack pushMode:[[PlayMovieMode alloc] init]];
         [self.modeStack pushMode:[[RepeatingMode alloc] init]];
         [self.modeStack pushMode:[[SubObjectMode alloc] init]];
         [self.modeStack pushMode:[[GroupTestMode alloc] init]];
-        [self.modeStack pushMode:[[LeakTestMode alloc] init]];*/
+        [self.modeStack pushMode:[[LeakTestMode alloc] init]];
     }];
 }
 

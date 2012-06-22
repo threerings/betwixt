@@ -62,7 +62,7 @@
     [sprite removeSelf];
     _sprite = sprite;
     
-    BTMovie *movie = [[BTApp.resourceManager requireResource:@"squaredance"] newMovie];
+    BTMovie *movie = [[BTApp.resourceManager requireResource:@"squaredance/squaredance"] newMovie];
     BTSpriteObject* movieSprite = [BTSpriteObject spriteObjectWithSprite:movie];
     [self addNode:movieSprite displayOn:self.sprite];
     [movieSprite removeSelf];
