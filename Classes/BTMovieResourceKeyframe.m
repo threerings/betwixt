@@ -58,9 +58,11 @@
         label = [frameEl stringAttribute:@"label" defaultVal:nil];
 
         libraryItem = [NSString stringWithFormat:@"%@_flipbook_%d", name, index];
-
+        
         scaleX = 1;
         scaleY = 1;
+        alpha = 1;
+        visible = YES;
     }
     return self;
 
