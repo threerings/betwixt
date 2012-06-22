@@ -57,13 +57,13 @@
     [self addNode:listener];
     _listener = listener;
     
-    BTSpriteObject* sprite = [BTSpriteObject sprite];
+    BTSpriteObject* sprite = [BTSpriteObject spriteObject];
     [self addNode:sprite displayOn:self.sprite];
     [sprite removeSelf];
     _sprite = sprite;
     
     BTMovie *movie = [[BTApp.resourceManager requireResource:@"squaredance"] newMovie];
-    BTSpriteObject* movieSprite = [BTSpriteObject withSprite:movie];
+    BTSpriteObject* movieSprite = [BTSpriteObject spriteObjectWithSprite:movie];
     [self addNode:movieSprite displayOn:self.sprite];
     [movieSprite removeSelf];
     _movie = movie;

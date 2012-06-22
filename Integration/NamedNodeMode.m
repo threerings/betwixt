@@ -18,12 +18,12 @@
         [sprite addNode:[[BTLocationTask alloc] initWithTime:1 toX:300 toY:200] withName:@"mover"];
         [sprite addNode:[BTSequenceTask withNodes:
             [BTWaitTask waitFor:.25f],
-            [BTBlockTask once:^(BTBlockTask *task) {
+            [BTBlockTask once:^{
                 [[sprite nodeForName:@"mover"] removeSelf];
             
             }],
             [BTWaitTask waitFor:.25f],
-            [BTBlockTask once:^(BTBlockTask *task) {
+            [BTBlockTask once:^{
                 NSAssert([sprite nodeForName:@"mover"] == nil, nil);
                 NSAssert(sprite.sprite.x > 0, nil);
                 NSAssert(sprite.sprite.x < 100, nil);

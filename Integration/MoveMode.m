@@ -24,11 +24,11 @@
         [sprite addNode:[BTSequenceTask withNodes:
             [[BTLocationTask alloc] initWithTime:0.5 toX:200 toY:200],
             [[BTRotationTask alloc] initWithTime:0.5 rotation:2],
-            [BTBlockTask once:^(BTBlockTask *task) {
+            [BTBlockTask once:^{
                 NSAssert(sprite.sprite.x == 200, nil);
                 NSAssert(sprite.sprite.rotation == 2, nil);
             }],
-            [BTBlockTask once:^(BTBlockTask *task) { [_modeStack popMode]; }],
+            [BTBlockTask once:^{ [_modeStack popMode]; }],
             nil]];
     }
     return self;
