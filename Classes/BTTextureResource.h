@@ -20,6 +20,7 @@
 
 + (id<BTResourceFactory>)sharedFactory;
 + (BTTextureResource*)require:(NSString*)name;
++ (SPImage*)newImage:(NSString*)name;
 
 - (id)initWithXml:(GDataXMLElement*)xml;
 - (SPImage*)createImage;

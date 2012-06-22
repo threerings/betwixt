@@ -24,6 +24,10 @@
     return [BTApp.resourceManager requireResource:name ofType:[BTTextureResource class]];
 }
 
++ (SPImage*)newImage:(NSString*)name {
+    return [[BTTextureResource require:name] createImage];
+}
+
 - (id)initWithXml:(GDataXMLElement*)xml {
     if ((self = [super init])) {
         NSString* filename = [BTApp requireResourcePathFor:[xml stringAttribute:@"filename"]];
