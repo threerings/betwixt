@@ -6,41 +6,42 @@
 #import "BTUpdatable.h"
 #import "BTNode+Protected.h"
 
-@interface BTBlockTask ()
-@property(nonatomic,copy) BTTaskBlock block;
-@end
+typedef void (^BTOnceBlock)();
+typedef void (^BTUpdateBlock)(BTBlockTask* task, float dt);
 
 @interface BTDoBlockOnceTask : BTBlockTask
+@property (nonatomic,copy) BTOnceBlock block;
 @end
 @implementation BTDoBlockOnceTask
+@synthesize block;
 - (void)added {
     [super added];
-    self.block(self);
+    self.block();
     [self removeSelf];
 }
 
 @end
 
 @interface BTUpdateBlockTask : BTBlockTask <BTUpdatable>
+@property (nonatomic,copy) BTUpdateBlock block;
 @end
 @implementation BTUpdateBlockTask
+@synthesize block;
 - (void)update:(float)dt {
-    self.block(self);
+    self.block(self, dt);
 }
 @end
 
 @implementation BTBlockTask
 
-@synthesize block;
-
-+ (BTBlockTask*)once:(BTTaskBlock)block {
-    BTBlockTask* task = [[BTDoBlockOnceTask alloc] init];
++ (BTBlockTask*)once:(BTOnceBlock)block {
+    BTDoBlockOnceTask* task = [[BTDoBlockOnceTask alloc] init];
     task.block = block;
     return task;
 }
 
-+ (BTBlockTask*)onUpdate:(BTTaskBlock)block {
-    BTBlockTask* task = [[BTUpdateBlockTask alloc] init];
++ (BTBlockTask*)onUpdate:(BTUpdateBlock)block {
+    BTUpdateBlockTask* task = [[BTUpdateBlockTask alloc] init];
     task.block = block;
     return task;
 }

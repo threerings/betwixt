@@ -3,11 +3,7 @@
 
 #import "BTNode.h"
 
-@class BTBlockTask;
-
-typedef void (^BTTaskBlock)(BTBlockTask* task);
-
 @interface BTBlockTask : BTNode
-+ (BTBlockTask*)once:(BTTaskBlock)block;
-+ (BTBlockTask*)onUpdate:(BTTaskBlock)block;
++ (BTBlockTask*)once:(void(^)())block;
++ (BTBlockTask*)onUpdate:(void(^)(BTBlockTask* task, float dt))block;
 @end
