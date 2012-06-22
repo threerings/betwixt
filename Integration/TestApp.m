@@ -24,25 +24,21 @@
 @implementation LoadingMode
 
 - (void)setup {
-    /*[self addFiles: 
-        @"squaredance/resources.xml",
-        @"shapes/resources.xml", 
-        @"guybrush/resources.xml", 
+    [self addFiles: 
+        @"iPhone/squaredance/resources.xml",
+        @"iPhone/guybrush/resources.xml",
         nil];
     [self.loadComplete connectUnit:^{
         [self.modeStack changeMode:[[FlipbookMode alloc] init]];
-        [self.modeStack pushMode:[[NamedNodeMode alloc] init]];
+        /*[self.modeStack pushMode:[[NamedNodeMode alloc] init]];
         [self.modeStack pushMode:[[MoveMode alloc] init]];
         [self.modeStack pushMode:[[SelfRemoveMode alloc] init]];
         [self.modeStack pushMode:[[PlayMovieMode alloc] init]];
         [self.modeStack pushMode:[[RepeatingMode alloc] init]];
         [self.modeStack pushMode:[[SubObjectMode alloc] init]];
         [self.modeStack pushMode:[[GroupTestMode alloc] init]];
-        [self.modeStack pushMode:[[LeakTestMode alloc] init]];
-    }];*/
-    
-    [self.modeStack changeMode:[[MovieTestMode alloc] initWithResourceName:@"bella/resources.xml"
-                                                                 movieName:@"bella/dance_01"]];
+        [self.modeStack pushMode:[[LeakTestMode alloc] init]];*/
+    }];
 }
 
 @end
@@ -51,6 +47,10 @@
 
 - (void)run:(BTModeStack *)defaultStack {
     [defaultStack pushMode:[[LoadingMode alloc] init]];
+}
+
+- (NSString*)resourcePathPrefix {
+    return @"rsrc/";
 }
 
 @end

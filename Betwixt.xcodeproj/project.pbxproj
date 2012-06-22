@@ -16,7 +16,6 @@
 		220F63B1152E878B0051B383 /* BTDisplayObjectButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 220F63AA152E878B0051B383 /* BTDisplayObjectButton.m */; };
 		220F63B2152E878B0051B383 /* BTMovieButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 220F63AB152E878B0051B383 /* BTMovieButton.h */; };
 		220F63B3152E878B0051B383 /* BTMovieButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 220F63AC152E878B0051B383 /* BTMovieButton.m */; };
-		221516AC1513C45900C48FBB /* hero_A_01 in Resources */ = {isa = PBXBuildFile; fileRef = 221516AB1513C45900C48FBB /* hero_A_01 */; };
 		2217E4CD14C79B90000F976A /* BTUpdatable.h in Headers */ = {isa = PBXBuildFile; fileRef = 2217E4CC14C79B90000F976A /* BTUpdatable.h */; };
 		221B6F9814C8BC3200747A18 /* BTMode+Protected.h in Headers */ = {isa = PBXBuildFile; fileRef = 221B6F9714C8BC3200747A18 /* BTMode+Protected.h */; };
 		2221996D14D0EE99009B764F /* BTResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2221996C14D0EE98009B764F /* BTResource.m */; };
@@ -26,6 +25,8 @@
 		2221999414D1F021009B764F /* BTApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 2221999214D1F021009B764F /* BTApp.m */; };
 		223B15C115929A71007304CA /* SPDisplayObjectContainer+BTExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 223B15BF15929A71007304CA /* SPDisplayObjectContainer+BTExtensions.h */; };
 		223B15C215929A71007304CA /* SPDisplayObjectContainer+BTExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 223B15C015929A71007304CA /* SPDisplayObjectContainer+BTExtensions.m */; };
+		223B15DD15941558007304CA /* TestApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 223B15DC15941558007304CA /* TestApp.m */; };
+		223B15DF15941579007304CA /* rsrc in Resources */ = {isa = PBXBuildFile; fileRef = 223B15DE15941578007304CA /* rsrc */; };
 		22400B1C1544CA5000B00D5E /* BTAudioChannel.h in Headers */ = {isa = PBXBuildFile; fileRef = 22400B1A1544CA5000B00D5E /* BTAudioChannel.h */; };
 		22400B1D1544CA5000B00D5E /* BTAudioChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = 22400B1B1544CA5000B00D5E /* BTAudioChannel.m */; };
 		22400B231544CD1400B00D5E /* BTSoundResource.h in Headers */ = {isa = PBXBuildFile; fileRef = 22400B211544CD1400B00D5E /* BTSoundResource.h */; };
@@ -90,7 +91,6 @@
 		22DB8235150AAA290091B648 /* BTDeviceType.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DB8233150AAA290091B648 /* BTDeviceType.m */; };
 		22DBA63814DCAF6200F0F7C8 /* BTApp+Protected.h in Headers */ = {isa = PBXBuildFile; fileRef = 22DBA63714DCAF6200F0F7C8 /* BTApp+Protected.h */; };
 		22DBA63D14DCB29100F0F7C8 /* BTApp+Package.h in Headers */ = {isa = PBXBuildFile; fileRef = 22DBA63C14DCB29100F0F7C8 /* BTApp+Package.h */; };
-		22DBA64014DCB64900F0F7C8 /* TestApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DBA63F14DCB64900F0F7C8 /* TestApp.m */; };
 		22E0A755152A311A009FDE09 /* BTEventSignal.h in Headers */ = {isa = PBXBuildFile; fileRef = 22E0A753152A311A009FDE09 /* BTEventSignal.h */; };
 		22E0A756152A311A009FDE09 /* BTEventSignal.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E0A754152A311A009FDE09 /* BTEventSignal.m */; };
 		22E0A75F152A3837009FDE09 /* BTEventSignal+Protected.h in Headers */ = {isa = PBXBuildFile; fileRef = 22E0A75E152A3837009FDE09 /* BTEventSignal+Protected.h */; };
@@ -143,10 +143,7 @@
 		CB65CE3014EC397E00534FAE /* BTTextureGroupFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = CB65CE2E14EC397E00534FAE /* BTTextureGroupFactory.m */; };
 		CB65CE3314EC3B1F00534FAE /* BTMultiResourceFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = CB65CE3114EC3B1F00534FAE /* BTMultiResourceFactory.h */; };
 		CB65CE3714EC400200534FAE /* BTTextureResource+Package.h in Headers */ = {isa = PBXBuildFile; fileRef = CB65CE3514EC400200534FAE /* BTTextureResource+Package.h */; };
-		CB65CE3B14EC42F400534FAE /* squaredance in Resources */ = {isa = PBXBuildFile; fileRef = CB65CE3A14EC42F400534FAE /* squaredance */; };
-		CB65CE3D14EC44FF00534FAE /* shapes in Resources */ = {isa = PBXBuildFile; fileRef = CB65CE3C14EC44FF00534FAE /* shapes */; };
 		CB65CE4014EC7EF200534FAE /* FlipbookMode.m in Sources */ = {isa = PBXBuildFile; fileRef = CB65CE3F14EC7EF200534FAE /* FlipbookMode.m */; };
-		CB65CE4214EC7F8300534FAE /* guybrush in Resources */ = {isa = PBXBuildFile; fileRef = CB65CE4114EC7F8300534FAE /* guybrush */; };
 		CB69E37114D8C66D00E7C18D /* BTRepeatingTask.h in Headers */ = {isa = PBXBuildFile; fileRef = CB69E36F14D8C66D00E7C18D /* BTRepeatingTask.h */; };
 		CB69E37214D8C66D00E7C18D /* BTRepeatingTask.m in Sources */ = {isa = PBXBuildFile; fileRef = CB69E37014D8C66D00E7C18D /* BTRepeatingTask.m */; };
 		CB69E37914D8D07E00E7C18D /* BTParallelTask.h in Headers */ = {isa = PBXBuildFile; fileRef = CB69E37714D8D07E00E7C18D /* BTParallelTask.h */; };
@@ -181,8 +178,6 @@
 		CBC4524B14D216A1008CC04D /* BTMovieResourceLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = CBC4524714D216A1008CC04D /* BTMovieResourceLayer.h */; };
 		CBC4524C14D216A1008CC04D /* BTMovieResourceLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC4524814D216A1008CC04D /* BTMovieResourceLayer.m */; };
 		CBC4524E14D21700008CC04D /* BTMovie+Package.h in Headers */ = {isa = PBXBuildFile; fileRef = CBC4524D14D21700008CC04D /* BTMovie+Package.h */; };
-		CBC88FC115459209005553D9 /* iPad in Resources */ = {isa = PBXBuildFile; fileRef = CBC88FBF15459209005553D9 /* iPad */; };
-		CBC88FC215459209005553D9 /* iPhone in Resources */ = {isa = PBXBuildFile; fileRef = CBC88FC015459209005553D9 /* iPhone */; };
 		CBD20D0814CF68D600662068 /* BTTextureResource.h in Headers */ = {isa = PBXBuildFile; fileRef = CBD20D0614CF68D600662068 /* BTTextureResource.h */; };
 		CBD20D0914CF68D600662068 /* BTTextureResource.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD20D0714CF68D600662068 /* BTTextureResource.m */; };
 		CBD20D0C14CF693700662068 /* BTMovieResource.h in Headers */ = {isa = PBXBuildFile; fileRef = CBD20D0A14CF693700662068 /* BTMovieResource.h */; };
@@ -285,7 +280,6 @@
 		220F63AA152E878B0051B383 /* BTDisplayObjectButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTDisplayObjectButton.m; sourceTree = "<group>"; };
 		220F63AB152E878B0051B383 /* BTMovieButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTMovieButton.h; sourceTree = "<group>"; };
 		220F63AC152E878B0051B383 /* BTMovieButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTMovieButton.m; sourceTree = "<group>"; };
-		221516AB1513C45900C48FBB /* hero_A_01 */ = {isa = PBXFileReference; lastKnownFileType = folder; name = hero_A_01; path = Exported/hero_A_01; sourceTree = "<group>"; };
 		2217E4CC14C79B90000F976A /* BTUpdatable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTUpdatable.h; sourceTree = "<group>"; };
 		221B6F9714C8BC3200747A18 /* BTMode+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BTMode+Protected.h"; sourceTree = "<group>"; };
 		2221996C14D0EE98009B764F /* BTResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTResource.m; sourceTree = "<group>"; };
@@ -295,6 +289,9 @@
 		2221999214D1F021009B764F /* BTApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTApp.m; sourceTree = "<group>"; };
 		223B15BF15929A71007304CA /* SPDisplayObjectContainer+BTExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SPDisplayObjectContainer+BTExtensions.h"; sourceTree = "<group>"; };
 		223B15C015929A71007304CA /* SPDisplayObjectContainer+BTExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SPDisplayObjectContainer+BTExtensions.m"; sourceTree = "<group>"; };
+		223B15DB15941558007304CA /* TestApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestApp.h; path = Integration/TestApp.h; sourceTree = "<group>"; };
+		223B15DC15941558007304CA /* TestApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TestApp.m; path = Integration/TestApp.m; sourceTree = "<group>"; };
+		223B15DE15941578007304CA /* rsrc */ = {isa = PBXFileReference; lastKnownFileType = folder; path = rsrc; sourceTree = "<group>"; };
 		22400B1A1544CA5000B00D5E /* BTAudioChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTAudioChannel.h; sourceTree = "<group>"; };
 		22400B1B1544CA5000B00D5E /* BTAudioChannel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTAudioChannel.m; sourceTree = "<group>"; };
 		22400B211544CD1400B00D5E /* BTSoundResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTSoundResource.h; sourceTree = "<group>"; };
@@ -360,8 +357,6 @@
 		22DB8233150AAA290091B648 /* BTDeviceType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTDeviceType.m; sourceTree = "<group>"; };
 		22DBA63714DCAF6200F0F7C8 /* BTApp+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BTApp+Protected.h"; sourceTree = "<group>"; };
 		22DBA63C14DCB29100F0F7C8 /* BTApp+Package.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BTApp+Package.h"; sourceTree = "<group>"; };
-		22DBA63E14DCB64900F0F7C8 /* TestApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestApp.h; sourceTree = "<group>"; };
-		22DBA63F14DCB64900F0F7C8 /* TestApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestApp.m; sourceTree = "<group>"; };
 		22E0A753152A311A009FDE09 /* BTEventSignal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTEventSignal.h; sourceTree = "<group>"; };
 		22E0A754152A311A009FDE09 /* BTEventSignal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTEventSignal.m; sourceTree = "<group>"; };
 		22E0A75E152A3837009FDE09 /* BTEventSignal+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BTEventSignal+Protected.h"; sourceTree = "<group>"; };
@@ -414,11 +409,8 @@
 		CB65CE2E14EC397E00534FAE /* BTTextureGroupFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTTextureGroupFactory.m; sourceTree = "<group>"; };
 		CB65CE3114EC3B1F00534FAE /* BTMultiResourceFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTMultiResourceFactory.h; sourceTree = "<group>"; };
 		CB65CE3514EC400200534FAE /* BTTextureResource+Package.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BTTextureResource+Package.h"; sourceTree = "<group>"; };
-		CB65CE3A14EC42F400534FAE /* squaredance */ = {isa = PBXFileReference; lastKnownFileType = folder; name = squaredance; path = Exported/squaredance; sourceTree = "<group>"; };
-		CB65CE3C14EC44FF00534FAE /* shapes */ = {isa = PBXFileReference; lastKnownFileType = folder; name = shapes; path = Exported/shapes; sourceTree = "<group>"; };
 		CB65CE3E14EC7EF200534FAE /* FlipbookMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlipbookMode.h; path = Integration/FlipbookMode.h; sourceTree = "<group>"; };
 		CB65CE3F14EC7EF200534FAE /* FlipbookMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FlipbookMode.m; path = Integration/FlipbookMode.m; sourceTree = "<group>"; };
-		CB65CE4114EC7F8300534FAE /* guybrush */ = {isa = PBXFileReference; lastKnownFileType = folder; name = guybrush; path = Exported/guybrush; sourceTree = "<group>"; };
 		CB69E36F14D8C66D00E7C18D /* BTRepeatingTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTRepeatingTask.h; sourceTree = "<group>"; };
 		CB69E37014D8C66D00E7C18D /* BTRepeatingTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTRepeatingTask.m; sourceTree = "<group>"; };
 		CB69E37314D8CADE00E7C18D /* RepeatingMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RepeatingMode.h; path = Integration/RepeatingMode.h; sourceTree = "<group>"; };
@@ -449,8 +441,6 @@
 		CBC4524D14D21700008CC04D /* BTMovie+Package.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BTMovie+Package.h"; sourceTree = "<group>"; };
 		CBC4525E14D22F04008CC04D /* PlayMovieMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayMovieMode.h; path = Integration/PlayMovieMode.h; sourceTree = "<group>"; };
 		CBC4525F14D22F04008CC04D /* PlayMovieMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayMovieMode.m; path = Integration/PlayMovieMode.m; sourceTree = "<group>"; };
-		CBC88FBF15459209005553D9 /* iPad */ = {isa = PBXFileReference; lastKnownFileType = folder; name = iPad; path = Exported/iPad; sourceTree = "<group>"; };
-		CBC88FC015459209005553D9 /* iPhone */ = {isa = PBXFileReference; lastKnownFileType = folder; name = iPhone; path = Exported/iPhone; sourceTree = "<group>"; };
 		CBD20D0614CF68D600662068 /* BTTextureResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTTextureResource.h; sourceTree = "<group>"; };
 		CBD20D0714CF68D600662068 /* BTTextureResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTTextureResource.m; sourceTree = "<group>"; };
 		CBD20D0A14CF693700662068 /* BTMovieResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTMovieResource.h; sourceTree = "<group>"; };
@@ -698,10 +688,10 @@
 				CB846EED149AE18900B29795 /* react.xcodeproj */,
 				DE4A3DA210FFB0D400FDA492 /* Sparrow.xcodeproj */,
 				080E96DDFE201D6D7F000001 /* Classes */,
-				CB65CE3914EC42DE00534FAE /* Exported */,
 				CBAD57921475A33900F7D78E /* Integration */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
+				223B15DE15941578007304CA /* rsrc */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 			);
@@ -790,19 +780,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		CB65CE3914EC42DE00534FAE /* Exported */ = {
-			isa = PBXGroup;
-			children = (
-				CBC88FBF15459209005553D9 /* iPad */,
-				CBC88FC015459209005553D9 /* iPhone */,
-				CB65CE4114EC7F8300534FAE /* guybrush */,
-				221516AB1513C45900C48FBB /* hero_A_01 */,
-				CB65CE3C14EC44FF00534FAE /* shapes */,
-				CB65CE3A14EC42F400534FAE /* squaredance */,
-			);
-			name = Exported;
-			sourceTree = "<group>";
-		};
 		CBAD57921475A33900F7D78E /* Integration */ = {
 			isa = PBXGroup;
 			children = (
@@ -829,8 +806,8 @@
 				CB72E4AA14773ED100F1EC78 /* Square.m */,
 				CBAD57CC1475A70100F7D78E /* SubObjectMode.h */,
 				CBAD57CD1475A70100F7D78E /* SubObjectMode.m */,
-				22DBA63E14DCB64900F0F7C8 /* TestApp.h */,
-				22DBA63F14DCB64900F0F7C8 /* TestApp.m */,
+				223B15DB15941558007304CA /* TestApp.h */,
+				223B15DC15941558007304CA /* TestApp.m */,
 			);
 			name = Integration;
 			sourceTree = "<group>";
@@ -1091,12 +1068,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB65CE3B14EC42F400534FAE /* squaredance in Resources */,
-				CB65CE3D14EC44FF00534FAE /* shapes in Resources */,
-				CB65CE4214EC7F8300534FAE /* guybrush in Resources */,
-				221516AC1513C45900C48FBB /* hero_A_01 in Resources */,
-				CBC88FC115459209005553D9 /* iPad in Resources */,
-				CBC88FC215459209005553D9 /* iPhone in Resources */,
+				223B15DF15941579007304CA /* rsrc in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1112,7 +1084,6 @@
 				CBAF5619149807B5009A1A06 /* SelfRemoveMode.m in Sources */,
 				CB24CBCF14A02E10004BAA57 /* MoveMode.m in Sources */,
 				CB442C7414B3800000EB2821 /* NamedNodeMode.m in Sources */,
-				22DBA64014DCB64900F0F7C8 /* TestApp.m in Sources */,
 				22448E7414E5D4C1001CF5CE /* PlayMovieMode.m in Sources */,
 				22448E7514E5D4D5001CF5CE /* RepeatingMode.m in Sources */,
 				22448E7614E5D4DD001CF5CE /* Square.m in Sources */,
@@ -1120,6 +1091,7 @@
 				22955A3F14EA1EB1006E5BEE /* LeakTestMode.m in Sources */,
 				CB65CE4014EC7EF200534FAE /* FlipbookMode.m in Sources */,
 				22608BE11505AC4E00CCE0A5 /* MovieTestMode.m in Sources */,
+				223B15DD15941558007304CA /* TestApp.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

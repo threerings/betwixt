@@ -1,0 +1,47 @@
+<resources md5="038bbbfe5d9d84b1367459829969602f">
+  <movie name="squaredance/nesteddance" md5="af5d5736f6d8c0a8dae3fa0712752592" frameRate="24">
+    <layer name="square1">
+      <kf duration="29" ref="squaredance/squaredance" loc="131.75,0"/>
+      <kf duration="1" ref="squaredance/squaredance" loc="249.25,357.7" skew="-1.5708,-1.5708"/>
+    </layer>
+    <layer name="square 2">
+      <kf duration="29" ref="squaredance/squaredance"/>
+      <kf duration="1" ref="squaredance/squaredance" loc="-192.75,246.7" skew="-1.5708,-1.5708"/>
+    </layer>
+    <layer name="labels">
+      <kf duration="9"/>
+      <kf duration="10" label="timepassed"/>
+      <kf duration="11" label="moretimepassed"/>
+    </layer>
+  </movie>
+  <movie name="squaredance/squaredance" md5="8b294fd4d8d47e55e4509120d3bc70f8" frameRate="24">
+    <layer name="red">
+      <kf duration="14" ref="squaredance/redsquare" loc="-125,-100"/>
+      <kf duration="15" ref="squaredance/redsquare" loc="72,258" scale="0.432,1.1728" skew="-1.5708,-1.5708" label="redswitch"/>
+      <kf duration="1" ref="squaredance/redsquare" loc="-126,258" scale="0.432,1.1728" skew="-1.5708,-1.5708"/>
+    </layer>
+    <layer name="blue">
+      <kf duration="14" ref="squaredance/bluesquare" loc="41.5,151.5"/>
+      <kf duration="15" ref="squaredance/bluesquare" loc="295.95,204" scale="1,0.6237" skew="1.5708,1.5708" label="blueswitch"/>
+      <kf duration="1" ref="squaredance/bluesquare" loc="97.95,204" scale="1,0.6237" skew="1.5708,1.5708"/>
+    </layer>
+  </movie>
+  <textureGroups>
+    <textureGroup retina="false">
+      <atlas file="iPhone/squaredance/atlas0.png">
+        <texture name="squaredance/bluesquare" rect="0,0,171,171" offset="0,0" md5="de6d78affc5a793733f7c9ba898d3ee8"/>
+      </atlas>
+      <atlas file="iPhone/squaredance/atlas1.png">
+        <texture name="squaredance/redsquare" rect="0,0,133,91" offset="125,100" md5="b7313e8cb63744254cd87a994d924650"/>
+      </atlas>
+    </textureGroup>
+    <textureGroup retina="true">
+      <atlas file="iPhone/squaredance/atlas0@2x.png">
+        <texture name="squaredance/bluesquare" rect="0,0,342,342" offset="0,0" md5="de6d78affc5a793733f7c9ba898d3ee8"/>
+      </atlas>
+      <atlas file="iPhone/squaredance/atlas1@2x.png">
+        <texture name="squaredance/redsquare" rect="0,0,266,182" offset="250,200" md5="b7313e8cb63744254cd87a994d924650"/>
+      </atlas>
+    </textureGroup>
+  </textureGroups>
+</resources>

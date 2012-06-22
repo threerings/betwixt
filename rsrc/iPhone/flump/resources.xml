@@ -1,0 +1,382 @@
+<resources md5="ae50f73ba80c4b079823542ecde2c34e">
+  <movie name="flump/attack" md5="dfbf2d2ff2eb0f2bc383cac89946f203" frameRate="30">
+    <layer name="Shadow">
+      <kf duration="7" ref="flump/shadow" loc="3.6,-10.4"/>
+      <kf duration="10" ref="flump/shadow" loc="-68.65,-10.4"/>
+      <kf duration="7" ref="flump/shadow" loc="-68.65,-10.4"/>
+      <kf duration="8" ref="flump/shadow" loc="3.6,-10.4"/>
+      <kf duration="1" ref="flump/shadow" loc="3.6,-10.4"/>
+    </layer>
+    <layer name="Foot_L">
+      <kf duration="3" ref="flump/foot_L" loc="-20.35,-7.55" skew="-1.5183,-1.5183"/>
+      <kf duration="4" ref="flump/foot_L" loc="-20.35,-7.55" skew="-1.5183,-1.5183"/>
+      <kf duration="5" ref="flump/foot_L" loc="3.3,-28.05" scale="0.9993,1.0047" skew="-1.7673,-1.856" ease="-1"/>
+      <kf duration="5" ref="flump/foot_L" loc="-192.25,-116.2" scale="0.9999,0.9999" skew="-1.3454,-1.3454" ease="1"/>
+      <kf duration="7" ref="flump/foot_L" loc="-151.7,-65.95" scale="1.0086,1" skew="-1.2567,-1.2567"/>
+      <kf duration="8" ref="flump/foot_L" loc="4.45,-7.55" skew="-1.5183,-1.5183" ease="1"/>
+      <kf duration="1" ref="flump/foot_L" loc="-20.35,-7.55" skew="-1.5183,-1.5183"/>
+    </layer>
+    <layer name="Calf_L">
+      <kf duration="3" ref="flump/calf_L" loc="-36.85,-61.5" skew="-0.2097,-0.2097"/>
+      <kf duration="4" ref="flump/calf_L" loc="-26.9,-61.5" scale="1.0259,0.9817" skew="-0.0855,-0.2043"/>
+      <kf duration="5" ref="flump/calf_L" loc="-42,-60.55" scale="0.8912,0.994" skew="-0.8252,-0.9762" ease="-1"/>
+      <kf duration="5" ref="flump/calf_L" loc="-182.6,-161.3" scale="0.867,0.8831" skew="0.3726,0.3726" ease="1"/>
+      <kf duration="7" ref="flump/calf_L" loc="-164.35,-117" scale="0.9425,0.9178" skew="-0.0986,0.1138"/>
+      <kf duration="8" ref="flump/calf_L" loc="-54.4,-32.3" scale="1.1048,1" skew="-0.9857,-0.5467" ease="1"/>
+      <kf duration="1" ref="flump/calf_L" loc="-36.85,-61.5" skew="-0.2097,-0.2097"/>
+    </layer>
+    <layer name="Thigh_L">
+      <kf duration="3" ref="flump/Thigh_L" loc="29.1,-101.4" skew="1.138,1.138"/>
+      <kf duration="4" ref="flump/Thigh_L" loc="44.15,-101.4" scale="0.9574,1.0486" skew="1.1593,1.2475"/>
+      <kf duration="5" ref="flump/Thigh_L" loc="-39,-132.35" scale="0.862,1.019" skew="0.1245,0.0464" ease="-1"/>
+      <kf duration="5" ref="flump/Thigh_L" loc="-119.25,-167.8" scale="0.8554,0.872" skew="1.6313,1.6313" ease="1"/>
+      <kf duration="7" ref="flump/Thigh_L" loc="-104,-136.55" scale="0.891,0.9034" skew="1.4623,1.4624"/>
+      <kf duration="8" ref="flump/Thigh_L" loc="12.35,-57.6" skew="1.3035,1.3035" ease="1"/>
+      <kf duration="1" ref="flump/Thigh_L" loc="29.1,-101.4" skew="1.138,1.138"/>
+    </layer>
+    <layer name="Body">
+      <kf duration="3" ref="flump/Body" loc="1.1,-69.45" ease="1"/>
+      <kf duration="2" ref="flump/Body" loc="8.45,-20.95" scale="1.2373,0.7655" skew="-0.0189,0"/>
+      <kf duration="5" ref="flump/Body" loc="-26.55,-61.45" scale="0.9131,1.3378" skew="-0.1412,0.0833"/>
+      <kf duration="8" ref="flump/Body" loc="-80.1,-171.95" scale="0.7556,1.2625" skew="-0.521,-1.0858" ease="1"/>
+      <kf duration="6" ref="flump/Body" loc="-31,-106.55" scale="0.8371,1.1577" skew="-0.796,-1.2394"/>
+      <kf duration="4" ref="flump/Body" loc="13.6,-21.35" scale="1.1693,0.9113" skew="-0.467,-0.057" ease="1"/>
+      <kf duration="4" ref="flump/Body" loc="-12.3,-35.9" scale="1.1495,0.9104" skew="-0.029,0" ease="1"/>
+      <kf duration="1" ref="flump/Body" loc="1.1,-69.45" ease="1"/>
+    </layer>
+    <layer name="Flap_L">
+      <kf duration="3" ref="flump/flap_L" loc="-113.4,-170" skew="0.0045,0.0045"/>
+      <kf duration="2" ref="flump/flap_L" loc="-135.85,-121.7" scale="1.0286,0.9062" skew="0.9986,1.4181"/>
+      <kf duration="5" ref="flump/flap_L" loc="-155.9,-203.85" scale="0.9062,1.3376" skew="-0.012,-0.1675" ease="-1"/>
+      <kf duration="8" ref="flump/flap_L" loc="-209.75,-256.8" scale="0.7527,0.8744" skew="-0.1119,1.0471"/>
+      <kf duration="6" ref="flump/flap_L" loc="-190.45,-144.15" scale="1.0902,0.5192" skew="-0.2177,1.082"/>
+      <kf duration="4" ref="flump/flap_L" loc="-185.15,-106.75" scale="1.1103,0.8261" skew="0.6224,0.8219" ease="1"/>
+      <kf duration="4" ref="flump/flap_L" loc="-146.6,-127.4" scale="1.1496,0.9102" skew="-0.0232,0.0036" ease="1"/>
+      <kf duration="1" ref="flump/flap_L" loc="-113.4,-170" skew="0.0045,0.0045"/>
+    </layer>
+    <layer name="Gut">
+      <kf duration="3" ref="flump/Gut" loc="-35.9,-99.5"/>
+      <kf duration="2" ref="flump/Gut" loc="-58.8,-60.35" scale="1.2097,1.0102" skew="0.1264,0.0804"/>
+      <kf duration="5" ref="flump/Gut" loc="-60.75,-105.1" scale="0.9316,1.7834" skew="-0.3233,-0.3075" ease="-1"/>
+      <kf duration="8" ref="flump/Gut" loc="-117.55,-198.05" scale="1.0215,1.4213" skew="-0.471,-1.1831" ease="1"/>
+      <kf duration="6" ref="flump/Gut" loc="-75.75,-111.55" scale="0.9583,1.344" skew="-0.454,-0.7457"/>
+      <kf duration="4" ref="flump/Gut" loc="-84.05,-54.6" scale="1.1582,1.0151" skew="-0.128,0.0062" ease="1"/>
+      <kf duration="4" ref="flump/Gut" loc="-55.65,-63.3" scale="1.1495,0.9104" skew="-0.029,0" ease="1"/>
+      <kf duration="1" ref="flump/Gut" loc="-35.9,-99.5"/>
+    </layer>
+    <layer name="Flap_R">
+      <kf duration="3" ref="flump/flap_R" loc="4,-140.5" skew="-1.5708,-1.5708"/>
+      <kf duration="2" ref="flump/flap_R" loc="-20.5,-108.8" scale="0.9327,1.0282" skew="-1.349,-0.9298"/>
+      <kf duration="5" ref="flump/flap_R" loc="-63.65,-186.55" scale="1.3974,0.8167" skew="-1.5993,-1.7509" ease="-1"/>
+      <kf duration="8" ref="flump/flap_R" loc="-175.35,-249.15" scale="1.6057,0.7191" skew="-1.0464,-1.313"/>
+      <kf duration="6" ref="flump/flap_R" loc="-156.4,-157.75" scale="0.9473,0.7593" skew="-0.2878,-0.7255"/>
+      <kf duration="4" ref="flump/flap_R" loc="-40.15,-92.95" scale="0.8625,1.1874" skew="-1.5256,-1.0463" ease="1"/>
+      <kf duration="4" ref="flump/flap_R" loc="-10.8,-100.55" scale="0.9104,1.1495" skew="-1.5708,-1.5998" ease="1"/>
+      <kf duration="1" ref="flump/flap_R" loc="4,-140.5" skew="-1.5708,-1.5708"/>
+    </layer>
+    <layer name="Foot_R">
+      <kf duration="3" ref="flump/foot_R" loc="18.65,-1.75" skew="-1.5708,-1.5708"/>
+      <kf duration="4" ref="flump/foot_R" loc="18.65,-1.75" skew="-1.5708,-1.5708"/>
+      <kf duration="5" ref="flump/foot_R" loc="24.25,-18.55" scale="1.004,1" skew="-2.2199,-2.3087" ease="-1"/>
+      <kf duration="5" ref="flump/foot_R" loc="-152.5,-79.65" scale="0.9999,0.9999" skew="-1.4558,-1.4558" ease="1"/>
+      <kf duration="7" ref="flump/foot_R" loc="-139,-10.4" scale="0.9995,0.9995" skew="-0.997,-0.997"/>
+      <kf duration="8" ref="flump/foot_R" loc="43.45,-1.75" skew="-1.5708,-1.5708" ease="1"/>
+      <kf duration="1" ref="flump/foot_R" loc="18.65,-1.75" skew="-1.5708,-1.5708"/>
+    </layer>
+    <layer name="Calf_R">
+      <kf duration="3" ref="flump/calf_R" loc="24.65,-55.9" skew="0.4268,0.4268"/>
+      <kf duration="4" ref="flump/calf_R" loc="-31.3,-24.4" scale="1.1147,0.7793" skew="-0.5716,-0.4086"/>
+      <kf duration="5" ref="flump/calf_R" loc="-15.35,-43.2" scale="0.8565,0.8687" skew="-0.6281,-0.7289" ease="-1"/>
+      <kf duration="5" ref="flump/calf_R" loc="-167.05,-127.5" scale="0.8752,0.89" skew="0.0782,0.0782" ease="1"/>
+      <kf duration="7" ref="flump/calf_R" loc="-136.5,-64.7" scale="0.9278,0.9159" skew="0.4154,0.5167"/>
+      <kf duration="8" ref="flump/calf_R" loc="-23.85,-13.6" scale="1.0335,1" skew="-1.0542,-0.5614" ease="1"/>
+      <kf duration="1" ref="flump/calf_R" loc="24.65,-55.9" skew="0.4268,0.4268"/>
+    </layer>
+    <layer name="Thigh_R">
+      <kf duration="3" ref="flump/Thigh_R" loc="108.15,-107.55" skew="0.9986,0.9986"/>
+      <kf duration="4" ref="flump/Thigh_R" loc="59.9,-20.55" scale="0.7349,0.9001" skew="1.7455,1.8713"/>
+      <kf duration="5" ref="flump/Thigh_R" loc="-21.35,-131.35" scale="0.9683,0.8141" skew="-0.0144,-0.2041" ease="-1"/>
+      <kf duration="5" ref="flump/Thigh_R" loc="-85.75,-152.9" scale="0.8474,0.9032" skew="1.2897,1.2897" ease="1"/>
+      <kf duration="7" ref="flump/Thigh_R" loc="-74,-128.35" scale="0.8844,0.9263" skew="0.785,0.785"/>
+      <kf duration="8" ref="flump/Thigh_R" loc="70.6,-36.85" scale="0.9718,0.9166" skew="1.3829,0.9477" ease="1"/>
+      <kf duration="1" ref="flump/Thigh_R" loc="108.15,-107.55" skew="0.9986,0.9986"/>
+    </layer>
+  </movie>
+  <movie name="flump/defeat" md5="e660bd82397e9a14a6beaf258bde5aca" frameRate="30">
+    <layer name="Shadow">
+      <kf duration="5" ref="flump/shadow" loc="3.6,-10.4"/>
+      <kf duration="7" ref="flump/shadow" loc="3.6,-10.4" ease="1"/>
+      <kf duration="8" ref="flump/shadow" loc="3.6,-1.4" scale="1.7701,0.4151"/>
+      <kf duration="5" ref="flump/shadow" loc="-17.4,6.95" scale="2.7283,0.3858"/>
+      <kf duration="1" ref="flump/shadow" loc="3.6,15.6" scale="0.2628,0.0616"/>
+    </layer>
+    <layer name="Foot_L">
+      <kf duration="2" ref="flump/foot_L" loc="-20.35,-7.55" skew="-1.5183,-1.5183"/>
+      <kf duration="3" ref="flump/foot_L" loc="-20.35,-7.55" skew="-1.5183,-1.5183" ease="-1"/>
+      <kf duration="4" ref="flump/foot_L" loc="-20.35,-7.55" skew="-1.5183,-1.5183" ease="1"/>
+      <kf duration="3" ref="flump/foot_L" loc="-126.3,-3" scale="1.0172,2.0213" skew="-1.4755,-1.4755"/>
+      <kf duration="4" ref="flump/foot_L" loc="-244.1,2.5" scale="0.7288,2.7639" skew="-1.5215,-1.3877"/>
+      <kf duration="4" ref="flump/foot_L" loc="-282.35,4.35" scale="0.6833,3.4245" skew="-1.534,-1.3276"/>
+      <kf duration="5" ref="flump/foot_L" loc="-292.35,4.35" scale="0.6833,3.4245" skew="-1.534,-1.3276" ease="1"/>
+      <kf duration="1" ref="flump/foot_L" loc="-24.55,16.55" scale="0.0449,0.7439" skew="-1.5501,-2.3403"/>
+    </layer>
+    <layer name="Calf_L">
+      <kf duration="2" ref="flump/calf_L" loc="-36.85,-61.5" skew="-0.2097,-0.2097"/>
+      <kf duration="3" ref="flump/calf_L" loc="-33.65,-62.25" skew="-0.1053,-0.1053" ease="-1"/>
+      <kf duration="4" ref="flump/calf_L" loc="-16.7,-67.6" scale="1,1.0985" skew="0.1383,0.1383" ease="1"/>
+      <kf duration="3" ref="flump/calf_L" loc="-100.3,-26.15" scale="1.678,0.7955" skew="0.9197,0.1075"/>
+      <kf duration="4" ref="flump/calf_L" loc="-192.65,-9.9" scale="2.1449,1.373" skew="1.4034,0.1401"/>
+      <kf duration="4" ref="flump/calf_L" loc="-237,-7.1" scale="3.5661,0.7172" skew="1.1467,-0.0126"/>
+      <kf duration="5" ref="flump/calf_L" loc="-303.5,-20.7" scale="1.6831,0.7621" skew="1.2554,0.55"/>
+      <kf duration="1" ref="flump/calf_L" loc="-18.6,16.15" scale="0.4394,0.061" skew="1.4515,0.0384"/>
+    </layer>
+    <layer name="Thigh_L">
+      <kf duration="2" ref="flump/Thigh_L" loc="29.1,-101.4" skew="1.138,1.138"/>
+      <kf duration="3" ref="flump/Thigh_L" loc="29.1,-101.4" skew="1.138,1.138" ease="-1"/>
+      <kf duration="4" ref="flump/Thigh_L" loc="-50.25,-148.55" skew="-0.3277,-0.3277" ease="1"/>
+      <kf duration="3" ref="flump/Thigh_L" loc="-60.15,-88.35" scale="1.4108,0.8849" skew="0.7087,0.7087"/>
+      <kf duration="4" ref="flump/Thigh_L" loc="-130.55,-0.55" scale="0.9075,1.1351" skew="1.779,2.5107"/>
+      <kf duration="4" ref="flump/Thigh_L" loc="-171.7,0" scale="0.9075,1.1351" skew="1.779,2.5107"/>
+      <kf duration="5" ref="flump/Thigh_L" loc="-242.6,-1.95" scale="1.1756,0.8504" skew="2.4275,2.6118"/>
+      <kf duration="1" ref="flump/Thigh_L" loc="2.05,16.45" scale="0.039,0.2197" skew="1.621,2.5571"/>
+    </layer>
+    <layer name="Body">
+      <kf duration="2" ref="flump/Body" loc="1.1,-69.45"/>
+      <kf duration="3" ref="flump/Body" loc="-1.8,-72.3" scale="0.9649,1.1491" skew="0.0201,0.0228" ease="-1"/>
+      <kf duration="4" ref="flump/Body" loc="-4.15,-148.25" scale="1.2231,0.8478" skew="0.0268,0.0171" ease="1"/>
+      <kf duration="3" ref="flump/Body" loc="-14,-42.45" scale="0.8796,1.3871" skew="0.0214,0.0214"/>
+      <kf duration="8" ref="flump/Body" loc="-2.9,-14.1" scale="1.0642,0.6733" skew="0.0314,0.0154"/>
+      <kf duration="5" ref="flump/Body" loc="45.9,7.45" scale="1.8368,0.137" skew="0.2649,0.0183" ease="1"/>
+      <kf duration="1" ref="flump/Body" loc="3.35,16.95" scale="0.4459,0.0149" skew="0.7413,-0.0012"/>
+    </layer>
+    <layer name="Flap_L">
+      <kf duration="2" ref="flump/flap_L" loc="-113.4,-170" skew="0.0045,0.0045"/>
+      <kf duration="3" ref="flump/flap_L" loc="-109.9,-190.35" scale="0.9649,1.1491" skew="0.0239,0.0282" ease="-1"/>
+      <kf duration="4" ref="flump/flap_L" loc="-141.65,-259.7" scale="0.9154,1.0583" skew="0.8158,0.8856" ease="1"/>
+      <kf duration="3" ref="flump/flap_L" loc="-117.9,-183.25" scale="0.9786,1.0999" skew="0.1724,0.4615"/>
+      <kf duration="8" ref="flump/flap_L" loc="-163.75,-56.85" scale="0.882,1.0638" skew="0.991,0.9905"/>
+      <kf duration="5" ref="flump/flap_L" loc="-249.45,-7.15" scale="0.7053,1.0441" skew="1.5676,1.6582" ease="1"/>
+      <kf duration="1" ref="flump/flap_L" loc="-42.45,14.75" scale="0.0771,0.2867" skew="1.4714,2.3154"/>
+    </layer>
+    <layer name="Gut">
+      <kf duration="2" ref="flump/Gut" loc="-35.9,-99.5"/>
+      <kf duration="3" ref="flump/Gut" loc="-36.8,-107.6" scale="0.9649,1.1491" skew="0.0201,0.0228" ease="-1"/>
+      <kf duration="4" ref="flump/Gut" loc="-50.4,-191.1" scale="1.4851,0.8661" skew="0.0268,0.0171" ease="1"/>
+      <kf duration="3" ref="flump/Gut" loc="-46.65,-77.7" scale="1.1305,1.3203" skew="0.0214,0.0214"/>
+      <kf duration="8" ref="flump/Gut" loc="-35.3,-26.1" scale="2.0695,0.7214" skew="0.4906,-0.0192"/>
+      <kf duration="5" ref="flump/Gut" loc="-87.45,-0.85" scale="2.1886,0.8627" skew="1.2573,0.0091" ease="1"/>
+      <kf duration="1" ref="flump/Gut" loc="-21.6,16.4" scale="0.5658,0.2092" skew="1.4868,-0.0033"/>
+    </layer>
+    <layer name="Flap_R">
+      <kf duration="2" ref="flump/flap_R" loc="4,-140.5" skew="-1.5708,-1.5708"/>
+      <kf duration="3" ref="flump/flap_R" loc="2.6,-153.85" scale="1.1491,0.9649" skew="-1.548,-1.5507" ease="-1"/>
+      <kf duration="4" ref="flump/flap_R" loc="-16.55,-249.15" scale="0.9117,1.0303" skew="-1.3755,-0.7968" ease="1"/>
+      <kf duration="3" ref="flump/flap_R" loc="-25.35,-155.6" scale="1.4689,0.7826" skew="-1.5409,-1.6126"/>
+      <kf duration="8" ref="flump/flap_R" loc="-27.45,-53.3" scale="1.46,1.3712" skew="-1.8281,-1.6005"/>
+      <kf duration="5" ref="flump/flap_R" loc="37.1,0.5" scale="0.4959,3.1269" skew="-1.6045,-1.2179" ease="1"/>
+      <kf duration="1" ref="flump/flap_R" loc="19.1,15.55" scale="0.0676,0.3882" skew="-1.575,-0.6118"/>
+    </layer>
+    <layer name="Foot_R">
+      <kf duration="2" ref="flump/foot_R" loc="18.65,-1.75" skew="-1.5708,-1.5708"/>
+      <kf duration="3" ref="flump/foot_R" loc="18.65,-1.75" skew="-1.5708,-1.5708" ease="-1"/>
+      <kf duration="4" ref="flump/foot_R" loc="18.65,-1.75" skew="-1.5708,-1.5708" ease="1"/>
+      <kf duration="3" ref="flump/foot_R" loc="116.5,-6.25" scale="1,1.6275" skew="-1.6054,-1.6054"/>
+      <kf duration="4" ref="flump/foot_R" loc="198.85,1.35" scale="0.872,2.2852" skew="-1.5817,-1.8204"/>
+      <kf duration="4" ref="flump/foot_R" loc="296.9,-2.6" scale="0.8451,2.8328" skew="-1.5734,-0.9678"/>
+      <kf duration="5" ref="flump/foot_R" loc="282.45,-3.25" scale="0.8451,2.8328" skew="-1.6596,-1.054" ease="1"/>
+      <kf duration="1" ref="flump/foot_R" loc="24.25,16" scale="0.0745,0.5055" skew="-1.5719,-0.5388"/>
+    </layer>
+    <layer name="Calf_R">
+      <kf duration="2" ref="flump/calf_R" loc="24.65,-55.9" skew="0.4268,0.4268"/>
+      <kf duration="3" ref="flump/calf_R" loc="37.7,-47.85" scale="1.0508,1" skew="0.6973,0.385" ease="-1"/>
+      <kf duration="4" ref="flump/calf_R" loc="-9.6,-59.1" scale="0.9645,1.0984" skew="-0.0906,-0.0906" ease="1"/>
+      <kf duration="3" ref="flump/calf_R" loc="41.65,-19.4" scale="1.6011,0.6723" skew="-0.7334,-0.2347"/>
+      <kf duration="4" ref="flump/calf_R" loc="97,-8.25" scale="2.1821,0.8261" skew="-1.0753,-0.1782"/>
+      <kf duration="4" ref="flump/calf_R" loc="183.35,-8.9" scale="2.1917,0.6722" skew="-1.0452,-0.19"/>
+      <kf duration="5" ref="flump/calf_R" loc="219.1,-11" scale="1.6836,0.8068" skew="-1.0461,-0.6357"/>
+      <kf duration="1" ref="flump/calf_R" loc="3.4,15.95" scale="0.5092,0.0416" skew="-1.2707,-0.0201"/>
+    </layer>
+    <layer name="Thigh_R">
+      <kf duration="2" ref="flump/Thigh_R" loc="108.15,-107.55" skew="0.9986,0.9986"/>
+      <kf duration="3" ref="flump/Thigh_R" loc="87.55,-119.9" skew="0.5551,0.5551" ease="-1"/>
+      <kf duration="4" ref="flump/Thigh_R" loc="46.8,-145.95" skew="0.6246,0.6246" ease="1"/>
+      <kf duration="3" ref="flump/Thigh_R" loc="45.5,-105.95" scale="1.4097,0.9097" skew="0.0501,0.0501"/>
+      <kf duration="4" ref="flump/Thigh_R" loc="56.7,-42.3" scale="1.9036,0.7461" skew="-0.9713,-0.1649"/>
+      <kf duration="4" ref="flump/Thigh_R" loc="128.7,-25.55" scale="1.8686,0.8489" skew="-1.2579,-0.1778"/>
+      <kf duration="5" ref="flump/Thigh_R" loc="189.2,-2.5" scale="1.0261,0.8383" skew="-2.1773,-1.4204"/>
+      <kf duration="1" ref="flump/Thigh_R" loc="-3.35,15.85" scale="0.2896,0.1833" skew="-1.5526,-0.1066"/>
+    </layer>
+  </movie>
+  <movie name="flump/idle" md5="f918efc513c48b20395c3adf04b8402e" frameRate="30">
+    <layer name="Shadow">
+      <kf duration="29" ref="flump/shadow" loc="3.6,-10.4"/>
+      <kf duration="1" ref="flump/shadow" loc="3.6,-10.4"/>
+    </layer>
+    <layer name="Foot_L">
+      <kf duration="12" ref="flump/foot_L" loc="-20.35,-7.55" skew="-1.5183,-1.5183"/>
+      <kf duration="17" ref="flump/foot_L" loc="-20.35,-7.55" skew="-1.5183,-1.5183" ease="1"/>
+      <kf duration="1" ref="flump/foot_L" loc="-20.35,-7.55" skew="-1.5183,-1.5183"/>
+    </layer>
+    <layer name="Calf_L">
+      <kf duration="12" ref="flump/calf_L" loc="-36.85,-61.5" skew="-0.2097,-0.2097"/>
+      <kf duration="17" ref="flump/calf_L" loc="-41.85,-56.5" skew="-0.3005,-0.3005" ease="1"/>
+      <kf duration="1" ref="flump/calf_L" loc="-36.85,-61.5" skew="-0.2097,-0.2097"/>
+    </layer>
+    <layer name="Thigh_L">
+      <kf duration="12" ref="flump/Thigh_L" loc="29.1,-101.4" skew="1.138,1.138"/>
+      <kf duration="17" ref="flump/Thigh_L" loc="29.1,-89.4" skew="1.3299,1.3299" ease="1"/>
+      <kf duration="1" ref="flump/Thigh_L" loc="29.1,-101.4" skew="1.138,1.138"/>
+    </layer>
+    <layer name="Body">
+      <kf duration="12" ref="flump/Body" loc="1.1,-69.45"/>
+      <kf duration="17" ref="flump/Body" loc="5.7,-60.6" scale="1.069,0.9492" ease="1"/>
+      <kf duration="1" ref="flump/Body" loc="1.1,-69.45"/>
+    </layer>
+    <layer name="Flap_L">
+      <kf duration="12" ref="flump/flap_L" loc="-113.4,-170" skew="0.0045,0.0045"/>
+      <kf duration="17" ref="flump/flap_L" loc="-116.75,-156.05" scale="1.069,0.9492" skew="0.0051,0.004" ease="1"/>
+      <kf duration="1" ref="flump/flap_L" loc="-113.4,-170" skew="0.0045,0.0045"/>
+    </layer>
+    <layer name="Gut">
+      <kf duration="12" ref="flump/Gut" loc="-35.9,-99.5"/>
+      <kf duration="17" ref="flump/Gut" loc="-33.9,-89.1" scale="1.069,0.9492" ease="1"/>
+      <kf duration="1" ref="flump/Gut" loc="-35.9,-99.5"/>
+    </layer>
+    <layer name="Flap_R">
+      <kf duration="12" ref="flump/flap_R" loc="4,-140.5" skew="-1.5708,-1.5708"/>
+      <kf duration="17" ref="flump/flap_R" loc="8.8,-128.05" scale="0.9492,1.069" skew="-1.5708,-1.5708" ease="1"/>
+      <kf duration="1" ref="flump/flap_R" loc="4,-140.5" skew="-1.5708,-1.5708"/>
+    </layer>
+    <layer name="Foot_R">
+      <kf duration="12" ref="flump/foot_R" loc="18.65,-1.75" skew="-1.5708,-1.5708"/>
+      <kf duration="17" ref="flump/foot_R" loc="18.65,-1.75" skew="-1.5708,-1.5708" ease="1"/>
+      <kf duration="1" ref="flump/foot_R" loc="18.65,-1.75" skew="-1.5708,-1.5708"/>
+    </layer>
+    <layer name="Calf_R">
+      <kf duration="12" ref="flump/calf_R" loc="24.65,-55.9" skew="0.4268,0.4268"/>
+      <kf duration="17" ref="flump/calf_R" loc="19.35,-57.7" skew="0.3362,0.3362" ease="1"/>
+      <kf duration="1" ref="flump/calf_R" loc="24.65,-55.9" skew="0.4268,0.4268"/>
+    </layer>
+    <layer name="Thigh_R">
+      <kf duration="12" ref="flump/Thigh_R" loc="108.15,-107.55" skew="0.9986,0.9986"/>
+      <kf duration="17" ref="flump/Thigh_R" loc="108.55,-85.55" skew="1.2385,1.2385" ease="1"/>
+      <kf duration="1" ref="flump/Thigh_R" loc="108.15,-107.55" skew="0.9986,0.9986"/>
+    </layer>
+  </movie>
+  <movie name="flump/walk" md5="7cc930fab12fde4483505ed0e375e43b" frameRate="30">
+    <layer name="Shadow">
+      <kf duration="39" ref="flump/shadow" loc="3.6,-10.4"/>
+      <kf duration="1" ref="flump/shadow" loc="3.6,-10.4"/>
+    </layer>
+    <layer name="Foot_L">
+      <kf duration="5" ref="flump/foot_L" loc="-7.85,-28.75" skew="-2.4784,-2.4784"/>
+      <kf duration="24" ref="flump/foot_L" loc="-113.35,-7.35" scale="1.0051,1.0881" skew="-1.4391,-1.4789"/>
+      <kf duration="10" ref="flump/foot_L" loc="125.25,-7.35" scale="1.0051,1.0881" skew="-1.4391,-1.4789"/>
+      <kf duration="1" ref="flump/foot_L" loc="-7.85,-28.75" skew="-2.4784,-2.4784"/>
+    </layer>
+    <layer name="Calf_L">
+      <kf duration="5" ref="flump/calf_L" loc="-61.5,-46.1" skew="-1.1698,-1.1698"/>
+      <kf duration="14" ref="flump/calf_L" loc="-130.3,-51.65" scale="1.0773,0.8847" skew="-0.1657,-0.0985"/>
+      <kf duration="10" ref="flump/calf_L" loc="-8.05,-14.55" scale="1.0795,0.8278" skew="-1.2521,-0.4867"/>
+      <kf duration="10" ref="flump/calf_L" loc="46.95,-14.9" scale="0.949,1.1694" skew="-1.3652,-0.6501"/>
+      <kf duration="1" ref="flump/calf_L" loc="-61.5,-46.1" skew="-1.1698,-1.1698"/>
+    </layer>
+    <layer name="Thigh_L">
+      <kf duration="5" ref="flump/Thigh_L" loc="-10.2,-94.45" skew="0.8985,0.8985"/>
+      <kf duration="14" ref="flump/Thigh_L" loc="-63.2,-73.85" scale="1.092,1.0009" skew="1.334,1.3513"/>
+      <kf duration="5" ref="flump/Thigh_L" loc="27.7,-77.75" scale="1.092,1.0009" skew="0.785,0.8023"/>
+      <kf duration="5" ref="flump/Thigh_L" loc="12.75,-95.45" scale="1.0914,1.0005" skew="0.1443,0.1618"/>
+      <kf duration="5" ref="flump/Thigh_L" loc="12.25,-89" scale="1.092,1.0009" skew="-0.2741,-0.2569"/>
+      <kf duration="5" ref="flump/Thigh_L" loc="5.55,-105.05" scale="1.0455,1" skew="0.1359,0.1446"/>
+      <kf duration="1" ref="flump/Thigh_L" loc="-10.2,-94.45" skew="0.8985,0.8985"/>
+    </layer>
+    <layer name="Body">
+      <kf duration="9" ref="flump/Body" loc="4.25,-76.9" scale="0.961,1.083" skew="0.1653,0.0829" ease="-1"/>
+      <kf duration="10" ref="flump/Body" loc="-0.05,-37.45" scale="1.2415,0.8468" skew="-0.066,0" ease="1"/>
+      <kf duration="10" ref="flump/Body" loc="9.2,-85.15" scale="0.95,1.0648" skew="-0.2348,-0.1654" ease="-1"/>
+      <kf duration="10" ref="flump/Body" loc="-0.05,-35.45" scale="1.2314,0.8328" skew="0.0695,0"/>
+      <kf duration="1" ref="flump/Body" loc="4.25,-76.9" scale="0.961,1.083" skew="0.1653,0.0829" ease="-1"/>
+    </layer>
+    <layer name="Flap_L">
+      <kf duration="9" ref="flump/flap_L" loc="-87.45,-193.45" scale="1.2347,0.8438" skew="0.1694,0.088"/>
+      <kf duration="11" ref="flump/flap_L" loc="-157.8,-123.1" scale="1.182,0.7146" skew="0.3422,0.5361" ease="1"/>
+      <kf duration="10" ref="flump/flap_L" loc="-136.9,-187.95" scale="1.067,0.5871" skew="0.5392,0.8762" ease="-1"/>
+      <kf duration="9" ref="flump/flap_L" loc="-140.25,-113.75" scale="0.9734,0.618" skew="0.1053,0.2912"/>
+      <kf duration="1" ref="flump/flap_L" loc="-87.45,-193.45" scale="1.2347,0.8438" skew="0.1694,0.088"/>
+    </layer>
+    <layer name="Gut">
+      <kf duration="10" ref="flump/Gut" loc="-36.3,-132.3" scale="0.9578,0.9847" skew="0.1653,0.1523" ease="-1"/>
+      <kf duration="11" ref="flump/Gut" loc="-39.15,-70.65" scale="1.604,1.1956" skew="0,-0.1275" ease="1"/>
+      <kf duration="10" ref="flump/Gut" loc="-73.5,-129.2" scale="0.905,1.0855" skew="0.1445,0.1676" ease="-1"/>
+      <kf duration="8" ref="flump/Gut" loc="-69.65,-81.6" scale="0.9691,1.2171" skew="0.0923,-0.0315" ease="1"/>
+      <kf duration="1" ref="flump/Gut" loc="-30,-127.4" scale="0.9578,0.9847" skew="0.1653,0.1523" ease="-1"/>
+    </layer>
+    <layer name="Flap_R">
+      <kf duration="9" ref="flump/flap_R" loc="25.45,-187.05" scale="1.083,1.0229" skew="-1.5926,-1.4055"/>
+      <kf duration="11" ref="flump/flap_R" loc="-10.55,-113.35" scale="1.0376,1.1798" skew="-1.5565,-1.5139" ease="1"/>
+      <kf duration="10" ref="flump/flap_R" loc="-40.8,-197.2" scale="0.711,0.881" skew="-1.5556,-1.1901" ease="-1"/>
+      <kf duration="9" ref="flump/flap_R" loc="-50.05,-117.85" scale="0.8879,0.9911" skew="-1.4237,-1.4212"/>
+      <kf duration="1" ref="flump/flap_R" loc="25.45,-187.05" scale="1.083,1.0229" skew="-1.5926,-1.4055"/>
+    </layer>
+    <layer name="Foot_R">
+      <kf duration="5" ref="flump/foot_R" loc="18.65,-1.75" skew="-1.5708,-1.5708"/>
+      <kf duration="8" ref="flump/foot_R" loc="76.3,-1.75" skew="-1.5708,-1.5708"/>
+      <kf duration="6" ref="flump/foot_R" loc="128.6,-1.75" skew="-1.5708,-1.5708"/>
+      <kf duration="5" ref="flump/foot_R" loc="7.4,-44.75" skew="-2.7567,-2.7567"/>
+      <kf duration="6" ref="flump/foot_R" loc="-75.35,-1.75" skew="-1.5708,-1.5708"/>
+      <kf duration="9" ref="flump/foot_R" loc="-37.75,-1.75" skew="-1.5708,-1.5708"/>
+      <kf duration="1" ref="flump/foot_R" loc="18.65,-1.75" skew="-1.5708,-1.5708"/>
+    </layer>
+    <layer name="Calf_R">
+      <kf duration="5" ref="flump/calf_R" loc="24.65,-55.9" skew="0.4268,0.4268"/>
+      <kf duration="4" ref="flump/calf_R" loc="26.45,-42.55" scale="1.062,1.001" skew="-0.4931,-0.3044"/>
+      <kf duration="4" ref="flump/calf_R" loc="39.95,-21.45" scale="1.1102,0.952" skew="-0.8621,-0.5167"/>
+      <kf duration="6" ref="flump/calf_R" loc="53.45,-10.6" scale="1.1614,1.004" skew="-1.1236,-0.6257"/>
+      <kf duration="5" ref="flump/calf_R" loc="-29.55,-93.05" scale="0.9667,1.0934" skew="-0.4085,-0.4085"/>
+      <kf duration="6" ref="flump/calf_R" loc="-73.15,-49" scale="1.0006,0.8403" skew="0.4354,0.4354"/>
+      <kf duration="9" ref="flump/calf_R" loc="-33,-53.15" scale="0.9991,0.903" skew="0.427,0.4271"/>
+      <kf duration="1" ref="flump/calf_R" loc="24.65,-55.9" skew="0.4268,0.4268"/>
+    </layer>
+    <layer name="Thigh_R">
+      <kf duration="5" ref="flump/Thigh_R" loc="108.15,-107.55" skew="0.9986,0.9986"/>
+      <kf duration="8" ref="flump/Thigh_R" loc="108.4,-68.7" scale="1.0657,0.958" skew="1.2709,1.2709"/>
+      <kf duration="6" ref="flump/Thigh_R" loc="85.75,-81.85" scale="1.0486,0.8435" skew="0.438,0.2713"/>
+      <kf duration="5" ref="flump/Thigh_R" loc="60.9,-138.45" skew="1.1767,1.1767"/>
+      <kf duration="6" ref="flump/Thigh_R" loc="32.25,-53.35" scale="0.8463,1.0608" skew="1.5383,1.5382"/>
+      <kf duration="9" ref="flump/Thigh_R" loc="63.8,-37.5" scale="0.9072,1.0359" skew="1.7228,1.7228"/>
+      <kf duration="1" ref="flump/Thigh_R" loc="108.15,-107.55" skew="0.9986,0.9986"/>
+    </layer>
+  </movie>
+  <textureGroups>
+    <textureGroup retina="false">
+      <atlas file="iPhone/flump/atlas0.png">
+        <texture name="flump/Body" rect="0,0,271,257" offset="-134.5,-219.5" md5="2b9aeb8ccc0a011b07852832815063f9"/>
+        <texture name="flump/Gut" rect="272,0,195,141" offset="-97.5,-70.5" md5="e5343d717868170226c0ba7a3a232bf8"/>
+        <texture name="flump/shadow" rect="0,258,268,99" offset="-134,-49.5" md5="b2a07a56190f820cf9a469cc12b2544c"/>
+        <texture name="flump/Thigh_R" rect="272,142,70,119" offset="-32,-10.5" md5="73b9c494ec37129ce85428ec81996c33"/>
+        <texture name="flump/flap_R" rect="343,142,80,101" offset="-40,-50.5" md5="d814dc62d9a0ea3981743ed4f6361481"/>
+        <texture name="flump/Thigh_L" rect="424,142,62,111" offset="-25,-18.5" md5="7c862445d518656ce63dad56cadd79e7"/>
+        <texture name="flump/calf_R" rect="343,244,65,89" offset="-18.5,-28.5" md5="d0f29ea50e6f0d83250d8ce5649ccbe7"/>
+        <texture name="flump/calf_L" rect="409,254,58,85" offset="-25,-19.5" md5="82690894f735cabe0ef89572b08715a6"/>
+        <texture name="flump/flap_L" rect="269,262,48,90" offset="-24,-45" md5="96c9df3ef2420d59a73b600141a8c35d"/>
+        <texture name="flump/foot_R" rect="468,0,21,39" offset="-13.5,-25.5" md5="a1d6b187259e71befa1b087cfd29af05"/>
+        <texture name="flump/foot_L" rect="490,0,21,39" offset="-14.5,-23.5" md5="3d58f2b9a238669648fc6809e03eaac7"/>
+      </atlas>
+    </textureGroup>
+    <textureGroup retina="true">
+      <atlas file="iPhone/flump/atlas0@2x.png">
+        <texture name="flump/Body" rect="0,0,542,514" offset="-269,-439" md5="2b9aeb8ccc0a011b07852832815063f9"/>
+        <texture name="flump/Gut" rect="543,0,390,282" offset="-195,-141" md5="e5343d717868170226c0ba7a3a232bf8"/>
+        <texture name="flump/shadow" rect="0,515,536,198" offset="-268,-99" md5="b2a07a56190f820cf9a469cc12b2544c"/>
+        <texture name="flump/Thigh_R" rect="543,283,140,238" offset="-64,-21" md5="73b9c494ec37129ce85428ec81996c33"/>
+        <texture name="flump/flap_R" rect="684,283,160,202" offset="-80,-101" md5="d814dc62d9a0ea3981743ed4f6361481"/>
+        <texture name="flump/Thigh_L" rect="845,283,124,222" offset="-50,-37" md5="7c862445d518656ce63dad56cadd79e7"/>
+        <texture name="flump/calf_R" rect="684,486,130,178" offset="-37,-57" md5="d0f29ea50e6f0d83250d8ce5649ccbe7"/>
+        <texture name="flump/calf_L" rect="815,506,116,170" offset="-50,-39" md5="82690894f735cabe0ef89572b08715a6"/>
+        <texture name="flump/flap_L" rect="537,522,96,180" offset="-48,-90" md5="96c9df3ef2420d59a73b600141a8c35d"/>
+        <texture name="flump/foot_R" rect="934,0,42,78" offset="-27,-51" md5="a1d6b187259e71befa1b087cfd29af05"/>
+        <texture name="flump/foot_L" rect="977,0,42,78" offset="-29,-47" md5="3d58f2b9a238669648fc6809e03eaac7"/>
+      </atlas>
+    </textureGroup>
+  </textureGroups>
+</resources>

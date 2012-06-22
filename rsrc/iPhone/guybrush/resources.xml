@@ -1,0 +1,34 @@
+<resources md5="313802143b69af9f64210e2df4d51ef5">
+  <movie name="guybrush/guybrush" md5="5ad036306c7fcbb059a313bfd54703ff" frameRate="30">
+    <layer name="flipbook" flipbook="true">
+      <kf duration="4" ref="guybrush/guybrush_flipbook_0"/>
+      <kf duration="4" ref="guybrush/guybrush_flipbook_4"/>
+      <kf duration="4" ref="guybrush/guybrush_flipbook_8"/>
+      <kf duration="4" ref="guybrush/guybrush_flipbook_12"/>
+      <kf duration="4" ref="guybrush/guybrush_flipbook_16"/>
+      <kf duration="4" ref="guybrush/guybrush_flipbook_20"/>
+    </layer>
+  </movie>
+  <textureGroups>
+    <textureGroup retina="false">
+      <atlas file="iPhone/guybrush/atlas0.png">
+        <texture name="guybrush/guybrush_flipbook_12" rect="0,0,104,150" offset="-52,-75" md5="null"/>
+        <texture name="guybrush/guybrush_flipbook_4" rect="106,0,104,150" offset="-52,-75" md5="null"/>
+        <texture name="guybrush/guybrush_flipbook_8" rect="0,151,104,150" offset="-50,-75" md5="null"/>
+        <texture name="guybrush/guybrush_flipbook_0" rect="106,151,104,150" offset="-53,-75" md5="null"/>
+        <texture name="guybrush/guybrush_flipbook_16" rect="0,302,104,150" offset="-52,-75" md5="null"/>
+        <texture name="guybrush/guybrush_flipbook_20" rect="106,302,104,150" offset="-52,-75" md5="null"/>
+      </atlas>
+    </textureGroup>
+    <textureGroup retina="true">
+      <atlas file="iPhone/guybrush/atlas0@2x.png">
+        <texture name="guybrush/guybrush_flipbook_12" rect="0,0,208,300" offset="-104,-150" md5="null"/>
+        <texture name="guybrush/guybrush_flipbook_4" rect="210,0,208,300" offset="-104,-150" md5="null"/>
+        <texture name="guybrush/guybrush_flipbook_8" rect="0,301,208,300" offset="-100,-150" md5="null"/>
+        <texture name="guybrush/guybrush_flipbook_0" rect="210,301,208,300" offset="-106,-150" md5="null"/>
+        <texture name="guybrush/guybrush_flipbook_16" rect="0,602,208,300" offset="-104,-150" md5="null"/>
+        <texture name="guybrush/guybrush_flipbook_20" rect="210,602,208,300" offset="-104,-150" md5="null"/>
+      </atlas>
+    </textureGroup>
+  </textureGroups>
+</resources>
