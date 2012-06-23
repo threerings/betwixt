@@ -30,21 +30,22 @@
 
 - (id)initWithXml:(GDataXMLElement*)xml {
     if ((self = [super init])) {
-        NSString* filename = [BTApp requireResourcePathFor:[xml stringAttribute:@"filename"]];
-        _texture = [[SPTexture alloc] initWithContentsOfFile:filename];
+        _filename = [BTApp requireResourcePathFor:[xml stringAttribute:@"filename"]];
+        _texture = [[SPTexture alloc] initWithContentsOfFile:_filename];
         _texture.repeat = [xml boolAttribute:@"repeat" defaultVal:NO];
         _offset = [xml pointAttribute:@"offset" defaultVal:[SPPoint pointWithX:0 y:0]];
     }
     return self;
 }
 
-- (id)initFromAtlas:(SPTexture*)atlas withXml:(GDataXMLElement*)xml {
+- (id)initFromAtlas:(SPTexture*)atlas withAtlasFilename:(NSString*)filename withXml:(GDataXMLElement*)xml {
     if ((self = [super init])) {
+        _filename = filename;
         float scale = 1.0f / atlas.scale;
         
-        SPRectangle* region = [xml rectangleAttribute:@"rect"];
-        [region scaleBy:scale];
-        _texture = [[SPTexture alloc] initWithRegion:region ofTexture:atlas];
+        _region = [xml rectangleAttribute:@"rect"];
+        [_region scaleBy:scale];
+        _texture = [[SPTexture alloc] initWithRegion:_region ofTexture:atlas];
         _offset = [[xml pointAttribute:@"offset" defaultVal:[SPPoint pointWithX:0 y:0]] scaleBy:scale];
         _name = [xml stringAttribute:@"name"];
     }
@@ -65,6 +66,32 @@
     img.pivotX = -_offset.x;
     img.pivotY = -_offset.y;
     return img;
+}
+
+- (UIImage*)createUIImage {
+    if ([[_filename lowercaseString] hasSuffix:@".pvr"] || [[_filename lowercaseString] hasSuffix:@".pvr.gz"]) {
+        [NSException raise:NSGenericException format:@"PVR to UIImage conversion is unsupported"];
+    }
+    
+    UIImage* image = [UIImage imageWithContentsOfFile:_filename];
+    if (image == nil) {
+        [NSException raise:NSGenericException format:@"failed to load image %@", _filename];
+    }
+    
+    if (_region != nil) {
+        //get this for coords
+        CGImageRef imageCG = CGImageCreateWithImageInRect([image CGImage], [_region toCGRect]);
+        image = [UIImage imageWithCGImage:imageCG 
+                                    scale:[SPStage contentScaleFactor] 
+                              orientation:image.imageOrientation];
+        CGImageRelease(imageCG);
+    }
+    
+    return image;
+}
+
+- (NSData*)createBitmap {
+    return [OOOImages convertUIImageToBitmapRGBA8:[self createUIImage]];
 }
 
 @end

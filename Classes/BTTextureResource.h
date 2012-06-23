@@ -13,6 +13,9 @@
 @protected
     SPTexture* _texture;
     SPPoint* _offset;
+    
+    NSString* _filename;
+    SPRectangle* _region;
 }
 
 @property (nonatomic,readonly) SPTexture* texture;
@@ -24,5 +27,8 @@
 
 - (id)initWithXml:(GDataXMLElement*)xml;
 - (SPImage*)createImage;
+
+- (UIImage*)createUIImage;
+- (NSData*)createBitmap;
 
 @end

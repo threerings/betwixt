@@ -6,5 +6,5 @@
 @class GDataXMLElement;
 
 @interface BTTextureResource (package)
-- (id)initFromAtlas:(SPTexture*)atlas withXml:(GDataXMLElement*)xml;
+- (id)initFromAtlas:(SPTexture*)atlas withAtlasFilename:(NSString*)filename withXml:(GDataXMLElement*)xml;
 @end

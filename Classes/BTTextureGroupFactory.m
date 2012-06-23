@@ -59,14 +59,13 @@
     
     if (theGroup != nil) {
         for (GDataXMLElement* atlasXml in [theGroup elementsForName:@"atlas"]) {
-            NSString* filename = [atlasXml stringAttribute:@"file"];
-            NSString* filepath = [BTApp resourcePathFor:filename];
-            if (filepath == nil) {
+            NSString* filename = [BTApp resourcePathFor:[atlasXml stringAttribute:@"file"]];
+            if (filename == nil) {
                 @throw [GDataXMLException withElement:xml reason:@"Missing texture atlas: %@", filename];
             }
-            SPTexture* atlas = [[SPTexture alloc] initWithContentsOfFile:filepath];
+            SPTexture* atlas = [[SPTexture alloc] initWithContentsOfFile:filename];
             for (GDataXMLElement* child in [atlasXml elements]) {
-                [textures addObject:[[BTTextureResource alloc] initFromAtlas:atlas withXml:child]];
+                [textures addObject:[[BTTextureResource alloc] initFromAtlas:atlas withAtlasFilename:filename withXml:child]];
             }
         }
     }
