@@ -29,6 +29,6 @@
 - (SPImage*)createImage;
 
 - (UIImage*)createUIImage;
-- (NSData*)createBitmap;
+- (OOOBitmap*)createBitmap;
 
 @end

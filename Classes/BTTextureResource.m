@@ -92,8 +92,8 @@
     return image;
 }
 
-- (NSData*)createBitmap {
-    return [OOOImages convertUIImageToBitmapRGBA8:[self createUIImage]];
+- (OOOBitmap*)createBitmap {
+    return [[OOOBitmap alloc] initWithUIImage:[self createUIImage]];
 }
 
 @end
