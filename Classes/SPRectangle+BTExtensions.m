@@ -79,4 +79,8 @@
     return sqrtf([self distanceSqToPoint:p]);
 }
 
+- (CGRect)toCGRect {
+    return CGRectMake(mX, mY, mWidth, mHeight);
+}
+
 @end

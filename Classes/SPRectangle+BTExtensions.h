@@ -41,4 +41,6 @@
 /// the distance will be 0.
 - (float)distanceToPoint:(SPPoint*)p;
 
+- (CGRect)toCGRect;
+
 @end
