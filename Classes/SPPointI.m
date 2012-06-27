@@ -98,15 +98,9 @@
     return [[SPPointI allocWithZone:zone] initWithX:mX y:mY];
 }
 
-#ifndef DISABLE_MEMORY_POOLING
 #pragma mark SPPoolObject
 
-+ (SPPoolInfo*)poolInfo {
-    static SPPoolInfo *poolInfo = nil;
-    if (!poolInfo) poolInfo = [[SPPoolInfo alloc] init];
-    return poolInfo;
-}
-#endif
+SP_IMPLEMENT_MEMORY_POOL();
 
 @end
 
