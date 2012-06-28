@@ -47,8 +47,8 @@
 		22448E7414E5D4C1001CF5CE /* PlayMovieMode.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC4525F14D22F04008CC04D /* PlayMovieMode.m */; };
 		22448E7514E5D4D5001CF5CE /* RepeatingMode.m in Sources */ = {isa = PBXBuildFile; fileRef = CB69E37414D8CADE00E7C18D /* RepeatingMode.m */; };
 		22448E7614E5D4DD001CF5CE /* Square.m in Sources */ = {isa = PBXBuildFile; fileRef = CB72E4AA14773ED100F1EC78 /* Square.m */; };
-		2244B7B215225856001DEACA /* SPPointI.h in Headers */ = {isa = PBXBuildFile; fileRef = 2244B7B015225855001DEACA /* SPPointI.h */; };
-		2244B7B315225856001DEACA /* SPPointI.m in Sources */ = {isa = PBXBuildFile; fileRef = 2244B7B115225856001DEACA /* SPPointI.m */; };
+		2244B7B215225856001DEACA /* BTSizeI.h in Headers */ = {isa = PBXBuildFile; fileRef = 2244B7B015225855001DEACA /* BTSizeI.h */; };
+		2244B7B315225856001DEACA /* BTSizeI.m in Sources */ = {isa = PBXBuildFile; fileRef = 2244B7B115225856001DEACA /* BTSizeI.m */; };
 		22518E03154385F8006E8494 /* BTAudioControls.h in Headers */ = {isa = PBXBuildFile; fileRef = 22518E01154385F8006E8494 /* BTAudioControls.h */; };
 		22518E04154385F8006E8494 /* BTAudioControls.m in Sources */ = {isa = PBXBuildFile; fileRef = 22518E02154385F8006E8494 /* BTAudioControls.m */; };
 		22518E0715438628006E8494 /* BTAudioState.h in Headers */ = {isa = PBXBuildFile; fileRef = 22518E0515438628006E8494 /* BTAudioState.h */; };
@@ -309,8 +309,8 @@
 		22448E2814E4A7A0001CF5CE /* SPPoint+BTExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SPPoint+BTExtensions.m"; sourceTree = "<group>"; };
 		22448E2B14E4A931001CF5CE /* SPRectangle+BTExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SPRectangle+BTExtensions.h"; sourceTree = "<group>"; };
 		22448E2C14E4A933001CF5CE /* SPRectangle+BTExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SPRectangle+BTExtensions.m"; sourceTree = "<group>"; };
-		2244B7B015225855001DEACA /* SPPointI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPPointI.h; sourceTree = "<group>"; };
-		2244B7B115225856001DEACA /* SPPointI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPPointI.m; sourceTree = "<group>"; };
+		2244B7B015225855001DEACA /* BTSizeI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTSizeI.h; sourceTree = "<group>"; };
+		2244B7B115225856001DEACA /* BTSizeI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTSizeI.m; sourceTree = "<group>"; };
 		22518E01154385F8006E8494 /* BTAudioControls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTAudioControls.h; sourceTree = "<group>"; };
 		22518E02154385F8006E8494 /* BTAudioControls.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTAudioControls.m; sourceTree = "<group>"; };
 		22518E0515438628006E8494 /* BTAudioState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTAudioState.h; sourceTree = "<group>"; };
@@ -571,10 +571,10 @@
 				2221998E14D0F809009B764F /* BTLoadingMode.m */,
 				22C85EAB14DB225400F9EC07 /* BTPoints.h */,
 				22C85EAC14DB225400F9EC07 /* BTPoints.m */,
+				2244B7B015225855001DEACA /* BTSizeI.h */,
+				2244B7B115225856001DEACA /* BTSizeI.m */,
 				22EA32231563248300557886 /* BTUserSettings.h */,
 				22EA32241563248300557886 /* BTUserSettings.m */,
-				2244B7B015225855001DEACA /* SPPointI.h */,
-				2244B7B115225856001DEACA /* SPPointI.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -901,7 +901,7 @@
 				22608C6D1505C2D300CCE0A5 /* SPView+BTExtensions.h in Headers */,
 				22DB8234150AAA290091B648 /* BTDeviceType.h in Headers */,
 				2208FC72151D207800669256 /* BTVisibilityTask.h in Headers */,
-				2244B7B215225856001DEACA /* SPPointI.h in Headers */,
+				2244B7B215225856001DEACA /* BTSizeI.h in Headers */,
 				22E0A755152A311A009FDE09 /* BTEventSignal.h in Headers */,
 				22E0A75F152A3837009FDE09 /* BTEventSignal+Protected.h in Headers */,
 				220F63AD152E878B0051B383 /* BTButton.h in Headers */,
@@ -1138,7 +1138,7 @@
 				22608C6E1505C2D300CCE0A5 /* SPView+BTExtensions.m in Sources */,
 				22DB8235150AAA290091B648 /* BTDeviceType.m in Sources */,
 				2208FC73151D207800669256 /* BTVisibilityTask.m in Sources */,
-				2244B7B315225856001DEACA /* SPPointI.m in Sources */,
+				2244B7B315225856001DEACA /* BTSizeI.m in Sources */,
 				22E0A756152A311A009FDE09 /* BTEventSignal.m in Sources */,
 				22E0A763152A4404009FDE09 /* BTTouchable.m in Sources */,
 				220F63AE152E878B0051B383 /* BTButton.m in Sources */,
