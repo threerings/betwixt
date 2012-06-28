@@ -16,7 +16,7 @@
 - (id)initWithWidth:(int)width height:(int)height;
 
 /// Returns the SPPoint representation of the size
-- (SPPoint*)toSPPoint;
+- (SPPoint*)toPoint;
 
 /// Adds a size to the current size and returns the resulting size.
 - (BTSizeI*)addSize:(BTSizeI*)size;

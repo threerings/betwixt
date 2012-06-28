@@ -28,7 +28,7 @@
     return [self initWithWidth:0 height:0];
 }
 
-- (SPPoint*)toSPPoint {
+- (SPPoint*)toPoint {
     return [[SPPoint alloc] initWithX:_width y:_height];
 }
 
