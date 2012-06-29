@@ -63,7 +63,5 @@
     return [[BTSizeI allocWithZone:zone] initWithWidth:_width height:_height];
 }
 
-SP_IMPLEMENT_MEMORY_POOL();
-
 @end
 
