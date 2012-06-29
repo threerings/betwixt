@@ -1,7 +1,7 @@
 //
 // Betwixt - Copyright 2012 Three Rings Design
 
-@interface BTSizeI : SPPoolObject <NSCopying> {
+@interface BTSizeI : NSObject <NSCopying> {
 @private
     int _width;
     int _height;
