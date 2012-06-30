@@ -72,6 +72,8 @@
 		22A870111568530B00101F6D /* BTResource+Protected.h in Headers */ = {isa = PBXBuildFile; fileRef = 22A8700F1568530B00101F6D /* BTResource+Protected.h */; };
 		22A870151568675E00101F6D /* SPBitmapFont+BTExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 22A870131568675E00101F6D /* SPBitmapFont+BTExtensions.h */; };
 		22A870161568675E00101F6D /* SPBitmapFont+BTExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A870141568675E00101F6D /* SPBitmapFont+BTExtensions.m */; };
+		22A898D6159E7E0B007A5C6D /* BTClipRectTask.h in Headers */ = {isa = PBXBuildFile; fileRef = 22A898D4159E7E0B007A5C6D /* BTClipRectTask.h */; };
+		22A898D7159E7E0B007A5C6D /* BTClipRectTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A898D5159E7E0B007A5C6D /* BTClipRectTask.m */; };
 		22B785C31578512600871699 /* SPSoundChannel+BTExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 22B785C11578512600871699 /* SPSoundChannel+BTExtensions.h */; };
 		22B785C41578512600871699 /* SPSoundChannel+BTExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B785C21578512600871699 /* SPSoundChannel+BTExtensions.m */; };
 		22BAAA80158014B4000B905B /* RAConnection+BTExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 22BAAA7E158014B4000B905B /* RAConnection+BTExtensions.h */; };
@@ -338,6 +340,8 @@
 		22A8700F1568530B00101F6D /* BTResource+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BTResource+Protected.h"; sourceTree = "<group>"; };
 		22A870131568675E00101F6D /* SPBitmapFont+BTExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SPBitmapFont+BTExtensions.h"; sourceTree = "<group>"; };
 		22A870141568675E00101F6D /* SPBitmapFont+BTExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SPBitmapFont+BTExtensions.m"; sourceTree = "<group>"; };
+		22A898D4159E7E0B007A5C6D /* BTClipRectTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTClipRectTask.h; sourceTree = "<group>"; };
+		22A898D5159E7E0B007A5C6D /* BTClipRectTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTClipRectTask.m; sourceTree = "<group>"; };
 		22B785C11578512600871699 /* SPSoundChannel+BTExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SPSoundChannel+BTExtensions.h"; sourceTree = "<group>"; };
 		22B785C21578512600871699 /* SPSoundChannel+BTExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SPSoundChannel+BTExtensions.m"; sourceTree = "<group>"; };
 		22BAAA7E158014B4000B905B /* RAConnection+BTExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RAConnection+BTExtensions.h"; sourceTree = "<group>"; };
@@ -737,6 +741,8 @@
 				CB323C6B14A138190039A2F1 /* BTAlphaTask.m */,
 				CBE1F0E314A1707500B82344 /* BTBlockTask.h */,
 				CBE1F0E414A1707500B82344 /* BTBlockTask.m */,
+				22A898D4159E7E0B007A5C6D /* BTClipRectTask.h */,
+				22A898D5159E7E0B007A5C6D /* BTClipRectTask.m */,
 				229B45FE14D87E05005FC8E9 /* BTDisplayObjectTask.h */,
 				229B45FF14D87E05005FC8E9 /* BTDisplayObjectTask.m */,
 				229B45C814D787F4005FC8E9 /* BTDurationTask+Protected.h */,
@@ -930,6 +936,7 @@
 				22B785C31578512600871699 /* SPSoundChannel+BTExtensions.h in Headers */,
 				22BAAA80158014B4000B905B /* RAConnection+BTExtensions.h in Headers */,
 				223B15C115929A71007304CA /* SPDisplayObjectContainer+BTExtensions.h in Headers */,
+				22A898D6159E7E0B007A5C6D /* BTClipRectTask.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1163,6 +1170,7 @@
 				22B785C41578512600871699 /* SPSoundChannel+BTExtensions.m in Sources */,
 				22BAAA81158014B4000B905B /* RAConnection+BTExtensions.m in Sources */,
 				223B15C215929A71007304CA /* SPDisplayObjectContainer+BTExtensions.m in Sources */,
+				22A898D7159E7E0B007A5C6D /* BTClipRectTask.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
