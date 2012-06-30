@@ -19,11 +19,6 @@
 + (BTScaleTask*)withTime:(float)seconds scaleX:(float)scaleX scaleY:(float)scaleY 
       interpolator:(id<OOOInterpolator>)interp target:(SPDisplayObject*)target;
 
-- (id)initWithTime:(float)seconds scaleX:(float)scaleX scaleY:(float)scaleY;
-- (id)initWithTime:(float)seconds scaleX:(float)scaleX scaleY:(float)scaleY 
-      interpolator:(id<OOOInterpolator>)interp;
-- (id)initWithTime:(float)seconds scaleX:(float)scaleX scaleY:(float)scaleY 
-            target:(SPDisplayObject*)target;
 - (id)initWithTime:(float)seconds scaleX:(float)scaleX scaleY:(float)scaleY 
       interpolator:(id<OOOInterpolator>)interp target:(SPDisplayObject*)target;
 

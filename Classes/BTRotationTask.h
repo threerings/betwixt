@@ -15,9 +15,6 @@
 + (BTRotationTask*)withTime:(float)seconds rotation:(float)rads interpolator:(id<OOOInterpolator>)interp 
             target:(SPDisplayObject*)target;
 
-- (id)initWithTime:(float)seconds rotation:(float)rads;
-- (id)initWithTime:(float)seconds rotation:(float)rads interpolator:(id<OOOInterpolator>)interp;
-- (id)initWithTime:(float)seconds rotation:(float)rads target:(SPDisplayObject*)target;
 - (id)initWithTime:(float)seconds rotation:(float)rads interpolator:(id<OOOInterpolator>)interp 
            target:(SPDisplayObject*)target;
 @end

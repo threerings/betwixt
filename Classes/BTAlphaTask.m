@@ -7,32 +7,20 @@
 @implementation BTAlphaTask
 
 + (BTAlphaTask*)withTime:(float)seconds alpha:(float)alpha {
-    return [[BTAlphaTask alloc] initWithTime:seconds alpha:alpha];
+    return [[BTAlphaTask alloc] initWithTime:seconds alpha:alpha interpolator:OOOEasing.linear target:nil];
 }
 
 + (BTAlphaTask*)withTime:(float)seconds alpha:(float)alpha interpolator:(id<OOOInterpolator>)interp {
-    return [[BTAlphaTask alloc] initWithTime:seconds alpha:alpha interpolator:interp];
+    return [[BTAlphaTask alloc] initWithTime:seconds alpha:alpha interpolator:interp target:nil];
 }
 
 + (BTAlphaTask*)withTime:(float)seconds alpha:(float)alpha target:(SPDisplayObject*)target {
-    return [[BTAlphaTask alloc] initWithTime:seconds alpha:alpha target:target];
+    return [[BTAlphaTask alloc] initWithTime:seconds alpha:alpha interpolator:OOOEasing.linear target:target];
 }
 
 + (BTAlphaTask*)withTime:(float)seconds alpha:(float)alpha interpolator:(id<OOOInterpolator>)interp 
         target:(SPDisplayObject*)target {
     return [[BTAlphaTask alloc] initWithTime:seconds alpha:alpha interpolator:interp target:target];
-}
-
-- (id)initWithTime:(float)seconds alpha:(float)alpha {
-    return [self initWithTime:seconds alpha:alpha interpolator:OOOEasing.linear target:nil];
-}
-
-- (id)initWithTime:(float)seconds alpha:(float)alpha interpolator:(id<OOOInterpolator>)interp {
-    return [self initWithTime:seconds alpha:alpha interpolator:interp target:nil];
-}
-
-- (id)initWithTime:(float)seconds alpha:(float)alpha target:(SPDisplayObject*)target {
-    return [self initWithTime:seconds alpha:alpha interpolator:OOOEasing.linear target:target];
 }
 
 - (id)initWithTime:(float)seconds alpha:(float)alpha interpolator:(id<OOOInterpolator>)interp target:(SPDisplayObject*)target {

@@ -8,39 +8,22 @@
 @implementation BTScaleTask
 
 + (BTScaleTask*)withTime:(float)seconds scaleX:(float)scaleX scaleY:(float)scaleY {
-    return [[BTScaleTask alloc] initWithTime:seconds scaleX:scaleX scaleY:scaleY];
+    return [[BTScaleTask alloc] initWithTime:seconds scaleX:scaleX scaleY:scaleY interpolator:OOOEasing.linear target:nil];
 }
 
 + (BTScaleTask*)withTime:(float)seconds scaleX:(float)scaleX scaleY:(float)scaleY 
              interpolator:(id<OOOInterpolator>)interp {
-    return [[BTScaleTask alloc] initWithTime:seconds scaleX:scaleX scaleY:scaleY interpolator:interp];
+    return [[BTScaleTask alloc] initWithTime:seconds scaleX:scaleX scaleY:scaleY interpolator:interp target:nil];
 }
 
 + (BTScaleTask*)withTime:(float)seconds scaleX:(float)scaleX scaleY:(float)scaleY 
                    target:(SPDisplayObject*)target {
-    return [[BTScaleTask alloc] initWithTime:seconds scaleX:scaleX scaleY:scaleY target:target];
+    return [[BTScaleTask alloc] initWithTime:seconds scaleX:scaleX scaleY:scaleY interpolator:OOOEasing.linear target:target];
 }
 
 + (BTScaleTask*)withTime:(float)seconds scaleX:(float)scaleX scaleY:(float)scaleY 
              interpolator:(id<OOOInterpolator>)interp target:(SPDisplayObject*)target {
     return [[BTScaleTask alloc] initWithTime:seconds scaleX:scaleX scaleY:scaleY interpolator:interp target:target];
-}
-
-- (id)initWithTime:(float)seconds scaleX:(float)scaleX scaleY:(float)scaleY {
-    return [self initWithTime:seconds scaleX:(float)scaleX scaleY:(float)scaleY 
-                 interpolator:OOOEasing.linear target:nil];
-}
-
-- (id)initWithTime:(float)seconds scaleX:(float)scaleX scaleY:(float)scaleY 
-      interpolator:(id<OOOInterpolator>)interp {
-    return [self initWithTime:seconds scaleX:(float)scaleX scaleY:(float)scaleY interpolator:interp 
-                       target:nil];
-}
-
-- (id)initWithTime:(float)seconds scaleX:(float)scaleX scaleY:(float)scaleY 
-            target:(SPDisplayObject*)target {
-    return [self initWithTime:seconds scaleX:(float)scaleX scaleY:(float)scaleY 
-                 interpolator:OOOEasing.linear target:target];
 }
 
 - (id)initWithTime:(float)seconds scaleX:(float)scaleX scaleY:(float)scaleY 

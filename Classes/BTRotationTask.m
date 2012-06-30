@@ -8,32 +8,20 @@
 @implementation BTRotationTask
 
 + (BTRotationTask*)withTime:(float)seconds rotation:(float)rads {
-    return [[BTRotationTask alloc] initWithTime:seconds rotation:rads];
+    return [[BTRotationTask alloc] initWithTime:seconds rotation:rads interpolator:OOOEasing.linear target:nil];
 }
 
 + (BTRotationTask*)withTime:(float)seconds rotation:(float)rads interpolator:(id<OOOInterpolator>)interp {
-    return [[BTRotationTask alloc] initWithTime:seconds rotation:rads interpolator:interp];
+    return [[BTRotationTask alloc] initWithTime:seconds rotation:rads interpolator:interp target:nil];
 }
 
 + (BTRotationTask*)withTime:(float)seconds rotation:(float)rads target:(SPDisplayObject*)target {
-    return [[BTRotationTask alloc] initWithTime:seconds rotation:rads target:target];
+    return [[BTRotationTask alloc] initWithTime:seconds rotation:rads interpolator:OOOEasing.linear target:target];
 }
 
 + (BTRotationTask*)withTime:(float)seconds rotation:(float)rads interpolator:(id<OOOInterpolator>)interp 
                       target:(SPDisplayObject*)target {
     return [[BTRotationTask alloc] initWithTime:seconds rotation:rads interpolator:interp target:target];
-}
-
-- (id)initWithTime:(float)seconds rotation:(float)rads {
-    return [self initWithTime:seconds rotation:rads interpolator:OOOEasing.linear target:nil];
-}
-
-- (id)initWithTime:(float)seconds rotation:(float)rads interpolator:(id<OOOInterpolator>)interp {
-    return [self initWithTime:seconds rotation:rads interpolator:interp target:nil];
-}
-
-- (id)initWithTime:(float)seconds rotation:(float)rads target:(SPDisplayObject*)target {
-    return [self initWithTime:seconds rotation:rads interpolator:OOOEasing.linear target:target];
 }
 
 - (id)initWithTime:(float)seconds rotation:(float)rads interpolator:(id<OOOInterpolator>)interp target:(SPDisplayObject*)target {

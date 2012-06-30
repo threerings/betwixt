@@ -10,31 +10,19 @@
 @implementation BTLocationTask
 
 + (BTLocationTask*)withTime:(float)seconds toX:(float)x toY:(float)y {
-    return [[BTLocationTask alloc] initWithTime:seconds toX:x toY:y];
+    return [[BTLocationTask alloc] initWithTime:seconds toX:x toY:y interpolator:OOOEasing.linear target:nil];
 }
 
 + (BTLocationTask*)withTime:(float)seconds toX:(float)x toY:(float)y interpolator:(id<OOOInterpolator>)interp {
-    return [[BTLocationTask alloc] initWithTime:seconds toX:x toY:y interpolator:interp];
+    return [[BTLocationTask alloc] initWithTime:seconds toX:x toY:y interpolator:interp target:nil];
 }
 
 + (BTLocationTask*)withTime:(float)seconds toX:(float)x toY:(float)y target:(id<BTHasLocation>)target {
-    return [[BTLocationTask alloc] initWithTime:seconds toX:x toY:y target:target];
+    return [[BTLocationTask alloc] initWithTime:seconds toX:x toY:y interpolator:OOOEasing.linear target:target];
 }
 
 + (BTLocationTask*)withTime:(float)seconds toX:(float)x toY:(float)y interpolator:(id<OOOInterpolator>)interp target:(id<BTHasLocation>)target {
     return [[BTLocationTask alloc] initWithTime:seconds toX:x toY:y interpolator:interp target:target];
-}
-
-- (id)initWithTime:(float)seconds toX:(float)x toY:(float)y {
-    return [self initWithTime:seconds toX:x toY:y interpolator:OOOEasing.linear target:nil];
-}
-
-- (id)initWithTime:(float)seconds toX:(float)x toY:(float)y interpolator:(id<OOOInterpolator>)interp {
-    return [self initWithTime:seconds toX:x toY:y interpolator:interp target:nil];
-}
-
-- (id)initWithTime:(float)seconds toX:(float)x toY:(float)y target:(id<BTHasLocation>)target {
-    return [self initWithTime:seconds toX:x toY:y interpolator:OOOEasing.linear target:target];
 }
 
 - (id)initWithTime:(float)seconds toX:(float)x toY:(float)y interpolator:(id<OOOInterpolator>)interp 

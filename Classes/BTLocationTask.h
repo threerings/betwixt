@@ -19,8 +19,5 @@
 + (BTLocationTask*)withTime:(float)seconds toX:(float)x toY:(float)y target:(id<BTHasLocation>)target;
 + (BTLocationTask*)withTime:(float)seconds toX:(float)x toY:(float)y interpolator:(id<OOOInterpolator>)interp target:(id<BTHasLocation>)target;
 
-- (id)initWithTime:(float)seconds toX:(float)x toY:(float)y;
-- (id)initWithTime:(float)seconds toX:(float)x toY:(float)y interpolator:(id<OOOInterpolator>)interp;
-- (id)initWithTime:(float)seconds toX:(float)x toY:(float)y target:(id<BTHasLocation>)target;
 - (id)initWithTime:(float)seconds toX:(float)x toY:(float)y interpolator:(id<OOOInterpolator>)interp target:(id<BTHasLocation>)target;
 @end
