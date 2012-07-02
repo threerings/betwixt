@@ -8,7 +8,7 @@
     SPSprite* _sprite;
 }
 
-@property(nonatomic,readonly) SPSprite* sprite;
+@property (nonatomic,readonly) SPSprite* sprite;
 
 + (BTSpriteObject*)spriteObject;
 + (BTSpriteObject*)spriteObjectWithSprite:(SPSprite*)sprite;

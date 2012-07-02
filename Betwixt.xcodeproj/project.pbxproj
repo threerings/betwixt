@@ -56,6 +56,8 @@
 		22608BE11505AC4E00CCE0A5 /* MovieTestMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 22608BE01505AC4E00CCE0A5 /* MovieTestMode.m */; };
 		22608C6D1505C2D300CCE0A5 /* SPView+BTExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 22608C6B1505C2D300CCE0A5 /* SPView+BTExtensions.h */; };
 		22608C6E1505C2D300CCE0A5 /* SPView+BTExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 22608C6C1505C2D300CCE0A5 /* SPView+BTExtensions.m */; };
+		228B545915A26A580008A955 /* BTMovieObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 228B545715A26A580008A955 /* BTMovieObject.h */; };
+		228B545A15A26A580008A955 /* BTMovieObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 228B545815A26A580008A955 /* BTMovieObject.m */; };
 		2290D8291502C99D009EED3D /* SPMatrix+BTExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 2290D8271502C99D009EED3D /* SPMatrix+BTExtensions.h */; };
 		2290D82A1502C99D009EED3D /* SPMatrix+BTExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2290D8281502C99D009EED3D /* SPMatrix+BTExtensions.m */; };
 		22955A3F14EA1EB1006E5BEE /* LeakTestMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 22955A3E14EA1EB1006E5BEE /* LeakTestMode.m */; };
@@ -322,6 +324,8 @@
 		22608BE01505AC4E00CCE0A5 /* MovieTestMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MovieTestMode.m; path = Integration/MovieTestMode.m; sourceTree = "<group>"; };
 		22608C6B1505C2D300CCE0A5 /* SPView+BTExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SPView+BTExtensions.h"; sourceTree = "<group>"; };
 		22608C6C1505C2D300CCE0A5 /* SPView+BTExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SPView+BTExtensions.m"; sourceTree = "<group>"; };
+		228B545715A26A580008A955 /* BTMovieObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTMovieObject.h; sourceTree = "<group>"; };
+		228B545815A26A580008A955 /* BTMovieObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTMovieObject.m; sourceTree = "<group>"; };
 		2290D8271502C99D009EED3D /* SPMatrix+BTExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SPMatrix+BTExtensions.h"; sourceTree = "<group>"; };
 		2290D8281502C99D009EED3D /* SPMatrix+BTExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SPMatrix+BTExtensions.m"; sourceTree = "<group>"; };
 		22955A3D14EA1EB1006E5BEE /* LeakTestMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LeakTestMode.h; path = Integration/LeakTestMode.h; sourceTree = "<group>"; };
@@ -538,8 +542,6 @@
 				CB366FE4148ECC84004BE08B /* BTNodeContainer.h */,
 				CBB86EDE1476669800D0C57E /* BTObject.h */,
 				CBB86EDF1476669800D0C57E /* BTObject.m */,
-				CB24CBD614A116AB004BAA57 /* BTSpriteObject.h */,
-				CB24CBD714A116AB004BAA57 /* BTSpriteObject.m */,
 				225F16A7157996BC00CF1A47 /* BTTouchable.h */,
 				22E0A761152A4404009FDE09 /* BTTouchable.m */,
 				2217E4CC14C79B90000F976A /* BTUpdatable.h */,
@@ -679,8 +681,12 @@
 				22D46A931538DEB4005BAD6D /* BTDragger.m */,
 				220F63AB152E878B0051B383 /* BTMovieButton.h */,
 				220F63AC152E878B0051B383 /* BTMovieButton.m */,
+				228B545715A26A580008A955 /* BTMovieObject.h */,
+				228B545815A26A580008A955 /* BTMovieObject.m */,
 				22E4F41415703205002AA4D1 /* BTSimpleTextButton.h */,
 				22E4F41515703205002AA4D1 /* BTSimpleTextButton.m */,
+				CB24CBD614A116AB004BAA57 /* BTSpriteObject.h */,
+				CB24CBD714A116AB004BAA57 /* BTSpriteObject.m */,
 			);
 			name = Objects;
 			sourceTree = "<group>";
@@ -937,6 +943,7 @@
 				22BAAA80158014B4000B905B /* RAConnection+BTExtensions.h in Headers */,
 				223B15C115929A71007304CA /* SPDisplayObjectContainer+BTExtensions.h in Headers */,
 				22A898D6159E7E0B007A5C6D /* BTClipRectTask.h in Headers */,
+				228B545915A26A580008A955 /* BTMovieObject.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1171,6 +1178,7 @@
 				22BAAA81158014B4000B905B /* RAConnection+BTExtensions.m in Sources */,
 				223B15C215929A71007304CA /* SPDisplayObjectContainer+BTExtensions.m in Sources */,
 				22A898D7159E7E0B007A5C6D /* BTClipRectTask.m in Sources */,
+				228B545A15A26A580008A955 /* BTMovieObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

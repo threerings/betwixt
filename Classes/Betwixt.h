@@ -14,7 +14,6 @@
 #import "BTNode.h"
 #import "BTNodeContainer.h"
 #import "BTObject.h"
-#import "BTSpriteObject.h"
 #import "BTTouchable.h"
 #import "BTUpdatable.h"
 #import "BTViewObject.h"
@@ -55,8 +54,10 @@
 #import "BTCheckbox.h"
 #import "BTDisplayObjectButton.h"
 #import "BTDragger.h"
+#import "BTMovieObject.h"
 #import "BTMovieButton.h"
 #import "BTSimpleTextButton.h"
+#import "BTSpriteObject.h"
 
 // Tasks
 #import "BTAlphaTask.h"
