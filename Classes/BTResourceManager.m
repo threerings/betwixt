@@ -190,63 +190,64 @@
         return;
     }
     
-    @try {
-        if (![BTApp.view useNewSharedEAGLContext]) {
-            [NSException raise:NSGenericException format:@"Unable to use new EAGLContext"];
+    NSString* path = [BTApp resourcePathFor:_filename];
+    
+    NSData* data = [NSData dataWithContentsOfFile:path];
+    if (data == nil) {
+        @throw [GDataXMLException withReason:@"Unable to load file '%@'", _filename];
+    }
+    
+    NSError* err;
+    GDataXMLDocument* xmldoc = [[GDataXMLDocument alloc] initWithData:data options:0 error:&err];
+    if (xmldoc == nil) {
+        @throw [[NSException alloc] initWithName:NSGenericException
+                                          reason:[err localizedDescription]
+                                        userInfo:[err userInfo]];
+    }
+    
+    // Create the resources
+    NSMutableArray* resources = [NSMutableArray array];
+    GDataXMLElement* root = [xmldoc rootElement];
+    for (GDataXMLElement* child in [root elements]) {
+        NSString* type = [child name];
+        // find the resource factory for this type
+        id factory = [_mgr getFactory:type];
+        if (factory == nil) {
+            @throw [GDataXMLException withElement:child 
+                                           reason:@"No ResourceFactory for '%@'", type];
         }
-        NSString* path = [BTApp resourcePathFor:_filename];
         
-        NSData* data = [NSData dataWithContentsOfFile:path];
-        if (data == nil) {
-            @throw [GDataXMLException withReason:@"Unable to load file '%@'", _filename];
-        }
-        
-        NSError* err;
-        GDataXMLDocument* xmldoc = [[GDataXMLDocument alloc] initWithData:data options:0 error:&err];
-        if (xmldoc == nil) {
-            @throw [[NSException alloc] initWithName:NSGenericException
-                                              reason:[err localizedDescription]
-                                            userInfo:[err userInfo]];
-        }
-        
-        // Create the resources
-        NSMutableArray* resources = [NSMutableArray array];
-        GDataXMLElement* root = [xmldoc rootElement];
-        for (GDataXMLElement* child in [root elements]) {
-            NSString* type = [child name];
-            // find the resource factory for this type
-            id factory = [_mgr getFactory:type];
-            if (factory == nil) {
-                @throw [GDataXMLException withElement:child 
-                                               reason:@"No ResourceFactory for '%@'", type];
-            }
-            
-            if ([factory conformsToProtocol:@protocol(BTMultiResourceFactory)]) {
-                for (BTResource* rsrc in [((id<BTMultiResourceFactory>)factory) create:child]) {
-                    rsrc->_group = _filename;
-                    // add it to the batch
-                    [resources addObject:rsrc];
-                }
-            } else {
-                NSAssert([factory conformsToProtocol:@protocol(BTResourceFactory)], 
-                         @"Factory for '%@', '%@', doesn't conform to BTResourceFactory or BTMultiResourceFactory", type, factory);
-                // create the resource
-                NSString* name = [child stringAttribute:@"name"];
-                BTResource* rsrc = [factory create:child];
-                rsrc->_name = name;
+        if ([factory conformsToProtocol:@protocol(BTMultiResourceFactory)]) {
+            for (BTResource* rsrc in [((id<BTMultiResourceFactory>)factory) create:child]) {
                 rsrc->_group = _filename;
                 // add it to the batch
                 [resources addObject:rsrc];
             }
+        } else {
+            NSAssert([factory conformsToProtocol:@protocol(BTResourceFactory)], 
+                     @"Factory for '%@', '%@', doesn't conform to BTResourceFactory or BTMultiResourceFactory", type, factory);
+            // create the resource
+            NSString* name = [child stringAttribute:@"name"];
+            BTResource* rsrc = [factory create:child];
+            rsrc->_name = name;
+            rsrc->_group = _filename;
+            // add it to the batch
+            [resources addObject:rsrc];
         }
-        _resources = resources;
-    } @catch (NSException* err) {
-        _err = err;
     }
+    _resources = resources;
 }
 
 - (void)loadInBackground {
-    [self loadNow];
+    @try {
+        if (![BTApp.view useNewSharedEAGLContext]) {
+            [NSException raise:NSGenericException format:@"Unable to use new EAGLContext"];
+        }
+        [self loadNow];
+    } @catch (NSException* err) {
+        _err = err;
+    }
+    
     [self performSelectorOnMainThread:@selector(complete) withObject:nil waitUntilDone:NO];
 }
 
@@ -254,7 +255,11 @@
     self.onComplete = ^{};
     self.onError = ^(NSException* err) { [err raise]; };
     
-    [self loadNow];
+    @try {
+        [self loadNow];
+    } @catch (NSException* err) {
+        _err = err;
+    }
     [self complete];
 }
 
