@@ -11,6 +11,7 @@
 @interface BTApp : NSObject <UIApplicationDelegate> {
 @protected
     UIWindow* _window;
+    UIImageView* _splashScreenView;
     BTViewController* _viewController;
     SPView* _view;
     SPPoint* _viewSize;

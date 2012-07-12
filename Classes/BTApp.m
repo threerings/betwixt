@@ -99,6 +99,43 @@ static BTApp* gInstance = nil;
     return self;
 }
 
+static UIImage* LoadPng (NSString* name) {
+    return [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:name
+                                                                            ofType:@"png" 
+                                                                       inDirectory:nil]];
+}
+
+static NSString* const DEFAULT_IMAGE_PATHS[] = {
+	@"",                            // UIDeviceOrientationUnknown
+    @"Default-Portrait",            // UIDeviceOrientationPortrait
+    @"Default-PortraitUpsideDown",  // UIDeviceOrientationPortraitUpsideDown
+    @"Default-LandscapeLeft",       // UIDeviceOrientationLandscapeLeft
+    @"Default-LandscapeRight",      // UIDeviceOrientationLandscapeRight
+    @"",                            // UIDeviceOrientationFaceUp
+    @""                             // UIDeviceOrientationFaceDown
+};
+
+static NSString* const FALLBACK_IMAGE_PATHS[] = {
+	@"",                            // UIDeviceOrientationUnknown
+    @"Default-Portrait",            // UIDeviceOrientationPortrait
+    @"Default-Portrait",            // UIDeviceOrientationPortraitUpsideDown
+    @"Default-Landscape",           // UIDeviceOrientationLandscapeLeft
+    @"Default-Landscape",           // UIDeviceOrientationLandscapeRight
+    @"",                            // UIDeviceOrientationFaceUp
+    @""                             // UIDeviceOrientationFaceDown
+};
+
+- (UIImage*)loadSplashImage:(UIInterfaceOrientation)orientation {
+    UIImage* image = LoadPng(DEFAULT_IMAGE_PATHS[orientation]);
+    if (image == nil) {
+        image = LoadPng(FALLBACK_IMAGE_PATHS[orientation]);
+    }
+    if (image == nil) {
+        image = LoadPng(@"Default");
+    }
+    return image;
+}
+
 - (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions {
     
     // Window
@@ -162,6 +199,15 @@ static BTApp* gInstance = nil;
     [self run:[self createModeStack]];
     
     [_window makeKeyAndVisible];
+    
+    // Show our splash image
+    UIImage* splashImage = [self loadSplashImage:_viewController.interfaceOrientation];
+    if (splashImage != nil) {
+        _splashScreenView = [[UIImageView alloc] initWithImage:splashImage];
+        [_window addSubview:_splashScreenView];
+        [_window bringSubviewToFront:_splashScreenView];
+    }
+    
     return YES;
 }
 
@@ -187,6 +233,11 @@ static BTApp* gInstance = nil;
 }
 
 - (void)update:(float)dt {
+    if (_splashScreenView != nil) {
+        [_splashScreenView removeFromSuperview];
+        _splashScreenView = nil;
+    }
+    
     _framerate = 1.0f / dt;
     [_audio update:dt];
     for (BTModeStack* stack in _modeStacks) {

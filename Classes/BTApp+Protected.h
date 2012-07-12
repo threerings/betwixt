@@ -9,7 +9,10 @@
 
 - (void)update:(float)dt;
 - (void)processTouches:(NSSet*)touches;
+
+- (UIImage*)loadSplashImage:(UIInterfaceOrientation)orientation;
 - (BOOL)supportsUIInterfaceOrientation:(UIInterfaceOrientation)orientation;
+
 - (NSString*)resourcePathPrefix;
 
 @end
