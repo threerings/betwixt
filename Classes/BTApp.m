@@ -106,7 +106,7 @@ static UIImage* LoadPng (NSString* name) {
 }
 
 static NSString* const DEFAULT_IMAGE_PATHS[] = {
-	@"",                            // UIDeviceOrientationUnknown
+    @"",                            // UIDeviceOrientationUnknown
     @"Default-Portrait",            // UIDeviceOrientationPortrait
     @"Default-PortraitUpsideDown",  // UIDeviceOrientationPortraitUpsideDown
     @"Default-LandscapeLeft",       // UIDeviceOrientationLandscapeLeft
@@ -116,7 +116,7 @@ static NSString* const DEFAULT_IMAGE_PATHS[] = {
 };
 
 static NSString* const FALLBACK_IMAGE_PATHS[] = {
-	@"",                            // UIDeviceOrientationUnknown
+    @"",                            // UIDeviceOrientationUnknown
     @"Default-Portrait",            // UIDeviceOrientationPortrait
     @"Default-Portrait",            // UIDeviceOrientationPortraitUpsideDown
     @"Default-Landscape",           // UIDeviceOrientationLandscapeLeft
