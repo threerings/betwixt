@@ -24,11 +24,11 @@ static const float MAX_TAP_MOVEMENT = 10;
 }
 
 - (float)elapsedTime {
-    return (self.dragging ? (float) (BTApp.timeNow - _startTime) : 0);
+    return (float) (BTApp.timeNow - _startTime);
 }
 
 - (BOOL)isTap {
-    if (self.dragging && self.elapsedTime <= MAX_TAP_TIME) {
+    if (self.elapsedTime <= MAX_TAP_TIME && _current != nil && _start != nil) {
         return [SPPoint distanceSqFromPoint:_current toPoint:_start] <= 
             (MAX_TAP_MOVEMENT * MAX_TAP_MOVEMENT);
     }
