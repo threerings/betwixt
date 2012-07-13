@@ -156,6 +156,11 @@
 }
 
 - (void)removedInternal {
+    // nil out parent immediately - so that we're not considered "live"
+    // while children are being removed - rather than waiting for
+    // BTNode.removedInternal to do it at the end of the function
+    _parent = nil;
+
     // Prevent our _children array from being manipulated while
     // we're iterating it
     NSMutableSet* kids = _children;
