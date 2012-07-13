@@ -2,9 +2,14 @@
 // Betwixt - Copyright 2012 Three Rings Design
 
 #import "BTDragger.h"
+#import "BTApp.h"
 #import "BTNode+Protected.h"
 #import "BTViewObject.h"
 #import "BTMode.h"
+#import "SPPoint+BTExtensions.h"
+
+static const float MAX_TAP_TIME = 0.5f;
+static const float MAX_TAP_MOVEMENT = 10;
 
 @implementation BTDragger
 
@@ -18,10 +23,24 @@
     return _dragReg != nil;
 }
 
+- (float)elapsedTime {
+    return (self.dragging ? (float) (BTApp.timeNow - _startTime) : 0);
+}
+
+- (BOOL)isTap {
+    if (self.dragging && self.elapsedTime <= MAX_TAP_TIME) {
+        return [SPPoint distanceSqFromPoint:_current toPoint:_start] <= 
+            (MAX_TAP_MOVEMENT * MAX_TAP_MOVEMENT);
+    }
+    return NO;
+}
+
 - (void)startDragWithTouch:(SPTouch*)touch {
     _dragReg = [self.mode.input registerListener:self];
     _start = [SPPoint pointWithX:touch.globalX y:touch.globalY];
+    _current = [_start copy];
     _touch = touch;
+    _startTime = _touch.timestamp;
     [self onDragStart:_start];
 }
 
