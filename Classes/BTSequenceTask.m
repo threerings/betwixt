@@ -25,9 +25,12 @@
     }];
 
     for (BTNode* node in _nodes) {
-        [node.removed connectUnit:^{
-            if (++_position >= [_nodes count]) [self removeSelf];
-            else [self.parent addNode:[_nodes objectAtIndex:_position]];
+        [self.conns onReactor:node.removed connectUnit:^{
+            if (++_position >= [_nodes count]) {
+                [self removeSelf];
+            } else if (self.parent.isLive) {
+                [self.parent addNode:[_nodes objectAtIndex:_position]];
+            }
         }];
     }
 
