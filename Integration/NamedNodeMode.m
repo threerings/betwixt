@@ -19,12 +19,12 @@
     [sprite.sprite addChild:[SPQuad quadWithWidth:100 height:100 color:0x0000ff]];
     [sprite addNode:[[BTLocationTask alloc] initWithTime:1 toX:300 toY:200] withName:@"mover"];
     [sprite addNode:[BTSequenceTask withNodes:
-        [BTWaitTask waitFor:.25f],
+        [BTWaitTask withTime:.25f],
         [BTBlockTask once:^{
             [[sprite nodeForName:@"mover"] removeSelf];
         
         }],
-        [BTWaitTask waitFor:.25f],
+        [BTWaitTask withTime:.25f],
         [BTBlockTask once:^{
             NSAssert([sprite nodeForName:@"mover"] == nil, nil);
             NSAssert(sprite.sprite.x > 0, nil);

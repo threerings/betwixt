@@ -5,7 +5,7 @@
 
 @implementation BTWaitTask
 
-+ (BTWaitTask*)waitFor:(float)seconds {
++ (BTWaitTask*)withTime:(float)seconds {
     return [[BTWaitTask alloc] initWithTime:seconds];
 }
 
