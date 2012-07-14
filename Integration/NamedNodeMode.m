@@ -17,7 +17,7 @@
     BTSpriteObject *sprite = [BTSpriteObject new];
     [self addNode:sprite displayOn:self.sprite];
     [sprite.sprite addChild:[SPQuad quadWithWidth:100 height:100 color:0x0000ff]];
-    [sprite addNode:[[BTLocationTask alloc] initWithTime:1 toX:300 toY:200] withName:@"mover"];
+    [sprite addNode:[BTLocationTask withTime:1 toX:300 toY:200] withName:@"mover"];
     [sprite addNode:[BTSequenceTask withNodes:
         [BTWaitTask withTime:.25f],
         [BTBlockTask once:^{

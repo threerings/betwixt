@@ -22,12 +22,12 @@
         if (reps++ == 2) [self.modeStack popMode];
         return [BTSequenceTask withNodes:
                     [BTParallelTask withNodes:
-                        [[BTLocationTask alloc] initWithTime:.25f toX:100 toY:100],
-                        [[BTRotationTask alloc] initWithTime:.25f rotation:1.0f],
+                        [BTLocationTask withTime:.25f toX:100 toY:100],
+                        [BTRotationTask withTime:.25f rotation:1.0f],
                         nil],
                     [BTParallelTask withNodes:
-                        [[BTLocationTask alloc] initWithTime:.25f toX:200 toY:200],
-                        [[BTRotationTask alloc] initWithTime:.25f rotation:0],
+                        [BTLocationTask withTime:.25f toX:200 toY:200],
+                        [BTRotationTask withTime:.25f rotation:0],
                         nil],
                 nil];
 
