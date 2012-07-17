@@ -46,8 +46,8 @@
 #import "BTTextureResource.h"
 
 // Movie
-#import "BTMovieResource.h"
 #import "BTMovie.h"
+#import "BTMovieResource.h"
 
 // Objects
 #import "BTButton.h"
