@@ -65,6 +65,7 @@
 
 - (void)cleanup {
     [self cancelCapture];
+    [super cleanup];
 }
 
 - (BOOL)onTouchStart:(SPTouch*)touch {
