@@ -23,10 +23,9 @@
 
 @interface BTPendingChildNode : NSObject {
 @public
-    BTNode *node;
-    NSString *name;
+    BTNode* node;
+    NSString* name;
     BOOL replaceExisting;
-    SPDisplayObjectContainer *displayParent;
 }
 @end
 @implementation BTPendingChildNode @end
@@ -56,12 +55,22 @@
     [self.namedObjects setObject:node forKey:name];
 }
 
-- (void)addNodeInternal:(BTNode*)node withName:(NSString*)name 
-        replaceExisting:(BOOL)replaceExisting parent:(SPDisplayObjectContainer*)parent {
+- (void)addNodeInternal:(BTNode*)node 
+               withName:(NSString*)name 
+        replaceExisting:(BOOL)replaceExisting 
+          displayParent:(SPDisplayObjectContainer*)displayParent {
     
     NSAssert(!_wasRemoved, @"Adding object to removed object");
     NSAssert(!node.isLive, @"Cannot add an already-added object");
     NSAssert(!node->_wasRemoved, @"Cannot re-add a removed object");
+    
+    // Was a displayParent specified?
+    // We attach the node's displayObject to its displayParent immediately,
+    // even if we're not yet live, to ensure that the displayList is ordered
+    // as the client code intends.
+    if (displayParent != nil) {
+        [displayParent addChild:((BTViewObject*)node).display];
+    }
     
     // If we're not yet attached to the mode, we'll attach this node when we are
     if (!self.isLive) {
@@ -69,7 +78,6 @@
         pendingChild->node = node;
         pendingChild->name = name;
         pendingChild->replaceExisting = replaceExisting;
-        pendingChild->displayParent = parent;
         [self.pendingChildren addObject:pendingChild];
         return;
     }
@@ -83,11 +91,6 @@
             [[self nodeForName:name] removeSelf];
         }
         [self associateNode:node withName:name];
-    }
-    
-    // Does the object have a display parent?
-    if (parent != nil) {
-        [parent addChild:((BTViewObject *)node).display];
     }
     
     // Register the node with the mode
@@ -104,7 +107,7 @@
             [self addNodeInternal:pending->node 
                          withName:pending->name 
                   replaceExisting:pending->replaceExisting 
-                           parent:pending->displayParent];
+                           displayParent:nil];
         }
         _pendingChildren = nil;
     }
@@ -112,19 +115,19 @@
 }
 
 - (void)addNode:(BTNode*)node {
-    [self addNodeInternal:node withName:nil replaceExisting:NO parent:nil];
+    [self addNodeInternal:node withName:nil replaceExisting:NO displayParent:nil];
 }
 
 - (void)addNode:(BTNode*)node withName:(NSString*)name {
-    [self addNodeInternal:node withName:name replaceExisting:NO parent:nil];
+    [self addNodeInternal:node withName:name replaceExisting:NO displayParent:nil];
 }
 
 - (void)addNode:(BTNode*)node withName:(NSString*)name replaceExisting:(BOOL)replaceExisting {
-    [self addNodeInternal:node withName:name replaceExisting:replaceExisting parent:nil];
+    [self addNodeInternal:node withName:name replaceExisting:replaceExisting displayParent:nil];
 }
 
 - (void)addNode:(BTViewObject*)node displayOn:(SPDisplayObjectContainer*)displayParent {
-    [self addNodeInternal:node withName:nil replaceExisting:NO parent:displayParent];
+    [self addNodeInternal:node withName:nil replaceExisting:NO displayParent:displayParent];
 }
 
 - (void)removeNode:(BTNode*)node {
