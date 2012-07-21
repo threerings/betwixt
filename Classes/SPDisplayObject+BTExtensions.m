@@ -77,14 +77,14 @@ static BOOL traverseInternal (SPDisplayObject* disp, BTTraverseCallback filter,
 }
 
 - (void)setTreeColor:(uint)color {
-    SEL sel = @selector(setColor:);
+    const SEL sel = @selector(setColor:);
     NSMethodSignature* signature = [[SPQuad class] instanceMethodSignatureForSelector:sel];
     NSInvocation* invocation = [NSInvocation invocationWithMethodSignature:signature];
     invocation.selector = sel;
     [invocation setArgument:&color atIndex:2];
     
     [self traverse:^BOOL(SPDisplayObject* disp) {
-        if ([disp respondsToSelector:@selector(setColor:)]) {
+        if ([disp respondsToSelector:sel]) {
             [invocation invokeWithTarget:disp];
         }
         return YES;
