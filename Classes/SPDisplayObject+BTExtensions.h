@@ -22,6 +22,9 @@ typedef BOOL (^BTTraverseCallback)(SPDisplayObject* disp);
 
 + (SPPoint*)transformPoint:(SPPoint*)pt from:(SPDisplayObject*)from to:(SPDisplayObject*)to;
 
+/// Sets the color of the displayObject and all its descendents
+- (void)setTreeColor:(uint)color;
+
 /// Traverses the display list from frontmost to rearmost SPDisplayObject.
 /// 'callback' is called for each display object (including this one).
 /// if callback returns NO, the traversal is stopped. 
