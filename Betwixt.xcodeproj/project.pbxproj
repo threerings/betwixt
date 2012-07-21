@@ -82,8 +82,6 @@
 		22B785C41578512600871699 /* SPSoundChannel+BTExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B785C21578512600871699 /* SPSoundChannel+BTExtensions.m */; };
 		22BAAA80158014B4000B905B /* RAConnection+BTExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 22BAAA7E158014B4000B905B /* RAConnection+BTExtensions.h */; };
 		22BAAA81158014B4000B905B /* RAConnection+BTExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BAAA7F158014B4000B905B /* RAConnection+BTExtensions.m */; };
-		22C85EAD14DB225400F9EC07 /* BTPoints.h in Headers */ = {isa = PBXBuildFile; fileRef = 22C85EAB14DB225400F9EC07 /* BTPoints.h */; };
-		22C85EAE14DB225400F9EC07 /* BTPoints.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C85EAC14DB225400F9EC07 /* BTPoints.m */; };
 		22C85EB614DB344100F9EC07 /* BTNode+Protected.h in Headers */ = {isa = PBXBuildFile; fileRef = 22C85EB514DB344100F9EC07 /* BTNode+Protected.h */; };
 		22C85F0A14DB784B00F9EC07 /* BTViewObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 22C85F0814DB784900F9EC07 /* BTViewObject.h */; };
 		22C85F0B14DB784B00F9EC07 /* BTViewObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C85F0914DB784A00F9EC07 /* BTViewObject.m */; };
@@ -354,8 +352,6 @@
 		22B785C21578512600871699 /* SPSoundChannel+BTExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SPSoundChannel+BTExtensions.m"; sourceTree = "<group>"; };
 		22BAAA7E158014B4000B905B /* RAConnection+BTExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RAConnection+BTExtensions.h"; sourceTree = "<group>"; };
 		22BAAA7F158014B4000B905B /* RAConnection+BTExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RAConnection+BTExtensions.m"; sourceTree = "<group>"; };
-		22C85EAB14DB225400F9EC07 /* BTPoints.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTPoints.h; sourceTree = "<group>"; };
-		22C85EAC14DB225400F9EC07 /* BTPoints.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTPoints.m; sourceTree = "<group>"; };
 		22C85EB514DB344100F9EC07 /* BTNode+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BTNode+Protected.h"; sourceTree = "<group>"; };
 		22C85F0814DB784900F9EC07 /* BTViewObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTViewObject.h; sourceTree = "<group>"; };
 		22C85F0914DB784A00F9EC07 /* BTViewObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTViewObject.m; sourceTree = "<group>"; };
@@ -579,8 +575,6 @@
 				22E0A754152A311A009FDE09 /* BTEventSignal.m */,
 				2221998D14D0F809009B764F /* BTLoadingMode.h */,
 				2221998E14D0F809009B764F /* BTLoadingMode.m */,
-				22C85EAB14DB225400F9EC07 /* BTPoints.h */,
-				22C85EAC14DB225400F9EC07 /* BTPoints.m */,
 				2244B7B015225855001DEACA /* BTSizeI.h */,
 				2244B7B115225856001DEACA /* BTSizeI.m */,
 				22EA32231563248300557886 /* BTUserSettings.h */,
@@ -909,7 +903,6 @@
 				229B463314D8C439005FC8E9 /* BTHasLocation.h in Headers */,
 				229B463614D8C525005FC8E9 /* SPDisplayObject+BTExtensions.h in Headers */,
 				CB69E37914D8D07E00E7C18D /* BTParallelTask.h in Headers */,
-				22C85EAD14DB225400F9EC07 /* BTPoints.h in Headers */,
 				22C85EB614DB344100F9EC07 /* BTNode+Protected.h in Headers */,
 				22C85F0A14DB784B00F9EC07 /* BTViewObject.h in Headers */,
 				22DBA63814DCAF6200F0F7C8 /* BTApp+Protected.h in Headers */,
@@ -1156,7 +1149,6 @@
 				CB69E37214D8C66D00E7C18D /* BTRepeatingTask.m in Sources */,
 				229B463714D8C525005FC8E9 /* SPDisplayObject+BTExtensions.m in Sources */,
 				CB69E37A14D8D07E00E7C18D /* BTParallelTask.m in Sources */,
-				22C85EAE14DB225400F9EC07 /* BTPoints.m in Sources */,
 				22C85F0B14DB784B00F9EC07 /* BTViewObject.m in Sources */,
 				22448DFA14E09B20001CF5CE /* BTInput.m in Sources */,
 				22448E0F14E3356A001CF5CE /* BTScaleTask.m in Sources */,
