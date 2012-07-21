@@ -81,5 +81,6 @@
 // Utils
 #import "BTEventSignal.h"
 #import "BTLoadingMode.h"
+#import "BTPointI.h"
 #import "BTSizeI.h"
 #import "BTUserSettings.h"

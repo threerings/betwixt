@@ -7,8 +7,8 @@
     int _height;
 }
 
-@property (nonatomic, assign) int width;
-@property (nonatomic, assign) int height;
+@property (nonatomic,assign) int width;
+@property (nonatomic,assign) int height;
 
 + (BTSizeI*)sizeWithWidth:(int)width height:(int)height;
 + (BTSizeI*)size;
