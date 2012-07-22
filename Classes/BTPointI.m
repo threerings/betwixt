@@ -43,7 +43,7 @@
 - (BOOL)isEqual:(id)other {
     if (other == self) {
         return YES;
-    } else if (!other || ![other isKindOfClass:[self class]]) {
+    } else if (![other isKindOfClass:[self class]]) {
         return NO;
     } else {
         BTPointI* o = (BTPointI*)other;
