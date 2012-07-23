@@ -16,18 +16,17 @@
 @interface LoadTask : NSObject {
 @public
     __weak BTResourceManager* _mgr;
-    NSString* _filename;
-    NSArray* _resources;
+    NSArray* _filenames;
+    NSMutableDictionary* _resources; // <NSString*, NSArray*>
     
     NSException* _err;
 }
 
-- (id)initWithManager:(BTResourceManager*)mgr filename:(NSString*)filename;
+- (id)initWithManager:(BTResourceManager*)mgr filenames:(NSArray*)filenames;
 - (void)load;
 - (void)loadAsync:(OOOUnitBlock)onComplete onError:(OOOErrorBlock)onError;
 
-@property (readonly,strong) NSString* filename;
-@property (readonly,strong) NSArray* resources;
+@property (readonly,strong) NSDictionary* resources;
 @property (readonly,strong) NSException* err;
 @property (copy) OOOUnitBlock onComplete;
 @property (copy) OOOErrorBlock onError;
@@ -50,55 +49,80 @@
     return [_loadedFiles containsObject:filename] || [_loadingFiles containsObject:filename];
 }
 
-- (LoadTask*)createLoadTask:(NSString*)filename {
-    NSAssert(![self isResourceFileLoaded:filename],
-             @"Resource file '%@' already loaded (or is loading)", filename);
-    
-    [_loadingFiles addObject:filename];
-    return [[LoadTask alloc] initWithManager:self filename:filename];
+- (LoadTask*)createLoadTask:(NSArray*)filenames {
+    for (NSString* filename in filenames) {
+        if ([self isResourceFileLoaded:filename]) {
+            [NSException raise:NSGenericException 
+                        format:@"Resource file '%@' already loaded (or is loading)", filename];
+        }
+    }
+    [_loadingFiles addObjectsFromArray:filenames];
+    return [[LoadTask alloc] initWithManager:self filenames:filenames];
+}
+
+- (void)loadResourceFiles:(NSArray*)filenames onComplete:(OOOUnitBlock)onComplete 
+                  onError:(OOOErrorBlock)onError {
+    LoadTask* task = [self createLoadTask:filenames];
+    [task loadAsync:onComplete onError:onError];
 }
 
 - (void)loadResourceFile:(NSString*)filename onComplete:(OOOUnitBlock)onComplete
                  onError:(OOOErrorBlock)onError {
-    LoadTask* task = [self createLoadTask:filename];
-    [task loadAsync:onComplete onError:onError];
+    [self loadResourceFiles:[NSArray arrayWithObject:filename] onComplete:onComplete 
+                    onError:onError];
 }
 
-- (void)loadResourceFile:(NSString*)filename {
-    LoadTask* task = [self createLoadTask:filename];
+- (void)loadResourceFiles:(NSArray*)filenames {
+    LoadTask* task = [self createLoadTask:filenames];
     [task load];
 }
 
-- (void)loadTaskCompleted:(LoadTask*)task {
-    NSAssert([_loadingFiles containsObject:task.filename], @"");
-    [_loadingFiles removeObject:task.filename];
-    
-    if (task.canceled) {
-        for (BTResource* rsrc in task.resources) {
-            [rsrc unload];
-        }
-        
-    } else {
-        NSException* loadErr = task.err;
+- (void)loadResourceFile:(NSString*)filename {
+    [self loadResourceFiles:[NSArray arrayWithObject:filename]];
+}
 
-        if (loadErr == nil) {
+- (void)loadTaskCompleted:(LoadTask*)task {
+    NSException* loadErr = task.err;
+    
+    // add all resources
+    for (NSString* filename in task.resources.keyEnumerator) {
+        NSAssert([_loadingFiles containsObject:filename], @"");
+        [_loadingFiles removeObject:filename];
+        
+        NSArray* resources = [task.resources objectForKey:filename];
+        if (task.canceled) {
+            for (BTResource* rsrc in resources) {
+                [rsrc unload];
+            }
+            
+        } else if (loadErr == nil) {
             @try {
-                for (BTResource* rsrc in task.resources) {
-                    NSAssert(![self isResourceLoaded:rsrc.name],
-                             @"A resource with that name already exists: '%@'", rsrc.name);
-                    [_resources setValue:rsrc forKey:rsrc.name];
+                for (BTResource* rsrc in resources) {
+                    if ([self isResourceLoaded:rsrc.name]) {
+                        [NSException raise:NSGenericException 
+                                    format:@"A resource with that name already exists: '%@'", rsrc.name];
+                    } else {
+                        [_resources setValue:rsrc forKey:rsrc.name];
+                    }
                 }
             } @catch (NSException* err) {
-                [self unloadResourceFile:task.filename];
                 loadErr = err;
             }
         }
-
-        if (loadErr) task.onError(loadErr);
-        else {
-            [_loadedFiles addObject:task.filename];
-            task.onComplete();
+    }
+    
+    for (NSString* filename in task.resources.keyEnumerator) {
+        if (loadErr == nil && !task.canceled) {
+            [_loadedFiles addObject:filename];
+        } else if (loadErr != nil) {
+            [self unloadResourceFile:filename];
         }
+    }
+    
+    if (loadErr != nil) {
+        task.onError(loadErr);
+    } else {
+        task.onComplete();
     }
 }
 
@@ -168,15 +192,15 @@
 
 @implementation LoadTask
 
-@synthesize filename = _filename;
 @synthesize err = _err;
 @synthesize resources = _resources;
 @synthesize onComplete, onError, canceled;
 
-- (id)initWithManager:(BTResourceManager*)mgr filename:(NSString*)filename {
+- (id)initWithManager:(BTResourceManager*)mgr filenames:(NSArray*)filenames {
     if ((self = [super init])) {
         _mgr = mgr;
-        _filename = filename;
+        _filenames = filenames;
+        _resources = [[NSMutableDictionary alloc] initWithCapacity:_filenames.count];
     }
     return self;
 }
@@ -190,52 +214,55 @@
         return;
     }
     
-    NSString* path = [BTApp resourcePathFor:_filename];
-    
-    NSData* data = [NSData dataWithContentsOfFile:path];
-    if (data == nil) {
-        @throw [GDataXMLException withReason:@"Unable to load file '%@'", _filename];
-    }
-    
-    NSError* err;
-    GDataXMLDocument* xmldoc = [[GDataXMLDocument alloc] initWithData:data options:0 error:&err];
-    if (xmldoc == nil) {
-        @throw [[NSException alloc] initWithName:NSGenericException
-                                          reason:[err localizedDescription]
-                                        userInfo:[err userInfo]];
-    }
-    
-    // Create the resources
-    NSMutableArray* resources = [NSMutableArray array];
-    GDataXMLElement* root = [xmldoc rootElement];
-    for (GDataXMLElement* child in [root elements]) {
-        NSString* type = [child name];
-        // find the resource factory for this type
-        id factory = [_mgr getFactory:type];
-        if (factory == nil) {
-            @throw [GDataXMLException withElement:child 
-                                           reason:@"No ResourceFactory for '%@'", type];
+    for (NSString* filename in _filenames) {
+        NSString* path = [BTApp resourcePathFor:filename];
+        
+        NSData* data = [NSData dataWithContentsOfFile:path];
+        if (data == nil) {
+            @throw [GDataXMLException withReason:@"Unable to load file '%@'", filename];
         }
         
-        if ([factory conformsToProtocol:@protocol(BTMultiResourceFactory)]) {
-            for (BTResource* rsrc in [((id<BTMultiResourceFactory>)factory) create:child]) {
-                rsrc->_group = _filename;
+        NSError* err;
+        GDataXMLDocument* xmldoc = [[GDataXMLDocument alloc] initWithData:data options:0 error:&err];
+        if (xmldoc == nil) {
+            @throw [[NSException alloc] initWithName:NSGenericException
+                                              reason:[err localizedDescription]
+                                            userInfo:[err userInfo]];
+        }
+        
+        // Create the resources
+        NSMutableArray* resources = [NSMutableArray array];
+        GDataXMLElement* root = [xmldoc rootElement];
+        for (GDataXMLElement* child in [root elements]) {
+            NSString* type = [child name];
+            // find the resource factory for this type
+            id factory = [_mgr getFactory:type];
+            if (factory == nil) {
+                @throw [GDataXMLException withElement:child 
+                                               reason:@"No ResourceFactory for '%@'", type];
+            }
+            
+            if ([factory conformsToProtocol:@protocol(BTMultiResourceFactory)]) {
+                for (BTResource* rsrc in [((id<BTMultiResourceFactory>)factory) create:child]) {
+                    rsrc->_group = filename;
+                    // add it to the batch
+                    [resources addObject:rsrc];
+                }
+            } else {
+                NSAssert([factory conformsToProtocol:@protocol(BTResourceFactory)], 
+                         @"Factory for '%@', '%@', doesn't conform to BTResourceFactory or BTMultiResourceFactory", type, factory);
+                // create the resource
+                NSString* name = [child stringAttribute:@"name"];
+                BTResource* rsrc = [factory create:child];
+                rsrc->_name = name;
+                rsrc->_group = filename;
                 // add it to the batch
                 [resources addObject:rsrc];
             }
-        } else {
-            NSAssert([factory conformsToProtocol:@protocol(BTResourceFactory)], 
-                     @"Factory for '%@', '%@', doesn't conform to BTResourceFactory or BTMultiResourceFactory", type, factory);
-            // create the resource
-            NSString* name = [child stringAttribute:@"name"];
-            BTResource* rsrc = [factory create:child];
-            rsrc->_name = name;
-            rsrc->_group = _filename;
-            // add it to the batch
-            [resources addObject:rsrc];
         }
+        
+        [_resources setObject:resources forKey:filename];
     }
-    _resources = resources;
 }
 
 - (void)loadInBackground {

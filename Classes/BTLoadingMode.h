@@ -9,7 +9,6 @@
 @protected
     RAUnitSignal* _loadComplete;
     NSMutableArray* _filenames;
-    int _filenameIdx;
 }
 
 @property (nonatomic,readonly) RAUnitSignal* loadComplete;

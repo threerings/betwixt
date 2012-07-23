@@ -8,7 +8,8 @@
 #import "BTResourceManager.h"
 
 @interface BTLoadingMode ()
-- (void)loadNextFile;
+- (void)loadNow;
+- (void)onError:(NSException*)err;
 @end
 
 @implementation BTLoadingMode
@@ -19,16 +20,11 @@
     if ((self = [super init])) {
         _loadComplete = [[RAUnitSignal alloc] init];
         _filenames = [NSMutableArray array];
-        _filenameIdx = -1;
         
         [_conns onReactor:self.entered connectUnit:^{
-            if (_filenameIdx < 0) {
-                // Start the load
-                [self loadNextFile];
-            }
+            [self loadNow];
         }];
     }
-    
     return self;
 }
 
@@ -40,23 +36,17 @@
     [_filenames addObjectsFromArray:filenames];
 }
 
-- (void)onError:(NSException*)err {
-    NSLog(@"LoadingMode error: %@", err);
-}
-
-- (void)loadNextFile {
-    if (++_filenameIdx >= _filenames.count) {
-        [_loadComplete emit];
-        return;
-    }
-    NSString* filename = [_filenames objectAtIndex:_filenameIdx];
-
+- (void)loadNow {
     __weak BTLoadingMode* this = self;
-    [BTApp.resourceManager loadResourceFile:filename onComplete:^{
-        [this loadNextFile];
+    [BTApp.resourceManager loadResourceFiles:_filenames onComplete:^{
+        [this->_loadComplete emit];
     } onError:^(NSException* err) {
         [this onError:err];
     }];
+}  
+
+- (void)onError:(NSException*)err {
+    NSLog(@"LoadingMode error: %@", err);
 }
 
 @end
