@@ -154,6 +154,12 @@
     return [self getResource:name] != nil;
 }
 
+- (void)unloadResourceFiles:(NSArray*)filenames {
+    for (NSString* filename in filenames) {
+        [self unloadResourceFile:filename];
+    }
+}
+
 - (void)unloadResourceFile:(NSString*)filename {
     for (BTResource* rsrc in _resources.allValues) {
         if ([rsrc.group isEqualToString:filename]) {

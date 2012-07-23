@@ -24,7 +24,10 @@
 - (void)loadResourceFile:(NSString*)filename onComplete:(OOOUnitBlock)onComplete
                  onError:(OOOErrorBlock)onError;
 
+/// Unloads resource files synchronously
+- (void)unloadResourceFiles:(NSArray*)filenames;
 - (void)unloadResourceFile:(NSString*)filename;
+
 - (id)getResource:(NSString*)name;
 - (id)requireResource:(NSString*)name;
 - (id)requireResource:(NSString*)name ofType:(Class)clazz;
