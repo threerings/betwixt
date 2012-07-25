@@ -39,7 +39,7 @@
 - (void)loadNow {
     __weak BTLoadingMode* this = self;
     [BTApp.resourceManager loadResourceFiles:_filenames onComplete:^{
-        [this->_loadComplete emit];
+        [this.loadComplete emit];
     } onError:^(NSException* err) {
         [this onError:err];
     }];
