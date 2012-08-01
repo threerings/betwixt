@@ -79,6 +79,7 @@
 #import "BTWaitTask.h"
 
 // Utils
+#import "BTDisplayUtil.h"
 #import "BTEventSignal.h"
 #import "BTLoadingMode.h"
 #import "BTPointI.h"
