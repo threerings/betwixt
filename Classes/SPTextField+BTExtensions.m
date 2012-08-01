@@ -8,7 +8,7 @@
 @implementation SPTextField (BTExtensions)
 
 - (id)initWithFormat:(NSString *)text, ... {
-    return [self initWithText:OOO_FORMAT_TO_STRING(text)];
+    return [self initWithText:OOO_FORMAT_TO_NSSTRING(text)];
 }
 
 - (void)autoSizeText:(NSString*)text maxWidth:(float)maxWidth maxHeight:(float)maxHeight {

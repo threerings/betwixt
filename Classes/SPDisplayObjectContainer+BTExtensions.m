@@ -16,11 +16,11 @@
 }
 
 - (SPSprite*)spriteByFormatName:(NSString*)format, ... {
-    return [self spriteByName:OOO_FORMAT_TO_STRING(format)];
+    return [self spriteByName:OOO_FORMAT_TO_NSSTRING(format)];
 }
 
 - (SPDisplayObject*)childByFormatName:(NSString*)format, ... {
-    return [self childByName:OOO_FORMAT_TO_STRING(format)];
+    return [self childByName:OOO_FORMAT_TO_NSSTRING(format)];
 }
 
 @end
