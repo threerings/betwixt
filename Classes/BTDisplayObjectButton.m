@@ -6,7 +6,7 @@
 
 @implementation BTDisplayObjectButton
 
-- (id)initWithUpState:(SPDisplayObject*)upState downState:(SPDisplayObject*)downState 
+- (id)initWithUpState:(SPDisplayObject*)upState downState:(SPDisplayObject*)downState
         disabledState:(SPDisplayObject*)disabledState {
     if ((self = [super init])) {
         _upState = upState;

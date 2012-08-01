@@ -23,12 +23,12 @@
 @synthesize enabled = _enabled;
 @synthesize clicked = _clicked;
 
-+ (BTButton*)buttonWithUpState:(SPDisplayObject*)upState 
++ (BTButton*)buttonWithUpState:(SPDisplayObject*)upState
                      downState:(SPDisplayObject*)downState
                  disabledState:(SPDisplayObject*)disabledState;
 {
-    return [[BTDisplayObjectButton alloc] initWithUpState:upState 
-                                                downState:downState 
+    return [[BTDisplayObjectButton alloc] initWithUpState:upState
+                                                downState:downState
                                             disabledState:disabledState];
 }
 
@@ -46,13 +46,13 @@
 
 - (void)added {
     [super added];
-    
+
     _curState = (BTButtonState) -1;
     [self setState:BT_BUTTON_STATE_UP];
     // Force the enabling logic
     _enabled = !_enabled;
     self.enabled = !_enabled;
-    
+
     [self.conns addConnection:[self.touchBegan connectSlot:^(SPTouch* touch) {
         if (_enabled) {
             _touch = touch;
@@ -134,6 +134,6 @@
     return [self.clickBounds containsPoint:
             [_sprite globalToLocal:[SPPoint pointWithX:touch.globalX y:touch.globalY]]];
 }
-             
+
 
 @end

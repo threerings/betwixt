@@ -4,12 +4,12 @@
 #import "SPDisplayObject+BTExtensions.h"
 #import "SPDisplayObjectContainer.h"
 
-static BOOL traverseInternal (SPDisplayObject* disp, BTTraverseCallback filter, 
+static BOOL traverseInternal (SPDisplayObject* disp, BTTraverseCallback filter,
                               BTTraverseCallback callback) {
     if (filter != nil && !filter(disp)) {
         return YES;
     }
-    
+
     if ([disp isKindOfClass:[SPDisplayObjectContainer class]]) {
         SPDisplayObjectContainer* container = (SPDisplayObjectContainer*)disp;
         int numChildren = container.numChildren;
@@ -20,7 +20,7 @@ static BOOL traverseInternal (SPDisplayObject* disp, BTTraverseCallback filter,
             }
         }
     }
-    
+
     return callback(disp);
 }
 
@@ -82,7 +82,7 @@ static BOOL traverseInternal (SPDisplayObject* disp, BTTraverseCallback filter,
     NSInvocation* invocation = [NSInvocation invocationWithMethodSignature:signature];
     invocation.selector = sel;
     [invocation setArgument:&color atIndex:2];
-    
+
     [self traverse:^BOOL(SPDisplayObject* disp) {
         if ([disp respondsToSelector:sel]) {
             [invocation invokeWithTarget:disp];

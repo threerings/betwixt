@@ -42,9 +42,9 @@
     if ((self = [super init])) {
         _filename = filename;
         float scale = 1.0f / atlas.scale;
-        
+
         _region = [xml rectangleAttribute:@"rect"];
-        
+
         SPRectangle* scaledRegion = [_region copy];
         [scaledRegion scaleBy:scale];
         _texture = [[SPTexture alloc] initWithRegion:scaledRegion ofTexture:atlas];
@@ -74,21 +74,21 @@
     if ([[_filename lowercaseString] hasSuffix:@".pvr"] || [[_filename lowercaseString] hasSuffix:@".pvr.gz"]) {
         [NSException raise:NSGenericException format:@"PVR to UIImage conversion is unsupported"];
     }
-    
+
     UIImage* image = [UIImage imageWithContentsOfFile:_filename];
     if (image == nil) {
         [NSException raise:NSGenericException format:@"failed to load image %@", _filename];
     }
-    
+
     if (_region != nil) {
         //get this for coords
         CGImageRef imageCG = CGImageCreateWithImageInRect([image CGImage], [_region toCGRect]);
-        image = [UIImage imageWithCGImage:imageCG 
-                                    scale:[SPStage contentScaleFactor] 
+        image = [UIImage imageWithCGImage:imageCG
+                                    scale:[SPStage contentScaleFactor]
                               orientation:image.imageOrientation];
         CGImageRelease(imageCG);
     }
-    
+
     return image;
 }
 

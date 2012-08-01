@@ -6,31 +6,31 @@
 @interface BTAudioControls : NSObject {
     BTAudioControls* _parent;
     NSMutableArray* _children;
-    
+
     BTAudioState* _localState;
     BTAudioState* _globalState;
-    
+
     float _initialVolume;
     float _targetVolumeDelta;
     float _targetVolumeElapsedTime;
     float _targetVolumeTotalTime;
-    
+
     float _initialPan;
     float _targetPanDelta;
     float _targetPanElapsedTime;
     float _targetPanTotalTime;
-    
+
     float _initialPitch;
     float _targetPitchDelta;
     float _targetPitchElapsedTime;
     float _targetPitchTotalTime;
-    
+
     BOOL _targetPause;
     float _pauseCountdown;
-    
+
     BOOL _targetMute;
     float _muteCountdown;
-    
+
     BOOL _targetStop;
     float _stopCountdown;
 }

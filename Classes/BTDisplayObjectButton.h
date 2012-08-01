@@ -12,8 +12,8 @@
     SPRectangle* _clickBounds;
 }
 
-- (id)initWithUpState:(SPDisplayObject*)upState 
-            downState:(SPDisplayObject*)downState 
+- (id)initWithUpState:(SPDisplayObject*)upState
+            downState:(SPDisplayObject*)downState
         disabledState:(SPDisplayObject*)disabledState;
 
 @end

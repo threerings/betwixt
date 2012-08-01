@@ -66,24 +66,24 @@
     return _group.count;
 }
 
-- (NSUInteger)countByEnumeratingWithState:(NSFastEnumerationState*)state 
-                                  objects:(__unsafe_unretained id [])buffer 
+- (NSUInteger)countByEnumeratingWithState:(NSFastEnumerationState*)state
+                                  objects:(__unsafe_unretained id [])buffer
                                     count:(NSUInteger)len {
     if (state->state == 0) {
         state->extra[0] = _mode->_nextNodeId - 1;
         state->extra[1] = 0;
         state->extra[2] = 0;
-        
+
         // mutationsPtr must not be null, so point it to an arbitrary unchanging value.
         state->mutationsPtr = &state->extra[0];
         // We can rewind our index, so we don't store it in state
         state->state = 1;
     }
-    
+
     NSUInteger maxNodeId = state->extra[0];
     NSUInteger minNodeId = state->extra[1];
     NSUInteger index = state->extra[2];
-    
+
     // Check to see if we need to rewind our index
     // (if nodes have been deleted during the iteration)
     if (_group.count > 0) {
@@ -97,7 +97,7 @@
             }
         }
     }
-    
+
     NSUInteger batchCount = 0;
     // Limit our batchCount to 1, so that enumerators
     // are guaranteed not to see nodes that have been removed.
@@ -115,7 +115,7 @@
             minNodeId = nodeId + 1;
         }
     }
-    
+
     state->extra[1] = minNodeId;
     state->extra[2] = index;
     state->itemsPtr = buffer;
@@ -160,7 +160,7 @@
     if ((self = [super init])) {
         _juggler = [[SPJuggler alloc] init];
         _rootNode = [[BTRootNode alloc] initWithMode:self];
-        
+
         _input = [[BTInput alloc] initWithRoot:_rootNode.sprite];
         _update = [[RAFloatSignal alloc] init];
         _entered = [[RAUnitSignal alloc] init];
@@ -169,7 +169,7 @@
         _keyedObjects = [[NSMutableDictionary alloc] init];
         _groups = [[NSMutableDictionary alloc] init];
     }
-    
+
     return self;
 }
 
@@ -234,7 +234,7 @@
 
 - (void)registerNode:(BTNode*)node {
     node->_id = _nextNodeId++;
-    
+
     // If the object is BTUpdatable, wire up its update function to the update event
     if ([node conformsToProtocol:@protocol(BTUpdatable)]) {
         BTNode<BTUpdatable>* updatable = (BTNode<BTUpdatable>*)node;
@@ -242,7 +242,7 @@
             [updatable update:dt];
         }];
     }
-    
+
     // register keys
     NSArray* keys = node.keys;
     if (keys != nil) {
@@ -256,7 +256,7 @@
             [_keyedObjects setObject:node forKey:key];
         }
     }
-    
+
     // register groups
     NSArray* groups = node.groups;
     if (groups != nil) {

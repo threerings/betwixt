@@ -6,8 +6,8 @@
 @interface SPBitmapFont (BTExtensions)
 
 /// Lays out text using a maximum width and height
-- (SPDisplayObject*)createDisplayObjectWithMaxWidth:(float)maxWidth maxHeight:(float)maxHeight 
-                                               text:(NSString*)text fontSize:(float)size 
+- (SPDisplayObject*)createDisplayObjectWithMaxWidth:(float)maxWidth maxHeight:(float)maxHeight
+                                               text:(NSString*)text fontSize:(float)size
                                               color:(uint)color hAlign:(SPHAlign)hAlign
                                              border:(BOOL)border kerning:(BOOL)kerning;
 

@@ -5,7 +5,7 @@
 #import "BTNodeContainer.h"
 #import "BTNode+Protected.h"
 
-@implementation BTParallelTask 
+@implementation BTParallelTask
 
 - (id)initWithNodes:(NSArray*)nodes {
     if ((self = [super init])) {
@@ -16,10 +16,10 @@
 
 - (void)added {
     [super added];
-    
+
     __block int toRemove = [_nodes count];
     for (BTNode* node in _nodes) {
-        [self.parent addNode:node]; 
+        [self.parent addNode:node];
         [node.removed connectUnit:^{ if (--toRemove == 0) [self removeSelf]; }];
     }
 }

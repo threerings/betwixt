@@ -13,7 +13,7 @@
 @protected
     SPTexture* _texture;
     SPPoint* _offset;
-    
+
     NSString* _filename;
     SPRectangle* _region;
 }

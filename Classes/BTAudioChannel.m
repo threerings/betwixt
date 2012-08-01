@@ -18,7 +18,7 @@ static BTAudioControls* GetDummyControls () {
 @synthesize loop = _loop;
 @synthesize startTime = _startTime;
 
-- (id)initWithControls:(BTAudioControls*)controls sound:(BTSoundResource*)sound 
+- (id)initWithControls:(BTAudioControls*)controls sound:(BTSoundResource*)sound
              startTime:(double)startTime loop:(BOOL)loop {
     if ((self = [super init])) {
         _controls = controls;
@@ -47,7 +47,7 @@ static BTAudioControls* GetDummyControls () {
         } else if (!state.paused && self.isPaused) {
             [_spChannel play];
         }
-        
+
         if (self.isPlaying && !self.isPaused) {
             _spChannel.volume = state.actualVolume * _sound.volume;
             if (state.pitch != _lastPitch) {
@@ -72,8 +72,8 @@ static BTAudioControls* GetDummyControls () {
 
 - (void)playWithState:(BTAudioState*)state {
     _spChannel = [_sound.sound createChannel];
-    [_spChannel addEventListener:@selector(handleComplete:) 
-                        atObject:self 
+    [_spChannel addEventListener:@selector(handleComplete:)
+                        atObject:self
                          forType:SP_EVENT_TYPE_SOUND_COMPLETED];
     _spChannel.loop = _loop;
     _spChannel.volume = state.actualVolume * _sound.volume;
@@ -90,8 +90,8 @@ static BTAudioControls* GetDummyControls () {
 - (void)stop {
     if (self.isPlaying) {
         if (_spChannel != nil) {
-            [_spChannel removeEventListener:@selector(handleComplete:) 
-                                   atObject:self 
+            [_spChannel removeEventListener:@selector(handleComplete:)
+                                   atObject:self
                                     forType:SP_EVENT_TYPE_SOUND_COMPLETED];
             [_spChannel stop];
             _spChannel = nil;

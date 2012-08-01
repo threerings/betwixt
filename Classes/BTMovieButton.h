@@ -13,7 +13,7 @@
     NSString* _disabledLabel;
 }
 
-- (id)initWithMovie:(BTMovie*)movie upLabel:(NSString*)upLabel downLabel:(NSString*)downLabel 
+- (id)initWithMovie:(BTMovie*)movie upLabel:(NSString*)upLabel downLabel:(NSString*)downLabel
       disabledLabel:(NSString*)disabledLabel;
 - (id)initWithMovie:(BTMovie*)movie;
 

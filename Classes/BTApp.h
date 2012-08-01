@@ -15,13 +15,13 @@
     BTViewController* _viewController;
     SPView* _view;
     SPPoint* _viewSize;
-    
+
     BTDeviceType* _deviceType;
-    
+
     BTResourceManager* _resourceMgr;
     BTAudioManager* _audio;
     NSMutableArray* _modeStacks;
-    
+
     float _framerate;
 }
 
@@ -38,7 +38,7 @@
 + (BTModeStack*)createModeStack;
 /// Returns the path for the given resource file.
 + (NSString*)resourcePathFor:(NSString*)resourceName;
-/// Returns the path for the given resource file. Throws an exception if the file does not exist. 
+/// Returns the path for the given resource file. Throws an exception if the file does not exist.
 + (NSString*)requireResourcePathFor:(NSString*)resourceName;
 
 @end

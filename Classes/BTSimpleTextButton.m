@@ -17,22 +17,22 @@ static const uint TEXT_COLOR_DOWN = 0x6699CC;
     if ((self = [super init])) {
         _container = [[SPSprite alloc] init];
         [_sprite addChild:_container];
-        
+
         _tf = [[SPTextField alloc] init];
         _tf.fontSize = size;
         _tf.color = TEXT_COLOR_UP;
         [_tf autoSizeText:text];
         _tf.x = PADDING;
         _tf.y = PADDING;
-        
+
         // draw a rectangle
-        _bg = [[SPQuad alloc] initWithWidth:_tf.width + (PADDING * 2) 
+        _bg = [[SPQuad alloc] initWithWidth:_tf.width + (PADDING * 2)
                                      height:_tf.height + (PADDING * 2)];
         _bg.color = BG_COLOR_UP;
-        
+
         [_container addChild:_bg];
         [_container addChild:_tf];
-        
+
         _clickBounds = [_container bounds];
     }
     return self;
@@ -45,7 +45,7 @@ static const uint TEXT_COLOR_DOWN = 0x6699CC;
 - (void)displayState:(BTButtonState)state {
     _bg.color = (state == BT_BUTTON_STATE_DOWN ? BG_COLOR_DOWN : BG_COLOR_UP);
     _tf.color = (state == BT_BUTTON_STATE_DOWN ? TEXT_COLOR_DOWN : TEXT_COLOR_UP);
-    
+
     _container.alpha = (state == BT_BUTTON_STATE_DISABLED ? 0.4f : 1.0f);
 }
 

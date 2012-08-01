@@ -21,13 +21,13 @@
     if ((self = [super init])) {
         layers = [[NSMutableArray alloc] init];
         int numFrames = 0;
-        
+
         framerate = [xml floatAttribute:@"frameRate" defaultVal:30];
-        
+
         NSArray* layerEls = [xml elementsForName:@"layer"];
-        
+
         if ([[layerEls objectAtIndex:0] boolAttribute:@"flipbook" defaultVal:NO]) {
-            BTMovieResourceLayer* layer = 
+            BTMovieResourceLayer* layer =
             [[BTMovieResourceLayer alloc] initFlipbookNamed:[xml stringAttribute:@"name"]
                                                         xml:[layerEls objectAtIndex:0]];
             [layers addObject:layer];
@@ -39,7 +39,7 @@
                 numFrames = MAX(numFrames, layer.numFrames);
             }
         }
-        
+
         labels = [[NSMutableArray alloc] initWithCapacity:numFrames];
         for (int ii = 0; ii < numFrames; ii++) {
             [labels insertObject:[[NSMutableArray alloc] init] atIndex:ii];

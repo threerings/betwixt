@@ -54,7 +54,7 @@
     NSArray* parentKeys = super.keys; \
     if (parentKeys != nil) { [values addObjectsFromArray:parentKeys]; } \
     values; })
-    
+
 #define BT_STATIC_GROUPS(...) ({ \
     static NSMutableArray* gValues = nil;  \
     if (gValues == nil) { \

@@ -25,14 +25,14 @@
     return [[BTLocationTask alloc] initWithTime:seconds toX:x toY:y interpolator:interp target:target];
 }
 
-- (id)initWithTime:(float)seconds toX:(float)x toY:(float)y interpolator:(id<OOOInterpolator>)interp 
+- (id)initWithTime:(float)seconds toX:(float)x toY:(float)y interpolator:(id<OOOInterpolator>)interp
            target:(id<BTHasLocation>)target {
     if ((self = [super initWithTime:seconds interpolator:interp])) {
         _target = target;
         _endX = x;
         _endY = y;
     }
-    
+
     return self;
 }
 

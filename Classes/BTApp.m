@@ -101,7 +101,7 @@ static BTApp* gInstance = nil;
 
 static UIImage* LoadPng (NSString* name) {
     return [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:name
-                                                                            ofType:@"png" 
+                                                                            ofType:@"png"
                                                                        inDirectory:nil]];
 }
 
@@ -137,27 +137,27 @@ static NSString* const FALLBACK_IMAGE_PATHS[] = {
 }
 
 - (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions {
-    
+
     // Window
     CGRect windowBounds = [UIScreen mainScreen].bounds;
     _window = [[UIWindow alloc] initWithFrame:windowBounds];
     _viewController = [[BTViewController alloc] initWithApp:self];
     _window.rootViewController = _viewController;
-    
+
     // Determine the type of device we're on by our resolution
     int deviceWidth = windowBounds.size.width * [UIScreen mainScreen].scale;
     int deviceHeight = windowBounds.size.height * [UIScreen mainScreen].scale;
     for (BTDeviceType* deviceType in BTDeviceType.values) {
-        if ((deviceWidth == deviceType.screenWidth && 
+        if ((deviceWidth == deviceType.screenWidth &&
              deviceHeight == deviceType.screenHeight) ||
             (deviceWidth == deviceType.screenHeight &&
              deviceHeight == deviceType.screenWidth)) {
-                
+
             _deviceType = deviceType;
-            break;    
+            break;
         }
     }
-    
+
     CGRect viewBounds = windowBounds;
     if (![self supportsUIInterfaceOrientation:UIInterfaceOrientationPortrait] &&
         ![self supportsUIInterfaceOrientation:UIInterfaceOrientationPortraitUpsideDown]) {
@@ -165,23 +165,23 @@ static NSString* const FALLBACK_IMAGE_PATHS[] = {
         viewBounds.size.width = viewBounds.size.height;
         viewBounds.size.height = tmp;
     }
-    
+
     // View
     _view = [[SPView alloc] initWithFrame:viewBounds];
     _view.multipleTouchEnabled = YES;
     _viewController.view = _view;
-    
+
     // Stage
     [BTStage setSupportHighResolutions:YES];
-    BTStage* stage = [[BTStage alloc] initWithWidth:viewBounds.size.width 
+    BTStage* stage = [[BTStage alloc] initWithWidth:viewBounds.size.width
                                              height:viewBounds.size.height];
     stage.app = self;
     _view.stage = stage;
     // Framerate must be set after the stage has been attached to the view.
     stage.frameRate = 60;
-    
+
     _viewSize = [SPPoint pointWithX:stage.width y:stage.height];
-    
+
     // Setup ResourceManager
     _resourceMgr = [[BTResourceManager alloc] init];
     [_resourceMgr registerFactory:[BTSoundResource sharedFactory] forType:BT_SOUND_RESOURCE_NAME];
@@ -189,17 +189,17 @@ static NSString* const FALLBACK_IMAGE_PATHS[] = {
     [_resourceMgr registerFactory:[BTFontResource sharedFactory] forType:BT_FONT_RESOURCE_NAME];
     [_resourceMgr registerFactory:[BTMovieResource sharedFactory] forType:BT_MOVIE_RESOURCE_NAME];
     [_resourceMgr registerMultiFactory:[BTTextureGroupFactory sharedFactory] forType:BT_TEXTURE_GROUP_RESOURCE_NAME];
-    
+
     // Setup AudioManager
     _audio = [[BTAudioManager alloc] init];
     [_audio setup];
-    
+
     // create default mode stack
     _modeStacks = [NSMutableArray array];
     [self run:[self createModeStack]];
-    
+
     [_window makeKeyAndVisible];
-    
+
     // Show our splash image
     UIImage* splashImage = [self loadSplashImage:_viewController.interfaceOrientation];
     if (splashImage != nil) {
@@ -207,7 +207,7 @@ static NSString* const FALLBACK_IMAGE_PATHS[] = {
         [_window addSubview:_splashScreenView];
         [_window bringSubviewToFront:_splashScreenView];
     }
-    
+
     return YES;
 }
 
@@ -237,7 +237,7 @@ static NSString* const FALLBACK_IMAGE_PATHS[] = {
         [_splashScreenView removeFromSuperview];
         _splashScreenView = nil;
     }
-    
+
     _framerate = 1.0f / dt;
     [_audio update:dt];
     for (BTModeStack* stack in _modeStacks) {
@@ -269,7 +269,7 @@ static NSString* const FALLBACK_IMAGE_PATHS[] = {
 - (NSString*)requireResourcePathFor:(NSString*)resourceName {
     NSString* path = [self resourcePathFor:resourceName];
     if (path == nil) {
-        [NSException raise:NSGenericException 
+        [NSException raise:NSGenericException
                     format:@"required resource does not exist: '%@'", resourceName];
     }
     return path;
@@ -277,7 +277,7 @@ static NSString* const FALLBACK_IMAGE_PATHS[] = {
 
 - (NSString*)resourcePathFor:(NSString*)resourceName {
     NSBundle* bundle = [NSBundle bundleForClass:[self class]];
-    
+
     NSString* devicePath = [[self.resourcePathPrefix stringByAppendingPathComponent:_deviceType.deviceClass] stringByAppendingPathComponent:resourceName];
     devicePath = [bundle pathForResource:devicePath];
     if (devicePath) {

@@ -11,13 +11,13 @@
 @synthesize valueChanged = _valueChanged;
 
 + (BTCheckbox*)checkboxWithMovie:(NSString*)movieName {
-    BTButton* checked = [[BTMovieButton alloc] initWithMovie:[BTMovieResource newMovie:movieName] 
-                                                     upLabel:@"on_up" 
-                                                   downLabel:@"on_down" 
+    BTButton* checked = [[BTMovieButton alloc] initWithMovie:[BTMovieResource newMovie:movieName]
+                                                     upLabel:@"on_up"
+                                                   downLabel:@"on_down"
                                                disabledLabel:@"on_disabled"];
-    BTButton* unchecked = [[BTMovieButton alloc] initWithMovie:[BTMovieResource newMovie:movieName] 
-                                                       upLabel:@"off_up" 
-                                                     downLabel:@"off_down" 
+    BTButton* unchecked = [[BTMovieButton alloc] initWithMovie:[BTMovieResource newMovie:movieName]
+                                                       upLabel:@"off_up"
+                                                     downLabel:@"off_down"
                                                  disabledLabel:@"off_disabled"];
     return [[BTCheckbox alloc] initWithCheckedButton:checked uncheckedButton:unchecked];
 }
@@ -37,7 +37,7 @@
     [super added];
     [self addNode:_checkedButton displayOn:_sprite];
     [self addNode:_uncheckedButton displayOn:_sprite];
-    
+
     [self.conns onReactor:_checkedButton.clicked connectUnit:^{
         self.value = NO;
     }];

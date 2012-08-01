@@ -14,9 +14,9 @@
 + (BTClipRectTask*)withTime:(float)seconds clipRect:(SPRectangle*)clipRect;
 + (BTClipRectTask*)withTime:(float)seconds clipRect:(SPRectangle*)clipRect interpolator:(id<OOOInterpolator>)interp;
 + (BTClipRectTask*)withTime:(float)seconds clipRect:(SPRectangle*)clipRect target:(SPDisplayObject*)target;
-+ (BTClipRectTask*)withTime:(float)seconds clipRect:(SPRectangle*)clipRect interpolator:(id<OOOInterpolator>)interp 
++ (BTClipRectTask*)withTime:(float)seconds clipRect:(SPRectangle*)clipRect interpolator:(id<OOOInterpolator>)interp
                      target:(SPDisplayObjectContainer*)target;
 
-- (id)initWithTime:(float)seconds clipRect:(SPRectangle*)clipRect interpolator:(id<OOOInterpolator>)interp 
+- (id)initWithTime:(float)seconds clipRect:(SPRectangle*)clipRect interpolator:(id<OOOInterpolator>)interp
             target:(SPDisplayObjectContainer*)target;
 @end

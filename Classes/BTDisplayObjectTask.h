@@ -8,7 +8,7 @@
     __weak SPDisplayObject* _target;
 }
 
-- (id)initWithTime:(float)seconds interpolator:(id<OOOInterpolator>)interp 
+- (id)initWithTime:(float)seconds interpolator:(id<OOOInterpolator>)interp
             target:(SPDisplayObject*)target;
 
 @end

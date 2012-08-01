@@ -27,7 +27,7 @@ typedef BOOL (^BTTraverseCallback)(SPDisplayObject* disp);
 
 /// Traverses the display list from frontmost to rearmost SPDisplayObject.
 /// 'callback' is called for each display object (including this one).
-/// if callback returns NO, the traversal is stopped. 
+/// if callback returns NO, the traversal is stopped.
 - (void)traverse:(BTTraverseCallback)callback;
 
 /// Traverses the display list from frontmost to rearmost SPDisplayObject.

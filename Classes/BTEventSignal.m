@@ -24,7 +24,7 @@
     if (!_connected) {
         // connect to the dispatcher
         _connected = YES;
-        [_dispatcher addEventListener:@selector(onEventDispatched:) atObject:self 
+        [_dispatcher addEventListener:@selector(onEventDispatched:) atObject:self
                               forType:_eventType];
     }
     return [super withPriority:priority connectSlot:block];
@@ -32,7 +32,7 @@
 
 - (void)dealloc {
     if (_connected) {
-        [_dispatcher removeEventListener:@selector(onEventDispatched:) atObject:self 
+        [_dispatcher removeEventListener:@selector(onEventDispatched:) atObject:self
                                  forType:_eventType];
     }
 }

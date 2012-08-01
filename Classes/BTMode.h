@@ -22,7 +22,7 @@
     NSMutableDictionary* _groups;
     SPJuggler* _juggler;
     NSUInteger _nextNodeId;
-    
+
     float _runningTime;
 }
 

@@ -17,7 +17,7 @@
     if ((self = [super init])) {
         keyframes = [[NSMutableArray alloc] init];
         name = [layerEl stringAttribute:@"name"];
-        
+
         int kfIndex = 0;
         for (GDataXMLElement* frameEl in [layerEl elementsForName:@"kf"]) {
             BTMovieResourceKeyframe* kf = [[BTMovieResourceKeyframe alloc] initWithIndex:kfIndex
@@ -25,10 +25,10 @@
             [keyframes addObject:kf];
             kfIndex += kf->duration;
         }
-        
+
         [self buildKeyframeSymbolMap];
     }
-    
+
     return self;
 }
 
@@ -36,19 +36,19 @@
     if ((self = [super init])) {
         keyframes = [[NSMutableArray alloc] init];
         name = [layerEl stringAttribute:@"name"];
-        
+
         int kfIndex = 0;
         for (GDataXMLElement* frameEl in [layerEl elementsForName:@"kf"]) {
             BTMovieResourceKeyframe* kf = [[BTMovieResourceKeyframe alloc] initFlipbookNamed:animName
-                                                                                   withIndex:kfIndex 
+                                                                                   withIndex:kfIndex
                                                                                          xml:frameEl];
             [keyframes addObject:kf];
             kfIndex += kf->duration;
         }
-        
+
         [self buildKeyframeSymbolMap];
     }
-    
+
     return self;
 }
 

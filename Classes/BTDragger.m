@@ -29,7 +29,7 @@ static const float MAX_TAP_MOVEMENT = 10;
 
 - (BOOL)isTap {
     if (self.elapsedTime <= MAX_TAP_TIME && _current != nil && _start != nil) {
-        return [SPPoint distanceSqFromPoint:_current toPoint:_start] <= 
+        return [SPPoint distanceSqFromPoint:_current toPoint:_start] <=
             (MAX_TAP_MOVEMENT * MAX_TAP_MOVEMENT);
     }
     return NO;
@@ -65,7 +65,7 @@ static const float MAX_TAP_MOVEMENT = 10;
     }
     if (touch == _touch) {
         _current = [SPPoint pointWithX:touch.globalX y:touch.globalY];
-        // stop the drag before calling onDragEnd, to allow safe destruction of the 
+        // stop the drag before calling onDragEnd, to allow safe destruction of the
         // dragger from within onDragEnd
         [self stopDragWithSuccess:YES];
         [self onDragEnd:_current start:_start];

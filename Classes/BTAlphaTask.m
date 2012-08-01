@@ -18,7 +18,7 @@
     return [[BTAlphaTask alloc] initWithTime:seconds alpha:alpha interpolator:OOOEasing.linear target:target];
 }
 
-+ (BTAlphaTask*)withTime:(float)seconds alpha:(float)alpha interpolator:(id<OOOInterpolator>)interp 
++ (BTAlphaTask*)withTime:(float)seconds alpha:(float)alpha interpolator:(id<OOOInterpolator>)interp
         target:(SPDisplayObject*)target {
     return [[BTAlphaTask alloc] initWithTime:seconds alpha:alpha interpolator:interp target:target];
 }

@@ -14,7 +14,7 @@
     BTSoundType* _type;
     float _volume;
     float _pan;
-    
+
     BOOL _randomizePitch;
     float _pitchShiftMin;
     float _pitchShiftMax;

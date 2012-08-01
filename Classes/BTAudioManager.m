@@ -53,7 +53,7 @@ static const double SOUND_PLAYED_RECENTLY_DELTA = 1.0 / 20.0;
 
 - (void)update:(float)dt {
     [_masterControls update:dt parentState:_defaultState];
-    
+
     // update all playing sound channels
     BOOL hasStoppedChannels = NO;
     for (BTAudioChannel* channel in _activeChannels) {
@@ -62,7 +62,7 @@ static const double SOUND_PLAYED_RECENTLY_DELTA = 1.0 / 20.0;
             hasStoppedChannels = YES;
         }
     }
-    
+
     // Remove inactive channels
     if (hasStoppedChannels) {
         _activeChannels = [_activeChannels filter:^BOOL(BTAudioChannel* channel) {
@@ -71,7 +71,7 @@ static const double SOUND_PLAYED_RECENTLY_DELTA = 1.0 / 20.0;
     }
 }
 
-- (BTAudioChannel*)playSoundNamed:(NSString*)name parentControls:(BTAudioControls*)parentControls 
+- (BTAudioChannel*)playSoundNamed:(NSString*)name parentControls:(BTAudioControls*)parentControls
                              loop:(BOOL)loop {
     return [self playSound:[BTSoundResource require:name] parentControls:parentControls loop:loop];
 }
@@ -84,47 +84,47 @@ static const double SOUND_PLAYED_RECENTLY_DELTA = 1.0 / 20.0;
     return [self playSound:[BTSoundResource require:name] parentControls:nil loop:NO];
 }
 
-- (BTAudioChannel*)playSound:(BTSoundResource*)soundResource 
+- (BTAudioChannel*)playSound:(BTSoundResource*)soundResource
               parentControls:(BTAudioControls*)parentControls loop:(BOOL)loop {
-    
+
     // get the appropriate parent controls
     if (parentControls == nil) {
         parentControls = [self getControlsForSoundType:soundResource.type];
     }
-    
+
     // don't play the sound if its parent controls are stopped
     BTAudioState* parentState = [parentControls updateStateNow];
     if (parentState.stopped) {
         NSLog(@"Discarding sound '%@' (parent controls are stopped)", soundResource.name);
         return [[BTAudioChannel alloc] init];
     }
-    
+
     // iterate the active channels to determine if this sound has been played
     // recently
     double timeNow = BTApp.timeNow;
     for (BTAudioChannel* activeChannel in _activeChannels) {
-        if (activeChannel.isPlaying && activeChannel.sound == soundResource && 
+        if (activeChannel.isPlaying && activeChannel.sound == soundResource &&
             (timeNow - activeChannel.startTime) < SOUND_PLAYED_RECENTLY_DELTA) {
             NSLog(@"Discarding sound '%@' (recently played)", soundResource.name);
             return [[BTAudioChannel alloc] init];
         }
     }
-    
+
     // create the channel
-    BTAudioChannel* channel = [[BTAudioChannel alloc] initWithControls:[parentControls createChild] 
-                                                                 sound:soundResource 
-                                                             startTime:timeNow 
+    BTAudioChannel* channel = [[BTAudioChannel alloc] initWithControls:[parentControls createChild]
+                                                                 sound:soundResource
+                                                             startTime:timeNow
                                                                   loop:loop];
-    
+
     BTAudioState* initialState = parentState;
-    
+
     // randomize the pitch if the sound requires it
     if (soundResource.randomizePitch) {
         float pitch = [_rands getFloatLow:soundResource.pitchShiftMin high:soundResource.pitchShiftMax];
         [channel.controls setPitch:pitch];
         initialState = [channel.controls updateStateNow];
     }
-    
+
     // start playing
     [channel playWithState:initialState];
     [_activeChannels addObject:channel];

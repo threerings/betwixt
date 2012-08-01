@@ -4,7 +4,7 @@
 @interface BTMovieResourceKeyframe : NSObject {
 @public
     int index, duration;
-    float x, y; 
+    float x, y;
     float skewX, skewY;
     float scaleX, scaleY;
     float pivotX, pivotY;

@@ -12,11 +12,11 @@
     if (items.count != 4) {
         return nil;
     }
-    
+
     @try {
         return [SPRectangle rectangleWithX:[[items objectAtIndex:0] requireFloatValue]
-                                         y:[[items objectAtIndex:1] requireFloatValue] 
-                                     width:[[items objectAtIndex:2] requireFloatValue] 
+                                         y:[[items objectAtIndex:1] requireFloatValue]
+                                     width:[[items objectAtIndex:2] requireFloatValue]
                                     height:[[items objectAtIndex:3] requireFloatValue]];
     } @catch (...) {
         return nil;
@@ -66,7 +66,7 @@
 }
 
 - (SPPoint*)closestInteriorPointTo:(SPPoint *)p {
-    return [SPPoint pointWithX:SP_CLAMP(p.x, self.left, self.right) 
+    return [SPPoint pointWithX:SP_CLAMP(p.x, self.left, self.right)
                              y:SP_CLAMP(p.y, self.top, self.bottom)];
 }
 

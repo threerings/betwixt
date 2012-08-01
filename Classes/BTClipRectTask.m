@@ -18,7 +18,7 @@
     return [[BTClipRectTask alloc] initWithTime:seconds clipRect:clipRect interpolator:OOOEasing.linear target:target];
 }
 
-+ (BTClipRectTask*)withTime:(float)seconds clipRect:(SPRectangle*)clipRect interpolator:(id<OOOInterpolator>)interp 
++ (BTClipRectTask*)withTime:(float)seconds clipRect:(SPRectangle*)clipRect interpolator:(id<OOOInterpolator>)interp
                      target:(SPDisplayObjectContainer*)target {
     return [[BTClipRectTask alloc] initWithTime:seconds clipRect:clipRect interpolator:interp target:target];
 }
@@ -34,7 +34,7 @@
 - (void)added {
     [super added];
     if (![_target isKindOfClass:[SPDisplayObjectContainer class]]) {
-        [NSException raise:NSGenericException format:@"%@: target must be a %@", 
+        [NSException raise:NSGenericException format:@"%@: target must be a %@",
             NSStringFromClass([self class]), NSStringFromClass([SPDisplayObjectContainer class])];
     }
     _containerTarget = (SPDisplayObjectContainer*)_target;

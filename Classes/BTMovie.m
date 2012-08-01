@@ -62,9 +62,9 @@ NSString* const BTMovieLastFrame = @"BTMovieLastFrame";
         _playing.value = YES;
         _labelPassed = [[RAObjectSignal alloc] init];
         [self gotoFrame:0 skipIntermediateFrames:YES overDuration:NO];
-        [self addEventListener:@selector(addedToStage:) atObject:self 
+        [self addEventListener:@selector(addedToStage:) atObject:self
                        forType:SP_EVENT_TYPE_ADDED_TO_STAGE];
-        [self addEventListener:@selector(removedFromStage:) atObject:self 
+        [self addEventListener:@selector(removedFromStage:) atObject:self
                        forType:SP_EVENT_TYPE_REMOVED_FROM_STAGE];
     }
     return self;
@@ -76,7 +76,7 @@ NSString* const BTMovieLastFrame = @"BTMovieLastFrame";
             return ii;
         }
     }
-    
+
     [NSException raise:@"UnknownLabel" format:@"Unknown label '%@'", label];
     return -1;
 }
@@ -104,7 +104,7 @@ NSString* const BTMovieLastFrame = @"BTMovieLastFrame";
 
 - (void)gotoFrame:(int)newFrame skipIntermediateFrames:(BOOL)skipIntermediateFrames overDuration:(BOOL)overDuration {
     NSAssert(newFrame >= 0 && newFrame < self.frames, @"bad frame: %d", newFrame);
-    
+
     if (_goingToFrame) {
         _pendingFrame = newFrame;
         return;
@@ -205,15 +205,15 @@ NSString* const BTMovieLastFrame = @"BTMovieLastFrame";
     [self gotoFrame:frame skipIntermediateFrames:YES overDuration:NO];
 }
 
-- (int)frames { 
-    return [_labels count]; 
+- (int)frames {
+    return [_labels count];
 }
 
 - (void)advanceTime:(double)dt {
     if (!_playing.value) {
         return;
     }
-    
+
     _playTime += dt;
     float actualPlaytime = _playTime;
     if (_playTime >= _duration) _playTime = fmodf(_playTime, _duration);
@@ -223,7 +223,7 @@ NSString* const BTMovieLastFrame = @"BTMovieLastFrame";
     // clear it
     if (_stopFrame != NO_FRAME) {
         // how many frames remain to the stopframe?
-        int framesRemaining = 
+        int framesRemaining =
             (_frame <= _stopFrame ? _stopFrame - _frame : self.frames - _frame + _stopFrame);
         int framesElapsed = (int)(actualPlaytime * _framerate) - _frame;
         if (framesElapsed >= framesRemaining) {
@@ -235,8 +235,8 @@ NSString* const BTMovieLastFrame = @"BTMovieLastFrame";
     [self gotoFrame:newFrame skipIntermediateFrames:NO overDuration:overDuration];
 }
 
-- (BOOL)isComplete { 
-    return NO; 
+- (BOOL)isComplete {
+    return NO;
 }
 
 - (void)addedToStage:(SPEvent*)event {

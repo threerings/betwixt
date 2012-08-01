@@ -19,7 +19,7 @@
     return [[BTRotationTask alloc] initWithTime:seconds rotation:rads interpolator:OOOEasing.linear target:target];
 }
 
-+ (BTRotationTask*)withTime:(float)seconds rotation:(float)rads interpolator:(id<OOOInterpolator>)interp 
++ (BTRotationTask*)withTime:(float)seconds rotation:(float)rads interpolator:(id<OOOInterpolator>)interp
                       target:(SPDisplayObject*)target {
     return [[BTRotationTask alloc] initWithTime:seconds rotation:rads interpolator:interp target:target];
 }

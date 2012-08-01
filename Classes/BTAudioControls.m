@@ -173,55 +173,55 @@
     // update local state
     if (_targetVolumeTotalTime > 0) {
         _targetVolumeElapsedTime = MIN(_targetVolumeElapsedTime + dt, _targetVolumeTotalTime);
-        _localState.volume = _initialVolume + 
+        _localState.volume = _initialVolume +
             (_targetVolumeDelta * (_targetVolumeElapsedTime / _targetVolumeTotalTime));
         if (_targetVolumeElapsedTime >= _targetVolumeTotalTime) {
             _targetVolumeTotalTime = 0;
         }
     }
-    
+
     if (_targetPanTotalTime > 0) {
         _targetPanElapsedTime = MIN(_targetPanElapsedTime + dt, _targetPanTotalTime);
-        _localState.pan = _initialPan + 
+        _localState.pan = _initialPan +
             (_targetPanDelta * (_targetPanElapsedTime / _targetPanTotalTime));
         if (_targetPanElapsedTime >= _targetPanTotalTime) {
             _targetPanTotalTime = 0;
         }
     }
-    
+
     if (_targetPitchTotalTime > 0) {
         _targetPitchElapsedTime = MIN(_targetPitchElapsedTime + dt, _targetPitchTotalTime);
-        _localState.pitch = _initialPitch + 
+        _localState.pitch = _initialPitch +
             (_targetPitchDelta * (_targetPitchElapsedTime / _targetPitchTotalTime));
         if (_targetPitchElapsedTime >= _targetPitchTotalTime) {
             _targetPitchTotalTime = 0;
         }
     }
-    
+
     if (_pauseCountdown > 0) {
         _pauseCountdown -= dt;
         if (_pauseCountdown <= 0) {
             _localState.paused = _targetPause;
         }
     }
-    
+
     if (_muteCountdown > 0) {
         _muteCountdown -= dt;
         if (_muteCountdown <= 0) {
             _localState.muted = _targetMute;
         }
     }
-    
+
     if (_stopCountdown > 0) {
         _stopCountdown -= dt;
         if (_stopCountdown <= 0) {
             _localState.stopped = _targetStop;
         }
     }
-    
+
     // update global state
     [BTAudioState combine:_localState with:parentState into:_globalState];
-    
+
     // update children
     if (_children != nil) {
         for (int ii = 0; ii < _children.count; ++ii) {

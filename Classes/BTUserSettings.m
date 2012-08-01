@@ -10,7 +10,7 @@
 }
 
 - (BOOL)boolForKey:(NSString*)key defaultValue:(BOOL)defaultValue {
-    return ([self keyExists:key] ? 
+    return ([self keyExists:key] ?
             [[NSUserDefaults standardUserDefaults] boolForKey:key] : defaultValue);
 }
 
@@ -20,7 +20,7 @@
 }
 
 - (NSInteger)integerForKey:(NSString*)key defaultValue:(NSInteger)defaultValue {
-    return ([self keyExists:key] ? 
+    return ([self keyExists:key] ?
             [[NSUserDefaults standardUserDefaults] integerForKey:key] : defaultValue);
 }
 
@@ -30,7 +30,7 @@
 }
 
 - (float)floatForKey:(NSString*)key defaultValue:(float)defaultValue {
-    return ([self keyExists:key] ? 
+    return ([self keyExists:key] ?
             [[NSUserDefaults standardUserDefaults] floatForKey:key] : defaultValue);
 }
 
@@ -40,7 +40,7 @@
 }
 
 - (double)doubleForKey:(NSString*)key defaultValue:(double)defaultValue {
-    return ([self keyExists:key] ? 
+    return ([self keyExists:key] ?
             [[NSUserDefaults standardUserDefaults] doubleForKey:key] : defaultValue);
 }
 
@@ -50,7 +50,7 @@
 }
 
 - (NSString*)stringForKey:(NSString*)key defaultValue:(NSString*)defaultValue {
-    return ([self keyExists:key] ? 
+    return ([self keyExists:key] ?
             [[NSUserDefaults standardUserDefaults] stringForKey:key] : defaultValue);
 }
 

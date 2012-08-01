@@ -24,7 +24,7 @@
             }
         }];
     }
-    
+
     return self;
 }
 
@@ -56,7 +56,7 @@
             [_filteredTouchSignals addObject:[NSNull null]];
         }
     }
-    
+
     RAObjectSignal* signal = OOONSNullToNil([_filteredTouchSignals objectAtIndex:phase]);
     if (signal == nil) {
         signal = [[FilteredTouchSignal alloc] initWithTouchEventSignal:_touchEvent phase:phase];

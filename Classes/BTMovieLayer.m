@@ -19,9 +19,9 @@
     if ((self = [super init])) {
         keyframes = layer->keyframes;
         movie = parent;
-        
+
         SPSprite* emptySprite = [[SPSprite alloc] init];
-        
+
         // Create the DisplayObjects that are attached to each keyframe
         displays = [[NSMutableArray alloc] initWithCapacity:[keyframes count]];
         for (int ii = 0; ii < [keyframes count]; ++ii) {
@@ -33,24 +33,24 @@
             if (symbolName == nil) {
                 display = emptySprite;
             } else {
-                id<BTDisplayObjectCreator> res = 
-                [BTApp.resourceManager requireResource:symbol 
+                id<BTDisplayObjectCreator> res =
+                [BTApp.resourceManager requireResource:symbol
                                           conformingTo:@protocol(BTDisplayObjectCreator)];
                 display = [res createDisplayObject];
             }
-            
+
             for (NSNumber* num in frameIndices) {
                 [displays replaceObjectAtIndex:num.integerValue withObject:display];
             }
         }];
-        
+
         // Add the first keyframe's DisplayObject to the movie
         [movie addChild:[displays objectAtIndex:0]];
-        
+
         layerIdx = movie.numChildren - 1;
         [movie childAtIndex:layerIdx].name = layer->name;
     }
-    
+
     return self;
 }
 
@@ -67,7 +67,7 @@
         }
     }
     changedKeyframe = false;
-    
+
     BTMovieResourceKeyframe* kf = [self kfAtIdx:keyframeIdx];
     SPDisplayObject* layer = [movie childAtIndex:layerIdx];
     if (keyframeIdx == [keyframes count] - 1|| kf->index == frame) {
@@ -94,7 +94,7 @@
             }
             interped = ease * t + (1 - ease) * interped;
         }
-        
+
         BTMovieResourceKeyframe* nextKf = [self kfAtIdx:keyframeIdx + 1];
         layer.x = kf->x + (nextKf->x - kf->x) * interped;
         layer.y = kf->y + (nextKf->y - kf->y) * interped;
@@ -104,7 +104,7 @@
         layer.skewY = kf->skewY + (nextKf->skewY - kf->skewY) * interped;
         layer.alpha = kf->alpha + (nextKf->alpha - kf->alpha) * interped;
     }
-    
+
     layer.pivotX = kf->pivotX;
     layer.pivotY = kf->pivotY;
     layer.visible = kf->visible;

@@ -7,7 +7,7 @@
 
 @implementation BTDisplayObjectTask
 
-- (id)initWithTime:(float)seconds interpolator:(id<OOOInterpolator>)interp 
+- (id)initWithTime:(float)seconds interpolator:(id<OOOInterpolator>)interp
             target:(SPDisplayObject*)target {
     if ((self = [super initWithTime:seconds interpolator:interp])) {
         _target = target;

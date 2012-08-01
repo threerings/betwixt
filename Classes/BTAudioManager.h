@@ -28,10 +28,10 @@
 
 - (BTAudioChannel*)playSoundNamed:(NSString*)name;
 - (BTAudioChannel*)playSoundNamed:(NSString*)name loop:(BOOL)loop;
-- (BTAudioChannel*)playSoundNamed:(NSString*)name parentControls:(BTAudioControls*)parentControls 
+- (BTAudioChannel*)playSoundNamed:(NSString*)name parentControls:(BTAudioControls*)parentControls
                              loop:(BOOL)loop;
 - (BTAudioChannel*)playSound:(BTSoundResource*)soundResource
-              parentControls:(BTAudioControls*)parentControls 
+              parentControls:(BTAudioControls*)parentControls
                         loop:(BOOL)loop;
 
 - (void)stopAllSounds;

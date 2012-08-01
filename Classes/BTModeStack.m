@@ -81,19 +81,19 @@ typedef enum {
     if (_pendingModeTransitions.count == 0) {
         return;
     }
-    
+
     __block BTMode* initialTopMode = self.topMode;
-    
+
     typedef void (^InsertModeBlock)(BTMode* mode, int index);
     typedef void (^RemoveModeBlock)(int index);
-    
+
     InsertModeBlock doInsertMode = ^(BTMode* newMode, int index) {
         if (index < 0) {
             index = _stack.count + index;
         }
         index = MAX(index, 0);
         index = MIN(index, _stack.count);
-        
+
         if (index == _stack.count) {
             [_stack addObject:newMode];
             [_sprite addChild:newMode.sprite];
@@ -102,75 +102,75 @@ typedef enum {
             [_sprite addChild:newMode.sprite atIndex:index];
         }
     };
-    
+
     RemoveModeBlock doRemoveMode = ^(int index) {
         NSAssert(_stack.count > 0, @"Can't remove from an empty modestack");
-        
+
         if (index < 0) {
             index = _stack.count + index;
         }
         index = MAX(index, 0);
         index = MIN(index, _stack.count - 1);
-        
+
         // if the top mode is removed, make sure it's exited first
         BTMode* removedMode = [_stack objectAtIndex:index];
         if (removedMode == initialTopMode) {
             [initialTopMode exitInternal];
             initialTopMode = nil;
         }
-        
+
         [_stack removeObjectAtIndex:index];
         [_sprite removeChild:removedMode.sprite];
-        
+
         // It's possible that the mode's setup function wasn't called -
         // if this is the case, don't call its shutdown function.
         if (removedMode->_modeStack != nil) {
             [removedMode shutdownInternal];
         }
     };
-    
+
     // create a new _pendingModeTransitionQueue right now
     // so that we can properly handle mode transition requests
     // that occur during the processing of the current queue
     NSMutableArray* transitions = _pendingModeTransitions;
     _pendingModeTransitions = [NSMutableArray array];
-    
+
     for (PendingModeTransition* transition in transitions) {
         switch (transition->type) {
             case kMTT_Push:
                 doInsertMode(transition->mode, _stack.count);
                 break;
-                
+
             case kMTT_Insert:
                 doInsertMode(transition->mode, transition->index);
                 break;
-                
+
             case kMTT_Remove:
                 doRemoveMode(transition->index);
                 break;
-                
+
             case kMTT_Change:
                 if (_stack.count > 0) {
                     doRemoveMode(-1); // pop
                 }
                 doInsertMode(transition->mode, _stack.count); // push
                 break;
-                
+
             case kMTT_Unwind:
                 // pop modes till we find the one we're looking for
                 while (_stack.count > 0 && self.topMode != transition->mode) {
                     doRemoveMode(-1);
                 }
-                
+
                 NSAssert(self.topMode == transition->mode || _stack.count == 0, @"");
-                
+
                 if (_stack.count == 0 && transition->mode != nil) {
                     doInsertMode(transition->mode, _stack.count);
                 }
                 break;
         }
     }
-    
+
     BTMode* newTopMode = self.topMode;
     if (newTopMode != initialTopMode) {
         if (initialTopMode != nil) {

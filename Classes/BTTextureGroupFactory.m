@@ -32,20 +32,20 @@
             }
         }];
     }
-    
+
     return self;
 }
 
 - (NSArray*)create:(GDataXMLElement*)xml {
     NSMutableArray* textures = [[NSMutableArray alloc] init];
-    
+
     GDataXMLElement* theGroup = nil;
     NSArray* groupElements = [xml elementsForName:@"textureGroup"];
     if (groupElements.count > 2) {
-        @throw [GDataXMLException withElement:xml 
+        @throw [GDataXMLException withElement:xml
                                        reason:@"Too many texture groups (expected no more than 2)"];
     }
-    
+
     for (GDataXMLElement* groupXml in groupElements) {
         BOOL retina = [groupXml boolAttribute:@"retina"];
         if (retina == BTApp.deviceType.retina) {
@@ -56,7 +56,7 @@
     if (theGroup == nil) {
         @throw [GDataXMLException withElement:xml reason:@"Missing texture group for density of %@", BTApp.deviceType.name];
     }
-    
+
     if (theGroup != nil) {
         for (GDataXMLElement* atlasXml in [theGroup elementsForName:@"atlas"]) {
             NSString* filename = [BTApp resourcePathFor:[atlasXml stringAttribute:@"file"]];
@@ -69,7 +69,7 @@
             }
         }
     }
-    
+
     return textures;
 }
 @end

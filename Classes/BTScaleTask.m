@@ -11,22 +11,22 @@
     return [[BTScaleTask alloc] initWithTime:seconds scaleX:scaleX scaleY:scaleY interpolator:OOOEasing.linear target:nil];
 }
 
-+ (BTScaleTask*)withTime:(float)seconds scaleX:(float)scaleX scaleY:(float)scaleY 
++ (BTScaleTask*)withTime:(float)seconds scaleX:(float)scaleX scaleY:(float)scaleY
              interpolator:(id<OOOInterpolator>)interp {
     return [[BTScaleTask alloc] initWithTime:seconds scaleX:scaleX scaleY:scaleY interpolator:interp target:nil];
 }
 
-+ (BTScaleTask*)withTime:(float)seconds scaleX:(float)scaleX scaleY:(float)scaleY 
++ (BTScaleTask*)withTime:(float)seconds scaleX:(float)scaleX scaleY:(float)scaleY
                    target:(SPDisplayObject*)target {
     return [[BTScaleTask alloc] initWithTime:seconds scaleX:scaleX scaleY:scaleY interpolator:OOOEasing.linear target:target];
 }
 
-+ (BTScaleTask*)withTime:(float)seconds scaleX:(float)scaleX scaleY:(float)scaleY 
++ (BTScaleTask*)withTime:(float)seconds scaleX:(float)scaleX scaleY:(float)scaleY
              interpolator:(id<OOOInterpolator>)interp target:(SPDisplayObject*)target {
     return [[BTScaleTask alloc] initWithTime:seconds scaleX:scaleX scaleY:scaleY interpolator:interp target:target];
 }
 
-- (id)initWithTime:(float)seconds scaleX:(float)scaleX scaleY:(float)scaleY 
+- (id)initWithTime:(float)seconds scaleX:(float)scaleX scaleY:(float)scaleY
       interpolator:(id<OOOInterpolator>)interp target:(SPDisplayObject*)target {
     if ((self = [super initWithTime:seconds interpolator:interp target:target])) {
         _endX = scaleX;

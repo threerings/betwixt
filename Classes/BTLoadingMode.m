@@ -20,7 +20,7 @@
     if ((self = [super init])) {
         _loadComplete = [[RAUnitSignal alloc] init];
         _filenames = [NSMutableArray array];
-        
+
         [_conns onReactor:self.entered connectUnit:^{
             [self loadNow];
         }];
@@ -43,7 +43,7 @@
     } onError:^(NSException* err) {
         [this onError:err];
     }];
-}  
+}
 
 - (void)onError:(NSException*)err {
     NSLog(@"LoadingMode error: %@", err);

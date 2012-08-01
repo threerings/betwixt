@@ -13,9 +13,9 @@
     if (items.count != 2) {
         return nil;
     }
-    
+
     @try {
-        return [SPPoint pointWithX:[[items objectAtIndex:0] requireFloatValue] 
+        return [SPPoint pointWithX:[[items objectAtIndex:0] requireFloatValue]
                                  y:[[items objectAtIndex:1] requireFloatValue]];
     } @catch (...) {
         return nil;
@@ -71,7 +71,7 @@
 - (void)setLength:(float)length {
     if (mX == 0 && mY == 0)
         [NSException raise:SP_EXC_INVALID_OPERATION format:@"Cannot normalize point in the origin"];
-    
+
     float scale = length / self.length;
     mX *= scale;
     mY *= scale;

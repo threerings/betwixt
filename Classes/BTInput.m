@@ -22,7 +22,7 @@
 
 - (id<OOORegistration>)registerListener:(id<BTTouchListener>)l {
     [_listeners addObject:l];
-    
+
     __weak BTInput* weakSelf = self;
     __weak id<BTTouchListener> weakListener = l;
     return [OOORegistrationFactory withBlock:^{
@@ -37,18 +37,18 @@
     [_listeners removeAllObjects];
 }
 
-- (void)processTouches:(NSSet*)touches {   
+- (void)processTouches:(NSSet*)touches {
     NSMutableSet *processedTouches = [[NSMutableSet alloc] init];
-    
+
     // process new touches
     for (SPTouch *touch in touches) {
         SPTouch *currentTouch = nil;
-        
+
         for (SPTouch *existingTouch in _currentTouches) {
             if (existingTouch.phase == SPTouchPhaseEnded || existingTouch.phase == SPTouchPhaseCancelled) {
                 continue;
             }
-            
+
             if ((existingTouch.globalX == touch.previousGlobalX &&
                  existingTouch.globalY == touch.previousGlobalY) ||
                 (existingTouch.globalX == touch.globalX &&
@@ -61,18 +61,18 @@
                 existingTouch.globalY = touch.globalY;
                 existingTouch.phase = touch.phase;
                 existingTouch.tapCount = touch.tapCount;
-                
+
                 if (!existingTouch.target.stage) {
                     // target could have been removed from stage -> find new target in that case
                     SPPoint *touchPosition = [SPPoint pointWithX:touch.globalX y:touch.globalY];
-                    existingTouch.target = [_root hitTestPoint:touchPosition forTouch:YES];       
+                    existingTouch.target = [_root hitTestPoint:touchPosition forTouch:YES];
                 }
-                
+
                 currentTouch = existingTouch;
                 break;
             }
         }
-        
+
         if (!currentTouch) {
             // new touch!
             currentTouch = [SPTouch touch];
@@ -86,10 +86,10 @@
             SPPoint *touchPosition = [SPPoint pointWithX:touch.globalX y:touch.globalY];
             currentTouch.target = [_root hitTestPoint:touchPosition forTouch:YES];
         }
-        
+
         [processedTouches addObject:currentTouch];
     }
-    
+
     // For each touch, first send it to our listeners who get first chance at all input.
     // If a listener doesn't handle the touch, dispatch it to the display list.
     for (SPTouch *touch in processedTouches) {
@@ -102,36 +102,36 @@
                     case SPTouchPhaseBegan:
                         handled = [l onTouchStart:touch];
                         break;
-                        
+
                     case SPTouchPhaseMoved:
                         handled = [l onTouchMove:touch];
                         break;
-                        
+
                     case SPTouchPhaseEnded:
                     case SPTouchPhaseCancelled:
                         handled = [l onTouchEnd:touch];
                         break;
-                        
+
                     // avoid warning for not handling all cases.
                     case SPTouchPhaseStationary:
                         handled = YES;
                         break;
                 }
-                
+
                 if (handled) {
                     break;
                 }
             }
         }
-        
+
         if (!handled) {
-            SPTouchEvent *touchEvent = [[SPTouchEvent alloc] initWithType:SP_EVENT_TYPE_TOUCH 
+            SPTouchEvent *touchEvent = [[SPTouchEvent alloc] initWithType:SP_EVENT_TYPE_TOUCH
                                                                   touches:processedTouches];
             [touch.target dispatchEvent:touchEvent];
         }
     }
-    
-    _currentTouches = processedTouches;    
+
+    _currentTouches = processedTouches;
 }
 
 @end

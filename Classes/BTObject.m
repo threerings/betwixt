@@ -55,15 +55,15 @@
     [self.namedObjects setObject:node forKey:name];
 }
 
-- (void)addNodeInternal:(BTNode*)node 
-               withName:(NSString*)name 
-        replaceExisting:(BOOL)replaceExisting 
+- (void)addNodeInternal:(BTNode*)node
+               withName:(NSString*)name
+        replaceExisting:(BOOL)replaceExisting
           displayParent:(SPDisplayObjectContainer*)displayParent {
-    
+
     NSAssert(!_wasRemoved, @"Adding object to removed object");
     NSAssert(!node.isLive, @"Cannot add an already-added object");
     NSAssert(!node->_wasRemoved, @"Cannot re-add a removed object");
-    
+
     // Was a displayParent specified?
     // We attach the node's displayObject to its displayParent immediately,
     // even if we're not yet live, to ensure that the displayList is ordered
@@ -71,7 +71,7 @@
     if (displayParent != nil) {
         [displayParent addChild:((BTViewObject*)node).display];
     }
-    
+
     // If we're not yet attached to the mode, we'll attach this node when we are
     if (!self.isLive) {
         BTPendingChildNode *pendingChild = [[BTPendingChildNode alloc] init];
@@ -81,10 +81,10 @@
         [self.pendingChildren addObject:pendingChild];
         return;
     }
-    
+
     [_children addObject:node];
     node->_parent = self;
-    
+
     // Does the object have a name?
     if (name != nil) {
         if (replaceExisting) {
@@ -92,10 +92,10 @@
         }
         [self associateNode:node withName:name];
     }
-    
+
     // Register the node with the mode
     [self.mode registerNode:node];
-    
+
     // Tell the node it's attached
     [node addedInternal];
 }
@@ -104,9 +104,9 @@
     if (_pendingChildren != nil) {
         // Attach all our pending children
         for (BTPendingChildNode *pending in _pendingChildren) {
-            [self addNodeInternal:pending->node 
-                         withName:pending->name 
-                  replaceExisting:pending->replaceExisting 
+            [self addNodeInternal:pending->node
+                         withName:pending->name
+                  replaceExisting:pending->replaceExisting
                            displayParent:nil];
         }
         _pendingChildren = nil;
@@ -132,12 +132,12 @@
 
 - (void)removeNode:(BTNode*)node {
     NSAssert(node->_parent == self || node->_parent == nil, @"node doesn't belong to us");
-    
+
     // if _children is nil, we're in the middle of being removed ourselves.
     if (node->_parent == nil || _children == nil) {
         return;
     }
-    
+
     NSAssert([_children containsObject:node], @"node not in _children");
     [_children removeObject:node];
     [node removedInternal];

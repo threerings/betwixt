@@ -11,11 +11,11 @@
 - (SPPoint*)pointAttribute:(NSString*)name defaultVal:(SPPoint*)defaultVal required:(BOOL)required {
     NSString* attr = [self getAttr:name required:required];
     if (attr == nil) return defaultVal;
-    
+
     SPPoint* p = [SPPoint pointFromString:attr];
     if (p != nil) return p;
-    
-    @throw [GDataXMLException withElement:self 
+
+    @throw [GDataXMLException withElement:self
        reason:@"Error reading attribute '%@': could not convert '%@' to SPPoint", name, attr];
 }
 
@@ -30,11 +30,11 @@
 - (SPRectangle*)rectangleAttribute:(NSString*)name defaultVal:(SPRectangle*)defaultVal required:(BOOL)required {
     NSString* attr = [self getAttr:name required:required];
     if (attr == nil) return defaultVal;
-    
+
     SPRectangle* r = [SPRectangle rectangleFromString:attr];
     if (r != nil) return r;
-    
-    @throw [GDataXMLException withElement:self 
+
+    @throw [GDataXMLException withElement:self
        reason:@"Error reading attribute '%@': could not convert '%@' to SPRectangle", name, attr];
 }
 

@@ -7,7 +7,7 @@
 
 @implementation BTMovieButton
 
-- (id)initWithMovie:(BTMovie*)movie upLabel:(NSString*)upLabel downLabel:(NSString*)downLabel 
+- (id)initWithMovie:(BTMovie*)movie upLabel:(NSString*)upLabel downLabel:(NSString*)downLabel
       disabledLabel:(NSString*)disabledLabel {
     if ((self = [super init])) {
         _movie = movie;
@@ -32,7 +32,7 @@
     case BT_BUTTON_STATE_DOWN:      label = _downLabel; break;
     case BT_BUTTON_STATE_DISABLED:  label = _disabledLabel; break;
     }
-    
+
     [_movie gotoLabel:label];
 }
 
