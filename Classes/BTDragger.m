@@ -44,24 +44,24 @@ static const float MAX_TAP_MOVEMENT = 10;
     [self onDragStart:_start];
 }
 
-- (BOOL)onTouchStart:(SPTouch*)touch {
-    return self.dragging;
+- (BTTouchStatus)onTouchStart:(SPTouch*)touch {
+    return (self.dragging ? BTTouch_Handled : BTTouch_Unhandled);
 }
 
-- (BOOL)onTouchMove:(SPTouch*)touch {
+- (BTTouchStatus)onTouchMove:(SPTouch*)touch {
     if (!self.dragging) {
-        return NO;
+        return BTTouch_Unhandled;
     }
     if (touch == _touch) {
         _current = [SPPoint pointWithX:touch.globalX y:touch.globalY];
         [self onDragged:_current start:_start];
     }
-    return YES;
+    return BTTouch_Handled;
 }
 
-- (BOOL)onTouchEnd:(SPTouch*)touch {
+- (BTTouchStatus)onTouchEnd:(SPTouch*)touch {
     if (!self.dragging) {
-        return NO;
+        return BTTouch_Unhandled;
     }
     if (touch == _touch) {
         _current = [SPPoint pointWithX:touch.globalX y:touch.globalY];
@@ -70,7 +70,7 @@ static const float MAX_TAP_MOVEMENT = 10;
         [self stopDragWithSuccess:YES];
         [self onDragEnd:_current start:_start];
     }
-    return YES;
+    return BTTouch_Handled;
 }
 
 - (void)cancelDrag {

@@ -68,23 +68,23 @@
     [super cleanup];
 }
 
-- (BOOL)onTouchStart:(SPTouch*)touch {
-    return YES;
+- (BTTouchStatus)onTouchStart:(SPTouch*)touch {
+    return BTTouch_Handled;
 }
 
-- (BOOL)onTouchMove:(SPTouch*)touch {
+- (BTTouchStatus)onTouchMove:(SPTouch*)touch {
     if (!_enabled) {
-        return NO;
+        return BTTouch_Unhandled;
     }
     if (touch == _touch) {
         [self setState:[self hitTest:touch] ? BT_BUTTON_STATE_DOWN : BT_BUTTON_STATE_UP];
     }
-    return YES;
+    return BTTouch_Handled;
 }
 
-- (BOOL)onTouchEnd:(SPTouch*)touch {
+- (BTTouchStatus)onTouchEnd:(SPTouch*)touch {
     if (!_enabled) {
-        return NO;
+        return BTTouch_Unhandled;
     }
     if (_touch == touch) {
         [self setState:BT_BUTTON_STATE_UP];
@@ -95,7 +95,7 @@
             [_clicked emit];
         }
     }
-    return YES;
+    return BTTouch_Handled;
 }
 
 - (void)cancelCapture {

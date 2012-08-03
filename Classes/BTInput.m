@@ -100,16 +100,16 @@
             for (id<BTTouchListener> l in listeners.reverseObjectEnumerator) {
                 switch (touch.phase) {
                     case SPTouchPhaseBegan:
-                        handled = [l onTouchStart:touch];
+                        handled = ([l onTouchStart:touch] == BTTouch_Handled);
                         break;
 
                     case SPTouchPhaseMoved:
-                        handled = [l onTouchMove:touch];
+                        handled = ([l onTouchMove:touch] == BTTouch_Handled);
                         break;
 
                     case SPTouchPhaseEnded:
                     case SPTouchPhaseCancelled:
-                        handled = [l onTouchEnd:touch];
+                        handled = ([l onTouchEnd:touch] == BTTouch_Handled);
                         break;
 
                     // avoid warning for not handling all cases.
