@@ -13,9 +13,7 @@
     BTButtonState _curState;
 }
 
-- (void)setState:(BTButtonState)state;
 - (BOOL)hitTest:(SPTouch*)touch;
-- (void)cancelCapture;
 @end
 
 @implementation BTButton
@@ -55,17 +53,21 @@
 
     [self.conns addConnection:[self.touchBegan connectSlot:^(SPTouch* touch) {
         if (_enabled) {
-            _touch = touch;
-            [self setState:BT_BUTTON_STATE_DOWN];
-            // capture all input until the touch ends
-            _captureReg = [self.mode.input registerListener:self];
+            [self handleInitialTouch:touch];
         }
     }]];
 }
 
 - (void)cleanup {
-    [self cancelCapture];
+    [self cancelInputCapture];
     [super cleanup];
+}
+
+- (void)handleInitialTouch:(SPTouch*)touch {
+    _touch = touch;
+    [self setState:BT_BUTTON_STATE_DOWN];
+    // capture all input until the touch ends
+    _captureReg = [self.mode.input registerListener:self];
 }
 
 - (BTTouchStatus)onTouchStart:(SPTouch*)touch {
@@ -88,7 +90,7 @@
     }
     if (_touch == touch) {
         [self setState:BT_BUTTON_STATE_UP];
-        [self cancelCapture];
+        [self cancelInputCapture];
         // Emit the signal after doing everything else, because a
         // signal handler could change our state.
         if ([self hitTest:touch]) {
@@ -98,7 +100,7 @@
     return BTTouch_Handled;
 }
 
-- (void)cancelCapture {
+- (void)cancelInputCapture {
     [_captureReg cancel];
     _captureReg = nil;
     _touch = nil;
