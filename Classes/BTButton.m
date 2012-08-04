@@ -9,10 +9,7 @@
 #import "BTMovieResource.h"
 #import "BTMode.h"
 
-@interface BTButton () {
-    BTButtonState _curState;
-}
-
+@interface BTButton ()
 - (BOOL)hitTest:(SPTouch*)touch;
 @end
 

@@ -3,12 +3,6 @@
 
 #import "BTButton.h"
 
-typedef enum {
-    BT_BUTTON_STATE_UP = 0,
-    BT_BUTTON_STATE_DOWN,
-    BT_BUTTON_STATE_DISABLED
-} BTButtonState;
-
 @interface BTButton (protected)
 
 /// Abstract: subclasses must implement
