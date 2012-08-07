@@ -53,6 +53,8 @@ extern NSString* const BTMovieLastFrame;
 /// Adds a loop to the BTMovie. When "endLabel" is passed, the movie
 /// will loop back to "startLabel"
 /// (Returns an RAConnection that can be used to cancel the loop.)
+/// BTMovieResource will automatically create loops when it encounters frame labels
+/// of the form loop_start*/loop_end* (where '*' is any string, including the empty string).
 - (RAConnection*)addLoopWithStart:(NSString*)startLabel end:(NSString*)endLabel;
 
 /// Fires when the given label is fired by labelPassed.

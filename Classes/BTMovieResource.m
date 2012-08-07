@@ -12,6 +12,29 @@
 #import "BTResourceManager.h"
 #import "BTDeviceType.h"
 
+static NSString* const LOOP_START_PREFIX = @"loop_start";
+static NSString* const LOOP_END_PREFIX = @"loop_end";
+
+static NSString* LabelToLoopStartName (NSString* label) {
+    return ([label startsWith:LOOP_START_PREFIX] ?
+            [label substringFromIndex:LOOP_START_PREFIX.length] :
+            nil);
+}
+
+static NSString* LabelToLoopEndName (NSString* label) {
+    return ([label startsWith:LOOP_END_PREFIX] ?
+            [label substringFromIndex:LOOP_END_PREFIX.length] :
+            nil);
+}
+
+static NSString* LoopStartNameToLabel (NSString* name) {
+    return [NSString stringWithFormat:@"%@%@", LOOP_START_PREFIX, name];
+}
+
+static NSString* LoopEndNameToLabel (NSString* name) {
+    return [NSString stringWithFormat:@"%@%@", LOOP_END_PREFIX, name];
+}
+
 @interface BTMovieResourceFactory : NSObject<BTResourceFactory>
 @end
 
@@ -48,17 +71,56 @@
                 [[_labels lastObject] addObject:label];
             }
         }
+
+        NSMutableSet* allLoopStarts = [[NSMutableSet alloc] init];
+        NSMutableSet* unmatchedLoopStarts = [[NSMutableSet alloc] init];
+        _loopLabels = [[NSMutableArray alloc] init];
         for (BTMovieResourceLayer* layer in _layers) {
             for (BTMovieResourceKeyframe* kf in layer->keyframes) {
-                if (kf->label) [[_labels objectAtIndex:kf->index] addObject:kf->label];
+                NSString* label = kf->label;
+                if (label != nil) {
+                    [[_labels objectAtIndex:kf->index] addObject:label];
+
+                    // is this label part of a loop?
+                    NSString* loopName = LabelToLoopStartName(label);
+                    if (loopName != nil) {
+                        if ([allLoopStarts containsObject:loopName]) {
+                            NSLog(@"Duplicate loop start '%@'", LoopStartNameToLabel(loopName));
+                        } else {
+                            [allLoopStarts addObject:loopName];
+                            [unmatchedLoopStarts addObject:loopName];
+                        }
+
+                    } else {
+                        loopName = LabelToLoopEndName(label);
+                        if (loopName != nil) {
+                            if (!([unmatchedLoopStarts containsObject:loopName])) {
+                                NSLog(@"Unmatched loop end '%@'", LoopEndNameToLabel(loopName));
+                            } else {
+                                [unmatchedLoopStarts removeObject:loopName];
+                                [_loopLabels addObject:LoopStartNameToLabel(loopName)];
+                                [_loopLabels addObject:LoopEndNameToLabel(loopName)];
+                            }
+                        }
+                    }
+                }
             }
         }
+
+        for (NSString* unmatchedLoopStart in unmatchedLoopStarts) {
+            NSLog(@"Unmatched loop start '%@'", LoopStartNameToLabel(unmatchedLoopStart));
+        }
+
     }
     return self;
 }
 
 - (BTMovie*)newMovie {
-    return [[BTMovie alloc] initWithFramerate:_framerate layers:_layers labels:_labels];
+    BTMovie* movie = [[BTMovie alloc] initWithFramerate:_framerate layers:_layers labels:_labels];
+    for (int ii = 0; ii < _loopLabels.count; ii += 2) {
+        [movie addLoopWithStart:[_loopLabels objectAtIndex:ii] end:[_loopLabels objectAtIndex:ii + 1]];
+    }
+    return movie;
 }
 
 - (SPDisplayObject*)createDisplayObject { return [self newMovie]; }

@@ -15,6 +15,7 @@
 @protected
     NSMutableArray* _layers;
     NSMutableArray* _labels;
+    NSMutableArray* _loopLabels;
     float _framerate;
 }
 
