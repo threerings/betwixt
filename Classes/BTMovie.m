@@ -209,6 +209,13 @@ NSString* const BTMovieLastFrame = @"BTMovieLastFrame";
     return [_labels count];
 }
 
+- (RAConnection*)addLoopWithStart:(NSString*)startLabel end:(NSString*)endLabel {
+    __weak BTMovie* this = self;
+    return [self monitorLabel:endLabel withUnit:^{
+        [this playFromLabel:startLabel];
+    }];
+}
+
 - (void)advanceTime:(double)dt {
     if (!_playing.value) {
         return;

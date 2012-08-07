@@ -6,8 +6,8 @@
 
 @class RABoolValue;
 
-extern NSString * const BTMovieFirstFrame;
-extern NSString * const BTMovieLastFrame;
+extern NSString* const BTMovieFirstFrame;
+extern NSString* const BTMovieLastFrame;
 
 @interface BTMovie : SPSprite <SPAnimatable> {
 @protected
@@ -50,7 +50,12 @@ extern NSString * const BTMovieLastFrame;
 - (void)playToLabel:(NSString*)label;
 - (void)playToFrame:(int)frame;
 
-// Fires when the given label is fired by labelPassed.
+/// Adds a loop to the BTMovie. When "endLabel" is passed, the movie
+/// will loop back to "startLabel"
+/// (Returns an RAConnection that can be used to cancel the loop.)
+- (RAConnection*)addLoopWithStart:(NSString*)startLabel end:(NSString*)endLabel;
+
+/// Fires when the given label is fired by labelPassed.
 - (RAConnection*)monitorLabel:(NSString*)label withUnit:(RAUnitBlock)slot;
 
 @end
