@@ -98,7 +98,7 @@
         } else if (loadErr == nil) {
             @try {
                 for (BTResource* rsrc in resources) {
-                    if ([self isResourceLoaded:rsrc.name]) {
+                    if ([self resourceExists:rsrc.name]) {
                         [NSException raise:NSGenericException
                                     format:@"A resource with that name already exists: '%@'", rsrc.name];
                     } else {
@@ -150,7 +150,7 @@
     return rsrc;
 }
 
-- (BOOL)isResourceLoaded:(NSString*)name {
+- (BOOL)resourceExists:(NSString*)name {
     return [self getResource:name] != nil;
 }
 

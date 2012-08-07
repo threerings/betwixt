@@ -28,11 +28,13 @@
 - (void)unloadResourceFiles:(NSArray*)filenames;
 - (void)unloadResourceFile:(NSString*)filename;
 
+- (BOOL)isResourceFileLoaded:(NSString*)filename;
+
 - (id)getResource:(NSString*)name;
 - (id)requireResource:(NSString*)name;
 - (id)requireResource:(NSString*)name ofType:(Class)clazz;
 - (id)requireResource:(NSString*)name conformingTo:(Protocol*)proto;
-- (BOOL)isResourceLoaded:(NSString*)name;
+- (BOOL)resourceExists:(NSString*)name;
 - (void)registerFactory:(id<BTResourceFactory>)factory forType:(NSString*)type;
 - (void)registerMultiFactory:(id<BTMultiResourceFactory>)factory forType:(NSString*)type;
 - (void)unloadAll;
