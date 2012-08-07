@@ -13,9 +13,9 @@
 
 @interface BTMovieResource : BTResource <BTDisplayObjectCreator> {
 @protected
-    NSMutableArray* layers;
-    NSMutableArray* labels;
-    float framerate;
+    NSMutableArray* _layers;
+    NSMutableArray* _labels;
+    float _framerate;
 }
 
 + (id<BTResourceFactory>)sharedFactory;
