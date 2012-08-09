@@ -14,5 +14,6 @@
 - (BOOL)supportsUIInterfaceOrientation:(UIInterfaceOrientation)orientation;
 
 - (NSString*)resourcePathPrefix;
+- (float)maxUpdateTime;
 
 @end

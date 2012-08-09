@@ -232,13 +232,18 @@ static NSString* const FALLBACK_IMAGE_PATHS[] = {
     OOO_IS_ABSTRACT();
 }
 
+- (float)maxUpdateTime {
+    return 1.0f / 20.0f; // by default, update at a minimum of 20 fps
+}
+
 - (void)update:(float)dt {
+    _framerate = 1.0f / dt;
+    dt = MIN(dt, self.maxUpdateTime);
     if (_splashScreenView != nil) {
         [_splashScreenView removeFromSuperview];
         _splashScreenView = nil;
     }
 
-    _framerate = 1.0f / dt;
     [_audio update:dt];
     for (BTModeStack* stack in _modeStacks) {
         [stack update:dt];
