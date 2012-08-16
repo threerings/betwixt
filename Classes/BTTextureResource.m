@@ -7,6 +7,7 @@
 #import "BTApp.h"
 #import "BTResourceManager.h"
 #import "SPRectangle+BTExtensions.h"
+#import "BTBitmap.h"
 
 @interface BTTextureResourceFactory : NSObject<BTResourceFactory>
 @end
@@ -92,8 +93,8 @@
     return image;
 }
 
-- (OOOBitmap*)createBitmap {
-    return [[OOOBitmap alloc] initWithUIImage:[self createUIImage]];
+- (BTBitmap*)createBitmap {
+    return [[BTBitmap alloc] initWithUIImage:[self createUIImage]];
 }
 
 @end

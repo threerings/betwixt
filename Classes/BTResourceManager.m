@@ -127,6 +127,7 @@
 }
 
 - (id)getResource:(NSString*)name {
+    OOO_PROFILE_SECTION(ResourceManager_getResource);
     return [_resources objectForKey:name];
 }
 

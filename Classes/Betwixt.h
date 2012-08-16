@@ -37,6 +37,7 @@
 #import "SPRectangle+BTExtensions.h"
 #import "SPTextField+BTExtensions.h"
 #import "SPView+BTExtensions.h"
+#import "UIColor+BTExtensions.h"
 
 // Resources
 #import "BTFontResource.h"
@@ -79,6 +80,7 @@
 #import "BTWaitTask.h"
 
 // Utils
+#import "BTBitmap.h"
 #import "BTDisplayUtil.h"
 #import "BTEventSignal.h"
 #import "BTLoadingMode.h"

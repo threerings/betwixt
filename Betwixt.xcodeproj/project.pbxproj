@@ -95,6 +95,10 @@
 		22D46A9F153CCE79005BAD6D /* BTSignalTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D46A9D153CCE79005BAD6D /* BTSignalTask.m */; };
 		22D46AA2153CD2A2005BAD6D /* BTMovieTask.h in Headers */ = {isa = PBXBuildFile; fileRef = 22D46AA0153CD2A1005BAD6D /* BTMovieTask.h */; };
 		22D46AA3153CD2A2005BAD6D /* BTMovieTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D46AA1153CD2A2005BAD6D /* BTMovieTask.m */; };
+		22D6C09215DD991500A824D2 /* BTBitmap.h in Headers */ = {isa = PBXBuildFile; fileRef = 22D6C09015DD991500A824D2 /* BTBitmap.h */; };
+		22D6C09315DD991500A824D2 /* BTBitmap.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D6C09115DD991500A824D2 /* BTBitmap.m */; };
+		22D6C09A15DD9AB000A824D2 /* UIColor+BTExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 22D6C09815DD9AB000A824D2 /* UIColor+BTExtensions.h */; };
+		22D6C09B15DD9AB000A824D2 /* UIColor+BTExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D6C09915DD9AB000A824D2 /* UIColor+BTExtensions.m */; };
 		22DB8234150AAA290091B648 /* BTDeviceType.h in Headers */ = {isa = PBXBuildFile; fileRef = 22DB8232150AAA290091B648 /* BTDeviceType.h */; };
 		22DB8235150AAA290091B648 /* BTDeviceType.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DB8233150AAA290091B648 /* BTDeviceType.m */; };
 		22DBA63814DCAF6200F0F7C8 /* BTApp+Protected.h in Headers */ = {isa = PBXBuildFile; fileRef = 22DBA63714DCAF6200F0F7C8 /* BTApp+Protected.h */; };
@@ -369,6 +373,10 @@
 		22D46A9D153CCE79005BAD6D /* BTSignalTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTSignalTask.m; sourceTree = "<group>"; };
 		22D46AA0153CD2A1005BAD6D /* BTMovieTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTMovieTask.h; sourceTree = "<group>"; };
 		22D46AA1153CD2A2005BAD6D /* BTMovieTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTMovieTask.m; sourceTree = "<group>"; };
+		22D6C09015DD991500A824D2 /* BTBitmap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTBitmap.h; sourceTree = "<group>"; };
+		22D6C09115DD991500A824D2 /* BTBitmap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTBitmap.m; sourceTree = "<group>"; };
+		22D6C09815DD9AB000A824D2 /* UIColor+BTExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+BTExtensions.h"; sourceTree = "<group>"; };
+		22D6C09915DD9AB000A824D2 /* UIColor+BTExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+BTExtensions.m"; sourceTree = "<group>"; };
 		22DB8232150AAA290091B648 /* BTDeviceType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTDeviceType.h; sourceTree = "<group>"; };
 		22DB8233150AAA290091B648 /* BTDeviceType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTDeviceType.m; sourceTree = "<group>"; };
 		22DBA63714DCAF6200F0F7C8 /* BTApp+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BTApp+Protected.h"; sourceTree = "<group>"; };
@@ -578,6 +586,8 @@
 		2221998C14D0F7DA009B764F /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				22D6C09015DD991500A824D2 /* BTBitmap.h */,
+				22D6C09115DD991500A824D2 /* BTBitmap.m */,
 				22B9CB7815C9E9AB00E0E4FD /* BTDisplayUtil.h */,
 				22B9CB7915C9E9AB00E0E4FD /* BTDisplayUtil.m */,
 				22E0A75E152A3837009FDE09 /* BTEventSignal+Protected.h */,
@@ -634,6 +644,8 @@
 				22FBCA28156EFEC9009C19CF /* SPTextField+BTExtensions.m */,
 				22608C6B1505C2D300CCE0A5 /* SPView+BTExtensions.h */,
 				22608C6C1505C2D300CCE0A5 /* SPView+BTExtensions.m */,
+				22D6C09815DD9AB000A824D2 /* UIColor+BTExtensions.h */,
+				22D6C09915DD9AB000A824D2 /* UIColor+BTExtensions.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -966,6 +978,8 @@
 				223163A115B61DD400F85F32 /* BTMovieLayer.h in Headers */,
 				221B023C15BA311500AD645C /* BTPointI.h in Headers */,
 				22B9CB7A15C9E9AB00E0E4FD /* BTDisplayUtil.h in Headers */,
+				22D6C09215DD991500A824D2 /* BTBitmap.h in Headers */,
+				22D6C09A15DD9AB000A824D2 /* UIColor+BTExtensions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1203,6 +1217,8 @@
 				223163A215B61DD400F85F32 /* BTMovieLayer.m in Sources */,
 				221B023D15BA311500AD645C /* BTPointI.m in Sources */,
 				22B9CB7B15C9E9AB00E0E4FD /* BTDisplayUtil.m in Sources */,
+				22D6C09315DD991500A824D2 /* BTBitmap.m in Sources */,
+				22D6C09B15DD9AB000A824D2 /* UIColor+BTExtensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

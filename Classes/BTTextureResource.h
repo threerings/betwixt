@@ -7,6 +7,7 @@
 #define BT_TEXTURE_RESOURCE_NAME @"texture"
 
 @protocol BTResourceFactory;
+@class BTBitmap;
 @class GDataXMLElement;
 
 @interface BTTextureResource : BTResource<BTDisplayObjectCreator> {
@@ -29,6 +30,6 @@
 - (SPImage*)createImage;
 
 - (UIImage*)createUIImage;
-- (OOOBitmap*)createBitmap;
+- (BTBitmap*)createBitmap;
 
 @end
