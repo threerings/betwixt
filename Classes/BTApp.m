@@ -76,7 +76,7 @@ static BTApp* gInstance = nil;
 }
 
 + (double)timeNow {
-    return CACurrentMediaTime();
+    return OOOTimeNow();
 }
 
 + (BTModeStack*)createModeStack {
