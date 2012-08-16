@@ -3,12 +3,7 @@
 
 #import "UIColor+BTExtensions.h"
 
-#define BT_COLOR_PART_ALPHA(color)  (((color) >> 24) & 0xff)
-#define BT_COLOR_PART_RED(color)    (((color) >> 16) & 0xff)
-#define OOO_COLOR_PART_GREEN(color)  (((color) >>  8) & 0xff)
-#define OOO_COLOR_PART_BLUE(color)   ( (color)        & 0xff)
-
-@implementation UIColor (BTExtensions.h)
+@implementation UIColor (BTExtensions)
 
 + (UIColor*)colorWithARGB:(uint)color {
     return [UIColor colorWithRed:SP_COLOR_PART_RED(color) / 255.0f
