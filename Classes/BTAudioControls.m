@@ -40,7 +40,7 @@
 }
 
 - (void)attachChild:(BTAudioControls*)child {
-    [self.children addObject:[OOOBoxedWeakRef createWith:child]];
+    [self.children addObject:[OOOBoxedWeakRef boxedWeakRefWithValue:child]];
 }
 
 - (BTAudioState*)state {
