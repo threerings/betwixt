@@ -78,6 +78,8 @@
 #import "BTSignalTask.h"
 #import "BTVisibilityTask.h"
 #import "BTWaitTask.h"
+#import "BTXLocationTask.h"
+#import "BTYLocationTask.h"
 
 // Utils
 #import "BTBitmap.h"

@@ -117,6 +117,10 @@
 		22EA323015633DA600557886 /* BTAudioManager+Package.h in Headers */ = {isa = PBXBuildFile; fileRef = 22EA322F15633DA500557886 /* BTAudioManager+Package.h */; };
 		22EA32341563436300557886 /* BTCheckbox.h in Headers */ = {isa = PBXBuildFile; fileRef = 22EA32321563436300557886 /* BTCheckbox.h */; };
 		22EA32351563436300557886 /* BTCheckbox.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EA32331563436300557886 /* BTCheckbox.m */; };
+		22F14C3215E1A74700E78C22 /* BTXLocationTask.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F14C3015E1A74700E78C22 /* BTXLocationTask.h */; };
+		22F14C3315E1A74700E78C22 /* BTXLocationTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F14C3115E1A74700E78C22 /* BTXLocationTask.m */; };
+		22F14C3A15E1A7C400E78C22 /* BTYLocationTask.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F14C3815E1A7C400E78C22 /* BTYLocationTask.h */; };
+		22F14C3B15E1A7C400E78C22 /* BTYLocationTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F14C3915E1A7C400E78C22 /* BTYLocationTask.m */; };
 		22F3373D14E89BAC00A17CCB /* GroupTestMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F3373C14E89BAC00A17CCB /* GroupTestMode.m */; };
 		22F979EA14C0E23F00A6913B /* GDataXMLNode+BTExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F979D814C0E23F00A6913B /* GDataXMLNode+BTExtensions.h */; };
 		22F979EB14C0E23F00A6913B /* GDataXMLNode+BTExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F979D914C0E23F00A6913B /* GDataXMLNode+BTExtensions.m */; };
@@ -394,6 +398,10 @@
 		22EA322F15633DA500557886 /* BTAudioManager+Package.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BTAudioManager+Package.h"; sourceTree = "<group>"; };
 		22EA32321563436300557886 /* BTCheckbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTCheckbox.h; sourceTree = "<group>"; };
 		22EA32331563436300557886 /* BTCheckbox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTCheckbox.m; sourceTree = "<group>"; };
+		22F14C3015E1A74700E78C22 /* BTXLocationTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTXLocationTask.h; sourceTree = "<group>"; };
+		22F14C3115E1A74700E78C22 /* BTXLocationTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTXLocationTask.m; sourceTree = "<group>"; };
+		22F14C3815E1A7C400E78C22 /* BTYLocationTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTYLocationTask.h; sourceTree = "<group>"; };
+		22F14C3915E1A7C400E78C22 /* BTYLocationTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTYLocationTask.m; sourceTree = "<group>"; };
 		22F3373B14E89BAC00A17CCB /* GroupTestMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GroupTestMode.h; path = Integration/GroupTestMode.h; sourceTree = "<group>"; };
 		22F3373C14E89BAC00A17CCB /* GroupTestMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GroupTestMode.m; path = Integration/GroupTestMode.m; sourceTree = "<group>"; };
 		22F979D814C0E23F00A6913B /* GDataXMLNode+BTExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GDataXMLNode+BTExtensions.h"; sourceTree = "<group>"; };
@@ -815,6 +823,10 @@
 				2208FC71151D207800669256 /* BTVisibilityTask.m */,
 				CB442C7514B3834200EB2821 /* BTWaitTask.h */,
 				CB442C7614B3834200EB2821 /* BTWaitTask.m */,
+				22F14C3015E1A74700E78C22 /* BTXLocationTask.h */,
+				22F14C3115E1A74700E78C22 /* BTXLocationTask.m */,
+				22F14C3815E1A7C400E78C22 /* BTYLocationTask.h */,
+				22F14C3915E1A7C400E78C22 /* BTYLocationTask.m */,
 			);
 			name = Tasks;
 			sourceTree = "<group>";
@@ -980,6 +992,8 @@
 				22B9CB7A15C9E9AB00E0E4FD /* BTDisplayUtil.h in Headers */,
 				22D6C09215DD991500A824D2 /* BTBitmap.h in Headers */,
 				22D6C09A15DD9AB000A824D2 /* UIColor+BTExtensions.h in Headers */,
+				22F14C3215E1A74700E78C22 /* BTXLocationTask.h in Headers */,
+				22F14C3A15E1A7C400E78C22 /* BTYLocationTask.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1219,6 +1233,8 @@
 				22B9CB7B15C9E9AB00E0E4FD /* BTDisplayUtil.m in Sources */,
 				22D6C09315DD991500A824D2 /* BTBitmap.m in Sources */,
 				22D6C09B15DD9AB000A824D2 /* UIColor+BTExtensions.m in Sources */,
+				22F14C3315E1A74700E78C22 /* BTXLocationTask.m in Sources */,
+				22F14C3B15E1A7C400E78C22 /* BTYLocationTask.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
