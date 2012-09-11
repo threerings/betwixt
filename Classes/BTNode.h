@@ -14,28 +14,28 @@
     RAConnectionGroup* _conns;
 }
 
-/// Removes the node from its mode. Once a node has been removed, it can't
-/// be readded or reused.
-- (void)removeSelf;
+@property (nonatomic,readonly) RAUnitSignal* removed;
+@property (nonatomic,readonly) BTMode* mode;
+@property (nonatomic,readonly) RAConnectionGroup* conns;
+@property (nonatomic,readonly) NSObject<BTNodeContainer>* parent;
+@property (nonatomic,readonly) BOOL isLive;
 
 /// "Keyed" objects are uniquely identified in their containing BTMode
 /// No two nodes can share the same key in a given mode.
 /// You can retrieve a keyed node from its mode with [BTMode nodeForKey:]
 /// You can use BT_STATIC_KEYS(@"foo", @"bar") for easy implementation.
 /// Alternately, if your keys are defined dynamically, you can use BT_KEYS(...)
-- (NSArray*)keys;
+@property (nonatomic,readonly) NSArray* keys;
 
 /// Multiple objects can belong to the same group.
 /// You can retrieve all objects in a group with [BTMode nodesForGroup:]
 /// You can use BT_STATIC_GROUPS(@"foo", @"bar") for easy implementation.
 /// Alternately, if your groups are defined dynamically, you can use BT_GROUPS(...)
-- (NSArray*)groups;
+@property (nonatomic,readonly) NSArray* groups;
 
-@property (nonatomic,readonly) RAUnitSignal* removed;
-@property (nonatomic,readonly) BTMode* mode;
-@property (nonatomic,readonly) RAConnectionGroup* conns;
-@property (nonatomic,readonly) NSObject<BTNodeContainer>* parent;
-@property (nonatomic,readonly) BOOL isLive;
+/// Removes the node from its mode. Once a node has been removed, it can't
+/// be readded or reused.
+- (void)removeSelf;
 
 @end
 
