@@ -63,7 +63,7 @@
             symbolIndices = [[NSMutableArray alloc] init];
             [keyframesForSymbol setObject:symbolIndices forKey:key];
         }
-        [symbolIndices addObject:[NSNumber numberWithInt:kfnum]];
+        [symbolIndices addObject:@(kfnum)];
         kfnum++;
     }
 }
