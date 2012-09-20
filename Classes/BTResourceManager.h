@@ -16,13 +16,10 @@
 
 /// Loads resource files synchronously
 - (void)loadResourceFiles:(NSArray*)filenames;
-- (void)loadResourceFile:(NSString*)filename;
 
 /// Loads resource files in the background
 - (void)loadResourceFiles:(NSArray*)filenames onComplete:(OOOUnitBlock)onComplete
                   onError:(OOOErrorBlock)onError;
-- (void)loadResourceFile:(NSString*)filename onComplete:(OOOUnitBlock)onComplete
-                 onError:(OOOErrorBlock)onError;
 
 /// Unloads resource files synchronously
 - (void)unloadResourceFiles:(NSArray*)filenames;

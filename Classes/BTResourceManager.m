@@ -66,19 +66,9 @@
     [task loadAsync:onComplete onError:onError];
 }
 
-- (void)loadResourceFile:(NSString*)filename onComplete:(OOOUnitBlock)onComplete
-                 onError:(OOOErrorBlock)onError {
-    [self loadResourceFiles:[NSArray arrayWithObject:filename] onComplete:onComplete
-                    onError:onError];
-}
-
 - (void)loadResourceFiles:(NSArray*)filenames {
     LoadTask* task = [self createLoadTask:filenames];
     [task load];
-}
-
-- (void)loadResourceFile:(NSString*)filename {
-    [self loadResourceFiles:[NSArray arrayWithObject:filename]];
 }
 
 - (void)loadTaskCompleted:(LoadTask*)task {
