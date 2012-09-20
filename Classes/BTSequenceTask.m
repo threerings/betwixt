@@ -38,7 +38,7 @@
     [self.parent addNode:[_nodes objectAtIndex:0]];
 }
 
-+ (BTSequenceTask*)withNodes:(BTNode*)node, ... {
-    return [[BTSequenceTask alloc] initWithNodes:OOO_VARARGS_TO_ARRAY(BTNode*, node)];
++ (BTSequenceTask*)withNodes:(NSArray*)nodes {
+    return [[BTSequenceTask alloc] initWithNodes:nodes];
 }
 @end

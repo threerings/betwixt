@@ -14,8 +14,7 @@
 @property (nonatomic,readonly) RAUnitSignal* loadComplete;
 
 - (id)init;
-- (void)addFiles:(NSString*)filename, ... NS_REQUIRES_NIL_TERMINATION;
-- (void)addFilesFromArray:(NSArray*)filenames;
+- (void)addFiles:(NSArray*)filenames;
 
 @end
 

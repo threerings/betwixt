@@ -28,11 +28,7 @@
     return self;
 }
 
-- (void)addFiles:(NSString*)filename, ... {
-    [_filenames addObjectsFromArray:OOO_VARARGS_TO_ARRAY(NSString*, filename)];
-}
-
-- (void)addFilesFromArray:(NSArray*)filenames {
+- (void)addFiles:(NSArray*)filenames {
     [_filenames addObjectsFromArray:filenames];
 }
 

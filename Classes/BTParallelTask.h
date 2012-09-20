@@ -7,6 +7,6 @@
 @protected
     NSArray *_nodes;
 }
-+ (BTParallelTask*)withNodes:(BTNode*)node, ... NS_REQUIRES_NIL_TERMINATION;
++ (BTParallelTask*)withNodes:(NSArray*)nodes;
 - (id)initWithNodes:(NSArray*)nodes;
 @end

@@ -9,6 +9,7 @@
     int _position;
 }
 
-+ (BTSequenceTask*)withNodes:(BTNode*)node, ... NS_REQUIRES_NIL_TERMINATION;
++ (BTSequenceTask*)withNodes:(NSArray*)nodes;
+
 - (id)initWithNodes:(NSArray*)nodes;
 @end

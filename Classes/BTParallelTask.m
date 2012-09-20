@@ -24,7 +24,7 @@
     }
 }
 
-+ (BTParallelTask*)withNodes:(BTNode*)node, ... {
-    return [[BTParallelTask alloc] initWithNodes:OOO_VARARGS_TO_ARRAY(BTNode*, node)];
++ (BTParallelTask*)withNodes:(NSArray*)nodes {
+    return [[BTParallelTask alloc] initWithNodes:nodes];
 }
 @end
