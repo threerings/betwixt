@@ -43,10 +43,10 @@ static const uint TEXT_COLOR_DOWN = 0x6699CC;
 }
 
 - (void)displayState:(BTButtonState)state {
-    _bg.color = (state == BT_BUTTON_STATE_DOWN ? BG_COLOR_DOWN : BG_COLOR_UP);
-    _tf.color = (state == BT_BUTTON_STATE_DOWN ? TEXT_COLOR_DOWN : TEXT_COLOR_UP);
+    _bg.color = (state == BT_ButtonDown ? BG_COLOR_DOWN : BG_COLOR_UP);
+    _tf.color = (state == BT_ButtonDown ? TEXT_COLOR_DOWN : TEXT_COLOR_UP);
 
-    _container.alpha = (state == BT_BUTTON_STATE_DISABLED ? 0.4f : 1.0f);
+    _container.alpha = (state == BT_ButtonDisabled ? 0.4f : 1.0f);
 }
 
 @end

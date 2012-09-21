@@ -43,7 +43,7 @@
     [super added];
 
     _curState = (BTButtonState) -1;
-    [self setState:BT_BUTTON_STATE_UP];
+    [self setState:BT_ButtonUp];
     // Force the enabling logic
     _enabled = !_enabled;
     self.enabled = !_enabled;
@@ -62,7 +62,7 @@
 
 - (void)handleInitialTouch:(SPTouch*)touch {
     _touch = touch;
-    [self setState:BT_BUTTON_STATE_DOWN];
+    [self setState:BT_ButtonDown];
     // capture all input until the touch ends
     _captureReg = [self.mode.input registerListener:self];
 }
@@ -76,7 +76,7 @@
         return BTTouch_Unhandled;
     }
     if (touch == _touch) {
-        [self setState:[self hitTest:touch] ? BT_BUTTON_STATE_DOWN : BT_BUTTON_STATE_UP];
+        [self setState:[self hitTest:touch] ? BT_ButtonDown : BT_ButtonUp];
     }
     return BTTouch_Handled;
 }
@@ -86,7 +86,7 @@
         return BTTouch_Unhandled;
     }
     if (_touch == touch) {
-        [self setState:BT_BUTTON_STATE_UP];
+        [self setState:BT_ButtonUp];
         [self cancelInputCapture];
         // Emit the signal after doing everything else, because a
         // signal handler could change our state.
@@ -109,7 +109,7 @@
     }
     _enabled = enabled;
     _sprite.touchable = _enabled;
-    [self setState:(_enabled ? BT_BUTTON_STATE_UP : BT_BUTTON_STATE_DISABLED)];
+    [self setState:(_enabled ? BT_ButtonUp : BT_ButtonDisabled)];
 }
 
 - (void)setState:(BTButtonState)state {

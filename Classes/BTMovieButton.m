@@ -28,9 +28,9 @@
 - (void)displayState:(BTButtonState)state {
     NSString* label = nil;
     switch (state) {
-    case BT_BUTTON_STATE_UP:        label = _upLabel; break;
-    case BT_BUTTON_STATE_DOWN:      label = _downLabel; break;
-    case BT_BUTTON_STATE_DISABLED:  label = _disabledLabel; break;
+    case BT_ButtonUp:        label = _upLabel; break;
+    case BT_ButtonDown:      label = _downLabel; break;
+    case BT_ButtonDisabled:  label = _disabledLabel; break;
     }
 
     [_movie gotoLabel:label];
