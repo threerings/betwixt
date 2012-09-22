@@ -12,7 +12,7 @@
 @implementation BTMovieLayer
 
 - (BTMovieResourceKeyframe*)kfAtIdx:(int)idx {
-    return (BTMovieResourceKeyframe*)[keyframes objectAtIndex:idx];
+    return (BTMovieResourceKeyframe*)keyframes[idx];
 }
 
 - (id)initWithMovie:(BTMovie*)parent layer:(BTMovieResourceLayer*)layer {
@@ -45,7 +45,7 @@
         }];
 
         // Add the first keyframe's DisplayObject to the movie
-        [movie addChild:[displays objectAtIndex:0]];
+        [movie addChild:displays[0]];
 
         layerIdx = movie.numChildren - 1;
         [movie childAtIndex:layerIdx].name = layer->name;
@@ -60,7 +60,7 @@
         changedKeyframe = true;
     }
     if (changedKeyframe) {
-        SPDisplayObject* display = [displays objectAtIndex:keyframeIdx];
+        SPDisplayObject* display = displays[keyframeIdx];
         if (display != [movie childAtIndex:layerIdx]) {
             [movie removeChildAtIndex:layerIdx];
             [movie addChild:display atIndex:layerIdx];

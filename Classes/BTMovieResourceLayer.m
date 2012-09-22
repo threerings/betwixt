@@ -61,7 +61,7 @@
         NSMutableArray* symbolIndices = [keyframesForSymbol objectForKey:key];
         if (symbolIndices == nil) {
             symbolIndices = [[NSMutableArray alloc] init];
-            [keyframesForSymbol setObject:symbolIndices forKey:key];
+            keyframesForSymbol[key] = symbolIndices;
         }
         [symbolIndices addObject:@(kfnum)];
         kfnum++;

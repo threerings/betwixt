@@ -14,10 +14,10 @@
     }
 
     @try {
-        return [SPRectangle rectangleWithX:[[items objectAtIndex:0] requireFloatValue]
-                                         y:[[items objectAtIndex:1] requireFloatValue]
-                                     width:[[items objectAtIndex:2] requireFloatValue]
-                                    height:[[items objectAtIndex:3] requireFloatValue]];
+        return [SPRectangle rectangleWithX:[items[0] requireFloatValue]
+                                         y:[items[1] requireFloatValue]
+                                     width:[items[2] requireFloatValue]
+                                    height:[items[3] requireFloatValue]];
     } @catch (...) {
         return nil;
     }

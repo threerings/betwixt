@@ -72,7 +72,7 @@ NSString* const BTMovieLastFrame = @"BTMovieLastFrame";
 
 - (int)frameForLabel:(NSString*)label {
     for (int ii = 0; ii < [_labels count]; ii++) {
-        if ([[_labels objectAtIndex:ii] containsObject:label]) {
+        if ([_labels[ii] containsObject:label]) {
             return ii;
         }
     }
@@ -96,7 +96,7 @@ NSString* const BTMovieLastFrame = @"BTMovieLastFrame";
 
 - (void)fireLabelsFrom:(int)startFrame to:(int)endFrame {
     for (int ii = startFrame; ii <= endFrame; ii++) {
-        for (NSString* label in [_labels objectAtIndex:ii]) {
+        for (NSString* label in _labels[ii]) {
             [_labelPassed emitEvent:label];
         }
     }

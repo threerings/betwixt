@@ -225,7 +225,7 @@
     // update children
     if (_children != nil) {
         for (int ii = 0; ii < _children.count; ++ii) {
-            __weak BTAudioControls* child = ((OOOBoxedWeakRef*) [_children objectAtIndex:ii]).value;
+            __weak BTAudioControls* child = ((OOOBoxedWeakRef*) _children[ii]).value;
             if (child == nil) {
                 // Nobody's holding a reference to the child
                 [_children removeObjectAtIndex:ii--];

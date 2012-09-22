@@ -49,10 +49,10 @@ static NSString* LoopEndNameToLabel (NSString* name) {
 
         NSArray* layerEls = [xml elementsForName:@"layer"];
 
-        if ([[layerEls objectAtIndex:0] boolAttribute:@"flipbook" defaultVal:NO]) {
+        if ([layerEls[0] boolAttribute:@"flipbook" defaultVal:NO]) {
             BTMovieResourceLayer* layer =
             [[BTMovieResourceLayer alloc] initFlipbookNamed:[xml stringAttribute:@"name"]
-                                                        xml:[layerEls objectAtIndex:0]];
+                                                        xml:layerEls[0]];
             [_layers addObject:layer];
             numFrames = layer.numFrames;
         } else {
@@ -79,7 +79,7 @@ static NSString* LoopEndNameToLabel (NSString* name) {
             for (BTMovieResourceKeyframe* kf in layer->keyframes) {
                 NSString* label = kf->label;
                 if (label != nil) {
-                    [[_labels objectAtIndex:kf->index] addObject:label];
+                    [_labels[kf->index] addObject:label];
 
                     // is this label part of a loop?
                     NSString* loopName = LabelToLoopStartName(label);
@@ -118,7 +118,7 @@ static NSString* LoopEndNameToLabel (NSString* name) {
 - (BTMovie*)newMovie {
     BTMovie* movie = [[BTMovie alloc] initWithFramerate:_framerate layers:_layers labels:_labels];
     for (int ii = 0; ii < _loopLabels.count; ii += 2) {
-        [movie addLoopWithStart:[_loopLabels objectAtIndex:ii] end:[_loopLabels objectAtIndex:ii + 1]];
+        [movie addLoopWithStart:_loopLabels[ii] end:_loopLabels[ii + 1]];
     }
     return movie;
 }

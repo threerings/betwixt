@@ -113,7 +113,7 @@ typedef enum {
         index = MIN(index, _stack.count - 1);
 
         // if the top mode is removed, make sure it's exited first
-        BTMode* removedMode = [_stack objectAtIndex:index];
+        BTMode* removedMode = _stack[index];
         if (removedMode == initialTopMode) {
             [initialTopMode exitInternal];
             initialTopMode = nil;

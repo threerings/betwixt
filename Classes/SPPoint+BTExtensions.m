@@ -15,8 +15,8 @@
     }
 
     @try {
-        return [SPPoint pointWithX:[[items objectAtIndex:0] requireFloatValue]
-                                 y:[[items objectAtIndex:1] requireFloatValue]];
+        return [SPPoint pointWithX:[items[0] requireFloatValue]
+                                 y:[items[1] requireFloatValue]];
     } @catch (...) {
         return nil;
     }

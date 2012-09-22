@@ -173,11 +173,11 @@
 }
 
 - (void)registerFactory:(id<BTResourceFactory>)factory forType:(NSString*)type {
-    [_factories setObject:factory forKey:type];
+    _factories[type] = factory;
 }
 
 - (void)registerMultiFactory:(id<BTMultiResourceFactory>)factory forType:(NSString*)type {
-    [_factories setObject:factory forKey:type];
+    _factories[type] = factory;
 }
 
 - (id<BTResourceFactory>)getFactory:(NSString*)type {
@@ -257,7 +257,7 @@
             }
         }
 
-        [_resources setObject:resources forKey:filename];
+        _resources[filename] = resources;
     }
 }
 

@@ -57,10 +57,10 @@
         }
     }
 
-    RAObjectSignal* signal = OOONSNullToNil([_filteredTouchSignals objectAtIndex:phase]);
+    RAObjectSignal* signal = OOONSNullToNil(_filteredTouchSignals[phase]);
     if (signal == nil) {
         signal = [[FilteredTouchSignal alloc] initWithTouchEventSignal:_touchEvent phase:phase];
-        [_filteredTouchSignals replaceObjectAtIndex:phase withObject:signal];
+        _filteredTouchSignals[phase] = signal;
     }
     return signal;
 }

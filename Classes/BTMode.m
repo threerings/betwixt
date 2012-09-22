@@ -89,7 +89,7 @@
     if (_group.count > 0) {
         index = MIN(index, _group.count - 1);
         while (index > 0) {
-            BTNode* prevNode = [_group objectAtIndex:index - 1];
+            BTNode* prevNode = _group[index - 1];
             if (prevNode->_id >= minNodeId) {
                 index--;
             } else {
@@ -106,7 +106,7 @@
     // iteration reaches them.
     while (batchCount < 1 && index < _group.count) {
     //while (batchCount < len && index < _group.count) {
-        BTNode* node = [_group objectAtIndex:index++];
+        BTNode* node = _group[index++];
         NSUInteger nodeId = node->_id;
         // Ensure we haven't already returned this node, and that the
         // node hasn't been added since group enumeration started
@@ -253,7 +253,7 @@
         }];
         for (NSString* key in keys) {
             NSAssert(![_keyedObjects objectForKey:key], @"Object key '%@' already used", key);
-            [_keyedObjects setObject:node forKey:key];
+            _keyedObjects[key] = node;
         }
     }
 
@@ -271,7 +271,7 @@
             BTNodeGroup* members = [_groups objectForKey:group];
             if (!members) {
                 members = [[BTNodeGroup alloc] initWithMode:self];
-                [_groups setObject:members forKey:group];
+                _groups[group] = members;
             }
             [members addNode:node];
         }

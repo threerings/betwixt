@@ -19,7 +19,7 @@
 
     [self.conns onReactor:self.removed connectUnit:^{
         if (_position == [_nodes count]) return;
-        BTNode* toRemove = [_nodes objectAtIndex:_position];
+        BTNode* toRemove = _nodes[_position];
         _position = [_nodes count];
         [toRemove removeSelf];
     }];
@@ -29,13 +29,13 @@
             if (++_position >= [_nodes count]) {
                 [self removeSelf];
             } else if (self.parent.isLive) {
-                [self.parent addNode:[_nodes objectAtIndex:_position]];
+                [self.parent addNode:_nodes[_position]];
             }
         }];
     }
 
     // Kick off the first task
-    [self.parent addNode:[_nodes objectAtIndex:0]];
+    [self.parent addNode:_nodes[0]];
 }
 
 + (BTSequenceTask*)withNodes:(NSArray*)nodes {
