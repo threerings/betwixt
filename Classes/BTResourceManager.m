@@ -117,7 +117,7 @@
 }
 
 - (id)getResource:(NSString*)name {
-    return [_resources objectForKey:name];
+    return _resources[name];
 }
 
 - (id)requireResource:(NSString*)name {
@@ -181,7 +181,7 @@
 }
 
 - (id<BTResourceFactory>)getFactory:(NSString*)type {
-    return [_factories objectForKey:type];
+    return _factories[type];
 }
 
 @end

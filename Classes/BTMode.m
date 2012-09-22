@@ -174,15 +174,15 @@
 }
 
 - (BTNode*)nodeForKey:(NSString*)key {
-    return [_keyedObjects objectForKey:key];
+    return _keyedObjects[key];
 }
 
 - (id<NSFastEnumeration>)nodesInGroup:(NSString*)group {
-    return [_groups objectForKey:group];
+    return _groups[group];
 }
 
 - (int)countNodesInGroup:(NSString*)group {
-    BTNodeGroup* nodeGroup = [_groups objectForKey:group];
+    BTNodeGroup* nodeGroup = _groups[group];
     return nodeGroup.count;
 }
 
@@ -252,7 +252,7 @@
             }
         }];
         for (NSString* key in keys) {
-            NSAssert(![_keyedObjects objectForKey:key], @"Object key '%@' already used", key);
+            NSAssert(!_keyedObjects[key], @"Object key '%@' already used", key);
             _keyedObjects[key] = node;
         }
     }
@@ -262,13 +262,13 @@
     if (groups != nil) {
         [node.removed connectUnit:^ {
             for (NSString* group in groups) {
-                BTNodeGroup* members = [_groups objectForKey:group];
+                BTNodeGroup* members = _groups[group];
                 [members removeNode:node];
                 if ([members count] == 0) [_groups removeObjectForKey:group];
             }
         }];
         for (NSString* group in groups) {
-            BTNodeGroup* members = [_groups objectForKey:group];
+            BTNodeGroup* members = _groups[group];
             if (!members) {
                 members = [[BTNodeGroup alloc] initWithMode:self];
                 _groups[group] = members;

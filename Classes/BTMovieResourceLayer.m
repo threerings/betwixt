@@ -58,7 +58,7 @@
     int kfnum = 0;
     for (BTMovieResourceKeyframe* kf in keyframes) {
         id key = OOONilToNSNull(kf->libraryItem);
-        NSMutableArray* symbolIndices = [keyframesForSymbol objectForKey:key];
+        NSMutableArray* symbolIndices = keyframesForSymbol[key];
         if (symbolIndices == nil) {
             symbolIndices = [[NSMutableArray alloc] init];
             keyframesForSymbol[key] = symbolIndices;
