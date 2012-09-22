@@ -388,7 +388,7 @@
 		22E0A753152A311A009FDE09 /* BTEventSignal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTEventSignal.h; sourceTree = "<group>"; };
 		22E0A754152A311A009FDE09 /* BTEventSignal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTEventSignal.m; sourceTree = "<group>"; };
 		22E0A75E152A3837009FDE09 /* BTEventSignal+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BTEventSignal+Protected.h"; sourceTree = "<group>"; };
-		22E0A761152A4404009FDE09 /* BTTouchable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTTouchable.m; sourceTree = "<group>"; };
+		22E0A761152A4404009FDE09 /* BTTouchable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = BTTouchable.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		22E4F41415703205002AA4D1 /* BTSimpleTextButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTSimpleTextButton.h; sourceTree = "<group>"; };
 		22E4F41515703205002AA4D1 /* BTSimpleTextButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTSimpleTextButton.m; sourceTree = "<group>"; };
 		22EA32231563248300557886 /* BTUserSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTUserSettings.h; sourceTree = "<group>"; };
@@ -408,7 +408,7 @@
 		22F979D914C0E23F00A6913B /* GDataXMLNode+BTExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GDataXMLNode+BTExtensions.m"; sourceTree = "<group>"; };
 		22F979DF14C0E23F00A6913B /* BTResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTResource.h; sourceTree = "<group>"; };
 		22F979E414C0E23F00A6913B /* BTResourceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTResourceManager.h; sourceTree = "<group>"; };
-		22F979E514C0E23F00A6913B /* BTResourceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTResourceManager.m; sourceTree = "<group>"; };
+		22F979E514C0E23F00A6913B /* BTResourceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = BTResourceManager.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		22F979F814C0E36F00A6913B /* BTResourceFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTResourceFactory.h; sourceTree = "<group>"; };
 		22F97A8F14C0EC8B00A6913B /* Betwixt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Betwixt.h; sourceTree = "<group>"; };
 		22FBCA27156EFEC9009C19CF /* SPTextField+BTExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SPTextField+BTExtensions.h"; sourceTree = "<group>"; };
@@ -469,7 +469,7 @@
 		CBC4524514D216A1008CC04D /* BTMovieResourceKeyframe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTMovieResourceKeyframe.h; sourceTree = "<group>"; };
 		CBC4524614D216A1008CC04D /* BTMovieResourceKeyframe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTMovieResourceKeyframe.m; sourceTree = "<group>"; };
 		CBC4524714D216A1008CC04D /* BTMovieResourceLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTMovieResourceLayer.h; sourceTree = "<group>"; };
-		CBC4524814D216A1008CC04D /* BTMovieResourceLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTMovieResourceLayer.m; sourceTree = "<group>"; };
+		CBC4524814D216A1008CC04D /* BTMovieResourceLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = BTMovieResourceLayer.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		CBC4524D14D21700008CC04D /* BTMovie+Package.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BTMovie+Package.h"; sourceTree = "<group>"; };
 		CBC4525E14D22F04008CC04D /* PlayMovieMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayMovieMode.h; path = Integration/PlayMovieMode.h; sourceTree = "<group>"; };
 		CBC4525F14D22F04008CC04D /* PlayMovieMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayMovieMode.m; path = Integration/PlayMovieMode.m; sourceTree = "<group>"; };
@@ -485,7 +485,7 @@
 		CBE1F0E314A1707500B82344 /* BTBlockTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTBlockTask.h; sourceTree = "<group>"; };
 		CBE1F0E414A1707500B82344 /* BTBlockTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTBlockTask.m; sourceTree = "<group>"; };
 		CBF2AA9C14765EA5000C022D /* BTMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTMode.h; sourceTree = "<group>"; };
-		CBF2AA9D14765EA5000C022D /* BTMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTMode.m; sourceTree = "<group>"; };
+		CBF2AA9D14765EA5000C022D /* BTMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = BTMode.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		CBF2AA9E14765EA5000C022D /* BTModeStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTModeStack.h; sourceTree = "<group>"; };
 		CBF2AA9F14765EA5000C022D /* BTModeStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTModeStack.m; sourceTree = "<group>"; };
 		DE3F093711B7B9DC009D4DB0 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
