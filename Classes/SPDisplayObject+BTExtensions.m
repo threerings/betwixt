@@ -76,6 +76,10 @@ static BOOL traverseInternal (SPDisplayObject* disp, BTTraverseCallback filter,
     self.scaleY = scale.y;
 }
 
+- (int)treeDepth {
+    return (self.parent == nil ? 0 : self.parent.treeDepth + 1);
+}
+
 - (void)setTreeColor:(uint)color {
     const SEL sel = @selector(setColor:);
     NSMethodSignature* signature = [[SPQuad class] instanceMethodSignatureForSelector:sel];

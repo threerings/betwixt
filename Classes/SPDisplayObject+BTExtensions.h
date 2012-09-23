@@ -20,6 +20,9 @@ typedef BOOL (^BTTraverseCallback)(SPDisplayObject* disp);
 /// The object's x and y scale factor
 @property (nonatomic,copy) SPPoint* scale;
 
+/// Returns the number of ancestors this display object has
+@property (nonatomic,readonly) int treeDepth;
+
 + (SPPoint*)transformPoint:(SPPoint*)pt from:(SPDisplayObject*)from to:(SPDisplayObject*)to;
 
 /// Sets the color of the displayObject and all its descendents
