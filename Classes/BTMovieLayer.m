@@ -40,7 +40,7 @@
             }
 
             for (NSNumber* num in frameIndices) {
-                [displays replaceObjectAtIndex:num.integerValue withObject:display];
+                displays[num.integerValue] = display;
             }
         }];
 
