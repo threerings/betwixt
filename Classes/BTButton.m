@@ -108,7 +108,6 @@
         return;
     }
     _enabled = enabled;
-    _sprite.touchable = _enabled;
     [self setState:(_enabled ? BT_ButtonUp : BT_ButtonDisabled)];
 }
 
