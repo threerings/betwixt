@@ -115,8 +115,8 @@
 		22EA322D15633CBB00557886 /* BTAudioSettings.h in Headers */ = {isa = PBXBuildFile; fileRef = 22EA322B15633CBB00557886 /* BTAudioSettings.h */; };
 		22EA322E15633CBB00557886 /* BTAudioSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EA322C15633CBB00557886 /* BTAudioSettings.m */; };
 		22EA323015633DA600557886 /* BTAudioManager+Package.h in Headers */ = {isa = PBXBuildFile; fileRef = 22EA322F15633DA500557886 /* BTAudioManager+Package.h */; };
-		22EA32341563436300557886 /* BTCheckbox.h in Headers */ = {isa = PBXBuildFile; fileRef = 22EA32321563436300557886 /* BTCheckbox.h */; };
-		22EA32351563436300557886 /* BTCheckbox.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EA32331563436300557886 /* BTCheckbox.m */; };
+		22EA32341563436300557886 /* BTMovieCheckbox.h in Headers */ = {isa = PBXBuildFile; fileRef = 22EA32321563436300557886 /* BTMovieCheckbox.h */; };
+		22EA32351563436300557886 /* BTMovieCheckbox.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EA32331563436300557886 /* BTMovieCheckbox.m */; };
 		22F14C3215E1A74700E78C22 /* BTXLocationTask.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F14C3015E1A74700E78C22 /* BTXLocationTask.h */; };
 		22F14C3315E1A74700E78C22 /* BTXLocationTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F14C3115E1A74700E78C22 /* BTXLocationTask.m */; };
 		22F14C3A15E1A7C400E78C22 /* BTYLocationTask.h in Headers */ = {isa = PBXBuildFile; fileRef = 22F14C3815E1A7C400E78C22 /* BTYLocationTask.h */; };
@@ -396,8 +396,8 @@
 		22EA322B15633CBB00557886 /* BTAudioSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTAudioSettings.h; sourceTree = "<group>"; };
 		22EA322C15633CBB00557886 /* BTAudioSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTAudioSettings.m; sourceTree = "<group>"; };
 		22EA322F15633DA500557886 /* BTAudioManager+Package.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BTAudioManager+Package.h"; sourceTree = "<group>"; };
-		22EA32321563436300557886 /* BTCheckbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTCheckbox.h; sourceTree = "<group>"; };
-		22EA32331563436300557886 /* BTCheckbox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTCheckbox.m; sourceTree = "<group>"; };
+		22EA32321563436300557886 /* BTMovieCheckbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTMovieCheckbox.h; sourceTree = "<group>"; };
+		22EA32331563436300557886 /* BTMovieCheckbox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTMovieCheckbox.m; sourceTree = "<group>"; };
 		22F14C3015E1A74700E78C22 /* BTXLocationTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTXLocationTask.h; sourceTree = "<group>"; };
 		22F14C3115E1A74700E78C22 /* BTXLocationTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTXLocationTask.m; sourceTree = "<group>"; };
 		22F14C3815E1A7C400E78C22 /* BTYLocationTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTYLocationTask.h; sourceTree = "<group>"; };
@@ -717,14 +717,14 @@
 				220F63A8152E878B0051B383 /* BTButton+Protected.h */,
 				220F63A6152E878B0051B383 /* BTButton.h */,
 				220F63A7152E878B0051B383 /* BTButton.m */,
-				22EA32321563436300557886 /* BTCheckbox.h */,
-				22EA32331563436300557886 /* BTCheckbox.m */,
 				220F63A9152E878B0051B383 /* BTDisplayObjectButton.h */,
 				220F63AA152E878B0051B383 /* BTDisplayObjectButton.m */,
 				22D46A921538DEB4005BAD6D /* BTDragger.h */,
 				22D46A931538DEB4005BAD6D /* BTDragger.m */,
 				220F63AB152E878B0051B383 /* BTMovieButton.h */,
 				220F63AC152E878B0051B383 /* BTMovieButton.m */,
+				22EA32321563436300557886 /* BTMovieCheckbox.h */,
+				22EA32331563436300557886 /* BTMovieCheckbox.m */,
 				228B545715A26A580008A955 /* BTMovieObject.h */,
 				228B545815A26A580008A955 /* BTMovieObject.m */,
 				22E4F41415703205002AA4D1 /* BTSimpleTextButton.h */,
@@ -976,7 +976,7 @@
 				22EA32251563248300557886 /* BTUserSettings.h in Headers */,
 				22EA322D15633CBB00557886 /* BTAudioSettings.h in Headers */,
 				22EA323015633DA600557886 /* BTAudioManager+Package.h in Headers */,
-				22EA32341563436300557886 /* BTCheckbox.h in Headers */,
+				22EA32341563436300557886 /* BTMovieCheckbox.h in Headers */,
 				22A8700915684E2400101F6D /* BTFontResource.h in Headers */,
 				22A870111568530B00101F6D /* BTResource+Protected.h in Headers */,
 				22A870151568675E00101F6D /* SPBitmapFont+BTExtensions.h in Headers */,
@@ -1218,7 +1218,7 @@
 				22400B2C1544E22500B00D5E /* BTAudioManager.m in Sources */,
 				22EA32261563248300557886 /* BTUserSettings.m in Sources */,
 				22EA322E15633CBB00557886 /* BTAudioSettings.m in Sources */,
-				22EA32351563436300557886 /* BTCheckbox.m in Sources */,
+				22EA32351563436300557886 /* BTMovieCheckbox.m in Sources */,
 				22A8700A15684E2400101F6D /* BTFontResource.m in Sources */,
 				22A870161568675E00101F6D /* SPBitmapFont+BTExtensions.m in Sources */,
 				22FBCA2A156EFEC9009C19CF /* SPTextField+BTExtensions.m in Sources */,

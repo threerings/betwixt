@@ -52,11 +52,11 @@
 
 // Objects
 #import "BTButton.h"
-#import "BTCheckbox.h"
 #import "BTDisplayObjectButton.h"
 #import "BTDragger.h"
-#import "BTMovieObject.h"
 #import "BTMovieButton.h"
+#import "BTMovieCheckbox.h"
+#import "BTMovieObject.h"
 #import "BTSimpleTextButton.h"
 #import "BTSpriteObject.h"
 

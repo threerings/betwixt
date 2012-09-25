@@ -1,19 +1,19 @@
 //
 // Betwixt - Copyright 2012 Three Rings Design
 
-#import "BTCheckbox.h"
+#import "BTMovieCheckbox.h"
 #import "BTButton+Protected.h"
 #import "BTNode+Protected.h"
 
 #import "BTMovie.h"
 #import "BTMovieResource.h"
 
-@implementation BTCheckbox
+@implementation BTMovieCheckbox
 
 @synthesize valueChanged = _value;
 
-+ (BTCheckbox*)checkboxWithMovie:(NSString*)movieName {
-    return [[BTCheckbox alloc] initWithMovie:[BTMovieResource newMovie:movieName]];
++ (BTMovieCheckbox*)checkboxWithMovie:(NSString*)movieName {
+    return [[BTMovieCheckbox alloc] initWithMovie:[BTMovieResource newMovie:movieName]];
 }
 
 - (id)initWithMovie:(BTMovie*)movie {

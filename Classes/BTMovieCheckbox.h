@@ -11,7 +11,7 @@
 /// Frame 4: BT_ButtonDown, unchecked
 /// Frame 5: BT_ButtonDisabled, unchecked
 
-@interface BTCheckbox : BTMovieButton {
+@interface BTMovieCheckbox : BTMovieButton {
 @protected
     RABoolValue* _value;
 }
@@ -19,7 +19,7 @@
 @property (nonatomic,assign) BOOL value;
 @property (nonatomic,readonly) RABoolReactor* valueChanged;
 
-+ (BTCheckbox*)checkboxWithMovie:(NSString*)movieName;
++ (BTMovieCheckbox*)checkboxWithMovie:(NSString*)movieName;
 
 - (id)initWithMovie:(BTMovie*)movie;
 
