@@ -1,24 +1,26 @@
 //
 // Betwixt - Copyright 2012 Three Rings Design
 
-#import "BTCheckbox.h"
-#import "BTSpriteObject.h"
+#import "BTMovieButton.h"
 
-@class BTButton;
+/// A checkbox that uses a six-frame BTMovie as its display
+/// Frame 0: BT_ButtonUp, checked
+/// Frame 1: BT_ButtonDown, checked
+/// Frame 2: BT_ButtonDisabled, checked
+/// Frame 3: BT_ButtonUp, unchecked
+/// Frame 4: BT_ButtonDown, unchecked
+/// Frame 5: BT_ButtonDisabled, unchecked
 
-@interface BTCheckbox : BTSpriteObject {
+@interface BTCheckbox : BTMovieButton {
 @protected
-    RABoolSignal* _valueChanged;
-    BTButton* _checkedButton;
-    BTButton* _uncheckedButton;
+    RABoolValue* _value;
 }
 
-@property (nonatomic,assign) BOOL enabled;
 @property (nonatomic,assign) BOOL value;
-@property (nonatomic,readonly) RABoolSignal* valueChanged;
+@property (nonatomic,readonly) RABoolReactor* valueChanged;
 
 + (BTCheckbox*)checkboxWithMovie:(NSString*)movieName;
 
-- (id)initWithCheckedButton:(BTButton*)checked uncheckedButton:(BTButton*)unchecked;
+- (id)initWithMovie:(BTMovie*)movie;
 
 @end

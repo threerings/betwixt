@@ -2,69 +2,48 @@
 // Betwixt - Copyright 2012 Three Rings Design
 
 #import "BTCheckbox.h"
+#import "BTButton+Protected.h"
 #import "BTNode+Protected.h"
-#import "BTMovieButton.h"
+
+#import "BTMovie.h"
 #import "BTMovieResource.h"
 
 @implementation BTCheckbox
 
-@synthesize valueChanged = _valueChanged;
+@synthesize valueChanged = _value;
 
 + (BTCheckbox*)checkboxWithMovie:(NSString*)movieName {
-    BTButton* checked = [[BTMovieButton alloc] initWithMovie:[BTMovieResource newMovie:movieName]
-                                                     upLabel:@"on_up"
-                                                   downLabel:@"on_down"
-                                               disabledLabel:@"on_disabled"];
-    BTButton* unchecked = [[BTMovieButton alloc] initWithMovie:[BTMovieResource newMovie:movieName]
-                                                       upLabel:@"off_up"
-                                                     downLabel:@"off_down"
-                                                 disabledLabel:@"off_disabled"];
-    return [[BTCheckbox alloc] initWithCheckedButton:checked uncheckedButton:unchecked];
+    return [[BTCheckbox alloc] initWithMovie:[BTMovieResource newMovie:movieName]];
 }
 
-- (id)initWithCheckedButton:(BTButton*)checked uncheckedButton:(BTButton*)unchecked {
-    if ((self = [super init])) {
-        _valueChanged = [[RABoolSignal alloc] init];
-        _checkedButton = checked;
-        _uncheckedButton = unchecked;
-        _checkedButton.display.visible = NO;
-        _uncheckedButton.display.visible = YES;
+- (id)initWithMovie:(BTMovie*)movie {
+    if ((self = [super initWithMovie:movie])) {
+        _value = [[RABoolValue alloc] init];
     }
     return self;
 }
 
 - (void)added {
     [super added];
-    [self addNode:_checkedButton displayOn:_sprite];
-    [self addNode:_uncheckedButton displayOn:_sprite];
 
-    [self.conns onReactor:_checkedButton.clicked connectUnit:^{
-        self.value = NO;
+    [self.conns onReactor:self.clicked connectUnit:^{
+        self.value = !self.value;
     }];
-    [self.conns onReactor:_uncheckedButton.clicked connectUnit:^{
-        self.value = YES;
-    }];
-}
-
-- (BOOL)enabled {
-    return _checkedButton.enabled;
-}
-
-- (void)setEnabled:(BOOL)enabled {
-    _checkedButton.enabled = enabled;
-    _uncheckedButton.enabled = enabled;
 }
 
 - (BOOL)value {
-    return _checkedButton.display.visible;
+    return _value.value;
 }
 
-- (void)setValue:(BOOL)newValue {
-    if (newValue != self.value) {
-        _checkedButton.display.visible = newValue;
-        _uncheckedButton.display.visible = !newValue;
-        [_valueChanged emitEvent:newValue];
+- (void)setValue:(BOOL)value {
+    if (_value.value != value) {
+        _value.value = value;
+        [self displayState:_curState];
     }
+}
+
+- (void)displayState:(BTButtonState)state {
+    [_movie gotoFrame:state + (_value.value ? 0 : 3)];
 }
 
 @end
