@@ -85,6 +85,7 @@
 #import "BTBitmap.h"
 #import "BTDisplayUtil.h"
 #import "BTEventSignal.h"
+#import "BTLayoutSprite.h"
 #import "BTLoadingMode.h"
 #import "BTPointI.h"
 #import "BTSizeI.h"
