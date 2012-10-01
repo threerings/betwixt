@@ -67,6 +67,12 @@
 		22955A3F14EA1EB1006E5BEE /* LeakTestMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 22955A3E14EA1EB1006E5BEE /* LeakTestMode.m */; };
 		229A01E6161A23880089ED32 /* BTLayoutSprite.h in Headers */ = {isa = PBXBuildFile; fileRef = 229A01E4161A23880089ED32 /* BTLayoutSprite.h */; };
 		229A01E7161A23880089ED32 /* BTLayoutSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 229A01E5161A23880089ED32 /* BTLayoutSprite.m */; };
+		229A020F161A281A0089ED32 /* BTMeter.h in Headers */ = {isa = PBXBuildFile; fileRef = 229A020D161A281A0089ED32 /* BTMeter.h */; };
+		229A0210161A281A0089ED32 /* BTMeter.m in Sources */ = {isa = PBXBuildFile; fileRef = 229A020E161A281A0089ED32 /* BTMeter.m */; };
+		229A0213161A2BCA0089ED32 /* BTRectMeter.h in Headers */ = {isa = PBXBuildFile; fileRef = 229A0211161A2BC90089ED32 /* BTRectMeter.h */; };
+		229A0214161A2BCA0089ED32 /* BTRectMeter.m in Sources */ = {isa = PBXBuildFile; fileRef = 229A0212161A2BC90089ED32 /* BTRectMeter.m */; };
+		229A0217161A2ED30089ED32 /* BTDisplayObjectMeter.h in Headers */ = {isa = PBXBuildFile; fileRef = 229A0215161A2ED10089ED32 /* BTDisplayObjectMeter.h */; };
+		229A0218161A2ED30089ED32 /* BTDisplayObjectMeter.m in Sources */ = {isa = PBXBuildFile; fileRef = 229A0216161A2ED20089ED32 /* BTDisplayObjectMeter.m */; };
 		229B45C314D786B6005FC8E9 /* BTDurationTask.h in Headers */ = {isa = PBXBuildFile; fileRef = 229B45C114D786B5005FC8E9 /* BTDurationTask.h */; };
 		229B45C414D786B6005FC8E9 /* BTDurationTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 229B45C214D786B6005FC8E9 /* BTDurationTask.m */; };
 		229B45C914D787F5005FC8E9 /* BTDurationTask+Protected.h in Headers */ = {isa = PBXBuildFile; fileRef = 229B45C814D787F4005FC8E9 /* BTDurationTask+Protected.h */; };
@@ -350,6 +356,12 @@
 		22955A3E14EA1EB1006E5BEE /* LeakTestMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LeakTestMode.m; path = Integration/LeakTestMode.m; sourceTree = "<group>"; };
 		229A01E4161A23880089ED32 /* BTLayoutSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTLayoutSprite.h; sourceTree = "<group>"; };
 		229A01E5161A23880089ED32 /* BTLayoutSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTLayoutSprite.m; sourceTree = "<group>"; };
+		229A020D161A281A0089ED32 /* BTMeter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTMeter.h; sourceTree = "<group>"; };
+		229A020E161A281A0089ED32 /* BTMeter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTMeter.m; sourceTree = "<group>"; };
+		229A0211161A2BC90089ED32 /* BTRectMeter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTRectMeter.h; sourceTree = "<group>"; };
+		229A0212161A2BC90089ED32 /* BTRectMeter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTRectMeter.m; sourceTree = "<group>"; };
+		229A0215161A2ED10089ED32 /* BTDisplayObjectMeter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTDisplayObjectMeter.h; sourceTree = "<group>"; };
+		229A0216161A2ED20089ED32 /* BTDisplayObjectMeter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTDisplayObjectMeter.m; sourceTree = "<group>"; };
 		229B45C114D786B5005FC8E9 /* BTDurationTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTDurationTask.h; sourceTree = "<group>"; };
 		229B45C214D786B6005FC8E9 /* BTDurationTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTDurationTask.m; sourceTree = "<group>"; };
 		229B45C814D787F4005FC8E9 /* BTDurationTask+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BTDurationTask+Protected.h"; sourceTree = "<group>"; };
@@ -600,6 +612,8 @@
 			children = (
 				22D6C09015DD991500A824D2 /* BTBitmap.h */,
 				22D6C09115DD991500A824D2 /* BTBitmap.m */,
+				229A0215161A2ED10089ED32 /* BTDisplayObjectMeter.h */,
+				229A0216161A2ED20089ED32 /* BTDisplayObjectMeter.m */,
 				22B9CB7815C9E9AB00E0E4FD /* BTDisplayUtil.h */,
 				22B9CB7915C9E9AB00E0E4FD /* BTDisplayUtil.m */,
 				22E0A75E152A3837009FDE09 /* BTEventSignal+Protected.h */,
@@ -609,8 +623,12 @@
 				229A01E5161A23880089ED32 /* BTLayoutSprite.m */,
 				2221998D14D0F809009B764F /* BTLoadingMode.h */,
 				2221998E14D0F809009B764F /* BTLoadingMode.m */,
+				229A020D161A281A0089ED32 /* BTMeter.h */,
+				229A020E161A281A0089ED32 /* BTMeter.m */,
 				221B023A15BA311500AD645C /* BTPointI.h */,
 				221B023B15BA311500AD645C /* BTPointI.m */,
+				229A0211161A2BC90089ED32 /* BTRectMeter.h */,
+				229A0212161A2BC90089ED32 /* BTRectMeter.m */,
 				2244B7B015225855001DEACA /* BTSizeI.h */,
 				2244B7B115225856001DEACA /* BTSizeI.m */,
 				22EA32231563248300557886 /* BTUserSettings.h */,
@@ -1001,6 +1019,9 @@
 				22F14C3215E1A74700E78C22 /* BTXLocationTask.h in Headers */,
 				22F14C3A15E1A7C400E78C22 /* BTYLocationTask.h in Headers */,
 				229A01E6161A23880089ED32 /* BTLayoutSprite.h in Headers */,
+				229A020F161A281A0089ED32 /* BTMeter.h in Headers */,
+				229A0213161A2BCA0089ED32 /* BTRectMeter.h in Headers */,
+				229A0217161A2ED30089ED32 /* BTDisplayObjectMeter.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1243,6 +1264,9 @@
 				22F14C3315E1A74700E78C22 /* BTXLocationTask.m in Sources */,
 				22F14C3B15E1A7C400E78C22 /* BTYLocationTask.m in Sources */,
 				229A01E7161A23880089ED32 /* BTLayoutSprite.m in Sources */,
+				229A0210161A281A0089ED32 /* BTMeter.m in Sources */,
+				229A0214161A2BCA0089ED32 /* BTRectMeter.m in Sources */,
+				229A0218161A2ED30089ED32 /* BTDisplayObjectMeter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

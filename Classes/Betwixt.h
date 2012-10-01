@@ -83,10 +83,13 @@
 
 // Utils
 #import "BTBitmap.h"
+#import "BTDisplayObjectMeter.h"
 #import "BTDisplayUtil.h"
 #import "BTEventSignal.h"
 #import "BTLayoutSprite.h"
 #import "BTLoadingMode.h"
+#import "BTMeter.h"
 #import "BTPointI.h"
+#import "BTRectMeter.h"
 #import "BTSizeI.h"
 #import "BTUserSettings.h"
