@@ -13,8 +13,14 @@
 
 @property (nonatomic,readonly) BTMovie* movie;
 
++ (void)makeOneShot:(BTMovieObject*)movieObj;
+
 + (BTMovieObject*)movieObjectWithMovieName:(NSString*)movieName;
 + (BTMovieObject*)movieObjectWithMovieResource:(BTMovieResource*)resource;
+
+/// Create a BTMovieObject that will play once and then remove itself
++ (BTMovieObject*)oneShotMovieObjectWithMovieName:(NSString*)movieName;
++ (BTMovieObject*)oneShotMovieObjectWithMovieResource:(BTMovieResource*)resource;
 
 - (id)initWithMovieName:(NSString*)movieName;
 - (id)initWithMovieResource:(BTMovieResource*)resource;
