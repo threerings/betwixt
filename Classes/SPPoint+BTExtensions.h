@@ -12,9 +12,6 @@
 /// Returns nil if the string could not be converted.
 + (SPPoint*)pointFromString:(NSString*)string;
 
-/// Returns YES if this point is equal to the given point within epsilon
-- (BOOL)isEquivalent:(SPPoint*)p;
-
 /// Sets this point's coords to those of the specfied point
 - (void)set:(SPPoint *)pt;
 

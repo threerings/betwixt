@@ -22,10 +22,6 @@
     }
 }
 
-- (BOOL)isEquivalent:(SPPoint*)p {
-    return SP_IS_FLOAT_EQUAL(mX, p->mX) && SP_IS_FLOAT_EQUAL(mY, p->mY);
-}
-
 - (void)set:(SPPoint *)pt {
     mX = pt.x;
     mY = pt.y;
