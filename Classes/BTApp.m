@@ -91,6 +91,15 @@ static BTApp* gInstance = nil;
     return [gInstance requireResourcePathFor:resourceName];
 }
 
++ (NSData*)loadFileAt:(NSString*)name {
+    NSString* path = [BTApp requireResourcePathFor:name];
+    NSData* data = [NSData dataWithContentsOfFile:path];
+    if (data == nil) {
+        [NSException raise:NSGenericException format:@"Unable to load file '%@'", name];
+    }
+    return data;
+}
+
 - (id)init {
     NSAssert(gInstance == nil, @"BTApp has already been created");
     if ((self = [super init])) {

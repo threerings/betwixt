@@ -211,12 +211,7 @@
     }
 
     for (NSString* filename in _filenames) {
-        NSString* path = [BTApp resourcePathFor:filename];
-
-        NSData* data = [NSData dataWithContentsOfFile:path];
-        if (data == nil) {
-            @throw [GDataXMLException withReason:@"Unable to load file '%@'", filename];
-        }
+        NSData* data = [BTApp loadFileAt:filename];
 
         NSError* err;
         GDataXMLDocument* xmldoc = [[GDataXMLDocument alloc] initWithData:data options:0 error:&err];

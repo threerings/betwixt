@@ -40,5 +40,7 @@
 + (NSString*)resourcePathFor:(NSString*)resourceName;
 /// Returns the path for the given resource file. Throws an exception if the file does not exist.
 + (NSString*)requireResourcePathFor:(NSString*)resourceName;
+/// Loads the file at the given resource path. Throws an exception if the file does not exist.
++ (NSData*)loadFileAt:(NSString*)name;
 
 @end
