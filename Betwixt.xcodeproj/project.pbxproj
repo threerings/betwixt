@@ -62,6 +62,7 @@
 		22608C6E1505C2D300CCE0A5 /* SPView+BTExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 22608C6C1505C2D300CCE0A5 /* SPView+BTExtensions.m */; };
 		228B545915A26A580008A955 /* BTMovieObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 228B545715A26A580008A955 /* BTMovieObject.h */; };
 		228B545A15A26A580008A955 /* BTMovieObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 228B545815A26A580008A955 /* BTMovieObject.m */; };
+		22903177163A18320006344E /* libSparrow.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 22903172163A17E50006344E /* libSparrow.a */; };
 		2290D8291502C99D009EED3D /* SPMatrix+BTExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 2290D8271502C99D009EED3D /* SPMatrix+BTExtensions.h */; };
 		2290D82A1502C99D009EED3D /* SPMatrix+BTExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2290D8281502C99D009EED3D /* SPMatrix+BTExtensions.m */; };
 		22955A3F14EA1EB1006E5BEE /* LeakTestMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 22955A3E14EA1EB1006E5BEE /* LeakTestMode.m */; };
@@ -178,7 +179,6 @@
 		CBAD57881475A28800F7D78E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
 		CBAD57891475A28800F7D78E /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE4A3D7910FFB08200FDA492 /* OpenGLES.framework */; };
 		CBAD578A1475A28800F7D78E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
-		CBAD578D1475A28C00F7D78E /* libSparrow.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE4A3DB010FFB0DB00FDA492 /* libSparrow.a */; };
 		CBAD57B51475A62B00F7D78E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		CBAD57B61475A62B00F7D78E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		CBAD57B71475A62B00F7D78E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
@@ -220,19 +220,33 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		22903171163A17E50006344E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DE4A3DA210FFB0D400FDA492 /* Sparrow.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DEFE4BC2101B317600E22471;
+			remoteInfo = Sparrow;
+		};
+		22903173163A17E50006344E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DE4A3DA210FFB0D400FDA492 /* Sparrow.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DEEA9335101E32A30071DD21;
+			remoteInfo = UnitTests;
+		};
+		22903175163A182D0006344E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DE4A3DA210FFB0D400FDA492 /* Sparrow.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = DEFE4BC1101B317600E22471;
+			remoteInfo = Sparrow;
+		};
 		22C7176E14C0D7C80014B656 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CB846EED149AE18900B29795 /* react.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = CBFF4A6B149AA9470003AC2B;
 			remoteInfo = react;
-		};
-		22C7177214C0D7CE0014B656 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DE4A3DA210FFB0D400FDA492 /* Sparrow.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = DEFE4BC1101B317600E22471;
-			remoteInfo = Sparrow;
 		};
 		22E43A591559B0BC003A43B8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -275,20 +289,6 @@
 			proxyType = 2;
 			remoteGlobalIDString = CBFF4A7C149AA9470003AC2B;
 			remoteInfo = reactTests;
-		};
-		DE4A3DAF10FFB0DB00FDA492 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DE4A3DA210FFB0D400FDA492 /* Sparrow.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = DEFE4BC2101B317600E22471;
-			remoteInfo = Sparrow;
-		};
-		DE4A3DB110FFB0DB00FDA492 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DE4A3DA210FFB0D400FDA492 /* Sparrow.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = DEEA9335101E32A30071DD21;
-			remoteInfo = UnitTests;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -509,7 +509,7 @@
 		DE3F097711B7BABD009D4DB0 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		DE4A3D7910FFB08200FDA492 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		DE4A3D7E10FFB08B00FDA492 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		DE4A3DA210FFB0D400FDA492 /* Sparrow.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Sparrow.xcodeproj; sourceTree = SPARROW_SRC; };
+		DE4A3DA210FFB0D400FDA492 /* Sparrow.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Sparrow.xcodeproj; path = ../Sparrow.xcodeproj; sourceTree = SPARROW_SRC; };
 		DE5C4E6D138ED109004892CA /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -535,9 +535,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22903177163A18320006344E /* libSparrow.a in Frameworks */,
 				22E43AB21559CF81003A43B8 /* libcooocoa.a in Frameworks */,
 				CB323C6114A11A530039A2F1 /* libreact.a in Frameworks */,
-				CBAD578D1475A28C00F7D78E /* libSparrow.a in Frameworks */,
 				CB602C711476603800E52CE2 /* libz.dylib in Frameworks */,
 				CB602C721476603800E52CE2 /* AVFoundation.framework in Frameworks */,
 				CB602C731476603800E52CE2 /* AudioToolbox.framework in Frameworks */,
@@ -703,6 +703,15 @@
 				22400B261544CEAE00B00D5E /* BTSoundType.m */,
 			);
 			name = Audio;
+			sourceTree = "<group>";
+		};
+		2290316D163A17E50006344E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				22903172163A17E50006344E /* libSparrow.a */,
+				22903174163A17E50006344E /* UnitTest.octest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		22C7178C14C0E0000014B656 /* Resources */ = {
@@ -908,15 +917,6 @@
 			name = Movie;
 			sourceTree = "<group>";
 		};
-		DE4A3DAB10FFB0DB00FDA492 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				DE4A3DB010FFB0DB00FDA492 /* libSparrow.a */,
-				DE4A3DB210FFB0DB00FDA492 /* UnitTest.octest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -1057,8 +1057,8 @@
 			buildRules = (
 			);
 			dependencies = (
+				22903176163A182D0006344E /* PBXTargetDependency */,
 				22E43AAC1559CF7B003A43B8 /* PBXTargetDependency */,
-				22C7177314C0D7CE0014B656 /* PBXTargetDependency */,
 				22C7176F14C0D7C80014B656 /* PBXTargetDependency */,
 			);
 			name = Betwixt;
@@ -1098,7 +1098,7 @@
 					ProjectRef = CB846EED149AE18900B29795 /* react.xcodeproj */;
 				},
 				{
-					ProductGroup = DE4A3DAB10FFB0DB00FDA492 /* Products */;
+					ProductGroup = 2290316D163A17E50006344E /* Products */;
 					ProjectRef = DE4A3DA210FFB0D400FDA492 /* Sparrow.xcodeproj */;
 				},
 			);
@@ -1111,6 +1111,20 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		22903172163A17E50006344E /* libSparrow.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSparrow.a;
+			remoteRef = 22903171163A17E50006344E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		22903174163A17E50006344E /* UnitTest.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = UnitTest.octest;
+			remoteRef = 22903173163A17E50006344E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		22E43A5A1559B0BC003A43B8 /* libcooocoa.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -1137,20 +1151,6 @@
 			fileType = wrapper.cfbundle;
 			path = reactTests.octest;
 			remoteRef = CB24CBE814A119EB004BAA57 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		DE4A3DB010FFB0DB00FDA492 /* libSparrow.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libSparrow.a;
-			remoteRef = DE4A3DAF10FFB0DB00FDA492 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		DE4A3DB210FFB0DB00FDA492 /* UnitTest.octest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = UnitTest.octest;
-			remoteRef = DE4A3DB110FFB0DB00FDA492 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -1273,15 +1273,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		22903176163A182D0006344E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Sparrow;
+			targetProxy = 22903175163A182D0006344E /* PBXContainerItemProxy */;
+		};
 		22C7176F14C0D7C80014B656 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = react;
 			targetProxy = 22C7176E14C0D7C80014B656 /* PBXContainerItemProxy */;
-		};
-		22C7177314C0D7CE0014B656 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Sparrow;
-			targetProxy = 22C7177214C0D7CE0014B656 /* PBXContainerItemProxy */;
 		};
 		22E43AAC1559CF7B003A43B8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
