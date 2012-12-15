@@ -29,9 +29,9 @@ static SPQuad* FillRect (float width, float height, uint color) {
         [self.sprite addChild:movie];
         [movie playFromFrame:0];
         [self addNode:[BTRepeatingTask withTaskCreator:^BTNode*  {
-            return [BTSequenceTask withNodes:
+            return [BTSequenceTask withNodes:@[
                      [BTRotationTask withTime:1.0 rotation:1 * ii target:movie],
-                     [BTRotationTask withTime:1.0 rotation:-1 * ii target:movie], nil];
+                     [BTRotationTask withTime:1.0 rotation:-1 * ii target:movie]]];
         }]];
     }
     

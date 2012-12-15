@@ -20,7 +20,7 @@
 
 - (void)setup {
     [super setup];
-    [BTApp.resourceManager loadResourceFile:_resourceName];
+    [BTApp.resourceManager loadResourceFiles:@[_resourceName]];
     
     // draw a background
     SPQuad* quad = [[SPQuad alloc] initWithWidth:BTApp.viewSize.x height:BTApp.viewSize.y];

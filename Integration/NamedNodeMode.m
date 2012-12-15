@@ -18,7 +18,7 @@
     [self addNode:sprite displayOn:self.sprite];
     [sprite.sprite addChild:[SPQuad quadWithWidth:100 height:100 color:0x0000ff]];
     [sprite addNode:[BTLocationTask withTime:1 toX:300 toY:200] withName:@"mover"];
-    [sprite addNode:[BTSequenceTask withNodes:
+    [sprite addNode:[BTSequenceTask withNodes:@[
         [BTWaitTask withTime:.25f],
         [BTBlockTask once:^{
             [[sprite nodeForName:@"mover"] removeSelf];
@@ -30,8 +30,8 @@
             NSAssert(sprite.sprite.x > 0, nil);
             NSAssert(sprite.sprite.x < 100, nil);
             [self.modeStack popMode];
-        }],
-        nil]];
+        }]
+    ]]];
 }
 
 @end

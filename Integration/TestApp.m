@@ -24,10 +24,10 @@
 @implementation LoadingMode
 
 - (void)setup {
-    [self addFiles: 
+    [self addFiles:@[
         @"iPhone/squaredance/resources.xml",
-        @"iPhone/guybrush/resources.xml",
-        nil];
+        @"iPhone/guybrush/resources.xml"
+    ]];
     [self.loadComplete connectUnit:^{
         [self.modeStack changeMode:[[FlipbookMode alloc] init]];
         [self.modeStack pushMode:[[NamedNodeMode alloc] init]];

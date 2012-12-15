@@ -20,16 +20,16 @@
     __block int reps = 0;
     [self addNode:[BTRepeatingTask withTaskCreator:^BTNode* {
         if (reps++ == 2) [self.modeStack popMode];
-        return [BTSequenceTask withNodes:
-                    [BTParallelTask withNodes:
+        return [BTSequenceTask withNodes:@[
+                    [BTParallelTask withNodes:@[
                         [BTLocationTask withTime:.25f toX:100 toY:100],
                         [BTRotationTask withTime:.25f rotation:1.0f],
-                        nil],
-                    [BTParallelTask withNodes:
+                        ]],
+                    [BTParallelTask withNodes:@[
                         [BTLocationTask withTime:.25f toX:200 toY:200],
                         [BTRotationTask withTime:.25f rotation:0],
-                        nil],
-                nil];
+                        ]],
+                ]];
 
     }]];
 }
