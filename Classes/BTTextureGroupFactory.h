@@ -6,10 +6,7 @@
 
 #define BT_TEXTURE_GROUP_RESOURCE_NAME @"textureGroups"
 
-@interface BTTextureGroupFactory : NSObject<BTMultiResourceFactory> {
-@protected
-    NSArray* _targetDevicePrefs;
-}
+@interface BTTextureGroupFactory : NSObject<BTMultiResourceFactory>
 
 + (id<BTMultiResourceFactory>) sharedFactory;
 

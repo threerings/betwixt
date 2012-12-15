@@ -16,57 +16,41 @@
     return OOO_SINGLETON([[BTTextureGroupFactory alloc] init]);
 }
 
-- (id)init {
-    if ((self = [super init])) {
-        // Build a list of device types, in the order that we prefer textures:
-        // - textures for our device
-        // - textures for lower-res devices
-        // - textures for higher-res devices
-        _targetDevicePrefs = [[BTDeviceType values] sortedArrayUsingComparator:^NSComparisonResult(BTDeviceType* a, BTDeviceType* b) {
-            if (a == BTApp.deviceType) {
-                return -1;
-            } else if (b == BTApp.deviceType) {
-                return 1;
-            } else {
-                return OOOCompareInts(a.screenWidth * a.screenHeight, b.screenWidth * b.screenHeight);
-            }
-        }];
-    }
-
-    return self;
-}
-
 - (NSArray*)create:(GDataXMLElement*)xml {
-    NSMutableArray* textures = [[NSMutableArray alloc] init];
-
-    GDataXMLElement* theGroup = nil;
     NSArray* groupElements = [xml elementsForName:@"textureGroup"];
-    if (groupElements.count > 2) {
-        @throw [GDataXMLException withElement:xml
-                                       reason:@"Too many texture groups (expected no more than 2)"];
+    if (groupElements.count <= 0) {
+        return @[];
     }
+    
+    // sort the textureGroups by scaleFactor
+    [groupElements sortedArrayUsingComparator:^NSComparisonResult(GDataXMLElement* a, GDataXMLElement* b) {
+        int scaleFactorA = [a intAttribute:@"scaleFactor"];
+        int scaleFactorB = [b intAttribute:@"scaleFactor"];
+        return OOOCompareInts(scaleFactorA, scaleFactorB);
+    }];
 
-    for (GDataXMLElement* groupXml in groupElements) {
-        BOOL retina = [groupXml boolAttribute:@"retina"];
-        if (retina == BTApp.deviceType.retina) {
+    // find the group with the highest scale factor <= our desired scale factor, if one exists
+    GDataXMLElement* theGroup = nil;
+    for (GDataXMLElement* groupXml in groupElements.reverseObjectEnumerator) {
+        if ([groupXml intAttribute:@"scaleFactor"] <= [SPStage contentScaleFactor]) {
             theGroup = groupXml;
             break;
         }
     }
+
     if (theGroup == nil) {
-        @throw [GDataXMLException withElement:xml reason:@"Missing texture group for density of %@", BTApp.deviceType.name];
+        theGroup = groupElements[0];
     }
 
-    if (theGroup != nil) {
-        for (GDataXMLElement* atlasXml in [theGroup elementsForName:@"atlas"]) {
-            NSString* filename = [BTApp resourcePathFor:[atlasXml stringAttribute:@"file"]];
-            if (filename == nil) {
-                @throw [GDataXMLException withElement:xml reason:@"Missing texture atlas: %@", filename];
-            }
-            SPTexture* atlas = [[SPTexture alloc] initWithContentsOfFile:filename];
-            for (GDataXMLElement* child in [atlasXml elements]) {
-                [textures addObject:[[BTTextureResource alloc] initFromAtlas:atlas withAtlasFilename:filename withXml:child]];
-            }
+    NSMutableArray* textures = [[NSMutableArray alloc] init];
+    for (GDataXMLElement* atlasXml in [theGroup elementsForName:@"atlas"]) {
+        NSString* filename = [BTApp resourcePathFor:[atlasXml stringAttribute:@"file"]];
+        if (filename == nil) {
+            @throw [GDataXMLException withElement:xml reason:@"Missing texture atlas: %@", filename];
+        }
+        SPTexture* atlas = [[SPTexture alloc] initWithContentsOfFile:filename];
+        for (GDataXMLElement* child in [atlasXml elements]) {
+            [textures addObject:[[BTTextureResource alloc] initFromAtlas:atlas withAtlasFilename:filename withXml:child]];
         }
     }
 
