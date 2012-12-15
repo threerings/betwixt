@@ -370,7 +370,7 @@
 		229B463214D8C439005FC8E9 /* BTHasLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTHasLocation.h; sourceTree = "<group>"; };
 		229B463414D8C525005FC8E9 /* SPDisplayObject+BTExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SPDisplayObject+BTExtensions.h"; sourceTree = "<group>"; };
 		229B463514D8C525005FC8E9 /* SPDisplayObject+BTExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SPDisplayObject+BTExtensions.m"; sourceTree = "<group>"; };
-		229E28561557503B001452E5 /* cooocoa.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cooocoa.xcodeproj; path = ../cooocoa.xcodeproj; sourceTree = COOOCOA_SRC; };
+		229E28561557503B001452E5 /* cooocoa.xcodeproj */ = {isa = PBXFileReference; name = cooocoa.xcodeproj; path = ../cooocoa.xcodeproj; sourceTree = COOOCOA_SRC; };
 		22A8700715684E2400101F6D /* BTFontResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTFontResource.h; sourceTree = "<group>"; };
 		22A8700815684E2400101F6D /* BTFontResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTFontResource.m; sourceTree = "<group>"; };
 		22A8700F1568530B00101F6D /* BTResource+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BTResource+Protected.h"; sourceTree = "<group>"; };
@@ -468,7 +468,7 @@
 		CB72E4A914773ED100F1EC78 /* Square.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Square.h; path = Integration/Square.h; sourceTree = "<group>"; };
 		CB72E4AA14773ED100F1EC78 /* Square.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Square.m; path = Integration/Square.m; sourceTree = "<group>"; };
 		CB7ABCB4147C747C00EC6AEC /* BTModeStack+Package.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BTModeStack+Package.h"; sourceTree = "<group>"; };
-		CB846EED149AE18900B29795 /* react.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = react.xcodeproj; path = ../../../react.xcodeproj; sourceTree = REACT_SRC; };
+		CB846EED149AE18900B29795 /* react.xcodeproj */ = {isa = PBXFileReference; name = react.xcodeproj; path = ../../../react.xcodeproj; sourceTree = REACT_SRC; };
 		CB8F0D7A14E85EC4005985C8 /* BTDisplayObjectCreator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTDisplayObjectCreator.h; sourceTree = "<group>"; };
 		CB8F0D7E14E85EF5005985C8 /* BTJugglerContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTJugglerContainer.h; sourceTree = "<group>"; };
 		CBAD57941475A3A000F7D78E /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Integration/main.m; sourceTree = "<group>"; };
