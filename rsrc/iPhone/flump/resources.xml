@@ -1,5 +1,5 @@
 <resources md5="ae50f73ba80c4b079823542ecde2c34e">
-  <movie name="flump/attack" md5="dfbf2d2ff2eb0f2bc383cac89946f203" frameRate="30">
+  <movie name="flump/attack" frameRate="30">
     <layer name="Shadow">
       <kf duration="7" ref="flump/shadow" loc="3.6,-10.4"/>
       <kf duration="10" ref="flump/shadow" loc="-68.65,-10.4"/>
@@ -102,7 +102,7 @@
       <kf duration="1" ref="flump/Thigh_R" loc="108.15,-107.55" skew="0.9986,0.9986"/>
     </layer>
   </movie>
-  <movie name="flump/defeat" md5="e660bd82397e9a14a6beaf258bde5aca" frameRate="30">
+  <movie name="flump/defeat" frameRate="30">
     <layer name="Shadow">
       <kf duration="5" ref="flump/shadow" loc="3.6,-10.4"/>
       <kf duration="7" ref="flump/shadow" loc="3.6,-10.4" ease="1"/>
@@ -207,7 +207,7 @@
       <kf duration="1" ref="flump/Thigh_R" loc="-3.35,15.85" scale="0.2896,0.1833" skew="-1.5526,-0.1066"/>
     </layer>
   </movie>
-  <movie name="flump/idle" md5="f918efc513c48b20395c3adf04b8402e" frameRate="30">
+  <movie name="flump/idle" frameRate="30">
     <layer name="Shadow">
       <kf duration="29" ref="flump/shadow" loc="3.6,-10.4"/>
       <kf duration="1" ref="flump/shadow" loc="3.6,-10.4"/>
@@ -263,7 +263,7 @@
       <kf duration="1" ref="flump/Thigh_R" loc="108.15,-107.55" skew="0.9986,0.9986"/>
     </layer>
   </movie>
-  <movie name="flump/walk" md5="7cc930fab12fde4483505ed0e375e43b" frameRate="30">
+  <movie name="flump/walk" frameRate="30">
     <layer name="Shadow">
       <kf duration="39" ref="flump/shadow" loc="3.6,-10.4"/>
       <kf duration="1" ref="flump/shadow" loc="3.6,-10.4"/>
@@ -348,34 +348,34 @@
     </layer>
   </movie>
   <textureGroups>
-    <textureGroup retina="false">
+    <textureGroup scaleFactor="1">
       <atlas file="iPhone/flump/atlas0.png">
-        <texture name="flump/Body" rect="0,0,271,257" offset="-134.5,-219.5" md5="2b9aeb8ccc0a011b07852832815063f9"/>
-        <texture name="flump/Gut" rect="272,0,195,141" offset="-97.5,-70.5" md5="e5343d717868170226c0ba7a3a232bf8"/>
-        <texture name="flump/shadow" rect="0,258,268,99" offset="-134,-49.5" md5="b2a07a56190f820cf9a469cc12b2544c"/>
-        <texture name="flump/Thigh_R" rect="272,142,70,119" offset="-32,-10.5" md5="73b9c494ec37129ce85428ec81996c33"/>
-        <texture name="flump/flap_R" rect="343,142,80,101" offset="-40,-50.5" md5="d814dc62d9a0ea3981743ed4f6361481"/>
-        <texture name="flump/Thigh_L" rect="424,142,62,111" offset="-25,-18.5" md5="7c862445d518656ce63dad56cadd79e7"/>
-        <texture name="flump/calf_R" rect="343,244,65,89" offset="-18.5,-28.5" md5="d0f29ea50e6f0d83250d8ce5649ccbe7"/>
-        <texture name="flump/calf_L" rect="409,254,58,85" offset="-25,-19.5" md5="82690894f735cabe0ef89572b08715a6"/>
-        <texture name="flump/flap_L" rect="269,262,48,90" offset="-24,-45" md5="96c9df3ef2420d59a73b600141a8c35d"/>
-        <texture name="flump/foot_R" rect="468,0,21,39" offset="-13.5,-25.5" md5="a1d6b187259e71befa1b087cfd29af05"/>
-        <texture name="flump/foot_L" rect="490,0,21,39" offset="-14.5,-23.5" md5="3d58f2b9a238669648fc6809e03eaac7"/>
+        <texture name="flump/Body" rect="1,1,271,257" offset="-134.5,-219.5"/>
+        <texture name="flump/Gut" rect="274,1,195,141" offset="-97.5,-70.5"/>
+        <texture name="flump/shadow" rect="1,260,268,99" offset="-134,-49.5"/>
+        <texture name="flump/Thigh_R" rect="274,144,70,119" offset="-32,-10.5"/>
+        <texture name="flump/flap_R" rect="346,144,80,101" offset="-40,-50.5"/>
+        <texture name="flump/Thigh_L" rect="428,144,62,111" offset="-25,-18.5"/>
+        <texture name="flump/calf_R" rect="346,247,65,89" offset="-18.5,-28.5"/>
+        <texture name="flump/calf_L" rect="413,257,58,85" offset="-25,-19.5"/>
+        <texture name="flump/flap_L" rect="271,265,48,90" offset="-24,-45"/>
+        <texture name="flump/foot_R" rect="471,1,21,39" offset="-13.5,-25.5"/>
+        <texture name="flump/foot_L" rect="471,42,21,39" offset="-14.5,-23.5"/>
       </atlas>
     </textureGroup>
-    <textureGroup retina="true">
+    <textureGroup scaleFactor="2">
       <atlas file="iPhone/flump/atlas0@2x.png">
-        <texture name="flump/Body" rect="0,0,542,514" offset="-269,-439" md5="2b9aeb8ccc0a011b07852832815063f9"/>
-        <texture name="flump/Gut" rect="543,0,390,282" offset="-195,-141" md5="e5343d717868170226c0ba7a3a232bf8"/>
-        <texture name="flump/shadow" rect="0,515,536,198" offset="-268,-99" md5="b2a07a56190f820cf9a469cc12b2544c"/>
-        <texture name="flump/Thigh_R" rect="543,283,140,238" offset="-64,-21" md5="73b9c494ec37129ce85428ec81996c33"/>
-        <texture name="flump/flap_R" rect="684,283,160,202" offset="-80,-101" md5="d814dc62d9a0ea3981743ed4f6361481"/>
-        <texture name="flump/Thigh_L" rect="845,283,124,222" offset="-50,-37" md5="7c862445d518656ce63dad56cadd79e7"/>
-        <texture name="flump/calf_R" rect="684,486,130,178" offset="-37,-57" md5="d0f29ea50e6f0d83250d8ce5649ccbe7"/>
-        <texture name="flump/calf_L" rect="815,506,116,170" offset="-50,-39" md5="82690894f735cabe0ef89572b08715a6"/>
-        <texture name="flump/flap_L" rect="537,522,96,180" offset="-48,-90" md5="96c9df3ef2420d59a73b600141a8c35d"/>
-        <texture name="flump/foot_R" rect="934,0,42,78" offset="-27,-51" md5="a1d6b187259e71befa1b087cfd29af05"/>
-        <texture name="flump/foot_L" rect="977,0,42,78" offset="-29,-47" md5="3d58f2b9a238669648fc6809e03eaac7"/>
+        <texture name="flump/Body" rect="1,1,542,514" offset="-269,-439"/>
+        <texture name="flump/Gut" rect="545,1,390,282" offset="-195,-141"/>
+        <texture name="flump/shadow" rect="1,517,536,198" offset="-268,-99"/>
+        <texture name="flump/Thigh_R" rect="545,285,140,238" offset="-64,-21"/>
+        <texture name="flump/flap_R" rect="687,285,160,202" offset="-80,-101"/>
+        <texture name="flump/Thigh_L" rect="849,285,124,222" offset="-50,-37"/>
+        <texture name="flump/calf_R" rect="687,489,130,178" offset="-37,-57"/>
+        <texture name="flump/calf_L" rect="819,509,116,170" offset="-50,-39"/>
+        <texture name="flump/flap_L" rect="539,525,96,180" offset="-48,-90"/>
+        <texture name="flump/foot_R" rect="937,1,42,78" offset="-27,-51"/>
+        <texture name="flump/foot_L" rect="981,1,42,78" offset="-29,-47"/>
       </atlas>
     </textureGroup>
   </textureGroups>

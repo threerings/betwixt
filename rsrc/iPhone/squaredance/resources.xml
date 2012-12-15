@@ -1,5 +1,5 @@
 <resources md5="038bbbfe5d9d84b1367459829969602f">
-  <movie name="squaredance/nesteddance" md5="af5d5736f6d8c0a8dae3fa0712752592" frameRate="24">
+  <movie name="squaredance/nesteddance" frameRate="24">
     <layer name="square1">
       <kf duration="29" ref="squaredance/squaredance" loc="131.75,0"/>
       <kf duration="1" ref="squaredance/squaredance" loc="249.25,357.7" skew="-1.5708,-1.5708"/>
@@ -14,7 +14,7 @@
       <kf duration="11" label="moretimepassed"/>
     </layer>
   </movie>
-  <movie name="squaredance/squaredance" md5="8b294fd4d8d47e55e4509120d3bc70f8" frameRate="24">
+  <movie name="squaredance/squaredance" frameRate="24">
     <layer name="red">
       <kf duration="14" ref="squaredance/redsquare" loc="-125,-100"/>
       <kf duration="15" ref="squaredance/redsquare" loc="72,258" scale="0.432,1.1728" skew="-1.5708,-1.5708" label="redswitch"/>
@@ -27,20 +27,20 @@
     </layer>
   </movie>
   <textureGroups>
-    <textureGroup retina="false">
+    <textureGroup scaleFactor="1">
       <atlas file="iPhone/squaredance/atlas0.png">
-        <texture name="squaredance/bluesquare" rect="0,0,171,171" offset="0,0" md5="de6d78affc5a793733f7c9ba898d3ee8"/>
+        <texture name="squaredance/bluesquare" rect="1,1,171,171" offset="0,0"/>
       </atlas>
       <atlas file="iPhone/squaredance/atlas1.png">
-        <texture name="squaredance/redsquare" rect="0,0,133,91" offset="125,100" md5="b7313e8cb63744254cd87a994d924650"/>
+        <texture name="squaredance/redsquare" rect="1,1,133,91" offset="125,100"/>
       </atlas>
     </textureGroup>
-    <textureGroup retina="true">
+    <textureGroup scaleFactor="2">
       <atlas file="iPhone/squaredance/atlas0@2x.png">
-        <texture name="squaredance/bluesquare" rect="0,0,342,342" offset="0,0" md5="de6d78affc5a793733f7c9ba898d3ee8"/>
+        <texture name="squaredance/bluesquare" rect="1,1,342,342" offset="0,0"/>
       </atlas>
       <atlas file="iPhone/squaredance/atlas1@2x.png">
-        <texture name="squaredance/redsquare" rect="0,0,266,182" offset="250,200" md5="b7313e8cb63744254cd87a994d924650"/>
+        <texture name="squaredance/redsquare" rect="1,1,266,182" offset="250,200"/>
       </atlas>
     </textureGroup>
   </textureGroups>
