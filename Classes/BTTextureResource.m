@@ -15,7 +15,7 @@
 @implementation BTTextureResource
 
 @synthesize texture = _texture;
-@synthesize offset = _offset;
+@synthesize origin = _origin;
 
 + (id<BTResourceFactory>)sharedFactory {
     return OOO_SINGLETON([[BTTextureResourceFactory alloc] init]);
@@ -34,7 +34,7 @@
         _filename = [BTApp requireResourcePathFor:[xml stringAttribute:@"filename"]];
         _texture = [[SPTexture alloc] initWithContentsOfFile:_filename];
         _texture.repeat = [xml boolAttribute:@"repeat" defaultVal:NO];
-        _offset = [xml pointAttribute:@"offset" defaultVal:[SPPoint pointWithX:0 y:0]];
+        _origin = [xml pointAttribute:@"origin"];
     }
     return self;
 }
@@ -49,25 +49,20 @@
         SPRectangle* scaledRegion = [_region copy];
         [scaledRegion scaleBy:scale];
         _texture = [[SPTexture alloc] initWithRegion:scaledRegion ofTexture:atlas];
-        _offset = [[xml pointAttribute:@"offset" defaultVal:[SPPoint pointWithX:0 y:0]] scaleBy:scale];
+        _origin = [[xml pointAttribute:@"origin"] scaleBy:scale];
         _name = [xml stringAttribute:@"name"];
     }
     return self;
 }
 
 - (SPDisplayObject*)createDisplayObject {
-    SPSprite* holder = [[SPSprite alloc] init];
-    SPImage* img = [[SPImage alloc] initWithTexture:_texture];
-    img.x = _offset.x;
-    img.y = _offset.y;
-    [holder addChild:img];
-    return holder;
+    return [self createImage];
 }
 
 - (SPImage*)createImage {
     SPImage* img = [[SPImage alloc] initWithTexture:_texture];
-    img.pivotX = -_offset.x;
-    img.pivotY = -_offset.y;
+    img.pivotX = _origin.x;
+    img.pivotY = _origin.y;
     return img;
 }
 

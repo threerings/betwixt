@@ -13,14 +13,14 @@
 @interface BTTextureResource : BTResource<BTDisplayObjectCreator> {
 @protected
     SPTexture* _texture;
-    SPPoint* _offset;
+    SPPoint* _origin;
 
     NSString* _filename;
     SPRectangle* _region;
 }
 
 @property (nonatomic,readonly) SPTexture* texture;
-@property (nonatomic,readonly) SPPoint* offset;
+@property (nonatomic,readonly) SPPoint* origin;
 
 + (id<BTResourceFactory>)sharedFactory;
 + (BTTextureResource*)require:(NSString*)name;
