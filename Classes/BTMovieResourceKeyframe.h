@@ -10,6 +10,7 @@
     float pivotX, pivotY;
     float alpha;
     BOOL visible;
+    BOOL tweened;
     float ease;
     NSString* libraryItem;
     NSString* label;

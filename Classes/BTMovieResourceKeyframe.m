@@ -44,6 +44,7 @@
 
         alpha = [frameEl floatAttribute:@"alpha" defaultVal:1];
         visible = [frameEl boolAttribute:@"visible" defaultVal:YES];
+        tweened = [frameEl boolAttribute:@"tweened" defaultVal:YES];
         ease = [frameEl floatAttribute:@"ease" defaultVal:0];
     }
 

@@ -70,7 +70,7 @@
 
     BTMovieResourceKeyframe* kf = [self kfAtIdx:keyframeIdx];
     SPDisplayObject* layer = [movie childAtIndex:layerIdx];
-    if (keyframeIdx == [keyframes count] - 1|| kf->index == frame) {
+    if (keyframeIdx == [keyframes count] - 1 || kf->index == frame || !kf->tweened) {
         layer.x = kf->x;
         layer.y = kf->y;
         layer.scaleX = kf->scaleX;
