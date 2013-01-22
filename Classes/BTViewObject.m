@@ -56,31 +56,6 @@
     return self.touchable.touchCanceled;
 }
 
-- (float)x {
-    return self.display.x;
-}
-
-- (float)y {
-    return self.display.y;
-}
-
-- (void)setX:(float)x {
-    self.display.x = x;
-}
-
-- (void)setY:(float)y {
-    self.display.y = y;
-}
-
-- (SPPoint*)loc {
-    return [SPPoint pointWithX:self.x y:self.y];
-}
-
-- (void)setLoc:(SPPoint*)loc {
-    self.x = loc.x;
-    self.y = loc.y;
-}
-
 - (SPDisplayObject*)display {
     OOO_IS_ABSTRACT();
     return nil;
