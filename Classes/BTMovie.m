@@ -61,7 +61,7 @@ NSString* const BTMovieLastFrame = @"BTMovieLastFrame";
         _playing = [[RABoolValue alloc] init];
         _playing.value = YES;
         _labelPassed = [[RAObjectSignal alloc] init];
-        [self gotoFrame:0 skipIntermediateFrames:YES overDuration:NO];
+        [self updateFrame:0 dt:0];
         [self addEventListener:@selector(addedToStage:) atObject:self
                        forType:SP_EVENT_TYPE_ADDED_TO_STAGE];
         [self addEventListener:@selector(removedFromStage:) atObject:self
@@ -94,25 +94,21 @@ NSString* const BTMovieLastFrame = @"BTMovieLastFrame";
     return proxy;
 }
 
-- (void)fireLabelsFrom:(int)startFrame to:(int)endFrame {
-    for (int ii = startFrame; ii <= endFrame; ii++) {
-        for (NSString* label in _labels[ii]) {
-            [_labelPassed emitEvent:label];
-        }
-    }
-}
-
-- (void)gotoFrame:(int)newFrame skipIntermediateFrames:(BOOL)skipIntermediateFrames overDuration:(BOOL)overDuration {
+- (void)updateFrame:(int)newFrame dt:(float)dt {
     NSAssert(newFrame >= 0 && newFrame < self.frames, @"bad frame: %d", newFrame);
 
-    if (_goingToFrame) {
+    if (_isUpdatingFrame) {
         _pendingFrame = newFrame;
         return;
+    } else {
+        _pendingFrame = NO_FRAME;
+        _isUpdatingFrame = YES;
     }
-    _goingToFrame = YES;
-    BOOL differentFrame = newFrame != _frame;
-    BOOL wrapped = newFrame < _frame;
-    if (differentFrame) {
+    
+    BOOL isGoTo = (dt <= 0);
+    BOOL wrapped = (dt >= _duration) || (newFrame < _frame);
+    
+    if (newFrame != _frame) {
         if (wrapped) {
             for (BTMovieLayer* layer in _layers) {
                 layer->changedKeyframe = true;
@@ -124,28 +120,50 @@ NSString* const BTMovieLastFrame = @"BTMovieLastFrame";
         }
     }
 
-    // Update the frame before firing, so if firing changes the frame, it sticks.
+    if (isGoTo) {
+        _playTime = newFrame / _framerate;
+    }
+
+    // Update the frame before firing frame label signals, so if firing changes the frame,
+    // it sticks.
     int oldFrame = _frame;
     _frame = newFrame;
-    if (skipIntermediateFrames) {
-        [self fireLabelsFrom:newFrame to:newFrame];
-        _playTime = newFrame/_framerate;
-    } else if (overDuration) {
-        [self fireLabelsFrom:oldFrame + 1 to:self.frames - 1];
-        [self fireLabelsFrom:0 to:_frame];
-    } else if (differentFrame) {
+
+    // determine which labels to fire signals for
+    int startFrame = 0;
+    int frameCount = 0;
+    if (isGoTo) {
+        startFrame = newFrame;
+        frameCount = 1;
+    } else {
+        startFrame = (oldFrame + 1 < self.frames ? oldFrame + 1 : 0);
+        frameCount = (_frame - oldFrame);
         if (wrapped) {
-            [self fireLabelsFrom:oldFrame + 1 to:self.frames - 1];
-            [self fireLabelsFrom:0 to:_frame];
-        } else {
-            [self fireLabelsFrom:oldFrame + 1 to:_frame];
+            frameCount += self.frames;
         }
     }
-    _goingToFrame = NO;
+
+    // Fire signals. Stop if pendingFrame is updated, which indicates that the client
+    // has called goTo()
+    for (int ii = 0; ii < frameCount; ++ii) {
+        if (_pendingFrame != NO_FRAME) {
+            break;
+        }
+
+        int frameIdx = (startFrame + ii) % self.frames;
+        for (NSString* label in _labels[frameIdx]) {
+            [_labelPassed emitEvent:label];
+            if (_pendingFrame != NO_FRAME) {
+                break;
+            }
+        }
+    }
+
+    _isUpdatingFrame = NO;
+    // If we were interrupted by a goTo(), update to that frame now.
     if (_pendingFrame != NO_FRAME) {
         newFrame = _pendingFrame;
-        _pendingFrame = NO_FRAME;
-        [self gotoFrame:newFrame skipIntermediateFrames:YES overDuration:NO];
+        [self updateFrame:newFrame dt:0];
     }
 }
 
@@ -183,7 +201,7 @@ NSString* const BTMovieLastFrame = @"BTMovieLastFrame";
 
 - (void)playFromFrame:(int)startFrame toFrame:(int)stopFrame {
     [self playToFrame:stopFrame];
-    [self gotoFrame:startFrame skipIntermediateFrames:YES overDuration:NO];
+    [self updateFrame:startFrame dt:0];
 }
 
 - (void)playFromLabel:(NSString*)label {
@@ -193,7 +211,7 @@ NSString* const BTMovieLastFrame = @"BTMovieLastFrame";
 - (void)playFromFrame:(int)frame {
     _playing.value = YES;
     _stopFrame = NO_FRAME;
-    [self gotoFrame:frame skipIntermediateFrames:YES overDuration:NO];
+    [self updateFrame:frame dt:0];
 }
 
 - (void)gotoLabel:(NSString*)label {
@@ -202,7 +220,7 @@ NSString* const BTMovieLastFrame = @"BTMovieLastFrame";
 
 - (void)gotoFrame:(int)frame {
     _playing.value = NO;
-    [self gotoFrame:frame skipIntermediateFrames:YES overDuration:NO];
+    [self updateFrame:frame dt:0];
 }
 
 - (int)frames {
@@ -224,10 +242,13 @@ NSString* const BTMovieLastFrame = @"BTMovieLastFrame";
     _playTime += dt;
     float actualPlaytime = _playTime;
     if (_playTime >= _duration) _playTime = fmodf(_playTime, _duration);
-    int newFrame = (int)(_playTime * _framerate);
-    BOOL overDuration = dt >= _duration;
-    // If the update crosses or goes to the stopFrame, go to the stop frame, stop the movie and
-    // clear it
+
+    // If _playTime is very close to _duration, rounding error can cause us to
+    // land on lastFrame + 1. Protect against that.
+    int newFrame = MIN((int)(_playTime * _framerate), self.frames - 1);
+
+    // If the update crosses or goes to the stopFrame:
+    // go to the stopFrame, stop the movie, clear the stopFrame
     if (_stopFrame != NO_FRAME) {
         // how many frames remain to the stopframe?
         int framesRemaining =
@@ -239,7 +260,8 @@ NSString* const BTMovieLastFrame = @"BTMovieLastFrame";
             _stopFrame = NO_FRAME;
         }
     }
-    [self gotoFrame:newFrame skipIntermediateFrames:NO overDuration:overDuration];
+
+    [self updateFrame:newFrame dt:dt];
 }
 
 - (BOOL)isComplete {

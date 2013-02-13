@@ -11,7 +11,7 @@ extern NSString* const BTMovieLastFrame;
 
 @interface BTMovie : SPSprite <SPAnimatable> {
 @protected
-    BOOL _goingToFrame;// If a call to gotoFrame is active
+    BOOL _isUpdatingFrame;// If a call to gotoFrame is active
     int _pendingFrame;// Latest frame given to gotoFrame while _goingToFrame, or NO_FRAME if there isn't a queued frame move
     int _frame;// Last drawn frame
     int _stopFrame;// Frame on which playing stops, or NO_FRAME if we're looping or already stopped
